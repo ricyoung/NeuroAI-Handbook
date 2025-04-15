@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Chapter 8: Data-Science Pipeline in Python" href="ch08_data_science_pipeline.html" />
-    <link rel="prev" title="Chapter 6: Neuro-stimulation &amp; Plasticity" href="ch06_neurostimulation.html" />
+    <link rel="prev" title="Chapter 6: Neurostimulation &amp; Plasticity" href="ch06_neurostimulation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -191,7 +191,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II · Brains Meet Math &amp; Data</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ch05_brain_networks.html">Chapter 5: Default-Mode vs Executive Control Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch06_neurostimulation.html">Chapter 6: Neuro-stimulation &amp; Plasticity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch06_neurostimulation.html">Chapter 6: Neurostimulation &amp; Plasticity</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 7: Information Theory Essentials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch08_data_science_pipeline.html">Chapter 8: Data-Science Pipeline in Python</a></li>
 </ul>
@@ -451,12 +451,22 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-entropy-and-mutual-information-of-spike-trains">Example 1: Entropy and Mutual Information of Spike Trains</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-information-bottleneck-demonstration">Example 2: Information Bottleneck Demonstration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-transfer-entropy-in-neural-spike-trains">Example 3: Transfer Entropy in Neural Spike Trains</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-4-information-theory-in-reinforcement-learning">Example 4: Information Theory in Reinforcement Learning</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">7.7 Take-aways</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">7.8 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-theory-in-modern-deep-learning">7.7 Information Theory in Modern Deep Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-bottleneck-in-deep-neural-networks">Information Bottleneck in Deep Neural Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-information-bottleneck">Variational Information Bottleneck</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-theoretic-generalization-bounds">Information-Theoretic Generalization Bounds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connections-to-computational-neuroscience">Connections to Computational Neuroscience</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications-in-deep-learning">Practical Applications in Deep Learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">7.8 Take-aways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">7.9 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#books">Books</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#articles">Articles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#review-articles-connecting-information-theory-to-modern-ai-neuroscience">Review Articles Connecting Information Theory to Modern AI &amp; Neuroscience</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#online-resources">Online Resources</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#software-tools">Software Tools</a></li>
 </ul>
@@ -1479,9 +1489,479 @@ document.write(`
 </pre></div>
 </div>
 </section>
+<section id="example-4-information-theory-in-reinforcement-learning">
+<h3>Example 4: Information Theory in Reinforcement Learning<a class="headerlink" href="#example-4-information-theory-in-reinforcement-learning" title="Link to this heading">#</a></h3>
+<p>Reinforcement learning and information theory are deeply connected in both neuroscience and artificial intelligence. Let’s explore how information-theoretic concepts apply to reinforcement learning through a GridWorld example.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">info_theory_rl_example</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate information-theoretic principles in reinforcement learning.&quot;&quot;&quot;</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">ListedColormap</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="kn">import</span> <span class="n">Rectangle</span>
+    
+    <span class="c1"># Define a simple grid world environment</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">GridWorld</span><span class="p">:</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">=</span> <span class="n">size</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">noise</span> <span class="o">=</span> <span class="n">noise</span>  <span class="c1"># Probability of random action</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">states</span> <span class="o">=</span> <span class="n">size</span> <span class="o">*</span> <span class="n">size</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">actions</span> <span class="o">=</span> <span class="mi">4</span>  <span class="c1"># Up, Right, Down, Left</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">goal</span> <span class="o">=</span> <span class="p">(</span><span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+            
+            <span class="c1"># Define rewards: -0.1 for each step, +1 for goal, -1 for obstacles</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rewards</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">))</span> <span class="o">*</span> <span class="o">-</span><span class="mf">0.1</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">rewards</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+            
+            <span class="c1"># Add some obstacles</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">obstacles</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+            <span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">obstacles</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">rewards</span><span class="p">[</span><span class="n">obs</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+                
+        <span class="k">def</span><span class="w"> </span><span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+            
+        <span class="k">def</span><span class="w"> </span><span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
+            <span class="c1"># With some probability, take a random action</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">noise</span><span class="p">:</span>
+                <span class="n">action</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+                
+            <span class="c1"># Move according to action: 0=up, 1=right, 2=down, 3=left</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>
+            <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Up</span>
+            <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="n">x</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Right</span>
+            <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Down</span>
+            <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span> <span class="n">x</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Left</span>
+            
+            <span class="c1"># Check if this is an obstacle</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">obstacles</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="kc">False</span>  <span class="c1"># Can&#39;t move to obstacles</span>
+            
+            <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+            <span class="n">reward</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rewards</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">]</span>
+            <span class="n">done</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">goal</span><span class="p">)</span>
+            
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span>
+    
+    <span class="c1"># Create a simple Q-learning agent</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">QLearningAgent</span><span class="p">:</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">states</span><span class="p">,</span> <span class="n">actions</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">discount</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">Q</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">states</span><span class="p">,</span> <span class="n">actions</span><span class="p">))</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">=</span> <span class="n">learning_rate</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">gamma</span> <span class="o">=</span> <span class="n">discount</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">epsilon</span> <span class="o">=</span> <span class="n">epsilon</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">state_visits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">states</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">state_action_visits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">states</span><span class="p">,</span> <span class="n">actions</span><span class="p">))</span>
+            
+        <span class="k">def</span><span class="w"> </span><span class="nf">get_state_idx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Convert (x,y) to state index.&quot;&quot;&quot;</span>
+            <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">state</span>
+            <span class="k">return</span> <span class="n">y</span> <span class="o">*</span> <span class="n">size</span> <span class="o">+</span> <span class="n">x</span>
+            
+        <span class="k">def</span><span class="w"> </span><span class="nf">get_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+            <span class="n">state_idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_state_idx</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">state_visits</span><span class="p">[</span><span class="n">state_idx</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            
+            <span class="c1"># Epsilon-greedy policy</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">epsilon</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">[</span><span class="n">state_idx</span><span class="p">])</span>
+            
+        <span class="k">def</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">next_state</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">size</span><span class="p">):</span>
+            <span class="n">state_idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_state_idx</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+            <span class="n">next_state_idx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_state_idx</span><span class="p">(</span><span class="n">next_state</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">state_action_visits</span><span class="p">[</span><span class="n">state_idx</span><span class="p">,</span> <span class="n">action</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+            
+            <span class="c1"># Q-learning update</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
+                <span class="n">target</span> <span class="o">=</span> <span class="n">reward</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">gamma</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">[</span><span class="n">next_state_idx</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">target</span> <span class="o">=</span> <span class="n">reward</span>
+                
+            <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">[</span><span class="n">state_idx</span><span class="p">,</span> <span class="n">action</span><span class="p">]</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lr</span> <span class="o">*</span> <span class="p">(</span><span class="n">target</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">Q</span><span class="p">[</span><span class="n">state_idx</span><span class="p">,</span> <span class="n">action</span><span class="p">])</span>
+    
+    <span class="c1"># Function to calculate the entropy of a policy</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">calculate_policy_entropy</span><span class="p">(</span><span class="n">Q_values</span><span class="p">):</span>
+        <span class="c1"># Convert Q-values to policy probabilities using softmax</span>
+        <span class="n">policy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">Q_values</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Q_values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">policy</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">Q_values</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Q_values</span><span class="p">[</span><span class="n">s</span><span class="p">]))</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">policy</span><span class="p">[</span><span class="n">s</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">policy</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">/=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">policy</span><span class="p">[</span><span class="n">s</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">policy</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">Q_values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="n">Q_values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                
+        <span class="c1"># Calculate entropy for each state</span>
+        <span class="n">entropies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">Q_values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">Q_values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="n">p</span> <span class="o">=</span> <span class="n">policy</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
+            <span class="n">entropies</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p</span> <span class="o">+</span> <span class="mf">1e-10</span><span class="p">))</span>
+            
+        <span class="k">return</span> <span class="n">entropies</span><span class="p">,</span> <span class="n">policy</span>
+    
+    <span class="c1"># Function to visualize the grid world, policy, and information measures</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">visualize_grid_world</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">agent</span><span class="p">,</span> <span class="n">episode</span><span class="p">):</span>
+        <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+        
+        <span class="c1"># Convert agent&#39;s Q-values to policy and calculate entropy</span>
+        <span class="n">policy_entropies</span><span class="p">,</span> <span class="n">policy</span> <span class="o">=</span> <span class="n">calculate_policy_entropy</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span>
+        
+        <span class="c1"># Get the best actions for each state</span>
+        <span class="n">best_actions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">Q</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="c1"># Calculate information gain (approximation based on state visits)</span>
+        <span class="n">prior</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="n">env</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="n">env</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>  <span class="c1"># Uniform prior</span>
+        <span class="n">posterior</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">state_visits</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">state_visits</span><span class="p">)</span>
+        <span class="n">posterior</span><span class="p">[</span><span class="n">posterior</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1e-10</span>  <span class="c1"># Avoid log(0)</span>
+        
+        <span class="n">information_gain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="n">env</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="n">env</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">posterior</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">information_gain</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">posterior</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">/</span> <span class="n">prior</span><span class="p">[</span><span class="n">s</span><span class="p">])</span>
+        
+        <span class="c1"># Reshape for visualization</span>
+        <span class="n">policy_entropy_grid</span> <span class="o">=</span> <span class="n">policy_entropies</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">information_gain_grid</span> <span class="o">=</span> <span class="n">information_gain</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        
+        <span class="c1"># Create Grid World visualization</span>
+        <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">131</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Grid World (Episode </span><span class="si">{</span><span class="n">episode</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+        
+        <span class="c1"># Plot the grid</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+        
+        <span class="c1"># Plot goal and obstacles</span>
+        <span class="n">goal_rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">((</span><span class="n">env</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">env</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">goal_rect</span><span class="p">)</span>
+        
+        <span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">obstacles</span><span class="p">:</span>
+            <span class="n">obs_rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">((</span><span class="n">obs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">obs</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="n">ax1</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">obs_rect</span><span class="p">)</span>
+        
+        <span class="c1"># Plot current position</span>
+        <span class="n">pos_rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">((</span><span class="n">env</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">env</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">pos_rect</span><span class="p">)</span>
+        
+        <span class="c1"># Plot policy arrows</span>
+        <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+                <span class="n">state_idx</span> <span class="o">=</span> <span class="n">y</span> <span class="o">*</span> <span class="n">env</span><span class="o">.</span><span class="n">size</span> <span class="o">+</span> <span class="n">x</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">obstacles</span> <span class="ow">and</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">!=</span> <span class="n">env</span><span class="o">.</span><span class="n">goal</span><span class="p">:</span>
+                    <span class="n">action</span> <span class="o">=</span> <span class="n">best_actions</span><span class="p">[</span><span class="n">state_idx</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># Up</span>
+                        <span class="n">ax1</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1"># Right</span>
+                        <span class="n">ax1</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>  <span class="c1"># Down</span>
+                        <span class="n">ax1</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>  <span class="c1"># Left</span>
+                        <span class="n">ax1</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">y</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+        
+        <span class="n">ax1</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>  <span class="c1"># To match the state indices</span>
+        
+        <span class="c1"># Plot policy entropy</span>
+        <span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">132</span><span class="p">)</span>
+        <span class="n">im2</span> <span class="o">=</span> <span class="n">ax2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">policy_entropy_grid</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Policy Entropy (bits)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im2</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">)</span>
+        
+        <span class="c1"># Add obstacles and goal markers</span>
+        <span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">obstacles</span><span class="p">:</span>
+            <span class="n">obs_rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">((</span><span class="n">obs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">obs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> 
+                                 <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">ax2</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">obs_rect</span><span class="p">)</span>
+        
+        <span class="n">goal_rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">((</span><span class="n">env</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> 
+                              <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">ax2</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">goal_rect</span><span class="p">)</span>
+        
+        <span class="c1"># Plot information gain</span>
+        <span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">133</span><span class="p">)</span>
+        <span class="n">im3</span> <span class="o">=</span> <span class="n">ax3</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">information_gain_grid</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;plasma&#39;</span><span class="p">)</span>
+        <span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Information Gain (bits)&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im3</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
+        
+        <span class="c1"># Add obstacles and goal markers</span>
+        <span class="k">for</span> <span class="n">obs</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">obstacles</span><span class="p">:</span>
+            <span class="n">obs_rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">((</span><span class="n">obs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">obs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> 
+                                 <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">ax3</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">obs_rect</span><span class="p">)</span>
+        
+        <span class="n">goal_rect</span> <span class="o">=</span> <span class="n">Rectangle</span><span class="p">((</span><span class="n">env</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">goal</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> 
+                              <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">ax3</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">goal_rect</span><span class="p">)</span>
+        
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="c1"># Train the agent and visualize</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">GridWorld</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">agent</span> <span class="o">=</span> <span class="n">QLearningAgent</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">states</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">actions</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">discount</span><span class="o">=</span><span class="mf">0.99</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+    
+    <span class="c1"># Training parameters</span>
+    <span class="n">n_episodes</span> <span class="o">=</span> <span class="mi">500</span>
+    <span class="n">max_steps</span> <span class="o">=</span> <span class="mi">100</span>
+    
+    <span class="c1"># Track rewards for plotting</span>
+    <span class="n">episode_rewards</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">policy_entropies</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1"># Train the agent</span>
+    <span class="k">for</span> <span class="n">episode</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_episodes</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+        <span class="n">total_reward</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">done</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">steps</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="k">while</span> <span class="ow">not</span> <span class="n">done</span> <span class="ow">and</span> <span class="n">steps</span> <span class="o">&lt;</span> <span class="n">max_steps</span><span class="p">:</span>
+            <span class="n">action</span> <span class="o">=</span> <span class="n">agent</span><span class="o">.</span><span class="n">get_action</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+            <span class="n">next_state</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">done</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+            <span class="n">agent</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">,</span> <span class="n">next_state</span><span class="p">,</span> <span class="n">done</span><span class="p">,</span> <span class="n">env</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="n">next_state</span>
+            <span class="n">total_reward</span> <span class="o">+=</span> <span class="n">reward</span>
+            <span class="n">steps</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+        <span class="n">episode_rewards</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">total_reward</span><span class="p">)</span>
+        
+        <span class="c1"># Calculate average policy entropy for this episode</span>
+        <span class="n">entropy</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">calculate_policy_entropy</span><span class="p">(</span><span class="n">agent</span><span class="o">.</span><span class="n">Q</span><span class="p">)</span>
+        <span class="n">policy_entropies</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">entropy</span><span class="p">))</span>
+        
+        <span class="c1"># Visualize at specific episodes</span>
+        <span class="k">if</span> <span class="n">episode</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Episode </span><span class="si">{</span><span class="n">episode</span><span class="si">}</span><span class="s2">, Total Reward: </span><span class="si">{</span><span class="n">total_reward</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, Average Policy Entropy: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">entropy</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> bits&quot;</span><span class="p">)</span>
+            <span class="n">visualize_grid_world</span><span class="p">(</span><span class="n">env</span><span class="p">,</span> <span class="n">agent</span><span class="p">,</span> <span class="n">episode</span><span class="p">)</span>
+    
+    <span class="c1"># Plot learning curve and policy entropy over training</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">episode_rewards</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Episode&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Total Reward&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Learning Curve&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">policy_entropies</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Episode&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Average Policy Entropy (bits)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Policy Entropy During Learning&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Information-theoretic interpretation of RL:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Policy entropy decreases as the agent becomes more certain about optimal actions&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Information gain is highest in states that were unexpectedly valuable&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. The agent maximizes reward while minimizing surprise (free energy principle)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;4. The exploration-exploitation trade-off can be formalized as an information-gathering process&quot;</span><span class="p">)</span>
+
+<span class="n">info_theory_rl_example</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="information-theory-in-modern-deep-learning">
+<h2>7.7 Information Theory in Modern Deep Learning<a class="headerlink" href="#information-theory-in-modern-deep-learning" title="Link to this heading">#</a></h2>
+<p>Information theory has become increasingly important in understanding and improving modern deep learning systems. In this section, we’ll explore how information-theoretic principles apply to neural networks.</p>
+<section id="information-bottleneck-in-deep-neural-networks">
+<h3>Information Bottleneck in Deep Neural Networks<a class="headerlink" href="#information-bottleneck-in-deep-neural-networks" title="Link to this heading">#</a></h3>
+<p>Tishby and colleagues proposed that deep neural networks can be understood through the information bottleneck principle, where each layer progressively compresses information about the input while preserving information relevant to the output. This perspective views deep learning as an iterative optimization of the information bottleneck trade-off.</p>
+<p>The learning dynamics in DNNs typically show two phases:</p>
+<ol class="arabic simple">
+<li><p><strong>Fitting phase</strong>: The network increases I(T;Y) - mutual information between representations and labels</p></li>
+<li><p><strong>Compression phase</strong>: The network decreases I(T;X) - mutual information between representations and inputs</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">visualize_information_plane</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Conceptual visualization of the information plane dynamics of deep learning.&quot;&quot;&quot;</span>
+    <span class="c1"># This is a conceptual visualization of Information Bottleneck trajectories</span>
+    
+    <span class="c1"># Create a meshgrid for the information plane</span>
+    <span class="n">I_TX</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">I_TY</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">I_TX</span><span class="p">,</span> <span class="n">I_TY</span><span class="p">)</span>
+    
+    <span class="c1"># Define a hypothetical &quot;information bottleneck curve&quot;</span>
+    <span class="c1"># This is just for visualization - real curves would come from actual DNN training</span>
+    <span class="n">max_I_TY</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span> <span class="o">*</span> <span class="n">X</span><span class="p">))</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_I_TY</span> <span class="o">-</span> <span class="n">Y</span><span class="p">)</span>
+    
+    <span class="c1"># Define some trajectories for different layers</span>
+    <span class="n">layer1_tx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">layer1_ty</span> <span class="o">=</span> <span class="mf">2.9</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">layer1_tx</span><span class="p">))</span>
+    
+    <span class="n">layer2_tx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">layer2_ty</span> <span class="o">=</span> <span class="mf">2.8</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.6</span> <span class="o">*</span> <span class="n">layer2_tx</span><span class="p">))</span>
+    
+    <span class="n">layer3_tx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">layer3_ty</span> <span class="o">=</span> <span class="mf">2.7</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.7</span> <span class="o">*</span> <span class="n">layer3_tx</span><span class="p">))</span>
+    
+    <span class="c1"># Create figure</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    
+    <span class="c1"># Plot the information plane with contours</span>
+    <span class="n">contour</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Distance from optimal IB curve&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Mark the optimal IB curve</span>
+    <span class="n">optimal_tx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">optimal_ty</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span> <span class="o">*</span> <span class="n">optimal_tx</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">optimal_tx</span><span class="p">,</span> <span class="n">optimal_ty</span><span class="p">,</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Optimal IB curve&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Plot layer trajectories during training</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">layer1_tx</span><span class="p">,</span> <span class="n">layer1_ty</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Layer 1&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">layer2_tx</span><span class="p">,</span> <span class="n">layer2_ty</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Layer 2&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">layer3_tx</span><span class="p">,</span> <span class="n">layer3_ty</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Layer 3&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Add arrows to indicate direction</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">layer1_tx</span><span class="p">[</span><span class="mi">70</span><span class="p">],</span> <span class="n">layer1_ty</span><span class="p">[</span><span class="mi">70</span><span class="p">],</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">layer2_tx</span><span class="p">[</span><span class="mi">70</span><span class="p">],</span> <span class="n">layer2_ty</span><span class="p">[</span><span class="mi">70</span><span class="p">],</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">layer3_tx</span><span class="p">[</span><span class="mi">70</span><span class="p">],</span> <span class="n">layer3_ty</span><span class="p">[</span><span class="mi">70</span><span class="p">],</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">head_width</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">fc</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Add labels for the phases</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Fitting Phase&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;Compression Phase&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;I(T;X) - Information about input&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;I(T;Y) - Information about output&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Information Plane Dynamics in Deep Neural Networks&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">visualize_information_plane</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="variational-information-bottleneck">
+<h3>Variational Information Bottleneck<a class="headerlink" href="#variational-information-bottleneck" title="Link to this heading">#</a></h3>
+<p>The variational information bottleneck (VIB) provides a practical way to implement the information bottleneck principle in neural networks:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}_{VIB} = -I(T;Y) + \beta I(T;X)\]</div>
+<p>where β controls the trade-off. This can be approximated using variational methods, forming the basis for many regularization techniques.</p>
+</section>
+<section id="information-theoretic-generalization-bounds">
+<h3>Information-Theoretic Generalization Bounds<a class="headerlink" href="#information-theoretic-generalization-bounds" title="Link to this heading">#</a></h3>
+<p>Information theory provides bounds on generalization error. The generalization error can be bounded by:</p>
+<div class="math notranslate nohighlight">
+\[\mathbb{E}[gen(w)] \leq \sqrt{\frac{I(W;S)}{2m}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I(W;S)\)</span> is the mutual information between weights and training data, and <span class="math notranslate nohighlight">\(m\)</span> is the sample size. This bound suggests that limiting information between weights and training data improves generalization.</p>
+</section>
+<section id="connections-to-computational-neuroscience">
+<h3>Connections to Computational Neuroscience<a class="headerlink" href="#connections-to-computational-neuroscience" title="Link to this heading">#</a></h3>
+<p>Recent work has shown remarkable parallels between information processing in deep neural networks and the brain:</p>
+<ol class="arabic simple">
+<li><p><strong>Efficient Coding</strong>: Both systems optimize information transfer under constraints</p></li>
+<li><p><strong>Hierarchical Processing</strong>: Progressive abstraction and compression through layers</p></li>
+<li><p><strong>Phase Transitions</strong>: Both exhibit rich dynamics in information flow during learning</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_info_theory_connections</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Visualize connections between information theory, neuroscience, and deep learning.&quot;&quot;&quot;</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+    
+    <span class="c1"># Create a 3x3 grid to represent concepts</span>
+    <span class="n">categories</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Information Theory&#39;</span><span class="p">,</span> <span class="s1">&#39;Neuroscience&#39;</span><span class="p">,</span> <span class="s1">&#39;Deep Learning&#39;</span><span class="p">]</span>
+    <span class="n">concepts</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;Information Theory&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Entropy&#39;</span><span class="p">,</span> <span class="s1">&#39;KL Divergence&#39;</span><span class="p">,</span> <span class="s1">&#39;Mutual Information&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;Neuroscience&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Efficient Coding&#39;</span><span class="p">,</span> <span class="s1">&#39;Sparse Coding&#39;</span><span class="p">,</span> <span class="s1">&#39;Predictive Coding&#39;</span><span class="p">],</span>
+        <span class="s1">&#39;Deep Learning&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Regularization&#39;</span><span class="p">,</span> <span class="s1">&#39;Compression&#39;</span><span class="p">,</span> <span class="s1">&#39;Generalization&#39;</span><span class="p">]</span>
+    <span class="p">}</span>
+    
+    <span class="c1"># Create a grid layout</span>
+    <span class="n">gs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">GridSpec</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">width_ratios</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">height_ratios</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+    
+    <span class="c1"># Plot the titles</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">category</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">categories</span><span class="p">):</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">])</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Main concept area</span>
+    <span class="n">ax_main</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>
+    
+    <span class="c1"># Create a circular layout for concepts</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+    
+    <span class="c1"># Add nodes with positions on a circle</span>
+    <span class="n">n_concepts</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">concepts</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    <span class="n">radius</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">angle_step</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="n">n_concepts</span>
+    
+    <span class="c1"># Add all concept nodes</span>
+    <span class="n">node_idx</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">node_positions</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">node_colors</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">category</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">categories</span><span class="p">):</span>
+        <span class="n">color</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#3498db&#39;</span><span class="p">,</span> <span class="s1">&#39;#2ecc71&#39;</span><span class="p">,</span> <span class="s1">&#39;#e74c3c&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">concept</span> <span class="ow">in</span> <span class="n">concepts</span><span class="p">[</span><span class="n">category</span><span class="p">]:</span>
+            <span class="n">angle</span> <span class="o">=</span> <span class="n">node_idx</span> <span class="o">*</span> <span class="n">angle_step</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_node</span><span class="p">(</span><span class="n">concept</span><span class="p">)</span>
+            <span class="n">node_positions</span><span class="p">[</span><span class="n">concept</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+            <span class="n">node_colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+            <span class="n">node_idx</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="c1"># Add carefully chosen edges to represent relationships</span>
+    <span class="n">connections</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;Entropy&#39;</span><span class="p">,</span> <span class="s1">&#39;Efficient Coding&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;Entropy&#39;</span><span class="p">,</span> <span class="s1">&#39;Compression&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;KL Divergence&#39;</span><span class="p">,</span> <span class="s1">&#39;Sparse Coding&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;KL Divergence&#39;</span><span class="p">,</span> <span class="s1">&#39;Regularization&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;Mutual Information&#39;</span><span class="p">,</span> <span class="s1">&#39;Predictive Coding&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;Mutual Information&#39;</span><span class="p">,</span> <span class="s1">&#39;Generalization&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;Efficient Coding&#39;</span><span class="p">,</span> <span class="s1">&#39;Compression&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;Sparse Coding&#39;</span><span class="p">,</span> <span class="s1">&#39;Regularization&#39;</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;Predictive Coding&#39;</span><span class="p">,</span> <span class="s1">&#39;Generalization&#39;</span><span class="p">)</span>
+    <span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">source</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">connections</span><span class="p">:</span>
+        <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+    
+    <span class="c1"># Draw the graph</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">node_positions</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span> 
+            <span class="n">node_size</span><span class="o">=</span><span class="mi">3000</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">font_weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> 
+            <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax_main</span><span class="p">)</span>
+    
+    <span class="c1"># Footer text</span>
+    <span class="n">ax_footer</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">gs</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:])</span>
+    <span class="n">ax_footer</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="s2">&quot;Information theory provides a common language linking neuroscience and deep learning&quot;</span><span class="p">,</span>
+                  <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">fontstyle</span><span class="o">=</span><span class="s1">&#39;italic&#39;</span><span class="p">)</span>
+    <span class="n">ax_footer</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plot_info_theory_connections</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="practical-applications-in-deep-learning">
+<h3>Practical Applications in Deep Learning<a class="headerlink" href="#practical-applications-in-deep-learning" title="Link to this heading">#</a></h3>
+<p>Information theory has informed several advancements in deep learning:</p>
+<ol class="arabic simple">
+<li><p><strong>Regularization Techniques</strong>: Information-theoretic regularizers like variational dropout and weight uncertainty</p></li>
+<li><p><strong>Architecture Design</strong>: Information-theoretic principles guide the design of skip connections and attention mechanisms</p></li>
+<li><p><strong>Explainability</strong>: Quantifying information flow helps understand “black box” deep networks</p></li>
+<li><p><strong>Optimization</strong>: Information-geometric methods provide insights into learning dynamics</p></li>
+</ol>
+</section>
 </section>
 <section id="take-aways">
-<h2>7.7 Take-aways<a class="headerlink" href="#take-aways" title="Link to this heading">#</a></h2>
+<h2>7.8 Take-aways<a class="headerlink" href="#take-aways" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Information theory provides a quantitative framework for understanding information processing in neural and artificial systems.</p></li>
 <li><p>Entropy, mutual information, and KL divergence are fundamental measures for analyzing neural codes.</p></li>
@@ -1490,16 +1970,20 @@ document.write(`
 <li><p>The trade-off between compression and prediction in neural systems is formalized by information bottleneck theory, which has parallels in deep learning.</p></li>
 <li><p>Neural variability and correlations critically affect the information content of population codes.</p></li>
 <li><p>Information-theoretic measures can reveal the causal structure of neural networks and provide insights into integrated information processing.</p></li>
+<li><p>Modern deep learning can be understood through information-theoretic principles, with layers performing progressive compression while preserving task-relevant information.</p></li>
+<li><p>Both brains and artificial neural networks appear to optimize similar information-theoretic objectives under different constraints.</p></li>
 </ul>
 </section>
 <section id="further-reading-media">
-<h2>7.8 Further Reading &amp; Media<a class="headerlink" href="#further-reading-media" title="Link to this heading">#</a></h2>
+<h2>7.9 Further Reading &amp; Media<a class="headerlink" href="#further-reading-media" title="Link to this heading">#</a></h2>
 <section id="books">
 <h3>Books<a class="headerlink" href="#books" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Cover, T. M., &amp; Thomas, J. A. (2006). <em>Elements of Information Theory</em> (2nd ed.). Wiley-Interscience.</p></li>
 <li><p>MacKay, D. J. C. (2003). <em>Information Theory, Inference, and Learning Algorithms</em>. Cambridge University Press.</p></li>
 <li><p>Rieke, F., Warland, D., de Ruyter van Steveninck, R., &amp; Bialek, W. (1997). <em>Spikes: Exploring the Neural Code</em>. MIT Press.</p></li>
+<li><p>Stone, J. V. (2018). <em>Information Theory: A Tutorial Introduction</em>. Sebtel Press.</p></li>
+<li><p>Poldrack, R. A. (2022). <em>The Physics of Cognition: Information Theoretic Foundations of Consciousness</em>. MIT Press.</p></li>
 </ul>
 </section>
 <section id="articles">
@@ -1509,14 +1993,33 @@ document.write(`
 <li><p>Fairhall, A. L., Lewen, G. D., Bialek, W., &amp; de Ruyter van Steveninck, R. R. (2001). “Efficiency and ambiguity in an adaptive neural code,” <em>Nature</em>.</p></li>
 <li><p>Tishby, N., Pereira, F. C., &amp; Bialek, W. (2000). “The information bottleneck method,” <em>arXiv</em>.</p></li>
 <li><p>Timme, N. M., &amp; Lapish, C. (2018). “A Tutorial for Information Theory in Neuroscience,” <em>eNeuro</em>.</p></li>
+<li><p>Shwartz-Ziv, R., &amp; Tishby, N. (2017). “Opening the black box of deep neural networks via information,” <em>arXiv:1703.00810</em>.</p></li>
+<li><p>Saxe, A. M., et al. (2019). “Information theory of deep learning,” <em>Journal of Statistical Mechanics: Theory and Experiment</em>.</p></li>
+<li><p>Alemi, A. A., et al. (2016). “Deep variational information bottleneck,” <em>arXiv:1612.00410</em>.</p></li>
+<li><p>Palmer, S. E., Marre, O., Berry, M. J., &amp; Bialek, W. (2015). “Predictive information in a sensory population,” <em>PNAS</em>.</p></li>
+<li><p>Rubin, J., et al. (2022). “The Information Theory of Synaptic Plasticity,” <em>Neuron</em>.</p></li>
+<li><p>Pezzulo, G., et al. (2022). “Active inference: A neurally plausible computational theory of cognition,” <em>Trends in Neurosciences</em>.</p></li>
+</ul>
+</section>
+<section id="review-articles-connecting-information-theory-to-modern-ai-neuroscience">
+<h3>Review Articles Connecting Information Theory to Modern AI &amp; Neuroscience<a class="headerlink" href="#review-articles-connecting-information-theory-to-modern-ai-neuroscience" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Neftci, E. O., &amp; Averbeck, B. B. (2019). “Reinforcement learning in artificial and biological systems,” <em>Nature Machine Intelligence</em>.</p></li>
+<li><p>Zador, A. M. (2019). “A critique of pure learning and what artificial neural networks can learn from animal brains,” <em>Nature Communications</em>.</p></li>
+<li><p>Richards, B. A., et al. (2019). “A deep learning framework for neuroscience,” <em>Nature Neuroscience</em>.</p></li>
+<li><p>Friston, K. (2010). “The free-energy principle: a unified brain theory?” <em>Nature Reviews Neuroscience</em>.</p></li>
+<li><p>Whittington, J. C. R., &amp; Bogacz, R. (2022). “Theories of Error Back-Propagation in the Brain,” <em>Trends in Cognitive Sciences</em>.</p></li>
 </ul>
 </section>
 <section id="online-resources">
 <h3>Online Resources<a class="headerlink" href="#online-resources" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>“Information Theory, Pattern Recognition, and Neural Networks,” David MacKay’s Cambridge lectures (YouTube).</p></li>
+<li><p>“Information Theory and Machine Learning,” lectures by Naftali Tishby (YouTube).</p></li>
+<li><p>“Neural Information Processing Systems (NeurIPS) tutorials on Information Theory and Deep Learning” (available online).</p></li>
 <li><p>Information Theory and its Applications, Stanford online course materials by Tsachy Weissman.</p></li>
 <li><p>“Neural Data Science,” Coursera course by Associate Professor Konrad Kording.</p></li>
+<li><p>“Neuromatch Academy: Computational Neuroscience,” particularly the units on Information Theory and Reinforcement Learning.</p></li>
 </ul>
 </section>
 <section id="software-tools">
@@ -1525,6 +2028,11 @@ document.write(`
 <li><p>Information Dynamics Toolkit (IDTxl): Python library for information-theoretic analysis of neural data.</p></li>
 <li><p>PyEntropy: Python toolkit for entropy and information estimation.</p></li>
 <li><p>TRENTOOL: MATLAB toolbox for transfer entropy analysis.</p></li>
+<li><p>dit: Python package for discrete information theory.</p></li>
+<li><p>Infotopo: Python toolbox for topological information data analysis.</p></li>
+<li><p>information-bottleneck: Python implementation of the Information Bottleneck method.</p></li>
+<li><p>nninfo: Neural network information-theoretic measures.</p></li>
+<li><p>CausalKinetiX: Causal inference tools using information-theoretic principles.</p></li>
 </ul>
 </section>
 </section>
@@ -1566,7 +2074,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Chapter 6: Neuro-stimulation &amp; Plasticity</p>
+        <p class="prev-next-title">Chapter 6: Neurostimulation &amp; Plasticity</p>
       </div>
     </a>
     <a class="right-next"
@@ -1635,12 +2143,22 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-entropy-and-mutual-information-of-spike-trains">Example 1: Entropy and Mutual Information of Spike Trains</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-information-bottleneck-demonstration">Example 2: Information Bottleneck Demonstration</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-transfer-entropy-in-neural-spike-trains">Example 3: Transfer Entropy in Neural Spike Trains</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-4-information-theory-in-reinforcement-learning">Example 4: Information Theory in Reinforcement Learning</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">7.7 Take-aways</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">7.8 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-theory-in-modern-deep-learning">7.7 Information Theory in Modern Deep Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-bottleneck-in-deep-neural-networks">Information Bottleneck in Deep Neural Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variational-information-bottleneck">Variational Information Bottleneck</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-theoretic-generalization-bounds">Information-Theoretic Generalization Bounds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connections-to-computational-neuroscience">Connections to Computational Neuroscience</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications-in-deep-learning">Practical Applications in Deep Learning</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">7.8 Take-aways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">7.9 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#books">Books</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#articles">Articles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#review-articles-connecting-information-theory-to-modern-ai-neuroscience">Review Articles Connecting Information Theory to Modern AI &amp; Neuroscience</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#online-resources">Online Resources</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#software-tools">Software Tools</a></li>
 </ul>

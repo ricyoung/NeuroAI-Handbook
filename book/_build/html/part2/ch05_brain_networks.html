@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'part2/ch05_brain_networks';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Chapter 6: Neuro-stimulation &amp; Plasticity" href="ch06_neurostimulation.html" />
+    <link rel="next" title="Chapter 6: Neurostimulation &amp; Plasticity" href="ch06_neurostimulation.html" />
     <link rel="prev" title="Chapter 4: Perception Pipeline – Visual Cortex → CNNs" href="../part1/ch04_perception_pipeline.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -189,7 +189,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II · Brains Meet Math &amp; Data</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 5: Default-Mode vs Executive Control Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ch06_neurostimulation.html">Chapter 6: Neuro-stimulation &amp; Plasticity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch06_neurostimulation.html">Chapter 6: Neurostimulation &amp; Plasticity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch07_information_theory.html">Chapter 7: Information Theory Essentials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch08_data_science_pipeline.html">Chapter 8: Data-Science Pipeline in Python</a></li>
 </ul>
@@ -417,6 +417,18 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab">5.6 Code Lab</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">5.7 Take-aways</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">5.8 Further Reading &amp; Media</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-depth-content">In-Depth Content</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The Default Mode Network (DMN)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Executive Control Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-interaction">Dynamic Interaction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transcranial-direct-current-stimulation-tdcs">Transcranial Direct Current Stimulation (tDCS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-code-examples">Python Code Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cognition-in-ai">Cognition in AI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metacognition-and-self-supervision">Metacognition and Self-Supervision</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suggested-readings">Suggested Readings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-videos-lectures">Supplementary Videos/Lectures</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -508,6 +520,319 @@ document.write(`
 <li><p>Bassett &amp; Sporns (2017) - “Network neuroscience”</p></li>
 </ul>
 </section>
+<hr class="docutils" />
+<section id="in-depth-content">
+<h2>In-Depth Content<a class="headerlink" href="#in-depth-content" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>The Default Mode Network (DMN)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>The Default Mode Network (DMN) is a set of brain regions (medial prefrontal cortex, posterior cingulate, precuneus, angular gyrus, etc.) that consistently show high activity during rest and self-referential thought. The DMN is most active when we recall memories, imagine the future, or reflect on ourselves – essentially, when we are not focused on an external task. It is often called the brain’s “task-negative” or introspective network.</p>
+<p>Key point: The DMN activates in the resting state and is involved in self-referential and introspective thought. It deactivates during external goal-driven tasks, suggesting a toggle between internal and external modes of cognition.</p>
+</section>
+<section id="id2">
+<h3>Executive Control Networks<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>In contrast, when the brain engages in a demanding task, other networks kick in – e.g., the Fronto-Parietal Network (FPN) or dorsal attention network – which handle attention, problem-solving, and working memory. These can be seen as the brain’s “task-positive” networks, directing focus to external goals.</p>
+</section>
+<section id="dynamic-interaction">
+<h3>Dynamic Interaction<a class="headerlink" href="#dynamic-interaction" title="Link to this heading">#</a></h3>
+<p>The DMN and executive networks are often anti-correlated (when one is active, the other quiets down). This balance might be analogous to how an AI agent could have a mode for planning (internally simulate scenarios) versus a mode for direct action/perception. We consider whether today’s AI models have an equivalent of a default mode – for instance, a language model generating text without a prompt could be likened to “daydreaming,” or generative models creating data akin to imagination.</p>
+</section>
+<section id="transcranial-direct-current-stimulation-tdcs">
+<h3>Transcranial Direct Current Stimulation (tDCS)<a class="headerlink" href="#transcranial-direct-current-stimulation-tdcs" title="Link to this heading">#</a></h3>
+<p>Transcranial Direct Current Stimulation (tDCS) is a form of non-invasive brain stimulation that uses a weak electrical current applied to the scalp to change the likelihood of neuronal firing and modulate brain activity. Stimulating regions of the DMN or executive network can alter cognitive performance (some studies attempt to enhance learning or creativity by targeting these networks). This raises an interesting parallel: in AI, we sometimes “fine-tune” or adjust parts of a network externally – could ideas from tDCS inform non-gradient interventions in AI models?</p>
+</section>
+<section id="python-code-examples">
+<h3>Python Code Examples<a class="headerlink" href="#python-code-examples" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+
+<span class="c1"># Simulate a simple brain network model with DMN and Executive Network dynamics</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">simulate_brain_networks</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">sampling_rate</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">noise_level</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">task_timing</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Simulate time series data from DMN and Executive Network with anti-correlation</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    duration: simulation length in seconds</span>
+<span class="sd">    sampling_rate: Hz</span>
+<span class="sd">    noise_level: amount of random fluctuation</span>
+<span class="sd">    task_timing: list of tuples (start_time, end_time) for task periods</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    time: time points</span>
+<span class="sd">    dmn_activity: simulated DMN time series</span>
+<span class="sd">    exec_activity: simulated executive network time series</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Create time axis</span>
+    <span class="n">n_samples</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">duration</span> <span class="o">*</span> <span class="n">sampling_rate</span><span class="p">)</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span>
+    
+    <span class="c1"># Base oscillations (slow intrinsic fluctuations ~0.1 Hz)</span>
+    <span class="n">freq_dmn</span> <span class="o">=</span> <span class="mf">0.05</span>  <span class="c1"># DMN fluctuation frequency</span>
+    <span class="n">freq_exec</span> <span class="o">=</span> <span class="mf">0.03</span>  <span class="c1"># Exec network fluctuation frequency</span>
+    
+    <span class="c1"># Generate intrinsic oscillations</span>
+    <span class="n">dmn_activity</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">freq_dmn</span> <span class="o">*</span> <span class="n">time</span><span class="p">)</span>
+    <span class="n">exec_activity</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">freq_exec</span> <span class="o">*</span> <span class="n">time</span><span class="p">)</span>
+    
+    <span class="c1"># Add random noise</span>
+    <span class="n">dmn_activity</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">noise_level</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span>
+    <span class="n">exec_activity</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">noise_level</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span>
+    
+    <span class="c1"># Add anti-correlation factor (when one goes up, the other tends to go down)</span>
+    <span class="n">anticorr_factor</span> <span class="o">=</span> <span class="mf">0.4</span>
+    <span class="n">dmn_activity</span> <span class="o">-=</span> <span class="n">anticorr_factor</span> <span class="o">*</span> <span class="n">exec_activity</span>
+    <span class="n">exec_activity</span> <span class="o">-=</span> <span class="n">anticorr_factor</span> <span class="o">*</span> <span class="n">dmn_activity</span>
+    
+    <span class="c1"># Simulate task engagement (executive network up, DMN down)</span>
+    <span class="k">if</span> <span class="n">task_timing</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="ow">in</span> <span class="n">task_timing</span><span class="p">:</span>
+            <span class="n">start_idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">start</span> <span class="o">*</span> <span class="n">sampling_rate</span><span class="p">)</span>
+            <span class="n">end_idx</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">end</span> <span class="o">*</span> <span class="n">sampling_rate</span><span class="p">)</span>
+            
+            <span class="c1"># During task: boost executive network and suppress DMN</span>
+            <span class="n">task_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_samples</span><span class="p">)</span>
+            <span class="n">task_mask</span><span class="p">[</span><span class="n">start_idx</span><span class="p">:</span><span class="n">end_idx</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+            
+            <span class="n">exec_activity</span> <span class="o">+=</span> <span class="mf">0.8</span> <span class="o">*</span> <span class="n">task_mask</span>
+            <span class="n">dmn_activity</span> <span class="o">-=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">task_mask</span>
+    
+    <span class="c1"># Normalize</span>
+    <span class="n">dmn_activity</span> <span class="o">=</span> <span class="p">(</span><span class="n">dmn_activity</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dmn_activity</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">dmn_activity</span><span class="p">)</span>
+    <span class="n">exec_activity</span> <span class="o">=</span> <span class="p">(</span><span class="n">exec_activity</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">exec_activity</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">exec_activity</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">time</span><span class="p">,</span> <span class="n">dmn_activity</span><span class="p">,</span> <span class="n">exec_activity</span>
+
+<span class="c1"># Visualize network dynamics</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_network_timeseries</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">dmn_activity</span><span class="p">,</span> <span class="n">exec_activity</span><span class="p">,</span> <span class="n">task_timing</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">dmn_activity</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Default Mode Network&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">exec_activity</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Executive Control Network&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="c1"># Highlight task periods</span>
+    <span class="k">if</span> <span class="n">task_timing</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="ow">in</span> <span class="n">task_timing</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="n">start</span> <span class="o">+</span> <span class="n">end</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="s1">&#39;Task&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (seconds)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Network Activity (z-score)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Simulated DMN vs Executive Network Dynamics&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    
+    <span class="c1"># Add correlation coefficient</span>
+    <span class="n">corr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">dmn_activity</span><span class="p">,</span> <span class="n">exec_activity</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;Correlation: </span><span class="si">{</span><span class="n">corr</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span>
+             <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">))</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Create a graph visualization of brain networks</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">visualize_brain_networks</span><span class="p">():</span>
+    <span class="c1"># Create graph</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+    
+    <span class="c1"># Define network nodes</span>
+    <span class="n">dmn_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mPFC&#39;</span><span class="p">,</span> <span class="s1">&#39;PCC&#39;</span><span class="p">,</span> <span class="s1">&#39;Precuneus&#39;</span><span class="p">,</span> <span class="s1">&#39;Angular_L&#39;</span><span class="p">,</span> <span class="s1">&#39;Angular_R&#39;</span><span class="p">,</span> <span class="s1">&#39;MTL_L&#39;</span><span class="p">,</span> <span class="s1">&#39;MTL_R&#39;</span><span class="p">]</span>
+    <span class="n">exec_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dlPFC_L&#39;</span><span class="p">,</span> <span class="s1">&#39;dlPFC_R&#39;</span><span class="p">,</span> <span class="s1">&#39;IPS_L&#39;</span><span class="p">,</span> <span class="s1">&#39;IPS_R&#39;</span><span class="p">,</span> <span class="s1">&#39;ACC&#39;</span><span class="p">,</span> <span class="s1">&#39;pre-SMA&#39;</span><span class="p">]</span>
+    
+    <span class="c1"># Add nodes</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([(</span><span class="n">node</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;network&#39;</span><span class="p">:</span> <span class="s1">&#39;DMN&#39;</span><span class="p">})</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">dmn_nodes</span><span class="p">])</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([(</span><span class="n">node</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;network&#39;</span><span class="p">:</span> <span class="s1">&#39;Executive&#39;</span><span class="p">})</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">exec_nodes</span><span class="p">])</span>
+    
+    <span class="c1"># Add intra-network edges (strong connections)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dmn_nodes</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">node2</span> <span class="ow">in</span> <span class="n">dmn_nodes</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">))</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">exec_nodes</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">node2</span> <span class="ow">in</span> <span class="n">exec_nodes</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:]:</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">))</span>
+    
+    <span class="c1"># Add inter-network edges (weaker connections)</span>
+    <span class="k">for</span> <span class="n">node1</span> <span class="ow">in</span> <span class="n">dmn_nodes</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">node2</span> <span class="ow">in</span> <span class="n">exec_nodes</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.3</span><span class="p">:</span>  <span class="c1"># Only some inter-network connections</span>
+                <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">))</span>
+    
+    <span class="c1"># Create positions</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="c1"># DMN nodes in a circle on the left</span>
+    <span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dmn_nodes</span><span class="p">),</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">radius</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dmn_nodes</span><span class="p">):</span>
+        <span class="n">pos</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angles</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">15</span><span class="p">,</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angles</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span>
+    
+    <span class="c1"># Executive nodes in a circle on the right</span>
+    <span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">exec_nodes</span><span class="p">),</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">exec_nodes</span><span class="p">):</span>
+        <span class="n">pos</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angles</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="mi">15</span><span class="p">,</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angles</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span>
+    
+    <span class="c1"># Prepare for visualization</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    
+    <span class="c1"># Draw nodes</span>
+    <span class="n">dmn_nodes_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;DMN&#39;</span><span class="p">]</span>
+    <span class="n">exec_nodes_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Executive&#39;</span><span class="p">]</span>
+    
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="n">dmn_nodes_list</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> 
+                          <span class="n">node_size</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;DMN&#39;</span><span class="p">)</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="n">exec_nodes_list</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
+                          <span class="n">node_size</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Executive Network&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Draw within-network edges</span>
+    <span class="n">dmn_edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;DMN&#39;</span> <span class="ow">and</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;DMN&#39;</span><span class="p">]</span>
+    <span class="n">exec_edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Executive&#39;</span> <span class="ow">and</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Executive&#39;</span><span class="p">]</span>
+    <span class="n">between_edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]]</span>
+    
+    <span class="c1"># Get weights for edge thickness</span>
+    <span class="n">dmn_weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">dmn_edges</span><span class="p">]</span>
+    <span class="n">exec_weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">exec_edges</span><span class="p">]</span>
+    <span class="n">between_weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">between_edges</span><span class="p">]</span>
+    
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edgelist</span><span class="o">=</span><span class="n">dmn_edges</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">dmn_weights</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edgelist</span><span class="o">=</span><span class="n">exec_edges</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">exec_weights</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edgelist</span><span class="o">=</span><span class="n">between_edges</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">between_weights</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
+                           <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Draw labels</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">font_weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Brain Networks: Default Mode Network &amp; Executive Control Network&quot;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Simulate tDCS effects on network balance</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">simulate_tdcs_effect</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">stim_period</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="n">target_network</span><span class="o">=</span><span class="s1">&#39;DMN&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Simulate how tDCS might affect the balance between DMN and Executive Network</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    duration: total simulation time in seconds</span>
+<span class="sd">    stim_period: tuple of (start, end) time for stimulation in seconds</span>
+<span class="sd">    target_network: which network to stimulate (&#39;DMN&#39; or &#39;Executive&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Standard simulation without stimulation</span>
+    <span class="n">time</span><span class="p">,</span> <span class="n">dmn</span><span class="p">,</span> <span class="n">exec_net</span> <span class="o">=</span> <span class="n">simulate_brain_networks</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="n">duration</span><span class="p">)</span>
+    
+    <span class="c1"># Create a stimulation time series (effect of tDCS)</span>
+    <span class="n">stim_effect</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">time</span><span class="p">)</span>
+    <span class="n">stim_start_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">time</span> <span class="o">&gt;=</span> <span class="n">stim_period</span><span class="p">[</span><span class="mi">0</span><span class="p">])[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">stim_end_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">time</span> <span class="o">&gt;=</span> <span class="n">stim_period</span><span class="p">[</span><span class="mi">1</span><span class="p">])[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="c1"># Ramp up effect</span>
+    <span class="n">ramp_duration</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># seconds for effect to reach maximum</span>
+    <span class="n">ramp_samples</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ramp_duration</span> <span class="o">*</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)</span> <span class="o">/</span> <span class="n">duration</span><span class="p">))</span>
+    
+    <span class="c1"># Ramp up</span>
+    <span class="n">ramp_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">stim_start_idx</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">stim_start_idx</span> <span class="o">+</span> <span class="n">ramp_samples</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)))</span>
+    <span class="n">stim_effect</span><span class="p">[</span><span class="n">ramp_indices</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ramp_indices</span><span class="p">))</span>
+    
+    <span class="c1"># Plateau</span>
+    <span class="n">plateau_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">stim_start_idx</span> <span class="o">+</span> <span class="n">ramp_samples</span><span class="p">,</span> <span class="n">stim_end_idx</span><span class="p">)</span>
+    <span class="n">stim_effect</span><span class="p">[</span><span class="n">plateau_indices</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>
+    
+    <span class="c1"># Ramp down</span>
+    <span class="n">ramp_down_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">stim_end_idx</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="n">stim_end_idx</span> <span class="o">+</span> <span class="n">ramp_samples</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)))</span>
+    <span class="n">stim_effect</span><span class="p">[</span><span class="n">ramp_down_indices</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ramp_down_indices</span><span class="p">))</span>
+    
+    <span class="c1"># Apply effect to target network</span>
+    <span class="n">dmn_stim</span> <span class="o">=</span> <span class="n">dmn</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="n">exec_stim</span> <span class="o">=</span> <span class="n">exec_net</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    
+    <span class="n">stim_magnitude</span> <span class="o">=</span> <span class="mf">0.8</span>
+    
+    <span class="k">if</span> <span class="n">target_network</span> <span class="o">==</span> <span class="s1">&#39;DMN&#39;</span><span class="p">:</span>
+        <span class="c1"># Stimulating DMN increases DMN and decreases Executive</span>
+        <span class="n">dmn_stim</span> <span class="o">+=</span> <span class="n">stim_effect</span> <span class="o">*</span> <span class="n">stim_magnitude</span>
+        <span class="n">exec_stim</span> <span class="o">-=</span> <span class="n">stim_effect</span> <span class="o">*</span> <span class="p">(</span><span class="n">stim_magnitude</span> <span class="o">*</span> <span class="mf">0.6</span><span class="p">)</span>  <span class="c1"># Secondary effect on other network</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Stimulating Executive increases Executive and decreases DMN</span>
+        <span class="n">exec_stim</span> <span class="o">+=</span> <span class="n">stim_effect</span> <span class="o">*</span> <span class="n">stim_magnitude</span>
+        <span class="n">dmn_stim</span> <span class="o">-=</span> <span class="n">stim_effect</span> <span class="o">*</span> <span class="p">(</span><span class="n">stim_magnitude</span> <span class="o">*</span> <span class="mf">0.6</span><span class="p">)</span>  <span class="c1"># Secondary effect on other network</span>
+    
+    <span class="c1"># Re-normalize</span>
+    <span class="n">dmn_stim</span> <span class="o">=</span> <span class="p">(</span><span class="n">dmn_stim</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dmn_stim</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">dmn_stim</span><span class="p">)</span>
+    <span class="n">exec_stim</span> <span class="o">=</span> <span class="p">(</span><span class="n">exec_stim</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">exec_stim</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">exec_stim</span><span class="p">)</span>
+    
+    <span class="c1"># Plot results</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">dmn</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;DMN (baseline)&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">exec_net</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Executive (baseline)&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">stim_period</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">stim_period</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="n">stim_period</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">stim_period</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;tDCS: </span><span class="si">{</span><span class="n">target_network</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> 
+             <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Baseline Network Dynamics&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">dmn_stim</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;DMN (with tDCS)&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">exec_stim</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Executive (with tDCS)&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">stim_period</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">stim_period</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;yellow&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Effect of tDCS on </span><span class="si">{</span><span class="n">target_network</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (seconds)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="c1"># Calculate correlation changes due to stimulation</span>
+    <span class="n">baseline_corr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">dmn</span><span class="p">,</span> <span class="n">exec_net</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="n">stim_corr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">dmn_stim</span><span class="p">,</span> <span class="n">exec_stim</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Baseline DMN-Executive correlation: </span><span class="si">{</span><span class="n">baseline_corr</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;With tDCS to </span><span class="si">{</span><span class="n">target_network</span><span class="si">}</span><span class="s2">, correlation: </span><span class="si">{</span><span class="n">stim_corr</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Change in anti-correlation: </span><span class="si">{</span><span class="n">stim_corr</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">baseline_corr</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Example calls:</span>
+<span class="c1"># time_series, dmn, exec_net = simulate_brain_networks(task_timing=[(100, 150), (300, 350)])</span>
+<span class="c1"># plot_network_timeseries(time_series, dmn, exec_net, task_timing=[(100, 150), (300, 350)])</span>
+<span class="c1"># visualize_brain_networks()</span>
+<span class="c1"># simulate_tdcs_effect(target_network=&#39;Executive&#39;)</span>
+</pre></div>
+</div>
+</section>
+<section id="cognition-in-ai">
+<h3>Cognition in AI<a class="headerlink" href="#cognition-in-ai" title="Link to this heading">#</a></h3>
+<p>Exploring whether AI architectures explicitly incorporate something analogous to DMN: Some advanced AI might have a planning module (imagination) separate from perception modules. Research on generative models that simulate possible futures (planning algorithms in reinforcement learning that use Monte Carlo rollouts – conceptually similar to imagining scenarios) provides interesting parallels. While not a direct analog, it sparks discussion on modularizing AI cognition.</p>
+</section>
+<section id="metacognition-and-self-supervision">
+<h3>Metacognition and Self-Supervision<a class="headerlink" href="#metacognition-and-self-supervision" title="Link to this heading">#</a></h3>
+<p>The brain’s ability to introspect (think about its own thoughts) via networks like the DMN can be loosely tied to AI models that evaluate or explain their own decisions. Current research on AI “metacognition” or self-monitoring (e.g., models that can detect when they might be wrong) represents an exciting area at the intersection of neuroscience-inspired AI.</p>
+</section>
+<section id="suggested-readings">
+<h3>Suggested Readings<a class="headerlink" href="#suggested-readings" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Raichle et al. (2001), “A default mode of brain function,” PNAS – Seminal paper that first named the Default Mode Network, discussing its discovery and functions.</p></li>
+<li><p>Buckner et al. (2008), “The brain’s default network: Anatomy, function, and relevance to disease,” Annals of the NY Academy of Sciences – Reviews the DMN and its role in internal mentation and how it contrasts with active tasks.</p></li>
+<li><p>Bzdok et al. (2015), “Intrinsic brain activity reveals memory states and predictive recall,” Frontiers in Human Neuroscience – Connects DMN activity to memory and future imagination, relevant for thinking how an AI might simulate data (imagination) when not perceiving input.</p></li>
+<li><p>Nitsche &amp; Paulus (2000), “Excitability changes induced in the human motor cortex by weak tDCS,” Journal of Physiology – foundational study of tDCS effects.</p></li>
+</ul>
+</section>
+<section id="supplementary-videos-lectures">
+<h3>Supplementary Videos/Lectures<a class="headerlink" href="#supplementary-videos-lectures" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Marcus Raichle – “The Brain’s Default Mode Network” (lecture) – A talk by the scientist who coined the term “DMN,” explaining its discovery and significance in accessible terms.</p></li>
+<li><p>YouTube: “Default Mode Network explained” (Psychology/Biology channel videos) – short videos describing what the DMN is and its link to daydreaming and self-referential thought.</p></li>
+<li><p>MIT Lecture – “Attention and Executive Control” – covers brain networks for attention (dorsal/ventral attention systems) and can complement understanding of task-positive networks in contrast to the DMN.</p></li>
+<li><p>BrainCraft video on tDCS – “Can Electricity Make You Smarter?” – a gentle introduction to what tDCS is, how people use it (even DIY), and what science says about its effects (cautioning that results are mixed).</p></li>
+</ul>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -554,7 +879,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Chapter 6: Neuro-stimulation &amp; Plasticity</p>
+        <p class="prev-next-title">Chapter 6: Neurostimulation &amp; Plasticity</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -583,6 +908,18 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab">5.6 Code Lab</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">5.7 Take-aways</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">5.8 Further Reading &amp; Media</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-depth-content">In-Depth Content</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The Default Mode Network (DMN)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Executive Control Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-interaction">Dynamic Interaction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transcranial-direct-current-stimulation-tdcs">Transcranial Direct Current Stimulation (tDCS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-code-examples">Python Code Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cognition-in-ai">Cognition in AI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metacognition-and-self-supervision">Metacognition and Self-Supervision</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suggested-readings">Suggested Readings</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-videos-lectures">Supplementary Videos/Lectures</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

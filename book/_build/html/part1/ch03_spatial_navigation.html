@@ -189,7 +189,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II · Brains Meet Math &amp; Data</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../part2/ch05_brain_networks.html">Chapter 5: Default-Mode vs Executive Control Networks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../part2/ch06_neurostimulation.html">Chapter 6: Neuro-stimulation &amp; Plasticity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part2/ch06_neurostimulation.html">Chapter 6: Neurostimulation &amp; Plasticity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part2/ch07_information_theory.html">Chapter 7: Information Theory Essentials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part2/ch08_data_science_pipeline.html">Chapter 8: Data-Science Pipeline in Python</a></li>
 </ul>
@@ -409,14 +409,54 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-goals">3.0 Chapter Goals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hippocampal-formation">3.1 Hippocampal Formation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#place-cells">3.2 Place Cells</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grid-cells">3.3 Grid Cells</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-circuits-for-navigation">3.4 Neural Circuits for Navigation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-computational-applications">3.5 AI &amp; Computational Applications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab">3.6 Code Lab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">3.7 Take-aways</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">3.8 Further Reading &amp; Media</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hippocampal-formation-organization-and-cell-types">3.1 Hippocampal Formation: Organization and Cell Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomical-organization">Anatomical Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cellular-organization-the-pyramidal-cell">Cellular Organization: The Pyramidal Cell</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#place-cells-the-brain-s-spatial-address-system">3.2 Place Cells: The Brain’s Spatial Address System</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discovery-and-properties">Discovery and Properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-properties-of-place-cells">Key Properties of Place Cells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-principles">Computational Principles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grid-cells-the-brain-s-coordinate-system">3.3 Grid Cells: The Brain’s Coordinate System</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discovery-and-patterns">Discovery and Patterns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grid-cell-organization">Grid Cell Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-efficiency-of-hexagonal-grids">Geometric Efficiency of Hexagonal Grids</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-navigation-circuit-from-single-cells-to-systems">3.4 The Navigation Circuit: From Single Cells to Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#head-direction-cells">Head Direction Cells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#border-boundary-cells">Border/Boundary Cells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunctive-cells">Conjunctive Cells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path-integration">Path Integration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallels-to-convolutional-neural-networks">3.5 Parallels to Convolutional Neural Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-similarities">Structural Similarities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Computational Principles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspiration-exchange">Inspiration Exchange</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab-modeling-spatial-representations">3.6 Code Lab: Modeling Spatial Representations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#place-cell-model">Place Cell Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grid-cell-model">Grid Cell Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path-integration-model">Path Integration Model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-representations-and-cnn-principles">3.7 Neural Representations and CNN Principles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-computational-motifs">Shared Computational Motifs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-in-ai">Applications in AI</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">3.8 Take-aways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">3.9 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-papers">Key Papers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#videos-and-lectures">Videos and Lectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorials-and-resources">Tutorials and Resources</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -434,78 +474,614 @@ document.write(`
 <h2>3.0 Chapter Goals<a class="headerlink" href="#chapter-goals" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Understand the neural basis of spatial navigation</p></li>
-<li><p>Explore place cells and grid cells in the hippocampus</p></li>
-<li><p>Connect biological navigation to AI pathfinding algorithms</p></li>
-<li><p>Implement simple models of place and grid cells</p></li>
+<li><p>Explore the organizational principles of place and grid cells</p></li>
+<li><p>Connect spatial coding in the brain to computational principles in AI</p></li>
+<li><p>Implement simple models of neural spatial representation</p></li>
 </ul>
 </section>
-<section id="hippocampal-formation">
-<h2>3.1 Hippocampal Formation<a class="headerlink" href="#hippocampal-formation" title="Link to this heading">#</a></h2>
+<section id="hippocampal-formation-organization-and-cell-types">
+<h2>3.1 Hippocampal Formation: Organization and Cell Types<a class="headerlink" href="#hippocampal-formation-organization-and-cell-types" title="Link to this heading">#</a></h2>
+<p>The hippocampal formation is a brain structure critical for spatial navigation and memory formation. This section examines its anatomical organization and the specialized cells that form the brain’s navigational system.</p>
+<section id="anatomical-organization">
+<h3>Anatomical Organization<a class="headerlink" href="#anatomical-organization" title="Link to this heading">#</a></h3>
+<p>The hippocampal formation consists of several interconnected regions:</p>
 <ul class="simple">
-<li><p>Overview of hippocampus structure</p></li>
-<li><p>Role in memory and navigation</p></li>
-<li><p>Key cell types for spatial representation</p></li>
+<li><p><strong>Hippocampus proper (CA1-CA3)</strong>: Processes and stores spatial memories</p></li>
+<li><p><strong>Dentate gyrus (DG)</strong>: Performs pattern separation of similar spatial inputs</p></li>
+<li><p><strong>Entorhinal cortex (EC)</strong>: Serves as the main interface between hippocampus and neocortex</p></li>
+</ul>
+<figure>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/CajalHippocampus.jpeg/800px-CajalHippocampus.jpeg" width="400"/>
+<figcaption>Hippocampal circuit drawn by Santiago Ramón y Cajal (1911), showing the flow of information through the structure.</figcaption>
+</figure>
+</section>
+<section id="cellular-organization-the-pyramidal-cell">
+<h3>Cellular Organization: The Pyramidal Cell<a class="headerlink" href="#cellular-organization-the-pyramidal-cell" title="Link to this heading">#</a></h3>
+<p>The principal cells in the hippocampus are pyramidal neurons, which have:</p>
+<ul class="simple">
+<li><p>A triangular cell body (soma)</p></li>
+<li><p>Apical dendrites extending toward the surface</p></li>
+<li><p>Basal dendrites reaching outward and downward</p></li>
+<li><p>A single axon that projects to other regions</p></li>
+</ul>
+<p>This cellular architecture is significant because:</p>
+<ol class="arabic simple">
+<li><p>The layered organization creates a structured processing pipeline</p></li>
+<li><p>The dendritic arbors receive thousands of inputs from different sources</p></li>
+<li><p>The hierarchical arrangement enables complex pattern recognition</p></li>
+</ol>
+<p>The pyramidal cell architecture parallels the computational structure seen in artificial neural networks, particularly in how information flows through layers and combines across multiple inputs. This similarity is not coincidental—early neural network designs were inspired by these biological principles.</p>
+</section>
+</section>
+<section id="place-cells-the-brain-s-spatial-address-system">
+<h2>3.2 Place Cells: The Brain’s Spatial Address System<a class="headerlink" href="#place-cells-the-brain-s-spatial-address-system" title="Link to this heading">#</a></h2>
+<p>Place cells are pyramidal neurons in the hippocampus (primarily in regions CA1 and CA3) that exhibit location-specific firing patterns.</p>
+<section id="discovery-and-properties">
+<h3>Discovery and Properties<a class="headerlink" href="#discovery-and-properties" title="Link to this heading">#</a></h3>
+<p>John O’Keefe discovered place cells in 1971 while recording from freely moving rats. These neurons show remarkable properties:</p>
+<ul class="simple">
+<li><p>Each cell fires strongly when the animal is in a specific location (“place field”)</p></li>
+<li><p>Place fields are typically 20-50 cm in diameter in a rat-sized environment</p></li>
+<li><p>Different place cells code for different locations, creating a distributed map</p></li>
+<li><p>The collection of all place cells forms a complete representation of the environment</p></li>
+</ul>
+<figure>
+<img src="../figures/brain_regions_table.svg" width="500"/>
+<figcaption>Place cell firing fields. The colored regions show where individual hippocampal neurons become active as an animal explores its environment.</figcaption>
+</figure>
+</section>
+<section id="key-properties-of-place-cells">
+<h3>Key Properties of Place Cells<a class="headerlink" href="#key-properties-of-place-cells" title="Link to this heading">#</a></h3>
+<p>Place cells exhibit several important characteristics that make them ideal for spatial representation:</p>
+<ol class="arabic simple">
+<li><p><strong>Spatial Specificity</strong>: Place cells remain silent most of the time, firing only when the animal enters a specific location.</p></li>
+<li><p><strong>Environmental Remapping</strong>: When moved to a new environment, place cells can:</p>
+<ul class="simple">
+<li><p>Undergo “global remapping” where cells completely change their firing locations</p></li>
+<li><p>Show “rate remapping” where the same locations are encoded but with different firing rates</p></li>
+</ul>
+</li>
+<li><p><strong>Stable but Plastic Representation</strong>: Place fields are stable over days or weeks in familiar environments but can rapidly reorganize when environments change.</p></li>
+<li><p><strong>Multimodal Integration</strong>: Place cell firing integrates various inputs:</p>
+<ul class="simple">
+<li><p>Visual landmarks</p></li>
+<li><p>Self-motion cues (velocity, direction)</p></li>
+<li><p>Olfactory and tactile information</p></li>
+<li><p>Goal location and task demands</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="computational-principles">
+<h3>Computational Principles<a class="headerlink" href="#computational-principles" title="Link to this heading">#</a></h3>
+<p>Place cells effectively implement a form of <strong>sparse coding</strong>:</p>
+<ul class="simple">
+<li><p>Only a small subset of neurons is active at any given location</p></li>
+<li><p>This creates an efficient, low-energy representation</p></li>
+<li><p>The sparse code is resistant to noise and damage</p></li>
+</ul>
+<p>These principles parallel design features in many AI systems:</p>
+<ul class="simple">
+<li><p>Sparse representations in machine learning reduce overfitting</p></li>
+<li><p>One-hot encoding systems for categorical data</p></li>
+<li><p>Locality-sensitive hashing for nearest-neighbor lookups</p></li>
 </ul>
 </section>
-<section id="place-cells">
-<h2>3.2 Place Cells<a class="headerlink" href="#place-cells" title="Link to this heading">#</a></h2>
+</section>
+<section id="grid-cells-the-brain-s-coordinate-system">
+<h2>3.3 Grid Cells: The Brain’s Coordinate System<a class="headerlink" href="#grid-cells-the-brain-s-coordinate-system" title="Link to this heading">#</a></h2>
+<p>While place cells provide discrete location encoding, grid cells in the medial entorhinal cortex (MEC) create a continuous, metric representation of space.</p>
+<section id="discovery-and-patterns">
+<h3>Discovery and Patterns<a class="headerlink" href="#discovery-and-patterns" title="Link to this heading">#</a></h3>
+<p>Discovered by Edvard and May-Britt Moser in 2005, grid cells fire in a remarkably regular pattern:</p>
 <ul class="simple">
-<li><p>Discovery by O’Keefe</p></li>
-<li><p>Properties and firing patterns</p></li>
-<li><p>Remapping phenomena</p></li>
-<li><p>Computational models of place cells</p></li>
+<li><p>Each grid cell fires at multiple locations arranged in a hexagonal lattice</p></li>
+<li><p>The firing fields are evenly spaced throughout the environment</p></li>
+<li><p>The spacing and orientation are consistent within cell clusters</p></li>
+<li><p>Different grid cells have different scales (spacing between firing fields)</p></li>
+</ul>
+<figure>
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Grid_cell_firing.svg" width="400"/>
+<figcaption>Grid cell firing pattern. The black line shows an animal's path through an environment, while the blue dots indicate locations where a single grid cell fired. Note the regular hexagonal pattern.</figcaption>
+</figure>
+</section>
+<section id="grid-cell-organization">
+<h3>Grid Cell Organization<a class="headerlink" href="#grid-cell-organization" title="Link to this heading">#</a></h3>
+<p>Grid cells are organized into modules based on their spatial scale:</p>
+<ul class="simple">
+<li><p>Dorsal MEC contains cells with smaller grid spacing (~25 cm)</p></li>
+<li><p>Ventral MEC contains cells with larger grid spacing (~3 m)</p></li>
+<li><p>Each module contains cells with similar spacing but offset grid phases</p></li>
+<li><p>This creates a combinatorial code that can represent vast spaces with relatively few neurons</p></li>
+</ul>
+<p>This organization is reminiscent of how convolutional neural networks (CNNs) operate:</p>
+<ul class="simple">
+<li><p>Each kernel in a CNN scans across an input field (like the repeating grid fields)</p></li>
+<li><p>Different kernels detect different features (like differently phased grid cells)</p></li>
+<li><p>The hierarchical scaling of feature detectors in CNNs parallels the scaling of grid spacing</p></li>
 </ul>
 </section>
-<section id="grid-cells">
-<h2>3.3 Grid Cells<a class="headerlink" href="#grid-cells" title="Link to this heading">#</a></h2>
+<section id="geometric-efficiency-of-hexagonal-grids">
+<h3>Geometric Efficiency of Hexagonal Grids<a class="headerlink" href="#geometric-efficiency-of-hexagonal-grids" title="Link to this heading">#</a></h3>
+<p>The hexagonal lattice pattern is mathematically optimal for spatial encoding:</p>
+<ol class="arabic simple">
+<li><p>Hexagonal packing is the most efficient way to cover a 2D plane with circles</p></li>
+<li><p>It minimizes the number of cells needed to represent a given area</p></li>
+<li><p>It provides the highest spatial resolution with a given number of neurons</p></li>
+</ol>
+<p>This geometric efficiency principle also appears in computer vision and signal processing:</p>
 <ul class="simple">
-<li><p>Discovery in entorhinal cortex</p></li>
-<li><p>Hexagonal firing patterns</p></li>
-<li><p>Theoretical significance</p></li>
-<li><p>Oscillatory interference models</p></li>
+<li><p>Hexagonal grids have been used in certain specialized CNN architectures</p></li>
+<li><p>Hexagonal sampling grids can provide better coverage with fewer points</p></li>
+<li><p>Certain image compression algorithms leverage similar geometric efficiencies</p></li>
 </ul>
 </section>
-<section id="neural-circuits-for-navigation">
-<h2>3.4 Neural Circuits for Navigation<a class="headerlink" href="#neural-circuits-for-navigation" title="Link to this heading">#</a></h2>
+</section>
+<section id="the-navigation-circuit-from-single-cells-to-systems">
+<h2>3.4 The Navigation Circuit: From Single Cells to Systems<a class="headerlink" href="#the-navigation-circuit-from-single-cells-to-systems" title="Link to this heading">#</a></h2>
+<p>Place and grid cells do not operate in isolation but form part of a larger navigation system that includes several specialized cell types:</p>
+<section id="head-direction-cells">
+<h3>Head Direction Cells<a class="headerlink" href="#head-direction-cells" title="Link to this heading">#</a></h3>
+<p>Found in multiple brain regions including the thalamus and retrosplenial cortex:</p>
 <ul class="simple">
-<li><p>Head direction cells</p></li>
-<li><p>Border/boundary cells</p></li>
-<li><p>Path integration mechanisms</p></li>
-<li><p>Reference frames and cognitive maps</p></li>
+<li><p>Act like a neural compass, firing when the animal faces a specific direction</p></li>
+<li><p>Maintain consistent preferred directions across environments</p></li>
+<li><p>Are calibrated by visual landmarks and updated by vestibular input</p></li>
 </ul>
 </section>
-<section id="ai-computational-applications">
-<h2>3.5 AI &amp; Computational Applications<a class="headerlink" href="#ai-computational-applications" title="Link to this heading">#</a></h2>
+<section id="border-boundary-cells">
+<h3>Border/Boundary Cells<a class="headerlink" href="#border-boundary-cells" title="Link to this heading">#</a></h3>
+<p>Located in the subiculum and entorhinal cortex:</p>
 <ul class="simple">
-<li><p>Simultaneous localization and mapping (SLAM)</p></li>
-<li><p>Vector-based navigation models</p></li>
-<li><p>Successor representations</p></li>
-<li><p>Hippocampal replay in reinforcement learning</p></li>
+<li><p>Fire when the animal is near environmental boundaries (walls, edges, cliffs)</p></li>
+<li><p>Help anchor the spatial map to physical landmarks</p></li>
+<li><p>Provide error correction for path integration</p></li>
 </ul>
 </section>
-<section id="code-lab">
-<h2>3.6 Code Lab<a class="headerlink" href="#code-lab" title="Link to this heading">#</a></h2>
+<section id="conjunctive-cells">
+<h3>Conjunctive Cells<a class="headerlink" href="#conjunctive-cells" title="Link to this heading">#</a></h3>
+<p>Found primarily in deeper layers of the entorhinal cortex:</p>
 <ul class="simple">
-<li><p>Implementing a place cell model</p></li>
-<li><p>Simulating grid cell firing patterns</p></li>
-<li><p>Path integration demonstration</p></li>
+<li><p>Combine properties of grid cells and head direction cells</p></li>
+<li><p>Fire in grid patterns but only when the animal faces certain directions</p></li>
+<li><p>Enhance the system’s ability to encode complex trajectories</p></li>
 </ul>
+</section>
+<section id="path-integration">
+<h3>Path Integration<a class="headerlink" href="#path-integration" title="Link to this heading">#</a></h3>
+<p>The navigation circuit performs path integration (dead reckoning):</p>
+<ul class="simple">
+<li><p>Tracking position based solely on self-motion cues (velocity, direction)</p></li>
+<li><p>Grid cells are believed to be the computational substrate for this process</p></li>
+<li><p>Works even in darkness but accumulates error over time</p></li>
+<li><p>Periodically calibrated by sensory information (vision, borders, landmarks)</p></li>
+</ul>
+</section>
+</section>
+<section id="parallels-to-convolutional-neural-networks">
+<h2>3.5 Parallels to Convolutional Neural Networks<a class="headerlink" href="#parallels-to-convolutional-neural-networks" title="Link to this heading">#</a></h2>
+<p>The spatial representation system in the brain shares remarkable similarities with CNNs, providing mutual inspiration between neuroscience and AI.</p>
+<section id="structural-similarities">
+<h3>Structural Similarities<a class="headerlink" href="#structural-similarities" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Receptive Fields</strong>:</p>
+<ul class="simple">
+<li><p>Place cells have spatially localized receptive fields</p></li>
+<li><p>CNN neurons similarly respond to specific regions of the input space</p></li>
+</ul>
+</li>
+<li><p><strong>Hierarchical Processing</strong>:</p>
+<ul class="simple">
+<li><p>Grid cells at different scales form a natural hierarchy</p></li>
+<li><p>CNNs use hierarchical layers to process information at different scales</p></li>
+</ul>
+</li>
+<li><p><strong>Regular Sampling</strong>:</p>
+<ul class="simple">
+<li><p>Grid cells sample space in a regular pattern</p></li>
+<li><p>CNN convolutional filters scan across inputs in a regular grid</p></li>
+</ul>
+</li>
+<li><p><strong>Invariant Representations</strong>:</p>
+<ul class="simple">
+<li><p>Place cells maintain consistent fields despite minor environmental changes</p></li>
+<li><p>CNNs develop translation-invariant representations through pooling operations</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="id1">
+<h3>Computational Principles<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Weight Sharing</strong>:</p>
+<ul class="simple">
+<li><p>Grid cells use the same firing pattern repeated across space</p></li>
+<li><p>CNNs use the same weights (kernels) applied across different parts of the input</p></li>
+</ul>
+</li>
+<li><p><strong>Sparse Coding</strong>:</p>
+<ul class="simple">
+<li><p>Only a subset of place/grid cells is active at any time</p></li>
+<li><p>ReLU activations in CNNs create sparse representations</p></li>
+</ul>
+</li>
+<li><p><strong>Multi-scale Processing</strong>:</p>
+<ul class="simple">
+<li><p>Grid cells operate at multiple spatial scales</p></li>
+<li><p>CNN architectures use multiple layers to detect features at different scales</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="inspiration-exchange">
+<h3>Inspiration Exchange<a class="headerlink" href="#inspiration-exchange" title="Link to this heading">#</a></h3>
+<p>Neuroscience has informed AI:</p>
+<ul class="simple">
+<li><p>Early CNN architectures were inspired by visual cortex organization</p></li>
+<li><p>Grid-like representations have been adapted for reinforcement learning</p></li>
+</ul>
+<p>AI has informed neuroscience:</p>
+<ul class="simple">
+<li><p>CNN visualization techniques help interpret neural recordings</p></li>
+<li><p>Network models test theories about navigation circuit function</p></li>
+</ul>
+</section>
+</section>
+<section id="code-lab-modeling-spatial-representations">
+<h2>3.6 Code Lab: Modeling Spatial Representations<a class="headerlink" href="#code-lab-modeling-spatial-representations" title="Link to this heading">#</a></h2>
+<p>This section provides practical implementations of computational models that capture key aspects of place and grid cells.</p>
+<section id="place-cell-model">
+<h3>Place Cell Model<a class="headerlink" href="#place-cell-model" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">cm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">gaussian_2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">sigma_x</span><span class="p">,</span> <span class="n">sigma_y</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate a 2D Gaussian function centered at (x0, y0)&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">x</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma_x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">y0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">sigma_y</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_place_cell_population</span><span class="p">(</span><span class="n">n_cells</span><span class="p">,</span> <span class="n">env_size</span><span class="p">,</span> <span class="n">field_size</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a population of place cells covering an environment</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    n_cells: Number of place cells</span>
+<span class="sd">    env_size: Size of the environment (width, height)</span>
+<span class="sd">    field_size: Size of place fields (sigma_x, sigma_y)</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    centers: Place field centers for each cell</span>
+<span class="sd">    sigmas: Place field sizes for each cell</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Randomly distribute place field centers</span>
+    <span class="n">centers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n_cells</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">env_size</span>
+    
+    <span class="c1"># Vary place field sizes slightly</span>
+    <span class="n">base_sigma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">field_size</span><span class="p">)</span>
+    <span class="n">sigmas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">base_sigma</span><span class="p">,</span> <span class="n">base_sigma</span> <span class="o">*</span> <span class="mf">0.2</span><span class="p">,</span> <span class="p">(</span><span class="n">n_cells</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">sigmas</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">sigmas</span><span class="p">,</span> <span class="n">base_sigma</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">base_sigma</span> <span class="o">*</span> <span class="mf">1.5</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">centers</span><span class="p">,</span> <span class="n">sigmas</span>
+
+<span class="c1"># Create environment grid</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Create population of place cells</span>
+<span class="n">n_place_cells</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">centers</span><span class="p">,</span> <span class="n">sigmas</span> <span class="o">=</span> <span class="n">create_place_cell_population</span><span class="p">(</span>
+    <span class="n">n_place_cells</span><span class="p">,</span> <span class="n">env_size</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">field_size</span><span class="o">=</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+
+<span class="c1"># Visualize a few example place cells</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Generate place field</span>
+    <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">centers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">sigma_x</span><span class="p">,</span> <span class="n">sigma_y</span> <span class="o">=</span> <span class="n">sigmas</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">place_field</span> <span class="o">=</span> <span class="n">gaussian_2d</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">sigma_x</span><span class="p">,</span> <span class="n">sigma_y</span><span class="p">)</span>
+    
+    <span class="c1"># Plot</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">place_field</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Place Cell </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;X Position&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y Position&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Function to encode a position with place cells</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">encode_position</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">centers</span><span class="p">,</span> <span class="n">sigmas</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Encode a position using the place cell population&quot;&quot;&quot;</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">position</span>
+    <span class="n">activities</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">centers</span><span class="p">))</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">((</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="p">(</span><span class="n">sigma_x</span><span class="p">,</span> <span class="n">sigma_y</span><span class="p">))</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">centers</span><span class="p">,</span> <span class="n">sigmas</span><span class="p">)):</span>
+        <span class="n">activities</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">gaussian_2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">sigma_x</span><span class="p">,</span> <span class="n">sigma_y</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">activities</span>
+
+<span class="c1"># Plot place cell population activity for a sample position</span>
+<span class="n">sample_position</span> <span class="o">=</span> <span class="p">(</span><span class="mf">4.0</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">)</span>
+<span class="n">activities</span> <span class="o">=</span> <span class="n">encode_position</span><span class="p">(</span><span class="n">sample_position</span><span class="p">,</span> <span class="n">centers</span><span class="p">,</span> <span class="n">sigmas</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">n_place_cells</span><span class="p">),</span> <span class="n">activities</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Place Cell ID&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Firing Rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Population Activity at Position </span><span class="si">{</span><span class="n">sample_position</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show the position and place fields</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">((</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="p">(</span><span class="n">sigma_x</span><span class="p">,</span> <span class="n">sigma_y</span><span class="p">))</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">centers</span><span class="p">,</span> <span class="n">sigmas</span><span class="p">)):</span>
+    <span class="n">circle</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Circle</span><span class="p">((</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">sigma_x</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">circle</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="o">*</span><span class="n">sample_position</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Position&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X Position&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y Position&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Place Field Centers&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="grid-cell-model">
+<h3>Grid Cell Model<a class="headerlink" href="#grid-cell-model" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generate_grid_pattern</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">spacing</span><span class="p">,</span> <span class="n">orientation</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a grid cell firing pattern</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    center: Offset of the grid pattern</span>
+<span class="sd">    spacing: Distance between grid fields</span>
+<span class="sd">    orientation: Rotation of the grid pattern (radians)</span>
+<span class="sd">    size: Size of the environment</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    grid_pattern: 2D array with grid pattern</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">width</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="n">size</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">height</span><span class="p">,</span> <span class="n">width</span><span class="p">))</span>
+    
+    <span class="c1"># Define the three basis vectors for the grid (120° apart)</span>
+    <span class="n">theta1</span> <span class="o">=</span> <span class="n">orientation</span>
+    <span class="n">theta2</span> <span class="o">=</span> <span class="n">orientation</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span>
+    <span class="n">theta3</span> <span class="o">=</span> <span class="n">orientation</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span>
+    
+    <span class="n">v1</span> <span class="o">=</span> <span class="n">spacing</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">)])</span>
+    <span class="n">v2</span> <span class="o">=</span> <span class="n">spacing</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta2</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta2</span><span class="p">)])</span>
+    <span class="n">v3</span> <span class="o">=</span> <span class="n">spacing</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta3</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta3</span><span class="p">)])</span>
+    
+    <span class="c1"># Generate grid pattern using interference of three plane waves</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
+            <span class="c1"># Position relative to grid offset</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">j</span> <span class="o">-</span> <span class="n">center</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">center</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">pos</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
+            
+            <span class="c1"># Calculate interference pattern from three waves</span>
+            <span class="n">f1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">v1</span><span class="p">)</span> <span class="o">/</span> <span class="n">spacing</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">f2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span> <span class="o">/</span> <span class="n">spacing</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+            <span class="n">f3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">pos</span><span class="p">,</span> <span class="n">v3</span><span class="p">)</span> <span class="o">/</span> <span class="n">spacing</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+            
+            <span class="c1"># Sum the waves and scale to [0, 1]</span>
+            <span class="n">grid</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">f1</span> <span class="o">+</span> <span class="n">f2</span> <span class="o">+</span> <span class="n">f3</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">6</span>
+    
+    <span class="k">return</span> <span class="n">grid</span>
+
+<span class="c1"># Generate and visualize grid cell patterns at different scales</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">grid_spacings</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+<span class="n">orientations</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">centers</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="mi">55</span><span class="p">),</span> <span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">45</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">spacing</span><span class="p">,</span> <span class="n">orientation</span><span class="p">,</span> <span class="n">center</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">grid_spacings</span><span class="p">,</span> <span class="n">orientations</span><span class="p">,</span> <span class="n">centers</span><span class="p">)):</span>
+    <span class="n">grid_pattern</span> <span class="o">=</span> <span class="n">generate_grid_pattern</span><span class="p">(</span><span class="n">center</span><span class="p">,</span> <span class="n">spacing</span><span class="p">,</span> <span class="n">orientation</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">grid_pattern</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Grid Cell: Spacing=</span><span class="si">{</span><span class="n">spacing</span><span class="si">}</span><span class="s1">, Orientation=</span><span class="si">{</span><span class="n">orientation</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Show how grid cells at different scales combine to precisely encode location</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_combined_grid_encoding</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot how grids at different scales combine to encode location uniquely&quot;&quot;&quot;</span>
+    <span class="c1"># Number of grid modules</span>
+    <span class="n">n_modules</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="c1"># Scales</span>
+    <span class="n">scales</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">]</span>
+    <span class="c1"># Orientations</span>
+    <span class="n">orientations</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">6</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">]</span>
+    
+    <span class="c1"># Create a small environment</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="mi">50</span>
+    <span class="n">environment</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    
+    <span class="c1"># Generate grid activations for each module</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="n">orientation</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">scales</span><span class="p">,</span> <span class="n">orientations</span><span class="p">)):</span>
+        <span class="n">grid</span> <span class="o">=</span> <span class="n">generate_grid_pattern</span><span class="p">((</span><span class="n">size</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">//</span><span class="mi">2</span><span class="p">),</span> <span class="n">scale</span><span class="p">,</span> <span class="n">orientation</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">))</span>
+        <span class="c1"># Normalize to [0, 1]</span>
+        <span class="n">grid</span> <span class="o">=</span> <span class="p">(</span><span class="n">grid</span> <span class="o">-</span> <span class="n">grid</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">grid</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+        <span class="c1"># Assign to RGB channel</span>
+        <span class="n">environment</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">grid</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">environment</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Combined Grid Cell Representation (RGB = different scales)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X Position&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y Position&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;RGB = Different grid cell modules&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plot_combined_grid_encoding</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="path-integration-model">
+<h3>Path Integration Model<a class="headerlink" href="#path-integration-model" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">simulate_path_integration</span><span class="p">(</span><span class="n">initial_pos</span><span class="p">,</span> <span class="n">velocity</span><span class="p">,</span> <span class="n">dt</span><span class="p">,</span> <span class="n">noise_level</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">n_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Simulate path integration with accumulating error.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        initial_pos: Starting position (x, y)</span>
+<span class="sd">        velocity: List of velocity vectors [(vx, vy), ...]</span>
+<span class="sd">        dt: Time step</span>
+<span class="sd">        noise_level: Amount of noise in velocity estimation</span>
+<span class="sd">        n_steps: Number of steps to simulate</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        true_positions: Actual positions</span>
+<span class="sd">        estimated_positions: Positions estimated through path integration</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">true_pos</span> <span class="o">=</span> <span class="p">[</span><span class="n">initial_pos</span><span class="p">]</span>
+    <span class="n">estimated_pos</span> <span class="o">=</span> <span class="p">[</span><span class="n">initial_pos</span><span class="p">]</span>
+    
+    <span class="n">current_true</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">initial_pos</span><span class="p">)</span>
+    <span class="n">current_est</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">initial_pos</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_steps</span><span class="p">):</span>
+        <span class="c1"># Get current velocity (may cycle through provided velocities)</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">velocity</span><span class="p">[</span><span class="n">i</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">velocity</span><span class="p">)])</span>
+        
+        <span class="c1"># Add noise to velocity for the estimation</span>
+        <span class="n">v_noisy</span> <span class="o">=</span> <span class="n">v</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">noise_level</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        
+        <span class="c1"># Update positions</span>
+        <span class="n">current_true</span> <span class="o">=</span> <span class="n">current_true</span> <span class="o">+</span> <span class="n">v</span> <span class="o">*</span> <span class="n">dt</span>
+        <span class="n">current_est</span> <span class="o">=</span> <span class="n">current_est</span> <span class="o">+</span> <span class="n">v_noisy</span> <span class="o">*</span> <span class="n">dt</span>
+        
+        <span class="n">true_pos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_true</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+        <span class="n">estimated_pos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">current_est</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+    
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">true_pos</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">estimated_pos</span><span class="p">)</span>
+
+<span class="c1"># Example usage</span>
+<span class="n">initial_position</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="c1"># Circular movement</span>
+<span class="n">velocities</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">angle</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">20</span><span class="p">):</span>
+    <span class="n">velocities</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)])</span>
+
+<span class="n">true_path</span><span class="p">,</span> <span class="n">estimated_path</span> <span class="o">=</span> <span class="n">simulate_path_integration</span><span class="p">(</span>
+    <span class="n">initial_position</span><span class="p">,</span> <span class="n">velocities</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">noise_level</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">n_steps</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="c1"># Plot the paths</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">true_path</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">true_path</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;True path&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">estimated_path</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">estimated_path</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> 
+         <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Estimated path (path integration)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">true_path</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">true_path</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Start&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;X position&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Y position&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Path Integration with Accumulating Error&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="neural-representations-and-cnn-principles">
+<h2>3.7 Neural Representations and CNN Principles<a class="headerlink" href="#neural-representations-and-cnn-principles" title="Link to this heading">#</a></h2>
+<p>This section directly connects the brain’s spatial representation system to the principles underlying convolutional neural networks.</p>
+<section id="shared-computational-motifs">
+<h3>Shared Computational Motifs<a class="headerlink" href="#shared-computational-motifs" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Local Receptive Fields</strong>:</p>
+<ul class="simple">
+<li><p>Place cells fire for specific locations in physical space</p></li>
+<li><p>CNN neurons activate for specific regions in the input space</p></li>
+<li><p>Both create a topographic mapping of their respective domains</p></li>
+</ul>
+</li>
+<li><p><strong>Hierarchical Feature Extraction</strong>:</p>
+<ul class="simple">
+<li><p>Grid cells at different scales (modules) encode space at multiple resolutions</p></li>
+<li><p>CNNs use successive layers to detect features at increasingly abstract levels</p></li>
+<li><p>This multi-resolution approach enables efficient encoding of complex patterns</p></li>
+</ul>
+</li>
+<li><p><strong>Pattern Completion and Pattern Separation</strong>:</p>
+<ul class="simple">
+<li><p>Hippocampal circuits perform pattern completion (filling in missing spatial information)</p></li>
+<li><p>They also perform pattern separation (distinguishing similar locations)</p></li>
+<li><p>CNNs similarly learn to generalize across similar inputs while maintaining class distinctions</p></li>
+</ul>
+</li>
+<li><p><strong>Coordinate Transforms</strong>:</p>
+<ul class="simple">
+<li><p>The navigation system performs coordinate transformations (egocentric to allocentric)</p></li>
+<li><p>CNNs perform analogous transformations through their layered architecture</p></li>
+<li><p>Both systems convert raw input into increasingly abstract representations</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="applications-in-ai">
+<h3>Applications in AI<a class="headerlink" href="#applications-in-ai" title="Link to this heading">#</a></h3>
+<p>These principles have informed developments in AI:</p>
+<ol class="arabic simple">
+<li><p><strong>DeepMind’s Grid-like Representations</strong>: When trained on navigation tasks, artificial agents spontaneously develop grid-like representations similar to entorhinal grid cells.</p></li>
+<li><p><strong>Successor Representations</strong>: This reinforcement learning technique, inspired by hippocampal predictive coding, represents states based on future visitation patterns.</p></li>
+<li><p><strong>Memory-Augmented Neural Networks</strong>: Systems like Differentiable Neural Computers (DNCs) incorporate hippocampal-inspired memory systems to store and retrieve information.</p></li>
+<li><p><strong>Hierarchical Reinforcement Learning</strong>: Multi-scale policy approaches inspired by the brain’s hierarchical representation of space and goals.</p></li>
+</ol>
+</section>
 </section>
 <section id="take-aways">
-<h2>3.7 Take-aways<a class="headerlink" href="#take-aways" title="Link to this heading">#</a></h2>
+<h2>3.8 Take-aways<a class="headerlink" href="#take-aways" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>The brain uses specialized cell types for navigation</p></li>
-<li><p>Efficient navigation requires complementary representations</p></li>
-<li><p>Predictive mechanisms enhance spatial memory</p></li>
+<li><p>The hippocampus contains specialized cells (place cells, grid cells) that form a coordinate system for navigation</p></li>
+<li><p>The cellular organization of these systems creates efficient, sparse coding of spatial information</p></li>
+<li><p>The regular, multi-scale nature of grid cells parallels the design principles of convolutional networks</p></li>
+<li><p>Neural systems balance competing demands: specificity vs. generalization, precision vs. efficiency</p></li>
+<li><p>Understanding biological implementations of spatial processing has directly informed AI architecture design</p></li>
+<li><p>Conversely, computational models help us understand biological systems through testable predictions</p></li>
 </ul>
 </section>
 <section id="further-reading-media">
-<h2>3.8 Further Reading &amp; Media<a class="headerlink" href="#further-reading-media" title="Link to this heading">#</a></h2>
+<h2>3.9 Further Reading &amp; Media<a class="headerlink" href="#further-reading-media" title="Link to this heading">#</a></h2>
+<section id="key-papers">
+<h3>Key Papers<a class="headerlink" href="#key-papers" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Moser, Kropff &amp; Moser (2008) - “Place Cells, Grid Cells, and the Brain’s Spatial Representation System”</p></li>
-<li><p>Banino et al. (2018) - “Vector-based navigation using grid-like representations in artificial agents”</p></li>
-<li><p>Knierim &amp; Hamilton (2011) - “Framing spatial cognition: Neural representations of proximal and distal frames of reference”</p></li>
+<li><p>O’Keefe, J., &amp; Dostrovsky, J. (1971). “The hippocampus as a spatial map.” <em>Brain Research</em>, 34(1), 171-175.</p></li>
+<li><p>Moser, E. I., Kropff, E., &amp; Moser, M. B. (2008). “Place cells, grid cells, and the brain’s spatial representation system.” <em>Annual Review of Neuroscience</em>, 31, 69-89.</p></li>
+<li><p>Banino, A., Barry, C., Uria, B., Blundell, C., Lillicrap, T., Mirowski, P., … &amp; Kumaran, D. (2018). “Vector-based navigation using grid-like representations in artificial agents.” <em>Nature</em>, 557(7705), 429-433.</p></li>
+<li><p>Cueva, C. J., &amp; Wei, X. X. (2018). “Emergence of grid-like representations by training recurrent neural networks to perform spatial localization.” <em>Science</em>, 361(6400), 337-341.</p></li>
 </ul>
+</section>
+<section id="videos-and-lectures">
+<h3>Videos and Lectures<a class="headerlink" href="#videos-and-lectures" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Edvard Moser – Nobel Lecture on Grid Cells (2014)</p></li>
+<li><p>“How Do We Find Our Way? Grid Cells in the Brain” (Frontiers for Young Minds video)</p></li>
+<li><p>DeepMind’s Podcast Episode on Neuroscience and AI</p></li>
+</ul>
+</section>
+<section id="tutorials-and-resources">
+<h3>Tutorials and Resources<a class="headerlink" href="#tutorials-and-resources" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Kloosterman, F. (2021). “Analyzing navigational data and neural activity.” <em>Current Protocols</em>, 1(4), e107.</p></li>
+<li><p>Chen, Z., Kloosterman, F., Wilson, M. A., &amp; Brown, E. N. (2012). “Uncovering spatial topology represented by rat hippocampal population neuronal codes.” <em>Journal of Computational Neuroscience</em>, 33(2), 227-255.</p></li>
+<li><p>Neuromatch Academy tutorials on spatial navigation and reinforcement learning</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -574,14 +1150,54 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-goals">3.0 Chapter Goals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hippocampal-formation">3.1 Hippocampal Formation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#place-cells">3.2 Place Cells</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grid-cells">3.3 Grid Cells</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-circuits-for-navigation">3.4 Neural Circuits for Navigation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-computational-applications">3.5 AI &amp; Computational Applications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab">3.6 Code Lab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">3.7 Take-aways</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">3.8 Further Reading &amp; Media</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hippocampal-formation-organization-and-cell-types">3.1 Hippocampal Formation: Organization and Cell Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anatomical-organization">Anatomical Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cellular-organization-the-pyramidal-cell">Cellular Organization: The Pyramidal Cell</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#place-cells-the-brain-s-spatial-address-system">3.2 Place Cells: The Brain’s Spatial Address System</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discovery-and-properties">Discovery and Properties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-properties-of-place-cells">Key Properties of Place Cells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-principles">Computational Principles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grid-cells-the-brain-s-coordinate-system">3.3 Grid Cells: The Brain’s Coordinate System</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discovery-and-patterns">Discovery and Patterns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grid-cell-organization">Grid Cell Organization</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#geometric-efficiency-of-hexagonal-grids">Geometric Efficiency of Hexagonal Grids</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-navigation-circuit-from-single-cells-to-systems">3.4 The Navigation Circuit: From Single Cells to Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#head-direction-cells">Head Direction Cells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#border-boundary-cells">Border/Boundary Cells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjunctive-cells">Conjunctive Cells</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path-integration">Path Integration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallels-to-convolutional-neural-networks">3.5 Parallels to Convolutional Neural Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-similarities">Structural Similarities</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Computational Principles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspiration-exchange">Inspiration Exchange</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab-modeling-spatial-representations">3.6 Code Lab: Modeling Spatial Representations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#place-cell-model">Place Cell Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grid-cell-model">Grid Cell Model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#path-integration-model">Path Integration Model</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-representations-and-cnn-principles">3.7 Neural Representations and CNN Principles</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-computational-motifs">Shared Computational Motifs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applications-in-ai">Applications in AI</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">3.8 Take-aways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">3.9 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-papers">Key Papers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#videos-and-lectures">Videos and Lectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorials-and-resources">Tutorials and Resources</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
