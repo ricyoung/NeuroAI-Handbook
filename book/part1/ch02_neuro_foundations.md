@@ -41,7 +41,7 @@ An arriving spike triggers Ca²⁺ influx, vesicles fuse, and transmitter molecu
 - Firing threshold → activation function f(⋅)
 - All-or-nothing spike → binary output y
 
-```{figure} ../figures/neuron_vs_perceptron.png
+```{figure} ../figures/neuron_vs_perceptron.svg
 ---
 height: 300px
 name: neuron-vs-perceptron
@@ -74,7 +74,7 @@ Early textbooks sold the cortex as a stack of feed-forward filters. We now know 
 
 A macaque V1 neuron might receive 6,000 synapses and send its axon to tens of thousands. Fan-in/out mirrors the fully-connected layers in a multilayer perceptron (MLP). However, cortical networks balance excitation with ~20% inhibitory interneurons that sculpt activity and prevent runaway excitation—a biological answer to the exploding-gradient problem.
 
-```{figure} ../figures/cortical_column_vs_ann.png
+```{figure} ../figures/cortical_column_vs_ann.svg
 ---
 height: 350px
 name: cortical-column-vs-ann
@@ -112,7 +112,7 @@ Research crossroads: can we design learning algorithms that marry back-prop effi
 - **Cerebellum**: supervised error-corrector for timing & coordination; millions of tiny granule cells converge on Purkinje output. Analogy = massively parallel shallow learners (think ensemble boosting).
 - **Thalamus**: smart relay & attention gate, not just a dumb switchboard. Analogy = transformer attention head that routes information based on context.
 
-```{figure} ../figures/brain_regions_table.png
+```{figure} ../figures/brain_regions_table.svg
 ---
 height: 300px
 name: brain-regions-table
