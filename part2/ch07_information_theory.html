@@ -1,0 +1,1702 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 7: Information Theory Essentials &#8212; The Neuroscience of AI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'part2/ch07_information_theory';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 8: Data-Science Pipeline in Python" href="ch08_data_science_pipeline.html" />
+    <link rel="prev" title="Chapter 6: Neuro-stimulation &amp; Plasticity" href="ch06_neurostimulation.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="The Neuroscience of AI - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="The Neuroscience of AI - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Neuroscience of AI
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I · Brains &amp; Inspiration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part1/ch01_intro.html">Chapter 1: Introduction to Neuroscience ↔ AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part1/ch02_neuro_foundations.html">Chapter 2: Neuroscience Foundations for AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part1/ch03_spatial_navigation.html">Chapter 3: Spatial Navigation – Place &amp; Grid Cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part1/ch04_perception_pipeline.html">Chapter 4: Perception Pipeline – Visual Cortex → CNNs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II · Brains Meet Math &amp; Data</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch05_brain_networks.html">Chapter 5: Default-Mode vs Executive Control Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch06_neurostimulation.html">Chapter 6: Neuro-stimulation &amp; Plasticity</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 7: Information Theory Essentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch08_data_science_pipeline.html">Chapter 8: Data-Science Pipeline in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part III · Learning Machines</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part3/ch09_ml_foundations.html">Chapter 9: Classical Machine-Learning Foundations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part3/ch10_deep_learning.html">Chapter 10: Deep Learning: Training &amp; Optimisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part3/ch11_sequence_models.html">Chapter 11: Sequence Models: RNN → Attention → Transformer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part IV · Frontier Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part4/ch12_large_language_models.html">Chapter 12: Large Language Models &amp; Fine-Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part4/ch13_multimodal_models.html">Chapter 13: Multimodal &amp; Diffusion Models</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part V · Reflection &amp; Futures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part5/ch14_future_directions.html">Chapter 14: Where Next for Neuro-AI?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendices/math_python_refresher.html">Appendix A: Math &amp; Python Mini-Refresher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/dataset_catalogue.html">Appendix B: Dataset Catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/colab_setup.html">Appendix C: Colab Setup Tips</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpart2/ch07_information_theory.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/part2/ch07_information_theory.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 7: Information Theory Essentials</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-goals">7.0 Chapter Goals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentals-of-information-theory">7.1 Fundamentals of Information Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shannon-s-entropy-quantifying-uncertainty">Shannon’s Entropy: Quantifying Uncertainty</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-and-conditional-entropy">Joint and Conditional Entropy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information-quantifying-shared-information">Mutual Information: Quantifying Shared Information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kullback-leibler-divergence">Kullback-Leibler Divergence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-capacity">Channel Capacity</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-coding-efficiency">7.2 Neural Coding &amp; Efficiency</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#efficient-coding-hypothesis">Efficient Coding Hypothesis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#redundancy-reduction">Redundancy Reduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-coding">Sparse Coding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predictive-coding">Predictive Coding</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-measures-in-neuroscience">7.3 Information Measures in Neuroscience</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spike-train-information">Spike Train Information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-decoding-approaches">Neural Decoding Approaches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-bottleneck-theory">Information Bottleneck Theory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representational-similarity-analysis">Representational Similarity Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noise-variability-information">7.4 Noise, Variability &amp; Information</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-vs-noise-in-neural-systems">Signal vs Noise in Neural Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-resonance">Stochastic Resonance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#population-coding-strategies">Population Coding Strategies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-inference-and-uncertainty">Bayesian Inference and Uncertainty</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-flow-in-networks">7.5 Information Flow in Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directed-information">Directed Information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-entropy">Transfer Entropy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-density">Causal Density</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-information-theory">Integrated Information Theory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab-information-analysis-in-python">7.6 Code Lab – Information Analysis in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-entropy-and-mutual-information-of-spike-trains">Example 1: Entropy and Mutual Information of Spike Trains</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-information-bottleneck-demonstration">Example 2: Information Bottleneck Demonstration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-transfer-entropy-in-neural-spike-trains">Example 3: Transfer Entropy in Neural Spike Trains</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">7.7 Take-aways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">7.8 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#books">Books</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#articles">Articles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#online-resources">Online Resources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#software-tools">Software Tools</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-7-information-theory-essentials">
+<h1>Chapter 7: Information Theory Essentials<a class="headerlink" href="#chapter-7-information-theory-essentials" title="Link to this heading">#</a></h1>
+<section id="chapter-goals">
+<h2>7.0 Chapter Goals<a class="headerlink" href="#chapter-goals" title="Link to this heading">#</a></h2>
+<p>Information theory provides essential mathematical tools for quantifying and analyzing information processing in both neural and artificial systems. By the end of this chapter, you should be able to:</p>
+<ul class="simple">
+<li><p>Calculate and interpret fundamental information-theoretic measures like entropy, mutual information, and KL divergence</p></li>
+<li><p>Apply information-theoretic analyses to neural data and understand their implications</p></li>
+<li><p>Implement efficient coding principles in computational models</p></li>
+<li><p>Explain how information theory connects neuroscience and machine learning</p></li>
+<li><p>Use Python to compute information measures on various types of data</p></li>
+</ul>
+</section>
+<section id="fundamentals-of-information-theory">
+<h2>7.1 Fundamentals of Information Theory<a class="headerlink" href="#fundamentals-of-information-theory" title="Link to this heading">#</a></h2>
+<section id="shannon-s-entropy-quantifying-uncertainty">
+<h3>Shannon’s Entropy: Quantifying Uncertainty<a class="headerlink" href="#shannon-s-entropy-quantifying-uncertainty" title="Link to this heading">#</a></h3>
+<p>The central concept in information theory is entropy, which measures the uncertainty or randomness in a probability distribution. For a discrete random variable <span class="math notranslate nohighlight">\(X\)</span> with possible values <span class="math notranslate nohighlight">\(\{x_1, x_2, ..., x_n\}\)</span> and probability mass function <span class="math notranslate nohighlight">\(p(x)\)</span>, the entropy <span class="math notranslate nohighlight">\(H(X)\)</span> is defined as:</p>
+<div class="math notranslate nohighlight">
+\[H(X) = -\sum_{i=1}^{n} p(x_i) \log_2 p(x_i)\]</div>
+<p>Entropy is measured in bits when using log base 2, and represents the average number of bits needed to encode values of the random variable. A few key properties:</p>
+<ul class="simple">
+<li><p>Entropy is always non-negative</p></li>
+<li><p>Entropy is maximized when all outcomes are equally likely</p></li>
+<li><p>Entropy is minimized (zero) when one outcome has probability 1</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">entropy</span><span class="p">(</span><span class="n">p</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the Shannon entropy of a probability distribution.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        p: array of probabilities that sum to 1</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        entropy value in bits</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Remove zeros to avoid log(0) issues</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">p</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
+
+<span class="c1"># Example: Calculate entropy of a fair coin toss</span>
+<span class="n">p_fair</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Entropy of fair coin: </span><span class="si">{</span><span class="n">entropy</span><span class="p">(</span><span class="n">p_fair</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> bits&quot;</span><span class="p">)</span>
+
+<span class="c1"># Example: Calculate entropy of a biased coin toss</span>
+<span class="n">p_biased</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Entropy of biased coin: </span><span class="si">{</span><span class="n">entropy</span><span class="p">(</span><span class="n">p_biased</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> bits&quot;</span><span class="p">)</span>
+
+<span class="c1"># Visualize entropy for a binary variable as p varies from 0 to 1</span>
+<span class="n">p_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.999</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">entropies</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="n">p</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">p_values</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p_values</span><span class="p">,</span> <span class="n">entropies</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Probability of outcome 1&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Entropy (bits)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Entropy of a Binary Variable&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="joint-and-conditional-entropy">
+<h3>Joint and Conditional Entropy<a class="headerlink" href="#joint-and-conditional-entropy" title="Link to this heading">#</a></h3>
+<p>For two random variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>, the joint entropy <span class="math notranslate nohighlight">\(H(X,Y)\)</span> measures the combined uncertainty:</p>
+<div class="math notranslate nohighlight">
+\[H(X,Y) = -\sum_{x \in X} \sum_{y \in Y} p(x,y) \log_2 p(x,y)\]</div>
+<p>Conditional entropy <span class="math notranslate nohighlight">\(H(Y|X)\)</span> quantifies the remaining uncertainty in <span class="math notranslate nohighlight">\(Y\)</span> after observing <span class="math notranslate nohighlight">\(X\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[H(Y|X) = -\sum_{x \in X} p(x) \sum_{y \in Y} p(y|x) \log_2 p(y|x)\]</div>
+<p>The chain rule of entropy relates these concepts:</p>
+<div class="math notranslate nohighlight">
+\[H(X,Y) = H(X) + H(Y|X)\]</div>
+</section>
+<section id="mutual-information-quantifying-shared-information">
+<h3>Mutual Information: Quantifying Shared Information<a class="headerlink" href="#mutual-information-quantifying-shared-information" title="Link to this heading">#</a></h3>
+<p>Mutual information <span class="math notranslate nohighlight">\(I(X;Y)\)</span> measures the reduction in uncertainty about one variable given knowledge of another:</p>
+<div class="math notranslate nohighlight">
+\[I(X;Y) = H(X) - H(X|Y) = H(Y) - H(Y|X) = H(X) + H(Y) - H(X,Y)\]</div>
+<p>This symmetric measure ranges from 0 (independent variables) to <span class="math notranslate nohighlight">\(\min(H(X), H(Y))\)</span> (one variable completely determines the other).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mutual_information</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the mutual information between two continuous variables.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        x, y: arrays of observations</span>
+<span class="sd">        bins: number of bins for discretization</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        mutual information value in bits</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Create joint histogram</span>
+    <span class="n">joint_hist</span><span class="p">,</span> <span class="n">x_edges</span><span class="p">,</span> <span class="n">y_edges</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram2d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">)</span>
+    
+    <span class="c1"># Normalize to get joint probability</span>
+    <span class="n">joint_prob</span> <span class="o">=</span> <span class="n">joint_hist</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">joint_hist</span><span class="p">)</span>
+    
+    <span class="c1"># Get marginal probabilities</span>
+    <span class="n">x_prob</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">joint_prob</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">y_prob</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">joint_prob</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate mutual information</span>
+    <span class="n">mi</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bins</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bins</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">joint_prob</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">mi</span> <span class="o">+=</span> <span class="n">joint_prob</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">joint_prob</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">x_prob</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">y_prob</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span>
+    
+    <span class="k">return</span> <span class="n">mi</span>
+
+<span class="c1"># Example: Mutual information between correlated variables</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="c1"># Generate correlated data</span>
+<span class="n">corr</span> <span class="o">=</span> <span class="mf">0.8</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">corr</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">corr</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mutual information: </span><span class="si">{</span><span class="n">mutual_information</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> bits&quot;</span><span class="p">)</span>
+
+<span class="c1"># Visualize MI for different correlation values</span>
+<span class="n">correlation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.99</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">mi_values</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">correlation</span><span class="p">:</span>
+    <span class="n">y_corr</span> <span class="o">=</span> <span class="n">c</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+    <span class="n">mi_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mutual_information</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y_corr</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">correlation</span><span class="p">,</span> <span class="n">mi_values</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Correlation coefficient&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Mutual information (bits)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mutual Information vs. Correlation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="kullback-leibler-divergence">
+<h3>Kullback-Leibler Divergence<a class="headerlink" href="#kullback-leibler-divergence" title="Link to this heading">#</a></h3>
+<p>The KL divergence <span class="math notranslate nohighlight">\(D_{KL}(P||Q)\)</span> measures how one probability distribution <span class="math notranslate nohighlight">\(P\)</span> differs from a reference distribution <span class="math notranslate nohighlight">\(Q\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[D_{KL}(P||Q) = \sum_{i} P(i) \log_2 \frac{P(i)}{Q(i)}\]</div>
+<p>Key properties:</p>
+<ul class="simple">
+<li><p>KL divergence is always non-negative</p></li>
+<li><p><span class="math notranslate nohighlight">\(D_{KL}(P||Q) = 0\)</span> if and only if <span class="math notranslate nohighlight">\(P = Q\)</span></p></li>
+<li><p>KL divergence is non-symmetric: <span class="math notranslate nohighlight">\(D_{KL}(P||Q) \neq D_{KL}(Q||P)\)</span></p></li>
+</ul>
+<p>A symmetrized version is the Jensen-Shannon divergence:</p>
+<div class="math notranslate nohighlight">
+\[JSD(P||Q) = \frac{1}{2}D_{KL}(P||M) + \frac{1}{2}D_{KL}(Q||M)\]</div>
+<p>where <span class="math notranslate nohighlight">\(M = \frac{1}{2}(P + Q)\)</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">kl_divergence</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the KL divergence between two distributions.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        p, q: array of probabilities that sum to 1</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        KL divergence in bits</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Filter out zeros to avoid division issues</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">q</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">p</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">mask</span><span class="p">],</span> <span class="n">q</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p</span> <span class="o">/</span> <span class="n">q</span><span class="p">))</span>
+
+<span class="c1"># Example: KL divergence between Gaussians</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Standard normal</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>  <span class="c1"># Shifted and wider normal</span>
+
+<span class="c1"># Normalize to ensure they sum to 1</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">p</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">q</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">q</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;KL(P||Q): </span><span class="si">{</span><span class="n">kl_divergence</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> bits&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;KL(Q||P): </span><span class="si">{</span><span class="n">kl_divergence</span><span class="p">(</span><span class="n">q</span><span class="p">,</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> bits&quot;</span><span class="p">)</span>
+
+<span class="c1"># Visualize</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;P ~ N(0,1)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Q ~ N(1,1.5)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Probability density&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;KL Divergence Between Distributions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="channel-capacity">
+<h3>Channel Capacity<a class="headerlink" href="#channel-capacity" title="Link to this heading">#</a></h3>
+<p>In communication systems, channel capacity represents the maximum rate at which information can be transmitted reliably over a noisy channel. For a discrete memoryless channel, the capacity <span class="math notranslate nohighlight">\(C\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[C = \max_{p(x)} I(X;Y)\]</div>
+<p>where <span class="math notranslate nohighlight">\(p(x)\)</span> is the input distribution. For a Gaussian channel with signal power <span class="math notranslate nohighlight">\(P\)</span> and noise power <span class="math notranslate nohighlight">\(N\)</span>, the capacity is:</p>
+<div class="math notranslate nohighlight">
+\[C = \frac{1}{2}\log_2(1 + \frac{P}{N})\]</div>
+<p>This concept is crucial in neuroscience for understanding the information-carrying capacity of neural circuits.</p>
+</section>
+</section>
+<section id="neural-coding-efficiency">
+<h2>7.2 Neural Coding &amp; Efficiency<a class="headerlink" href="#neural-coding-efficiency" title="Link to this heading">#</a></h2>
+<section id="efficient-coding-hypothesis">
+<h3>Efficient Coding Hypothesis<a class="headerlink" href="#efficient-coding-hypothesis" title="Link to this heading">#</a></h3>
+<p>Proposed by Horace Barlow in the 1960s, the efficient coding hypothesis states that sensory systems have evolved to efficiently represent natural stimuli by reducing redundancy and maximizing information transmission given metabolic constraints.</p>
+<p>Key principles:</p>
+<ul class="simple">
+<li><p>Neurons should encode independent features of the environment</p></li>
+<li><p>Neural codes should minimize redundancy</p></li>
+<li><p>Coding strategies should be adapted to the statistics of natural stimuli</p></li>
+</ul>
+</section>
+<section id="redundancy-reduction">
+<h3>Redundancy Reduction<a class="headerlink" href="#redundancy-reduction" title="Link to this heading">#</a></h3>
+<p>Natural signals contain statistical regularities and redundancies. Efficient neural coding reduces these redundancies through:</p>
+<ol class="arabic simple">
+<li><p><strong>Decorrelation</strong>: Neurons respond to different features, minimizing correlations between their activities</p></li>
+<li><p><strong>Predictive coding</strong>: Only unpredicted information is transmitted</p></li>
+<li><p><strong>Adaptation</strong>: Sensory systems adapt to the statistics of their input</p></li>
+</ol>
+<p>The correlation coefficient between two neurons’ activities <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(x_j\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[\rho_{ij} = \frac{cov(x_i, x_j)}{\sigma_i \sigma_j}\]</div>
+<p>An efficient code would minimize these correlations.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate_neural_correlations</span><span class="p">(</span><span class="n">spike_trains</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate pairwise correlations between neural spike trains.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        spike_trains: array of shape (n_neurons, n_timepoints)</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        correlation matrix of shape (n_neurons, n_neurons)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n_neurons</span> <span class="o">=</span> <span class="n">spike_trains</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">correlations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_neurons</span><span class="p">,</span> <span class="n">n_neurons</span><span class="p">))</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_neurons</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_neurons</span><span class="p">):</span>
+            <span class="n">correlations</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">spike_trains</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">spike_trains</span><span class="p">[</span><span class="n">j</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">correlations</span>
+
+<span class="c1"># Simulate some neural data</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">n_neurons</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">n_timepoints</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1"># Create correlated spike trains</span>
+<span class="n">base</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n_timepoints</span><span class="p">)</span>
+<span class="n">noise_level</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">spike_trains</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">base</span> <span class="o">+</span> <span class="n">noise_level</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_timepoints</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_neurons</span><span class="p">)])</span>
+
+<span class="c1"># Calculate and visualize correlations</span>
+<span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">calculate_neural_correlations</span><span class="p">(</span><span class="n">spike_trains</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">corr_matrix</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Correlation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Neural Correlation Matrix&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Neuron index&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron index&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Check average correlation to assess redundancy</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average pairwise correlation: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span><span class="n">corr_matrix</span><span class="p">,</span><span class="w"> </span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="sparse-coding">
+<h3>Sparse Coding<a class="headerlink" href="#sparse-coding" title="Link to this heading">#</a></h3>
+<p>Sparse coding aims to represent input data using a small number of active neurons from a large population. This approach:</p>
+<ol class="arabic simple">
+<li><p>Reduces energy consumption (fewer spikes)</p></li>
+<li><p>Increases memory capacity</p></li>
+<li><p>Facilitates pattern recognition and generalization</p></li>
+</ol>
+<p>The sparseness of a neural code can be measured using the population sparseness metric:</p>
+<div class="math notranslate nohighlight">
+\[S_p = \frac{(\frac{1}{n}\sum_i |r_i|)^2}{\frac{1}{n}\sum_i r_i^2}\]</div>
+<p>where <span class="math notranslate nohighlight">\(r_i\)</span> is the response of neuron <span class="math notranslate nohighlight">\(i\)</span>, and <span class="math notranslate nohighlight">\(n\)</span> is the number of neurons. <span class="math notranslate nohighlight">\(S_p\)</span> ranges from 0 (dense code) to 1 (maximally sparse).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate_sparseness</span><span class="p">(</span><span class="n">population_activity</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate population sparseness of neural activity.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        population_activity: array of shape (n_neurons, n_samples)</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        sparseness values for each sample</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n_samples</span> <span class="o">=</span> <span class="n">population_activity</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">sparseness</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_samples</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">population_activity</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># Avoid division by zero</span>
+            <span class="n">sparseness</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">r</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">sparseness</span>
+
+<span class="c1"># Simulate neural populations with different levels of sparseness</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">n_neurons</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">n_samples</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="c1"># Dense coding (many neurons active)</span>
+<span class="n">dense_pop</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n_neurons</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">)</span>
+
+<span class="c1"># Sparse coding (few neurons active)</span>
+<span class="n">sparse_pop</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n_neurons</span><span class="p">,</span> <span class="n">n_samples</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_samples</span><span class="p">):</span>
+    <span class="n">active_neurons</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">n_neurons</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">sparse_pop</span><span class="p">[</span><span class="n">active_neurons</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+
+<span class="c1"># Calculate sparseness</span>
+<span class="n">dense_sparseness</span> <span class="o">=</span> <span class="n">calculate_sparseness</span><span class="p">(</span><span class="n">dense_pop</span><span class="p">)</span>
+<span class="n">sparse_sparseness</span> <span class="o">=</span> <span class="n">calculate_sparseness</span><span class="p">(</span><span class="n">sparse_pop</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average sparseness (dense): </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dense_sparseness</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Average sparseness (sparse): </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sparse_sparseness</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Visualize</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">dense_pop</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Dense Population</span><span class="se">\n</span><span class="s1">Sparseness: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dense_sparseness</span><span class="p">)</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sample&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">sparse_pop</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sparse Population</span><span class="se">\n</span><span class="s1">Sparseness: </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">sparse_sparseness</span><span class="p">)</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Sample&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="predictive-coding">
+<h3>Predictive Coding<a class="headerlink" href="#predictive-coding" title="Link to this heading">#</a></h3>
+<p>Predictive coding posits that neural systems encode and transmit only the “prediction errors” or deviations from expected input, rather than the raw sensory information. This framework:</p>
+<ol class="arabic simple">
+<li><p>Minimizes redundancy by transmitting only what’s unpredicted</p></li>
+<li><p>Forms a hierarchical structure where higher levels predict lower levels</p></li>
+<li><p>Explains phenomena like sensory adaptation and context effects</p></li>
+</ol>
+<p>Mathematically, if <span class="math notranslate nohighlight">\(y\)</span> is the sensory input and <span class="math notranslate nohighlight">\(\hat{y}\)</span> is the prediction, the prediction error <span class="math notranslate nohighlight">\(e\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[e = y - \hat{y}\]</div>
+<p>Only this error signal is transmitted, allowing for efficient resource use.</p>
+</section>
+</section>
+<section id="information-measures-in-neuroscience">
+<h2>7.3 Information Measures in Neuroscience<a class="headerlink" href="#information-measures-in-neuroscience" title="Link to this heading">#</a></h2>
+<section id="spike-train-information">
+<h3>Spike Train Information<a class="headerlink" href="#spike-train-information" title="Link to this heading">#</a></h3>
+<p>Neural spike trains carry information through both their rate and timing patterns. To quantify this information, we can:</p>
+<ol class="arabic simple">
+<li><p><strong>Direct method</strong>: Estimate the mutual information between stimulus and response directly</p></li>
+<li><p><strong>Indirect methods</strong>: Use specific information-theoretic quantities like stimulus-specific information</p></li>
+</ol>
+<p>For a spike train response <span class="math notranslate nohighlight">\(r\)</span> to stimulus <span class="math notranslate nohighlight">\(s\)</span>, the information transmitted is:</p>
+<div class="math notranslate nohighlight">
+\[I(S;R) = \sum_{s,r} p(s,r) \log_2 \frac{p(s,r)}{p(s)p(r)}\]</div>
+<p>This can be decomposed into different coding aspects (rate vs. timing).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">spike_train_information</span><span class="p">(</span><span class="n">stimulus</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate mutual information between stimulus and neural response.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        stimulus: array of stimulus values</span>
+<span class="sd">        response: array of neural responses to the stimulus</span>
+<span class="sd">        bins: number of bins for discretization</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        mutual information in bits</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Discretize continuous variables</span>
+    <span class="n">s_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">stimulus</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">stimulus</span><span class="p">),</span> <span class="n">bins</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">r_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">response</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">response</span><span class="p">),</span> <span class="n">bins</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">s_discrete</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">stimulus</span><span class="p">,</span> <span class="n">s_bins</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">r_discrete</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">r_bins</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    
+    <span class="c1"># Calculate joint and marginal probabilities</span>
+    <span class="n">joint_counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">bins</span><span class="p">,</span> <span class="n">bins</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">s_discrete</span><span class="p">,</span> <span class="n">r_discrete</span><span class="p">):</span>
+        <span class="n">joint_counts</span><span class="p">[</span><span class="n">s</span><span class="p">,</span> <span class="n">r</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="n">joint_prob</span> <span class="o">=</span> <span class="n">joint_counts</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">joint_counts</span><span class="p">)</span>
+    <span class="n">s_prob</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">joint_prob</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">r_prob</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">joint_prob</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate mutual information</span>
+    <span class="n">mi</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bins</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bins</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">joint_prob</span><span class="p">[</span><span class="n">s</span><span class="p">,</span> <span class="n">r</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">mi</span> <span class="o">+=</span> <span class="n">joint_prob</span><span class="p">[</span><span class="n">s</span><span class="p">,</span> <span class="n">r</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">joint_prob</span><span class="p">[</span><span class="n">s</span><span class="p">,</span> <span class="n">r</span><span class="p">]</span> <span class="o">/</span> <span class="p">(</span><span class="n">s_prob</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">*</span> <span class="n">r_prob</span><span class="p">[</span><span class="n">r</span><span class="p">]))</span>
+    
+    <span class="k">return</span> <span class="n">mi</span>
+
+<span class="c1"># Simulate neural tuning curves</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">n_trials</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">stimulus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">n_trials</span><span class="p">)</span>  <span class="c1"># Stimulus orientation</span>
+
+<span class="c1"># Neuron with orientation tuning</span>
+<span class="n">preferred_orientation</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">tuning_width</span> <span class="o">=</span> <span class="mf">0.5</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">tuning_curve</span><span class="p">(</span><span class="n">stim</span><span class="p">,</span> <span class="n">preferred</span><span class="p">,</span> <span class="n">width</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Von Mises tuning curve (circular Gaussian)&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">stim</span> <span class="o">-</span> <span class="n">preferred</span><span class="p">)</span> <span class="o">/</span> <span class="n">width</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">width</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Generate noisy neural responses</span>
+<span class="n">mean_response</span> <span class="o">=</span> <span class="n">tuning_curve</span><span class="p">(</span><span class="n">stimulus</span><span class="p">,</span> <span class="n">preferred_orientation</span><span class="p">,</span> <span class="n">tuning_width</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">mean_response</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Poisson spiking</span>
+
+<span class="c1"># Calculate information</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Stimulus-response information: </span><span class="si">{</span><span class="n">spike_train_information</span><span class="p">(</span><span class="n">stimulus</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> bits&quot;</span><span class="p">)</span>
+
+<span class="c1"># Visualize tuning curve</span>
+<span class="n">stim_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">tuning</span> <span class="o">=</span> <span class="n">tuning_curve</span><span class="p">(</span><span class="n">stim_range</span><span class="p">,</span> <span class="n">preferred_orientation</span><span class="p">,</span> <span class="n">tuning_width</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">stim_range</span><span class="p">,</span> <span class="n">tuning</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stimulus orientation (rad)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Mean response&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Neural Tuning Curve&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">stimulus</span><span class="p">,</span> <span class="n">response</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Stimulus orientation (rad)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Spike count&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Noisy Neural Responses&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="neural-decoding-approaches">
+<h3>Neural Decoding Approaches<a class="headerlink" href="#neural-decoding-approaches" title="Link to this heading">#</a></h3>
+<p>Neural decoding aims to recover stimulus information from neural activity. Information-theoretic approaches include:</p>
+<ol class="arabic simple">
+<li><p><strong>Maximum likelihood decoding</strong>: <span class="math notranslate nohighlight">\(\hat{s} = \arg\max_s p(r|s)\)</span></p></li>
+<li><p><strong>Bayesian decoding</strong>: <span class="math notranslate nohighlight">\(p(s|r) \propto p(r|s)p(s)\)</span></p></li>
+<li><p><strong>Population vector decoding</strong>: Using the combined activity of a neural population</p></li>
+</ol>
+<p>The decoding accuracy provides a lower bound on the information content of neural activity.</p>
+</section>
+<section id="information-bottleneck-theory">
+<h3>Information Bottleneck Theory<a class="headerlink" href="#information-bottleneck-theory" title="Link to this heading">#</a></h3>
+<p>Information bottleneck theory, introduced by Tishby et al., provides a framework for understanding the trade-off between compression and prediction in neural systems. The objective is to find a compressed representation <span class="math notranslate nohighlight">\(T\)</span> of input <span class="math notranslate nohighlight">\(X\)</span> that preserves relevant information about output <span class="math notranslate nohighlight">\(Y\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\min_{p(t|x)} I(X;T) - \beta I(T;Y)\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta\)</span> controls the trade-off between compression <span class="math notranslate nohighlight">\((I(X;T))\)</span> and prediction <span class="math notranslate nohighlight">\((I(T;Y))\)</span>.</p>
+<p>This has found applications in understanding neural coding and deep learning.</p>
+</section>
+<section id="representational-similarity-analysis">
+<h3>Representational Similarity Analysis<a class="headerlink" href="#representational-similarity-analysis" title="Link to this heading">#</a></h3>
+<p>Representational Similarity Analysis (RSA) compares representational geometries between brain regions or between brains and models. The key steps are:</p>
+<ol class="arabic simple">
+<li><p>Compute representational dissimilarity matrices (RDMs) for neural data and models</p></li>
+<li><p>Compare these RDMs using correlation or other metrics</p></li>
+</ol>
+<p>The information shared between representations can be quantified using metrics based on KL divergence or mutual information.</p>
+</section>
+</section>
+<section id="noise-variability-information">
+<h2>7.4 Noise, Variability &amp; Information<a class="headerlink" href="#noise-variability-information" title="Link to this heading">#</a></h2>
+<section id="signal-vs-noise-in-neural-systems">
+<h3>Signal vs Noise in Neural Systems<a class="headerlink" href="#signal-vs-noise-in-neural-systems" title="Link to this heading">#</a></h3>
+<p>Neural systems exhibit intrinsic variability that affects information processing:</p>
+<ol class="arabic simple">
+<li><p><strong>Neural variability</strong>: Spike count variance often follows Poisson statistics (variance ≈ mean)</p></li>
+<li><p><strong>Signal-to-noise ratio (SNR)</strong>: <span class="math notranslate nohighlight">\(SNR = \frac{\sigma_{signal}^2}{\sigma_{noise}^2}\)</span></p></li>
+<li><p><strong>Fisher information</strong>: Measures how well a parameter can be estimated from noisy observations</p></li>
+</ol>
+<p>The Cramér-Rao lower bound states that the variance of any unbiased estimator is at least as high as the inverse of the Fisher information.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate_snr</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">noise</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate signal-to-noise ratio.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        signal: array of signal values</span>
+<span class="sd">        noise: array of noise values</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        SNR in decibels</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">signal_power</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">signal</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">noise_power</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">noise</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">snr</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">signal_power</span> <span class="o">/</span> <span class="n">noise_power</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">snr</span>
+
+<span class="c1"># Simulate signal with noise</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">signal</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+<span class="n">noise_levels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">noise_level</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">noise_levels</span><span class="p">):</span>
+    <span class="n">noise</span> <span class="o">=</span> <span class="n">noise_level</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+    <span class="n">noisy_signal</span> <span class="o">=</span> <span class="n">signal</span> <span class="o">+</span> <span class="n">noise</span>
+    
+    <span class="n">snr</span> <span class="o">=</span> <span class="n">calculate_snr</span><span class="p">(</span><span class="n">signal</span><span class="p">,</span> <span class="n">noise</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Signal&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">noisy_signal</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Noisy signal&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Noise level: </span><span class="si">{</span><span class="n">noise_level</span><span class="si">}</span><span class="s1">, SNR: </span><span class="si">{</span><span class="n">snr</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> dB&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Amplitude&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="stochastic-resonance">
+<h3>Stochastic Resonance<a class="headerlink" href="#stochastic-resonance" title="Link to this heading">#</a></h3>
+<p>Stochastic resonance is a counter-intuitive phenomenon where adding noise to a system can enhance signal detection. In neural systems, moderate noise can help weak signals cross thresholds that they wouldn’t reach otherwise.</p>
+<p>The information transmission in a system with stochastic resonance follows an inverted U-shape as a function of noise intensity: too little noise doesn’t help, while too much noise overwhelms the signal.</p>
+</section>
+<section id="population-coding-strategies">
+<h3>Population Coding Strategies<a class="headerlink" href="#population-coding-strategies" title="Link to this heading">#</a></h3>
+<p>Neural systems use population coding to improve reliability and increase information content. Key strategies include:</p>
+<ol class="arabic simple">
+<li><p><strong>Redundant coding</strong>: Multiple neurons encode similar information</p></li>
+<li><p><strong>Distributed coding</strong>: Information is spread across many neurons</p></li>
+<li><p><strong>Correlation structure</strong>: The pattern of correlations affects information content</p></li>
+</ol>
+<p>The information capacity of a population of <span class="math notranslate nohighlight">\(n\)</span> independent neurons can scale linearly with <span class="math notranslate nohighlight">\(n\)</span>, but correlations typically reduce this capacity.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">simulate_population_coding</span><span class="p">(</span><span class="n">n_neurons</span><span class="p">,</span> <span class="n">correlation</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulate a population of neurons with specified correlation structure.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        n_neurons: number of neurons in the population</span>
+<span class="sd">        correlation: correlation coefficient between neurons</span>
+<span class="sd">        n_trials: number of trials to simulate</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        population activity matrix of shape (n_neurons, n_trials)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Create correlation matrix</span>
+    <span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">n_neurons</span><span class="p">)</span>
+    <span class="n">corr_matrix</span><span class="p">[</span><span class="n">corr_matrix</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">correlation</span>
+    
+    <span class="c1"># Cholesky decomposition to generate correlated Gaussian data</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">cholesky</span><span class="p">(</span><span class="n">corr_matrix</span><span class="p">)</span>
+    <span class="n">uncorrelated</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_neurons</span><span class="p">,</span> <span class="n">n_trials</span><span class="p">)</span>
+    <span class="n">population_activity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">uncorrelated</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">population_activity</span>
+
+<span class="c1"># Simulate populations with different correlation structures</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">n_neurons</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">correlation_levels</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">corr</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">correlation_levels</span><span class="p">):</span>
+    <span class="n">population</span> <span class="o">=</span> <span class="n">simulate_population_coding</span><span class="p">(</span><span class="n">n_neurons</span><span class="p">,</span> <span class="n">corr</span><span class="p">)</span>
+    
+    <span class="c1"># Estimate population information capacity</span>
+    <span class="c1"># Simple approximation based on eigenvalue spectrum of correlation matrix</span>
+    <span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">population</span><span class="p">)</span>
+    <span class="n">eigenvalues</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eigvalsh</span><span class="p">(</span><span class="n">corr_matrix</span><span class="p">)</span>
+    <span class="n">information_capacity</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">eigenvalues</span><span class="p">))</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">corr_matrix</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Correlation&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Correlation: </span><span class="si">{</span><span class="n">corr</span><span class="si">}</span><span class="se">\n</span><span class="s1">Info Capacity: </span><span class="si">{</span><span class="n">information_capacity</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1"> bits&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Neuron index&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Neuron index&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="bayesian-inference-and-uncertainty">
+<h3>Bayesian Inference and Uncertainty<a class="headerlink" href="#bayesian-inference-and-uncertainty" title="Link to this heading">#</a></h3>
+<p>Neural systems appear to implement Bayesian inference, combining prior knowledge with new evidence to form posterior beliefs. Information theory helps quantify uncertainty in these computations through:</p>
+<ol class="arabic simple">
+<li><p><strong>Entropy</strong>: Representing overall uncertainty</p></li>
+<li><p><strong>KL divergence</strong>: Measuring the information gain when updating from prior to posterior</p></li>
+<li><p><strong>Mutual information</strong>: Quantifying how much new observations reduce uncertainty</p></li>
+</ol>
+<p>The information gained from an observation <span class="math notranslate nohighlight">\(x\)</span> about parameter <span class="math notranslate nohighlight">\(\theta\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[IG = D_{KL}(p(\theta|x) || p(\theta))\]</div>
+</section>
+</section>
+<section id="information-flow-in-networks">
+<h2>7.5 Information Flow in Networks<a class="headerlink" href="#information-flow-in-networks" title="Link to this heading">#</a></h2>
+<section id="directed-information">
+<h3>Directed Information<a class="headerlink" href="#directed-information" title="Link to this heading">#</a></h3>
+<p>Directed information measures the causal influence of one process on another, accounting for feedback. For time series <span class="math notranslate nohighlight">\(X^n\)</span> and <span class="math notranslate nohighlight">\(Y^n\)</span>, the directed information is:</p>
+<div class="math notranslate nohighlight">
+\[I(X^n \rightarrow Y^n) = \sum_{i=1}^{n} I(X^i; Y_i | Y^{i-1})\]</div>
+<p>This captures asymmetric information flow, unlike mutual information.</p>
+</section>
+<section id="transfer-entropy">
+<h3>Transfer Entropy<a class="headerlink" href="#transfer-entropy" title="Link to this heading">#</a></h3>
+<p>Transfer entropy quantifies the directed flow of information between systems:</p>
+<div class="math notranslate nohighlight">
+\[TE_{X \rightarrow Y} = \sum p(y_{t+1}, y_t, x_t) \log_2 \frac{p(y_{t+1} | y_t, x_t)}{p(y_{t+1} | y_t)}\]</div>
+<p>It measures how much knowing the past of <span class="math notranslate nohighlight">\(X\)</span> reduces uncertainty about the future of <span class="math notranslate nohighlight">\(Y\)</span> beyond what is already predictable from <span class="math notranslate nohighlight">\(Y\)</span>’s past.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate_transfer_entropy</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate transfer entropy from source to target time series.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        source: array of source time series</span>
+<span class="sd">        target: array of target time series</span>
+<span class="sd">        delay: time delay to consider</span>
+<span class="sd">        bins: number of bins for discretization</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        transfer entropy in bits</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">source</span><span class="p">)</span> <span class="o">-</span> <span class="n">delay</span>
+    
+    <span class="c1"># Discretize data</span>
+    <span class="n">s_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">source</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">source</span><span class="p">),</span> <span class="n">bins</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">t_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">target</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">target</span><span class="p">),</span> <span class="n">bins</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">s_disc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">s_bins</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">t_disc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">t_bins</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    
+    <span class="c1"># Calculate probabilities</span>
+    <span class="n">p_t_future</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bins</span><span class="p">)</span>
+    <span class="n">p_t_past</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">bins</span><span class="p">)</span>
+    <span class="n">p_joint_tt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">bins</span><span class="p">,</span> <span class="n">bins</span><span class="p">))</span>
+    <span class="n">p_joint_tts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">bins</span><span class="p">,</span> <span class="n">bins</span><span class="p">,</span> <span class="n">bins</span><span class="p">))</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">t_past</span> <span class="o">=</span> <span class="n">t_disc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">t_future</span> <span class="o">=</span> <span class="n">t_disc</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">delay</span><span class="p">]</span>
+        <span class="n">s_past</span> <span class="o">=</span> <span class="n">s_disc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        
+        <span class="n">p_t_future</span><span class="p">[</span><span class="n">t_future</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">p_t_past</span><span class="p">[</span><span class="n">t_past</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">p_joint_tt</span><span class="p">[</span><span class="n">t_past</span><span class="p">,</span> <span class="n">t_future</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">p_joint_tts</span><span class="p">[</span><span class="n">t_past</span><span class="p">,</span> <span class="n">t_future</span><span class="p">,</span> <span class="n">s_past</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="n">p_t_future</span> <span class="o">/=</span> <span class="n">n</span>
+    <span class="n">p_t_past</span> <span class="o">/=</span> <span class="n">n</span>
+    <span class="n">p_joint_tt</span> <span class="o">/=</span> <span class="n">n</span>
+    <span class="n">p_joint_tts</span> <span class="o">/=</span> <span class="n">n</span>
+    
+    <span class="c1"># Calculate transfer entropy</span>
+    <span class="n">te</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bins</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bins</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">bins</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">p_joint_tts</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">te</span> <span class="o">+=</span> <span class="n">p_joint_tts</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">p_joint_tts</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">p_t_past</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> 
+                                                        <span class="p">(</span><span class="n">p_joint_tt</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">p_joint_tt</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">/</span> <span class="n">p_t_past</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">te</span><span class="p">)</span>  <span class="c1"># Transfer entropy should be non-negative</span>
+
+<span class="c1"># Simulate coupled systems with different coupling strengths</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">n_steps</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">coupling_strengths</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">coupling</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">coupling_strengths</span><span class="p">):</span>
+    <span class="c1"># System 1 drives System 2 with specified coupling strength</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
+    
+    <span class="c1"># Initial conditions</span>
+    <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>
+    <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span>
+    
+    <span class="c1"># Simulate coupled logistic maps</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.9</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Independent system</span>
+        <span class="n">y</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.9</span> <span class="o">*</span> <span class="p">(</span><span class="n">coupling</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">coupling</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">coupling</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">coupling</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+    
+    <span class="c1"># Calculate transfer entropies</span>
+    <span class="n">te_x_to_y</span> <span class="o">=</span> <span class="n">calculate_transfer_entropy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">te_y_to_x</span> <span class="o">=</span> <span class="n">calculate_transfer_entropy</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">900</span><span class="p">:</span><span class="mi">950</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;System X&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="mi">900</span><span class="p">:</span><span class="mi">950</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;System Y&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Coupling: </span><span class="si">{</span><span class="n">coupling</span><span class="si">}</span><span class="se">\n</span><span class="s1">TE X→Y: </span><span class="si">{</span><span class="n">te_x_to_y</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">, TE Y→X: </span><span class="si">{</span><span class="n">te_y_to_x</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;State&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="causal-density">
+<h3>Causal Density<a class="headerlink" href="#causal-density" title="Link to this heading">#</a></h3>
+<p>Causal density measures the overall level of causal interactivity in a network, defined as the average transfer entropy between all pairs of nodes:</p>
+<div class="math notranslate nohighlight">
+\[CD = \frac{1}{n(n-1)} \sum_{i \neq j} TE_{X_i \rightarrow X_j}\]</div>
+<p>This metric helps characterize complex networks by their causal interconnectedness.</p>
+</section>
+<section id="integrated-information-theory">
+<h3>Integrated Information Theory<a class="headerlink" href="#integrated-information-theory" title="Link to this heading">#</a></h3>
+<p>Integrated Information Theory (IIT) aims to quantify consciousness by measuring the amount of information integrated across neural systems. The core quantity, integrated information (Φ), represents information that cannot be decomposed into independent parts:</p>
+<div class="math notranslate nohighlight">
+\[\Phi = \min_{P} [ D_{KL}(p(X_t | X_{t-1}) || p^{(P)}(X_t | X_{t-1})) ]\]</div>
+<p>where <span class="math notranslate nohighlight">\(p^{(P)}\)</span> is the product of the probability distributions for the system divided according to partition <span class="math notranslate nohighlight">\(P\)</span>.</p>
+<p>High Φ indicates that the system integrates information in a way that cannot be reduced to its parts, a proposed correlate of consciousness.</p>
+</section>
+</section>
+<section id="code-lab-information-analysis-in-python">
+<h2>7.6 Code Lab – Information Analysis in Python<a class="headerlink" href="#code-lab-information-analysis-in-python" title="Link to this heading">#</a></h2>
+<p>Let’s implement some practical information-theoretic analyses on real-world data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import necessary libraries</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">mutual_info_score</span>
+
+<span class="c1"># Set random seed for reproducibility</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="example-1-entropy-and-mutual-information-of-spike-trains">
+<h3>Example 1: Entropy and Mutual Information of Spike Trains<a class="headerlink" href="#example-1-entropy-and-mutual-information-of-spike-trains" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generate_spike_train</span><span class="p">(</span><span class="n">rate</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate a Poisson spike train.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        rate: firing rate in Hz</span>
+<span class="sd">        duration: duration in seconds</span>
+<span class="sd">        dt: time step in seconds</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        binary spike train array</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n_steps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">duration</span> <span class="o">/</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="n">spike_prob</span> <span class="o">=</span> <span class="n">rate</span> <span class="o">*</span> <span class="n">dt</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">spike_prob</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="c1"># Generate spike trains with different rates and correlations</span>
+<span class="n">duration</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># seconds</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.001</span>     <span class="c1"># 1ms bins</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+
+<span class="c1"># Independent spike trains</span>
+<span class="n">rates</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>  <span class="c1"># Hz</span>
+<span class="n">independent_trains</span> <span class="o">=</span> <span class="p">[</span><span class="n">generate_spike_train</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">rates</span><span class="p">]</span>
+
+<span class="c1"># Calculate entropy of each spike train</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_spike_train_entropy</span><span class="p">(</span><span class="n">spike_train</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate entropy of spike counts in windows.&quot;&quot;&quot;</span>
+    <span class="c1"># Count spikes in windows</span>
+    <span class="n">n_windows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">spike_train</span><span class="p">)</span> <span class="o">//</span> <span class="n">window_size</span>
+    <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">spike_train</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">window_size</span><span class="p">:(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">window_size</span><span class="p">])</span> 
+                       <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_windows</span><span class="p">)])</span>
+    
+    <span class="c1"># Calculate probability distribution</span>
+    <span class="n">values</span><span class="p">,</span> <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">counts</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">probs</span> <span class="o">=</span> <span class="n">counts</span> <span class="o">/</span> <span class="n">n_windows</span>
+    
+    <span class="c1"># Calculate entropy</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">probs</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">probs</span> <span class="o">+</span> <span class="mf">1e-10</span><span class="p">))</span>
+
+<span class="c1"># Calculate mutual information between pairs of spike trains</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_spike_train_mi</span><span class="p">(</span><span class="n">train1</span><span class="p">,</span> <span class="n">train2</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate mutual information between spike counts in windows.&quot;&quot;&quot;</span>
+    <span class="n">n_windows</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">train1</span><span class="p">)</span> <span class="o">//</span> <span class="n">window_size</span>
+    <span class="n">counts1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">train1</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">window_size</span><span class="p">:(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">window_size</span><span class="p">])</span> 
+                        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_windows</span><span class="p">)])</span>
+    <span class="n">counts2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">train2</span><span class="p">[</span><span class="n">i</span><span class="o">*</span><span class="n">window_size</span><span class="p">:(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">window_size</span><span class="p">])</span> 
+                        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_windows</span><span class="p">)])</span>
+    
+    <span class="c1"># Calculate mutual information using scikit-learn</span>
+    <span class="n">counts1_disc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">counts1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Limit to prevent sparsity issues</span>
+    <span class="n">counts2_disc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">counts2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mutual_info_score</span><span class="p">(</span><span class="n">counts1_disc</span><span class="p">,</span> <span class="n">counts2_disc</span><span class="p">)</span>
+
+<span class="c1"># Calculate and display entropies and mutual information</span>
+<span class="n">entropies</span> <span class="o">=</span> <span class="p">[</span><span class="n">calculate_spike_train_entropy</span><span class="p">(</span><span class="n">train</span><span class="p">)</span> <span class="k">for</span> <span class="n">train</span> <span class="ow">in</span> <span class="n">independent_trains</span><span class="p">]</span>
+
+<span class="n">mi_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">rates</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">rates</span><span class="p">)))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rates</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rates</span><span class="p">)):</span>
+        <span class="n">mi_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_spike_train_mi</span><span class="p">(</span><span class="n">independent_trains</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">independent_trains</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Spike Train Entropies (bits):&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">r</span><span class="p">,</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">rates</span><span class="p">,</span> <span class="n">entropies</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Rate </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2"> Hz: </span><span class="si">{</span><span class="n">e</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Visualize</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">rates</span><span class="p">,</span> <span class="n">entropies</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Firing Rate (Hz)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Entropy (bits)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Entropy vs. Firing Rate&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mi_matrix</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Mutual Information (bits)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mutual Information Between Spike Trains&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Train Index&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Train Index&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rates</span><span class="p">)):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rates</span><span class="p">)):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">mi_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">]</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="example-2-information-bottleneck-demonstration">
+<h3>Example 2: Information Bottleneck Demonstration<a class="headerlink" href="#example-2-information-bottleneck-demonstration" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">information_bottleneck_example</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate the information bottleneck principle on a toy dataset.&quot;&quot;&quot;</span>
+    <span class="c1"># Generate synthetic data: X (input) -&gt; T (compressed representation) -&gt; Y (target)</span>
+    <span class="n">n_samples</span> <span class="o">=</span> <span class="mi">1000</span>
+    
+    <span class="c1"># Create a scenario where X has 10 dimensions but only 3 are relevant for Y</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">relevant_dims</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">relevant_dims</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="p">(</span><span class="n">Y</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>  <span class="c1"># Binary classification target</span>
+    
+    <span class="c1"># Apply dimensionality reduction with different compression levels</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.decomposition</span><span class="w"> </span><span class="kn">import</span> <span class="n">PCA</span>
+    
+    <span class="n">compression_dims</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+    <span class="n">mutual_info_values</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">n_dims</span> <span class="ow">in</span> <span class="n">compression_dims</span><span class="p">:</span>
+        <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">n_dims</span><span class="p">)</span>
+        <span class="n">T</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        
+        <span class="c1"># Discretize continuous values for MI calculation</span>
+        <span class="n">T_binned</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">T_binned</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">digitize</span><span class="p">(</span><span class="n">T</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">T</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">T</span><span class="p">[:,</span> <span class="n">i</span><span class="p">]),</span> <span class="mi">10</span><span class="p">))</span>
+        
+        <span class="c1"># Calculate I(T;Y) - the preserved relevant information</span>
+        <span class="n">mi_sum</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">T</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">mi_sum</span> <span class="o">+=</span> <span class="n">mutual_info_score</span><span class="p">(</span><span class="n">T_binned</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">Y</span><span class="p">)</span>
+        
+        <span class="n">mutual_info_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mi_sum</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate the &quot;information curve&quot;</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">compression_dims</span><span class="p">,</span> <span class="n">mutual_info_values</span><span class="p">,</span> <span class="s1">&#39;o-&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> 
+                <span class="n">label</span><span class="o">=</span><span class="s1">&#39;True relevant dimensions&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Number of dimensions in compressed representation (T)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Mutual Information I(T;Y) (bits)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Information Bottleneck Principle&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Information bottleneck shows that we only need 3 dimensions&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;to capture almost all relevant information about Y.&quot;</span><span class="p">)</span>
+
+<span class="n">information_bottleneck_example</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="example-3-transfer-entropy-in-neural-spike-trains">
+<h3>Example 3: Transfer Entropy in Neural Spike Trains<a class="headerlink" href="#example-3-transfer-entropy-in-neural-spike-trains" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">simple_transfer_entropy_demo</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate transfer entropy on simulated coupled neurons.&quot;&quot;&quot;</span>
+    <span class="c1"># Simulate two coupled neurons</span>
+    <span class="n">n_steps</span> <span class="o">=</span> <span class="mi">5000</span>
+    <span class="n">coupling</span> <span class="o">=</span> <span class="mf">0.3</span>
+    
+    <span class="c1"># Generate baseline spike probabilities</span>
+    <span class="n">rate1</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># Base firing probability for neuron 1</span>
+    <span class="n">rate2</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># Base firing probability for neuron 2</span>
+    
+    <span class="n">neuron1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">neuron2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+    
+    <span class="c1"># Neuron 1 has an independent firing pattern</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">rate1</span><span class="p">:</span>
+            <span class="n">neuron1</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="c1"># Neuron 2 is influenced by neuron 1 (with delay=1)</span>
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">):</span>
+        <span class="n">influence</span> <span class="o">=</span> <span class="n">coupling</span> <span class="o">*</span> <span class="n">neuron1</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">rate2</span> <span class="o">+</span> <span class="n">influence</span><span class="p">):</span>
+            <span class="n">neuron2</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    
+    <span class="c1"># Calculate transfer entropy (simple implementation)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">simple_te</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Simplified transfer entropy calculation.&quot;&quot;&quot;</span>
+        <span class="n">joint_counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>  <span class="c1"># [target_past, source_past, target_future]</span>
+        
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">delay</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">source</span><span class="p">)</span><span class="o">-</span><span class="n">delay</span><span class="p">):</span>
+            <span class="n">s_past</span> <span class="o">=</span> <span class="n">source</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">delay</span><span class="p">]</span>
+            <span class="n">t_past</span> <span class="o">=</span> <span class="n">target</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="n">delay</span><span class="p">]</span>
+            <span class="n">t_future</span> <span class="o">=</span> <span class="n">target</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+            
+            <span class="n">joint_counts</span><span class="p">[</span><span class="n">t_past</span><span class="p">,</span> <span class="n">s_past</span><span class="p">,</span> <span class="n">t_future</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+        <span class="c1"># Normalize to get probabilities</span>
+        <span class="n">joint_prob</span> <span class="o">=</span> <span class="n">joint_counts</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">joint_counts</span><span class="p">)</span>
+        
+        <span class="c1"># Marginal probabilities</span>
+        <span class="n">p_t_past</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">joint_prob</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">p_joint_ts_past</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">joint_prob</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">p_joint_tt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+                <span class="n">p_joint_tt</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">joint_prob</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:,</span> <span class="n">j</span><span class="p">])</span>
+        
+        <span class="c1"># Calculate transfer entropy</span>
+        <span class="n">te</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>  <span class="c1"># t_past</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>  <span class="c1"># s_past</span>
+                <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>  <span class="c1"># t_future</span>
+                    <span class="k">if</span> <span class="n">joint_prob</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">p_joint_ts_past</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">p_joint_tt</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">te</span> <span class="o">+=</span> <span class="n">joint_prob</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log2</span><span class="p">(</span><span class="n">joint_prob</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">p_t_past</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">/</span> 
+                                                            <span class="p">(</span><span class="n">p_joint_ts_past</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">p_joint_tt</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">]))</span>
+        
+        <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">te</span><span class="p">)</span>  <span class="c1"># Ensure non-negative</span>
+    
+    <span class="c1"># Calculate transfer entropy in both directions</span>
+    <span class="n">te_1_to_2</span> <span class="o">=</span> <span class="n">simple_te</span><span class="p">(</span><span class="n">neuron1</span><span class="p">,</span> <span class="n">neuron2</span><span class="p">)</span>
+    <span class="n">te_2_to_1</span> <span class="o">=</span> <span class="n">simple_te</span><span class="p">(</span><span class="n">neuron2</span><span class="p">,</span> <span class="n">neuron1</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Transfer Entropy (Neuron 1 → Neuron 2): </span><span class="si">{</span><span class="n">te_1_to_2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> bits&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Transfer Entropy (Neuron 2 → Neuron 1): </span><span class="si">{</span><span class="n">te_2_to_1</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2"> bits&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Visualize the spike trains</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">neuron1</span><span class="p">[:</span><span class="mi">100</span><span class="p">],</span> <span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Neuron 1 (Driver)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Spike&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">neuron2</span><span class="p">[:</span><span class="mi">100</span><span class="p">],</span> <span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Neuron 2 (Driven)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Spike&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="c1"># Plot cross-correlation to show relationship</span>
+    <span class="n">max_lag</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">xcorr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">max_lag</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">lags</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">max_lag</span><span class="p">,</span> <span class="n">max_lag</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">lag</span> <span class="ow">in</span> <span class="n">lags</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">lag</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># Neuron1 leads</span>
+            <span class="n">xcorr</span><span class="p">[</span><span class="n">lag</span> <span class="o">+</span> <span class="n">max_lag</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">neuron1</span><span class="p">[</span><span class="o">-</span><span class="n">lag</span><span class="p">:],</span> <span class="n">neuron2</span><span class="p">[:</span><span class="n">lag</span><span class="p">])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">lag</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="c1"># Neuron2 leads</span>
+            <span class="n">xcorr</span><span class="p">[</span><span class="n">lag</span> <span class="o">+</span> <span class="n">max_lag</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">neuron1</span><span class="p">[:</span><span class="o">-</span><span class="n">lag</span><span class="p">],</span> <span class="n">neuron2</span><span class="p">[</span><span class="n">lag</span><span class="p">:])[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># No lag</span>
+            <span class="n">xcorr</span><span class="p">[</span><span class="n">lag</span> <span class="o">+</span> <span class="n">max_lag</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">neuron1</span><span class="p">,</span> <span class="n">neuron2</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lags</span><span class="p">,</span> <span class="n">xcorr</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Lag (Neuron 1 → Neuron 2)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Correlation&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Cross-correlation Between Neurons&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">simple_transfer_entropy_demo</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="take-aways">
+<h2>7.7 Take-aways<a class="headerlink" href="#take-aways" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Information theory provides a quantitative framework for understanding information processing in neural and artificial systems.</p></li>
+<li><p>Entropy, mutual information, and KL divergence are fundamental measures for analyzing neural codes.</p></li>
+<li><p>Efficient coding principles like redundancy reduction and sparse coding are observed in both biological and artificial neural networks.</p></li>
+<li><p>Information flows asymmetrically in neural circuits, which can be captured by directional measures like transfer entropy.</p></li>
+<li><p>The trade-off between compression and prediction in neural systems is formalized by information bottleneck theory, which has parallels in deep learning.</p></li>
+<li><p>Neural variability and correlations critically affect the information content of population codes.</p></li>
+<li><p>Information-theoretic measures can reveal the causal structure of neural networks and provide insights into integrated information processing.</p></li>
+</ul>
+</section>
+<section id="further-reading-media">
+<h2>7.8 Further Reading &amp; Media<a class="headerlink" href="#further-reading-media" title="Link to this heading">#</a></h2>
+<section id="books">
+<h3>Books<a class="headerlink" href="#books" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Cover, T. M., &amp; Thomas, J. A. (2006). <em>Elements of Information Theory</em> (2nd ed.). Wiley-Interscience.</p></li>
+<li><p>MacKay, D. J. C. (2003). <em>Information Theory, Inference, and Learning Algorithms</em>. Cambridge University Press.</p></li>
+<li><p>Rieke, F., Warland, D., de Ruyter van Steveninck, R., &amp; Bialek, W. (1997). <em>Spikes: Exploring the Neural Code</em>. MIT Press.</p></li>
+</ul>
+</section>
+<section id="articles">
+<h3>Articles<a class="headerlink" href="#articles" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Shannon, C. E. (1948). “A Mathematical Theory of Communication,” <em>Bell System Technical Journal</em>.</p></li>
+<li><p>Fairhall, A. L., Lewen, G. D., Bialek, W., &amp; de Ruyter van Steveninck, R. R. (2001). “Efficiency and ambiguity in an adaptive neural code,” <em>Nature</em>.</p></li>
+<li><p>Tishby, N., Pereira, F. C., &amp; Bialek, W. (2000). “The information bottleneck method,” <em>arXiv</em>.</p></li>
+<li><p>Timme, N. M., &amp; Lapish, C. (2018). “A Tutorial for Information Theory in Neuroscience,” <em>eNeuro</em>.</p></li>
+</ul>
+</section>
+<section id="online-resources">
+<h3>Online Resources<a class="headerlink" href="#online-resources" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>“Information Theory, Pattern Recognition, and Neural Networks,” David MacKay’s Cambridge lectures (YouTube).</p></li>
+<li><p>Information Theory and its Applications, Stanford online course materials by Tsachy Weissman.</p></li>
+<li><p>“Neural Data Science,” Coursera course by Associate Professor Konrad Kording.</p></li>
+</ul>
+</section>
+<section id="software-tools">
+<h3>Software Tools<a class="headerlink" href="#software-tools" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Information Dynamics Toolkit (IDTxl): Python library for information-theoretic analysis of neural data.</p></li>
+<li><p>PyEntropy: Python toolkit for entropy and information estimation.</p></li>
+<li><p>TRENTOOL: MATLAB toolbox for transfer entropy analysis.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./part2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch06_neurostimulation.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 6: Neuro-stimulation &amp; Plasticity</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ch08_data_science_pipeline.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 8: Data-Science Pipeline in Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-goals">7.0 Chapter Goals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fundamentals-of-information-theory">7.1 Fundamentals of Information Theory</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shannon-s-entropy-quantifying-uncertainty">Shannon’s Entropy: Quantifying Uncertainty</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-and-conditional-entropy">Joint and Conditional Entropy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mutual-information-quantifying-shared-information">Mutual Information: Quantifying Shared Information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kullback-leibler-divergence">Kullback-Leibler Divergence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#channel-capacity">Channel Capacity</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-coding-efficiency">7.2 Neural Coding &amp; Efficiency</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#efficient-coding-hypothesis">Efficient Coding Hypothesis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#redundancy-reduction">Redundancy Reduction</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sparse-coding">Sparse Coding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#predictive-coding">Predictive Coding</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-measures-in-neuroscience">7.3 Information Measures in Neuroscience</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spike-train-information">Spike Train Information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-decoding-approaches">Neural Decoding Approaches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-bottleneck-theory">Information Bottleneck Theory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representational-similarity-analysis">Representational Similarity Analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#noise-variability-information">7.4 Noise, Variability &amp; Information</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signal-vs-noise-in-neural-systems">Signal vs Noise in Neural Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stochastic-resonance">Stochastic Resonance</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#population-coding-strategies">Population Coding Strategies</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bayesian-inference-and-uncertainty">Bayesian Inference and Uncertainty</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#information-flow-in-networks">7.5 Information Flow in Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directed-information">Directed Information</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transfer-entropy">Transfer Entropy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#causal-density">Causal Density</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrated-information-theory">Integrated Information Theory</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab-information-analysis-in-python">7.6 Code Lab – Information Analysis in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-entropy-and-mutual-information-of-spike-trains">Example 1: Entropy and Mutual Information of Spike Trains</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-information-bottleneck-demonstration">Example 2: Information Bottleneck Demonstration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-transfer-entropy-in-neural-spike-trains">Example 3: Transfer Entropy in Neural Spike Trains</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">7.7 Take-aways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">7.8 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#books">Books</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#articles">Articles</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#online-resources">Online Resources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#software-tools">Software Tools</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Richard Young
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
