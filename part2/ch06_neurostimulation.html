@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Chapter 6: Neuro-stimulation &amp; Plasticity &#8212; The Neuroscience of AI</title>
+    <title>Chapter 6: Neurostimulation &amp; Plasticity &#8212; The Neuroscience of AI</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -57,6 +57,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'part2/ch06_neurostimulation';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -189,7 +191,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II · Brains Meet Math &amp; Data</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ch05_brain_networks.html">Chapter 5: Default-Mode vs Executive Control Networks</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 6: Neuro-stimulation &amp; Plasticity</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 6: Neurostimulation &amp; Plasticity</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch07_information_theory.html">Chapter 7: Information Theory Essentials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ch08_data_science_pipeline.html">Chapter 8: Data-Science Pipeline in Python</a></li>
 </ul>
@@ -398,7 +400,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Chapter 6: Neuro-stimulation & Plasticity</h1>
+    <h1>Chapter 6: Neurostimulation & Plasticity</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -409,14 +411,59 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-goals">6.0 Chapter Goals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-plasticity-mechanisms">6.1 Neural Plasticity Mechanisms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromodulatory-systems">6.2 Neuromodulatory Systems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-stimulation-techniques">6.3 Brain Stimulation Techniques</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cognitive-enhancement-applications">6.4 Cognitive Enhancement Applications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-models">6.5 Computational Models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab">6.6 Code Lab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-plasticity-mechanisms">6.1 Neural Plasticity Mechanisms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hebbian-learning-cells-that-fire-together-wire-together">Hebbian Learning: Cells That Fire Together, Wire Together</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#long-term-potentiation-ltp-and-depression-ltd">Long-Term Potentiation (LTP) and Depression (LTD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spike-timing-dependent-plasticity-stdp">Spike-Timing-Dependent Plasticity (STDP)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homeostatic-plasticity">Homeostatic Plasticity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-vs-functional-plasticity">Structural vs. Functional Plasticity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#critical-periods-and-adult-plasticity">Critical Periods and Adult Plasticity</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromodulatory-systems">6.2 Neuromodulatory Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dopamine-the-reward-signal">Dopamine: The Reward Signal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acetylcholine-the-attention-modulator">Acetylcholine: The Attention Modulator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norepinephrine-the-alertness-signal">Norepinephrine: The Alertness Signal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serotonin-the-mood-regulator">Serotonin: The Mood Regulator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactions-and-integration">Interactions and Integration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-stimulation-techniques">6.3 Brain Stimulation Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transcranial-direct-current-stimulation-tdcs">Transcranial Direct Current Stimulation (tDCS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transcranial-magnetic-stimulation-tms">Transcranial Magnetic Stimulation (TMS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-brain-stimulation-dbs">Deep Brain Stimulation (DBS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-neurostimulation-approaches">Other Neurostimulation Approaches</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cognitive-enhancement-applications">6.4 Cognitive Enhancement Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-augmentation">Memory Augmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-modulation">Attention Modulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motor-learning-facilitation">Motor Learning Facilitation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clinical-applications">Clinical Applications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-models">6.5 Computational Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning-and-dopamine">Reinforcement Learning and Dopamine</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-network-plasticity-rules">Neural Network Plasticity Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-learning-in-ai">Meta-Learning in AI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stimulation-effects-on-neural-networks">Stimulation Effects on Neural Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning-ai-models">Fine-Tuning AI Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab-neurostimulation-and-learning-simulations">6.6 Code Lab: Neurostimulation and Learning Simulations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-tdcs-effects-on-learning">Simulating tDCS Effects on Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-neuromodulatory-systems">Modeling Neuromodulatory Systems</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">6.7 Take-aways</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">6.8 Further Reading &amp; Media</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">6.8 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-plasticity">Neural Plasticity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Neuromodulatory Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-stimulation">Brain Stimulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-models-and-ai">Computational Models and AI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#videos-and-online-resources">Videos and Online Resources</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -428,8 +475,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="chapter-6-neuro-stimulation-plasticity">
-<h1>Chapter 6: Neuro-stimulation &amp; Plasticity<a class="headerlink" href="#chapter-6-neuro-stimulation-plasticity" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-6-neurostimulation-plasticity">
+<h1>Chapter 6: Neurostimulation &amp; Plasticity<a class="headerlink" href="#chapter-6-neurostimulation-plasticity" title="Link to this heading">#</a></h1>
 <section id="chapter-goals">
 <h2>6.0 Chapter Goals<a class="headerlink" href="#chapter-goals" title="Link to this heading">#</a></h2>
 <ul class="simple">
@@ -441,72 +488,1121 @@ document.write(`
 </section>
 <section id="neural-plasticity-mechanisms">
 <h2>6.1 Neural Plasticity Mechanisms<a class="headerlink" href="#neural-plasticity-mechanisms" title="Link to this heading">#</a></h2>
+<p>Neural plasticity refers to the brain’s remarkable ability to modify its structure and function in response to experience. This section explores the fundamental mechanisms that enable learning and adaptation in biological neural networks.</p>
+<section id="hebbian-learning-cells-that-fire-together-wire-together">
+<h3>Hebbian Learning: Cells That Fire Together, Wire Together<a class="headerlink" href="#hebbian-learning-cells-that-fire-together-wire-together" title="Link to this heading">#</a></h3>
+<p>Donald Hebb’s seminal postulate (1949) established the foundation of modern neural plasticity theory: “When an axon of cell A is near enough to excite cell B and repeatedly or persistently takes part in firing it, some growth process or metabolic change takes place in one or both cells such that A’s efficiency, as one of the cells firing B, is increased.”</p>
+<p>This principle is often simplified as “cells that fire together, wire together.” Mathematically, classical Hebbian learning can be expressed as:</p>
+<div class="math notranslate nohighlight">
+\[\Delta w_{ij} = \eta \cdot x_i \cdot y_j\]</div>
+<p>Where:</p>
 <ul class="simple">
-<li><p>Hebbian and homeostatic plasticity</p></li>
-<li><p>Long-term potentiation and depression</p></li>
-<li><p>Structural vs functional plasticity</p></li>
-<li><p>Critical periods and adult plasticity</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Delta w_{ij}\)</span> is the change in synaptic weight</p></li>
+<li><p><span class="math notranslate nohighlight">\(\eta\)</span> is the learning rate</p></li>
+<li><p><span class="math notranslate nohighlight">\(x_i\)</span> is the presynaptic activity</p></li>
+<li><p><span class="math notranslate nohighlight">\(y_j\)</span> is the postsynaptic activity</p></li>
 </ul>
+<p>While elegant, pure Hebbian learning is unstable as it creates positive feedback loops that can lead to runaway excitation. This necessitates additional regulatory mechanisms.</p>
+</section>
+<section id="long-term-potentiation-ltp-and-depression-ltd">
+<h3>Long-Term Potentiation (LTP) and Depression (LTD)<a class="headerlink" href="#long-term-potentiation-ltp-and-depression-ltd" title="Link to this heading">#</a></h3>
+<p>LTP and LTD are cellular mechanisms that implement Hebbian learning by strengthening or weakening synapses.</p>
+<p><strong>Long-Term Potentiation (LTP):</strong></p>
+<ul class="simple">
+<li><p>High-frequency stimulation (≈100 Hz) can induce lasting increases in synaptic strength</p></li>
+<li><p>NMDA receptors act as coincidence detectors that require both presynaptic glutamate release and postsynaptic depolarization</p></li>
+<li><p>Calcium influx through NMDA receptors activates CaMKII, leading to AMPA receptor insertion and synaptic strengthening</p></li>
+<li><p>First demonstrated in hippocampal slices by Bliss and Lømo (1973)</p></li>
+</ul>
+<p><strong>Long-Term Depression (LTD):</strong></p>
+<ul class="simple">
+<li><p>Low-frequency stimulation (≈1 Hz) induces sustained decreases in synaptic strength</p></li>
+<li><p>Moderate calcium influx activates phosphatases rather than kinases</p></li>
+<li><p>Results in AMPA receptor internalization and synaptic weakening</p></li>
+</ul>
+<p>LTP and LTD can last from hours to months and provide a cellular basis for memory formation and learning.</p>
+</section>
+<section id="spike-timing-dependent-plasticity-stdp">
+<h3>Spike-Timing-Dependent Plasticity (STDP)<a class="headerlink" href="#spike-timing-dependent-plasticity-stdp" title="Link to this heading">#</a></h3>
+<p>STDP refines Hebbian learning by incorporating the precise timing relationship between pre- and postsynaptic spikes:</p>
+<ul class="simple">
+<li><p>If a presynaptic neuron fires slightly before a postsynaptic neuron (within ~20ms), the synapse strengthens (LTP)</p></li>
+<li><p>If a presynaptic neuron fires after a postsynaptic neuron, the synapse weakens (LTD)</p></li>
+<li><p>The magnitude of change decreases exponentially with the time difference</p></li>
+</ul>
+<p>This temporal precision allows neural networks to learn causal relationships and temporal sequences. Mathematically, STDP can be modeled as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Delta w = \begin{cases}
+A_+ \cdot e^{-\Delta t / \tau_+} &amp; \text{if } \Delta t &gt; 0 \\
+-A_- \cdot e^{\Delta t / \tau_-} &amp; \text{if } \Delta t &lt; 0
+\end{cases}\end{split}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(\Delta t = t_{post} - t_{pre}\)</span> is the timing difference between spikes.</p>
+</section>
+<section id="homeostatic-plasticity">
+<h3>Homeostatic Plasticity<a class="headerlink" href="#homeostatic-plasticity" title="Link to this heading">#</a></h3>
+<p>While Hebbian mechanisms enable specific changes in response to activity patterns, homeostatic plasticity maintains network stability:</p>
+<p><strong>Synaptic Scaling:</strong></p>
+<ul class="simple">
+<li><p>Global adjustment of all synapses to maintain a target activity level</p></li>
+<li><p>Multiplicative scaling preserves relative differences between synapses</p></li>
+<li><p>Occurs over longer timescales (days) than Hebbian plasticity</p></li>
+</ul>
+<p><strong>Metaplasticity:</strong></p>
+<ul class="simple">
+<li><p>“Plasticity of plasticity” - adjustment of plasticity thresholds based on history</p></li>
+<li><p>Bienenstock-Cooper-Munro (BCM) theory introduces sliding threshold for potentiation/depression</p></li>
+<li><p>Higher activity raises threshold, making LTP harder and LTD easier</p></li>
+</ul>
+<p><strong>Intrinsic Plasticity:</strong></p>
+<ul class="simple">
+<li><p>Adjustment of neuronal excitability through ion channel modulation</p></li>
+<li><p>Compensates for changes in synaptic inputs to maintain stable firing rates</p></li>
+</ul>
+<p>These homeostatic mechanisms prevent neuronal silence or seizure-like overactivity while allowing meaningful learning to occur.</p>
+</section>
+<section id="structural-vs-functional-plasticity">
+<h3>Structural vs. Functional Plasticity<a class="headerlink" href="#structural-vs-functional-plasticity" title="Link to this heading">#</a></h3>
+<p>Neural plasticity operates on multiple timescales and involves both functional and structural changes:</p>
+<p><strong>Functional Plasticity:</strong></p>
+<ul class="simple">
+<li><p>Changes in synaptic strength without morphological alterations</p></li>
+<li><p>Occurs rapidly (minutes to hours)</p></li>
+<li><p>Mediated by receptor trafficking, phosphorylation, and neurotransmitter release changes</p></li>
+</ul>
+<p><strong>Structural Plasticity:</strong></p>
+<ul class="simple">
+<li><p>Formation, elimination, and morphological changes of synaptic connections</p></li>
+<li><p>Occurs more slowly (hours to days)</p></li>
+<li><p>Involves dendritic spine growth/retraction, axonal sprouting, and synaptogenesis</p></li>
+<li><p>Converts temporary memories into more permanent forms</p></li>
+</ul>
+</section>
+<section id="critical-periods-and-adult-plasticity">
+<h3>Critical Periods and Adult Plasticity<a class="headerlink" href="#critical-periods-and-adult-plasticity" title="Link to this heading">#</a></h3>
+<p>Critical periods are developmental windows of heightened plasticity:</p>
+<ul class="simple">
+<li><p>Visual system critical period: Ocular dominance plasticity occurs readily in young animals but diminishes in adulthood</p></li>
+<li><p>Language acquisition: Enhanced capacity to learn languages without accent before puberty</p></li>
+<li><p>Molecular regulators include perineuronal nets, myelin-associated inhibitors, and GABA maturation</p></li>
+</ul>
+<p>While adult plasticity is more restricted, substantial rewiring remains possible:</p>
+<ul class="simple">
+<li><p>Hippocampus and associative cortical areas maintain higher plasticity throughout life</p></li>
+<li><p>Adult neurogenesis occurs in specific brain regions (hippocampus, subventricular zone)</p></li>
+<li><p>Environmental enrichment, exercise, and certain neurostimulation protocols can reactivate juvenile-like plasticity</p></li>
+</ul>
+</section>
 </section>
 <section id="neuromodulatory-systems">
 <h2>6.2 Neuromodulatory Systems<a class="headerlink" href="#neuromodulatory-systems" title="Link to this heading">#</a></h2>
+<p>Neuromodulators are chemical messengers that regulate neural activity and plasticity on broader spatial and temporal scales than fast neurotransmitters. They constitute the brain’s internal control system for learning and adaptation.</p>
+<section id="dopamine-the-reward-signal">
+<h3>Dopamine: The Reward Signal<a class="headerlink" href="#dopamine-the-reward-signal" title="Link to this heading">#</a></h3>
+<p>The dopaminergic system plays a crucial role in reward-based learning and motivation:</p>
+<p><strong>Anatomical Organization:</strong></p>
 <ul class="simple">
-<li><p>Dopamine and reward prediction</p></li>
-<li><p>Acetylcholine and attention</p></li>
-<li><p>Norepinephrine and arousal</p></li>
-<li><p>Serotonin and mood regulation</p></li>
+<li><p>Nigrostriatal pathway (substantia nigra → striatum): Motor control</p></li>
+<li><p>Mesolimbic pathway (VTA → nucleus accumbens, amygdala): Reward learning</p></li>
+<li><p>Mesocortical pathway (VTA → prefrontal cortex): Executive function, working memory</p></li>
 </ul>
+<p><strong>Receptor Types:</strong></p>
+<ul class="simple">
+<li><p>D1-like receptors (D1, D5): Coupled to Gs proteins, increase cAMP, generally excitatory</p></li>
+<li><p>D2-like receptors (D2, D3, D4): Coupled to Gi proteins, decrease cAMP, generally inhibitory</p></li>
+</ul>
+<p><strong>Key Functions:</strong></p>
+<ul class="simple">
+<li><p>Reward prediction error signaling: Phasic dopamine release encodes the difference between expected and actual rewards</p></li>
+<li><p>Incentive salience: Makes rewarding stimuli “wanted” rather than just “liked”</p></li>
+<li><p>Working memory gating: Controls information flow into prefrontal working memory circuits</p></li>
+<li><p>Motor program selection: Facilitates movement initiation via basal ganglia circuits</p></li>
+</ul>
+<p><strong>Plasticity Effects:</strong></p>
+<ul class="simple">
+<li><p>D1 receptor activation enhances LTP in striatum and prefrontal cortex</p></li>
+<li><p>Can convert LTD to LTP when timed appropriately with synaptic activity</p></li>
+<li><p>Provides the third factor in three-factor learning rules (Hebbian plasticity gated by reward)</p></li>
+</ul>
+<p><strong>Computational Parallel:</strong></p>
+<ul class="simple">
+<li><p>Temporal difference (TD) learning in reinforcement learning algorithms</p></li>
+<li><p>Actor-critic models with dopamine as the TD error signal</p></li>
+<li><p>Reward-modulated STDP in neuromorphic computing</p></li>
+</ul>
+</section>
+<section id="acetylcholine-the-attention-modulator">
+<h3>Acetylcholine: The Attention Modulator<a class="headerlink" href="#acetylcholine-the-attention-modulator" title="Link to this heading">#</a></h3>
+<p>The cholinergic system regulates attention, arousal, and memory formation:</p>
+<p><strong>Anatomical Organization:</strong></p>
+<ul class="simple">
+<li><p>Basal forebrain nuclei (including nucleus basalis) → widespread cortical projections</p></li>
+<li><p>Brainstem nuclei → thalamus, midbrain, and other subcortical structures</p></li>
+</ul>
+<p><strong>Receptor Types:</strong></p>
+<ul class="simple">
+<li><p>Nicotinic receptors: Ionotropic, fast-acting, enhance neural excitability</p></li>
+<li><p>Muscarinic receptors: Metabotropic, slower modulatory effects via G-protein signaling</p></li>
+</ul>
+<p><strong>Key Functions:</strong></p>
+<ul class="simple">
+<li><p>Attention: Enhances processing of behaviorally relevant stimuli</p></li>
+<li><p>Signal-to-noise ratio: Increases response to relevant inputs while suppressing background activity</p></li>
+<li><p>Cortical plasticity: Enables experience-dependent map reorganization</p></li>
+<li><p>Memory encoding: Essential for forming new episodic memories</p></li>
+</ul>
+<p><strong>Plasticity Effects:</strong></p>
+<ul class="simple">
+<li><p>Enhances LTP in hippocampus when released during learning</p></li>
+<li><p>Lowers threshold for spike-timing-dependent plasticity</p></li>
+<li><p>Enables map reorganization in sensory cortices during learning</p></li>
+</ul>
+<p><strong>Computational Parallel:</strong></p>
+<ul class="simple">
+<li><p>Attention mechanisms in artificial neural networks</p></li>
+<li><p>Dropout regularization (mimicking fluctuating acetylcholine levels during sleep/wake cycles)</p></li>
+<li><p>Precision weighting in predictive coding models</p></li>
+</ul>
+</section>
+<section id="norepinephrine-the-alertness-signal">
+<h3>Norepinephrine: The Alertness Signal<a class="headerlink" href="#norepinephrine-the-alertness-signal" title="Link to this heading">#</a></h3>
+<p>The noradrenergic system regulates arousal and behavioral flexibility:</p>
+<p><strong>Anatomical Organization:</strong></p>
+<ul class="simple">
+<li><p>Primary source: Locus coeruleus</p></li>
+<li><p>Widespread projections throughout cerebral cortex, cerebellum, brainstem, and spinal cord</p></li>
+</ul>
+<p><strong>Receptor Types:</strong></p>
+<ul class="simple">
+<li><p>α1: Excitatory, increases neural responsiveness</p></li>
+<li><p>α2: Inhibitory, provides negative feedback to locus coeruleus</p></li>
+<li><p>β1, β2: Enhance excitability and synaptic transmission</p></li>
+</ul>
+<p><strong>Key Functions:</strong></p>
+<ul class="simple">
+<li><p>Arousal regulation: Transitions between sleep, drowsiness, and alertness</p></li>
+<li><p>Attention shifting: Facilitates reorienting to novel or significant stimuli</p></li>
+<li><p>Stress response: Coordinates physiological responses to threat</p></li>
+<li><p>Memory consolidation: Enhances storage of emotionally salient information</p></li>
+</ul>
+<p><strong>Plasticity Effects:</strong></p>
+<ul class="simple">
+<li><p>Enhances LTP in amygdala (emotional learning)</p></li>
+<li><p>Promotes memory consolidation when released during emotional arousal</p></li>
+<li><p>Facilitates synaptic tagging, determining which memories are stored long-term</p></li>
+</ul>
+<p><strong>Computational Parallel:</strong></p>
+<ul class="simple">
+<li><p>Exploration-exploitation tradeoff in reinforcement learning</p></li>
+<li><p>Learning rate adjustment based on environmental novelty or uncertainty</p></li>
+<li><p>Adaptive gain control in attention networks</p></li>
+</ul>
+</section>
+<section id="serotonin-the-mood-regulator">
+<h3>Serotonin: The Mood Regulator<a class="headerlink" href="#serotonin-the-mood-regulator" title="Link to this heading">#</a></h3>
+<p>The serotonergic system influences mood, impulse control, and time horizons for decision-making:</p>
+<p><strong>Anatomical Organization:</strong></p>
+<ul class="simple">
+<li><p>Primary source: Raphe nuclei in brainstem</p></li>
+<li><p>Projects widely throughout cortex, limbic system, and spinal cord</p></li>
+</ul>
+<p><strong>Receptor Types:</strong></p>
+<ul class="simple">
+<li><p>Seven families (5-HT1-7) with at least 14 known subtypes</p></li>
+<li><p>Diverse effects depending on receptor subtype and location</p></li>
+</ul>
+<p><strong>Key Functions:</strong></p>
+<ul class="simple">
+<li><p>Mood regulation: Balanced activity essential for emotional stability</p></li>
+<li><p>Impulse control: Inhibits premature responding and aggression</p></li>
+<li><p>Appetite and sleep regulation: Modulates hypothalamic functions</p></li>
+<li><p>Social behavior: Influences social cognition and interaction</p></li>
+</ul>
+<p><strong>Plasticity Effects:</strong></p>
+<ul class="simple">
+<li><p>Complex and often region-specific effects on plasticity</p></li>
+<li><p>Promotes neurogenesis in hippocampus</p></li>
+<li><p>Facilitates ocular dominance plasticity in visual cortex</p></li>
+<li><p>Modulates stress effects on plasticity</p></li>
+</ul>
+<p><strong>Computational Parallel:</strong></p>
+<ul class="simple">
+<li><p>Temporal discounting in reinforcement learning</p></li>
+<li><p>Mood-dependent learning bias in decision models</p></li>
+<li><p>Inhibitory control in cognitive architectures</p></li>
+</ul>
+</section>
+<section id="interactions-and-integration">
+<h3>Interactions and Integration<a class="headerlink" href="#interactions-and-integration" title="Link to this heading">#</a></h3>
+<p>Neuromodulatory systems do not operate in isolation but form a complex, interconnected regulatory network:</p>
+<ul class="simple">
+<li><p>Dopamine-acetylcholine interactions in striatum control learning from rewards</p></li>
+<li><p>Norepinephrine-serotonin balance influences impulsivity and patience</p></li>
+<li><p>Dopamine-serotonin balance regulates approach vs. avoidance behaviors</p></li>
+<li><p>Acetylcholine-norepinephrine interactions control attention allocation</p></li>
+</ul>
+<p>This orchestrated control enables sophisticated regulation of neural plasticity across different brain states and behavioral contexts.</p>
+</section>
 </section>
 <section id="brain-stimulation-techniques">
 <h2>6.3 Brain Stimulation Techniques<a class="headerlink" href="#brain-stimulation-techniques" title="Link to this heading">#</a></h2>
+<p>Brain stimulation techniques allow direct manipulation of neural activity and plasticity. These methods span from non-invasive approaches accessible to researchers and clinicians to invasive procedures reserved for specific clinical populations.</p>
+<section id="transcranial-direct-current-stimulation-tdcs">
+<h3>Transcranial Direct Current Stimulation (tDCS)<a class="headerlink" href="#transcranial-direct-current-stimulation-tdcs" title="Link to this heading">#</a></h3>
+<p>tDCS applies weak direct electrical current to the scalp to modulate brain activity:</p>
+<p><strong>Mechanism:</strong></p>
 <ul class="simple">
-<li><p>Transcranial direct current stimulation (tDCS)</p></li>
-<li><p>Transcranial magnetic stimulation (TMS)</p></li>
-<li><p>Deep brain stimulation (DBS)</p></li>
-<li><p>Ultrasound and optogenetic approaches</p></li>
+<li><p>Low-intensity direct current (typically 1-2 mA) delivered through scalp electrodes</p></li>
+<li><p>Anodal stimulation: Increases neural excitability by slightly depolarizing neurons</p></li>
+<li><p>Cathodal stimulation: Decreases neural excitability by slightly hyperpolarizing neurons</p></li>
 </ul>
+<p><strong>Physiological Effects:</strong></p>
+<ul class="simple">
+<li><p>During stimulation: Shifts in resting membrane potential without directly triggering action potentials</p></li>
+<li><p>After-effects: NMDA receptor-dependent changes in synaptic strength (LTP-like)</p></li>
+<li><p>Secondary changes in neurotransmitter systems (GABA, glutamate, dopamine)</p></li>
+</ul>
+<p><strong>Spatial Resolution:</strong></p>
+<ul class="simple">
+<li><p>Limited by large electrode size (traditional setup)</p></li>
+<li><p>High-definition tDCS (HD-tDCS) uses smaller electrodes for improved focality</p></li>
+<li><p>Computational models help optimize montages for targeted effects</p></li>
+</ul>
+<p><strong>Applications:</strong></p>
+<ul class="simple">
+<li><p>Working memory enhancement via dorsolateral prefrontal cortex stimulation</p></li>
+<li><p>Motor learning facilitation through primary motor cortex stimulation</p></li>
+<li><p>Mood regulation in depression through frontal asymmetry modulation</p></li>
+<li><p>Pain reduction via motor cortex or thalamic stimulation</p></li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul class="simple">
+<li><p>Significant individual variability in response</p></li>
+<li><p>Modest effect sizes and variable reproducibility</p></li>
+<li><p>Limited spatial precision compared to other techniques</p></li>
+</ul>
+</section>
+<section id="transcranial-magnetic-stimulation-tms">
+<h3>Transcranial Magnetic Stimulation (TMS)<a class="headerlink" href="#transcranial-magnetic-stimulation-tms" title="Link to this heading">#</a></h3>
+<p>TMS uses rapidly changing magnetic fields to induce electrical currents in brain tissue:</p>
+<p><strong>Mechanism:</strong></p>
+<ul class="simple">
+<li><p>Brief, strong magnetic field (1-2 Tesla) induces electrical currents via electromagnetic induction</p></li>
+<li><p>Current flow in neural tissue can elicit action potentials</p></li>
+<li><p>Effects depend on stimulation protocol and brain state during application</p></li>
+</ul>
+<p><strong>Protocols:</strong></p>
+<ul class="simple">
+<li><p>Single-pulse TMS: Brief neural activation or disruption</p></li>
+<li><p>Paired-pulse TMS: Measures cortical inhibition and facilitation</p></li>
+<li><p>Repetitive TMS (rTMS):</p>
+<ul>
+<li><p>Low-frequency (≤1 Hz): Generally inhibitory</p></li>
+<li><p>High-frequency (≥5 Hz): Generally excitatory</p></li>
+<li><p>Theta-burst stimulation: More rapid induction of plasticity</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Spatial and Temporal Resolution:</strong></p>
+<ul class="simple">
+<li><p>Better spatial precision than tDCS (~1-2 cm)</p></li>
+<li><p>Excellent temporal precision (sub-millisecond)</p></li>
+<li><p>Depth limited to cortical structures without special coils</p></li>
+</ul>
+<p><strong>Applications:</strong></p>
+<ul class="simple">
+<li><p>FDA-approved for treatment-resistant depression</p></li>
+<li><p>Therapeutic applications in anxiety disorders, OCD, and addiction</p></li>
+<li><p>Motor rehabilitation after stroke</p></li>
+<li><p>Mapping cortical functions and connectivity</p></li>
+<li><p>“Virtual lesion” approach in cognitive neuroscience</p></li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul class="simple">
+<li><p>Requires specialized equipment and trained operators</p></li>
+<li><p>Can be uncomfortable due to muscle activation and loud clicking</p></li>
+<li><p>Potential seizure risk in predisposed individuals</p></li>
+</ul>
+</section>
+<section id="deep-brain-stimulation-dbs">
+<h3>Deep Brain Stimulation (DBS)<a class="headerlink" href="#deep-brain-stimulation-dbs" title="Link to this heading">#</a></h3>
+<p>DBS involves surgically implanted electrodes delivering electrical pulses to specific deep brain structures:</p>
+<p><strong>Mechanism:</strong></p>
+<ul class="simple">
+<li><p>Implanted electrodes connected to programmable pulse generator</p></li>
+<li><p>Continuous or intermittent high-frequency stimulation (typically 130-180 Hz)</p></li>
+<li><p>Creates functional inhibition within stimulated nucleus while activating output fibers</p></li>
+</ul>
+<p><strong>Target Areas:</strong></p>
+<ul class="simple">
+<li><p>Movement disorders: Subthalamic nucleus, globus pallidus, thalamus</p></li>
+<li><p>Psychiatric conditions: Anterior limb of internal capsule, nucleus accumbens, subgenual cingulate</p></li>
+<li><p>Epilepsy: Anterior nucleus of thalamus, centromedian nucleus</p></li>
+<li><p>Experimental targets: Fornix and nucleus basalis for Alzheimer’s disease</p></li>
+</ul>
+<p><strong>Effects:</strong></p>
+<ul class="simple">
+<li><p>Immediate symptom relief in movement disorders</p></li>
+<li><p>Gradual improvement in psychiatric conditions</p></li>
+<li><p>Modulation of network activity beyond the stimulation site</p></li>
+<li><p>Potential neuroplasticity induction with long-term use</p></li>
+</ul>
+<p><strong>Applications:</strong></p>
+<ul class="simple">
+<li><p>Parkinson’s disease: Remarkably effective for motor symptoms</p></li>
+<li><p>Essential tremor: Typically targeting the thalamus</p></li>
+<li><p>Dystonia: Often targeting globus pallidus</p></li>
+<li><p>Treatment-resistant OCD (FDA approved under Humanitarian Device Exemption)</p></li>
+<li><p>Experimental treatment for depression, addiction, and dementia</p></li>
+</ul>
+<p><strong>Limitations:</strong></p>
+<ul class="simple">
+<li><p>Invasive neurosurgical procedure with associated risks</p></li>
+<li><p>High cost and limited accessibility</p></li>
+<li><p>Need for battery replacement and ongoing adjustments</p></li>
+<li><p>Potential side effects including mood changes, speech issues, and impulse control disorders</p></li>
+</ul>
+</section>
+<section id="other-neurostimulation-approaches">
+<h3>Other Neurostimulation Approaches<a class="headerlink" href="#other-neurostimulation-approaches" title="Link to this heading">#</a></h3>
+<p><strong>Transcranial Alternating Current Stimulation (tACS):</strong></p>
+<ul class="simple">
+<li><p>Delivers oscillating current at specific frequencies to entrain brain rhythms</p></li>
+<li><p>Can influence cognitive functions associated with specific oscillatory bands (theta for memory, alpha for attention, etc.)</p></li>
+<li><p>More frequency-specific effects than tDCS, potentially enabling more targeted cognitive modulation</p></li>
+</ul>
+<p><strong>Transcranial Focused Ultrasound (tFUS):</strong></p>
+<ul class="simple">
+<li><p>Uses focused acoustic energy to modulate neural activity</p></li>
+<li><p>Superior spatial resolution (millimeter precision) compared to tDCS/TMS</p></li>
+<li><p>Can reach deep brain structures non-invasively</p></li>
+<li><p>Currently primarily experimental but showing clinical promise</p></li>
+</ul>
+<p><strong>Vagus Nerve Stimulation (VNS):</strong></p>
+<ul class="simple">
+<li><p>Stimulates the vagus nerve in neck via implanted device or non-invasive auricular stimulation</p></li>
+<li><p>Approved for epilepsy and depression</p></li>
+<li><p>Enhances plasticity by engaging multiple neuromodulatory systems</p></li>
+<li><p>Paired with rehabilitation can enhance recovery from stroke or TBI</p></li>
+</ul>
+<p><strong>Optogenetics (Research Tool):</strong></p>
+<ul class="simple">
+<li><p>Uses light-sensitive proteins (opsins) to control genetically-defined neuron populations</p></li>
+<li><p>Unparalleled precision in circuit control (millisecond temporal and cell-type specificity)</p></li>
+<li><p>Primarily a research tool in animal models, with human applications limited by gene delivery requirements</p></li>
+<li><p>Has revolutionized understanding of circuit function and plasticity mechanisms</p></li>
+</ul>
+</section>
 </section>
 <section id="cognitive-enhancement-applications">
 <h2>6.4 Cognitive Enhancement Applications<a class="headerlink" href="#cognitive-enhancement-applications" title="Link to this heading">#</a></h2>
+<p>Neurostimulation techniques have been applied to enhance various cognitive domains, with applications spanning from basic research to clinical interventions.</p>
+<section id="memory-augmentation">
+<h3>Memory Augmentation<a class="headerlink" href="#memory-augmentation" title="Link to this heading">#</a></h3>
+<p><strong>Working Memory Enhancement:</strong></p>
 <ul class="simple">
-<li><p>Memory augmentation</p></li>
-<li><p>Attention modulation</p></li>
-<li><p>Motor learning facilitation</p></li>
-<li><p>Clinical applications</p></li>
+<li><p>Left DLPFC stimulation with anodal tDCS improves capacity and manipulation</p></li>
+<li><p>Effects appear larger in individuals with lower baseline performance</p></li>
+<li><p>Theta-frequency stimulation (4-8 Hz) using tACS enhances performance on n-back tasks</p></li>
+<li><p>Combined with cognitive training, may produce longer-lasting benefits</p></li>
 </ul>
+<p><strong>Long-term Memory Improvement:</strong></p>
+<ul class="simple">
+<li><p>Stimulation during encoding phase of memory formation shows greater effects than during retrieval</p></li>
+<li><p>Temporal lobe tDCS enhances verbal and episodic memory formation</p></li>
+<li><p>Slow oscillation tDCS during slow-wave sleep enhances memory consolidation</p></li>
+<li><p>Hippocampal-targeted stimulation methods in development for memory disorders</p></li>
+</ul>
+<p><strong>Mechanisms:</strong></p>
+<ul class="simple">
+<li><p>Enhanced neural synchrony between prefrontal and parietal regions for working memory</p></li>
+<li><p>Facilitated LTP-like processes in hippocampal-cortical networks for long-term memory</p></li>
+<li><p>Improved coordination of memory reactivation during consolidation</p></li>
+<li><p>Modulation of cholinergic and glutamatergic signaling essential for memory function</p></li>
+</ul>
+</section>
+<section id="attention-modulation">
+<h3>Attention Modulation<a class="headerlink" href="#attention-modulation" title="Link to this heading">#</a></h3>
+<p><strong>Sustained Attention:</strong></p>
+<ul class="simple">
+<li><p>Right frontal tDCS improves vigilance and reduces fatigue effects</p></li>
+<li><p>Alpha-frequency tACS to parietal cortex stabilizes attentional focus</p></li>
+<li><p>Effects enhanced when stimulation timed to individual alpha phase</p></li>
+</ul>
+<p><strong>Selective Attention:</strong></p>
+<ul class="simple">
+<li><p>Right parietal stimulation enhances spatial attention and reduces neglect symptoms</p></li>
+<li><p>Alpha suppression via tACS improves filtering of distractors</p></li>
+<li><p>Gamma-band stimulation enhances feature binding and object perception</p></li>
+</ul>
+<p><strong>Mechanisms:</strong></p>
+<ul class="simple">
+<li><p>Enhanced top-down control signals from frontal regions</p></li>
+<li><p>Improved signal-to-noise ratio in sensory processing</p></li>
+<li><p>Modulation of alpha oscillations that normally gate information flow</p></li>
+<li><p>Potential enhancement of cholinergic function, mimicking endogenous attention systems</p></li>
+</ul>
+</section>
+<section id="motor-learning-facilitation">
+<h3>Motor Learning Facilitation<a class="headerlink" href="#motor-learning-facilitation" title="Link to this heading">#</a></h3>
+<p><strong>Skill Acquisition:</strong></p>
+<ul class="simple">
+<li><p>Primary motor cortex (M1) anodal tDCS accelerates motor sequence learning</p></li>
+<li><p>Effects most pronounced during acquisition phase rather than retention</p></li>
+<li><p>Cerebellar stimulation particularly effective for adaptation and error-based learning</p></li>
+<li><p>Paired associative stimulation (PAS) strengthens specific motor circuits</p></li>
+</ul>
+<p><strong>Consolidation Enhancement:</strong></p>
+<ul class="simple">
+<li><p>Post-training stimulation during rest periods boosts consolidation</p></li>
+<li><p>Sleep combined with stimulation shows synergistic effects on motor memory</p></li>
+<li><p>Stimulation-induced increases in slow-wave activity correlate with improved retention</p></li>
+</ul>
+<p><strong>Applications:</strong></p>
+<ul class="simple">
+<li><p>Rehabilitation after stroke or injury</p></li>
+<li><p>Sports training and performance optimization</p></li>
+<li><p>Recovery of fine motor skills in aging</p></li>
+<li><p>Musician training and performance</p></li>
+</ul>
+</section>
+<section id="clinical-applications">
+<h3>Clinical Applications<a class="headerlink" href="#clinical-applications" title="Link to this heading">#</a></h3>
+<p><strong>Stroke Rehabilitation:</strong></p>
+<ul class="simple">
+<li><p>Inhibitory stimulation to contralesional hemisphere and/or excitatory to ipsilesional hemisphere</p></li>
+<li><p>Based on interhemispheric competition model of recovery</p></li>
+<li><p>Most effective when paired with targeted behavioral therapy</p></li>
+<li><p>Emerging evidence for connectivity-based personalized targeting</p></li>
+</ul>
+<p><strong>Depression Treatment:</strong></p>
+<ul class="simple">
+<li><p>Left DLPFC stimulation to address frontal hypoactivity in depression</p></li>
+<li><p>High-frequency rTMS FDA-approved for treatment-resistant depression</p></li>
+<li><p>tDCS shows promise as a more accessible alternative</p></li>
+<li><p>Accelerated protocols (multiple daily sessions) reduce treatment timeframe</p></li>
+</ul>
+<p><strong>Cognitive Decline:</strong></p>
+<ul class="simple">
+<li><p>Multifocal tDCS approaches target large-scale networks affected in dementia</p></li>
+<li><p>Stimulation paired with cognitive training shows greater benefits</p></li>
+<li><p>Early intervention may be critical before substantial neurodegeneration</p></li>
+<li><p>Both compensatory (recruiting intact areas) and restorative (enhancing affected circuits) approaches</p></li>
+</ul>
+<p><strong>Addiction and Impulse Control:</strong></p>
+<ul class="simple">
+<li><p>Dorsolateral prefrontal cortex stimulation reduces cravings</p></li>
+<li><p>May strengthen top-down control over limbic reward circuits</p></li>
+<li><p>Preliminary evidence for reduced consumption in alcohol and tobacco users</p></li>
+<li><p>Combines effectively with cognitive behavioral therapy</p></li>
+</ul>
+</section>
 </section>
 <section id="computational-models">
 <h2>6.5 Computational Models<a class="headerlink" href="#computational-models" title="Link to this heading">#</a></h2>
+<p>Computational models provide a bridge between neuroscience and AI, allowing insights from plasticity and neurostimulation to inform machine learning approaches and vice versa.</p>
+<section id="reinforcement-learning-and-dopamine">
+<h3>Reinforcement Learning and Dopamine<a class="headerlink" href="#reinforcement-learning-and-dopamine" title="Link to this heading">#</a></h3>
+<p>The striking correspondence between dopamine signals and temporal difference errors in reinforcement learning represents one of the most successful intersections of neuroscience and AI:</p>
+<p><strong>Actor-Critic Architecture:</strong></p>
 <ul class="simple">
-<li><p>Reinforcement learning and dopamine</p></li>
-<li><p>Attention gating mechanisms</p></li>
-<li><p>Modeling stimulation effects</p></li>
-<li><p>Neural network plasticity rules</p></li>
+<li><p>Parallels basal ganglia organization</p></li>
+<li><p>Critic (ventral striatum): Learns state values and computes prediction errors</p></li>
+<li><p>Actor (dorsal striatum): Selects actions based on learned policy</p></li>
+<li><p>Dopamine signals function as the TD error that drives learning in both components</p></li>
+</ul>
+<p><strong>Temporal Difference Learning:</strong></p>
+<ul class="simple">
+<li><p>TD error: δ = r + γV(s’) - V(s)</p></li>
+<li><p>Closely matches the pattern of phasic dopamine firing</p></li>
+<li><p>Explains shift from reward to predictive cue with learning</p></li>
+<li><p>Accounts for dopamine suppression when expected rewards are omitted</p></li>
+</ul>
+<p><strong>Computational Implementation:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">dopamine_based_rl</span><span class="p">(</span><span class="n">n_states</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_trials</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">discount_factor</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulate dopamine-like reward prediction error in reinforcement learning&quot;&quot;&quot;</span>
+    <span class="c1"># Environment: simple chain with rewards at the end</span>
+    <span class="n">reward</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_states</span><span class="p">)</span>
+    <span class="n">reward</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># Reward at the end state</span>
+    
+    <span class="c1"># Initialize value function (prediction of future reward)</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_states</span><span class="p">)</span>
+    
+    <span class="c1"># Storage for plotting</span>
+    <span class="n">values_over_time</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">prediction_errors</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1"># Learning loop</span>
+    <span class="k">for</span> <span class="n">trial</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_trials</span><span class="p">):</span>
+        <span class="c1"># Start at state 0</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">values_this_trial</span> <span class="o">=</span> <span class="p">[</span><span class="n">V</span><span class="o">.</span><span class="n">copy</span><span class="p">()]</span>
+        <span class="n">trial_prediction_errors</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="c1"># Move through the chain</span>
+        <span class="k">while</span> <span class="n">state</span> <span class="o">&lt;</span> <span class="n">n_states</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="c1"># Move to next state</span>
+            <span class="n">next_state</span> <span class="o">=</span> <span class="n">state</span> <span class="o">+</span> <span class="mi">1</span>
+            
+            <span class="c1"># Get reward</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">reward</span><span class="p">[</span><span class="n">next_state</span><span class="p">]</span>
+            
+            <span class="c1"># Compute prediction error (dopamine-like signal)</span>
+            <span class="n">prediction_error</span> <span class="o">=</span> <span class="n">r</span> <span class="o">+</span> <span class="n">discount_factor</span> <span class="o">*</span> <span class="n">V</span><span class="p">[</span><span class="n">next_state</span><span class="p">]</span> <span class="o">-</span> <span class="n">V</span><span class="p">[</span><span class="n">state</span><span class="p">]</span>
+            <span class="n">trial_prediction_errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prediction_error</span><span class="p">)</span>
+            
+            <span class="c1"># Update value function</span>
+            <span class="n">V</span><span class="p">[</span><span class="n">state</span><span class="p">]</span> <span class="o">+=</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">prediction_error</span>
+            
+            <span class="c1"># Store values for plotting</span>
+            <span class="n">values_this_trial</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">V</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+            
+            <span class="c1"># Move to next state</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="n">next_state</span>
+        
+        <span class="n">values_over_time</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">values_this_trial</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">prediction_errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">trial_prediction_errors</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">V</span><span class="p">,</span> <span class="n">values_over_time</span><span class="p">,</span> <span class="n">prediction_errors</span>
+</pre></div>
+</div>
+<p><strong>Three-Factor Learning Rules:</strong></p>
+<ul class="simple">
+<li><p>Extends Hebbian plasticity with dopaminergic modulation</p></li>
+<li><p>Weight change: Δw = η · pre · post · dopamine</p></li>
+<li><p>Eligibility traces: Synaptic “tags” allow delayed reward to affect recent synaptic activity</p></li>
+<li><p>Bridges reinforcement learning and neurobiological plasticity</p></li>
 </ul>
 </section>
-<section id="code-lab">
-<h2>6.6 Code Lab<a class="headerlink" href="#code-lab" title="Link to this heading">#</a></h2>
+<section id="neural-network-plasticity-rules">
+<h3>Neural Network Plasticity Rules<a class="headerlink" href="#neural-network-plasticity-rules" title="Link to this heading">#</a></h3>
+<p>Biologically-inspired learning rules offer alternatives to backpropagation that may be more neurally plausible:</p>
+<p><strong>STDP Implementation:</strong></p>
 <ul class="simple">
-<li><p>Simulating tDCS effects on neural activity</p></li>
-<li><p>Implementing neuromodulatory learning rules</p></li>
-<li><p>Modeling dopamine-based reinforcement learning</p></li>
+<li><p>Local learning rule using only information available at the synapse</p></li>
+<li><p>Weight update based on spike timing without global error signals</p></li>
+<li><p>Can extract statistical regularities from input patterns</p></li>
+<li><p>Used in neuromorphic computing systems like SpiNNaker and BrainScaleS</p></li>
 </ul>
+<p><strong>Homeostatic Regulation:</strong></p>
+<ul class="simple">
+<li><p>Synaptic scaling in artificial networks:</p>
+<ul>
+<li><p>Multiplicative scaling: w_i → w_i * (target_activity / actual_activity)</p></li>
+<li><p>Preserves relative synaptic weights while regulating overall activity</p></li>
+</ul>
+</li>
+<li><p>Intrinsic plasticity: Adaptive thresholds that maintain target firing rates</p></li>
+<li><p>Crucial for stable learning in recurrent networks and systems trained on streaming data</p></li>
+</ul>
+<p><strong>Implementation Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">stdp_update</span><span class="p">(</span><span class="n">pre_times</span><span class="p">,</span> <span class="n">post_times</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">A_plus</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">A_minus</span><span class="o">=</span><span class="mf">0.0025</span><span class="p">,</span> <span class="n">tau</span><span class="o">=</span><span class="mf">20.0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Update synaptic weights according to STDP rule</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    - pre_times: spike times of presynaptic neurons</span>
+<span class="sd">    - post_times: spike times of postsynaptic neurons</span>
+<span class="sd">    - weights: current synaptic weights</span>
+<span class="sd">    - A_plus: LTP learning rate</span>
+<span class="sd">    - A_minus: LTD learning rate</span>
+<span class="sd">    - tau: time constant of STDP window</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    - updated weights</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">new_weights</span> <span class="o">=</span> <span class="n">weights</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    
+    <span class="c1"># For each synapse (pre-post pair)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">pre_spikes</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">pre_times</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">post_spikes</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">post_times</span><span class="p">):</span>
+            <span class="c1"># For each pair of pre and post spikes</span>
+            <span class="k">for</span> <span class="n">t_pre</span> <span class="ow">in</span> <span class="n">pre_spikes</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">t_post</span> <span class="ow">in</span> <span class="n">post_spikes</span><span class="p">:</span>
+                    <span class="c1"># Compute time difference</span>
+                    <span class="n">delta_t</span> <span class="o">=</span> <span class="n">t_post</span> <span class="o">-</span> <span class="n">t_pre</span>
+                    
+                    <span class="c1"># Apply STDP rule</span>
+                    <span class="k">if</span> <span class="n">delta_t</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># Post after pre -&gt; LTP</span>
+                        <span class="n">dw</span> <span class="o">=</span> <span class="n">A_plus</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">delta_t</span> <span class="o">/</span> <span class="n">tau</span><span class="p">)</span>
+                        <span class="n">new_weights</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dw</span>
+                    <span class="k">else</span><span class="p">:</span>  <span class="c1"># Pre after post -&gt; LTD</span>
+                        <span class="n">dw</span> <span class="o">=</span> <span class="n">A_minus</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">delta_t</span> <span class="o">/</span> <span class="n">tau</span><span class="p">)</span>
+                        <span class="n">new_weights</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">-=</span> <span class="n">dw</span>
+    
+    <span class="c1"># Apply weight constraints (optional)</span>
+    <span class="n">new_weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">new_weights</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">new_weights</span>
+</pre></div>
+</div>
+</section>
+<section id="meta-learning-in-ai">
+<h3>Meta-Learning in AI<a class="headerlink" href="#meta-learning-in-ai" title="Link to this heading">#</a></h3>
+<p>Paralleling neuromodulatory systems, meta-learning approaches adjust how networks learn:</p>
+<p><strong>Learning Rate Modulation:</strong></p>
+<ul class="simple">
+<li><p>Dynamic adjustment of learning rates analogous to neuromodulation</p></li>
+<li><p>Cyclical learning rate schedules inspired by oscillatory brain dynamics</p></li>
+<li><p>Adaptive optimizers (Adam, RMSProp) as artificial meta-plasticity systems</p></li>
+</ul>
+<p><strong>Implementation Example:</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.optim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">optim</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">train_with_lr_schedule</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">lr_schedule</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Train a model with a specific learning rate schedule</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    model: PyTorch neural network</span>
+<span class="sd">    train_loader: DataLoader with training data</span>
+<span class="sd">    criterion: Loss function</span>
+<span class="sd">    epochs: Number of training epochs</span>
+<span class="sd">    lr_schedule: Function that takes epoch number and returns learning rate</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    losses: List of training losses</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">losses</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">learning_rates</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+        <span class="c1"># Get learning rate for this epoch (neuromodulation-like)</span>
+        <span class="n">lr</span> <span class="o">=</span> <span class="n">lr_schedule</span><span class="p">(</span><span class="n">epoch</span><span class="p">)</span>
+        <span class="n">learning_rates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lr</span><span class="p">)</span>
+        
+        <span class="c1"># Create optimizer with current learning rate</span>
+        <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">)</span>
+        
+        <span class="n">running_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="k">for</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">targets</span> <span class="ow">in</span> <span class="n">train_loader</span><span class="p">:</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
+            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+            <span class="n">running_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            
+        <span class="n">epoch_loss</span> <span class="o">=</span> <span class="n">running_loss</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">train_loader</span><span class="p">)</span>
+        <span class="n">losses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">epoch_loss</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">losses</span><span class="p">,</span> <span class="n">learning_rates</span>
+
+<span class="c1"># Different learning rate schedules (analogous to different neuromodulation patterns)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">constant_lr</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">lr</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">decaying_lr</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">initial_lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">decay</span><span class="o">=</span><span class="mf">0.9</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">initial_lr</span> <span class="o">*</span> <span class="p">(</span><span class="n">decay</span> <span class="o">**</span> <span class="n">epoch</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">cyclical_lr</span><span class="p">(</span><span class="n">epoch</span><span class="p">,</span> <span class="n">min_lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">max_lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">cycle_length</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">min_lr</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">max_lr</span> <span class="o">-</span> <span class="n">min_lr</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">epoch</span> <span class="o">/</span> <span class="n">cycle_length</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><strong>Attention Mechanisms:</strong></p>
+<ul class="simple">
+<li><p>Self-attention in transformers as analogous to cholinergic modulation</p></li>
+<li><p>Selective enhancement of relevant inputs while suppressing distractors</p></li>
+<li><p>Parallels acetylcholine’s role in signal-to-noise enhancement</p></li>
+<li><p>Key-query-value operations conceptually similar to neuromodulatory gating</p></li>
+</ul>
+</section>
+<section id="stimulation-effects-on-neural-networks">
+<h3>Stimulation Effects on Neural Networks<a class="headerlink" href="#stimulation-effects-on-neural-networks" title="Link to this heading">#</a></h3>
+<p>Models of brain stimulation can inform novel approaches to AI optimization:</p>
+<p><strong>Simulating tDCS in Neural Networks:</strong></p>
+<ul class="simple">
+<li><p>Modeled as shifts in neuronal excitability or response bias</p></li>
+<li><p>Implementation example:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">tDCSNeuralNetwork</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">tDCSNeuralNetwork</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">relu</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+        
+        <span class="c1"># tDCS modulation parameters</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">anodal_regions</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Neurons with increased excitability</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cathodal_regions</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Neurons with decreased excitability</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modulation_strength</span> <span class="o">=</span> <span class="mf">0.2</span>
+        
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_stimulation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">anodal_mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cathodal_mask</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">strength</span><span class="o">=</span><span class="mf">0.2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Set which neurons receive stimulation</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">anodal_regions</span> <span class="o">=</span> <span class="n">anodal_mask</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cathodal_regions</span> <span class="o">=</span> <span class="n">cathodal_mask</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modulation_strength</span> <span class="o">=</span> <span class="n">strength</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="c1"># First layer</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        
+        <span class="c1"># Apply tDCS effects to hidden layer activations (modulating excitability)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">anodal_regions</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Increase activity in stimulated regions</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">mask</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">anodal_regions</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">modulation_strength</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">mask</span>
+            
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">cathodal_regions</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Decrease activity in inhibited regions</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            <span class="n">mask</span><span class="p">[:,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cathodal_regions</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">modulation_strength</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">mask</span>
+        
+        <span class="c1"># Continue forward pass</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p><strong>Oscillatory Entrainment:</strong></p>
+<ul class="simple">
+<li><p>tACS-inspired approaches add oscillatory components to network activation</p></li>
+<li><p>Phase alignment between internal dynamics and external oscillations</p></li>
+<li><p>Potential for enhanced information routing in complex networks</p></li>
+</ul>
+<p><strong>Network Connectivity Modulation:</strong></p>
+<ul class="simple">
+<li><p>Graph theoretical approaches to identify optimal stimulation targets</p></li>
+<li><p>Enhanced activation of hub nodes for network-wide effects</p></li>
+<li><p>Personalized stimulation based on individual network architecture</p></li>
+</ul>
+</section>
+<section id="fine-tuning-ai-models">
+<h3>Fine-Tuning AI Models<a class="headerlink" href="#fine-tuning-ai-models" title="Link to this heading">#</a></h3>
+<p>Fine-tuning pre-trained AI models parallels how brain stimulation enhances learning in existing neural circuits:</p>
+<p><strong>Transfer Learning Parallels:</strong></p>
+<ul class="simple">
+<li><p>Pre-trained models as analogous to developed brain circuitry</p></li>
+<li><p>Fine-tuning as selective enhancement of plasticity in specific circuits</p></li>
+<li><p>Both approaches more efficient than training/learning from scratch</p></li>
+</ul>
+<p><strong>Adapter Modules:</strong></p>
+<ul class="simple">
+<li><p>Small, trainable components added to pre-trained models</p></li>
+<li><p>Conceptually similar to targeted plasticity in specific brain pathways</p></li>
+<li><p>Efficiently adapt existing knowledge to new tasks</p></li>
+</ul>
+<p><strong>Low-Rank Adaptation (LoRA):</strong></p>
+<ul class="simple">
+<li><p>Minimal parameter updates through low-rank decomposition of weight changes</p></li>
+<li><p>Analogous to minimal interventions of neurostimulation</p></li>
+<li><p>Preserves core knowledge while enabling task-specific adaptation</p></li>
+</ul>
+</section>
+</section>
+<section id="code-lab-neurostimulation-and-learning-simulations">
+<h2>6.6 Code Lab: Neurostimulation and Learning Simulations<a class="headerlink" href="#code-lab-neurostimulation-and-learning-simulations" title="Link to this heading">#</a></h2>
+<p>We’ve incorporated several code examples throughout this chapter to illustrate key concepts. Here, we’ll pull these together into a complete simulation framework for exploring how neurostimulation might influence learning in neural systems.</p>
+<section id="simulating-tdcs-effects-on-learning">
+<h3>Simulating tDCS Effects on Learning<a class="headerlink" href="#simulating-tdcs-effects-on-learning" title="Link to this heading">#</a></h3>
+<p>This simulation demonstrates how tDCS-like stimulation might affect learning in a neural network:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.optim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">optim</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">TensorDataset</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">simulate_tdcs_learning</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulate how tDCS might affect the learning of a classification task&quot;&quot;&quot;</span>
+    <span class="c1"># Generate data for a classification task</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    
+    <span class="c1"># Create two-class classification problem</span>
+    <span class="n">n_samples</span> <span class="o">=</span> <span class="mi">500</span>
+    <span class="n">n_features</span> <span class="o">=</span> <span class="mi">20</span>
+    
+    <span class="n">X</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">n_features</span><span class="p">)</span>
+    <span class="c1"># Task depends heavily on specific features (e.g., features 5-10)</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_features</span><span class="p">)</span>
+    <span class="n">w</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># These features are important</span>
+    
+    <span class="c1"># Generate labels</span>
+    <span class="n">logits</span> <span class="o">=</span> <span class="n">X</span> <span class="o">@</span> <span class="n">w</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">logits</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+    
+    <span class="c1"># Split data</span>
+    <span class="n">train_X</span><span class="p">,</span> <span class="n">train_y</span> <span class="o">=</span> <span class="n">X</span><span class="p">[:</span><span class="mi">400</span><span class="p">],</span> <span class="n">y</span><span class="p">[:</span><span class="mi">400</span><span class="p">]</span>
+    <span class="n">test_X</span><span class="p">,</span> <span class="n">test_y</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="mi">400</span><span class="p">:],</span> <span class="n">y</span><span class="p">[</span><span class="mi">400</span><span class="p">:]</span>
+    
+    <span class="n">train_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">TensorDataset</span><span class="p">(</span><span class="n">train_X</span><span class="p">,</span> <span class="n">train_y</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span> 
+                              <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">test_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">TensorDataset</span><span class="p">(</span><span class="n">test_X</span><span class="p">,</span> <span class="n">test_y</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">)),</span> 
+                             <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+    <span class="c1"># Create two identical models</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">model_baseline</span> <span class="o">=</span> <span class="n">tDCSNeuralNetwork</span><span class="p">(</span><span class="n">n_features</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">model_tdcs</span> <span class="o">=</span> <span class="n">tDCSNeuralNetwork</span><span class="p">(</span><span class="n">n_features</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="c1"># Stimulate neurons that process the relevant features (5-10)</span>
+    <span class="c1"># In a real brain, we wouldn&#39;t know which neurons are important,</span>
+    <span class="c1"># but this simplification helps illustrate the concept</span>
+    <span class="n">model_tdcs</span><span class="o">.</span><span class="n">set_stimulation</span><span class="p">(</span><span class="n">anodal_mask</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">)),</span> <span class="n">strength</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    
+    <span class="c1"># Training setup</span>
+    <span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BCEWithLogitsLoss</span><span class="p">()</span>
+    <span class="n">optimizer_baseline</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model_baseline</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">optimizer_tdcs</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model_tdcs</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+    
+    <span class="c1"># Training loop</span>
+    <span class="n">epochs</span> <span class="o">=</span> <span class="mi">30</span>
+    <span class="n">baseline_train_acc</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">tdcs_train_acc</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">baseline_test_acc</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">tdcs_test_acc</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+        <span class="c1"># Train baseline model</span>
+        <span class="n">model_baseline</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+        <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">targets</span> <span class="ow">in</span> <span class="n">train_loader</span><span class="p">:</span>
+            <span class="n">optimizer_baseline</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">outputs</span> <span class="o">=</span> <span class="n">model_baseline</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
+            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+            <span class="n">optimizer_baseline</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+            
+            <span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">outputs</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+            <span class="n">correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">pred</span> <span class="o">==</span> <span class="n">targets</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">targets</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        
+        <span class="n">baseline_train_acc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">correct</span> <span class="o">/</span> <span class="n">total</span><span class="p">)</span>
+        
+        <span class="c1"># Train tDCS model</span>
+        <span class="n">model_tdcs</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+        <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">targets</span> <span class="ow">in</span> <span class="n">train_loader</span><span class="p">:</span>
+            <span class="n">optimizer_tdcs</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">outputs</span> <span class="o">=</span> <span class="n">model_tdcs</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
+            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+            <span class="n">optimizer_tdcs</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+            
+            <span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">outputs</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+            <span class="n">correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">pred</span> <span class="o">==</span> <span class="n">targets</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+            <span class="n">total</span> <span class="o">+=</span> <span class="n">targets</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        
+        <span class="n">tdcs_train_acc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">correct</span> <span class="o">/</span> <span class="n">total</span><span class="p">)</span>
+        
+        <span class="c1"># Evaluate on test set</span>
+        <span class="n">model_baseline</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+        <span class="n">model_tdcs</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+        <span class="n">baseline_correct</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">tdcs_correct</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">targets</span> <span class="ow">in</span> <span class="n">test_loader</span><span class="p">:</span>
+                <span class="c1"># Baseline model</span>
+                <span class="n">outputs</span> <span class="o">=</span> <span class="n">model_baseline</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+                <span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">outputs</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+                <span class="n">baseline_correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">pred</span> <span class="o">==</span> <span class="n">targets</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+                
+                <span class="c1"># tDCS model</span>
+                <span class="n">outputs</span> <span class="o">=</span> <span class="n">model_tdcs</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+                <span class="n">pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">outputs</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+                <span class="n">tdcs_correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">pred</span> <span class="o">==</span> <span class="n">targets</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+                
+                <span class="n">total</span> <span class="o">+=</span> <span class="n">targets</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        
+        <span class="n">baseline_test_acc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">baseline_correct</span> <span class="o">/</span> <span class="n">total</span><span class="p">)</span>
+        <span class="n">tdcs_test_acc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tdcs_correct</span> <span class="o">/</span> <span class="n">total</span><span class="p">)</span>
+    
+    <span class="c1"># Plot results</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">baseline_train_acc</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Baseline&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tdcs_train_acc</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;With tDCS&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Training Accuracy&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">baseline_test_acc</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Baseline&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tdcs_test_acc</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;With tDCS&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Test Accuracy&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;Effect of Simulated tDCS on Learning Performance&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">1.05</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Final test accuracy (Baseline): </span><span class="si">{</span><span class="n">baseline_test_acc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Final test accuracy (With tDCS): </span><span class="si">{</span><span class="n">tdcs_test_acc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Improvement with tDCS: </span><span class="si">{</span><span class="p">(</span><span class="n">tdcs_test_acc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">baseline_test_acc</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This simulation demonstrates how tDCS-like stimulation of relevant neural populations can accelerate learning and improve performance, paralleling findings from neurostimulation research in humans.</p>
+</section>
+<section id="modeling-neuromodulatory-systems">
+<h3>Modeling Neuromodulatory Systems<a class="headerlink" href="#modeling-neuromodulatory-systems" title="Link to this heading">#</a></h3>
+<p>This example simulates how different neuromodulatory “states” (implemented as learning rate schedules) affect neural network training:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compare_neuromodulatory_states</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compare how different neuromodulatory states (learning rate schedules) affect learning&quot;&quot;&quot;</span>
+    <span class="c1"># Generate data</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">generate_toy_data</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">input_dim</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">noise</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+    <span class="n">train_data</span> <span class="o">=</span> <span class="n">TensorDataset</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+    <span class="n">train_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Create models with identical initialization</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">model1</span> <span class="o">=</span> <span class="n">SimpleNet</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># &quot;Baseline&quot; state</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">model2</span> <span class="o">=</span> <span class="n">SimpleNet</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># &quot;Dopaminergic&quot; state (high initial learning rate)</span>
+    <span class="n">torch</span><span class="o">.</span><span class="n">manual_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">model3</span> <span class="o">=</span> <span class="n">SimpleNet</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># &quot;Noradrenergic&quot; state (cyclical learning rate)</span>
+    
+    <span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+    <span class="n">epochs</span> <span class="o">=</span> <span class="mi">50</span>
+    
+    <span class="c1"># Train with different learning rate schedules (neuromodulatory states)</span>
+    <span class="n">losses1</span><span class="p">,</span> <span class="n">lrs1</span> <span class="o">=</span> <span class="n">train_with_lr_schedule</span><span class="p">(</span><span class="n">model1</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> 
+                                           <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">constant_lr</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">))</span>
+    <span class="n">losses2</span><span class="p">,</span> <span class="n">lrs2</span> <span class="o">=</span> <span class="n">train_with_lr_schedule</span><span class="p">(</span><span class="n">model2</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> 
+                                           <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">decaying_lr</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">initial_lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">decay</span><span class="o">=</span><span class="mf">0.9</span><span class="p">))</span>
+    <span class="n">losses3</span><span class="p">,</span> <span class="n">lrs3</span> <span class="o">=</span> <span class="n">train_with_lr_schedule</span><span class="p">(</span><span class="n">model3</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> 
+                                           <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">cyclical_lr</span><span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="n">min_lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span> <span class="n">max_lr</span><span class="o">=</span><span class="mf">0.1</span><span class="p">))</span>
+    
+    <span class="c1"># Plot results</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">losses1</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Baseline State&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">losses2</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Dopaminergic State&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">losses3</span><span class="p">,</span> <span class="s1">&#39;g-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Noradrenergic State&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Loss&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Learning Curves with Different Neuromodulatory States&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lrs1</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Baseline State&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lrs2</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Dopaminergic State&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lrs3</span><span class="p">,</span> <span class="s1">&#39;g-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Noradrenergic State&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Epoch&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Learning Rate&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Neuromodulatory State Dynamics&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This example illustrates how different neuromodulatory “states” can optimize learning for different situations - consistent learning for stable environments (baseline), rapid early learning for salient rewards (dopaminergic), or attention to both global patterns and local details (noradrenergic).</p>
+</section>
 </section>
 <section id="take-aways">
 <h2>6.7 Take-aways<a class="headerlink" href="#take-aways" title="Link to this heading">#</a></h2>
+<p>This chapter has explored the fundamental mechanisms of neural plasticity, the neuromodulatory systems that regulate them, and the neurostimulation techniques that can influence them. Key insights include:</p>
+<ol class="arabic simple">
+<li><p><strong>Neural plasticity operates on multiple timescales and through various mechanisms</strong></p>
 <ul class="simple">
-<li><p>Plasticity underlies learning and adaptation</p></li>
-<li><p>Neuromodulators regulate plasticity and computation</p></li>
-<li><p>Brain stimulation can enhance cognitive functions</p></li>
+<li><p>From rapid synaptic changes (LTP/LTD, STDP) to slower structural remodeling</p></li>
+<li><p>Both Hebbian and homeostatic processes are necessary for stable learning</p></li>
+<li><p>Different brain regions maintain different plasticity capacities throughout life</p></li>
 </ul>
+</li>
+<li><p><strong>Neuromodulatory systems act as the brain’s control panel for learning and adaptation</strong></p>
+<ul class="simple">
+<li><p>Dopamine signals reward prediction errors and drives reinforcement learning</p></li>
+<li><p>Acetylcholine enhances attention and regulates signal-to-noise ratio</p></li>
+<li><p>Norepinephrine modulates arousal and exploration-exploitation balance</p></li>
+<li><p>Serotonin influences mood, impulsivity, and temporal discounting</p></li>
+<li><p>These systems interact in complex ways to orchestrate adaptive behavior</p></li>
+</ul>
+</li>
+<li><p><strong>Neurostimulation techniques provide tools to modulate brain activity and plasticity</strong></p>
+<ul class="simple">
+<li><p>Non-invasive methods (tDCS, TMS) offer accessible approaches to influence cortical function</p></li>
+<li><p>Invasive techniques (DBS) provide more targeted modulation for clinical conditions</p></li>
+<li><p>Effects depend on stimulation parameters, brain state, and individual differences</p></li>
+<li><p>Most effective when combined with behavioral training or rehabilitation</p></li>
+</ul>
+</li>
+<li><p><strong>Computational models bridge neuroscience and AI</strong></p>
+<ul class="simple">
+<li><p>Reinforcement learning algorithms parallel dopaminergic learning systems</p></li>
+<li><p>Biologically-inspired plasticity rules offer alternatives to backpropagation</p></li>
+<li><p>Meta-learning and neuromodulation share conceptual frameworks</p></li>
+<li><p>Stimulation and fine-tuning use similar principles to enhance learning in existing networks</p></li>
+</ul>
+</li>
+<li><p><strong>Cognitive enhancement applications span multiple domains</strong></p>
+<ul class="simple">
+<li><p>Memory augmentation through targeted stimulation of memory circuits</p></li>
+<li><p>Attention modulation by enhancing relevant networks</p></li>
+<li><p>Motor learning facilitation through optimized plasticity in motor circuits</p></li>
+<li><p>Clinical applications for rehabilitation, treatment, and cognitive preservation</p></li>
+</ul>
+</li>
+</ol>
+<p>Understanding the interplay between plasticity mechanisms, neuromodulatory systems, and external stimulation not only advances our knowledge of the brain but also inspires new approaches to artificial intelligence. As these fields continue to converge, we can expect increasingly sophisticated models of learning and adaptation that draw from the remarkable flexibility of biological neural systems.</p>
 </section>
 <section id="further-reading-media">
 <h2>6.8 Further Reading &amp; Media<a class="headerlink" href="#further-reading-media" title="Link to this heading">#</a></h2>
+<section id="neural-plasticity">
+<h3>Neural Plasticity<a class="headerlink" href="#neural-plasticity" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Dayan &amp; Yu (2006) - “Phasic norepinephrine: A neural interrupt signal”</p></li>
-<li><p>Nitsche &amp; Paulus (2011) - “Transcranial direct current stimulation - update 2011”</p></li>
-<li><p>Marblestone et al. (2016) - “Toward an Integration of Deep Learning and Neuroscience”</p></li>
+<li><p>Citri, A., &amp; Malenka, R. C. (2008). “Synaptic plasticity: multiple forms, functions, and mechanisms.” <em>Neuropsychopharmacology</em>, 33(1), 18-41.</p></li>
+<li><p>Zenke, F., Agnes, E. J., &amp; Gerstner, W. (2015). “Diverse synaptic plasticity mechanisms orchestrated to form and retrieve memories in spiking neural networks.” <em>Nature Communications</em>, 6(1), 1-13.</p></li>
+<li><p>Turrigiano, G. (2012). “Homeostatic synaptic plasticity: local and global mechanisms for stabilizing neuronal function.” <em>Cold Spring Harbor Perspectives in Biology</em>, 4(1), a005736.</p></li>
 </ul>
+</section>
+<section id="id1">
+<h3>Neuromodulatory Systems<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Dayan, P., &amp; Yu, A. J. (2006). “Phasic norepinephrine: a neural interrupt signal for unexpected events.” <em>Network: Computation in Neural Systems</em>, 17(4), 335-350.</p></li>
+<li><p>Schultz, W. (2016). “Dopamine reward prediction error coding.” <em>Dialogues in Clinical Neuroscience</em>, 18(1), 23-32.</p></li>
+<li><p>Avery, M. C., &amp; Krichmar, J. L. (2017). “Neuromodulatory systems and their interactions: a review of models, theories, and experiments.” <em>Frontiers in Neural Circuits</em>, 11, 108.</p></li>
+</ul>
+</section>
+<section id="brain-stimulation">
+<h3>Brain Stimulation<a class="headerlink" href="#brain-stimulation" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Nitsche, M. A., &amp; Paulus, W. (2011). “Transcranial direct current stimulation–update 2011.” <em>Restorative Neurology and Neuroscience</em>, 29(6), 463-492.</p></li>
+<li><p>Polanía, R., Nitsche, M. A., &amp; Ruff, C. C. (2018). “Studying and modifying brain function with non-invasive brain stimulation.” <em>Nature Neuroscience</em>, 21(2), 174-187.</p></li>
+<li><p>Johnson, M. D., Lim, H. H., Netoff, T. I., Connolly, A. T., Johnson, N., Roy, A., … &amp; Vitek, J. L. (2013). “Neuromodulation for brain disorders: challenges and opportunities.” <em>IEEE Transactions on Biomedical Engineering</em>, 60(3), 610-624.</p></li>
+</ul>
+</section>
+<section id="computational-models-and-ai">
+<h3>Computational Models and AI<a class="headerlink" href="#computational-models-and-ai" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Marblestone, A. H., Wayne, G., &amp; Kording, K. P. (2016). “Toward an integration of deep learning and neuroscience.” <em>Frontiers in Computational Neuroscience</em>, 10, 94.</p></li>
+<li><p>Richards, B. A., Lillicrap, T. P., Beaudoin, P., Bengio, Y., Bogacz, R., Christensen, A., … &amp; Kording, K. P. (2019). “A deep learning framework for neuroscience.” <em>Nature Neuroscience</em>, 22(11), 1761-1770.</p></li>
+<li><p>Wang, J. X., Kurth-Nelson, Z., Kumaran, D., Tirumala, D., Soyer, H., Leibo, J. Z., … &amp; Botvinick, M. (2018). “Prefrontal cortex as a meta-reinforcement learning system.” <em>Nature Neuroscience</em>, 21(6), 860-868.</p></li>
+</ul>
+</section>
+<section id="videos-and-online-resources">
+<h3>Videos and Online Resources<a class="headerlink" href="#videos-and-online-resources" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>“Brain Hacking: Does tDCS make you smarter?” (Seeker YouTube channel)</p></li>
+<li><p>“The Plastic Brain” (BBC documentary on neuroplasticity)</p></li>
+<li><p>Two Minute Papers: “AI Learns to Learn (Meta-learning)”</p></li>
+<li><p>Neuromatch Academy - Computational Neuroscience course (online lectures on plasticity and learning)</p></li>
+<li><p>Huberman Lab Podcast - Episodes on neuroplasticity and neuromodulation</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -575,14 +1671,59 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-goals">6.0 Chapter Goals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-plasticity-mechanisms">6.1 Neural Plasticity Mechanisms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromodulatory-systems">6.2 Neuromodulatory Systems</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-stimulation-techniques">6.3 Brain Stimulation Techniques</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cognitive-enhancement-applications">6.4 Cognitive Enhancement Applications</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-models">6.5 Computational Models</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab">6.6 Code Lab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-plasticity-mechanisms">6.1 Neural Plasticity Mechanisms</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hebbian-learning-cells-that-fire-together-wire-together">Hebbian Learning: Cells That Fire Together, Wire Together</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#long-term-potentiation-ltp-and-depression-ltd">Long-Term Potentiation (LTP) and Depression (LTD)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#spike-timing-dependent-plasticity-stdp">Spike-Timing-Dependent Plasticity (STDP)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#homeostatic-plasticity">Homeostatic Plasticity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#structural-vs-functional-plasticity">Structural vs. Functional Plasticity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#critical-periods-and-adult-plasticity">Critical Periods and Adult Plasticity</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromodulatory-systems">6.2 Neuromodulatory Systems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dopamine-the-reward-signal">Dopamine: The Reward Signal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#acetylcholine-the-attention-modulator">Acetylcholine: The Attention Modulator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#norepinephrine-the-alertness-signal">Norepinephrine: The Alertness Signal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#serotonin-the-mood-regulator">Serotonin: The Mood Regulator</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactions-and-integration">Interactions and Integration</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-stimulation-techniques">6.3 Brain Stimulation Techniques</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transcranial-direct-current-stimulation-tdcs">Transcranial Direct Current Stimulation (tDCS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transcranial-magnetic-stimulation-tms">Transcranial Magnetic Stimulation (TMS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deep-brain-stimulation-dbs">Deep Brain Stimulation (DBS)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-neurostimulation-approaches">Other Neurostimulation Approaches</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cognitive-enhancement-applications">6.4 Cognitive Enhancement Applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-augmentation">Memory Augmentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention-modulation">Attention Modulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#motor-learning-facilitation">Motor Learning Facilitation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clinical-applications">Clinical Applications</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-models">6.5 Computational Models</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning-and-dopamine">Reinforcement Learning and Dopamine</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-network-plasticity-rules">Neural Network Plasticity Rules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-learning-in-ai">Meta-Learning in AI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stimulation-effects-on-neural-networks">Stimulation Effects on Neural Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning-ai-models">Fine-Tuning AI Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab-neurostimulation-and-learning-simulations">6.6 Code Lab: Neurostimulation and Learning Simulations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-tdcs-effects-on-learning">Simulating tDCS Effects on Learning</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modeling-neuromodulatory-systems">Modeling Neuromodulatory Systems</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">6.7 Take-aways</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">6.8 Further Reading &amp; Media</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">6.8 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-plasticity">Neural Plasticity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Neuromodulatory Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-stimulation">Brain Stimulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-models-and-ai">Computational Models and AI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#videos-and-online-resources">Videos and Online Resources</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -607,7 +1748,7 @@ By Richard Young
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>
