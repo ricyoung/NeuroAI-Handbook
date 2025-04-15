@@ -1027,7 +1027,479 @@ def simple_transfer_entropy_demo():
 simple_transfer_entropy_demo()
 ```
 
-## 7.7 Take-aways
+### Example 4: Information Theory in Reinforcement Learning
+
+Reinforcement learning and information theory are deeply connected in both neuroscience and artificial intelligence. Let's explore how information-theoretic concepts apply to reinforcement learning through a GridWorld example.
+
+```python
+def info_theory_rl_example():
+    """Demonstrate information-theoretic principles in reinforcement learning."""
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    from matplotlib.colors import ListedColormap
+    from matplotlib.patches import Rectangle
+    
+    # Define a simple grid world environment
+    class GridWorld:
+        def __init__(self, size=5, noise=0.1):
+            self.size = size
+            self.noise = noise  # Probability of random action
+            self.states = size * size
+            self.actions = 4  # Up, Right, Down, Left
+            self.goal = (size-1, size-1)
+            self.reset()
+            
+            # Define rewards: -0.1 for each step, +1 for goal, -1 for obstacles
+            self.rewards = np.ones((size, size)) * -0.1
+            self.rewards[self.goal] = 1.0
+            
+            # Add some obstacles
+            self.obstacles = [(1, 1), (2, 1), (3, 1), (1, 3), (3, 3)]
+            for obs in self.obstacles:
+                self.rewards[obs] = -1.0
+                
+        def reset(self):
+            self.pos = (0, 0)
+            return self.pos
+            
+        def step(self, action):
+            # With some probability, take a random action
+            if np.random.random() < self.noise:
+                action = np.random.randint(0, 4)
+                
+            # Move according to action: 0=up, 1=right, 2=down, 3=left
+            x, y = self.pos
+            if action == 0: y = max(0, y - 1)  # Up
+            elif action == 1: x = min(self.size - 1, x + 1)  # Right
+            elif action == 2: y = min(self.size - 1, y + 1)  # Down
+            elif action == 3: x = max(0, x - 1)  # Left
+            
+            # Check if this is an obstacle
+            if (x, y) in self.obstacles:
+                return self.pos, -1, False  # Can't move to obstacles
+            
+            self.pos = (x, y)
+            reward = self.rewards[self.pos]
+            done = (self.pos == self.goal)
+            
+            return self.pos, reward, done
+    
+    # Create a simple Q-learning agent
+    class QLearningAgent:
+        def __init__(self, states, actions, learning_rate=0.1, discount=0.99, epsilon=0.1):
+            self.Q = np.zeros((states, actions))
+            self.lr = learning_rate
+            self.gamma = discount
+            self.epsilon = epsilon
+            self.state_visits = np.zeros(states)
+            self.state_action_visits = np.zeros((states, actions))
+            
+        def get_state_idx(self, state, size):
+            """Convert (x,y) to state index."""
+            x, y = state
+            return y * size + x
+            
+        def get_action(self, state, size):
+            state_idx = self.get_state_idx(state, size)
+            self.state_visits[state_idx] += 1
+            
+            # Epsilon-greedy policy
+            if np.random.random() < self.epsilon:
+                return np.random.randint(0, 4)
+            else:
+                return np.argmax(self.Q[state_idx])
+            
+        def update(self, state, action, reward, next_state, done, size):
+            state_idx = self.get_state_idx(state, size)
+            next_state_idx = self.get_state_idx(next_state, size)
+            self.state_action_visits[state_idx, action] += 1
+            
+            # Q-learning update
+            if not done:
+                target = reward + self.gamma * np.max(self.Q[next_state_idx])
+            else:
+                target = reward
+                
+            self.Q[state_idx, action] += self.lr * (target - self.Q[state_idx, action])
+    
+    # Function to calculate the entropy of a policy
+    def calculate_policy_entropy(Q_values):
+        # Convert Q-values to policy probabilities using softmax
+        policy = np.zeros_like(Q_values)
+        for s in range(Q_values.shape[0]):
+            policy[s] = np.exp(Q_values[s] - np.max(Q_values[s]))
+            if np.sum(policy[s]) > 0:
+                policy[s] /= np.sum(policy[s])
+            else:
+                policy[s] = np.ones(Q_values.shape[1]) / Q_values.shape[1]
+                
+        # Calculate entropy for each state
+        entropies = np.zeros(Q_values.shape[0])
+        for s in range(Q_values.shape[0]):
+            p = policy[s]
+            entropies[s] = -np.sum(p * np.log2(p + 1e-10))
+            
+        return entropies, policy
+    
+    # Function to visualize the grid world, policy, and information measures
+    def visualize_grid_world(env, agent, episode):
+        fig = plt.figure(figsize=(15, 5))
+        
+        # Convert agent's Q-values to policy and calculate entropy
+        policy_entropies, policy = calculate_policy_entropy(agent.Q)
+        
+        # Get the best actions for each state
+        best_actions = np.argmax(agent.Q, axis=1)
+        
+        # Calculate information gain (approximation based on state visits)
+        prior = np.ones(env.size * env.size) / (env.size * env.size)  # Uniform prior
+        posterior = agent.state_visits / np.sum(agent.state_visits)
+        posterior[posterior == 0] = 1e-10  # Avoid log(0)
+        
+        information_gain = np.zeros(env.size * env.size)
+        for s in range(env.size * env.size):
+            if posterior[s] > 0:
+                information_gain[s] = np.log2(posterior[s] / prior[s])
+        
+        # Reshape for visualization
+        policy_entropy_grid = policy_entropies.reshape(env.size, env.size)
+        information_gain_grid = information_gain.reshape(env.size, env.size)
+        
+        # Create Grid World visualization
+        ax1 = fig.add_subplot(131)
+        ax1.set_title(f'Grid World (Episode {episode})')
+        
+        # Plot the grid
+        ax1.set_xlim(0, env.size)
+        ax1.set_ylim(0, env.size)
+        ax1.set_xticks(np.arange(0, env.size + 1, 1))
+        ax1.set_yticks(np.arange(0, env.size + 1, 1))
+        ax1.grid(True)
+        
+        # Plot goal and obstacles
+        goal_rect = Rectangle((env.goal[0], env.goal[1]), 1, 1, facecolor='green', alpha=0.5)
+        ax1.add_patch(goal_rect)
+        
+        for obs in env.obstacles:
+            obs_rect = Rectangle((obs[0], obs[1]), 1, 1, facecolor='red', alpha=0.5)
+            ax1.add_patch(obs_rect)
+        
+        # Plot current position
+        pos_rect = Rectangle((env.pos[0], env.pos[1]), 1, 1, facecolor='blue', alpha=0.3)
+        ax1.add_patch(pos_rect)
+        
+        # Plot policy arrows
+        for y in range(env.size):
+            for x in range(env.size):
+                state_idx = y * env.size + x
+                if (x, y) not in env.obstacles and (x, y) != env.goal:
+                    action = best_actions[state_idx]
+                    if action == 0:  # Up
+                        ax1.arrow(x + 0.5, y + 0.5, 0, -0.3, head_width=0.1, head_length=0.1, fc='k', ec='k')
+                    elif action == 1:  # Right
+                        ax1.arrow(x + 0.5, y + 0.5, 0.3, 0, head_width=0.1, head_length=0.1, fc='k', ec='k')
+                    elif action == 2:  # Down
+                        ax1.arrow(x + 0.5, y + 0.5, 0, 0.3, head_width=0.1, head_length=0.1, fc='k', ec='k')
+                    elif action == 3:  # Left
+                        ax1.arrow(x + 0.5, y + 0.5, -0.3, 0, head_width=0.1, head_length=0.1, fc='k', ec='k')
+        
+        ax1.set_aspect('equal')
+        ax1.invert_yaxis()  # To match the state indices
+        
+        # Plot policy entropy
+        ax2 = fig.add_subplot(132)
+        im2 = ax2.imshow(policy_entropy_grid, cmap='viridis')
+        ax2.set_title('Policy Entropy (bits)')
+        plt.colorbar(im2, ax=ax2)
+        
+        # Add obstacles and goal markers
+        for obs in env.obstacles:
+            obs_rect = Rectangle((obs[0] - 0.5, obs[1] - 0.5), 1, 1, 
+                                 edgecolor='red', facecolor='none', lw=2)
+            ax2.add_patch(obs_rect)
+        
+        goal_rect = Rectangle((env.goal[0] - 0.5, env.goal[1] - 0.5), 1, 1, 
+                              edgecolor='green', facecolor='none', lw=2)
+        ax2.add_patch(goal_rect)
+        
+        # Plot information gain
+        ax3 = fig.add_subplot(133)
+        im3 = ax3.imshow(information_gain_grid, cmap='plasma')
+        ax3.set_title('Information Gain (bits)')
+        plt.colorbar(im3, ax=ax3)
+        
+        # Add obstacles and goal markers
+        for obs in env.obstacles:
+            obs_rect = Rectangle((obs[0] - 0.5, obs[1] - 0.5), 1, 1, 
+                                 edgecolor='red', facecolor='none', lw=2)
+            ax3.add_patch(obs_rect)
+        
+        goal_rect = Rectangle((env.goal[0] - 0.5, env.goal[1] - 0.5), 1, 1, 
+                              edgecolor='green', facecolor='none', lw=2)
+        ax3.add_patch(goal_rect)
+        
+        plt.tight_layout()
+        plt.show()
+    
+    # Train the agent and visualize
+    np.random.seed(42)
+    env = GridWorld(size=5, noise=0.1)
+    agent = QLearningAgent(env.states, env.actions, learning_rate=0.1, discount=0.99, epsilon=0.1)
+    
+    # Training parameters
+    n_episodes = 500
+    max_steps = 100
+    
+    # Track rewards for plotting
+    episode_rewards = []
+    policy_entropies = []
+    
+    # Train the agent
+    for episode in range(1, n_episodes + 1):
+        state = env.reset()
+        total_reward = 0
+        done = False
+        steps = 0
+        
+        while not done and steps < max_steps:
+            action = agent.get_action(state, env.size)
+            next_state, reward, done = env.step(action)
+            agent.update(state, action, reward, next_state, done, env.size)
+            state = next_state
+            total_reward += reward
+            steps += 1
+        
+        episode_rewards.append(total_reward)
+        
+        # Calculate average policy entropy for this episode
+        entropy, _ = calculate_policy_entropy(agent.Q)
+        policy_entropies.append(np.mean(entropy))
+        
+        # Visualize at specific episodes
+        if episode in [1, 100, 500]:
+            print(f"Episode {episode}, Total Reward: {total_reward:.2f}, Average Policy Entropy: {np.mean(entropy):.4f} bits")
+            visualize_grid_world(env, agent, episode)
+    
+    # Plot learning curve and policy entropy over training
+    plt.figure(figsize=(12, 5))
+    
+    plt.subplot(1, 2, 1)
+    plt.plot(episode_rewards)
+    plt.xlabel('Episode')
+    plt.ylabel('Total Reward')
+    plt.title('Learning Curve')
+    plt.grid(True, alpha=0.3)
+    
+    plt.subplot(1, 2, 2)
+    plt.plot(policy_entropies)
+    plt.xlabel('Episode')
+    plt.ylabel('Average Policy Entropy (bits)')
+    plt.title('Policy Entropy During Learning')
+    plt.grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    plt.show()
+    
+    print("\nInformation-theoretic interpretation of RL:")
+    print("1. Policy entropy decreases as the agent becomes more certain about optimal actions")
+    print("2. Information gain is highest in states that were unexpectedly valuable")
+    print("3. The agent maximizes reward while minimizing surprise (free energy principle)")
+    print("4. The exploration-exploitation trade-off can be formalized as an information-gathering process")
+
+info_theory_rl_example()
+```
+
+## 7.7 Information Theory in Modern Deep Learning
+
+Information theory has become increasingly important in understanding and improving modern deep learning systems. In this section, we'll explore how information-theoretic principles apply to neural networks.
+
+### Information Bottleneck in Deep Neural Networks
+
+Tishby and colleagues proposed that deep neural networks can be understood through the information bottleneck principle, where each layer progressively compresses information about the input while preserving information relevant to the output. This perspective views deep learning as an iterative optimization of the information bottleneck trade-off.
+
+The learning dynamics in DNNs typically show two phases:
+1. **Fitting phase**: The network increases I(T;Y) - mutual information between representations and labels
+2. **Compression phase**: The network decreases I(T;X) - mutual information between representations and inputs
+
+```python
+def visualize_information_plane():
+    """Conceptual visualization of the information plane dynamics of deep learning."""
+    # This is a conceptual visualization of Information Bottleneck trajectories
+    
+    # Create a meshgrid for the information plane
+    I_TX = np.linspace(0, 10, 100)
+    I_TY = np.linspace(0, 3, 100)
+    X, Y = np.meshgrid(I_TX, I_TY)
+    
+    # Define a hypothetical "information bottleneck curve"
+    # This is just for visualization - real curves would come from actual DNN training
+    max_I_TY = 3 * (1 - np.exp(-0.3 * X))
+    Z = np.maximum(0, max_I_TY - Y)
+    
+    # Define some trajectories for different layers
+    layer1_tx = np.linspace(2, 5, 100)
+    layer1_ty = 2.9 * (1 - np.exp(-0.5 * layer1_tx))
+    
+    layer2_tx = np.linspace(1.5, 4, 100)
+    layer2_ty = 2.8 * (1 - np.exp(-0.6 * layer2_tx))
+    
+    layer3_tx = np.linspace(1, 3, 100)
+    layer3_ty = 2.7 * (1 - np.exp(-0.7 * layer3_tx))
+    
+    # Create figure
+    plt.figure(figsize=(10, 8))
+    
+    # Plot the information plane with contours
+    contour = plt.contourf(X, Y, Z, 20, cmap='viridis', alpha=0.6)
+    plt.colorbar(label='Distance from optimal IB curve')
+    
+    # Mark the optimal IB curve
+    optimal_tx = np.linspace(0, 10, 100)
+    optimal_ty = 3 * (1 - np.exp(-0.3 * optimal_tx))
+    plt.plot(optimal_tx, optimal_ty, 'r--', linewidth=2, label='Optimal IB curve')
+    
+    # Plot layer trajectories during training
+    plt.plot(layer1_tx, layer1_ty, 'o-', markersize=3, label='Layer 1')
+    plt.plot(layer2_tx, layer2_ty, 'o-', markersize=3, label='Layer 2')
+    plt.plot(layer3_tx, layer3_ty, 'o-', markersize=3, label='Layer 3')
+    
+    # Add arrows to indicate direction
+    plt.arrow(layer1_tx[70], layer1_ty[70], -0.2, 0, head_width=0.1, head_length=0.2, fc='k', ec='k')
+    plt.arrow(layer2_tx[70], layer2_ty[70], -0.2, 0, head_width=0.1, head_length=0.2, fc='k', ec='k')
+    plt.arrow(layer3_tx[70], layer3_ty[70], -0.2, 0, head_width=0.1, head_length=0.2, fc='k', ec='k')
+    
+    # Add labels for the phases
+    plt.text(6, 1, 'Fitting Phase', fontsize=12)
+    plt.text(2.5, 2.5, 'Compression Phase', fontsize=12)
+    
+    plt.xlabel('I(T;X) - Information about input')
+    plt.ylabel('I(T;Y) - Information about output')
+    plt.title('Information Plane Dynamics in Deep Neural Networks')
+    plt.legend()
+    plt.grid(True, alpha=0.3)
+    plt.show()
+
+visualize_information_plane()
+```
+
+### Variational Information Bottleneck
+
+The variational information bottleneck (VIB) provides a practical way to implement the information bottleneck principle in neural networks:
+
+$$\mathcal{L}_{VIB} = -I(T;Y) + \beta I(T;X)$$
+
+where β controls the trade-off. This can be approximated using variational methods, forming the basis for many regularization techniques.
+
+### Information-Theoretic Generalization Bounds
+
+Information theory provides bounds on generalization error. The generalization error can be bounded by:
+
+$$\mathbb{E}[gen(w)] \leq \sqrt{\frac{I(W;S)}{2m}}$$
+
+where $I(W;S)$ is the mutual information between weights and training data, and $m$ is the sample size. This bound suggests that limiting information between weights and training data improves generalization.
+
+### Connections to Computational Neuroscience
+
+Recent work has shown remarkable parallels between information processing in deep neural networks and the brain:
+
+1. **Efficient Coding**: Both systems optimize information transfer under constraints
+2. **Hierarchical Processing**: Progressive abstraction and compression through layers
+3. **Phase Transitions**: Both exhibit rich dynamics in information flow during learning
+
+```python
+def plot_info_theory_connections():
+    """Visualize connections between information theory, neuroscience, and deep learning."""
+    plt.figure(figsize=(10, 7))
+    
+    # Create a 3x3 grid to represent concepts
+    categories = ['Information Theory', 'Neuroscience', 'Deep Learning']
+    concepts = {
+        'Information Theory': ['Entropy', 'KL Divergence', 'Mutual Information'],
+        'Neuroscience': ['Efficient Coding', 'Sparse Coding', 'Predictive Coding'],
+        'Deep Learning': ['Regularization', 'Compression', 'Generalization']
+    }
+    
+    # Create a grid layout
+    gs = plt.GridSpec(3, 3, width_ratios=[1, 1, 1], height_ratios=[1, 3, 1])
+    
+    # Plot the titles
+    for i, category in enumerate(categories):
+        ax = plt.subplot(gs[0, i])
+        ax.text(0.5, 0.5, category, ha='center', va='center', fontsize=12, fontweight='bold')
+        ax.axis('off')
+    
+    # Main concept area
+    ax_main = plt.subplot(gs[1, :])
+    
+    # Create a circular layout for concepts
+    import networkx as nx
+    G = nx.Graph()
+    
+    # Add nodes with positions on a circle
+    n_concepts = sum(len(v) for v in concepts.values())
+    radius = 1
+    angle_step = 2 * np.pi / n_concepts
+    
+    # Add all concept nodes
+    node_idx = 0
+    node_positions = {}
+    node_colors = []
+    
+    for i, category in enumerate(categories):
+        color = ['#3498db', '#2ecc71', '#e74c3c'][i]
+        for concept in concepts[category]:
+            angle = node_idx * angle_step
+            x = radius * np.cos(angle)
+            y = radius * np.sin(angle)
+            G.add_node(concept)
+            node_positions[concept] = (x, y)
+            node_colors.append(color)
+            node_idx += 1
+    
+    # Add carefully chosen edges to represent relationships
+    connections = [
+        ('Entropy', 'Efficient Coding'),
+        ('Entropy', 'Compression'),
+        ('KL Divergence', 'Sparse Coding'),
+        ('KL Divergence', 'Regularization'),
+        ('Mutual Information', 'Predictive Coding'),
+        ('Mutual Information', 'Generalization'),
+        ('Efficient Coding', 'Compression'),
+        ('Sparse Coding', 'Regularization'),
+        ('Predictive Coding', 'Generalization')
+    ]
+    
+    for source, target in connections:
+        G.add_edge(source, target)
+    
+    # Draw the graph
+    nx.draw(G, pos=node_positions, with_labels=True, node_color=node_colors, 
+            node_size=3000, font_size=10, font_weight='bold', 
+            edge_color='gray', width=1.5, alpha=0.8, ax=ax_main)
+    
+    # Footer text
+    ax_footer = plt.subplot(gs[2, :])
+    ax_footer.text(0.5, 0.5, "Information theory provides a common language linking neuroscience and deep learning",
+                  ha='center', va='center', fontsize=11, fontstyle='italic')
+    ax_footer.axis('off')
+    
+    plt.tight_layout()
+    plt.show()
+
+plot_info_theory_connections()
+```
+
+### Practical Applications in Deep Learning
+
+Information theory has informed several advancements in deep learning:
+
+1. **Regularization Techniques**: Information-theoretic regularizers like variational dropout and weight uncertainty
+2. **Architecture Design**: Information-theoretic principles guide the design of skip connections and attention mechanisms
+3. **Explainability**: Quantifying information flow helps understand "black box" deep networks
+4. **Optimization**: Information-geometric methods provide insights into learning dynamics
+
+## 7.8 Take-aways
 
 - Information theory provides a quantitative framework for understanding information processing in neural and artificial systems.
 - Entropy, mutual information, and KL divergence are fundamental measures for analyzing neural codes.
@@ -1036,26 +1508,51 @@ simple_transfer_entropy_demo()
 - The trade-off between compression and prediction in neural systems is formalized by information bottleneck theory, which has parallels in deep learning.
 - Neural variability and correlations critically affect the information content of population codes.
 - Information-theoretic measures can reveal the causal structure of neural networks and provide insights into integrated information processing.
+- Modern deep learning can be understood through information-theoretic principles, with layers performing progressive compression while preserving task-relevant information.
+- Both brains and artificial neural networks appear to optimize similar information-theoretic objectives under different constraints.
 
-## 7.8 Further Reading & Media
+## 7.9 Further Reading & Media
 
 ### Books
 - Cover, T. M., & Thomas, J. A. (2006). *Elements of Information Theory* (2nd ed.). Wiley-Interscience.
 - MacKay, D. J. C. (2003). *Information Theory, Inference, and Learning Algorithms*. Cambridge University Press.
 - Rieke, F., Warland, D., de Ruyter van Steveninck, R., & Bialek, W. (1997). *Spikes: Exploring the Neural Code*. MIT Press.
+- Stone, J. V. (2018). *Information Theory: A Tutorial Introduction*. Sebtel Press.
+- Poldrack, R. A. (2022). *The Physics of Cognition: Information Theoretic Foundations of Consciousness*. MIT Press.
 
 ### Articles
 - Shannon, C. E. (1948). "A Mathematical Theory of Communication," *Bell System Technical Journal*.
 - Fairhall, A. L., Lewen, G. D., Bialek, W., & de Ruyter van Steveninck, R. R. (2001). "Efficiency and ambiguity in an adaptive neural code," *Nature*.
 - Tishby, N., Pereira, F. C., & Bialek, W. (2000). "The information bottleneck method," *arXiv*.
 - Timme, N. M., & Lapish, C. (2018). "A Tutorial for Information Theory in Neuroscience," *eNeuro*.
+- Shwartz-Ziv, R., & Tishby, N. (2017). "Opening the black box of deep neural networks via information," *arXiv:1703.00810*.
+- Saxe, A. M., et al. (2019). "Information theory of deep learning," *Journal of Statistical Mechanics: Theory and Experiment*.
+- Alemi, A. A., et al. (2016). "Deep variational information bottleneck," *arXiv:1612.00410*.
+- Palmer, S. E., Marre, O., Berry, M. J., & Bialek, W. (2015). "Predictive information in a sensory population," *PNAS*.
+- Rubin, J., et al. (2022). "The Information Theory of Synaptic Plasticity," *Neuron*.
+- Pezzulo, G., et al. (2022). "Active inference: A neurally plausible computational theory of cognition," *Trends in Neurosciences*.
+
+### Review Articles Connecting Information Theory to Modern AI & Neuroscience
+- Neftci, E. O., & Averbeck, B. B. (2019). "Reinforcement learning in artificial and biological systems," *Nature Machine Intelligence*.
+- Zador, A. M. (2019). "A critique of pure learning and what artificial neural networks can learn from animal brains," *Nature Communications*.
+- Richards, B. A., et al. (2019). "A deep learning framework for neuroscience," *Nature Neuroscience*.
+- Friston, K. (2010). "The free-energy principle: a unified brain theory?" *Nature Reviews Neuroscience*.
+- Whittington, J. C. R., & Bogacz, R. (2022). "Theories of Error Back-Propagation in the Brain," *Trends in Cognitive Sciences*.
 
 ### Online Resources
 - "Information Theory, Pattern Recognition, and Neural Networks," David MacKay's Cambridge lectures (YouTube).
+- "Information Theory and Machine Learning," lectures by Naftali Tishby (YouTube).
+- "Neural Information Processing Systems (NeurIPS) tutorials on Information Theory and Deep Learning" (available online).
 - Information Theory and its Applications, Stanford online course materials by Tsachy Weissman.
 - "Neural Data Science," Coursera course by Associate Professor Konrad Kording.
+- "Neuromatch Academy: Computational Neuroscience," particularly the units on Information Theory and Reinforcement Learning.
 
 ### Software Tools
 - Information Dynamics Toolkit (IDTxl): Python library for information-theoretic analysis of neural data.
 - PyEntropy: Python toolkit for entropy and information estimation.
 - TRENTOOL: MATLAB toolbox for transfer entropy analysis.
+- dit: Python package for discrete information theory.
+- Infotopo: Python toolbox for topological information data analysis.
+- information-bottleneck: Python implementation of the Information Bottleneck method.
+- nninfo: Neural network information-theoretic measures.
+- CausalKinetiX: Causal inference tools using information-theoretic principles.
