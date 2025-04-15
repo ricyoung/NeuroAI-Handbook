@@ -1,11 +1,20 @@
-# Welcome to your Jupyter Book
+# The Neuroscience of AI
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+## Preface
+- Why this book / how to use it
+- Glossary & notation
 
-Check out the content pages bundled with this sample book to see more.
+This handbook bridges neuroscience and artificial intelligence, exploring how biological principles inspire and inform computational models. Each chapter combines theoretical foundations with practical Python implementations.
+
+The book is organized into five parts, progressing from foundational neuroscience concepts to cutting-edge AI applications:
+
+1. **Brains & Inspiration**: Fundamental neuroscience concepts relevant to AI
+2. **Brains Meet Math & Data**: Quantitative approaches and data analysis techniques
+3. **Learning Machines**: Classic and modern machine learning approaches
+4. **Frontier Models**: State-of-the-art AI architectures
+5. **Reflection & Futures**: Emerging trends and ethical considerations
+
+Each chapter includes code examples, diagrams, and hands-on exercises to reinforce concepts.
 
 ```{tableofcontents}
 ```
