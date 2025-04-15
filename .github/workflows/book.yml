@@ -1,0 +1,35 @@
+name: build-and-deploy-book
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  jupyterbook:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install jupyter-book matplotlib numpy
+
+      - name: Build JupyterBook
+        run: |
+          jb build book
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: book/_build/html
