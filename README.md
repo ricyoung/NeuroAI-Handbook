@@ -12,18 +12,18 @@ This handbook explores the intersection of neuroscience and artificial intellige
 
 1. **Part I: Brains & Inspiration**
    - Introduction to Neuroscience ↔ AI
-   - Neuroscience Foundations for AI
+   - ✅ Neuroscience Foundations for AI
    - Spatial Navigation – Place & Grid Cells
    - Perception Pipeline – Visual Cortex → CNNs
 
 2. **Part II: Brains Meet Math & Data**
    - Default-Mode vs Executive Control Networks
    - Neuro-stimulation & Plasticity
-   - Information Theory Essentials
-   - Data-Science Pipeline in Python
+   - ✅ Information Theory Essentials
+   - ✅ Data-Science Pipeline in Python
 
 3. **Part III: Learning Machines**
-   - Classical Machine-Learning Foundations
+   - ✅ Classical Machine-Learning Foundations
    - Deep Learning: Training & Optimisation
    - Sequence Models: RNN → Attention → Transformer
 
@@ -38,6 +38,13 @@ This handbook explores the intersection of neuroscience and artificial intellige
    - Math & Python mini-refresher
    - Dataset catalogue
    - Colab setup tips
+
+### Implemented Chapters
+
+- **Chapter 2: Neuroscience Foundations for AI** - Core neuroscience concepts relevant to AI, including neuron anatomy, neural circuits, and brain organization with Python implementations.
+- **Chapter 7: Information Theory Essentials** - Mathematical foundations of information theory with applications to neural coding and AI, including implementations for entropy, mutual information, and efficient coding.
+- **Chapter 8: Data-Science Pipeline in Python** - Comprehensive workflow for neural data analysis, including preprocessing, feature extraction, and machine learning applications with detailed code examples.
+- **Chapter 9: Classical Machine-Learning Foundations** - Implementation of key ML algorithms with neural data applications, including supervised and unsupervised learning techniques.
 
 ## Getting Started
 
@@ -67,8 +74,19 @@ jb build book
 python -m http.server -d book/_build/html
 ```
 
+### Required Libraries
+
+The examples in this handbook use the following Python libraries:
+- NumPy and SciPy for numerical operations
+- Matplotlib and Seaborn for visualizations
+- Pandas for data manipulation
+- scikit-learn for machine learning implementations
+- MNE-Python for neurophysiological data processing (recommended)
+
 ## License
 
 This project is licensed under multiple licenses:
 - Content: [LICENSE-content](LICENSE-content)
 - Code: [LICENSE-code](LICENSE-code)
+
+© 2025 Richard Young. All rights reserved.
