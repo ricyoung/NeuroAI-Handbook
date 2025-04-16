@@ -445,9 +445,24 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab-building-an-end-to-end-pipeline">8.6 Code Lab: Building an End-to-End Pipeline</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">8.7 Take-aways</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">8.8 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-tools-and-libraries">Recommended Tools and Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-art-of-programming-for-neuroscience-data">8.7 The Art of Programming for Neuroscience Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python-for-neural-data-analysis">8.7.1 Why Python for Neural Data Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-code-to-concept-programming-as-scientific-thinking">8.7.2 From Code to Concept: Programming as Scientific Thinking</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-future-of-neural-data-science-ai-augmented-programming">8.7.3 The Future of Neural Data Science: AI-Augmented Programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices-for-the-ai-assisted-neuroscience-era">8.7.4 Best Practices for the AI-Assisted Neuroscience Era</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">8.8 Take-aways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">8.9 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroscience-data-analysis">Neuroscience Data Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-for-scientific-computing">Python for Scientific Computing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-augmented-programming">AI-Augmented Programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#future-of-neuroscience-and-ai">Future of Neuroscience and AI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-tools-and-libraries">Recommended Tools and Libraries</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Neuroscience Data Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-assisted-programming">AI-Assisted Programming</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -474,6 +489,8 @@ document.write(`
 </section>
 <section id="neural-data-types-sources">
 <h2>8.1 Neural Data Types &amp; Sources<a class="headerlink" href="#neural-data-types-sources" title="Link to this heading">#</a></h2>
+<p><img alt="Neural Data Science Pipeline" src="../_images/neural_data_pipeline.svg" />
+<em>Figure 8.1: The data science pipeline for neural data, showing the progression from data acquisition through processing, analysis, and interpretation.</em></p>
 <p>Neural data comes in many forms, each requiring specialized processing approaches.</p>
 <section id="spike-trains-and-local-field-potentials-lfps">
 <h3>8.1.1 Spike Trains and Local Field Potentials (LFPs)<a class="headerlink" href="#spike-trains-and-local-field-potentials-lfps" title="Link to this heading">#</a></h3>
@@ -730,6 +747,8 @@ document.write(`
 <section id="dimensionality-reduction-techniques">
 <h3>8.2.2 Dimensionality Reduction Techniques<a class="headerlink" href="#dimensionality-reduction-techniques" title="Link to this heading">#</a></h3>
 <p>Neural datasets often have high dimensionality, requiring techniques to extract meaningful structure.</p>
+<p><img alt="Dimensionality Reduction Techniques" src="../_images/dimensionality_reduction.svg" />
+<em>Figure 8.2: Comparison of dimensionality reduction techniques for neural data, showing how high-dimensional data can be projected into lower-dimensional spaces using PCA, t-SNE, and UMAP.</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">apply_dimensionality_reduction</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;pca&#39;</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Apply dimensionality reduction to neural data.</span>
@@ -2058,8 +2077,227 @@ document.write(`
 </pre></div>
 </div>
 </section>
+<section id="the-art-of-programming-for-neuroscience-data">
+<h2>8.7 The Art of Programming for Neuroscience Data<a class="headerlink" href="#the-art-of-programming-for-neuroscience-data" title="Link to this heading">#</a></h2>
+<section id="why-python-for-neural-data-analysis">
+<h3>8.7.1 Why Python for Neural Data Analysis<a class="headerlink" href="#why-python-for-neural-data-analysis" title="Link to this heading">#</a></h3>
+<p><img alt="Python Ecosystem for Neuroscience" src="../_images/python_neuro_ecosystem.svg" />
+<em>Figure 8.3: The Python ecosystem for neuroscience, showing the relationships between core libraries, data processing tools, visualization packages, machine learning frameworks, and specialized neuroscience libraries.</em></p>
+<p>Python has become the dominant programming language in neuroscience and data science for several compelling reasons:</p>
+<ol class="arabic simple">
+<li><p><strong>Ecosystem Maturity</strong>: Libraries like NumPy, SciPy, pandas, and matplotlib provide robust foundations for scientific computing.</p></li>
+<li><p><strong>Domain-Specific Tools</strong>: Specialized packages like MNE-Python (for EEG/MEG), Neo (for electrophysiology), and CaImAn (for calcium imaging) make complex analyses accessible.</p></li>
+<li><p><strong>Integration Capabilities</strong>: Python easily interfaces with other languages (C/C++, R) and platforms (MATLAB) commonly used in neuroscience.</p></li>
+<li><p><strong>Balance of Readability and Power</strong>: Python’s clean syntax makes code readable while maintaining computational efficiency through vectorized operations and compiled extensions.</p></li>
+<li><p><strong>Community Support</strong>: Active communities in both neuroscience and data science continuously contribute to tools and documentation.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example illustrating Python&#39;s readability and power for neural analysis</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Define preprocessing function with clear, readable code</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">preprocess_neural_data</span><span class="p">(</span><span class="n">raw_data</span><span class="p">,</span> <span class="n">sampling_rate</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Preprocess neural time series data.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        raw_data: Raw neural signal (channels x time)</span>
+<span class="sd">        sampling_rate: Recording sampling rate in Hz</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        Preprocessed data and frequency analysis results</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># 1. Apply bandpass filter (1-100 Hz)</span>
+    <span class="n">nyq</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">sampling_rate</span>
+    <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">butter</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">nyq</span><span class="p">,</span> <span class="mi">100</span><span class="o">/</span><span class="n">nyq</span><span class="p">],</span> <span class="n">btype</span><span class="o">=</span><span class="s1">&#39;band&#39;</span><span class="p">)</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">filtfilt</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">raw_data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># 2. Remove line noise with notch filter</span>
+    <span class="n">notch_b</span><span class="p">,</span> <span class="n">notch_a</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">iirnotch</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">sampling_rate</span><span class="p">)</span>
+    <span class="n">notched</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">filtfilt</span><span class="p">(</span><span class="n">notch_b</span><span class="p">,</span> <span class="n">notch_a</span><span class="p">,</span> <span class="n">filtered</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># 3. Compute power spectrum</span>
+    <span class="n">freqs</span><span class="p">,</span> <span class="n">psd</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">welch</span><span class="p">(</span><span class="n">notched</span><span class="p">,</span> <span class="n">fs</span><span class="o">=</span><span class="n">sampling_rate</span><span class="p">,</span> <span class="n">nperseg</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># 4. Create results dataframe</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;theta_power&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">psd</span><span class="p">[:,</span> <span class="p">(</span><span class="n">freqs</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">freqs</span> <span class="o">&lt;=</span> <span class="mi">8</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="s1">&#39;alpha_power&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">psd</span><span class="p">[:,</span> <span class="p">(</span><span class="n">freqs</span> <span class="o">&gt;=</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">freqs</span> <span class="o">&lt;=</span> <span class="mi">12</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+        <span class="s1">&#39;beta_power&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">psd</span><span class="p">[:,</span> <span class="p">(</span><span class="n">freqs</span> <span class="o">&gt;=</span> <span class="mi">12</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">freqs</span> <span class="o">&lt;=</span> <span class="mi">30</span><span class="p">)],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="p">})</span>
+    
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;preprocessed_data&#39;</span><span class="p">:</span> <span class="n">notched</span><span class="p">,</span>
+        <span class="s1">&#39;frequencies&#39;</span><span class="p">:</span> <span class="n">freqs</span><span class="p">,</span>
+        <span class="s1">&#39;power_spectrum&#39;</span><span class="p">:</span> <span class="n">psd</span><span class="p">,</span>
+        <span class="s1">&#39;band_powers&#39;</span><span class="p">:</span> <span class="n">results</span>
+    <span class="p">}</span>
+
+<span class="c1"># Clear, concise visualization of results</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_power_spectrum</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">channel</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Plot power spectrum of neural data.&quot;&quot;&quot;</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">results</span><span class="p">[</span><span class="s1">&#39;frequencies&#39;</span><span class="p">],</span> <span class="n">results</span><span class="p">[</span><span class="s1">&#39;power_spectrum&#39;</span><span class="p">][</span><span class="n">channel</span><span class="p">])</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (Hz)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Power Spectral Density (μV²/Hz)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Neural Power Spectrum - Channel </span><span class="si">{</span><span class="n">channel</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Add shaded areas for frequency bands</span>
+    <span class="n">bands</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;Delta&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+        <span class="s1">&#39;Theta&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+        <span class="s1">&#39;Alpha&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
+        <span class="s1">&#39;Beta&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span>
+        <span class="s1">&#39;Gamma&#39;</span><span class="p">:</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="p">}</span>
+    
+    <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#E6F5FF&#39;</span><span class="p">,</span> <span class="s1">&#39;#CCEBFF&#39;</span><span class="p">,</span> <span class="s1">&#39;#99D6FF&#39;</span><span class="p">,</span> <span class="s1">&#39;#66C0FF&#39;</span><span class="p">,</span> <span class="s1">&#39;#33AAFF&#39;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">band</span><span class="p">,</span> <span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">)),</span> <span class="n">color</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">bands</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">colors</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">low</span><span class="p">,</span> <span class="n">high</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">band</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="from-code-to-concept-programming-as-scientific-thinking">
+<h3>8.7.2 From Code to Concept: Programming as Scientific Thinking<a class="headerlink" href="#from-code-to-concept-programming-as-scientific-thinking" title="Link to this heading">#</a></h3>
+<p>Effective data science in neuroscience is less about writing perfect code and more about translating scientific questions into computational approaches:</p>
+<ol class="arabic simple">
+<li><p><strong>Hypothesis-Driven Programming</strong>: Start with the scientific question, then determine the appropriate analysis approach.</p></li>
+<li><p><strong>Iterative Development</strong>: Begin with a minimal viable analysis that addresses the core question, then refine.</p></li>
+<li><p><strong>Visual Debugging</strong>: Continuously visualize intermediate results to catch errors and build intuition.</p></li>
+<li><p><strong>Pipeline Thinking</strong>: Structure code as transformative steps in a data pipeline rather than monolithic scripts.</p></li>
+<li><p><strong>Documenting Reasoning</strong>: Comment not just what code does, but why certain parameters or approaches were chosen.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of hypothesis-driven programming for neural decoding</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_neural_decoding_hypothesis</span><span class="p">(</span><span class="n">neural_data</span><span class="p">,</span> <span class="n">stimulus_conditions</span><span class="p">,</span> <span class="n">hypothesis</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Test specific hypothesis about neural coding using appropriate analysis.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        neural_data: Matrix of neural activity (neurons x time)</span>
+<span class="sd">        stimulus_conditions: Experimental conditions at each timepoint</span>
+<span class="sd">        hypothesis: Dict with hypothesis parameters</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        Dictionary of results relevant to the hypothesis</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Extract hypothesis parameters</span>
+    <span class="n">feature_type</span> <span class="o">=</span> <span class="n">hypothesis</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;feature_type&#39;</span><span class="p">,</span> <span class="s1">&#39;rate&#39;</span><span class="p">)</span>
+    <span class="n">decoding_window</span> <span class="o">=</span> <span class="n">hypothesis</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;decoding_window&#39;</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">))</span>
+    <span class="n">model_type</span> <span class="o">=</span> <span class="n">hypothesis</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;model_type&#39;</span><span class="p">,</span> <span class="s1">&#39;linear&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Convert hypothesis parameters to analysis approach</span>
+    <span class="k">if</span> <span class="n">feature_type</span> <span class="o">==</span> <span class="s1">&#39;rate&#39;</span><span class="p">:</span>
+        <span class="c1"># Use firing rate features</span>
+        <span class="n">features</span> <span class="o">=</span> <span class="n">extract_rate_features</span><span class="p">(</span><span class="n">neural_data</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="n">decoding_window</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">feature_type</span> <span class="o">==</span> <span class="s1">&#39;temporal&#39;</span><span class="p">:</span>
+        <span class="c1"># Use temporal pattern features</span>
+        <span class="n">features</span> <span class="o">=</span> <span class="n">extract_temporal_features</span><span class="p">(</span><span class="n">neural_data</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="n">decoding_window</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">feature_type</span> <span class="o">==</span> <span class="s1">&#39;synchrony&#39;</span><span class="p">:</span>
+        <span class="c1"># Use synchrony-based features</span>
+        <span class="n">features</span> <span class="o">=</span> <span class="n">extract_synchrony_features</span><span class="p">(</span><span class="n">neural_data</span><span class="p">,</span> <span class="n">window</span><span class="o">=</span><span class="n">decoding_window</span><span class="p">)</span>
+    
+    <span class="c1"># Select appropriate model based on hypothesis</span>
+    <span class="k">if</span> <span class="n">model_type</span> <span class="o">==</span> <span class="s1">&#39;linear&#39;</span><span class="p">:</span>
+        <span class="n">accuracy</span><span class="p">,</span> <span class="n">model</span> <span class="o">=</span> <span class="n">fit_linear_decoder</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">stimulus_conditions</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">model_type</span> <span class="o">==</span> <span class="s1">&#39;nonlinear&#39;</span><span class="p">:</span>
+        <span class="n">accuracy</span><span class="p">,</span> <span class="n">model</span> <span class="o">=</span> <span class="n">fit_nonlinear_decoder</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">stimulus_conditions</span><span class="p">)</span>
+    
+    <span class="c1"># Test against specific prediction in hypothesis</span>
+    <span class="n">predicted_accuracy</span> <span class="o">=</span> <span class="n">hypothesis</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;predicted_accuracy&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">p_value</span> <span class="o">=</span> <span class="n">statistical_test</span><span class="p">(</span><span class="n">accuracy</span><span class="p">,</span> <span class="n">predicted_accuracy</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;hypothesis_parameters&#39;</span><span class="p">:</span> <span class="n">hypothesis</span><span class="p">,</span>
+        <span class="s1">&#39;accuracy&#39;</span><span class="p">:</span> <span class="n">accuracy</span><span class="p">,</span>
+        <span class="s1">&#39;p_value&#39;</span><span class="p">:</span> <span class="n">p_value</span><span class="p">,</span>
+        <span class="s1">&#39;model&#39;</span><span class="p">:</span> <span class="n">model</span><span class="p">,</span>
+        <span class="s1">&#39;conclusion&#39;</span><span class="p">:</span> <span class="s1">&#39;Supported&#39;</span> <span class="k">if</span> <span class="n">p_value</span> <span class="o">&lt;</span> <span class="mf">0.05</span> <span class="k">else</span> <span class="s1">&#39;Not supported&#39;</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="the-future-of-neural-data-science-ai-augmented-programming">
+<h3>8.7.3 The Future of Neural Data Science: AI-Augmented Programming<a class="headerlink" href="#the-future-of-neural-data-science-ai-augmented-programming" title="Link to this heading">#</a></h3>
+<p><img alt="AI-Augmented Programming Workflow" src="../_images/ai_augmented_workflow.svg" />
+<em>Figure 8.4: Evolution of neural data analysis workflows, contrasting traditional programming approaches with AI-augmented programming that enables neuroscientists to focus on scientific questions rather than implementation details.</em></p>
+<p>The landscape of neural data analysis is rapidly evolving with the integration of AI assistants:</p>
+<ol class="arabic simple">
+<li><p><strong>From Syntax to Intent</strong>: Future programming will focus more on communicating analysis intent rather than syntax details.</p></li>
+<li><p><strong>Agent-Assisted Workflows</strong>: AI agents will handle routine coding tasks, allowing neuroscientists to focus on experimental design and interpretation.</p></li>
+<li><p><strong>Natural Language Data Exploration</strong>: Interactive exploration of datasets through natural language queries.</p></li>
+<li><p><strong>Code Generation and Optimization</strong>: AI generating efficient, optimized code based on high-level descriptions of analysis goals.</p></li>
+<li><p><strong>Democratized Analysis</strong>: Advanced analysis techniques becoming accessible to researchers without extensive programming backgrounds.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of a future AI-augmented neural analysis workflow</span>
+<span class="c1"># The comments represent natural language instructions to an AI assistant</span>
+
+<span class="c1"># &quot;Load the calcium imaging dataset and preprocess it using standard parameters&quot;</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">load_calcium_imaging_dataset</span><span class="p">(</span><span class="s1">&#39;experiment_20230512.h5&#39;</span><span class="p">)</span>
+<span class="n">preprocessed_data</span> <span class="o">=</span> <span class="n">preprocess_calcium_data</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">raw_traces</span><span class="p">)</span>
+
+<span class="c1"># &quot;Extract cell activity during the different experimental conditions&quot;</span>
+<span class="n">cell_activity</span> <span class="o">=</span> <span class="n">extract_condition_specific_activity</span><span class="p">(</span>
+    <span class="n">preprocessed_data</span><span class="p">,</span> 
+    <span class="n">dataset</span><span class="o">.</span><span class="n">experiment_conditions</span>
+<span class="p">)</span>
+
+<span class="c1"># &quot;Find cells that show significant tuning to the target stimulus&quot;</span>
+<span class="c1"># The AI would generate appropriate statistical testing code</span>
+<span class="n">tuned_cells</span> <span class="o">=</span> <span class="n">find_significantly_tuned_cells</span><span class="p">(</span>
+    <span class="n">cell_activity</span><span class="p">,</span>
+    <span class="n">condition</span><span class="o">=</span><span class="s1">&#39;target_stimulus&#39;</span><span class="p">,</span>
+    <span class="n">statistical_test</span><span class="o">=</span><span class="s1">&#39;permutation&#39;</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span>
+<span class="p">)</span>
+
+<span class="c1"># &quot;Visualize the spatial distribution of tuned cells&quot;</span>
+<span class="c1"># The AI would generate appropriate visualization code</span>
+<span class="n">spatial_map</span> <span class="o">=</span> <span class="n">plot_spatial_tuning_map</span><span class="p">(</span>
+    <span class="n">tuned_cells</span><span class="p">,</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">cell_coordinates</span><span class="p">,</span>
+    <span class="n">plot_type</span><span class="o">=</span><span class="s1">&#39;heatmap&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># &quot;Create a model that predicts stimulus identity from population activity&quot;</span>
+<span class="c1"># The AI would select an appropriate decoding approach based on data properties</span>
+<span class="n">decoder_model</span> <span class="o">=</span> <span class="n">create_population_decoder</span><span class="p">(</span>
+    <span class="n">cell_activity</span><span class="p">,</span>
+    <span class="n">dataset</span><span class="o">.</span><span class="n">stimulus_conditions</span><span class="p">,</span>
+    <span class="n">model_type</span><span class="o">=</span><span class="s1">&#39;optimal&#39;</span><span class="p">,</span>  <span class="c1"># AI selects appropriate model</span>
+    <span class="n">cross_validation</span><span class="o">=</span><span class="s1">&#39;timeseries&#39;</span>  <span class="c1"># AI selects appropriate validation approach</span>
+<span class="p">)</span>
+
+<span class="c1"># &quot;Summarize the key findings in a publication-ready figure&quot;</span>
+<span class="c1"># The AI would generate comprehensive figure code</span>
+<span class="n">create_summary_figure</span><span class="p">(</span>
+    <span class="n">tuned_cells</span><span class="o">=</span><span class="n">tuned_cells</span><span class="p">,</span>
+    <span class="n">spatial_map</span><span class="o">=</span><span class="n">spatial_map</span><span class="p">,</span>
+    <span class="n">decoder_performance</span><span class="o">=</span><span class="n">decoder_model</span><span class="o">.</span><span class="n">performance</span><span class="p">,</span>
+    <span class="n">save_path</span><span class="o">=</span><span class="s1">&#39;figures/main_result.pdf&#39;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>This AI-augmented workflow illustrates how neuroscientists of the future will interact with data through higher-level conceptual instructions rather than detailed code implementation. The AI handles the translation from scientific intent to executable code, allowing researchers to focus on the scientific questions rather than programming details.</p>
+</section>
+<section id="best-practices-for-the-ai-assisted-neuroscience-era">
+<h3>8.7.4 Best Practices for the AI-Assisted Neuroscience Era<a class="headerlink" href="#best-practices-for-the-ai-assisted-neuroscience-era" title="Link to this heading">#</a></h3>
+<p>As we transition to AI-augmented neural data analysis, several best practices emerge:</p>
+<ol class="arabic simple">
+<li><p><strong>Focus on Scientific Questions</strong>: Clearly formulate scientific hypotheses and analysis goals rather than programming details.</p></li>
+<li><p><strong>Conceptual Understanding</strong>: Maintain understanding of analysis principles, even when implementation details are handled by AI.</p></li>
+<li><p><strong>Critical Evaluation</strong>: Carefully verify AI-generated analyses and visualizations for scientific validity.</p></li>
+<li><p><strong>Documentation and Reproducibility</strong>: Ensure that analysis methods are thoroughly documented, including AI-generated components.</p></li>
+<li><p><strong>Continuous Learning</strong>: Stay current with analytical approaches and methodologies to effectively guide AI tools.</p></li>
+</ol>
+<p>The future neuroscientist will be less a programmer and more an analytical strategist, guiding AI tools to efficiently transform data into insights.</p>
+</section>
+</section>
 <section id="take-aways">
-<h2>8.7 Take-aways<a class="headerlink" href="#take-aways" title="Link to this heading">#</a></h2>
+<h2>8.8 Take-aways<a class="headerlink" href="#take-aways" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Domain-Specific Adaptations</strong>: Neural data requires specialized preprocessing and feature extraction techniques tailored to the specific data type (spikes, LFPs, EEG, etc.).</p></li>
 <li><p><strong>Critical Preprocessing</strong>: Small changes in preprocessing parameters can dramatically affect results in neural data analysis, requiring careful validation and parameter selection.</p></li>
@@ -2068,10 +2306,14 @@ document.write(`
 <li><p><strong>Model Validation</strong>: Cross-validation in neural data analysis should account for temporal dependencies and non-stationarity.</p></li>
 <li><p><strong>Encoding vs. Decoding</strong>: Both approaches provide complementary insights - encoding models predict neural responses to stimuli, while decoding models predict stimuli from neural activity.</p></li>
 <li><p><strong>Reproducibility Challenges</strong>: Neural data analysis requires meticulous documentation of each processing step to ensure reproducibility.</p></li>
+<li><p><strong>Python Ecosystem</strong>: Python’s rich ecosystem of libraries and tools makes it uniquely suited for neural data analysis.</p></li>
+<li><p><strong>AI-Augmented Analysis</strong>: The future of neural data science involves AI assistants that handle routine coding tasks, allowing neuroscientists to focus on higher-level questions and interpretations.</p></li>
 </ul>
 </section>
 <section id="further-reading-media">
-<h2>8.8 Further Reading &amp; Media<a class="headerlink" href="#further-reading-media" title="Link to this heading">#</a></h2>
+<h2>8.9 Further Reading &amp; Media<a class="headerlink" href="#further-reading-media" title="Link to this heading">#</a></h2>
+<section id="neuroscience-data-analysis">
+<h3>Neuroscience Data Analysis<a class="headerlink" href="#neuroscience-data-analysis" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Kriegeskorte, N., &amp; Golan, T. (2019). “Neural network models and deep learning”. <em>Current Biology</em>, 29(7), R231-R236.</p></li>
 <li><p>Paninski, L., &amp; Cunningham, J. P. (2018). “Neural data science: accelerating the experiment-analysis-theory cycle in large-scale neuroscience”. <em>Current Opinion in Neurobiology</em>, 50, 232-241.</p></li>
@@ -2081,8 +2323,40 @@ document.write(`
 <li><p>Kobak, D., &amp; Berens, P. (2019). “The art of using t-SNE for single-cell transcriptomics”. <em>Nature Communications</em>, 10(1), 1-14.</p></li>
 <li><p>Pachitariu, M., &amp; Sahani, M. (2012). “Learning visual motion in recurrent neural networks”. <em>Advances in Neural Information Processing Systems</em>, 25, 1322-1330.</p></li>
 </ul>
+</section>
+<section id="python-for-scientific-computing">
+<h3>Python for Scientific Computing<a class="headerlink" href="#python-for-scientific-computing" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>VanderPlas, J. (2016). <em>A Whirlwind Tour of Python</em>. O’Reilly Media.</p></li>
+<li><p>McKinney, W. (2017). <em>Python for Data Analysis: Data Wrangling with Pandas, NumPy, and IPython</em>. O’Reilly Media.</p></li>
+<li><p>Raschka, S., &amp; Mirjalili, V. (2019). <em>Python Machine Learning: Machine Learning and Deep Learning with Python, scikit-learn, and TensorFlow 2</em>. Packt Publishing.</p></li>
+<li><p>Géron, A. (2019). <em>Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems</em>. O’Reilly Media.</p></li>
+</ul>
+</section>
+<section id="ai-augmented-programming">
+<h3>AI-Augmented Programming<a class="headerlink" href="#ai-augmented-programming" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Bubeck, S., Chandrasekaran, V., Eldan, R., Gehrke, J., Horvitz, E., Kamar, E., Lee, P., Lee, Y.T., Li, Y., Lundberg, S. and Nori, H. (2023). “Sparks of Artificial General Intelligence: Early experiments with GPT-4”. arXiv preprint arXiv:2303.12712.</p></li>
+<li><p>Chen, M., Tworek, J., Jun, H., Yuan, Q., Pinto, H.P.D.O., Kaplan, J., Edwards, H., Burda, Y., Joseph, N., Brockman, G. and Ray, A. (2021). “Evaluating large language models trained on code”. arXiv preprint arXiv:2107.03374.</p></li>
+<li><p>Shen, S., Amer, M., Bender, G., Ramachandran, P., &amp; Shlens, J. (2023). “Augmenting Developers with Large Language Models: The Impact of Code Suggestions on Productivity, Code Quality, and Well-being at Microsoft”. arXiv preprint arXiv:2309.11436.</p></li>
+<li><p>Bricken, T., Elhage, N., Vance, N., Nanda, N., Edwards, B., Steinhardt, J., &amp; Bowman, S. R. (2023). “Towards understanding the behavior of neural algorithms”. arXiv preprint arXiv:2305.18465.</p></li>
+<li><p>Shanahan, M. (2022). “Talking about large language models”. arXiv preprint arXiv:2212.03551.</p></li>
+</ul>
+</section>
+<section id="future-of-neuroscience-and-ai">
+<h3>Future of Neuroscience and AI<a class="headerlink" href="#future-of-neuroscience-and-ai" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Richards, B.A., Lillicrap, T.P., Beaudoin, P., Bengio, Y., Bogacz, R., Christensen, A., Clopath, C., Costa, R.P., de Berker, A., Ganguli, S. and Gillon, C.J. (2019). “A deep learning framework for neuroscience”. <em>Nature Neuroscience</em>, 22(11), 1761-1770.</p></li>
+<li><p>Zador, A. M. (2019). “A critique of pure learning and what artificial neural networks can learn from animal brains”. <em>Nature Communications</em>, 10(1), 1-7.</p></li>
+<li><p>Jonas, E., &amp; Kording, K. P. (2017). “Could a neuroscientist understand a microprocessor?”. <em>PLoS computational biology</em>, 13(1), e1005268.</p></li>
+<li><p>Marblestone, A. H., Wayne, G., &amp; Kording, K. P. (2016). “Toward an integration of deep learning and neuroscience”. <em>Frontiers in computational neuroscience</em>, 10, 94.</p></li>
+<li><p>Kording, K. P., Benjamin, A. S., Farhoodi, R., &amp; Glaser, J. I. (2020). “The roles of machine learning in biomedical science”. <em>Nature Machine Intelligence</em>, 2(4), 198-204.</p></li>
+</ul>
+</section>
 <section id="recommended-tools-and-libraries">
 <h3>Recommended Tools and Libraries<a class="headerlink" href="#recommended-tools-and-libraries" title="Link to this heading">#</a></h3>
+<section id="id1">
+<h4>Neuroscience Data Analysis<a class="headerlink" href="#id1" title="Link to this heading">#</a></h4>
 <ul class="simple">
 <li><p><strong>MNE-Python</strong>: Comprehensive toolkit for processing electrophysiological data</p></li>
 <li><p><strong>Neo</strong>: Python package for handling electrophysiology data in Python</p></li>
@@ -2090,7 +2364,23 @@ document.write(`
 <li><p><strong>CaImAn</strong>: Calcium Imaging Analysis package</p></li>
 <li><p><strong>SpikeInterface</strong>: Framework for spike sorting and electrophysiology analysis</p></li>
 <li><p><strong>NWB (Neurodata Without Borders)</strong>: Standard format for neurophysiology data</p></li>
+<li><p><strong>DeepLabCut</strong>: Deep learning for markerless pose estimation</p></li>
+<li><p><strong>CellProfiler</strong>: Cell image analysis software</p></li>
+<li><p><strong>BrainGlobe</strong>: Tools for brain atlas visualization and anatomical analysis</p></li>
 </ul>
+</section>
+<section id="ai-assisted-programming">
+<h4>AI-Assisted Programming<a class="headerlink" href="#ai-assisted-programming" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>GitHub Copilot</strong>: AI pair programmer that offers code suggestions</p></li>
+<li><p><strong>Jupyter AI</strong>: AI extensions for Jupyter notebooks</p></li>
+<li><p><strong>LangChain</strong>: Framework for developing applications powered by language models</p></li>
+<li><p><strong>Gradio</strong>: Tool for quickly creating UIs for machine learning models</p></li>
+<li><p><strong>Streamlit</strong>: App framework for machine learning and data science</p></li>
+<li><p><strong>Hugging Face Transformers</strong>: State-of-the-art NLP models for code generation</p></li>
+<li><p><strong>AutoML</strong>: Automated machine learning platforms for model selection and hyperparameter tuning</p></li>
+</ul>
+</section>
 </section>
 </section>
 </section>
@@ -2196,9 +2486,24 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab-building-an-end-to-end-pipeline">8.6 Code Lab: Building an End-to-End Pipeline</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">8.7 Take-aways</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">8.8 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-tools-and-libraries">Recommended Tools and Libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-art-of-programming-for-neuroscience-data">8.7 The Art of Programming for Neuroscience Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python-for-neural-data-analysis">8.7.1 Why Python for Neural Data Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-code-to-concept-programming-as-scientific-thinking">8.7.2 From Code to Concept: Programming as Scientific Thinking</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-future-of-neural-data-science-ai-augmented-programming">8.7.3 The Future of Neural Data Science: AI-Augmented Programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices-for-the-ai-assisted-neuroscience-era">8.7.4 Best Practices for the AI-Assisted Neuroscience Era</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">8.8 Take-aways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">8.9 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroscience-data-analysis">Neuroscience Data Analysis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-for-scientific-computing">Python for Scientific Computing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-augmented-programming">AI-Augmented Programming</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#future-of-neuroscience-and-ai">Future of Neuroscience and AI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-tools-and-libraries">Recommended Tools and Libraries</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Neuroscience Data Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-assisted-programming">AI-Assisted Programming</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
