@@ -16,5 +16,15 @@ The book is organized into five parts, progressing from foundational neuroscienc
 
 Each chapter includes code examples, diagrams, and hands-on exercises to reinforce concepts.
 
+### Recent Updates
+
+We have recently expanded our coverage of modern AI architectures with detailed implementations:
+
+- **Deep Learning Fundamentals**: Neural networks, backpropagation, optimization techniques, and regularization methods with PyTorch implementations
+- **Sequence Processing Models**: RNNs, attention mechanisms, and transformer architectures, with biological parallels and practical code examples
+- **Large Language Models**: Comprehensive overview of LLM architectures, fine-tuning approaches (including parameter-efficient methods like LoRA), prompting techniques, and connections to neural language processing
+
+Each of these chapters includes practical code labs to help readers implement and experiment with these technologies.
+
 ```{tableofcontents}
 ```

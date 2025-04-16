@@ -24,11 +24,11 @@ This handbook explores the intersection of neuroscience and artificial intellige
 
 3. **Part III: Learning Machines**
    - ✅ Classical Machine-Learning Foundations
-   - Deep Learning: Training & Optimisation
-   - Sequence Models: RNN → Attention → Transformer
+   - ✅ Deep Learning: Training & Optimisation
+   - ✅ Sequence Models: RNN → Attention → Transformer
 
 4. **Part IV: Frontier Models**
-   - Large Language Models & Fine-Tuning
+   - ✅ Large Language Models & Fine-Tuning
    - Multimodal & Diffusion Models
 
 5. **Part V: Reflection & Futures**
@@ -45,6 +45,9 @@ This handbook explores the intersection of neuroscience and artificial intellige
 - **Chapter 7: Information Theory Essentials** - Mathematical foundations of information theory with applications to neural coding and AI, including implementations for entropy, mutual information, and efficient coding.
 - **Chapter 8: Data-Science Pipeline in Python** - Comprehensive workflow for neural data analysis, including preprocessing, feature extraction, and machine learning applications with detailed code examples.
 - **Chapter 9: Classical Machine-Learning Foundations** - Implementation of key ML algorithms with neural data applications, including supervised and unsupervised learning techniques, with visual diagrams illustrating learning paradigms, bias-variance tradeoff, feature selection methods, and neuroscience-ML parallels.
+- **Chapter 10: Deep Learning: Training & Optimisation** - Foundations of neural networks, backpropagation, optimization techniques, regularization methods, and connections to biological learning with PyTorch implementations.
+- **Chapter 11: Sequence Models: RNN → Attention → Transformer** - Evolution of sequence processing from RNNs through attention mechanisms to transformer architectures, with biological parallels and practical implementations.
+- **Chapter 12: Large Language Models & Fine-Tuning** - Comprehensive overview of LLM architectures, fine-tuning approaches (including LoRA and RLHF), prompting techniques, and connections to neural language processing, with practical code labs for implementation.
 
 ## Getting Started
 
