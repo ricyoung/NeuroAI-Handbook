@@ -8,6 +8,9 @@
 
 ## 8.1 Neural Data Types & Sources
 
+![Neural Data Science Pipeline](../figures/ch08/neural_data_pipeline.svg)
+*Figure 8.1: The data science pipeline for neural data, showing the progression from data acquisition through processing, analysis, and interpretation.*
+
 Neural data comes in many forms, each requiring specialized processing approaches.
 
 ### 8.1.1 Spike Trains and Local Field Potentials (LFPs)
@@ -269,6 +272,9 @@ def detect_artifacts(signal, threshold=5):
 ### 8.2.2 Dimensionality Reduction Techniques
 
 Neural datasets often have high dimensionality, requiring techniques to extract meaningful structure.
+
+![Dimensionality Reduction Techniques](../figures/ch08/dimensionality_reduction.svg)
+*Figure 8.2: Comparison of dimensionality reduction techniques for neural data, showing how high-dimensional data can be projected into lower-dimensional spaces using PCA, t-SNE, and UMAP.*
 
 ```python
 def apply_dimensionality_reduction(data, method='pca', n_components=3):
@@ -1602,6 +1608,9 @@ def neural_data_pipeline(raw_data_file, metadata_file):
 
 ### 8.7.1 Why Python for Neural Data Analysis
 
+![Python Ecosystem for Neuroscience](../figures/ch08/python_neuro_ecosystem.svg)
+*Figure 8.3: The Python ecosystem for neuroscience, showing the relationships between core libraries, data processing tools, visualization packages, machine learning frameworks, and specialized neuroscience libraries.*
+
 Python has become the dominant programming language in neuroscience and data science for several compelling reasons:
 
 1. **Ecosystem Maturity**: Libraries like NumPy, SciPy, pandas, and matplotlib provide robust foundations for scientific computing.
@@ -1748,6 +1757,9 @@ def test_neural_decoding_hypothesis(neural_data, stimulus_conditions, hypothesis
 ```
 
 ### 8.7.3 The Future of Neural Data Science: AI-Augmented Programming
+
+![AI-Augmented Programming Workflow](../figures/ch08/ai_augmented_workflow.svg)
+*Figure 8.4: Evolution of neural data analysis workflows, contrasting traditional programming approaches with AI-augmented programming that enables neuroscientists to focus on scientific questions rather than implementation details.*
 
 The landscape of neural data analysis is rapidly evolving with the integration of AI assistants:
 
