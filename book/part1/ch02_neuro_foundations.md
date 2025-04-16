@@ -38,6 +38,10 @@ An arriving spike triggers Ca²⁺ influx, vesicles fuse, and transmitter molecu
 - Dendritic spine → input line xᵢ
 - Synaptic strength (number & efficacy of receptors) → weight wᵢ
 - Somatic integration → weighted sum Σ wᵢxᵢ
+
+![Neuronal Signaling Mechanisms](../figures/ch02/neuronal_signaling.svg)
+
+*Figure 2.1: Neuronal signaling mechanisms showing ion channels, action potential generation, and neurotransmitter release at the synapse.*
 - Firing threshold → activation function f(⋅)
 - All-or-nothing spike → binary output y
 
