@@ -13,6 +13,9 @@ The relationship between neuroscience and artificial intelligence is deeply inte
 ![Neuroscience and AI Timeline](../figures/ch01/neuro_ai_timeline.svg)
 *Figure 1.1: Historical timeline showing the parallel development of neuroscience and AI, with key moments of cross-fertilization.*
 
+![Historical Convergence of Neuroscience and AI](../figures/ch01/neuro_ai_history.svg)
+*Figure 1.2: Key milestones in the parallel development of neuroscience and artificial intelligence, showing how the fields have converged over time.*
+
 ### 1.1.1 Early Foundations
 
 The foundational ideas that would become AI emerged from attempts to understand and model how the brain processes information:
