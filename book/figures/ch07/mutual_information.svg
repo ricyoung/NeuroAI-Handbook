@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <title>Mutual Information</title>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">Mutual Information</text>
+  <text x="400" y="70" font-family="Arial" font-size="16" text-anchor="middle">Quantifying Shared Information Between Variables</text>
+  
+  <!-- Venn diagram representation -->
+  <g id="venn-diagram">
+    <!-- Set boundary -->
+    <rect x="150" y="100" width="500" height="300" fill="#f9f9f9" stroke="#666666" stroke-width="2" rx="10" ry="10"/>
+    
+    <!-- Explanation text -->
+    <text x="400" y="125" font-family="Arial" font-size="18" text-anchor="middle" font-weight="bold">Information Theoretic Measures</text>
+    
+    <!-- Circle for H(X) -->
+    <circle cx="300" cy="250" r="120" fill="#ff99cc" stroke="#cc3366" stroke-width="2" fill-opacity="0.5"/>
+    <text x="240" y="250" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">H(X)</text>
+    
+    <!-- Circle for H(Y) -->
+    <circle cx="500" cy="250" r="120" fill="#99ccff" stroke="#3366cc" stroke-width="2" fill-opacity="0.5"/>
+    <text x="560" y="250" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">H(Y)</text>
+    
+    <!-- Label for mutual information -->
+    <text x="400" y="250" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">I(X;Y)</text>
+    
+    <!-- Annotations for different regions -->
+    <text x="240" y="190" font-family="Arial" font-size="14" text-anchor="middle">H(X|Y)</text>
+    <text x="560" y="190" font-family="Arial" font-size="14" text-anchor="middle">H(Y|X)</text>
+    <text x="400" y="330" font-family="Arial" font-size="14" text-anchor="middle">Mutual Information</text>
+    
+    <!-- Formula below diagram -->
+    <text x="400" y="420" font-family="Arial" font-size="16" text-anchor="middle" font-style="italic">I(X;Y) = H(X) + H(Y) - H(X,Y) = H(X) - H(X|Y) = H(Y) - H(Y|X)</text>
+  </g>
+  
+  <!-- Examples of Mutual Information -->
+  <g id="examples">
+    <rect x="100" y="460" width="600" height="120" fill="#f9f9f9" stroke="#666666" stroke-width="2" rx="10" ry="10"/>
+    <text x="400" y="480" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Examples of Mutual Information</text>
+    
+    <!-- Independent variables -->
+    <g id="independent">
+      <rect x="130" y="500" width="160" height="60" fill="#f0f0f0" stroke="#999999" stroke-width="1" rx="5" ry="5"/>
+      <circle cx="170" cy="530" r="25" fill="#ff99cc" stroke="#cc3366" stroke-width="1" fill-opacity="0.5"/>
+      <circle cx="250" cy="530" r="25" fill="#99ccff" stroke="#3366cc" stroke-width="1" fill-opacity="0.5"/>
+      <text x="210" y="520" font-family="Arial" font-size="12" text-anchor="middle">Independent</text>
+      <text x="210" y="540" font-family="Arial" font-size="12" text-anchor="middle">I(X;Y) = 0</text>
+    </g>
+    
+    <!-- Partially correlated variables -->
+    <g id="partial">
+      <rect x="320" y="500" width="160" height="60" fill="#f0f0f0" stroke="#999999" stroke-width="1" rx="5" ry="5"/>
+      <circle cx="360" cy="530" r="25" fill="#ff99cc" stroke="#cc3366" stroke-width="1" fill-opacity="0.5"/>
+      <circle cx="440" cy="530" r="25" fill="#99ccff" stroke="#3366cc" stroke-width="1" fill-opacity="0.5"/>
+      <ellipse cx="400" cy="530" rx="15" ry="15" fill="#cc99ff" stroke="#9933cc" stroke-width="1" fill-opacity="0.7"/>
+      <text x="400" y="520" font-family="Arial" font-size="12" text-anchor="middle">Partial Correlation</text>
+      <text x="400" y="540" font-family="Arial" font-size="12" text-anchor="middle">0 < I(X;Y) < min(H(X),H(Y))</text>
+    </g>
+    
+    <!-- Completely dependent variables -->
+    <g id="dependent">
+      <rect x="510" y="500" width="160" height="60" fill="#f0f0f0" stroke="#999999" stroke-width="1" rx="5" ry="5"/>
+      <circle cx="550" cy="530" r="25" fill="#ff99cc" stroke="#cc3366" stroke-width="1" fill-opacity="0.5"/>
+      <circle cx="590" cy="530" r="25" fill="#99ccff" stroke="#3366cc" stroke-width="1" fill-opacity="0.5"/>
+      <text x="590" y="520" font-family="Arial" font-size="12" text-anchor="middle">Perfect Dependency</text>
+      <text x="590" y="540" font-family="Arial" font-size="12" text-anchor="middle">I(X;Y) = H(X) = H(Y)</text>
+    </g>
+  </g>
+  
+  <!-- Applications to Neuroscience and AI -->
+  <g id="applications">
+    <text x="400" y="595" font-family="Arial" font-size="14" text-anchor="middle" fill="#666666">Applications: Neural Coding, Feature Selection, Generalization Bounds, Neural Networks, Information Bottleneck</text>
+  </g>
+</svg>

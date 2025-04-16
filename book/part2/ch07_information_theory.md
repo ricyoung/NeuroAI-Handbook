@@ -18,6 +18,10 @@ The central concept in information theory is entropy, which measures the uncerta
 
 $$H(X) = -\sum_{i=1}^{n} p(x_i) \log_2 p(x_i)$$
 
+![Information Entropy](../figures/ch07/entropy_illustration.svg)
+
+*Figure 7.1: The binary entropy function showing how uncertainty is maximized at p=0.5 (equal probabilities) and minimized at p=0 or p=1 (complete certainty).*
+
 Entropy is measured in bits when using log base 2, and represents the average number of bits needed to encode values of the random variable. A few key properties:
 
 - Entropy is always non-negative
@@ -83,6 +87,10 @@ $$H(X,Y) = H(X) + H(Y|X)$$
 Mutual information $I(X;Y)$ measures the reduction in uncertainty about one variable given knowledge of another:
 
 $$I(X;Y) = H(X) - H(X|Y) = H(Y) - H(Y|X) = H(X) + H(Y) - H(X,Y)$$
+
+![Mutual Information](../figures/ch07/mutual_information.svg)
+
+*Figure 7.2: Venn diagram representation of mutual information as the overlap between entropies of X and Y, showing the relationship between joint, conditional, and marginal entropies.*
 
 This symmetric measure ranges from 0 (independent variables) to $\min(H(X), H(Y))$ (one variable completely determines the other).
 
@@ -216,6 +224,10 @@ This concept is crucial in neuroscience for understanding the information-carryi
 ### Efficient Coding Hypothesis
 
 Proposed by Horace Barlow in the 1960s, the efficient coding hypothesis states that sensory systems have evolved to efficiently represent natural stimuli by reducing redundancy and maximizing information transmission given metabolic constraints.
+
+![Efficient Coding in Neural Systems](../figures/ch07/efficient_coding.svg)
+
+*Figure 7.3: Efficient coding principles in neural systems. The brain adapts to input statistics to create representations that maximize information while minimizing resources through redundancy reduction and sparse coding.*
 
 Key principles:
 - Neurons should encode independent features of the environment
