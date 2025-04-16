@@ -44,7 +44,7 @@ This handbook explores the intersection of neuroscience and artificial intellige
 - **Chapter 2: Neuroscience Foundations for AI** - Core neuroscience concepts relevant to AI, including neuron anatomy, neural circuits, and brain organization with Python implementations.
 - **Chapter 7: Information Theory Essentials** - Mathematical foundations of information theory with applications to neural coding and AI, including implementations for entropy, mutual information, and efficient coding.
 - **Chapter 8: Data-Science Pipeline in Python** - Comprehensive workflow for neural data analysis, including preprocessing, feature extraction, and machine learning applications with detailed code examples.
-- **Chapter 9: Classical Machine-Learning Foundations** - Implementation of key ML algorithms with neural data applications, including supervised and unsupervised learning techniques.
+- **Chapter 9: Classical Machine-Learning Foundations** - Implementation of key ML algorithms with neural data applications, including supervised and unsupervised learning techniques, with visual diagrams illustrating learning paradigms, bias-variance tradeoff, feature selection methods, and neuroscience-ML parallels.
 
 ## Getting Started
 
