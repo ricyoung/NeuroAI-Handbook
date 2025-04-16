@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 24px Arial; fill: #333; text-anchor: middle; }
+    .subtitle { font: 18px Arial; fill: #666; text-anchor: middle; }
+    .arch-title { font: bold 16px Arial; fill: #333; text-anchor: middle; }
+    .description { font: 14px Arial; fill: #333; text-anchor: middle; }
+    .layer-label { font: 12px Arial; fill: #555; text-anchor: middle; }
+    .box { fill-opacity: 0.7; stroke-width: 1.5; }
+    .cnn-box { fill: #9ecae1; stroke: #3182bd; }
+    .relu-box { fill: #a1d99b; stroke: #31a354; }
+    .pool-box { fill: #bcbddc; stroke: #756bb1; }
+    .fc-box { fill: #fdae6b; stroke: #e6550d; }
+    .res-box { fill: #9ecae1; stroke: #3182bd; }
+    .norm-box { fill: #dadaeb; stroke: #756bb1; }
+    .concat-box { fill: #e6f5c9; stroke: #31a354; }
+    .attn-box { fill: #fdd0a2; stroke: #fd8d3c; }
+    .arrow { stroke: #666; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+    .shortcut { stroke: #e6550d; stroke-width: 2; fill: none; marker-end: url(#shortcuthead); stroke-dasharray: 5,3; }
+    .key-value { font: 12px Arial; fill: #333; }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+    <marker id="shortcuthead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e6550d" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="40" class="title">Advanced Neural Network Architectures</text>
+  <text x="400" y="70" class="subtitle">Key design patterns in modern deep learning</text>
+  
+  <!-- CNN Architecture -->
+  <g transform="translate(30, 110)">
+    <rect x="0" y="0" width="350" height="180" fill="#f9f9f9" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+    <text x="175" y="25" class="arch-title">Convolutional Neural Network (CNN)</text>
+    
+    <!-- Input -->
+    <rect x="10" y="60" width="40" height="40" class="box" fill="#fee0d2" stroke="#de2d26" />
+    <text x="30" y="110" class="layer-label">Input</text>
+    
+    <!-- Conv layers -->
+    <rect x="60" y="55" width="30" height="30" class="box cnn-box" />
+    <rect x="60" y="75" width="30" height="30" class="box cnn-box" />
+    <text x="75" y="125" class="layer-label">Conv</text>
+    
+    <!-- ReLU -->
+    <rect x="100" y="55" width="20" height="30" class="box relu-box" />
+    <rect x="100" y="75" width="20" height="30" class="box relu-box" />
+    <text x="110" y="125" class="layer-label">ReLU</text>
+    
+    <!-- Pool -->
+    <rect x="130" y="60" width="30" height="40" class="box pool-box" />
+    <text x="145" y="125" class="layer-label">Pool</text>
+    
+    <!-- Conv2 -->
+    <rect x="170" y="55" width="25" height="25" class="box cnn-box" />
+    <rect x="170" y="70" width="25" height="25" class="box cnn-box" />
+    <rect x="170" y="85" width="25" height="25" class="box cnn-box" />
+    <text x="183" y="125" class="layer-label">Conv</text>
+    
+    <!-- ReLU2 -->
+    <rect x="205" y="55" width="15" height="25" class="box relu-box" />
+    <rect x="205" y="70" width="15" height="25" class="box relu-box" />
+    <rect x="205" y="85" width="15" height="25" class="box relu-box" />
+    <text x="213" y="125" class="layer-label">ReLU</text>
+    
+    <!-- Pool2 -->
+    <rect x="230" y="65" width="25" height="35" class="box pool-box" />
+    <text x="243" y="125" class="layer-label">Pool</text>
+    
+    <!-- FC -->
+    <rect x="265" y="70" width="30" height="25" class="box fc-box" />
+    <text x="280" y="125" class="layer-label">FC</text>
+    
+    <!-- Output -->
+    <rect x="305" y="75" width="35" height="15" fill="#c6dbef" stroke="#3182bd" class="box" />
+    <text x="323" y="110" class="layer-label">Output</text>
+    
+    <!-- Arrows -->
+    <path d="M 50,80 L 60,80" class="arrow" />
+    <path d="M 90,80 L 100,80" class="arrow" />
+    <path d="M 120,80 L 130,80" class="arrow" />
+    <path d="M 160,80 L 170,80" class="arrow" />
+    <path d="M 195,80 L 205,80" class="arrow" />
+    <path d="M 220,80 L 230,80" class="arrow" />
+    <path d="M 255,80 L 265,80" class="arrow" />
+    <path d="M 295,80 L 305,80" class="arrow" />
+    
+    <text x="175" y="155" class="description">Hierarchical feature extraction with weight sharing</text>
+  </g>
+  
+  <!-- ResNet Architecture -->
+  <g transform="translate(420, 110)">
+    <rect x="0" y="0" width="350" height="180" fill="#f9f9f9" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+    <text x="175" y="25" class="arch-title">Residual Network (ResNet)</text>
+    
+    <!-- Input -->
+    <rect x="15" y="75" width="30" height="30" class="box" fill="#fee0d2" stroke="#de2d26" />
+    <text x="30" y="125" class="layer-label">Input</text>
+    
+    <!-- Residual Block 1 -->
+    <rect x="55" y="50" width="120" height="80" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="5,2" />
+    <text x="115" y="45" class="layer-label">Residual Block</text>
+    
+    <!-- Block Contents -->
+    <rect x="65" y="70" width="30" height="20" class="box res-box" />
+    <text x="80" y="80" class="layer-label" style="font-size: 10px;">Conv</text>
+    
+    <rect x="105" y="70" width="20" height="20" class="box norm-box" />
+    <text x="115" y="80" class="layer-label" style="font-size: 10px;">BN</text>
+    
+    <rect x="135" y="70" width="30" height="20" class="box res-box" />
+    <text x="150" y="80" class="layer-label" style="font-size: 10px;">Conv</text>
+    
+    <!-- Addition (circle) -->
+    <circle cx="185" cy="80" r="10" fill="white" stroke="#666" stroke-width="1.5" />
+    <text x="185" y="84" class="layer-label" style="font-size: 12px; font-weight: bold;">+</text>
+    
+    <!-- ReLU -->
+    <rect x="205" y="70" width="25" height="20" class="box relu-box" />
+    <text x="218" y="125" class="layer-label">ReLU</text>
+    
+    <!-- FC -->
+    <rect x="240" y="70" width="40" height="20" class="box fc-box" />
+    <text x="260" y="125" class="layer-label">FC</text>
+    
+    <!-- Output -->
+    <rect x="290" y="75" width="40" height="10" fill="#c6dbef" stroke="#3182bd" class="box" />
+    <text x="310" y="125" class="layer-label">Output</text>
+    
+    <!-- Arrows -->
+    <path d="M 45,80 L 65,80" class="arrow" />
+    <path d="M 95,80 L 105,80" class="arrow" />
+    <path d="M 125,80 L 135,80" class="arrow" />
+    <path d="M 165,80 L 175,80" class="arrow" />
+    <path d="M 195,80 L 205,80" class="arrow" />
+    <path d="M 230,80 L 240,80" class="arrow" />
+    <path d="M 280,80 L 290,80" class="arrow" />
+    
+    <!-- Skip Connection -->
+    <path d="M 45,60 C 45,60 160,60 175,80" class="shortcut" />
+    
+    <text x="175" y="155" class="description">Skip connections enable training very deep networks</text>
+  </g>
+  
+  <!-- Inception/GoogLeNet Architecture -->
+  <g transform="translate(30, 330)">
+    <rect x="0" y="0" width="350" height="220" fill="#f9f9f9" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+    <text x="175" y="25" class="arch-title">Inception Module</text>
+    
+    <!-- Input -->
+    <rect x="15" y="80" width="40" height="40" class="box" fill="#fee0d2" stroke="#de2d26" />
+    <text x="35" y="140" class="layer-label">Input</text>
+    
+    <!-- Parallel Paths -->
+    <!-- 1x1 Conv -->
+    <rect x="95" y="50" width="30" height="20" class="box res-box" />
+    <text x="110" y="40" class="layer-label" style="font-size: 10px;">1×1 Conv</text>
+    
+    <!-- 1x1 + 3x3 Conv -->
+    <rect x="95" y="80" width="20" height="15" class="box res-box" />
+    <text x="105" y="75" class="layer-label" style="font-size: 9px;">1×1</text>
+    <rect x="125" y="80" width="30" height="15" class="box res-box" />
+    <text x="140" y="75" class="layer-label" style="font-size: 9px;">3×3</text>
+    
+    <!-- 1x1 + 5x5 Conv -->
+    <rect x="95" y="105" width="20" height="15" class="box res-box" />
+    <text x="105" y="100" class="layer-label" style="font-size: 9px;">1×1</text>
+    <rect x="125" y="105" width="40" height="15" class="box res-box" />
+    <text x="145" y="100" class="layer-label" style="font-size: 9px;">5×5</text>
+    
+    <!-- MaxPool + 1x1 -->
+    <rect x="95" y="130" width="30" height="15" class="box pool-box" />
+    <text x="110" y="125" class="layer-label" style="font-size: 9px;">Pool</text>
+    <rect x="135" y="130" width="20" height="15" class="box res-box" />
+    <text x="145" y="125" class="layer-label" style="font-size: 9px;">1×1</text>
+    
+    <!-- Concatenation -->
+    <rect x="195" y="50" width="15" height="95" class="box concat-box" />
+    <text x="203" y="170" class="layer-label">Concat</text>
+    
+    <!-- Next Layer -->
+    <rect x="240" y="80" width="40" height="40" class="box res-box" />
+    <text x="260" y="140" class="layer-label">Next Layer</text>
+    
+    <!-- Arrows -->
+    <path d="M 55,100 L 75,100" class="arrow" />
+    
+    <!-- Branching arrows -->
+    <path d="M 75,100 L 85,60 L 95,60" class="arrow" />
+    <path d="M 75,100 L 85,87 L 95,87" class="arrow" />
+    <path d="M 75,100 L 85,112 L 95,112" class="arrow" />
+    <path d="M 75,100 L 85,137 L 95,137" class="arrow" />
+    
+    <!-- Continuation arrows -->
+    <path d="M 115,60 L 175,60 L 195,60" class="arrow" />
+    
+    <path d="M 115,87 L 125,87" class="arrow" />
+    <path d="M 155,87 L 175,87 L 195,87" class="arrow" />
+    
+    <path d="M 115,112 L 125,112" class="arrow" />
+    <path d="M 165,112 L 175,112 L 195,112" class="arrow" />
+    
+    <path d="M 125,137 L 135,137" class="arrow" />
+    <path d="M 155,137 L 175,137 L 195,137" class="arrow" />
+    
+    <!-- Final arrow -->
+    <path d="M 210,100 L 240,100" class="arrow" />
+    
+    <text x="175" y="200" class="description">Parallel filters at multiple scales with dimensionality reduction</text>
+  </g>
+  
+  <!-- Transformer Architecture -->
+  <g transform="translate(420, 330)">
+    <rect x="0" y="0" width="350" height="220" fill="#f9f9f9" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+    <text x="175" y="25" class="arch-title">Transformer Architecture</text>
+    
+    <!-- Input -->
+    <rect x="20" y="100" width="30" height="30" class="box" fill="#fee0d2" stroke="#de2d26" />
+    <text x="35" y="145" class="layer-label">Input</text>
+    
+    <!-- Positional Encoding -->
+    <rect x="80" y="105" width="35" height="20" fill="#fdae6b" stroke="#e6550d" class="box" />
+    <text x="97" y="145" class="layer-label">+ Positional</text>
+    <text x="97" y="157" class="layer-label">Encoding</text>
+    
+    <!-- Multi-Head Attention -->
+    <rect x="145" y="80" width="80" height="70" fill="none" stroke="#999" stroke-width="1" stroke-dasharray="5,2" />
+    <text x="185" y="70" class="layer-label">Multi-Head Attention</text>
+    
+    <!-- Attention Heads -->
+    <rect x="155" y="90" width="20" height="15" class="box attn-box" />
+    <rect x="155" y="110" width="20" height="15" class="box attn-box" />
+    <rect x="155" y="130" width="20" height="15" class="box attn-box" />
+    <text x="165" y="102" class="layer-label" style="font-size: 8px;">Head 1</text>
+    <text x="165" y="122" class="layer-label" style="font-size: 8px;">Head 2</text>
+    <text x="165" y="142" class="layer-label" style="font-size: 8px;">Head n</text>
+    
+    <!-- Attention Vertical Ellipsis -->
+    <text x="165" y="125" class="layer-label" style="font-size: 10px; font-weight: bold;">⋮</text>
+    
+    <!-- Concatenation -->
+    <rect x="195" y="105" width="20" height="20" class="box concat-box" />
+    <text x="205" y="117" class="layer-label" style="font-size: 8px;">Concat</text>
+    
+    <!-- Feed Forward -->
+    <rect x="255" y="95" width="40" height="40" class="box fc-box" />
+    <text x="275" y="120" class="layer-label" style="font-size: 10px;">Feed</text>
+    <text x="275" y="130" class="layer-label" style="font-size: 10px;">Forward</text>
+    
+    <!-- Output -->
+    <rect x="305" y="105" width="25" height="20" fill="#c6dbef" stroke="#3182bd" class="box" />
+    <text x="318" y="145" class="layer-label">Output</text>
+    
+    <!-- Arrows -->
+    <path d="M 50,115 L 80,115" class="arrow" />
+    <path d="M 115,115 L 145,115" class="arrow" />
+    <path d="M 215,115 L 255,115" class="arrow" />
+    <path d="M 295,115 L 305,115" class="arrow" />
+    
+    <!-- Key, Query, Value labels -->
+    <text x="142" y="200" class="key-value" style="text-anchor: end;">Q: Query (what to look for)</text>
+    <text x="232" y="200" class="key-value">K: Key (where to look)</text>
+    <text x="307" y="200" class="key-value" style="text-anchor: end;">V: Value (what to return)</text>
+    
+    <text x="175" y="180" class="description">Self-attention captures long-range dependencies</text>
+  </g>
+</svg>

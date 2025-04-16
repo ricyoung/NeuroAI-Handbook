@@ -10,6 +10,9 @@
 
 Deep learning has revolutionized AI by enabling models to learn hierarchical representations directly from data. At its core, deep learning is built on neural networks with multiple layers that progressively extract higher-level features.
 
+![Neural Network Architecture](../figures/ch10/neural_network_architecture.svg)
+*Figure 10.1: A multilayer perceptron with two hidden layers, showing how neurons connect between layers and activate through non-linear functions.*
+
 ### 10.1.1 Multilayer Perceptrons
 
 Multilayer perceptrons (MLPs) are the foundational architecture of deep learning, consisting of an input layer, one or more hidden layers, and an output layer.
@@ -250,6 +253,9 @@ Solutions to these gradient problems include:
 ## 10.2 Optimization Techniques
 
 Training deep neural networks requires effective optimization algorithms. The choice of optimizer significantly impacts training speed and model performance.
+
+![Optimization Algorithms](../figures/ch10/optimization_algorithms.svg)
+*Figure 10.2: Comparison of different optimization algorithms showing convergence paths in a loss landscape. Modern approaches like Adam and RMSprop often converge faster and more reliably than vanilla SGD.*
 
 ### 10.2.1 Stochastic Gradient Descent
 
@@ -559,6 +565,9 @@ While second-order methods offer theoretical advantages, their computational req
 ## 10.3 Regularization Strategies
 
 Regularization helps prevent overfitting by constraining the model's capacity or adding noise to the training process.
+
+![Regularization Techniques](../figures/ch10/regularization_techniques.svg)
+*Figure 10.3: Common regularization methods in deep learning, including dropout, weight decay (L2), batch normalization, data augmentation, early stopping, and label smoothing.*
 
 ### 10.3.1 Dropout and Batch Normalization
 
@@ -956,6 +965,9 @@ Benefits include:
 
 Modern deep learning has evolved sophisticated architectures for different domains.
 
+![Advanced Architectures](../figures/ch10/advanced_architectures.svg)
+*Figure 10.4: Key architectural patterns in modern deep learning, including CNNs, ResNets, Inception modules, and Transformer blocks, each addressing specific model design challenges.*
+
 ### 10.4.1 Convolutional Neural Networks
 
 ```python
@@ -1264,23 +1276,8 @@ Understanding the training dynamics of deep networks provides insights into opti
 
 ### 10.5.1 Loss Landscapes
 
-```python
-def loss_landscape_visualization():
-    """Create visual representation of neural network loss landscape."""
-    # Display the SVG figure
-    from IPython.display import SVG, display
-    fig_path = '/Volumes/data_bolt/_github/NeuroAI-Handbook/book/figures/dl_optimization_landscape.svg'
-    
-    # Create a placeholder figure with text directing to the SVG
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.text(0.5, 0.5, "Loss Landscape Visualization\n\nSee figure: dl_optimization_landscape.svg", 
-            ha='center', va='center', fontsize=14)
-    ax.axis('off')
-    
-    # Return instructions to view the actual figure
-    print("Please refer to the figure: dl_optimization_landscape.svg")
-    return fig
-```
+![Loss Landscape](../figures/dl_optimization_landscape.svg)
+*Figure 10.5: Visualization of neural network loss landscape showing the complex optimization surface with local minima, saddle points, and flat regions.*
 
 Loss landscapes in deep networks are complex, high-dimensional surfaces with many local minima, saddle points, and flat regions:
 
