@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 24px Arial; fill: #333; text-anchor: middle; }
+    .subtitle { font: 18px Arial; fill: #666; text-anchor: middle; }
+    .technique-title { font: bold 16px Arial; fill: #333; text-anchor: middle; }
+    .label { font: 14px Arial; fill: #333; text-anchor: middle; }
+    .sublabel { font: 12px Arial; fill: #666; text-anchor: middle; }
+    .code { font: 12px Courier; fill: #333; text-anchor: start; }
+    .code-highlight { font: 12px Courier; fill: #cc3300; text-anchor: start; }
+    .comment { font: italic 12px Arial; fill: #666; text-anchor: start; }
+    .performance { font: 12px Arial; fill: #333; text-anchor: end; }
+    .zero-shot { fill: #e6f3ff; stroke: #3366cc; stroke-width: 1.5; }
+    .few-shot { fill: #e6ffe6; stroke: #339933; stroke-width: 1.5; }
+    .cot { fill: #ffcccc; stroke: #993333; stroke-width: 1.5; }
+    .system { fill: #f0e6ff; stroke: #6633cc; stroke-width: 1.5; }
+    .persona { fill: #ffffcc; stroke: #996600; stroke-width: 1.5; }
+    .arrow { stroke: #666; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+    .box { fill: #f9f9f9; stroke: #ccc; stroke-width: 1; }
+    .prompt { fill: #fff; stroke: #999; stroke-width: 1; }
+    .model { fill: #f2f2f2; stroke: #999; stroke-width: 1; rx: 20; ry: 20; }
+    .response { fill: #f8f8f8; stroke: #666; stroke-width: 1; rx: 5; ry: 5; }
+    .scale { fill: #e0e0e0; stroke: none; }
+    .scale-highlight { fill: #66cc66; opacity: 0.7; }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" class="title">Prompting Techniques for LLMs</text>
+  <text x="400" y="60" class="subtitle">Strategies to Optimize Model Performance Without Fine-tuning</text>
+  
+  <!-- Zero-shot prompting -->
+  <rect x="50" y="90" width="700" height="100" class="box" rx="5" ry="5" />
+  <text x="400" y="110" class="technique-title">Zero-Shot Prompting</text>
+  
+  <rect x="80" y="125" width="300" height="50" class="prompt" rx="3" ry="3" />
+  <text x="90" y="145" class="code">Classify the following sentiment:</text>
+  <text x="90" y="160" class="code">"I love this new phone, it's amazing!"</text>
+  
+  <rect x="400" y="125" width="50" height="50" class="model" />
+  <text x="425" y="155" class="label">LLM</text>
+  
+  <rect x="470" y="125" width="250" height="50" class="response" />
+  <text x="480" y="150" class="code">Positive</text>
+  
+  <path d="M 380,150 L 400,150" class="arrow" />
+  <path d="M 450,150 L 470,150" class="arrow" />
+  
+  <!-- Few-shot prompting -->
+  <rect x="50" y="210" width="700" height="140" class="box" rx="5" ry="5" />
+  <text x="400" y="230" class="technique-title">Few-Shot Prompting</text>
+  
+  <rect x="80" y="245" width="300" height="90" class="prompt" rx="3" ry="3" />
+  <text x="90" y="265" class="code">Text: "The food was cold and bland."</text>
+  <text x="90" y="280" class="code">Sentiment: Negative</text>
+  <text x="90" y="295" class="code">Text: "This movie is a masterpiece!"</text>
+  <text x="90" y="310" class="code">Sentiment: Positive</text>
+  <text x="90" y="325" class="code">Text: "I love this new phone, it's amazing!"</text>
+  <text x="90" y="340" class="code">Sentiment:</text>
+  
+  <rect x="400" y="265" width="50" height="50" class="model" />
+  <text x="425" y="295" class="label">LLM</text>
+  
+  <rect x="470" y="265" width="250" height="50" class="response" />
+  <text x="480" y="290" class="code">Positive</text>
+  
+  <path d="M 380,290 L 400,290" class="arrow" />
+  <path d="M 450,290 L 470,290" class="arrow" />
+  
+  <!-- Chain of Thought prompting -->
+  <rect x="50" y="370" width="700" height="140" class="box" rx="5" ry="5" />
+  <text x="400" y="390" class="technique-title">Chain-of-Thought Prompting</text>
+  
+  <rect x="80" y="405" width="300" height="90" class="prompt" rx="3" ry="3" />
+  <text x="90" y="425" class="code">Question: If John has 5 apples and</text>
+  <text x="90" y="440" class="code">buys 3 more, then gives 2 to Mary,</text>
+  <text x="90" y="455" class="code">how many apples does John have?</text>
+  <text x="90" y="475" class="code-highlight">Let's think step by step.</text>
+  
+  <rect x="400" y="425" width="50" height="50" class="model" />
+  <text x="425" y="455" class="label">LLM</text>
+  
+  <rect x="470" y="405" width="250" height="90" class="response" />
+  <text x="480" y="425" class="code">1. John starts with 5 apples.</text>
+  <text x="480" y="440" class="code">2. He buys 3 more, so he has 5+3=8.</text>
+  <text x="480" y="455" class="code">3. He gives 2 to Mary, so he has 8-2=6.</text>
+  <text x="480" y="470" class="code">4. John has 6 apples.</text>
+  <text x="480" y="485" class="code">The answer is 6 apples.</text>
+  
+  <path d="M 380,450 L 400,450" class="arrow" />
+  <path d="M 450,450 L 470,450" class="arrow" />
+  
+  <!-- System prompts -->
+  <rect x="50" y="530" width="700" height="50" class="box" rx="5" ry="5" />
+  <text x="400" y="560" class="technique-title">System Prompts &amp; Persona Design</text>
+  
+  <rect x="80" y="490" width="640" height="30" class="system" rx="3" ry="3" />
+  <text x="400" y="510" class="label">Role, Behavior Guidelines, Constraints, Domain Knowledge</text>
+  
+  <!-- Performance comparison -->
+  <rect x="720" y="110" width="20" height="80" rx="2" ry="2" class="scale" />
+  <rect x="720" y="150" width="20" height="40" class="scale-highlight" rx="2" ry="2" />
+  <text x="710" y="110" class="performance">Basic</text>
+  
+  <rect x="720" y="265" width="20" height="80" rx="2" ry="2" class="scale" />
+  <rect x="720" y="265" width="20" height="60" class="scale-highlight" rx="2" ry="2" />
+  <text x="710" y="265" class="performance">Good</text>
+  
+  <rect x="720" y="425" width="20" height="80" rx="2" ry="2" class="scale" />
+  <rect x="720" y="425" width="20" height="75" class="scale-highlight" rx="2" ry="2" />
+  <text x="710" y="425" class="performance">Best</text>
+  
+  <!-- Example indicators -->
+  <rect x="400" y="180" width="200" height="20" fill="none" stroke="none" />
+  <text x="400" y="195" class="comment">✓ Direct task instructions</text>
+  
+  <rect x="400" y="350" width="200" height="20" fill="none" stroke="none" />
+  <text x="400" y="365" class="comment">✓ Learning from examples</text>
+  
+  <rect x="400" y="515" width="200" height="20" fill="none" stroke="none" />
+  <text x="400" y="530" class="comment">✓ Explicit reasoning guidance</text>
+  
+  <rect x="400" y="585" width="200" height="20" fill="none" stroke="none" />
+  <text x="400" y="600" class="comment">✓ Behavior framing</text>
+</svg>

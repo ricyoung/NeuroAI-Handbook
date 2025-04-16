@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 24px Arial; fill: #333; text-anchor: middle; }
+    .subtitle { font: 18px Arial; fill: #666; text-anchor: middle; }
+    .box-title { font: bold 16px Arial; fill: #333; text-anchor: middle; }
+    .layer-title { font: bold 14px Arial; fill: #333; text-anchor: middle; }
+    .label { font: 14px Arial; fill: #333; text-anchor: middle; }
+    .sublabel { font: 12px Arial; fill: #666; text-anchor: middle; }
+    .token { fill: #e6f3ff; stroke: #3366cc; stroke-width: 1.5; }
+    .embedding { fill: #ffffcc; stroke: #999; stroke-width: 1.5; }
+    .attention { fill: #ffcccc; stroke: #993333; stroke-width: 1.5; }
+    .mlp { fill: #e6ffe6; stroke: #339933; stroke-width: 1.5; }
+    .output { fill: #f0e6ff; stroke: #6633cc; stroke-width: 1.5; }
+    .arrow { stroke: #666; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+    .residual { stroke: #ff6600; stroke-width: 2; fill: none; stroke-dasharray: 5,3; }
+    .layer-bg { fill: #f9f9f9; stroke: #ccc; stroke-width: 1; }
+    .scale-bar { fill: #f0f0f0; stroke: #666; stroke-width: 1; }
+    .scale-highlight { fill: #ffcc99; stroke: #ff6600; stroke-width: 1.5; }
+    .callout { fill: #fff; stroke: #999; stroke-width: 1; stroke-dasharray: 3,3; rx: 5; ry: 5; }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" class="title">Large Language Model Architecture</text>
+  <text x="400" y="60" class="subtitle">From Tokenization to Next Token Prediction</text>
+  
+  <!-- Input text -->
+  <rect x="50" y="100" width="700" height="30" fill="#f5f5f5" stroke="#ccc" stroke-width="1" />
+  <text x="400" y="120" class="label">"The quick brown fox jumps over the lazy"</text>
+  
+  <!-- Tokenization -->
+  <rect x="170" y="160" width="60" height="30" class="token" />
+  <text x="200" y="180" class="label">The</text>
+  
+  <rect x="240" y="160" width="60" height="30" class="token" />
+  <text x="270" y="180" class="label">quick</text>
+  
+  <rect x="310" y="160" width="60" height="30" class="token" />
+  <text x="340" y="180" class="label">brown</text>
+  
+  <rect x="380" y="160" width="60" height="30" class="token" />
+  <text x="410" y="180" class="label">fox</text>
+  
+  <rect x="450" y="160" width="60" height="30" class="token" />
+  <text x="480" y="180" class="label">jumps</text>
+  
+  <rect x="520" y="160" width="60" height="30" class="token" />
+  <text x="550" y="180" class="label">over</text>
+  
+  <rect x="590" y="160" width="60" height="30" class="token" />
+  <text x="620" y="180" class="label">the</text>
+  
+  <rect x="660" y="160" width="60" height="30" class="token" />
+  <text x="690" y="180" class="label">lazy</text>
+  
+  <!-- Token Embeddings -->
+  <rect x="170" y="220" width="60" height="30" class="embedding" />
+  <text x="200" y="240" class="sublabel">E1</text>
+  
+  <rect x="240" y="220" width="60" height="30" class="embedding" />
+  <text x="270" y="240" class="sublabel">E2</text>
+  
+  <rect x="310" y="220" width="60" height="30" class="embedding" />
+  <text x="340" y="240" class="sublabel">E3</text>
+  
+  <rect x="380" y="220" width="60" height="30" class="embedding" />
+  <text x="410" y="240" class="sublabel">E4</text>
+  
+  <rect x="450" y="220" width="60" height="30" class="embedding" />
+  <text x="480" y="240" class="sublabel">E5</text>
+  
+  <rect x="520" y="220" width="60" height="30" class="embedding" />
+  <text x="550" y="240" class="sublabel">E6</text>
+  
+  <rect x="590" y="220" width="60" height="30" class="embedding" />
+  <text x="620" y="240" class="sublabel">E7</text>
+  
+  <rect x="660" y="220" width="60" height="30" class="embedding" />
+  <text x="690" y="240" class="sublabel">E8</text>
+  
+  <!-- Positional Embeddings -->
+  <text x="100" y="240" class="sublabel" text-anchor="start">+ Position</text>
+  
+  <!-- Transformer Encoder Stack -->
+  <rect x="150" y="280" width="600" height="180" class="layer-bg" rx="5" ry="5" />
+  <text x="450" y="300" class="box-title">Transformer Layers × N</text>
+  
+  <!-- Layer 1 -->
+  <rect x="170" y="320" width="540" height="40" fill="#fff" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+  <text x="220" y="345" class="layer-title">Self-Attention</text>
+  
+  <rect x="170" y="370" width="540" height="40" fill="#fff" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+  <text x="220" y="395" class="layer-title">Feed-Forward Network</text>
+  
+  <!-- Layer details -->
+  <text x="450" y="345" class="sublabel">(Multi-Head Attention with causal masking)</text>
+  <text x="450" y="395" class="sublabel">(MLP with GeLU activation)</text>
+  
+  <!-- Layer output -->
+  <rect x="300" y="450" width="60" height="30" class="token" />
+  <text x="330" y="470" class="label">dog</text>
+  <text x="330" y="490" class="sublabel">71%</text>
+  
+  <rect x="370" y="450" width="60" height="30" class="token" />
+  <text x="400" y="470" class="label">cat</text>
+  <text x="400" y="490" class="sublabel">18%</text>
+  
+  <rect x="440" y="450" width="60" height="30" class="token" />
+  <text x="470" y="470" class="label">rabbit</text>
+  <text x="470" y="490" class="sublabel">6%</text>
+  
+  <rect x="510" y="450" width="60" height="30" class="token" />
+  <text x="540" y="470" class="label">dog</text>
+  <text x="540" y="490" class="sublabel">3%</text>
+  
+  <text x="200" y="470" class="label" text-anchor="start">Next Token:</text>
+  
+  <!-- Scaling visualization -->
+  <rect x="150" y="520" width="600" height="60" fill="#f5f5f5" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+  <text x="450" y="540" class="layer-title">Scaling Dimensions</text>
+  
+  <!-- Scale bars -->
+  <rect x="180" y="560" width="150" height="10" class="scale-bar" />
+  <rect x="180" y="560" width="30" height="10" class="scale-highlight" />
+  <text x="180" y="580" class="sublabel" text-anchor="start">Model Size (Parameters)</text>
+  
+  <rect x="380" y="560" width="150" height="10" class="scale-bar" />
+  <rect x="380" y="560" width="90" height="10" class="scale-highlight" />
+  <text x="380" y="580" class="sublabel" text-anchor="start">Training Data Size</text>
+  
+  <rect x="580" y="560" width="150" height="10" class="scale-bar" />
+  <rect x="580" y="560" width="110" height="10" class="scale-highlight" />
+  <text x="580" y="580" class="sublabel" text-anchor="start">Compute Budget</text>
+  
+  <!-- Connections -->
+  <path d="M 400,130 L 400,150" class="arrow" />
+  <text x="420" y="145" class="sublabel" text-anchor="start">Tokenize</text>
+  
+  <path d="M 400,190 L 400,210" class="arrow" />
+  <text x="420" y="205" class="sublabel" text-anchor="start">Embed</text>
+  
+  <path d="M 400,250 L 400,280" class="arrow" />
+  <text x="420" y="270" class="sublabel" text-anchor="start">Process</text>
+  
+  <path d="M 400,460 L 400,480" class="arrow" />
+  <text x="420" y="475" class="sublabel" text-anchor="start">Sample</text>
+  
+  <!-- Residual connections -->
+  <path d="M 150,340 L 170,340" class="residual" />
+  <path d="M 710,340 L 730,340 C 740,340 740,390 730,390 L 150,390 C 140,390 140,340 150,340" class="residual" />
+  
+  <path d="M 150,390 L 170,390" class="residual" />
+  <path d="M 710,390 L 730,390 C 740,390 740,450 730,450 L 150,450 C 140,450 140,390 150,390" class="residual" />
+  
+  <!-- Callouts -->
+  <rect x="50" y="330" width="80" height="40" class="callout" />
+  <text x="90" y="345" class="sublabel" text-anchor="middle">Residual</text>
+  <text x="90" y="360" class="sublabel" text-anchor="middle">Connections</text>
+  
+  <rect x="50" y="400" width="80" height="40" class="callout" />
+  <text x="90" y="415" class="sublabel" text-anchor="middle">Layer</text>
+  <text x="90" y="430" class="sublabel" text-anchor="middle">Normalization</text>
+</svg>

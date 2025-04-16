@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 20px Arial; fill: #333; text-anchor: middle; }
+    .subtitle { font: italic 14px Arial; fill: #666; text-anchor: middle; }
+    .year { font: bold 12px Arial; fill: #333; text-anchor: middle; }
+    .event-title { font: bold 12px Arial; fill: #333; text-anchor: middle; }
+    .event-text { font: 10px Arial; fill: #333; text-anchor: middle; }
+    .divider { stroke: #999; stroke-width: 1; stroke-dasharray: 3,3; }
+    .timeline { stroke: #333; stroke-width: 2; }
+    .timeline-marker { stroke: #333; stroke-width: 1; fill: #fff; }
+    .neuro-box { fill: #e6f3ff; stroke: #3366cc; stroke-width: 1.5; }
+    .ai-box { fill: #ffe6e6; stroke: #cc3333; stroke-width: 1.5; }
+    .joint-box { fill: #e6ffe6; stroke: #339933; stroke-width: 1.5; }
+    .winter-box { fill: #f2f2f2; stroke: #999; stroke-width: 1.5; opacity: 0.5; }
+    .connection { stroke: #666; stroke-width: 1; stroke-dasharray: 2,2; marker-end: url(#arrowhead); }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" class="title">Historical Timeline: Neuroscience and AI</text>
+  <text x="400" y="50" class="subtitle">Key developments and cross-influences between the fields</text>
+  
+  <!-- Timeline divider -->
+  <line x1="50" y1="250" x2="750" y2="250" class="divider" />
+  <text x="730" y="240" class="subtitle" text-anchor="end">Neuroscience</text>
+  <text x="730" y="270" class="subtitle" text-anchor="end">Artificial Intelligence</text>
+  
+  <!-- Timeline -->
+  <line x1="100" y1="250" x2="700" y2="250" class="timeline" />
+  
+  <!-- Timeline markers -->
+  <line x1="100" y1="245" x2="100" y2="255" class="timeline-marker" />
+  <line x1="200" y1="245" x2="200" y2="255" class="timeline-marker" />
+  <line x1="300" y1="245" x2="300" y2="255" class="timeline-marker" />
+  <line x1="400" y1="245" x2="400" y2="255" class="timeline-marker" />
+  <line x1="500" y1="245" x2="500" y2="255" class="timeline-marker" />
+  <line x1="600" y1="245" x2="600" y2="255" class="timeline-marker" />
+  <line x1="700" y1="245" x2="700" y2="255" class="timeline-marker" />
+  
+  <!-- Timeline years -->
+  <text x="100" y="270" class="year">1940s</text>
+  <text x="200" y="270" class="year">1950s</text>
+  <text x="300" y="270" class="year">1960s</text>
+  <text x="400" y="270" class="year">1970s-80s</text>
+  <text x="500" y="270" class="year">1990s</text>
+  <text x="600" y="270" class="year">2000s</text>
+  <text x="700" y="270" class="year">2010s+</text>
+  
+  <!-- Neuroscience Events -->
+  <rect x="80" y="140" width="80" height="60" class="neuro-box" rx="5" ry="5" />
+  <text x="120" y="160" class="event-title">Hodgkin-Huxley</text>
+  <text x="120" y="175" class="event-text">Action potential</text>
+  <text x="120" y="190" class="event-text">model (1952)</text>
+  
+  <rect x="170" y="140" width="80" height="60" class="neuro-box" rx="5" ry="5" />
+  <text x="210" y="160" class="event-title">Hubel & Wiesel</text>
+  <text x="210" y="175" class="event-text">Visual cortex</text>
+  <text x="210" y="190" class="event-text">receptive fields (1959)</text>
+  
+  <rect x="270" y="90" width="80" height="60" class="neuro-box" rx="5" ry="5" />
+  <text x="310" y="110" class="event-title">Hebb's Learning</text>
+  <text x="310" y="125" class="event-text">"Neurons that fire</text>
+  <text x="310" y="140" class="event-text">together, wire together"</text>
+  
+  <rect x="380" y="140" width="80" height="60" class="neuro-box" rx="5" ry="5" />
+  <text x="420" y="160" class="event-title">LTP Discovery</text>
+  <text x="420" y="175" class="event-text">Synaptic plasticity</text>
+  <text x="420" y="190" class="event-text">mechanism (1973)</text>
+  
+  <rect x="480" y="80" width="80" height="60" class="neuro-box" rx="5" ry="5" />
+  <text x="520" y="100" class="event-title">Dopamine RPE</text>
+  <text x="520" y="115" class="event-text">Reward prediction</text>
+  <text x="520" y="130" class="event-text">error coding (1990s)</text>
+  
+  <rect x="600" y="110" width="80" height="60" class="neuro-box" rx="5" ry="5" />
+  <text x="640" y="130" class="event-title">Human</text>
+  <text x="640" y="145" class="event-text">Connectome</text>
+  <text x="640" y="160" class="event-text">Project (2009)</text>
+  
+  <rect x="690" y="160" width="80" height="60" class="neuro-box" rx="5" ry="5" />
+  <text x="730" y="180" class="event-title">BRAIN Initiative</text>
+  <text x="730" y="195" class="event-text">Large-scale neural</text>
+  <text x="730" y="210" class="event-text">recordings (2013)</text>
+  
+  <!-- AI Events -->
+  <rect x="80" y="310" width="80" height="60" class="ai-box" rx="5" ry="5" />
+  <text x="120" y="330" class="event-title">McCulloch & Pitts</text>
+  <text x="120" y="345" class="event-text">Mathematical neuron</text>
+  <text x="120" y="360" class="event-text">model (1943)</text>
+  
+  <rect x="180" y="310" width="80" height="60" class="ai-box" rx="5" ry="5" />
+  <text x="220" y="330" class="event-title">Perceptron</text>
+  <text x="220" y="345" class="event-text">First trainable neural</text>
+  <text x="220" y="360" class="event-text">network (1957)</text>
+  
+  <rect x="260" y="360" width="80" height="60" class="ai-box" rx="5" ry="5" />
+  <text x="300" y="380" class="event-title">Minsky & Papert</text>
+  <text x="300" y="395" class="event-text">"Perceptrons" book</text>
+  <text x="300" y="410" class="event-text">(1969)</text>
+  
+  <rect x="370" y="370" width="100" height="40" class="winter-box" rx="5" ry="5" />
+  <text x="420" y="395" class="event-title">First AI Winter</text>
+  
+  <rect x="380" y="310" width="80" height="60" class="ai-box" rx="5" ry="5" />
+  <text x="420" y="330" class="event-title">Backpropagation</text>
+  <text x="420" y="345" class="event-text">Multi-layer network</text>
+  <text x="420" y="360" class="event-text">training (1986)</text>
+  
+  <rect x="480" y="350" width="80" height="60" class="ai-box" rx="5" ry="5" />
+  <text x="520" y="370" class="event-title">CNNs</text>
+  <text x="520" y="385" class="event-text">LeNet-5 for digit</text>
+  <text x="520" y="400" class="event-text">recognition (1998)</text>
+  
+  <rect x="580" y="310" width="80" height="60" class="ai-box" rx="5" ry="5" />
+  <text x="620" y="330" class="event-title">Deep Learning</text>
+  <text x="620" y="345" class="event-text">Pre-training</text>
+  <text x="620" y="360" class="event-text">breakthrough (2006)</text>
+  
+  <rect x="680" y="310" width="80" height="60" class="ai-box" rx="5" ry="5" />
+  <text x="720" y="330" class="event-title">Transformers</text>
+  <text x="720" y="345" class="event-text">Attention-based</text>
+  <text x="720" y="360" class="event-text">architectures (2017+)</text>
+  
+  <!-- Joint Developments / Cross-Fertilization -->
+  <rect x="130" y="220" width="80" height="60" class="joint-box" rx="5" ry="5" />
+  <text x="170" y="240" class="event-title">Cybernetics</text>
+  <text x="170" y="255" class="event-text">Feedback systems</text>
+  <text x="170" y="270" class="event-text">(Wiener, 1948)</text>
+  
+  <rect x="220" y="220" width="80" height="60" class="joint-box" rx="5" ry="5" />
+  <text x="260" y="240" class="event-title">Dartmouth</text>
+  <text x="260" y="255" class="event-text">Conference</text>
+  <text x="260" y="270" class="event-text">(1956)</text>
+  
+  <rect x="490" y="220" width="80" height="60" class="joint-box" rx="5" ry="5" />
+  <text x="530" y="240" class="event-title">Neural Basis of RL</text>
+  <text x="530" y="255" class="event-text">TD learning & dopamine</text>
+  <text x="530" y="270" class="event-text">(Montague et al., 1996)</text>
+  
+  <rect x="630" y="220" width="100" height="60" class="joint-box" rx="5" ry="5" />
+  <text x="680" y="240" class="event-title">Deep Neural Networks</text>
+  <text x="680" y="255" class="event-text">predict neural responses</text>
+  <text x="680" y="270" class="event-text">(Yamins et al., 2014)</text>
+  
+  <!-- Connections -->
+  <path d="M 200,200 C 220,280 260,300 300,350" class="connection" />
+  <path d="M 520,140 C 530,180 530,200 530,220" class="connection" />
+  <path d="M 520,410 C 550,450 600,460 700,370" class="connection" />
+  <path d="M 240,140 C 300,150 350,160 400,310" class="connection" />
+  <path d="M 640,170 C 670,200 690,220 730,310" class="connection" />
+</svg>

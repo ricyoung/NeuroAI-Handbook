@@ -409,13 +409,45 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-goals">1.0 Chapter Goals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-context">1.1 Historical Context</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#levels-of-analysis">1.2 Levels of Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-parallels">1.3 Key Parallels</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-studies">1.4 Case Studies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-challenges">1.5 Current Challenges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-context">1.1 Historical Context</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#early-foundations">1.1.1 Early Foundations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-networks-first-wave">1.1.2 Neural Networks: First Wave</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revival-and-modern-neural-networks">1.1.3 Revival and Modern Neural Networks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#levels-of-analysis">1.2 Levels of Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#marr-s-three-levels">1.2.1 Marr’s Three Levels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-neurons-to-networks-to-behavior">1.2.2 From Neurons to Networks to Behavior</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-neuroscience-approaches">1.2.3 Computational Neuroscience Approaches</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-parallels">1.3 Key Parallels</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-processing-units">1.3.1 Information Processing Units</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-architectures">1.3.2 Network Architectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-mechanisms">1.3.3 Learning Mechanisms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representational-properties">1.3.4 Representational Properties</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-studies">1.4 Case Studies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-recognition-visual-cortex-vs-cnns">1.4.1 Object Recognition: Visual Cortex vs. CNNs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning-and-reward-systems">1.4.2 Reinforcement Learning and Reward Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-systems-and-neural-networks">1.4.3 Memory Systems and Neural Networks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-challenges">1.5 Current Challenges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-and-complexity-differences">1.5.1 Scale and Complexity Differences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-efficiency-gap">1.5.2 Energy Efficiency Gap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretability-issues">1.5.3 Interpretability Issues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalization-capabilities">1.5.4 Generalization Capabilities</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">1.6 Take-aways</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">1.7 Further Reading &amp; Media</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">1.7 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foundational-papers">Foundational Papers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#books">Books</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#videos-and-lectures">Videos and Lectures</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -440,64 +472,649 @@ document.write(`
 </section>
 <section id="historical-context">
 <h2>1.1 Historical Context<a class="headerlink" href="#historical-context" title="Link to this heading">#</a></h2>
+<p>The relationship between neuroscience and artificial intelligence is deeply intertwined, with each field influencing the other across decades of research. Understanding this history helps frame modern developments in both disciplines.</p>
+<p><img alt="Neuroscience and AI Timeline" src="../_images/neuro_ai_timeline.svg" />
+<em>Figure 1.1: Historical timeline showing the parallel development of neuroscience and AI, with key moments of cross-fertilization.</em></p>
+<section id="early-foundations">
+<h3>1.1.1 Early Foundations<a class="headerlink" href="#early-foundations" title="Link to this heading">#</a></h3>
+<p>The foundational ideas that would become AI emerged from attempts to understand and model how the brain processes information:</p>
+<p><strong>Cybernetics (1940s-1950s)</strong> established the concept of feedback control systems, inspired by how biological organisms maintain homeostasis. Norbert Wiener defined cybernetics as “the scientific study of control and communication in the animal and the machine,” highlighting the cross-disciplinary approach.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">simple_feedback_system</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">initial_state</span><span class="p">,</span> <span class="n">gain</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">noise_level</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">steps</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulate a simple feedback control system with noise.&quot;&quot;&quot;</span>
+    <span class="n">state</span> <span class="o">=</span> <span class="n">initial_state</span>
+    <span class="n">states</span> <span class="o">=</span> <span class="p">[</span><span class="n">state</span><span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">steps</span><span class="p">):</span>
+        <span class="c1"># Measure error (difference between current state and target)</span>
+        <span class="n">error</span> <span class="o">=</span> <span class="n">target</span> <span class="o">-</span> <span class="n">state</span>
+        
+        <span class="c1"># Apply correction based on error and gain factor</span>
+        <span class="n">correction</span> <span class="o">=</span> <span class="n">gain</span> <span class="o">*</span> <span class="n">error</span>
+        
+        <span class="c1"># Add some noise to simulate real-world conditions</span>
+        <span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">noise_level</span><span class="p">)</span>
+        
+        <span class="c1"># Update state</span>
+        <span class="n">state</span> <span class="o">=</span> <span class="n">state</span> <span class="o">+</span> <span class="n">correction</span> <span class="o">+</span> <span class="n">noise</span>
+        <span class="n">states</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">states</span><span class="p">)</span>
+
+<span class="c1"># Example: Simulate homeostatic control (like body temperature regulation)</span>
+<span class="n">target_value</span> <span class="o">=</span> <span class="mf">37.0</span>  <span class="c1"># Target temperature (e.g., human body temperature)</span>
+<span class="n">initial_value</span> <span class="o">=</span> <span class="mf">36.0</span>  <span class="c1"># Starting below target</span>
+
+<span class="c1"># Compare different gain factors</span>
+<span class="n">gains</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">gain</span> <span class="ow">in</span> <span class="n">gains</span><span class="p">:</span>
+    <span class="n">states</span> <span class="o">=</span> <span class="n">simple_feedback_system</span><span class="p">(</span><span class="n">target_value</span><span class="p">,</span> <span class="n">initial_value</span><span class="p">,</span> <span class="n">gain</span><span class="o">=</span><span class="n">gain</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">states</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Gain = </span><span class="si">{</span><span class="n">gain</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">target_value</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Target&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time Steps&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;System State&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Feedback Control System (Cybernetic Principle)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># plt.show()  # Uncomment to display the plot</span>
+</pre></div>
+</div>
+<p><strong>McCulloch &amp; Pitts Neurons (1943)</strong> provided the first mathematical model of a neuron, showing how simple logical operations could be performed by binary threshold units. This model represented neurons as boolean logic gates that fire when their inputs exceed a threshold—a framework that remains influential today.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mcculloch_pitts_neuron</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Implementation of a McCulloch-Pitts neuron.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        inputs: Binary input values (0 or 1)</span>
+<span class="sd">        weights: Connection weights (typically 1 or -1 for excitatory/inhibitory)</span>
+<span class="sd">        threshold: Activation threshold</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        1 if weighted sum of inputs meets/exceeds threshold, 0 otherwise</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">weighted_sum</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">w</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">weights</span><span class="p">))</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">weighted_sum</span> <span class="o">&gt;=</span> <span class="n">threshold</span> <span class="k">else</span> <span class="mi">0</span>
+
+<span class="c1"># Example: Implement logical operations with McCulloch-Pitts neurons</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">logical_AND</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">mcculloch_pitts_neuron</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">logical_OR</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">mcculloch_pitts_neuron</span><span class="p">([</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">logical_NOT</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">mcculloch_pitts_neuron</span><span class="p">([</span><span class="n">x</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Test the logical operations</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;McCulloch-Pitts Neuron Implementation:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AND(0,0) =&quot;</span><span class="p">,</span> <span class="n">logical_AND</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>  <span class="c1"># Expected: 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AND(1,0) =&quot;</span><span class="p">,</span> <span class="n">logical_AND</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>  <span class="c1"># Expected: 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AND(0,1) =&quot;</span><span class="p">,</span> <span class="n">logical_AND</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># Expected: 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;AND(1,1) =&quot;</span><span class="p">,</span> <span class="n">logical_AND</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>  <span class="c1"># Expected: 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OR(0,0) =&quot;</span><span class="p">,</span> <span class="n">logical_OR</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>    <span class="c1"># Expected: 0</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;OR(1,0) =&quot;</span><span class="p">,</span> <span class="n">logical_OR</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>    <span class="c1"># Expected: 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NOT(0) =&quot;</span><span class="p">,</span> <span class="n">logical_NOT</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>       <span class="c1"># Expected: 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;NOT(1) =&quot;</span><span class="p">,</span> <span class="n">logical_NOT</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>       <span class="c1"># Expected: 0</span>
+</pre></div>
+</div>
+<p><strong>Von Neumann Architecture (1945)</strong> established the foundational computing paradigm that separates memory and processing—quite different from the brain’s integrated approach. Despite this architectural divergence, von Neumann drew inspiration from neuroscience, writing about neural networks and brain-like computing in his unfinished work “The Computer and the Brain” (1958).</p>
+</section>
+<section id="neural-networks-first-wave">
+<h3>1.1.2 Neural Networks: First Wave<a class="headerlink" href="#neural-networks-first-wave" title="Link to this heading">#</a></h3>
+<p>The late 1950s and 1960s brought significant developments in neural network research, directly inspired by biological principles:</p>
+<p><strong>The Perceptron (1957)</strong> was developed by Frank Rosenblatt as the first trainable neural network model. Unlike the static McCulloch-Pitts neuron, the perceptron featured an adaptive learning algorithm that modified connection weights based on errors—mirroring aspects of neural plasticity.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Perceptron</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_inputs</span><span class="p">,</span> <span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Simple perceptron implementation.</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            n_inputs: Number of input features</span>
+<span class="sd">            learning_rate: Learning rate for weight updates</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Initialize weights with small random values (including bias)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_inputs</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">learning_rate</span> <span class="o">=</span> <span class="n">learning_rate</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Make a prediction for the given inputs.&quot;&quot;&quot;</span>
+        <span class="c1"># Add bias input</span>
+        <span class="n">inputs_with_bias</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="c1"># Calculate weighted sum</span>
+        <span class="n">weighted_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">inputs_with_bias</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">weights</span><span class="p">)</span>
+        <span class="c1"># Apply step activation function</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">weighted_sum</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">training_inputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Train the perceptron on the given data.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+            <span class="n">total_error</span> <span class="o">=</span> <span class="mi">0</span>
+            
+            <span class="k">for</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">training_inputs</span><span class="p">,</span> <span class="n">labels</span><span class="p">):</span>
+                <span class="c1"># Make prediction</span>
+                <span class="n">prediction</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+                <span class="c1"># Calculate error</span>
+                <span class="n">error</span> <span class="o">=</span> <span class="n">label</span> <span class="o">-</span> <span class="n">prediction</span>
+                <span class="n">total_error</span> <span class="o">+=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+                
+                <span class="k">if</span> <span class="n">error</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="c1"># Update weights (including bias)</span>
+                    <span class="n">inputs_with_bias</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">weights</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">learning_rate</span> <span class="o">*</span> <span class="n">error</span> <span class="o">*</span> <span class="n">inputs_with_bias</span>
+            
+            <span class="c1"># If no errors, we&#39;ve converged</span>
+            <span class="k">if</span> <span class="n">total_error</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">break</span>
+                
+<span class="c1"># Example: Train a perceptron to learn the AND function</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># AND function</span>
+
+<span class="n">perceptron</span> <span class="o">=</span> <span class="n">Perceptron</span><span class="p">(</span><span class="n">n_inputs</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">perceptron</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Perceptron Implementation for AND Function:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">inputs</span> <span class="ow">in</span> <span class="n">X</span><span class="p">:</span>
+    <span class="n">prediction</span> <span class="o">=</span> <span class="n">perceptron</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Inputs: </span><span class="si">{</span><span class="n">inputs</span><span class="si">}</span><span class="s2">, Prediction: </span><span class="si">{</span><span class="n">prediction</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Limitations and AI Winter (1969-1980s)</strong>: Marvin Minsky and Seymour Papert’s book “Perceptrons” (1969) highlighted the inability of single-layer perceptrons to learn non-linearly separable functions like XOR. This critique, combined with computational limitations of the era, led to the first “AI winter”—a period of reduced funding and interest in neural network research.</p>
+</section>
+<section id="revival-and-modern-neural-networks">
+<h3>1.1.3 Revival and Modern Neural Networks<a class="headerlink" href="#revival-and-modern-neural-networks" title="Link to this heading">#</a></h3>
+<p>Interest in neural networks resurged in the 1980s and 1990s, driven by several key developments:</p>
+<p><strong>Backpropagation Algorithm (1986)</strong> by Rumelhart, Hinton, and Williams solved the training problem for multi-layer networks, enabling them to learn complex, non-linear patterns. Though the algorithm itself doesn’t directly model biological learning processes, it shares conceptual similarities with error-driven learning in the brain.</p>
+<p><strong>Deep Learning Renaissance (2006-present)</strong> began with breakthroughs in unsupervised pre-training for deep networks by Hinton, Bengio, and others. The increasing availability of computational resources and large datasets has enabled neural networks of unprecedented scale and capability, including models with billions of parameters.</p>
+<p>Today, neuroscience and AI maintain a productive bidirectional relationship:</p>
 <ul class="simple">
-<li><p>Von Neumann and the early computing architecture</p></li>
-<li><p>The birth of cybernetics</p></li>
-<li><p>McCulloch &amp; Pitts neurons</p></li>
-<li><p>The perceptron by Rosenblatt</p></li>
-<li><p>AI winters and neural network revivals</p></li>
+<li><p>Deep learning models inform hypotheses about brain function</p></li>
+<li><p>Neuroscience insights continue to inspire architectural innovations in AI</p></li>
+<li><p>Tools from both fields are increasingly used to explore the other</p></li>
 </ul>
+</section>
 </section>
 <section id="levels-of-analysis">
 <h2>1.2 Levels of Analysis<a class="headerlink" href="#levels-of-analysis" title="Link to this heading">#</a></h2>
+<p>To bridge neuroscience and AI effectively, we need conceptual frameworks that span both disciplines. David Marr’s influential three-level approach provides an elegant structure for this comparison.</p>
+<section id="marr-s-three-levels">
+<h3>1.2.1 Marr’s Three Levels<a class="headerlink" href="#marr-s-three-levels" title="Link to this heading">#</a></h3>
+<p>David Marr (1982) proposed analyzing information processing systems at three distinct levels:</p>
+<ol class="arabic simple">
+<li><p><strong>Computational Level</strong>: What is the system trying to accomplish and why?</p>
 <ul class="simple">
-<li><p>Marr’s three levels: computational, algorithmic, implementational</p></li>
-<li><p>From neurons to networks to behavior</p></li>
-<li><p>Computational neuroscience approaches</p></li>
-<li><p>Cognitive modeling</p></li>
+<li><p>The goals, functions, and abstract problems being solved</p></li>
+<li><p>Example: Object recognition, prediction, decision-making</p></li>
 </ul>
+</li>
+<li><p><strong>Algorithmic Level</strong>: What specific representations and procedures implement the computation?</p>
+<ul class="simple">
+<li><p>The information formats and processing approaches</p></li>
+<li><p>Example: Hierarchical feature extraction, error backpropagation</p></li>
+</ul>
+</li>
+<li><p><strong>Implementational Level</strong>: How are the algorithms physically realized?</p>
+<ul class="simple">
+<li><p>The physical substrate and mechanisms</p></li>
+<li><p>Example: Neurons and synapses vs. silicon transistors</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">marrs_levels_example</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Illustrate Marr&#39;s three levels for object recognition.&quot;&quot;&quot;</span>
+    
+    <span class="n">marrs_levels</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;computational&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;brain&quot;</span><span class="p">:</span> <span class="s2">&quot;Identify objects regardless of viewpoint, lighting, and context&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ai&quot;</span><span class="p">:</span> <span class="s2">&quot;Classify images into predefined categories with high accuracy&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;algorithmic&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;brain&quot;</span><span class="p">:</span> <span class="s2">&quot;Hierarchical processing from simple features (edges) to complex patterns (shapes) to object identities&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ai&quot;</span><span class="p">:</span> <span class="s2">&quot;Convolutional neural network with feature extraction, pooling, and classification layers&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;implementational&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;brain&quot;</span><span class="p">:</span> <span class="s2">&quot;Neurons connected by synapses, organized in specialized regions (V1→V2→V4→IT)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ai&quot;</span><span class="p">:</span> <span class="s2">&quot;Matrix multiplications and non-linear activations implemented on GPU hardware&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">marrs_levels</span>
+
+<span class="c1"># Display the comparison of Marr&#39;s levels between brain and AI systems</span>
+<span class="n">marrs_comparison</span> <span class="o">=</span> <span class="n">marrs_levels_example</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">level</span><span class="p">,</span> <span class="n">systems</span> <span class="ow">in</span> <span class="n">marrs_comparison</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;--- </span><span class="si">{</span><span class="n">level</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2"> LEVEL ---&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Brain: </span><span class="si">{</span><span class="n">systems</span><span class="p">[</span><span class="s1">&#39;brain&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AI:    </span><span class="si">{</span><span class="n">systems</span><span class="p">[</span><span class="s1">&#39;ai&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This framework helps us identify where brain-inspired AI systems truly parallel biological processing versus where they diverge. Often, modern AI systems implement similar computational and algorithmic principles to the brain but through radically different implementations.</p>
+</section>
+<section id="from-neurons-to-networks-to-behavior">
+<h3>1.2.2 From Neurons to Networks to Behavior<a class="headerlink" href="#from-neurons-to-networks-to-behavior" title="Link to this heading">#</a></h3>
+<p>Neuroscience operates across multiple scales of analysis, each with parallels in artificial systems:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Level</p></th>
+<th class="head"><p>Neuroscience</p></th>
+<th class="head"><p>Artificial Intelligence</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Micro</p></td>
+<td><p>Neurons, synapses, ion channels</p></td>
+<td><p>Artificial neurons, weights, activation functions</p></td>
+</tr>
+<tr class="row-odd"><td><p>Meso</p></td>
+<td><p>Circuits, columns, local networks</p></td>
+<td><p>Layers, blocks, attention heads</p></td>
+</tr>
+<tr class="row-even"><td><p>Macro</p></td>
+<td><p>Brain regions, functional networks</p></td>
+<td><p>Full models, system architectures</p></td>
+</tr>
+<tr class="row-odd"><td><p>Behavioral</p></td>
+<td><p>Perception, cognition, decision-making</p></td>
+<td><p>Computer vision, NLP, reinforcement learning</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This multi-scale view emphasizes that both brains and AI systems achieve complex behavior through hierarchical organization of simpler components, though the details differ substantially.</p>
+</section>
+<section id="computational-neuroscience-approaches">
+<h3>1.2.3 Computational Neuroscience Approaches<a class="headerlink" href="#computational-neuroscience-approaches" title="Link to this heading">#</a></h3>
+<p>Computational neuroscience seeks to understand neural systems through mathematical models and simulations, forming a natural bridge to AI:</p>
+<p><strong>Biophysical Models</strong> capture the detailed dynamics of neurons and synapses:</p>
+<ul class="simple">
+<li><p>Hodgkin-Huxley models of action potentials</p></li>
+<li><p>Compartmental models of dendritic integration</p></li>
+<li><p>Synaptic plasticity models (STDP, homeostasis)</p></li>
+</ul>
+<p><strong>Network Models</strong> focus on collective dynamics and computation:</p>
+<ul class="simple">
+<li><p>Recurrent network models of working memory</p></li>
+<li><p>Attractor networks for decision-making</p></li>
+<li><p>Predictive coding models of perception</p></li>
+</ul>
+<p><strong>Normative Models</strong> ask why the brain operates as it does:</p>
+<ul class="simple">
+<li><p>Bayesian inference frameworks</p></li>
+<li><p>Free energy principle</p></li>
+<li><p>Optimal control theory</p></li>
+</ul>
+<p>These approaches have directly influenced AI architectures, from spiking neural networks to probabilistic generative models.</p>
+</section>
 </section>
 <section id="key-parallels">
 <h2>1.3 Key Parallels<a class="headerlink" href="#key-parallels" title="Link to this heading">#</a></h2>
+<p>Despite very different physical substrates, biological and artificial neural systems share fundamental computational principles. Here we explore key parallels that highlight their common heritage.</p>
+<section id="information-processing-units">
+<h3>1.3.1 Information Processing Units<a class="headerlink" href="#information-processing-units" title="Link to this heading">#</a></h3>
+<p>At their core, both biological and artificial systems use simple processing units combined into powerful networks:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">biological_neuron_model</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simplified model of biological neuron activation.&quot;&quot;&quot;</span>
+    <span class="n">weighted_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">inputs</span> <span class="o">*</span> <span class="n">weights</span><span class="p">)</span>
+    <span class="c1"># Non-linear activation with refractory period</span>
+    <span class="k">if</span> <span class="n">weighted_sum</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">20</span>  <span class="c1"># Spike and refractory period (in ms)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mi">0</span>  <span class="c1"># No spike, no refractory period</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">artificial_neuron_model</span><span class="p">(</span><span class="n">inputs</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">bias</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Standard artificial neuron with ReLU activation.&quot;&quot;&quot;</span>
+    <span class="n">weighted_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">inputs</span> <span class="o">*</span> <span class="n">weights</span><span class="p">)</span> <span class="o">+</span> <span class="n">bias</span>
+    <span class="c1"># ReLU activation function</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">weighted_sum</span><span class="p">)</span>
+
+<span class="c1"># Compare action potential with artificial neuron activation</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">compare_activations</span><span class="p">():</span>
+    <span class="c1"># Input stimulus values</span>
+    <span class="n">stimulus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    
+    <span class="c1"># Biological neuron (simplified threshold model)</span>
+    <span class="n">bio_outputs</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">stimulus</span><span class="p">:</span>
+        <span class="n">spike</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">biological_neuron_model</span><span class="p">([</span><span class="n">s</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">],</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+        <span class="n">bio_outputs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">spike</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># Scale for visualization</span>
+        
+    <span class="c1"># Artificial neuron (ReLU)</span>
+    <span class="n">art_outputs</span> <span class="o">=</span> <span class="p">[</span><span class="n">artificial_neuron_model</span><span class="p">([</span><span class="n">s</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">],</span> <span class="n">bias</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">stimulus</span><span class="p">]</span>
+    
+    <span class="c1"># Plot comparison</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">stimulus</span><span class="p">,</span> <span class="n">bio_outputs</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Biological (Threshold)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">stimulus</span><span class="p">,</span> <span class="n">art_outputs</span><span class="p">,</span> <span class="s1">&#39;r--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Artificial (ReLU)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Threshold&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Input Stimulus&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Output Activity&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparing Biological vs. Artificial Neuron Activation&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">plt</span>
+    
+<span class="c1"># compare_activations().show()  # Uncomment to display</span>
+</pre></div>
+</div>
+<p><strong>Biological Neurons</strong> are cellular information processors with:</p>
 <ul class="simple">
-<li><p>Information processing units (neurons vs artificial units)</p></li>
-<li><p>Network architectures</p></li>
-<li><p>Learning mechanisms</p></li>
-<li><p>Representational properties</p></li>
+<li><p>Dendritic integration of thousands of inputs</p></li>
+<li><p>Non-linear activation via action potentials</p></li>
+<li><p>Temporal dynamics (spiking, refractory periods)</p></li>
+<li><p>Multiple time scales of operation</p></li>
+<li><p>Extreme energy efficiency (~10^-16 joules per operation)</p></li>
 </ul>
+<p><strong>Artificial Neurons</strong> are mathematical abstractions that capture key computational features:</p>
+<ul class="simple">
+<li><p>Weighted summation of inputs</p></li>
+<li><p>Non-linear activation functions (ReLU, sigmoid, etc.)</p></li>
+<li><p>Static, discrete-time operation (typically)</p></li>
+<li><p>Focus on rate-based rather than spike-based processing</p></li>
+<li><p>Higher energy consumption (~10^-9 joules per operation)</p></li>
+</ul>
+<p>While artificial neurons greatly simplify the complexity of biological neurons, they preserve the essential computational motif: inputs are weighted, summed, and non-linearly transformed to produce output.</p>
+</section>
+<section id="network-architectures">
+<h3>1.3.2 Network Architectures<a class="headerlink" href="#network-architectures" title="Link to this heading">#</a></h3>
+<p>Both biological and artificial systems organize neurons into structured networks that determine information flow:</p>
+<p><strong>Biological Networks</strong> feature:</p>
+<ul class="simple">
+<li><p>Layered organization (e.g., cortical layers)</p></li>
+<li><p>Both feedforward and recurrent connections</p></li>
+<li><p>Specialized regions for different processes</p></li>
+<li><p>Multi-scale organization (columns, areas, systems)</p></li>
+<li><p>Complex connectivity patterns (small-world properties)</p></li>
+</ul>
+<p><strong>Artificial Networks</strong> have evolved increasingly sophisticated architectures:</p>
+<ul class="simple">
+<li><p>Deep feedforward networks (MLPs, CNNs)</p></li>
+<li><p>Recurrent architectures (RNNs, LSTMs)</p></li>
+<li><p>Attention-based systems (Transformers)</p></li>
+<li><p>Graph neural networks</p></li>
+<li><p>Modular, multi-model architectures</p></li>
+</ul>
+<p>Recent AI innovations like attention mechanisms and residual connections have interesting parallels in the brain, suggesting convergent discovery of efficient architectural principles.</p>
+</section>
+<section id="learning-mechanisms">
+<h3>1.3.3 Learning Mechanisms<a class="headerlink" href="#learning-mechanisms" title="Link to this heading">#</a></h3>
+<p>Learning allows both biological and artificial systems to adapt to environmental regularities:</p>
+<p><strong>Biological Learning</strong> involves:</p>
+<ul class="simple">
+<li><p>Hebbian plasticity (“neurons that fire together, wire together”)</p></li>
+<li><p>Spike-timing-dependent plasticity (STDP)</p></li>
+<li><p>Neuromodulatory signals (dopamine, acetylcholine)</p></li>
+<li><p>Structural changes (synaptogenesis, pruning)</p></li>
+<li><p>Multiple time scales (short-term to lifelong)</p></li>
+</ul>
+<p><strong>Artificial Learning</strong> typically employs:</p>
+<ul class="simple">
+<li><p>Gradient-based optimization</p></li>
+<li><p>Backpropagation of errors</p></li>
+<li><p>Various loss functions targeting different objectives</p></li>
+<li><p>Regularization techniques</p></li>
+<li><p>Transfer learning and meta-learning</p></li>
+</ul>
+<p>While the specific mechanisms differ substantially, both systems fundamentally adapt connection strengths to minimize errors and optimize performance on relevant tasks.</p>
+</section>
+<section id="representational-properties">
+<h3>1.3.4 Representational Properties<a class="headerlink" href="#representational-properties" title="Link to this heading">#</a></h3>
+<p>How information is encoded and transformed is a key parallel between neural systems:</p>
+<p><strong>Distributed Representations</strong> are used by both systems:</p>
+<ul class="simple">
+<li><p>Information is encoded across populations of units</p></li>
+<li><p>Provides robustness to noise and damage</p></li>
+<li><p>Enables efficient generalization</p></li>
+</ul>
+<p><strong>Hierarchical Feature Extraction</strong> is a shared organizing principle:</p>
+<ul class="simple">
+<li><p>Simple features combine into increasingly complex representations</p></li>
+<li><p>Abstraction increases along processing pathways</p></li>
+<li><p>Enables recognition invariant to irrelevant variations</p></li>
+</ul>
+<p><strong>Attentional Mechanisms</strong> focus processing on relevant information:</p>
+<ul class="simple">
+<li><p>Selective enhancement of important signals</p></li>
+<li><p>Suppression of irrelevant information</p></li>
+<li><p>Dynamic routing of information flow</p></li>
+</ul>
+<p>These shared representational strategies highlight how both biological and artificial systems solve similar computational challenges.</p>
+</section>
 </section>
 <section id="case-studies">
 <h2>1.4 Case Studies<a class="headerlink" href="#case-studies" title="Link to this heading">#</a></h2>
+<p>Examining specific domains where neuroscience and AI intersect provides concrete examples of their productive relationship.</p>
+<section id="object-recognition-visual-cortex-vs-cnns">
+<h3>1.4.1 Object Recognition: Visual Cortex vs. CNNs<a class="headerlink" href="#object-recognition-visual-cortex-vs-cnns" title="Link to this heading">#</a></h3>
+<p>Visual processing represents one of the clearest examples of neuroscience informing AI development:</p>
+<p><strong>Visual Cortex Organization</strong>:</p>
 <ul class="simple">
-<li><p>Object recognition in visual cortex vs CNNs</p></li>
-<li><p>Reinforcement learning models and reward systems</p></li>
-<li><p>Memory systems (hippocampus) vs memory networks</p></li>
+<li><p>Hierarchical processing pathway (V1→V2→V4→IT)</p></li>
+<li><p>Simple cells detect oriented edges; complex cells detect movement</p></li>
+<li><p>Increasing receptive field size and abstraction along the pathway</p></li>
+<li><p>Dorsal “where” and ventral “what” streams</p></li>
 </ul>
+<p><strong>CNN Parallels</strong>:</p>
+<ul class="simple">
+<li><p>Hierarchical layer structure with increasing abstraction</p></li>
+<li><p>Convolutional filters detect oriented edges in early layers</p></li>
+<li><p>Pooling operations provide translation invariance (like complex cells)</p></li>
+<li><p>Higher layers develop object detectors similar to IT neurons</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">visualize_feature_hierarchy</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Illustrate the hierarchy of features in visual processing.&quot;&quot;&quot;</span>
+    
+    <span class="n">feature_hierarchy</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;level1&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;brain&quot;</span><span class="p">:</span> <span class="s2">&quot;V1 simple cells: Oriented edges, bars, gratings&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cnn&quot;</span><span class="p">:</span> <span class="s2">&quot;First conv layer: Edge detectors, Gabor-like filters&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;level2&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;brain&quot;</span><span class="p">:</span> <span class="s2">&quot;V2: Combinations of edges, contours, texture patterns&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cnn&quot;</span><span class="p">:</span> <span class="s2">&quot;Mid-level conv layers: Corners, textures, simple shapes&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;level3&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;brain&quot;</span><span class="p">:</span> <span class="s2">&quot;V4: Shape fragments, curved contours, color patterns&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cnn&quot;</span><span class="p">:</span> <span class="s2">&quot;Higher conv layers: Object parts, complex patterns&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;level4&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;brain&quot;</span><span class="p">:</span> <span class="s2">&quot;IT: Object-selective cells, face cells, scene cells&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cnn&quot;</span><span class="p">:</span> <span class="s2">&quot;Final layers: Object detectors, scene classifiers&quot;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="c1"># In a real notebook, this would generate a visualization of the hierarchy</span>
+    <span class="k">return</span> <span class="n">feature_hierarchy</span>
+
+</pre></div>
+</div>
+<p>The parallels between primate vision and CNNs are so strong that CNN activations can predict neural responses in visual cortex with remarkable accuracy. Yamins et al. (2014) showed that the internal representations of CNNs trained on object recognition match neural recordings from macaque IT better than any previous computational model.</p>
+</section>
+<section id="reinforcement-learning-and-reward-systems">
+<h3>1.4.2 Reinforcement Learning and Reward Systems<a class="headerlink" href="#reinforcement-learning-and-reward-systems" title="Link to this heading">#</a></h3>
+<p>Reinforcement learning (RL) algorithms draw direct inspiration from neural reward systems:</p>
+<p><strong>Brain Reward Mechanisms</strong>:</p>
+<ul class="simple">
+<li><p>Dopaminergic neurons encode reward prediction errors</p></li>
+<li><p>Ventral striatum and orbitofrontal cortex represent expected value</p></li>
+<li><p>Basal ganglia implement action selection through competitive dynamics</p></li>
+<li><p>Multiple learning systems (model-free and model-based)</p></li>
+</ul>
+<p><strong>RL Algorithms</strong>:</p>
+<ul class="simple">
+<li><p>Temporal difference learning captures dopamine-like prediction errors</p></li>
+<li><p>Value function approximation parallels striatal value encoding</p></li>
+<li><p>Actor-critic architectures reflect basal ganglia organization</p></li>
+<li><p>Model-free and model-based RL mirror distinct neural learning systems</p></li>
+</ul>
+<p>This bidirectional relationship has been particularly fruitful: neuroscience findings directly informed RL algorithms, while RL concepts now provide theoretical frameworks for interpreting neural data.</p>
+</section>
+<section id="memory-systems-and-neural-networks">
+<h3>1.4.3 Memory Systems and Neural Networks<a class="headerlink" href="#memory-systems-and-neural-networks" title="Link to this heading">#</a></h3>
+<p>Memory processes in the brain have inspired various artificial architectures:</p>
+<p><strong>Hippocampal Memory System</strong>:</p>
+<ul class="simple">
+<li><p>Specialized for one-shot learning of episodic memories</p></li>
+<li><p>Pattern separation (dentate gyrus) and pattern completion (CA3)</p></li>
+<li><p>Consolidation of memories from hippocampus to neocortex</p></li>
+<li><p>Replay of experiences during sleep for memory reinforcement</p></li>
+</ul>
+<p><strong>Artificial Memory Systems</strong>:</p>
+<ul class="simple">
+<li><p>Memory-augmented neural networks (e.g., Neural Turing Machines)</p></li>
+<li><p>Differentiable Neural Computers with external memory matrices</p></li>
+<li><p>Episodic memory modules in reinforcement learning agents</p></li>
+<li><p>Replay buffers in experience replay for deep RL</p></li>
+</ul>
+<p>These artificial memory systems don’t replicate biological processes in detail but employ similar computational strategies for rapid learning and efficient storage.</p>
+</section>
 </section>
 <section id="current-challenges">
 <h2>1.5 Current Challenges<a class="headerlink" href="#current-challenges" title="Link to this heading">#</a></h2>
+<p>Despite significant progress, substantial gaps remain between biological and artificial neural systems.</p>
+<section id="scale-and-complexity-differences">
+<h3>1.5.1 Scale and Complexity Differences<a class="headerlink" href="#scale-and-complexity-differences" title="Link to this heading">#</a></h3>
+<p>Brains vastly exceed current AI systems in scale and complexity:</p>
 <ul class="simple">
-<li><p>Scale and complexity differences</p></li>
-<li><p>Energy efficiency gap</p></li>
-<li><p>Interpretability issues</p></li>
-<li><p>Generalization capabilities</p></li>
+<li><p>The human brain contains ~86 billion neurons and ~100 trillion synapses</p></li>
+<li><p>Neurons themselves are complex computational units with thousands of inputs</p></li>
+<li><p>Brain networks exhibit small-world topology with high clustering and short path lengths</p></li>
+<li><p>Multiple neurotransmitter systems modulate neural dynamics and learning</p></li>
 </ul>
+<p>While modern AI systems reach billions of parameters, they remain simpler in structure and typically lack the multi-scale organization of brains.</p>
+</section>
+<section id="energy-efficiency-gap">
+<h3>1.5.2 Energy Efficiency Gap<a class="headerlink" href="#energy-efficiency-gap" title="Link to this heading">#</a></h3>
+<p>Perhaps the most dramatic difference is in energy consumption:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">compare_efficiency</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compare energy efficiency of brains vs. AI systems.&quot;&quot;&quot;</span>
+    
+    <span class="c1"># Energy usage data in watts</span>
+    <span class="n">systems</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;Human Brain&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">&quot;Mouse Brain&quot;</span><span class="p">:</span> <span class="mf">0.001</span><span class="p">,</span>
+        <span class="s2">&quot;GPT-3 Training (peak)&quot;</span><span class="p">:</span> <span class="mf">2.5e6</span><span class="p">,</span>  <span class="c1"># Estimated</span>
+        <span class="s2">&quot;AlphaGo vs Lee Sedol&quot;</span><span class="p">:</span> <span class="mf">1e3</span><span class="p">,</span>     <span class="c1"># Estimated</span>
+        <span class="s2">&quot;Typical GPU Inference&quot;</span><span class="p">:</span> <span class="mi">250</span>
+    <span class="p">}</span>
+    
+    <span class="c1"># Operations per second (estimated)</span>
+    <span class="n">ops_per_second</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;Human Brain&quot;</span><span class="p">:</span> <span class="mf">1e16</span><span class="p">,</span>  <span class="c1"># Very rough estimate</span>
+        <span class="s2">&quot;Mouse Brain&quot;</span><span class="p">:</span> <span class="mf">1e14</span><span class="p">,</span>  <span class="c1"># Very rough estimate</span>
+        <span class="s2">&quot;GPT-3 Training (peak)&quot;</span><span class="p">:</span> <span class="mf">1e20</span><span class="p">,</span>
+        <span class="s2">&quot;AlphaGo vs Lee Sedol&quot;</span><span class="p">:</span> <span class="mf">1e15</span><span class="p">,</span>
+        <span class="s2">&quot;Typical GPU Inference&quot;</span><span class="p">:</span> <span class="mf">1e12</span>
+    <span class="p">}</span>
+    
+    <span class="c1"># Calculate operations per joule (efficiency)</span>
+    <span class="n">efficiency</span> <span class="o">=</span> <span class="p">{</span><span class="n">system</span><span class="p">:</span> <span class="n">ops_per_second</span><span class="p">[</span><span class="n">system</span><span class="p">]</span> <span class="o">/</span> <span class="n">systems</span><span class="p">[</span><span class="n">system</span><span class="p">]</span> <span class="k">for</span> <span class="n">system</span> <span class="ow">in</span> <span class="n">systems</span><span class="p">}</span>
+    
+    <span class="c1"># Return comparison data</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s2">&quot;power_usage_watts&quot;</span><span class="p">:</span> <span class="n">systems</span><span class="p">,</span>
+        <span class="s2">&quot;ops_per_second&quot;</span><span class="p">:</span> <span class="n">ops_per_second</span><span class="p">,</span>
+        <span class="s2">&quot;ops_per_joule&quot;</span><span class="p">:</span> <span class="n">efficiency</span><span class="p">,</span>
+        <span class="s2">&quot;brain_advantage_factor&quot;</span><span class="p">:</span> <span class="n">efficiency</span><span class="p">[</span><span class="s2">&quot;Human Brain&quot;</span><span class="p">]</span> <span class="o">/</span> <span class="n">efficiency</span><span class="p">[</span><span class="s2">&quot;GPT-3 Training (peak)&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+
+<span class="n">efficiency_data</span> <span class="o">=</span> <span class="n">compare_efficiency</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The human brain is approximately </span><span class="si">{</span><span class="n">efficiency_data</span><span class="p">[</span><span class="s1">&#39;brain_advantage_factor&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.1e</span><span class="si">}</span><span class="s2"> times more energy-efficient than AI training.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The brain’s extreme energy efficiency stems from several factors:</p>
+<ul class="simple">
+<li><p>Sparse activity patterns (only ~1-2% of neurons active simultaneously)</p></li>
+<li><p>Information encoded in spike timing as well as rates</p></li>
+<li><p>Adaptive metabolic regulation based on computational demands</p></li>
+<li><p>Co-localization of memory and processing (no von Neumann bottleneck)</p></li>
+</ul>
+<p>Neuromorphic computing efforts aim to narrow this gap by implementing brain-inspired architectures in efficient hardware, but significant challenges remain.</p>
+</section>
+<section id="interpretability-issues">
+<h3>1.5.3 Interpretability Issues<a class="headerlink" href="#interpretability-issues" title="Link to this heading">#</a></h3>
+<p>Both systems present interpretability challenges, but for different reasons:</p>
+<p><strong>Brain Interpretability Challenges</strong>:</p>
+<ul class="simple">
+<li><p>Limited recording capabilities (small subsets of neurons)</p></li>
+<li><p>Multi-scale organization complicates analysis</p></li>
+<li><p>Non-linear dynamics create emergent properties</p></li>
+<li><p>Difficulty isolating specific functions experimentally</p></li>
+</ul>
+<p><strong>AI Interpretability Challenges</strong>:</p>
+<ul class="simple">
+<li><p>Distributed representations lack clear semantic meaning</p></li>
+<li><p>Complex models contain billions of parameters</p></li>
+<li><p>Black-box nature obscures decision processes</p></li>
+<li><p>Lack of theoretical understanding of deep learning</p></li>
+</ul>
+<p>Interestingly, techniques developed to understand one system often transfer to the other, with methods like dimensionality reduction and representational similarity analysis being applied in both fields.</p>
+</section>
+<section id="generalization-capabilities">
+<h3>1.5.4 Generalization Capabilities<a class="headerlink" href="#generalization-capabilities" title="Link to this heading">#</a></h3>
+<p>Brains and AI systems differ markedly in how they generalize:</p>
+<p><strong>Biological Generalization</strong>:</p>
+<ul class="simple">
+<li><p>Sample-efficient learning from limited examples</p></li>
+<li><p>Strong transfer between related tasks</p></li>
+<li><p>Robust to distributional shifts</p></li>
+<li><p>Common sense and causal understanding</p></li>
+</ul>
+<p><strong>Artificial Generalization</strong>:</p>
+<ul class="simple">
+<li><p>Often requires large training datasets</p></li>
+<li><p>Limited transfer to new domains</p></li>
+<li><p>Vulnerability to adversarial examples and distribution shifts</p></li>
+<li><p>Struggles with causal reasoning</p></li>
+</ul>
+<p>Recent approaches like meta-learning, few-shot learning, and self-supervised learning aim to close this gap, often drawing inspiration from biological learning principles.</p>
+</section>
 </section>
 <section id="take-aways">
 <h2>1.6 Take-aways<a class="headerlink" href="#take-aways" title="Link to this heading">#</a></h2>
+<p>The ongoing dialogue between neuroscience and AI yields insights in both directions:</p>
 <ul class="simple">
-<li><p>Biological inspiration remains valuable for AI</p></li>
-<li><p>Neuroscience can validate and inspire computational approaches</p></li>
-<li><p>AI provides tools and models to test neuroscience theories</p></li>
+<li><p><strong>Biological inspiration remains valuable for AI</strong>: Neural principles continue to inspire innovations in architecture, learning algorithms, and representation formats. Brain-inspired approaches like attention mechanisms and predictive coding have led to breakthrough performance in AI systems.</p></li>
+<li><p><strong>Neuroscience can validate and inspire computational approaches</strong>: Comparing artificial and biological systems helps identify universal computational principles versus implementation-specific details. The convergent evolution of similar solutions suggests underlying computational fundamentals.</p></li>
+<li><p><strong>AI provides tools and models to test neuroscience theories</strong>: Neural networks offer computational laboratories to test theories of brain function. Successful AI systems can generate testable hypotheses about neural mechanisms.</p></li>
 </ul>
+<p>As both fields advance, their ongoing collaboration promises deeper understanding of intelligence in both natural and artificial systems.</p>
 </section>
 <section id="further-reading-media">
 <h2>1.7 Further Reading &amp; Media<a class="headerlink" href="#further-reading-media" title="Link to this heading">#</a></h2>
+<section id="foundational-papers">
+<h3>Foundational Papers<a class="headerlink" href="#foundational-papers" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Hassabis et al. (2017) - “Neuroscience-Inspired Artificial Intelligence”</p></li>
-<li><p>Churchland &amp; Sejnowski - “The Computational Brain”</p></li>
-<li><p>Kriegeskorte &amp; Douglas (2018) - “Cognitive computational neuroscience”</p></li>
+<li><p>Hassabis, D., Kumaran, D., Summerfield, C., &amp; Botvinick, M. (2017). Neuroscience-inspired artificial intelligence. <em>Neuron, 95</em>(2), 245-258.</p></li>
+<li><p>Marblestone, A. H., Wayne, G., &amp; Kording, K. P. (2016). Toward an integration of deep learning and neuroscience. <em>Frontiers in Computational Neuroscience, 10</em>, 94.</p></li>
+<li><p>Lake, B. M., Ullman, T. D., Tenenbaum, J. B., &amp; Gershman, S. J. (2017). Building machines that learn and think like people. <em>Behavioral and Brain Sciences, 40</em>, E253.</p></li>
 </ul>
+</section>
+<section id="books">
+<h3>Books<a class="headerlink" href="#books" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Churchland, P. S., &amp; Sejnowski, T. J. (2016). <em>The computational brain</em>. MIT press.</p></li>
+<li><p>Dayan, P., &amp; Abbott, L. F. (2001). <em>Theoretical neuroscience: computational and mathematical modeling of neural systems</em>. MIT press.</p></li>
+<li><p>Kriegeskorte, N., &amp; Douglas, P. K. (2018). Cognitive computational neuroscience. <em>Nature Neuroscience, 21</em>(9), 1148-1160.</p></li>
+</ul>
+</section>
+<section id="videos-and-lectures">
+<h3>Videos and Lectures<a class="headerlink" href="#videos-and-lectures" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>“From Neuroscience to Artificial Intelligence and Back Again” - Surya Ganguli (Stanford)</p></li>
+<li><p>“The Deep Learning Revolution and Its Implications for Neuroscience” - Terry Sejnowski (Salk Institute)</p></li>
+<li><p>Neuromatch Academy Core Computational Neuroscience tutorials (freely available online)</p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -566,13 +1183,45 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-goals">1.0 Chapter Goals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-context">1.1 Historical Context</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#levels-of-analysis">1.2 Levels of Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-parallels">1.3 Key Parallels</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-studies">1.4 Case Studies</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-challenges">1.5 Current Challenges</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#historical-context">1.1 Historical Context</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#early-foundations">1.1.1 Early Foundations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-networks-first-wave">1.1.2 Neural Networks: First Wave</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revival-and-modern-neural-networks">1.1.3 Revival and Modern Neural Networks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#levels-of-analysis">1.2 Levels of Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#marr-s-three-levels">1.2.1 Marr’s Three Levels</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-neurons-to-networks-to-behavior">1.2.2 From Neurons to Networks to Behavior</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-neuroscience-approaches">1.2.3 Computational Neuroscience Approaches</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-parallels">1.3 Key Parallels</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#information-processing-units">1.3.1 Information Processing Units</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-architectures">1.3.2 Network Architectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-mechanisms">1.3.3 Learning Mechanisms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#representational-properties">1.3.4 Representational Properties</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-studies">1.4 Case Studies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#object-recognition-visual-cortex-vs-cnns">1.4.1 Object Recognition: Visual Cortex vs. CNNs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reinforcement-learning-and-reward-systems">1.4.2 Reinforcement Learning and Reward Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-systems-and-neural-networks">1.4.3 Memory Systems and Neural Networks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#current-challenges">1.5 Current Challenges</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scale-and-complexity-differences">1.5.1 Scale and Complexity Differences</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#energy-efficiency-gap">1.5.2 Energy Efficiency Gap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretability-issues">1.5.3 Interpretability Issues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalization-capabilities">1.5.4 Generalization Capabilities</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">1.6 Take-aways</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">1.7 Further Reading &amp; Media</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">1.7 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#foundational-papers">Foundational Papers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#books">Books</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#videos-and-lectures">Videos and Lectures</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
