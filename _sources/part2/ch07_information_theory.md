@@ -18,11 +18,31 @@ The central concept in information theory is entropy, which measures the uncerta
 
 $$H(X) = -\sum_{i=1}^{n} p(x_i) \log_2 p(x_i)$$
 
+![Information Entropy](../figures/ch07/entropy_illustration.svg)
+
+*Figure 7.1: The binary entropy function showing how uncertainty is maximized at p=0.5 (equal probabilities) and minimized at p=0 or p=1 (complete certainty).*
+
 Entropy is measured in bits when using log base 2, and represents the average number of bits needed to encode values of the random variable. A few key properties:
 
 - Entropy is always non-negative
 - Entropy is maximized when all outcomes are equally likely
 - Entropy is minimized (zero) when one outcome has probability 1
+
+```{admonition} Applications in AI and Real Life
+:class: tip
+
+**AI Applications:**
+- **Model Evaluation**: Models with lower entropy predictions are more confident (though not necessarily correct)
+- **Model Compression**: Information-theoretic principles guide model pruning and quantization
+- **Learning Algorithms**: Maximum entropy methods provide a principled approach to machine learning when knowledge is limited
+- **Feature Selection**: High-entropy features typically carry more information for classification tasks
+
+**Real-World Applications:**
+- **Data Compression**: ZIP, JPEG, PNG all rely on entropy coding techniques (Huffman, arithmetic coding)
+- **Cryptography**: Secure encryption requires high-entropy (unpredictable) keys
+- **Natural Language Processing**: Language models estimate word probabilities and maximize entropy for diverse generation
+- **Neuroscience**: Neural spike patterns can be analyzed to determine information content
+```
 
 ```python
 import numpy as np
@@ -84,7 +104,27 @@ Mutual information $I(X;Y)$ measures the reduction in uncertainty about one vari
 
 $$I(X;Y) = H(X) - H(X|Y) = H(Y) - H(Y|X) = H(X) + H(Y) - H(X,Y)$$
 
+![Mutual Information](../figures/ch07/mutual_information.svg)
+
+*Figure 7.2: Venn diagram representation of mutual information as the overlap between entropies of X and Y, showing the relationship between joint, conditional, and marginal entropies.*
+
 This symmetric measure ranges from 0 (independent variables) to $\min(H(X), H(Y))$ (one variable completely determines the other).
+
+```{admonition} Mutual Information in AI and Neuroscience
+:class: tip
+
+**AI Applications:**
+- **Feature Selection**: MI identifies which features provide the most information about target classes
+- **Representation Learning**: Maximizing MI between representations and inputs in self-supervised learning (e.g., InfoNCE loss in contrastive learning)
+- **Model Interpretability**: MI can measure which neurons/features capture important input attributes
+- **Information Bottleneck**: Networks trained to maximize MI with targets while minimizing MI with inputs generalize better
+
+**Neuroscience Applications:** 
+- **Neural Coding**: Quantifies how much information spike trains carry about stimuli
+- **Brain Connectivity**: Functional connectivity between brain regions can be measured using MI
+- **Sensory Processing**: MI helps analyze how sensory information is transformed through neural pathways
+- **Neural Population Decoding**: Reveals which groups of neurons collectively encode behaviorally relevant information
+```
 
 ```python
 def mutual_information(x, y, bins=10):
@@ -211,16 +251,53 @@ $$C = \frac{1}{2}\log_2(1 + \frac{P}{N})$$
 
 This concept is crucial in neuroscience for understanding the information-carrying capacity of neural circuits.
 
+```{admonition} Channel Capacity in Neural and Artificial Systems
+:class: tip
+
+**Neuroscience Implications:**
+- **Neural Bandwidth**: Limits how much information a single neuron can transmit (typically 2-3 bits per spike)
+- **Population Coding**: Brain overcomes single-neuron capacity limits by distributing information across many neurons
+- **Energy Constraints**: Neurons balance information transmission against metabolic costs
+- **Sensory Bottlenecks**: Optic nerve's ~1 million axons create an information bottleneck requiring efficient coding
+
+**Engineering Applications:**
+- **Communication Systems**: Shannon's capacity theorem revolutionized telecommunications by establishing fundamental limits
+- **5G Networks**: Modern wireless systems approach Shannon capacity with sophisticated coding (LDPC, turbo codes)
+- **Neural Interfaces**: Designing optimal neural recording/stimulation devices requires understanding neural channel capacities
+- **AI System Design**: Network width and depth choices implicitly reflect channel capacity considerations
+```
+
 ## 7.2 Neural Coding & Efficiency
 
 ### Efficient Coding Hypothesis
 
 Proposed by Horace Barlow in the 1960s, the efficient coding hypothesis states that sensory systems have evolved to efficiently represent natural stimuli by reducing redundancy and maximizing information transmission given metabolic constraints.
 
+![Efficient Coding in Neural Systems](../figures/ch07/efficient_coding.svg)
+
+*Figure 7.3: Efficient coding principles in neural systems. The brain adapts to input statistics to create representations that maximize information while minimizing resources through redundancy reduction and sparse coding.*
+
 Key principles:
 - Neurons should encode independent features of the environment
 - Neural codes should minimize redundancy
 - Coding strategies should be adapted to the statistics of natural stimuli
+
+```{admonition} Efficient Coding: From Brains to AI Systems
+:class: tip
+
+**Biological Implementations:**
+- **Visual System**: Retinal ganglion cells adapt to luminance statistics; V1 neurons encode oriented edges (sparse components of natural images)
+- **Auditory System**: Cochlear filters adapt to natural sound statistics with 1/f power distributions
+- **Olfactory System**: Sparse odor coding with minimal overlapping representations
+- **Adaptation**: Sensory neurons dynamically adjust to stimulus statistics to maintain optimal information transmission
+
+**AI Applications:**
+- **Sparse Autoencoders**: Learn efficient, sparse representations similar to V1 receptive fields
+- **Predictive Coding Networks**: Optimize to minimize prediction errors, similar to brain's predictive processing
+- **Model Compression**: Pruning, quantization, and knowledge distillation guided by information-theoretic principles
+- **Generative Models**: VAEs and diffusion models incorporate information compression principles
+- **Neural Architecture Search**: Information Bottleneck principles guide efficient network design
+```
 
 ### Redundancy Reduction
 
@@ -748,6 +825,19 @@ $$\Phi = \min_{P} [ D_{KL}(p(X_t | X_{t-1}) || p^{(P)}(X_t | X_{t-1})) ]$$
 where $p^{(P)}$ is the product of the probability distributions for the system divided according to partition $P$.
 
 High Φ indicates that the system integrates information in a way that cannot be reduced to its parts, a proposed correlate of consciousness.
+
+```{admonition} Knowledge Connections
+:class: important
+
+**Looking Back**
+- **Chapter 1 (Introduction)**: The cybernetics section (1.1.1) introduced early information processing concepts that are formalized here as Shannon's information theory.
+- **Chapter 2 (Neuroscience Foundations)**: Neural coding strategies discussed in section 2.1 can be quantitatively analyzed using the information-theoretic measures presented in this chapter.
+
+**Looking Forward**
+- **Chapter 10 (Deep Learning)**: The information bottleneck principle covered in section 7.6 provides important theoretical insights into how deep networks learn and generalize.
+- **Chapter 11 (Sequence Models)**: Information-theoretic measures like entropy and cross-entropy become critical loss functions for language and sequence modeling.
+- **Chapter 12 (LLMs)**: The efficient coding principles in section 7.2 help explain how large language models compress knowledge from training data.
+```
 
 ## 7.6 Code Lab – Information Analysis in Python
 

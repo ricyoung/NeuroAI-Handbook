@@ -1,0 +1,1095 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Creating Presentations with RISE &#8212; The Neuroscience of AI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'part6/rise_slides_demo';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://neuroai-handbook.github.io/part6/rise_slides_demo.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 21: AI for Neuroscience Discovery" href="ch21_ai_for_neuro_discovery.html" />
+    <link rel="prev" title="Jupyter AI Integration for NeuroAI" href="jupyter_ai_demo.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/nai.png" class="logo__image only-light" alt="The Neuroscience of AI - Home"/>
+    <script>document.write(`<img src="../_static/nai.png" class="logo__image only-dark" alt="The Neuroscience of AI - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Neuroscience of AI
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I · Brains &amp; Inspiration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part1/ch01_intro.html">Chapter 1: Introduction to Neuroscience ↔ AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part1/ch02_neuro_foundations.html">Chapter 2: Neuroscience Foundations for AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part1/ch03_spatial_navigation.html">Chapter 3: Spatial Navigation – Place &amp; Grid Cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part1/ch04_perception_pipeline.html">Chapter 4: Perception Pipeline – Visual Cortex → CNNs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II · Brains Meet Math &amp; Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part2/ch05_brain_networks.html">Chapter 5: Default-Mode vs Executive Control Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part2/ch06_neurostimulation.html">Chapter 6: Neurostimulation &amp; Plasticity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part2/ch07_information_theory.html">Chapter 7: Information Theory Essentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part2/ch08_data_science_pipeline.html">Chapter 8: Data-Science Pipeline in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part III · Learning Machines</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part3/ch09_ml_foundations.html">Chapter 9: Classical Machine-Learning Foundations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part3/ch10_deep_learning.html">Chapter 10: Deep Learning: Training &amp; Optimisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part3/ch11_sequence_models.html">Chapter 11: Sequence Models: RNN → Attention → Transformer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part IV · Frontier Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part4/ch12_large_language_models.html">Chapter 12: Large Language Models &amp; Fine-Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part4/ch13_multimodal_models.html">Chapter 13: Multimodal &amp; Diffusion Models</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part V · Ethics &amp; Futures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part5/ch15_ethical_ai.html">Chapter 15: Ethical AI - Considerations for NeuroAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part5/ch16_future_directions.html">Chapter 16: Where Next for Neuro-AI?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VI · Advanced Applications</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch17_bci_human_ai_interfaces.html">Brain-Computer Interfaces and Human-AI Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch18_neuromorphic_computing.html">Chapter 18: Neuromorphic Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch19_cognitive_neuro_dl.html">Cognitive Neuroscience and Deep Learning</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ch20_case_studies.html">Case Studies in NeuroAI</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ch20_interactive.html">Interactive NeuroAI Case Studies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jupyter_ai_demo.html">AI-Assisted Learning with Jupyter AI</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Creating Presentations with RISE</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="ch21_ai_for_neuro_discovery.html">Chapter 21: AI for Neuroscience Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch22_embodied_ai_robotics.html">Chapter 22: Embodied AI and Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch23_lifelong_learning.html">Chapter 23: Lifelong Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendices/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/math_python_refresher.html">Appendix A: Math &amp; Python Mini-Refresher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/dataset_catalogue.html">Appendix B: Dataset Catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/colab_setup.html">Appendix C: Google Colab Setup for NeuroAI</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=lab/tree/docs/part6/rise_slides_demo.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/edit/master/docs/part6/rise_slides_demo.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpart6/rise_slides_demo.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/part6/rise_slides_demo.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Creating Presentations with RISE</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Creating Presentations with RISE</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-guide-for-the-neuroai-handbook">A Guide for the NeuroAI Handbook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-rise">What is RISE?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-rise">Installing RISE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-slides-with-rise">Creating Slides with RISE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-cell-metadata">Using Cell Metadata</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-chapter-20-case-studies-in-neuroai">Example: Chapter 20 Case Studies in NeuroAI</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-20-case-studies-in-neuroai">Chapter 20: Case Studies in NeuroAI</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-1-predictive-coding-networks">Case Study 1: Predictive Coding Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-ai-connection">Brain ↔ AI Connection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-2-prioritized-experience-replay">Case Study 2: Prioritized Experience Replay</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Brain ↔ AI Connection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-3-vision-transformer">Case Study 3: Vision Transformer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Brain ↔ AI Connection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-activity-design-your-own-neuroai-model">Practical Activity: Design Your Own NeuroAI Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-rise-for-neuroai-presentations">Advantages of RISE for NeuroAI Presentations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-rise-vs-google-slides">Advantages of RISE vs. Google Slides</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-rise">When to Use RISE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-google-slides">When to Use Google Slides</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices-for-creating-slides-with-rise">Best Practices for Creating Slides with RISE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-rise-configuration">Adding RISE Configuration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#available-themes">Available Themes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-with-jupyterbook">Integration with JupyterBook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="creating-presentations-with-rise">
+<h1>Creating Presentations with RISE<a class="headerlink" href="#creating-presentations-with-rise" title="Link to this heading">#</a></h1>
+<section id="a-guide-for-the-neuroai-handbook">
+<h2>A Guide for the NeuroAI Handbook<a class="headerlink" href="#a-guide-for-the-neuroai-handbook" title="Link to this heading">#</a></h2>
+<p>This notebook demonstrates how to create interactive slide presentations from Jupyter notebooks using RISE (Reveal.js - Jupyter/IPython Slideshow Extension).</p>
+</section>
+<section id="what-is-rise">
+<h2>What is RISE?<a class="headerlink" href="#what-is-rise" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>R</strong>eveal.js <strong>I</strong>Python <strong>S</strong>lideshow <strong>E</strong>xtension</p></li>
+<li><p>Transforms Jupyter notebooks into interactive Reveal.js-based presentations</p></li>
+<li><p>Allows for seamless transitions between slides while preserving code execution capability</p></li>
+<li><p>Perfect for teaching or presenting research findings with live code demonstrations</p></li>
+</ul>
+</section>
+<section id="installing-rise">
+<h2>Installing RISE<a class="headerlink" href="#installing-rise" title="Link to this heading">#</a></h2>
+<p>RISE can be installed using pip:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>rise
+</pre></div>
+</div>
+<p>After installation, you may need to enable the extension:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-nbextension<span class="w"> </span>install<span class="w"> </span>rise<span class="w"> </span>--py<span class="w"> </span>--sys-prefix
+jupyter-nbextension<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>rise<span class="w"> </span>--py<span class="w"> </span>--sys-prefix
+</pre></div>
+</div>
+</section>
+<section id="creating-slides-with-rise">
+<h2>Creating Slides with RISE<a class="headerlink" href="#creating-slides-with-rise" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Create a regular Jupyter notebook with your content</p></li>
+<li><p>Use the Cell Toolbar menu: View → Cell Toolbar → Slideshow</p></li>
+<li><p>Set the slide type for each cell:</p>
+<ul class="simple">
+<li><p><strong>Slide</strong>: Start a new slide</p></li>
+<li><p><strong>Sub-slide</strong>: Start a new sub-slide (vertical navigation)</p></li>
+<li><p><strong>Fragment</strong>: Content appears incrementally on the current slide</p></li>
+<li><p><strong>Skip</strong>: Cell is not included in the slideshow</p></li>
+<li><p><strong>Notes</strong>: Speaker notes (not displayed in the presentation)</p></li>
+</ul>
+</li>
+</ol>
+<section id="using-cell-metadata">
+<h3>Using Cell Metadata<a class="headerlink" href="#using-cell-metadata" title="Link to this heading">#</a></h3>
+<p>You can also set slide properties directly in cell metadata:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;slideshow&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;slide_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;slide&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Options for <code class="docutils literal notranslate"><span class="pre">slide_type</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;slide&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;subslide&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;fragment&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;skip&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;notes&quot;</span></code></p>
+</section>
+</section>
+<section id="example-chapter-20-case-studies-in-neuroai">
+<h2>Example: Chapter 20 Case Studies in NeuroAI<a class="headerlink" href="#example-chapter-20-case-studies-in-neuroai" title="Link to this heading">#</a></h2>
+<p>Let’s demonstrate how we can create slides for Chapter 20 of the NeuroAI Handbook.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="chapter-20-case-studies-in-neuroai">
+<h1>Chapter 20: Case Studies in NeuroAI<a class="headerlink" href="#chapter-20-case-studies-in-neuroai" title="Link to this heading">#</a></h1>
+<p>This presentation covers key case studies where neuroscience has informed AI development.</p>
+<section id="case-study-1-predictive-coding-networks">
+<h2>Case Study 1: Predictive Coding Networks<a class="headerlink" href="#case-study-1-predictive-coding-networks" title="Link to this heading">#</a></h2>
+<section id="brain-ai-connection">
+<h3>Brain ↔ AI Connection<a class="headerlink" href="#brain-ai-connection" title="Link to this heading">#</a></h3>
+<p><strong>Neuroscience Principle</strong>: The brain constantly generates predictions about incoming sensory information and updates its internal models based on prediction errors.</p>
+<p><strong>AI Implementation</strong>: PredNet architecture with explicit representation of prediction errors between layers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simple visualization of predictive coding</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Generate data</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">signal</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="n">prediction</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">error</span> <span class="o">=</span> <span class="n">signal</span> <span class="o">-</span> <span class="n">prediction</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">signal</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Input Signal&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Input Signal with Noise&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">prediction</span><span class="p">,</span> <span class="s1">&#39;g&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Model Prediction&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Brain</span><span class="se">\&#39;</span><span class="s1">s Prediction&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">error</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Prediction Error&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Prediction Error (What the Brain Uses for Learning)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/10aaf118a4819b4b4a4db43ea65403d49b80fa20402e567d7b8f69d6d75efde8.png" src="../_images/10aaf118a4819b4b4a4db43ea65403d49b80fa20402e567d7b8f69d6d75efde8.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="case-study-2-prioritized-experience-replay">
+<h2>Case Study 2: Prioritized Experience Replay<a class="headerlink" href="#case-study-2-prioritized-experience-replay" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Brain ↔ AI Connection<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><strong>Neuroscience Principle</strong>: The hippocampus preferentially replays behaviorally relevant experiences during sleep and rest.</p>
+<p><strong>AI Implementation</strong>: Reinforcement learning with prioritized replay based on TD-error magnitude.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Visualize prioritized experience replay</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">patches</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearSegmentedColormap</span>
+
+<span class="c1"># Create a grid environment</span>
+<span class="n">grid_size</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">grid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">grid_size</span><span class="p">,</span> <span class="n">grid_size</span><span class="p">))</span>
+
+<span class="c1"># Set start and goal positions</span>
+<span class="n">start_pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">goal_pos</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+<span class="c1"># Create TD errors (higher near goal and obstacles)</span>
+<span class="n">td_errors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">grid_size</span><span class="p">,</span> <span class="n">grid_size</span><span class="p">))</span> <span class="o">*</span> <span class="mf">0.2</span>
+<span class="n">td_errors</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># Goal has high TD error</span>
+<span class="n">td_errors</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.9</span>
+<span class="n">td_errors</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.9</span>
+<span class="n">td_errors</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.8</span>  <span class="c1"># Obstacle area</span>
+<span class="n">td_errors</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.7</span>
+<span class="n">td_errors</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.7</span>
+
+<span class="c1"># Plot the environment and replay probabilities</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Create custom colormap</span>
+<span class="n">cmap</span> <span class="o">=</span> <span class="n">LinearSegmentedColormap</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="s1">&#39;replay_cmap&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;#f5f5f5&#39;</span><span class="p">,</span> <span class="s1">&#39;#ffcc00&#39;</span><span class="p">,</span> <span class="s1">&#39;#ff6600&#39;</span><span class="p">,</span> <span class="s1">&#39;#cc0000&#39;</span><span class="p">])</span>
+
+<span class="c1"># Plot TD errors as colors</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">td_errors</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add grid lines</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grid_size</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Mark start and goal</span>
+<span class="n">start_rect</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="n">start_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">start_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> 
+                              <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">goal_rect</span> <span class="o">=</span> <span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="n">goal_pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">goal_pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> 
+                              <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">start_rect</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">goal_rect</span><span class="p">)</span>
+
+<span class="c1"># Add labels</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grid_size</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grid_size</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">td_errors</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="p">]</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+
+<span class="c1"># Add colorbar</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="s1">&#39;Replay Priority (TD Error)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Set title and labels</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Prioritized Experience Replay&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">grid_size</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">grid_size</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">grid_size</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">grid_size</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/73ce5be2898618670164280a55e407ee0ed2bab7d4e059c98b576c054bebdf0a.png" src="../_images/73ce5be2898618670164280a55e407ee0ed2bab7d4e059c98b576c054bebdf0a.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="case-study-3-vision-transformer">
+<h2>Case Study 3: Vision Transformer<a class="headerlink" href="#case-study-3-vision-transformer" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>Brain ↔ AI Connection<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p><strong>Neuroscience Principle</strong>: Visual attention in humans allows selective processing of relevant information.</p>
+<p><strong>AI Implementation</strong>: Vision Transformer with self-attention mechanisms between image patches.</p>
+<p>Key innovations:</p>
+<ul class="simple">
+<li><p>Division of images into patches</p></li>
+<li><p>Parallel processing of all patches</p></li>
+<li><p>Attention-based relationships between patches</p></li>
+</ul>
+<p><img alt="Vision Transformer Architecture" src="https://storage.googleapis.com/neuroai-handbook/vision_transformer.png" /></p>
+<p><em>Vision Transformer architecture showing image patches, positional embeddings, and self-attention layers</em></p>
+</section>
+</section>
+<section id="practical-activity-design-your-own-neuroai-model">
+<h2>Practical Activity: Design Your Own NeuroAI Model<a class="headerlink" href="#practical-activity-design-your-own-neuroai-model" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Choose a brain mechanism you find interesting</p></li>
+<li><p>Identify its key computational principles</p></li>
+<li><p>Sketch an AI architecture inspired by this mechanism</p></li>
+<li><p>Consider how you would evaluate its performance</p></li>
+</ol>
+</section>
+<section id="key-takeaways">
+<h2>Key Takeaways<a class="headerlink" href="#key-takeaways" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Successful NeuroAI implementations focus on <strong>computational principles</strong> rather than precise biological details</p></li>
+<li><p>The most effective implementations involve <strong>iterative refinement</strong> between neuroscience insights and AI implementations</p></li>
+<li><p>Key areas where neuroscience has informed AI include <strong>attention mechanisms</strong>, <strong>memory systems</strong>, <strong>predictive processing</strong>, and <strong>neural data analysis</strong></p></li>
+<li><p>Implementing neuroscience principles in AI often requires <strong>creative adaptations</strong> to match the constraints of current deep learning frameworks</p></li>
+</ol>
+</section>
+<section id="additional-resources">
+<h2>Additional Resources<a class="headerlink" href="#additional-resources" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Interactive notebooks: <a class="reference external" href="https://github.com/NeuroAI-Handbook">github.com/NeuroAI-Handbook</a></p></li>
+<li><p>Code implementations: Available in Chapter 20</p></li>
+<li><p>Further reading: See references at end of Chapter 20</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="advantages-of-rise-for-neuroai-presentations">
+<h1>Advantages of RISE for NeuroAI Presentations<a class="headerlink" href="#advantages-of-rise-for-neuroai-presentations" title="Link to this heading">#</a></h1>
+<p>Let’s return to discussing the benefits of RISE for creating presentations from the NeuroAI Handbook content.</p>
+<section id="advantages-of-rise-vs-google-slides">
+<h2>Advantages of RISE vs. Google Slides<a class="headerlink" href="#advantages-of-rise-vs-google-slides" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Feature</p></th>
+<th class="head"><p>RISE</p></th>
+<th class="head"><p>Google Slides</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Code execution</p></td>
+<td><p>✅ Live code execution</p></td>
+<td><p>❌ Static code snippets only</p></td>
+</tr>
+<tr class="row-odd"><td><p>Integration with content</p></td>
+<td><p>✅ Direct from notebook</p></td>
+<td><p>❌ Requires copy/paste</p></td>
+</tr>
+<tr class="row-even"><td><p>Interactive visualizations</p></td>
+<td><p>✅ Fully interactive</p></td>
+<td><p>❌ Static images only</p></td>
+</tr>
+<tr class="row-odd"><td><p>Mathematical expressions</p></td>
+<td><p>✅ Native LaTeX support</p></td>
+<td><p>⚠️ Limited equation editor</p></td>
+</tr>
+<tr class="row-even"><td><p>Version control</p></td>
+<td><p>✅ Git-friendly format</p></td>
+<td><p>❌ Separate from codebase</p></td>
+</tr>
+<tr class="row-odd"><td><p>Consistency with handbook</p></td>
+<td><p>✅ Same styling possible</p></td>
+<td><p>⚠️ Requires manual styling</p></td>
+</tr>
+<tr class="row-even"><td><p>Real-time collaboration</p></td>
+<td><p>❌ Limited</p></td>
+<td><p>✅ Excellent</p></td>
+</tr>
+<tr class="row-odd"><td><p>Export options</p></td>
+<td><p>⚠️ HTML, PDF</p></td>
+<td><p>✅ Many formats</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="when-to-use-rise">
+<h2>When to Use RISE<a class="headerlink" href="#when-to-use-rise" title="Link to this heading">#</a></h2>
+<p>RISE is ideal for NeuroAI Handbook presentations when:</p>
+<ul class="simple">
+<li><p>You want to demonstrate live code execution</p></li>
+<li><p>You need interactive visualizations</p></li>
+<li><p>You’re presenting complex mathematical concepts</p></li>
+<li><p>You want to maintain consistency with the handbook content</p></li>
+<li><p>Your audience is technically oriented</p></li>
+<li><p>You need to make frequent updates to content</p></li>
+</ul>
+</section>
+<section id="when-to-use-google-slides">
+<h2>When to Use Google Slides<a class="headerlink" href="#when-to-use-google-slides" title="Link to this heading">#</a></h2>
+<p>Google Slides may be preferable when:</p>
+<ul class="simple">
+<li><p>Multiple authors need to collaborate simultaneously</p></li>
+<li><p>You need sophisticated animations and transitions</p></li>
+<li><p>Your audience includes non-technical stakeholders</p></li>
+<li><p>You need to incorporate rich media like videos</p></li>
+<li><p>You require compatibility with PowerPoint</p></li>
+<li><p>You need advanced presentation features like speaker notes and timed transitions</p></li>
+</ul>
+</section>
+<section id="best-practices-for-creating-slides-with-rise">
+<h2>Best Practices for Creating Slides with RISE<a class="headerlink" href="#best-practices-for-creating-slides-with-rise" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Start with a template</strong>: Create a template notebook with your desired styling</p></li>
+<li><p><strong>Keep content concise</strong>: Use bullet points and visuals rather than long paragraphs</p></li>
+<li><p><strong>Add interactivity</strong>: Include widgets for demonstrations</p></li>
+<li><p><strong>Use fragments</strong>: Reveal content progressively to maintain focus</p></li>
+<li><p><strong>Include practical examples</strong>: Demonstrate concepts with executable code</p></li>
+<li><p><strong>Test your presentations</strong>: Ensure all code cells execute properly</p></li>
+<li><p><strong>Export as HTML</strong>: Share presentations as standalone HTML files</p></li>
+</ol>
+</section>
+<section id="adding-rise-configuration">
+<h2>Adding RISE Configuration<a class="headerlink" href="#adding-rise-configuration" title="Link to this heading">#</a></h2>
+<p>You can customize RISE behavior by adding configuration to your notebook metadata:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;rise&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;theme&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sky&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;transition&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;fade&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;start_slideshow_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;selected&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;auto_select&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;code&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;autolaunch&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="available-themes">
+<h3>Available Themes<a class="headerlink" href="#available-themes" title="Link to this heading">#</a></h3>
+<p>RISE uses Reveal.js themes:</p>
+<ul class="simple">
+<li><p><strong>black</strong>: Black background, white text (default)</p></li>
+<li><p><strong>white</strong>: White background, dark text</p></li>
+<li><p><strong>league</strong>: Dark gray background</p></li>
+<li><p><strong>sky</strong>: Blue background</p></li>
+<li><p><strong>beige</strong>: Beige background</p></li>
+<li><p><strong>simple</strong>: White background, black text</p></li>
+<li><p><strong>serif</strong>: Cappuccino background, gray text</p></li>
+<li><p><strong>night</strong>: Black background, thick white text</p></li>
+<li><p><strong>moon</strong>: Dark blue background</p></li>
+<li><p><strong>solarized</strong>: Cream-colored background</p></li>
+</ul>
+</section>
+</section>
+<section id="integration-with-jupyterbook">
+<h2>Integration with JupyterBook<a class="headerlink" href="#integration-with-jupyterbook" title="Link to this heading">#</a></h2>
+<p>To integrate RISE slides with the NeuroAI Handbook:</p>
+<ol class="arabic simple">
+<li><p>Create slide notebooks for each chapter</p></li>
+<li><p>Add links in the chapter content to the slide versions</p></li>
+<li><p>Include a presentations section in the table of contents</p></li>
+<li><p>Configure JupyterBook to properly handle RISE notebooks</p></li>
+</ol>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>RISE provides an excellent way to create interactive presentations directly from Jupyter notebooks, making it ideal for teaching and presenting NeuroAI concepts.</p>
+<p>By integrating RISE with the NeuroAI Handbook, you can:</p>
+<ul class="simple">
+<li><p>Maintain consistency between content and presentations</p></li>
+<li><p>Demonstrate concepts with live code execution</p></li>
+<li><p>Create engaging, interactive learning experiences</p></li>
+<li><p>Easily update presentations when the handbook content changes</p></li>
+</ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>RISE Documentation: <a class="reference external" href="https://rise.readthedocs.io/">https://rise.readthedocs.io/</a></p></li>
+<li><p>Reveal.js: <a class="reference external" href="https://revealjs.com/">https://revealjs.com/</a></p></li>
+<li><p>Jupyter Book: <a class="reference external" href="https://jupyterbook.org/">https://jupyterbook.org/</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./part6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="jupyter_ai_demo.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Jupyter AI Integration for NeuroAI</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ch21_ai_for_neuro_discovery.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 21: AI for Neuroscience Discovery</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Creating Presentations with RISE</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-guide-for-the-neuroai-handbook">A Guide for the NeuroAI Handbook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-rise">What is RISE?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-rise">Installing RISE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-slides-with-rise">Creating Slides with RISE</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-cell-metadata">Using Cell Metadata</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-chapter-20-case-studies-in-neuroai">Example: Chapter 20 Case Studies in NeuroAI</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-20-case-studies-in-neuroai">Chapter 20: Case Studies in NeuroAI</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-1-predictive-coding-networks">Case Study 1: Predictive Coding Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-ai-connection">Brain ↔ AI Connection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-2-prioritized-experience-replay">Case Study 2: Prioritized Experience Replay</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Brain ↔ AI Connection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-3-vision-transformer">Case Study 3: Vision Transformer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Brain ↔ AI Connection</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-activity-design-your-own-neuroai-model">Practical Activity: Design Your Own NeuroAI Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-takeaways">Key Takeaways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-resources">Additional Resources</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-rise-for-neuroai-presentations">Advantages of RISE for NeuroAI Presentations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advantages-of-rise-vs-google-slides">Advantages of RISE vs. Google Slides</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-rise">When to Use RISE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-to-use-google-slides">When to Use Google Slides</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practices-for-creating-slides-with-rise">Best Practices for Creating Slides with RISE</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-rise-configuration">Adding RISE Configuration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#available-themes">Available Themes</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integration-with-jupyterbook">Integration with JupyterBook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Richard Young
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

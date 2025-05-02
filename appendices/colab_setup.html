@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Appendix C: Colab Setup Tips &#8212; The Neuroscience of AI</title>
+    <title>Appendix C: Google Colab Setup for NeuroAI &#8212; The Neuroscience of AI</title>
   
   
   
@@ -51,6 +51,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -58,6 +59,8 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'appendices/colab_setup';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://neuroai-handbook.github.io/appendices/colab_setup.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Appendix B: Dataset Catalogue" href="dataset_catalogue.html" />
@@ -152,8 +155,8 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="The Neuroscience of AI - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="The Neuroscience of AI - Home"/>`);</script>
+    <img src="../_static/nai.png" class="logo__image only-light" alt="The Neuroscience of AI - Home"/>
+    <script>document.write(`<img src="../_static/nai.png" class="logo__image only-dark" alt="The Neuroscience of AI - Home"/>`);</script>
   
   
 </a></div>
@@ -203,15 +206,35 @@
 <li class="toctree-l1"><a class="reference internal" href="../part4/ch12_large_language_models.html">Chapter 12: Large Language Models &amp; Fine-Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part4/ch13_multimodal_models.html">Chapter 13: Multimodal &amp; Diffusion Models</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part V · Reflection &amp; Futures</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part V · Ethics &amp; Futures</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../part5/ch14_future_directions.html">Chapter 14: Where Next for Neuro-AI?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part5/ch15_ethical_ai.html">Chapter 15: Ethical AI - Considerations for NeuroAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part5/ch16_future_directions.html">Chapter 16: Where Next for Neuro-AI?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VI · Advanced Applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch17_bci_human_ai_interfaces.html">Brain-Computer Interfaces and Human-AI Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch18_neuromorphic_computing.html">Chapter 18: Neuromorphic Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch19_cognitive_neuro_dl.html">Cognitive Neuroscience and Deep Learning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part6/ch20_case_studies.html">Case Studies in NeuroAI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part6/ch20_interactive.html">Interactive NeuroAI Case Studies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part6/jupyter_ai_demo.html">AI-Assisted Learning with Jupyter AI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part6/rise_slides_demo.html">Creating Presentations with RISE</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch21_ai_for_neuro_discovery.html">Chapter 21: AI for Neuroscience Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch22_embodied_ai_robotics.html">Chapter 22: Embodied AI and Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch23_lifelong_learning.html">Chapter 23: Lifelong Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="math_python_refresher.html">Appendix A: Math &amp; Python Mini-Refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataset_catalogue.html">Appendix B: Dataset Catalogue</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Appendix C: Colab Setup Tips</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Appendix C: Google Colab Setup for NeuroAI</a></li>
 </ul>
 
     </div>
@@ -277,6 +300,23 @@
   <i class="fab fa-github"></i>
   </span>
 <span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/edit/master/docs/appendices/colab_setup.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
 </li>
       
@@ -397,7 +437,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Appendix C: Colab Setup Tips</h1>
+    <h1>Appendix C: Google Colab Setup for NeuroAI</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -412,27 +452,48 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-setup">Basic Setup</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-2-environment-configuration">C.2 Environment Configuration</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-installation">Package Installation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-gpu-resources">Managing GPU Resources</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-custom-paths">Setting Up Custom Paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-2-setting-up-neuroai-handbook-environment">C.2 Setting Up NeuroAI-Handbook Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-the-neuroai-handbook-repository">Cloning the NeuroAI-Handbook Repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-package-installation">Required Package Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-configuration-and-management">GPU Configuration and Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structure-setup">Directory Structure Setup</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-3-data-management">C.3 Data Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-3-data-management-in-colab">C.3 Data Management in Colab</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mounting-google-drive">Mounting Google Drive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-datasets">Downloading Datasets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persistent-storage-solutions">Persistent Storage Solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-transfer-methods">Data Transfer Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#from-google-drive-to-colab-vm">From Google Drive to Colab VM</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#from-external-sources">From External Sources</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-4-collaboration-features">C.4 Collaboration Features</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharing-notebooks">Sharing Notebooks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-and-embedding">Publishing and Embedding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-results-back-to-drive">Saving Results Back to Drive</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-5-advanced-tips">C.5 Advanced Tips</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-and-debugging">Monitoring and Debugging</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-visualization-setup">Automated Visualization Setup</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#avoiding-session-timeouts">Avoiding Session Timeouts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-4-optimizing-colab-for-neuroai-computations">C.4 Optimizing Colab for NeuroAI Computations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management">Memory Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#session-management">Session Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-configuration-for-neuroscience">Visualization Configuration for Neuroscience</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-5-working-with-specific-neuroai-datasets">C.5 Working with Specific NeuroAI Datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-loading-and-processing-mri-data">Example: Loading and Processing MRI Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-working-with-eeg-data">Example: Working with EEG Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-6-collaboration-and-sharing">C.6 Collaboration and Sharing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharing-your-notebooks">Sharing Your Notebooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-your-work">Exporting Your Work</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-7-troubleshooting-common-issues">C.7 Troubleshooting Common Issues</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-memory-issues">GPU Memory Issues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-issues">Connection Issues</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-8-resources-and-references">C.8 Resources and References</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-links">Useful Links</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroai-specific-resources">NeuroAI-Specific Resources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
 </ul>
 </li>
 </ul>
@@ -446,173 +507,297 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="appendix-c-colab-setup-tips">
-<h1>Appendix C: Colab Setup Tips<a class="headerlink" href="#appendix-c-colab-setup-tips" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="appendix-c-google-colab-setup-for-neuroai">
+<h1>Appendix C: Google Colab Setup for NeuroAI<a class="headerlink" href="#appendix-c-google-colab-setup-for-neuroai" title="Link to this heading">#</a></h1>
 <section id="c-1-getting-started-with-google-colab">
 <h2>C.1 Getting Started with Google Colab<a class="headerlink" href="#c-1-getting-started-with-google-colab" title="Link to this heading">#</a></h2>
 <section id="what-is-google-colab">
 <h3>What is Google Colab?<a class="headerlink" href="#what-is-google-colab" title="Link to this heading">#</a></h3>
+<p>Google Colaboratory (Colab) is a free cloud-based Jupyter notebook environment that requires no setup and runs entirely in the cloud. It’s particularly useful for machine learning and data analysis tasks in the NeuroAI domain because:</p>
 <ul class="simple">
-<li><p>Free cloud-based Jupyter notebook environment</p></li>
-<li><p>No setup required, runs in browser</p></li>
-<li><p>Access to GPUs and TPUs for accelerated computation</p></li>
-<li><p>Integrated with Google Drive for storage</p></li>
+<li><p><strong>Zero Configuration</strong>: Run Python code through your browser with no installation required</p></li>
+<li><p><strong>Free GPU/TPU Access</strong>: Accelerate neural network training with free GPU (NVIDIA K80, T4, P100, or V100) and TPU resources</p></li>
+<li><p><strong>Easy Sharing</strong>: Collaborate with colleagues through Google Drive integration</p></li>
+<li><p><strong>Pre-installed Libraries</strong>: Comes with many ML libraries (TensorFlow, PyTorch, scikit-learn) pre-installed</p></li>
 </ul>
 </section>
 <section id="basic-setup">
 <h3>Basic Setup<a class="headerlink" href="#basic-setup" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Accessing Colab</strong>:</p>
 <ul class="simple">
-<li><p>Accessing Colab: <a class="reference external" href="https://colab.research.google.com/">https://colab.research.google.com/</a></p></li>
-<li><p>Notebook overview and interface</p></li>
-<li><p>Cell types: code, text (markdown), and output</p></li>
-<li><p>Runtime management and memory limits</p></li>
+<li><p>Go to <a class="reference external" href="https://colab.research.google.com/">https://colab.research.google.com/</a></p></li>
+<li><p>Sign in with your Google account</p></li>
+<li><p>Create a new notebook or open an existing one</p></li>
 </ul>
-</section>
-</section>
-<section id="c-2-environment-configuration">
-<h2>C.2 Environment Configuration<a class="headerlink" href="#c-2-environment-configuration" title="Link to this heading">#</a></h2>
-<section id="package-installation">
-<h3>Package Installation<a class="headerlink" href="#package-installation" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install packages not included in Colab&#39;s default environment</span>
-<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">q</span> <span class="n">neurom</span> <span class="n">allensdk</span> <span class="n">seaborn</span> <span class="n">nibabel</span> <span class="n">mne</span>
-
-<span class="c1"># Verify installation</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">neurom</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">allensdk</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">mne</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MNE version: </span><span class="si">{</span><span class="n">mne</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;neurom version: </span><span class="si">{</span><span class="n">neurom</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="managing-gpu-resources">
-<h3>Managing GPU Resources<a class="headerlink" href="#managing-gpu-resources" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check if GPU is available</span>
+</li>
+<li><p><strong>Notebook Interface</strong>:</p>
+<ul class="simple">
+<li><p><strong>Menu Bar</strong>: File operations, runtime management, and help resources</p></li>
+<li><p><strong>Toolbar</strong>: Common operations like adding cells and running code</p></li>
+<li><p><strong>Cells</strong>: Individual code or text blocks (similar to Jupyter)</p></li>
+</ul>
+</li>
+<li><p><strong>Cell Types</strong>:</p>
+<ul class="simple">
+<li><p><strong>Code Cells</strong>: For Python code execution</p></li>
+<li><p><strong>Text Cells</strong>: For markdown documentation</p></li>
+<li><p><strong>Output Cells</strong>: Display results of executed code</p></li>
+</ul>
+</li>
+<li><p><strong>Runtime Management</strong>:</p>
+<ul class="simple">
+<li><p>Select <strong>Runtime &gt; Change runtime type</strong> to choose hardware accelerator (None, GPU, or TPU)</p></li>
+<li><p>Runtimes automatically disconnect after 90 minutes of inactivity or 12 hours of total usage</p></li>
+</ul>
+</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check what type of hardware you&#39;re using</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GPU Available: &quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s1">&#39;GPU&#39;</span><span class="p">))</span>
-
-<span class="c1"># Check GPU memory usage</span>
-<span class="err">!</span><span class="n">nvidia</span><span class="o">-</span><span class="n">smi</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TensorFlow version:&quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GPU Available:&quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s1">&#39;GPU&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TPU Available:&quot;</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s1">&#39;TPU&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </section>
-<section id="setting-up-custom-paths">
-<h3>Setting Up Custom Paths<a class="headerlink" href="#setting-up-custom-paths" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create directories for data storage</span>
-<span class="err">!</span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">./</span><span class="n">data</span><span class="o">/</span><span class="n">raw</span> <span class="o">./</span><span class="n">data</span><span class="o">/</span><span class="n">processed</span> <span class="o">./</span><span class="n">models</span> <span class="o">./</span><span class="n">results</span>
+</section>
+<section id="c-2-setting-up-neuroai-handbook-environment">
+<h2>C.2 Setting Up NeuroAI-Handbook Environment<a class="headerlink" href="#c-2-setting-up-neuroai-handbook-environment" title="Link to this heading">#</a></h2>
+<section id="cloning-the-neuroai-handbook-repository">
+<h3>Cloning the NeuroAI-Handbook Repository<a class="headerlink" href="#cloning-the-neuroai-handbook-repository" title="Link to this heading">#</a></h3>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
+<span class="o">!</span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/yourusername/NeuroAI-Handbook.git
 
-<span class="c1"># Define paths</span>
+<span class="c1"># Change to the repository directory</span>
+<span class="o">%</span><span class="k">cd</span> NeuroAI-Handbook
+
+<span class="c1"># Install required packages</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>book/requirements.txt
+</pre></div>
+</div>
+</section>
+<section id="required-package-installation">
+<h3>Required Package Installation<a class="headerlink" href="#required-package-installation" title="Link to this heading">#</a></h3>
+<p>For the exercises in this handbook, you’ll need various neuroscience and ML libraries:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install essential packages for NeuroAI</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>torch<span class="w"> </span>torchvision<span class="w"> </span>tensorflow<span class="w"> </span>matplotlib<span class="w"> </span>numpy<span class="w"> </span>pandas<span class="w"> </span>scipy<span class="w"> </span>scikit-learn
+
+<span class="c1"># Install neuroscience-specific packages</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>nibabel<span class="w"> </span>nilearn<span class="w"> </span>mne<span class="w"> </span>seaborn<span class="w"> </span>allensdk<span class="w"> </span>neurom<span class="w"> </span>pynwb
+
+<span class="c1"># Install JupyterBook for building the handbook (optional)</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>jupyter-book
+
+<span class="c1"># Verify key installations</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mne</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nibabel</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">allensdk</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Python version: </span><span class="si">{</span><span class="n">sys</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PyTorch version: </span><span class="si">{</span><span class="n">torch</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TensorFlow version: </span><span class="si">{</span><span class="n">tf</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MNE version: </span><span class="si">{</span><span class="n">mne</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;NiBabel version: </span><span class="si">{</span><span class="n">nib</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;AllenSDK version: </span><span class="si">{</span><span class="n">allensdk</span><span class="o">.</span><span class="n">__version__</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="gpu-configuration-and-management">
+<h3>GPU Configuration and Management<a class="headerlink" href="#gpu-configuration-and-management" title="Link to this heading">#</a></h3>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check GPU details</span>
+<span class="o">!</span>nvidia-smi
+
+<span class="c1"># Configure TensorFlow for GPU memory growth (prevents memory errors)</span>
+<span class="n">gpus</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s1">&#39;GPU&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">gpus</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">gpu</span> <span class="ow">in</span> <span class="n">gpus</span><span class="p">:</span>
+            <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">experimental</span><span class="o">.</span><span class="n">set_memory_growth</span><span class="p">(</span><span class="n">gpu</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Memory growth enabled for </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">gpus</span><span class="p">)</span><span class="si">}</span><span class="s2"> GPUs&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error setting memory growth: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Configure PyTorch to use GPU</span>
+<span class="n">device</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s2">&quot;cuda&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PyTorch is using: </span><span class="si">{</span><span class="n">device</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="directory-structure-setup">
+<h3>Directory Structure Setup<a class="headerlink" href="#directory-structure-setup" title="Link to this heading">#</a></h3>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create standard directory structure for NeuroAI projects</span>
+<span class="o">!</span>mkdir<span class="w"> </span>-p<span class="w"> </span>./data/raw<span class="w"> </span>./data/processed<span class="w"> </span>./models<span class="w"> </span>./results<span class="w"> </span>./figures
+
+<span class="c1"># Define and export path variables</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="c1"># Define key paths</span>
 <span class="n">RAW_DATA_PATH</span> <span class="o">=</span> <span class="s1">&#39;./data/raw&#39;</span>
 <span class="n">PROCESSED_DATA_PATH</span> <span class="o">=</span> <span class="s1">&#39;./data/processed&#39;</span>
 <span class="n">MODEL_PATH</span> <span class="o">=</span> <span class="s1">&#39;./models&#39;</span>
 <span class="n">RESULTS_PATH</span> <span class="o">=</span> <span class="s1">&#39;./results&#39;</span>
+<span class="n">FIGURES_PATH</span> <span class="o">=</span> <span class="s1">&#39;./figures&#39;</span>
+
+<span class="c1"># Create a function to create needed directories</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">ensure_directories</span><span class="p">(</span><span class="n">paths</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create directories if they don&#39;t exist.&quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">paths</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Directory available: </span><span class="si">{</span><span class="n">path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+<span class="n">ensure_directories</span><span class="p">([</span><span class="n">RAW_DATA_PATH</span><span class="p">,</span> <span class="n">PROCESSED_DATA_PATH</span><span class="p">,</span> <span class="n">MODEL_PATH</span><span class="p">,</span> <span class="n">RESULTS_PATH</span><span class="p">,</span> <span class="n">FIGURES_PATH</span><span class="p">])</span>
 </pre></div>
 </div>
 </section>
 </section>
-<section id="c-3-data-management">
-<h2>C.3 Data Management<a class="headerlink" href="#c-3-data-management" title="Link to this heading">#</a></h2>
+<section id="c-3-data-management-in-colab">
+<h2>C.3 Data Management in Colab<a class="headerlink" href="#c-3-data-management-in-colab" title="Link to this heading">#</a></h2>
 <section id="mounting-google-drive">
 <h3>Mounting Google Drive<a class="headerlink" href="#mounting-google-drive" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
-<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/gdrive&#39;</span><span class="p">)</span>
+<p>For persistent storage, mount your Google Drive:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">drive</span>
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
 
-<span class="c1"># Create path to your Drive folder</span>
-<span class="n">DRIVE_PATH</span> <span class="o">=</span> <span class="s1">&#39;/content/gdrive/My Drive/NeuroAI-Handbook&#39;</span>
-<span class="err">!</span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="err">$</span><span class="n">DRIVE_PATH</span>
+<span class="c1"># Create a dedicated folder for NeuroAI work</span>
+<span class="n">DRIVE_PATH</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/NeuroAI-Handbook&#39;</span>
+<span class="o">!</span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$DRIVE_PATH</span>
+
+<span class="c1"># Create symbolic links for convenient access</span>
+<span class="o">!</span>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$DRIVE_PATH</span>/data<span class="w"> </span>./drive_data
+<span class="o">!</span>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$DRIVE_PATH</span>/models<span class="w"> </span>./drive_models
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Google Drive mounted at: </span><span class="si">{</span><span class="n">DRIVE_PATH</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
-<section id="downloading-datasets">
-<h3>Downloading Datasets<a class="headerlink" href="#downloading-datasets" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example: Download a dataset from a URL</span>
-<span class="err">!</span><span class="n">wget</span> <span class="o">-</span><span class="n">P</span> <span class="err">$</span><span class="n">RAW_DATA_PATH</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">dataset</span><span class="o">.</span><span class="n">zip</span>
-<span class="err">!</span><span class="n">unzip</span> <span class="o">-</span><span class="n">q</span> <span class="err">$</span><span class="n">RAW_DATA_PATH</span><span class="o">/</span><span class="n">dataset</span><span class="o">.</span><span class="n">zip</span> <span class="o">-</span><span class="n">d</span> <span class="err">$</span><span class="n">RAW_DATA_PATH</span>
-
-<span class="c1"># Example: Get data from Kaggle</span>
-<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">q</span> <span class="n">kaggle</span>
-<span class="err">!</span><span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/.</span><span class="n">kaggle</span>
-<span class="err">!</span><span class="n">echo</span> <span class="s1">&#39;{&quot;username&quot;:&quot;YOUR_USERNAME&quot;,&quot;key&quot;:&quot;YOUR_KEY&quot;}&#39;</span> <span class="o">&gt;</span> <span class="o">~/.</span><span class="n">kaggle</span><span class="o">/</span><span class="n">kaggle</span><span class="o">.</span><span class="n">json</span>
-<span class="err">!</span><span class="n">chmod</span> <span class="mi">600</span> <span class="o">~/.</span><span class="n">kaggle</span><span class="o">/</span><span class="n">kaggle</span><span class="o">.</span><span class="n">json</span>
-<span class="err">!</span><span class="n">kaggle</span> <span class="n">datasets</span> <span class="n">download</span> <span class="o">-</span><span class="n">d</span> <span class="n">dataset</span><span class="o">/</span><span class="n">name</span> <span class="o">-</span><span class="n">p</span> <span class="err">$</span><span class="n">RAW_DATA_PATH</span>
+<section id="data-transfer-methods">
+<h3>Data Transfer Methods<a class="headerlink" href="#data-transfer-methods" title="Link to this heading">#</a></h3>
+<section id="from-google-drive-to-colab-vm">
+<h4>From Google Drive to Colab VM<a class="headerlink" href="#from-google-drive-to-colab-vm" title="Link to this heading">#</a></h4>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copy datasets from Drive to Colab (faster processing)</span>
+<span class="o">!</span>cp<span class="w"> </span>-r<span class="w"> </span>/content/drive/MyDrive/NeuroAI-Handbook/data/raw/*<span class="w"> </span>./data/raw/
 </pre></div>
 </div>
 </section>
-<section id="persistent-storage-solutions">
-<h3>Persistent Storage Solutions<a class="headerlink" href="#persistent-storage-solutions" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Saving to mounted Google Drive</p></li>
-<li><p>Using Google Cloud Storage</p></li>
-<li><p>Exporting and importing notebooks with data</p></li>
-</ul>
+<section id="from-external-sources">
+<h4>From External Sources<a class="headerlink" href="#from-external-sources" title="Link to this heading">#</a></h4>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># Method 1: Download using wget</span>
+<span class="o">!</span>wget<span class="w"> </span>-P<span class="w"> </span><span class="nv">$RAW_DATA_PATH</span><span class="w"> </span>https://openneuro.org/crn/datasets/ds003031/snapshots/2.0.0/files/sub-01:func:sub-01_task-imagery_run-01_bold.nii.gz
+
+<span class="c1"># Method 2: From GitHub</span>
+<span class="o">!</span>curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span><span class="nv">$RAW_DATA_PATH</span>/sample_data.zip<span class="w"> </span>https://github.com/username/repo/raw/main/data/sample_data.zip
+<span class="o">!</span>unzip<span class="w"> </span>-q<span class="w"> </span><span class="nv">$RAW_DATA_PATH</span>/sample_data.zip<span class="w"> </span>-d<span class="w"> </span><span class="nv">$RAW_DATA_PATH</span>
+
+<span class="c1"># Method 3: From Kaggle (requires API key setup)</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>kaggle
+<span class="o">!</span>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.kaggle
+
+<span class="c1"># Create Kaggle API token (replace with your token details)</span>
+<span class="c1"># Get your token from https://www.kaggle.com/account</span>
+<span class="o">!</span><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;{&quot;username&quot;:&quot;YOUR_USERNAME&quot;,&quot;key&quot;:&quot;YOUR_API_KEY&quot;}&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>~/.kaggle/kaggle.json
+<span class="o">!</span>chmod<span class="w"> </span><span class="m">600</span><span class="w"> </span>~/.kaggle/kaggle.json
+
+<span class="c1"># Download dataset from Kaggle</span>
+<span class="o">!</span>kaggle<span class="w"> </span>datasets<span class="w"> </span>download<span class="w"> </span>-d<span class="w"> </span>codingdisciple/brain-mri-dataset<span class="w"> </span>-p<span class="w"> </span><span class="nv">$RAW_DATA_PATH</span>
+<span class="o">!</span>unzip<span class="w"> </span>-q<span class="w"> </span><span class="nv">$RAW_DATA_PATH</span>/brain-mri-dataset.zip<span class="w"> </span>-d<span class="w"> </span><span class="nv">$RAW_DATA_PATH</span>
+</pre></div>
+</div>
 </section>
 </section>
-<section id="c-4-collaboration-features">
-<h2>C.4 Collaboration Features<a class="headerlink" href="#c-4-collaboration-features" title="Link to this heading">#</a></h2>
-<section id="sharing-notebooks">
-<h3>Sharing Notebooks<a class="headerlink" href="#sharing-notebooks" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Generating shareable links</p></li>
-<li><p>Collaborative editing</p></li>
-<li><p>Version history and comments</p></li>
-</ul>
+<section id="saving-results-back-to-drive">
+<h3>Saving Results Back to Drive<a class="headerlink" href="#saving-results-back-to-drive" title="Link to this heading">#</a></h3>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save processed data and models to Google Drive for persistence</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">save_to_drive</span><span class="p">(</span><span class="n">source_path</span><span class="p">,</span> <span class="n">drive_destination</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Save files to Google Drive with logging.&quot;&quot;&quot;</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+    
+    <span class="c1"># Create destination directory if it doesn&#39;t exist</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">drive_destination</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Copy data</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">source_path</span><span class="p">):</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copytree</span><span class="p">(</span><span class="n">source_path</span><span class="p">,</span> <span class="n">drive_destination</span><span class="p">,</span> <span class="n">dirs_exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">shutil</span><span class="o">.</span><span class="n">copy2</span><span class="p">(</span><span class="n">source_path</span><span class="p">,</span> <span class="n">drive_destination</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error saving to Drive: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span>
+
+<span class="c1"># Example usage</span>
+<span class="n">model_path</span> <span class="o">=</span> <span class="s1">&#39;./models/trained_cnn.h5&#39;</span>
+<span class="n">drive_model_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">DRIVE_PATH</span><span class="si">}</span><span class="s1">/models/trained_cnn.h5&#39;</span>
+
+<span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">model_path</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">save_to_drive</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">drive_model_path</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model saved to Drive: </span><span class="si">{</span><span class="n">drive_model_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
-<section id="publishing-and-embedding">
-<h3>Publishing and Embedding<a class="headerlink" href="#publishing-and-embedding" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>GitHub integration</p></li>
-<li><p>Saving to GitHub Gist</p></li>
-<li><p>Embedding in websites or blogs</p></li>
-</ul>
 </section>
-</section>
-<section id="c-5-advanced-tips">
-<h2>C.5 Advanced Tips<a class="headerlink" href="#c-5-advanced-tips" title="Link to this heading">#</a></h2>
-<section id="monitoring-and-debugging">
-<h3>Monitoring and Debugging<a class="headerlink" href="#monitoring-and-debugging" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Memory management monitoring</span>
-<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">q</span> <span class="n">psutil</span>
+<section id="c-4-optimizing-colab-for-neuroai-computations">
+<h2>C.4 Optimizing Colab for NeuroAI Computations<a class="headerlink" href="#c-4-optimizing-colab-for-neuroai-computations" title="Link to this heading">#</a></h2>
+<section id="memory-management">
+<h3>Memory Management<a class="headerlink" href="#memory-management" title="Link to this heading">#</a></h3>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check and monitor memory usage</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>psutil
 <span class="kn">import</span><span class="w"> </span><span class="nn">psutil</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">gc</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">print_memory_usage</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Print current memory usage of the Colab instance.&quot;&quot;&quot;</span>
     <span class="n">mem</span> <span class="o">=</span> <span class="n">psutil</span><span class="o">.</span><span class="n">virtual_memory</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total memory: </span><span class="si">{</span><span class="n">mem</span><span class="o">.</span><span class="n">total</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e9</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> GB&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Available memory: </span><span class="si">{</span><span class="n">mem</span><span class="o">.</span><span class="n">available</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e9</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> GB&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Used memory: </span><span class="si">{</span><span class="n">mem</span><span class="o">.</span><span class="n">used</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e9</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> GB (</span><span class="si">{</span><span class="n">mem</span><span class="o">.</span><span class="n">percent</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MEMORY STATUS:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Total:     </span><span class="si">{</span><span class="n">mem</span><span class="o">.</span><span class="n">total</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e9</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> GB&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Available: </span><span class="si">{</span><span class="n">mem</span><span class="o">.</span><span class="n">available</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e9</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> GB&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Used:      </span><span class="si">{</span><span class="n">mem</span><span class="o">.</span><span class="n">used</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e9</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> GB (</span><span class="si">{</span><span class="n">mem</span><span class="o">.</span><span class="n">percent</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Free:      </span><span class="si">{</span><span class="n">mem</span><span class="o">.</span><span class="n">free</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1e9</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> GB&quot;</span><span class="p">)</span>
     
 <span class="n">print_memory_usage</span><span class="p">()</span>
+
+<span class="c1"># Memory optimization function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">optimize_memory</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Perform garbage collection and clear GPU memory if available.&quot;&quot;&quot;</span>
+    <span class="c1"># Clear memory</span>
+    <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+    
+    <span class="c1"># Clear PyTorch cache if using GPU</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+    <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">empty_cache</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PyTorch GPU cache cleared&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Clear TensorFlow GPU memory</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+    <span class="k">if</span> <span class="n">tf</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">list_physical_devices</span><span class="p">(</span><span class="s1">&#39;GPU&#39;</span><span class="p">):</span>
+        <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">backend</span><span class="o">.</span><span class="n">clear_session</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TensorFlow session cleared&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Report memory after optimization</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Memory after optimization:&quot;</span><span class="p">)</span>
+    <span class="n">print_memory_usage</span><span class="p">()</span>
+
+<span class="c1"># Use after heavy computations</span>
+<span class="c1"># optimize_memory()</span>
 </pre></div>
 </div>
 </section>
-<section id="automated-visualization-setup">
-<h3>Automated Visualization Setup<a class="headerlink" href="#automated-visualization-setup" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Standard visualization setup for neuroscience plots</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">setup_visualization</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="s1">&#39;talk&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Set up standardized visualization environment.&quot;&quot;&quot;</span>
-    <span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">palette</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;savefig.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;sans-serif&#39;</span>
-    <span class="k">return</span> <span class="s2">&quot;Visualization environment configured&quot;</span>
-
-<span class="n">setup_visualization</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
-<section id="avoiding-session-timeouts">
-<h3>Avoiding Session Timeouts<a class="headerlink" href="#avoiding-session-timeouts" title="Link to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to prevent Colab from disconnecting (use cautiously)</span>
+<section id="session-management">
+<h3>Session Management<a class="headerlink" href="#session-management" title="Link to this heading">#</a></h3>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function to prevent Colab from disconnecting (prevents idle timeouts)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Javascript</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">keep_alive</span><span class="p">(</span><span class="n">delay_minutes</span><span class="o">=</span><span class="mi">55</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Prevents Colab from disconnecting by clicking connect button periodically.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Prevents Colab from disconnecting due to inactivity.</span>
+<span class="sd">    Note: Use responsibly and only when needed for long computations.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">delay_seconds</span> <span class="o">=</span> <span class="n">delay_minutes</span> <span class="o">*</span> <span class="mi">60</span>
     <span class="n">display</span><span class="p">(</span><span class="n">Javascript</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
 <span class="s1">        function click_connect(){</span>
@@ -628,6 +813,371 @@ document.write(`
 </pre></div>
 </div>
 </section>
+<section id="visualization-configuration-for-neuroscience">
+<h3>Visualization Configuration for Neuroscience<a class="headerlink" href="#visualization-configuration-for-neuroscience" title="Link to this heading">#</a></h3>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># Standardized visualization setup for NeuroAI plots</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">setup_neuro_visualization</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="s1">&#39;whitegrid&#39;</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="s1">&#39;talk&#39;</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Set up standardized visualization environment for neuroscience.&quot;&quot;&quot;</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="n">style</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">context</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">palette</span><span class="p">)</span>
+    
+    <span class="c1"># Configure matplotlib</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;savefig.dpi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">300</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;sans-serif&#39;</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.titlesize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">18</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.labelsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">14</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;xtick.labelsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;ytick.labelsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">12</span>
+    
+    <span class="c1"># Scientific notation settings</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;axes.formatter.use_mathtext&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.sans-serif&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Arial&#39;</span><span class="p">,</span> <span class="s1">&#39;Helvetica&#39;</span><span class="p">,</span> <span class="s1">&#39;DejaVu Sans&#39;</span><span class="p">]</span>
+    
+    <span class="c1"># Default colormap options</span>
+    <span class="n">cmap_options</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;brain&#39;</span><span class="p">:</span> <span class="s1">&#39;gray&#39;</span><span class="p">,</span>           <span class="c1"># Structural brain images</span>
+        <span class="s1">&#39;activation&#39;</span><span class="p">:</span> <span class="s1">&#39;hot&#39;</span><span class="p">,</span>       <span class="c1"># Activation maps</span>
+        <span class="s1">&#39;connectivity&#39;</span><span class="p">:</span> <span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="c1"># Connectivity matrices</span>
+        <span class="s1">&#39;category&#39;</span><span class="p">:</span> <span class="s1">&#39;tab10&#39;</span><span class="p">,</span>       <span class="c1"># Categorical data</span>
+        <span class="s1">&#39;continuous&#39;</span><span class="p">:</span> <span class="s1">&#39;viridis&#39;</span>    <span class="c1"># Continuous data</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">cmap_options</span>
+
+<span class="c1"># Set up visualization</span>
+<span class="n">cmap_options</span> <span class="o">=</span> <span class="n">setup_neuro_visualization</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Visualization environment configured for NeuroAI&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="c-5-working-with-specific-neuroai-datasets">
+<h2>C.5 Working with Specific NeuroAI Datasets<a class="headerlink" href="#c-5-working-with-specific-neuroai-datasets" title="Link to this heading">#</a></h2>
+<section id="example-loading-and-processing-mri-data">
+<h3>Example: Loading and Processing MRI Data<a class="headerlink" href="#example-loading-and-processing-mri-data" title="Link to this heading">#</a></h3>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install necessary libraries</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>nibabel<span class="w"> </span>nilearn<span class="w"> </span>matplotlib
+
+<span class="c1"># Sample code to download a test MRI dataset</span>
+<span class="o">!</span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$RAW_DATA_PATH</span>/mri_sample
+<span class="o">!</span>curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span><span class="nv">$RAW_DATA_PATH</span>/mri_sample/brain.nii.gz<span class="w"> </span>https://github.com/nilearn/nilearn/raw/main/nilearn/datasets/data/avg152T1_brain.nii.gz
+
+<span class="c1"># Load and visualize MRI data</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nibabel</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">nilearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">plotting</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">load_and_view_mri</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load and display a 3D brain image.&quot;&quot;&quot;</span>
+    <span class="c1"># Load the NIfTI file</span>
+    <span class="n">img</span> <span class="o">=</span> <span class="n">nib</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Image shape: </span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Image affine:</span><span class="se">\n</span><span class="si">{</span><span class="n">img</span><span class="o">.</span><span class="n">affine</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Extract data array</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">get_fdata</span><span class="p">()</span>
+    
+    <span class="c1"># Plot using nilearn</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    
+    <span class="c1"># Calculate middle slices</span>
+    <span class="n">x_mid</span><span class="p">,</span> <span class="n">y_mid</span><span class="p">,</span> <span class="n">z_mid</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+    
+    <span class="c1"># Display middle slices</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">x_mid</span><span class="p">,</span> <span class="p">:,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sagittal (x=</span><span class="si">{</span><span class="n">x_mid</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+    
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span> <span class="n">y_mid</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Coronal (y=</span><span class="si">{</span><span class="n">y_mid</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+    
+    <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span> <span class="p">:,</span> <span class="n">z_mid</span><span class="p">]</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+    <span class="n">axes</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Axial (z=</span><span class="si">{</span><span class="n">z_mid</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    
+    <span class="c1"># Also show a nilearn 3D plot</span>
+    <span class="n">plotting</span><span class="o">.</span><span class="n">plot_anat</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;3D MRI Visualization&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">img</span><span class="p">,</span> <span class="n">data</span>
+
+<span class="c1"># Load and view the sample MRI</span>
+<span class="n">mri_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RAW_DATA_PATH</span><span class="si">}</span><span class="s2">/mri_sample/brain.nii.gz&quot;</span>
+<span class="n">brain_img</span><span class="p">,</span> <span class="n">brain_data</span> <span class="o">=</span> <span class="n">load_and_view_mri</span><span class="p">(</span><span class="n">mri_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="example-working-with-eeg-data">
+<h3>Example: Working with EEG Data<a class="headerlink" href="#example-working-with-eeg-data" title="Link to this heading">#</a></h3>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install MNE for EEG/MEG data analysis</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>mne
+
+<span class="c1"># Download sample EEG data</span>
+<span class="o">!</span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$RAW_DATA_PATH</span>/eeg_sample
+<span class="o">!</span>curl<span class="w"> </span>-L<span class="w"> </span>-o<span class="w"> </span><span class="nv">$RAW_DATA_PATH</span>/eeg_sample/sample_eeg.fif.gz<span class="w"> </span>https://mne.tools/stable/_downloads/e00c9bc516cb10e35d4d49e374ea8001/sample_audvis_raw.fif.gz
+
+<span class="c1"># Process and visualize EEG data</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">mne</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">explore_eeg_data</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load and explore EEG data using MNE-Python.&quot;&quot;&quot;</span>
+    <span class="c1"># Load the data</span>
+    <span class="n">raw</span> <span class="o">=</span> <span class="n">mne</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_raw_fif</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="n">preload</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Print basic information</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;EEG data loaded: </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of channels: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="o">.</span><span class="n">ch_names</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Sampling frequency: </span><span class="si">{</span><span class="n">raw</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s1">&#39;sfreq&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> Hz&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Duration: </span><span class="si">{</span><span class="n">raw</span><span class="o">.</span><span class="n">times</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> seconds&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Basic preprocessing</span>
+    <span class="n">raw</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>  <span class="c1"># Bandpass filter between 1-40 Hz</span>
+    
+    <span class="c1"># Plot the data</span>
+    <span class="n">raw</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_channels</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">scalings</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Plot the power spectral density</span>
+    <span class="n">raw</span><span class="o">.</span><span class="n">plot_psd</span><span class="p">(</span><span class="n">fmax</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+    
+    <span class="c1"># Plot channel locations</span>
+    <span class="n">raw</span><span class="o">.</span><span class="n">plot_sensors</span><span class="p">(</span><span class="n">show_names</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">raw</span>
+
+<span class="c1"># Load and explore the sample EEG data</span>
+<span class="n">eeg_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">RAW_DATA_PATH</span><span class="si">}</span><span class="s2">/eeg_sample/sample_eeg.fif.gz&quot;</span>
+<span class="n">eeg_data</span> <span class="o">=</span> <span class="n">explore_eeg_data</span><span class="p">(</span><span class="n">eeg_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="c-6-collaboration-and-sharing">
+<h2>C.6 Collaboration and Sharing<a class="headerlink" href="#c-6-collaboration-and-sharing" title="Link to this heading">#</a></h2>
+<section id="sharing-your-notebooks">
+<h3>Sharing Your Notebooks<a class="headerlink" href="#sharing-your-notebooks" title="Link to this heading">#</a></h3>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># Generate a link to share your notebook</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">files</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">display</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_share_link</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Display instructions for sharing the current notebook.&quot;&quot;&quot;</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    &lt;div style=&quot;background-color:#f8f9fa; padding:12px; border-radius:5px; margin-bottom:12px&quot;&gt;</span>
+<span class="s2">        &lt;h3 style=&quot;margin-top:0&quot;&gt;Share this Notebook&lt;/h3&gt;</span>
+<span class="s2">        &lt;p&gt;To share this notebook:&lt;/p&gt;</span>
+<span class="s2">        &lt;ol&gt;</span>
+<span class="s2">            &lt;li&gt;Click &lt;b&gt;File → Share&lt;/b&gt; in the menu&lt;/li&gt;</span>
+<span class="s2">            &lt;li&gt;Adjust sharing settings (View only, Comment, or Edit)&lt;/li&gt;</span>
+<span class="s2">            &lt;li&gt;Copy the link and share with collaborators&lt;/li&gt;</span>
+<span class="s2">        &lt;/ol&gt;</span>
+<span class="s2">        &lt;p&gt;For version control, consider saving to GitHub:&lt;/p&gt;</span>
+<span class="s2">        &lt;ol&gt;</span>
+<span class="s2">            &lt;li&gt;Click &lt;b&gt;File → Save a copy in GitHub&lt;/b&gt;&lt;/li&gt;</span>
+<span class="s2">            &lt;li&gt;Connect to your GitHub account if prompted&lt;/li&gt;</span>
+<span class="s2">            &lt;li&gt;Select repository and file path&lt;/li&gt;</span>
+<span class="s2">        &lt;/ol&gt;</span>
+<span class="s2">    &lt;/div&gt;</span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="p">))</span>
+
+<span class="c1"># Show sharing instructions</span>
+<span class="n">get_share_link</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="exporting-your-work">
+<h3>Exporting Your Work<a class="headerlink" href="#exporting-your-work" title="Link to this heading">#</a></h3>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># Export notebook to different formats</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">google.colab</span><span class="w"> </span><span class="kn">import</span> <span class="n">files</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">export_notebook</span><span class="p">(</span><span class="n">format_type</span><span class="o">=</span><span class="s1">&#39;ipynb&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Export the current notebook in the specified format.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    format_type : str</span>
+<span class="sd">        Format to export (&#39;ipynb&#39;, &#39;py&#39;, or &#39;html&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">IPython</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_ipython</span>
+    
+    <span class="c1"># Get the notebook filename</span>
+    <span class="n">notebook_path</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/temp_notebook.ipynb&#39;</span>
+    
+    <span class="k">if</span> <span class="n">format_type</span> <span class="o">==</span> <span class="s1">&#39;ipynb&#39;</span><span class="p">:</span>
+        <span class="c1"># Just download the notebook directly</span>
+        <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="s1">&#39;/content/notebook.ipynb&#39;</span><span class="p">))</span>
+    
+    <span class="k">elif</span> <span class="n">format_type</span> <span class="o">==</span> <span class="s1">&#39;py&#39;</span><span class="p">:</span>
+        <span class="c1"># Convert to Python script using nbconvert</span>
+        <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>nbconvert
+        <span class="o">!</span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>python<span class="w"> </span>/content/notebook.ipynb
+        <span class="n">py_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="s1">&#39;/content/notebook.py&#39;</span><span class="p">)</span>
+        <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">py_filename</span><span class="p">)</span>
+    
+    <span class="k">elif</span> <span class="n">format_type</span> <span class="o">==</span> <span class="s1">&#39;html&#39;</span><span class="p">:</span>
+        <span class="c1"># Convert to HTML using nbconvert</span>
+        <span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>nbconvert
+        <span class="o">!</span>jupyter<span class="w"> </span>nbconvert<span class="w"> </span>--to<span class="w"> </span>html<span class="w"> </span>/content/notebook.ipynb
+        <span class="n">html_filename</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="s1">&#39;/content/notebook.html&#39;</span><span class="p">)</span>
+        <span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">html_filename</span><span class="p">)</span>
+    
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unsupported format: </span><span class="si">{</span><span class="n">format_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Supported formats: &#39;ipynb&#39;, &#39;py&#39;, &#39;html&#39;&quot;</span><span class="p">)</span>
+
+<span class="c1"># Export as Python script</span>
+<span class="c1"># export_notebook(format_type=&#39;py&#39;)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="c-7-troubleshooting-common-issues">
+<h2>C.7 Troubleshooting Common Issues<a class="headerlink" href="#c-7-troubleshooting-common-issues" title="Link to this heading">#</a></h2>
+<section id="gpu-memory-issues">
+<h3>GPU Memory Issues<a class="headerlink" href="#gpu-memory-issues" title="Link to this heading">#</a></h3>
+<p>If you encounter GPU memory errors:</p>
+<div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check current GPU memory usage</span>
+<span class="o">!</span>nvidia-smi
+
+<span class="c1"># Reset runtime environment</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tensorflow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">gc</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">reset_gpu_memory</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Reset GPU memory when you hit Out of Memory errors.&quot;&quot;&quot;</span>
+    <span class="c1"># Clear memory</span>
+    <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
+    
+    <span class="c1"># Clear PyTorch cache</span>
+    <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">():</span>
+        <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">empty_cache</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;PyTorch CUDA memory cleared&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Reset TensorFlow session</span>
+    <span class="n">tf</span><span class="o">.</span><span class="n">keras</span><span class="o">.</span><span class="n">backend</span><span class="o">.</span><span class="n">clear_session</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TensorFlow session reset&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Check GPU memory after clearing</span>
+    <span class="o">!</span>nvidia-smi
+
+<span class="c1"># Call when you get OOM errors</span>
+<span class="n">reset_gpu_memory</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="connection-issues">
+<h3>Connection Issues<a class="headerlink" href="#connection-issues" title="Link to this heading">#</a></h3>
+<p>To address connection issues:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save your progress frequently</span>
+<span class="c1"># 1. Auto-backup function for important variables</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">backup_variables</span><span class="p">(</span><span class="n">variables_dict</span><span class="p">,</span> <span class="n">backup_dir</span><span class="o">=</span><span class="s1">&#39;./backup&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Save important variables to Google Drive as a backup.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    -----------</span>
+<span class="sd">    variables_dict : dict</span>
+<span class="sd">        Dictionary of variable names and their values to backup</span>
+<span class="sd">    backup_dir : str</span>
+<span class="sd">        Directory to save backups</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">backup_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Generate timestamp</span>
+    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">_%H%M%S&quot;</span><span class="p">)</span>
+    <span class="n">backup_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">backup_dir</span><span class="si">}</span><span class="s2">/backup_</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">.pkl&quot;</span>
+    
+    <span class="c1"># Save variables</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">backup_file</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">variables_dict</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Backup saved to </span><span class="si">{</span><span class="n">backup_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Also save to Drive if mounted</span>
+    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">):</span>
+        <span class="n">drive_backup_dir</span> <span class="o">=</span> <span class="s1">&#39;/content/drive/MyDrive/NeuroAI-Handbook/backups&#39;</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">drive_backup_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">drive_backup_file</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">drive_backup_dir</span><span class="si">}</span><span class="s2">/backup_</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">.pkl&quot;</span>
+        
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">drive_backup_file</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">variables_dict</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Backup also saved to Google Drive: </span><span class="si">{</span><span class="n">drive_backup_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">backup_file</span>
+
+<span class="c1"># Example usage</span>
+<span class="c1"># important_vars = {</span>
+<span class="c1">#     &#39;trained_model&#39;: model,</span>
+<span class="c1">#     &#39;history&#39;: training_history,</span>
+<span class="c1">#     &#39;test_results&#39;: test_results</span>
+<span class="c1"># }</span>
+<span class="c1"># backup_path = backup_variables(important_vars)</span>
+
+<span class="c1"># Function to restore from backup</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">restore_from_backup</span><span class="p">(</span><span class="n">backup_file</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Restore variables from backup file.&quot;&quot;&quot;</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">backup_file</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">variables</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Restored variables from </span><span class="si">{</span><span class="n">backup_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Available variables: </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">variables</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">variables</span>
+
+<span class="c1"># Example: Restore from most recent backup</span>
+<span class="c1"># latest_backup = max(glob.glob(&#39;./backup/backup_*.pkl&#39;), key=os.path.getctime)</span>
+<span class="c1"># restored_vars = restore_from_backup(latest_backup)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="c-8-resources-and-references">
+<h2>C.8 Resources and References<a class="headerlink" href="#c-8-resources-and-references" title="Link to this heading">#</a></h2>
+<section id="useful-links">
+<h3>Useful Links<a class="headerlink" href="#useful-links" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://colab.research.google.com/notebooks/basic_features_overview.ipynb">Google Colab Documentation</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/signup">Google Colab Pro Features</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/notebooks/keyboardshortcuts.ipynb">Colab Keyboard Shortcuts</a></p></li>
+</ul>
+</section>
+<section id="neuroai-specific-resources">
+<h3>NeuroAI-Specific Resources<a class="headerlink" href="#neuroai-specific-resources" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://portal.brain-map.org/">Allen Brain Atlas</a></p></li>
+<li><p><a class="reference external" href="https://www.humanconnectome.org/">Human Connectome Project</a></p></li>
+<li><p><a class="reference external" href="https://neuralensemble.org/">NeuralEnsemble</a></p></li>
+<li><p><a class="reference external" href="https://openneuro.org/">OpenNeuro</a></p></li>
+<li><p><a class="reference external" href="https://www.nitrc.org/">NeuroImaging Tools &amp; Resources Collaboratory</a></p></li>
+</ul>
+</section>
+<section id="citation">
+<h3>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@book</span><span class="p">{</span><span class="n">neuroai_handbook_2024</span><span class="p">,</span>
+  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">NeuroAI</span> <span class="n">Handbook</span><span class="p">:</span> <span class="n">Bridging</span> <span class="n">Neuroscience</span> <span class="ow">and</span> <span class="n">Artificial</span> <span class="n">Intelligence</span><span class="p">},</span>
+  <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">NeuroAI</span> <span class="n">Contributors</span><span class="p">},</span>
+  <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2024</span><span class="p">},</span>
+  <span class="n">publisher</span><span class="o">=</span><span class="p">{</span><span class="n">Online</span> <span class="n">Resource</span><span class="p">},</span>
+  <span class="n">url</span><span class="o">=</span><span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">yourusername</span><span class="o">/</span><span class="n">NeuroAI</span><span class="o">-</span><span class="n">Handbook</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -635,7 +1185,7 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -691,27 +1241,48 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-setup">Basic Setup</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-2-environment-configuration">C.2 Environment Configuration</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#package-installation">Package Installation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-gpu-resources">Managing GPU Resources</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-custom-paths">Setting Up Custom Paths</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-2-setting-up-neuroai-handbook-environment">C.2 Setting Up NeuroAI-Handbook Environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cloning-the-neuroai-handbook-repository">Cloning the NeuroAI-Handbook Repository</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#required-package-installation">Required Package Installation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-configuration-and-management">GPU Configuration and Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-structure-setup">Directory Structure Setup</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-3-data-management">C.3 Data Management</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-3-data-management-in-colab">C.3 Data Management in Colab</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mounting-google-drive">Mounting Google Drive</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-datasets">Downloading Datasets</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#persistent-storage-solutions">Persistent Storage Solutions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-transfer-methods">Data Transfer Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#from-google-drive-to-colab-vm">From Google Drive to Colab VM</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#from-external-sources">From External Sources</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-4-collaboration-features">C.4 Collaboration Features</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharing-notebooks">Sharing Notebooks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-and-embedding">Publishing and Embedding</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#saving-results-back-to-drive">Saving Results Back to Drive</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-5-advanced-tips">C.5 Advanced Tips</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-and-debugging">Monitoring and Debugging</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#automated-visualization-setup">Automated Visualization Setup</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#avoiding-session-timeouts">Avoiding Session Timeouts</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-4-optimizing-colab-for-neuroai-computations">C.4 Optimizing Colab for NeuroAI Computations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-management">Memory Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#session-management">Session Management</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualization-configuration-for-neuroscience">Visualization Configuration for Neuroscience</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-5-working-with-specific-neuroai-datasets">C.5 Working with Specific NeuroAI Datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-loading-and-processing-mri-data">Example: Loading and Processing MRI Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-working-with-eeg-data">Example: Working with EEG Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-6-collaboration-and-sharing">C.6 Collaboration and Sharing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sharing-your-notebooks">Sharing Your Notebooks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exporting-your-work">Exporting Your Work</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-7-troubleshooting-common-issues">C.7 Troubleshooting Common Issues</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu-memory-issues">GPU Memory Issues</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connection-issues">Connection Issues</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-8-resources-and-references">C.8 Resources and References</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-links">Useful Links</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neuroai-specific-resources">NeuroAI-Specific Resources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
 </ul>
 </li>
 </ul>

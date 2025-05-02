@@ -51,6 +51,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -60,6 +61,8 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://neuroai-handbook.github.io/intro.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Chapter 1: Introduction to Neuroscience ↔ AI" href="part1/ch01_intro.html" />
@@ -156,8 +159,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="The Neuroscience of AI - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="The Neuroscience of AI - Home"/>`);</script>
+    <img src="_static/nai.png" class="logo__image only-light" alt="The Neuroscience of AI - Home"/>
+    <script>document.write(`<img src="_static/nai.png" class="logo__image only-dark" alt="The Neuroscience of AI - Home"/>`);</script>
   
   
 </a></div>
@@ -207,15 +210,35 @@
 <li class="toctree-l1"><a class="reference internal" href="part4/ch12_large_language_models.html">Chapter 12: Large Language Models &amp; Fine-Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="part4/ch13_multimodal_models.html">Chapter 13: Multimodal &amp; Diffusion Models</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part V · Reflection &amp; Futures</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part V · Ethics &amp; Futures</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="part5/ch14_future_directions.html">Chapter 14: Where Next for Neuro-AI?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part5/ch15_ethical_ai.html">Chapter 15: Ethical AI - Considerations for NeuroAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part5/ch16_future_directions.html">Chapter 16: Where Next for Neuro-AI?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VI · Advanced Applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="part6/ch17_bci_human_ai_interfaces.html">Brain-Computer Interfaces and Human-AI Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part6/ch18_neuromorphic_computing.html">Chapter 18: Neuromorphic Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part6/ch19_cognitive_neuro_dl.html">Cognitive Neuroscience and Deep Learning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="part6/ch20_case_studies.html">Case Studies in NeuroAI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="part6/ch20_interactive.html">Interactive NeuroAI Case Studies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part6/jupyter_ai_demo.html">AI-Assisted Learning with Jupyter AI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part6/rise_slides_demo.html">Creating Presentations with RISE</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="part6/ch21_ai_for_neuro_discovery.html">Chapter 21: AI for Neuroscience Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part6/ch22_embodied_ai_robotics.html">Chapter 22: Embodied AI and Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part6/ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part6/ch23_lifelong_learning.html">Chapter 23: Lifelong Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="appendices/glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendices/math_python_refresher.html">Appendix A: Math &amp; Python Mini-Refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendices/dataset_catalogue.html">Appendix B: Dataset Catalogue</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendices/colab_setup.html">Appendix C: Colab Setup Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices/colab_setup.html">Appendix C: Google Colab Setup for NeuroAI</a></li>
 </ul>
 
     </div>
@@ -281,6 +304,23 @@
   <i class="fab fa-github"></i>
   </span>
 <span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/edit/master/docs/intro.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
 </li>
       
@@ -412,7 +452,12 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preface">Preface</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evidence-based-educational-design">Evidence-Based Educational Design</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recent-updates">Recent Updates</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core-chapters">Core Chapters</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enhanced-appendices">Enhanced Appendices</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -432,11 +477,17 @@ document.write(`
 <h1>The Neuroscience of AI<a class="headerlink" href="#the-neuroscience-of-ai" title="Link to this heading">#</a></h1>
 <section id="preface">
 <h2>Preface<a class="headerlink" href="#preface" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Why this book / how to use it</p></li>
-<li><p>Glossary &amp; notation</p></li>
-</ul>
 <p>This handbook bridges neuroscience and artificial intelligence, exploring how biological principles inspire and inform computational models. Each chapter combines theoretical foundations with practical Python implementations.</p>
+<section id="evidence-based-educational-design">
+<h3>Evidence-Based Educational Design<a class="headerlink" href="#evidence-based-educational-design" title="Link to this heading">#</a></h3>
+<p>This book has been carefully designed using evidence-based educational principles to maximize learning effectiveness:</p>
+<ol class="arabic simple">
+<li><p><strong>Clear Learning Objectives</strong>: Each chapter begins with specific learning objectives that outline what you will be able to accomplish.</p></li>
+<li><p><strong>Knowledge Connections</strong>: Special sections highlight relationships between concepts across different chapters, helping you build an integrated understanding.</p></li>
+<li><p><strong>Real-World Applications</strong>: Application callout boxes connect abstract concepts to concrete, practical implementations in both research and industry.</p></li>
+<li><p><strong>Visual Consistency</strong>: Diagrams and figures follow a consistent color scheme and design language (blue for neuroscience concepts, green for AI components, purple for hybrid approaches). The deep learning chapter (Chapter 10) exemplifies this approach with standardized SVG visualizations for neural architectures, optimization algorithms, regularization techniques, and biological parallels, making complex concepts immediately accessible through visual learning.</p></li>
+<li><p><strong>Comprehensive Glossary</strong>: An alphabetically organized reference of key terms with cross-references to relevant chapters.</p></li>
+</ol>
 <p>The book is organized into five parts, progressing from foundational neuroscience concepts to cutting-edge AI applications:</p>
 <ol class="arabic simple">
 <li><p><strong>Brains &amp; Inspiration</strong>: Fundamental neuroscience concepts relevant to AI</p></li>
@@ -446,15 +497,37 @@ document.write(`
 <li><p><strong>Reflection &amp; Futures</strong>: Emerging trends and ethical considerations</p></li>
 </ol>
 <p>Each chapter includes code examples, diagrams, and hands-on exercises to reinforce concepts.</p>
+</section>
 <section id="recent-updates">
 <h3>Recent Updates<a class="headerlink" href="#recent-updates" title="Link to this heading">#</a></h3>
-<p>We have recently expanded our coverage of modern AI architectures with detailed implementations:</p>
+<p>We are pleased to announce that all chapters and appendices are now fully implemented with comprehensive content:</p>
+<section id="core-chapters">
+<h4>Core Chapters<a class="headerlink" href="#core-chapters" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li><p><strong>Deep Learning Fundamentals</strong>: Neural networks, backpropagation, optimization techniques, and regularization methods with PyTorch implementations</p></li>
-<li><p><strong>Sequence Processing Models</strong>: RNNs, attention mechanisms, and transformer architectures, with biological parallels and practical code examples</p></li>
-<li><p><strong>Large Language Models</strong>: Comprehensive overview of LLM architectures, fine-tuning approaches (including parameter-efficient methods like LoRA), prompting techniques, and connections to neural language processing</p></li>
+<li><p><strong>Neuroscience Foundations</strong>: Neurons, neural circuits, brain regions, and their parallels to AI architectures</p></li>
+<li><p><strong>Spatial Navigation</strong>: Grid cells, place cells, and cognitive maps with computational implementations</p></li>
+<li><p><strong>Visual Perception</strong>: Visual processing pathways, object recognition, and computational vision models</p></li>
+<li><p><strong>Network Neuroscience</strong>: Brain networks, connectivity, and computational approaches for modeling network dynamics</p></li>
+<li><p><strong>Neurostimulation &amp; Plasticity</strong>: Neural plasticity mechanisms, neuromodulatory systems, and brain stimulation techniques</p></li>
+<li><p><strong>Information Theory in Neuroscience</strong>: Coding principles, mutual information, and efficient coding in neural systems</p></li>
+<li><p><strong>Data Science Pipeline</strong>: Preprocessing, analysis, and visualization techniques for neuroscience data</p></li>
+<li><p><strong>Machine Learning Foundations</strong>: Supervised, unsupervised, and reinforcement learning with biological parallels</p></li>
+<li><p><strong>Deep Learning Fundamentals</strong>: Neural networks, backpropagation, optimization techniques, and regularization methods with comprehensive visual diagrams illustrating neural architectures, optimization algorithms, regularization techniques, and biological parallels</p></li>
+<li><p><strong>Sequence Processing Models</strong>: RNNs, attention mechanisms, and transformer architectures with biological parallels</p></li>
+<li><p><strong>Large Language Models</strong>: Comprehensive overview of LLM architectures, fine-tuning approaches, and connections to neural language processing</p></li>
+<li><p><strong>Multimodal &amp; Diffusion Models</strong>: Multimodal learning architectures, diffusion model principles, and neural multimodal integration</p></li>
+<li><p><strong>Future Research Directions</strong>: Neuromorphic computing, continual learning, AI for neuroscience, and ethical considerations</p></li>
 </ul>
-<p>Each of these chapters includes practical code labs to help readers implement and experiment with these technologies.</p>
+</section>
+<section id="enhanced-appendices">
+<h4>Enhanced Appendices<a class="headerlink" href="#enhanced-appendices" title="Link to this heading">#</a></h4>
+<ul class="simple">
+<li><p><strong>Comprehensive Glossary</strong>: Alphabetically organized glossary of key terms with cross-references to relevant chapters</p></li>
+<li><p><strong>Math &amp; Python Mini-Refresher</strong>: Comprehensive review of essential linear algebra, calculus, probability, and core Python libraries for NeuroAI</p></li>
+<li><p><strong>Dataset Catalogue</strong>: Extensive collection of neuroscience, AI, and NeuroAI-specific datasets with usage examples</p></li>
+<li><p><strong>Google Colab Setup</strong>: Detailed guide to setting up and optimizing Google Colab for NeuroAI research, including memory management, data handling, and visualization techniques</p></li>
+</ul>
+<p>Each chapter and appendix includes practical code labs, detailed figures, and extensive references to help readers implement and experiment with these technologies.</p>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I · Brains &amp; Inspiration</span></p>
 <ul>
@@ -489,19 +562,35 @@ document.write(`
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part V · Reflection &amp; Futures</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part V · Ethics &amp; Futures</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="part5/ch14_future_directions.html">Chapter 14: Where Next for Neuro-AI?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part5/ch15_ethical_ai.html">Chapter 15: Ethical AI - Considerations for NeuroAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part5/ch16_future_directions.html">Chapter 16: Where Next for Neuro-AI?</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VI · Advanced Applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="part6/ch17_bci_human_ai_interfaces.html">Brain-Computer Interfaces and Human-AI Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part6/ch18_neuromorphic_computing.html">Chapter 18: Neuromorphic Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part6/ch19_cognitive_neuro_dl.html">Cognitive Neuroscience and Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part6/ch20_case_studies.html">Case Studies in NeuroAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part6/ch21_ai_for_neuro_discovery.html">Chapter 21: AI for Neuroscience Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part6/ch22_embodied_ai_robotics.html">Chapter 22: Embodied AI and Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part6/ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part6/ch23_lifelong_learning.html">Chapter 23: Lifelong Learning</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="appendices/glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendices/math_python_refresher.html">Appendix A: Math &amp; Python Mini-Refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="appendices/dataset_catalogue.html">Appendix B: Dataset Catalogue</a></li>
-<li class="toctree-l1"><a class="reference internal" href="appendices/colab_setup.html">Appendix C: Colab Setup Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="appendices/colab_setup.html">Appendix C: Google Colab Setup for NeuroAI</a></li>
 </ul>
 </div>
+</section>
 </section>
 </section>
 </section>
@@ -510,7 +599,7 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -562,7 +651,12 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preface">Preface</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evidence-based-educational-design">Evidence-Based Educational Design</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recent-updates">Recent Updates</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#core-chapters">Core Chapters</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enhanced-appendices">Enhanced Appendices</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
 </ul>
 </li>
 </ul>

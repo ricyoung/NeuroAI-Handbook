@@ -1,10 +1,16 @@
 # Chapter 1: Introduction to Neuroscience ↔ AI
 
-## 1.0 Chapter Goals
-- Understand the historical relationship between neuroscience and AI
-- Recognize key parallels between biological and artificial neural systems
-- Identify areas where biology continues to inspire AI development
-- Appreciate the bidirectional relationship: AI also helps us understand the brain
+```{admonition} Learning Objectives
+:class: note
+
+By the end of this chapter, you will be able to:
+
+- **Trace** the historical development of neuroscience and AI as interconnected fields
+- **Identify** key parallels between biological neural systems and artificial neural networks
+- **Explain** how biological principles have inspired major AI advances
+- **Describe** how modern AI tools contribute to neuroscience research
+- **Implement** basic simulations demonstrating bio-inspired computational principles
+```
 
 ## 1.1 Historical Context
 
@@ -12,6 +18,9 @@ The relationship between neuroscience and artificial intelligence is deeply inte
 
 ![Neuroscience and AI Timeline](../figures/ch01/neuro_ai_timeline.svg)
 *Figure 1.1: Historical timeline showing the parallel development of neuroscience and AI, with key moments of cross-fertilization.*
+
+![Historical Convergence of Neuroscience and AI](../figures/ch01/neuro_ai_history.svg)
+*Figure 1.2: Key milestones in the parallel development of neuroscience and artificial intelligence, showing how the fields have converged over time.*
 
 ### 1.1.1 Early Foundations
 
@@ -300,6 +309,7 @@ def artificial_neuron_model(inputs, weights, bias):
 
 # Compare action potential with artificial neuron activation
 def compare_activations():
+    """Visualize the difference between biological and artificial neuron activation."""
     # Input stimulus values
     stimulus = np.linspace(-2, 5, 100)
     
@@ -591,7 +601,7 @@ Brains and AI systems differ markedly in how they generalize:
 
 Recent approaches like meta-learning, few-shot learning, and self-supervised learning aim to close this gap, often drawing inspiration from biological learning principles.
 
-## 1.6 Take-aways
+## 1.6 Key Insights
 
 The ongoing dialogue between neuroscience and AI yields insights in both directions:
 
@@ -602,6 +612,34 @@ The ongoing dialogue between neuroscience and AI yields insights in both directi
 - **AI provides tools and models to test neuroscience theories**: Neural networks offer computational laboratories to test theories of brain function. Successful AI systems can generate testable hypotheses about neural mechanisms.
 
 As both fields advance, their ongoing collaboration promises deeper understanding of intelligence in both natural and artificial systems.
+
+```{admonition} Chapter Summary
+:class: important
+
+In this chapter, we explored:
+
+- The **historical co-evolution** of neuroscience and AI, from early cybernetics to modern deep learning
+- **Bidirectional inspiration** between biological neural networks and artificial neural networks
+- Key **structural parallels** between neural circuits and artificial network architectures
+- **Functional parallels** in learning mechanisms, from Hebbian plasticity to backpropagation
+- The **complementary strengths** of biological and artificial systems
+- How AI serves as both a **tool for neuroscience** and a **beneficiary of biological insights**
+- Current **research frontiers** at the intersection of the fields
+- The importance of a **multidisciplinary approach** to advancing both fields
+
+This chapter provides the foundation for the detailed explorations of specific neural systems and their artificial counterparts in subsequent chapters.
+```
+
+```{admonition} Knowledge Connections
+:class: important
+
+**Looking Forward**
+- **Chapter 2 (Neuroscience Foundations)**: Builds directly on this introduction with a detailed exploration of neural anatomy, circuits, and plasticity, providing the biological groundwork for AI concepts.
+- **Chapter 7 (Information Theory)**: Expands on communication and information processing principles first introduced in the cybernetics section (1.1.1).
+- **Chapter 9 (ML Foundations)**: Takes the artificial neural network concepts introduced here and develops them into complete learning frameworks.
+- **Chapter 10 (Deep Learning)**: The backpropagation algorithm mentioned in section 1.1.3 becomes central to training the deep networks discussed in Chapter 10.
+- **Chapter 14 (Future Directions)**: The challenges identified in section 1.5 inform many of the research directions explored in the final chapter.
+```
 
 ## 1.7 Further Reading & Media
 

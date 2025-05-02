@@ -5,6 +5,8 @@
 - Explore neuromodulatory systems (dopamine, acetylcholine, etc.)
 - Connect plasticity to learning algorithms
 - Investigate non-invasive brain stimulation techniques
+- Explore computational models of neural plasticity and stimulation
+- Apply neuroscience concepts to AI systems
 
 ## 6.1 Neural Plasticity Mechanisms
 
@@ -84,6 +86,8 @@ These homeostatic mechanisms prevent neuronal silence or seizure-like overactivi
 
 Neural plasticity operates on multiple timescales and involves both functional and structural changes:
 
+![Neural Plasticity Mechanisms](../figures/ch06/plasticity_mechanisms.svg)
+
 **Functional Plasticity:**
 - Changes in synaptic strength without morphological alterations
 - Occurs rapidly (minutes to hours)
@@ -112,6 +116,8 @@ While adult plasticity is more restricted, substantial rewiring remains possible
 ## 6.2 Neuromodulatory Systems
 
 Neuromodulators are chemical messengers that regulate neural activity and plasticity on broader spatial and temporal scales than fast neurotransmitters. They constitute the brain's internal control system for learning and adaptation.
+
+![Neuromodulatory Systems](../figures/ch06/neuromodulatory_systems.svg)
 
 ### Dopamine: The Reward Signal
 
@@ -242,6 +248,8 @@ This orchestrated control enables sophisticated regulation of neural plasticity 
 ## 6.3 Brain Stimulation Techniques
 
 Brain stimulation techniques allow direct manipulation of neural activity and plasticity. These methods span from non-invasive approaches accessible to researchers and clinicians to invasive procedures reserved for specific clinical populations.
+
+![Neurostimulation Techniques](../figures/ch06/neurostimulation_techniques.svg)
 
 ### Transcranial Direct Current Stimulation (tDCS)
 

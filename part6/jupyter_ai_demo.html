@@ -1,0 +1,1428 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Jupyter AI Integration for NeuroAI &#8212; The Neuroscience of AI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'part6/jupyter_ai_demo';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://neuroai-handbook.github.io/part6/jupyter_ai_demo.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Creating Presentations with RISE" href="rise_slides_demo.html" />
+    <link rel="prev" title="Interactive Examples for Case Studies in NeuroAI" href="ch20_interactive.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/nai.png" class="logo__image only-light" alt="The Neuroscience of AI - Home"/>
+    <script>document.write(`<img src="../_static/nai.png" class="logo__image only-dark" alt="The Neuroscience of AI - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Neuroscience of AI
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I · Brains &amp; Inspiration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part1/ch01_intro.html">Chapter 1: Introduction to Neuroscience ↔ AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part1/ch02_neuro_foundations.html">Chapter 2: Neuroscience Foundations for AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part1/ch03_spatial_navigation.html">Chapter 3: Spatial Navigation – Place &amp; Grid Cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part1/ch04_perception_pipeline.html">Chapter 4: Perception Pipeline – Visual Cortex → CNNs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II · Brains Meet Math &amp; Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part2/ch05_brain_networks.html">Chapter 5: Default-Mode vs Executive Control Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part2/ch06_neurostimulation.html">Chapter 6: Neurostimulation &amp; Plasticity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part2/ch07_information_theory.html">Chapter 7: Information Theory Essentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part2/ch08_data_science_pipeline.html">Chapter 8: Data-Science Pipeline in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part III · Learning Machines</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part3/ch09_ml_foundations.html">Chapter 9: Classical Machine-Learning Foundations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part3/ch10_deep_learning.html">Chapter 10: Deep Learning: Training &amp; Optimisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part3/ch11_sequence_models.html">Chapter 11: Sequence Models: RNN → Attention → Transformer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part IV · Frontier Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part4/ch12_large_language_models.html">Chapter 12: Large Language Models &amp; Fine-Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part4/ch13_multimodal_models.html">Chapter 13: Multimodal &amp; Diffusion Models</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part V · Ethics &amp; Futures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part5/ch15_ethical_ai.html">Chapter 15: Ethical AI - Considerations for NeuroAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part5/ch16_future_directions.html">Chapter 16: Where Next for Neuro-AI?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VI · Advanced Applications</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch17_bci_human_ai_interfaces.html">Brain-Computer Interfaces and Human-AI Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch18_neuromorphic_computing.html">Chapter 18: Neuromorphic Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch19_cognitive_neuro_dl.html">Cognitive Neuroscience and Deep Learning</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ch20_case_studies.html">Case Studies in NeuroAI</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ch20_interactive.html">Interactive NeuroAI Case Studies</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">AI-Assisted Learning with Jupyter AI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rise_slides_demo.html">Creating Presentations with RISE</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="ch21_ai_for_neuro_discovery.html">Chapter 21: AI for Neuroscience Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch22_embodied_ai_robotics.html">Chapter 22: Embodied AI and Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch23_lifelong_learning.html">Chapter 23: Lifelong Learning</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendices/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/math_python_refresher.html">Appendix A: Math &amp; Python Mini-Refresher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/dataset_catalogue.html">Appendix B: Dataset Catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/colab_setup.html">Appendix C: Google Colab Setup for NeuroAI</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=lab/tree/docs/part6/jupyter_ai_demo.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/edit/master/docs/part6/jupyter_ai_demo.ipynb" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpart6/jupyter_ai_demo.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/part6/jupyter_ai_demo.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Jupyter AI Integration for NeuroAI</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-instructions">Setup Instructions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-jupyter-ai">Configuring Jupyter AI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-jupyter-ai-with-neuroai">Using Jupyter AI with NeuroAI</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-generating-code-for-neuroscience-models">Example 1: Generating Code for Neuroscience Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-getting-explanations-of-complex-concepts">Example 2: Getting Explanations of Complex Concepts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-debugging-and-improving-code">Example 3: Debugging and Improving Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-4-generating-and-improving-visualizations">Example 4: Generating and Improving Visualizations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-jupyter-ai-to-the-handbook">Adding Jupyter AI to the Handbook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-jupyter-ai-with-the-neuroai-handbook">Using Jupyter AI with the NeuroAI Handbook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start-guide">Quick Start Guide</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-use-cases">Recommended Use Cases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#available-models">Available Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="jupyter-ai-integration-for-neuroai">
+<h1>Jupyter AI Integration for NeuroAI<a class="headerlink" href="#jupyter-ai-integration-for-neuroai" title="Link to this heading">#</a></h1>
+<p>This notebook demonstrates how to use Jupyter AI to enhance the learning experience when studying neuroscience and AI concepts. Jupyter AI integrates generative AI capabilities directly into Jupyter notebooks, allowing you to:</p>
+<ul class="simple">
+<li><p>Generate code examples based on neuroscience concepts</p></li>
+<li><p>Get explanations of complex neural network architectures</p></li>
+<li><p>Debug and improve code implementations</p></li>
+<li><p>Generate visualizations for neural data</p></li>
+<li><p>Summarize research papers and concepts</p></li>
+</ul>
+<section id="setup-instructions">
+<h2>Setup Instructions<a class="headerlink" href="#setup-instructions" title="Link to this heading">#</a></h2>
+<p>To use Jupyter AI, you’ll need to install the required packages:</p>
+<div class="cell tag_thebe-init docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Jupyter AI and dependencies</span>
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>jupyter-ai<span class="w"> </span>jupyter-ai-magics<span class="w"> </span>openai
+</pre></div>
+</div>
+</div>
+</div>
+<p>After installation, you need to enable the extension. In JupyterLab, this happens automatically. In a classic notebook, you may need to run:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable Jupyter AI magics</span>
+<span class="o">%</span><span class="k">load_ext</span> jupyter_ai_magics
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="configuring-jupyter-ai">
+<h2>Configuring Jupyter AI<a class="headerlink" href="#configuring-jupyter-ai" title="Link to this heading">#</a></h2>
+<p>Jupyter AI can be configured to use different AI models:</p>
+<ol class="arabic simple">
+<li><p>OpenAI models (requires API key)</p></li>
+<li><p>Anthropic Claude models (requires API key)</p></li>
+<li><p>Open source models via Hugging Face or local installation</p></li>
+</ol>
+<p>To configure an API key, you can use environment variables or the Jupyter configuration system. For this demo, we’ll use a placeholder approach:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example configuration (for demonstration only)</span>
+<span class="c1"># In a real setup, you would set these via environment variables</span>
+<span class="c1"># import os</span>
+<span class="c1"># os.environ[&quot;OPENAI_API_KEY&quot;] = &quot;your-api-key&quot;</span>
+<span class="c1"># os.environ[&quot;ANTHROPIC_API_KEY&quot;] = &quot;your-api-key&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Note: For actual use, you&#39;ll need to configure your API keys&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;See: https://jupyter-ai.readthedocs.io/en/latest/users/index.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: For actual use, you&#39;ll need to configure your API keys
+See: https://jupyter-ai.readthedocs.io/en/latest/users/index.html
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="using-jupyter-ai-with-neuroai">
+<h2>Using Jupyter AI with NeuroAI<a class="headerlink" href="#using-jupyter-ai-with-neuroai" title="Link to this heading">#</a></h2>
+<p>Jupyter AI can be used in several ways:</p>
+<ol class="arabic simple">
+<li><p>Using cell magics with <code class="docutils literal notranslate"><span class="pre">%%ai</span></code></p></li>
+<li><p>Using line magics with <code class="docutils literal notranslate"><span class="pre">%ai</span></code></p></li>
+<li><p>Using the chat interface in JupyterLab</p></li>
+</ol>
+<p>Let’s see some examples of how to use these features for NeuroAI tasks.</p>
+<section id="example-1-generating-code-for-neuroscience-models">
+<h3>Example 1: Generating Code for Neuroscience Models<a class="headerlink" href="#example-1-generating-code-for-neuroscience-models" title="Link to this heading">#</a></h3>
+<p>We can use Jupyter AI to generate code for implementing neuroscience-inspired models:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai</span> gpt-4
+Write a PyTorch implementation of a predictive coding network for visual inputs, based on the PredNet architecture described in Chapter 20. Include comments explaining the biological inspiration for each component.
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<p>Cannot determine model provider from model ID <code class="docutils literal notranslate"><span class="pre">gpt-4</span></code>.</p>
+<p>To see a list of models you can use, run <code class="docutils literal notranslate"><span class="pre">%ai</span> <span class="pre">list</span></code></p>
+<p>If you were trying to run a command, run <code class="docutils literal notranslate"><span class="pre">%ai</span> <span class="pre">help</span></code> to see a list of commands.</p>
+</div>
+</div>
+<p>Note: In a live Jupyter AI environment, the code above would produce a complete PyTorch implementation of PredNet. Since we don’t have API keys configured here, we’ll show an example of what the output might look like:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn.functional</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">F</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">PredNetLayer</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A single layer of the PredNet architecture</span>
+<span class="sd">    </span>
+<span class="sd">    Biological inspiration:</span>
+<span class="sd">    - Representation units: Similar to neural populations in visual cortex that encode features</span>
+<span class="sd">    - Prediction units: Analogous to top-down feedback connections in visual hierarchy</span>
+<span class="sd">    - Error units: Mimics error-signaling neurons that respond to unexpected stimuli</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_channels</span><span class="p">,</span> <span class="n">representation_channels</span><span class="p">,</span> <span class="n">prediction_channels</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">PredNetLayer</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_channels</span> <span class="o">=</span> <span class="n">input_channels</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">representation_channels</span> <span class="o">=</span> <span class="n">representation_channels</span>
+        
+        <span class="c1"># Error computation units (biological: error-signaling neurons)</span>
+        <span class="c1"># Separate units for positive and negative errors mimics ON/OFF pathways</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">error_conv_pos</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">input_channels</span><span class="p">,</span> <span class="n">representation_channels</span><span class="p">,</span> 
+                                        <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">error_conv_neg</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">input_channels</span><span class="p">,</span> <span class="n">representation_channels</span><span class="p">,</span> 
+                                        <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="c1"># Prediction units (biological: feedback connections)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">prediction_conv</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">representation_channels</span><span class="p">,</span> <span class="n">input_channels</span><span class="p">,</span> 
+                                         <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="c1"># Representation update network (biological: integration in pyramidal neurons)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">representation_update</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">representation_channels</span><span class="p">,</span> 
+                                             <span class="n">representation_channels</span><span class="p">,</span>
+                                             <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="c1"># Pooling for feeding to next layer (biological: hierarchical processing)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pool</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_tensor</span><span class="p">,</span> <span class="n">representation_tensor</span><span class="p">,</span> <span class="n">top_down_tensor</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="c1"># Generate predictions from current representation</span>
+        <span class="n">predictions</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">prediction_conv</span><span class="p">(</span><span class="n">representation_tensor</span><span class="p">)</span>
+        
+        <span class="c1"># Calculate prediction errors (biological: error-signaling neurons)</span>
+        <span class="n">error</span> <span class="o">=</span> <span class="n">input_tensor</span> <span class="o">-</span> <span class="n">predictions</span>
+        <span class="n">error_pos</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>  <span class="c1"># Positive errors (ON pathway)</span>
+        <span class="n">error_neg</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="o">-</span><span class="n">error</span><span class="p">)</span>  <span class="c1"># Negative errors (OFF pathway)</span>
+        
+        <span class="c1"># Process errors through convolutional layers</span>
+        <span class="n">error_pos_processed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">error_conv_pos</span><span class="p">(</span><span class="n">error_pos</span><span class="p">)</span>
+        <span class="n">error_neg_processed</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">error_conv_neg</span><span class="p">(</span><span class="n">error_neg</span><span class="p">)</span>
+        
+        <span class="c1"># Combine error signals (biological: integration of error signals)</span>
+        <span class="n">combined_error</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">error_pos_processed</span><span class="p">,</span> <span class="n">error_neg_processed</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+        <span class="c1"># Update representation (biological: synaptic update based on errors)</span>
+        <span class="n">representation_update</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">representation_update</span><span class="p">(</span><span class="n">combined_error</span><span class="p">)</span>
+        <span class="n">updated_representation</span> <span class="o">=</span> <span class="n">representation_tensor</span> <span class="o">+</span> <span class="n">representation_update</span>
+        
+        <span class="c1"># If we have top-down input, integrate it (biological: top-down modulation)</span>
+        <span class="k">if</span> <span class="n">top_down_tensor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">updated_representation</span> <span class="o">=</span> <span class="n">updated_representation</span> <span class="o">+</span> <span class="n">top_down_tensor</span>
+        
+        <span class="c1"># Pool for next layer (biological: increased receptive field sizes in hierarchy)</span>
+        <span class="n">pooled_representation</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pool</span><span class="p">(</span><span class="n">updated_representation</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">error</span><span class="p">,</span> <span class="n">updated_representation</span><span class="p">,</span> <span class="n">pooled_representation</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">PredNet</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Complete PredNet architecture with multiple layers</span>
+<span class="sd">    </span>
+<span class="sd">    Biological inspiration:</span>
+<span class="sd">    - Hierarchical structure: Mimics the visual cortical hierarchy (V1, V2, V4, IT)</span>
+<span class="sd">    - Bidirectional processing: Combines bottom-up and top-down information flow</span>
+<span class="sd">    - Prediction error emphasis: Focuses learning on surprising/unexpected information</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_channels</span><span class="p">,</span> <span class="n">layer_channels</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">PredNet</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">num_layers</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">layer_channels</span><span class="p">)</span>
+        
+        <span class="c1"># Create PredNet layers</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">layers</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">()</span>
+        <span class="n">in_channels</span> <span class="o">=</span> <span class="n">input_channels</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">out_channels</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">layer_channels</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">PredNetLayer</span><span class="p">(</span><span class="n">in_channels</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">,</span> <span class="n">out_channels</span><span class="p">))</span>
+            <span class="n">in_channels</span> <span class="o">=</span> <span class="n">out_channels</span>
+        
+        <span class="c1"># Upsampling for top-down connections (biological: feedback projections)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">upsample</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_layers</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">upsample</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span>
+                <span class="n">layer_channels</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span> <span class="n">layer_channels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                <span class="n">kernel_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span>
+            <span class="p">))</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_sequence</span><span class="p">):</span>
+        <span class="n">batch_size</span><span class="p">,</span> <span class="n">seq_length</span><span class="p">,</span> <span class="n">channels</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">input_sequence</span><span class="o">.</span><span class="n">shape</span>
+        
+        <span class="c1"># Initialize representations for each layer</span>
+        <span class="n">representations</span> <span class="o">=</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">representation_channels</span><span class="p">,</span> 
+                                     <span class="n">height</span> <span class="o">//</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">),</span> <span class="n">width</span> <span class="o">//</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">),</span>
+                                     <span class="n">device</span><span class="o">=</span><span class="n">input_sequence</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+                         <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">)]</span>
+        
+        <span class="c1"># Initialize errors for each layer</span>
+        <span class="n">errors</span> <span class="o">=</span> <span class="p">[</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">layer</span><span class="o">.</span><span class="n">input_channels</span><span class="p">,</span>
+                            <span class="n">height</span> <span class="o">//</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">),</span> <span class="n">width</span> <span class="o">//</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">i</span><span class="p">),</span>
+                            <span class="n">device</span><span class="o">=</span><span class="n">input_sequence</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
+                 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">)]</span>
+        
+        <span class="n">all_errors</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Store errors for all time steps</span>
+        
+        <span class="c1"># Process sequence</span>
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">seq_length</span><span class="p">):</span>
+            <span class="n">current_input</span> <span class="o">=</span> <span class="n">input_sequence</span><span class="p">[:,</span> <span class="n">t</span><span class="p">]</span>
+            <span class="n">frame_errors</span> <span class="o">=</span> <span class="p">[]</span>
+            
+            <span class="c1"># Bottom-up pass (biological: feedforward processing)</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">):</span>
+                <span class="c1"># Set input for each layer</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">layer_input</span> <span class="o">=</span> <span class="n">current_input</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># Input from errors of previous layer (biological: error propagation)</span>
+                    <span class="n">layer_input</span> <span class="o">=</span> <span class="n">errors</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                
+                <span class="c1"># Process through layer</span>
+                <span class="n">error</span><span class="p">,</span> <span class="n">updated_rep</span><span class="p">,</span> <span class="n">pooled_rep</span> <span class="o">=</span> <span class="n">layer</span><span class="p">(</span><span class="n">layer_input</span><span class="p">,</span> <span class="n">representations</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                
+                <span class="c1"># Store results</span>
+                <span class="n">errors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">error</span>
+                <span class="n">representations</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">updated_rep</span>
+                <span class="n">frame_errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">error</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+                
+                <span class="c1"># Set input for next layer</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_layers</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                    <span class="n">next_layer_input</span> <span class="o">=</span> <span class="n">pooled_rep</span>
+            
+            <span class="c1"># Top-down pass (biological: feedback processing)</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">num_layers</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)):</span>
+                <span class="c1"># Get top-down signal</span>
+                <span class="n">top_down</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">upsample</span><span class="p">[</span><span class="n">i</span><span class="p">](</span><span class="n">representations</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+                
+                <span class="c1"># Update representation with top-down input</span>
+                <span class="n">representations</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">representations</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">top_down</span>
+                
+            <span class="n">all_errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frame_errors</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">errors</span><span class="p">,</span> <span class="n">representations</span><span class="p">,</span> <span class="n">all_errors</span>
+
+<span class="c1"># Example usage</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_prednet_model</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a PredNet model for video prediction&quot;&quot;&quot;</span>
+    <span class="c1"># Input: RGB images</span>
+    <span class="n">input_channels</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="c1"># Layer channels increase with depth (analogous to increasing feature complexity)</span>
+    <span class="n">layer_channels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">256</span><span class="p">]</span>
+    
+    <span class="n">model</span> <span class="o">=</span> <span class="n">PredNet</span><span class="p">(</span><span class="n">input_channels</span><span class="p">,</span> <span class="n">layer_channels</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span>
+
+<span class="c1"># Create model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">create_prednet_model</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PredNet model created with </span><span class="si">{</span><span class="nb">sum</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">numel</span><span class="p">()</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">())</span><span class="si">}</span><span class="s2"> parameters&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn.functional</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">F</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;torch&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-2-getting-explanations-of-complex-concepts">
+<h3>Example 2: Getting Explanations of Complex Concepts<a class="headerlink" href="#example-2-getting-explanations-of-complex-concepts" title="Link to this heading">#</a></h3>
+<p>Jupyter AI is useful for getting on-demand explanations of complex neuroscience or AI concepts:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai</span> anthropic/claude-3-sonnet
+Explain the connection between hippocampal replay during sleep and Prioritized Experience Replay in reinforcement learning. Include key similarities and differences.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Example output (what Jupyter AI would generate with proper configuration):</p>
+<p><strong>Hippocampal Replay vs. Prioritized Experience Replay</strong></p>
+<p><strong>Similarities:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Selective Memory Processing</strong>: Both mechanisms selectively revisit past experiences rather than processing all memories equally.</p></li>
+<li><p><strong>Learning Efficiency</strong>: Both enhance learning efficiency by focusing computational resources on high-value experiences.</p></li>
+<li><p><strong>Information Consolidation</strong>: Both help stabilize and integrate new knowledge with existing memories.</p></li>
+<li><p><strong>Pattern Reactivation</strong>: Both involve reactivating patterns of activity associated with previous experiences.</p></li>
+<li><p><strong>Stability-Plasticity Balance</strong>: Both help address the stability-plasticity dilemma by allowing new learning without catastrophic forgetting.</p></li>
+</ol>
+<p><strong>Differences:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Priority Mechanism</strong>:</p>
+<ul class="simple">
+<li><p>Hippocampal replay often prioritizes experiences based on emotional salience, novelty, reward prediction errors, and goal relevance.</p></li>
+<li><p>PER explicitly uses TD errors (prediction errors) as the priority metric.</p></li>
+</ul>
+</li>
+<li><p><strong>Temporal Structure</strong>:</p>
+<ul class="simple">
+<li><p>Hippocampal replay occurs primarily during sleep and rest periods, with specific patterns during different sleep stages.</p></li>
+<li><p>PER operates continuously during the learning process, interleaved with new experiences.</p></li>
+</ul>
+</li>
+<li><p><strong>Speed and Compression</strong>:</p>
+<ul class="simple">
+<li><p>Hippocampal replay often occurs at compressed timescales (5-20x faster than real experiences).</p></li>
+<li><p>PER doesn’t explicitly model temporal compression.</p></li>
+</ul>
+</li>
+<li><p><strong>Sequence Structure</strong>:</p>
+<ul class="simple">
+<li><p>Hippocampal replay often maintains sequential structure, replaying experiences in forward or reverse order.</p></li>
+<li><p>PER samples individual transitions without preserving sequences.</p></li>
+</ul>
+</li>
+<li><p><strong>Biological Implementation</strong>:</p>
+<ul class="simple">
+<li><p>Hippocampal replay involves coordinated oscillations (sharp-wave ripples) and specific neurochemical environments.</p></li>
+<li><p>PER is an algorithmic approximation that captures the functional role but not the biological implementation details.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="example-3-debugging-and-improving-code">
+<h3>Example 3: Debugging and Improving Code<a class="headerlink" href="#example-3-debugging-and-improving-code" title="Link to this heading">#</a></h3>
+<p>Jupyter AI can help debug and improve code implementations:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example code with a bug</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">simulate_hodgkin_huxley</span><span class="p">(</span><span class="n">I_ext</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulate the Hodgkin-Huxley model of action potential generation&quot;&quot;&quot;</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    
+    <span class="c1"># Constants</span>
+    <span class="n">E_Na</span> <span class="o">=</span> <span class="mf">55.0</span>   <span class="c1"># mV</span>
+    <span class="n">E_K</span> <span class="o">=</span> <span class="o">-</span><span class="mf">77.0</span>   <span class="c1"># mV</span>
+    <span class="n">E_L</span> <span class="o">=</span> <span class="o">-</span><span class="mf">65.0</span>   <span class="c1"># mV</span>
+    <span class="n">g_Na</span> <span class="o">=</span> <span class="mf">120.0</span>  <span class="c1"># mS/cm^2</span>
+    <span class="n">g_K</span> <span class="o">=</span> <span class="mf">36.0</span>    <span class="c1"># mS/cm^2</span>
+    <span class="n">g_L</span> <span class="o">=</span> <span class="mf">0.3</span>     <span class="c1"># mS/cm^2</span>
+    <span class="n">C_m</span> <span class="o">=</span> <span class="mf">1.0</span>     <span class="c1"># uF/cm^2</span>
+    
+    <span class="c1"># Simulation parameters</span>
+    <span class="n">steps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">T</span> <span class="o">/</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+    
+    <span class="c1"># State variables</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span>
+    
+    <span class="c1"># Initialize</span>
+    <span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">65.0</span>  <span class="c1"># mV</span>
+    <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.05</span>
+    <span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.6</span>
+    <span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.32</span>
+    
+    <span class="c1"># Helper functions for gating variables</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">alpha_m</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">40.0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">40.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">10.0</span><span class="p">))</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">beta_m</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">65.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">18.0</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">alpha_h</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">0.07</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">65.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">20.0</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">beta_h</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">35.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">10.0</span><span class="p">))</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">alpha_n</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">55.0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">55.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">10.0</span><span class="p">))</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">beta_n</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">0.125</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">65.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">80.0</span><span class="p">)</span>
+    
+    <span class="c1"># Bug: division by zero in alpha_m when V = -40.0</span>
+    <span class="c1"># Bug: division by zero in alpha_n when V = -55.0</span>
+    
+    <span class="c1"># Simulation loop</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">steps</span><span class="p">):</span>
+        <span class="c1"># Calculate gating variables</span>
+        <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="p">(</span><span class="n">alpha_m</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">beta_m</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="p">(</span><span class="n">alpha_h</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">beta_h</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="p">(</span><span class="n">alpha_n</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">beta_n</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        
+        <span class="c1"># Calculate conductances and currents</span>
+        <span class="n">g_Na_t</span> <span class="o">=</span> <span class="n">g_Na</span> <span class="o">*</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">g_K_t</span> <span class="o">=</span> <span class="n">g_K</span> <span class="o">*</span> <span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">4</span>
+        
+        <span class="n">I_Na</span> <span class="o">=</span> <span class="n">g_Na_t</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">E_Na</span><span class="p">)</span>
+        <span class="n">I_K</span> <span class="o">=</span> <span class="n">g_K_t</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">E_K</span><span class="p">)</span>
+        <span class="n">I_L</span> <span class="o">=</span> <span class="n">g_L</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">E_L</span><span class="p">)</span>
+        
+        <span class="c1"># Update membrane potential</span>
+        <span class="n">dV</span> <span class="o">=</span> <span class="p">(</span><span class="n">I_ext</span> <span class="o">-</span> <span class="n">I_Na</span> <span class="o">-</span> <span class="n">I_K</span> <span class="o">-</span> <span class="n">I_L</span><span class="p">)</span> <span class="o">/</span> <span class="n">C_m</span>
+        <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">dV</span>
+        
+    <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">n</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Code with potential bugs defined&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai</span> gpt-4
+There&#39;s a bug in my Hodgkin-Huxley model implementation. The code can cause division by zero errors in the alpha_m and alpha_n functions. Can you fix these issues and explain the neurobiological meaning of these functions?
+</pre></div>
+</div>
+</div>
+</div>
+<p>Example output (what Jupyter AI would generate with proper configuration):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">simulate_hodgkin_huxley</span><span class="p">(</span><span class="n">I_ext</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Simulate the Hodgkin-Huxley model of action potential generation&quot;&quot;&quot;</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+    
+    <span class="c1"># Constants</span>
+    <span class="n">E_Na</span> <span class="o">=</span> <span class="mf">55.0</span>   <span class="c1"># mV</span>
+    <span class="n">E_K</span> <span class="o">=</span> <span class="o">-</span><span class="mf">77.0</span>   <span class="c1"># mV</span>
+    <span class="n">E_L</span> <span class="o">=</span> <span class="o">-</span><span class="mf">65.0</span>   <span class="c1"># mV</span>
+    <span class="n">g_Na</span> <span class="o">=</span> <span class="mf">120.0</span>  <span class="c1"># mS/cm^2</span>
+    <span class="n">g_K</span> <span class="o">=</span> <span class="mf">36.0</span>    <span class="c1"># mS/cm^2</span>
+    <span class="n">g_L</span> <span class="o">=</span> <span class="mf">0.3</span>     <span class="c1"># mS/cm^2</span>
+    <span class="n">C_m</span> <span class="o">=</span> <span class="mf">1.0</span>     <span class="c1"># uF/cm^2</span>
+    
+    <span class="c1"># Simulation parameters</span>
+    <span class="n">steps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">T</span> <span class="o">/</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+    
+    <span class="c1"># State variables</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span>
+    
+    <span class="c1"># Initialize</span>
+    <span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">65.0</span>  <span class="c1"># mV</span>
+    <span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.05</span>
+    <span class="n">h</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.6</span>
+    <span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.32</span>
+    
+    <span class="c1"># Helper functions for gating variables with fixed division by zero issues</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">alpha_m</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+        <span class="c1"># Using L&#39;Hôpital&#39;s rule for the case when V is close to -40</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">40.0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-6</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">1.0</span>  <span class="c1"># Limit value when V = -40</span>
+        <span class="k">return</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">40.0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">40.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">10.0</span><span class="p">))</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">beta_m</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">4.0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">65.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">18.0</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">alpha_h</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">0.07</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">65.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">20.0</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">beta_h</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">35.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">10.0</span><span class="p">))</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">alpha_n</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+        <span class="c1"># Using L&#39;Hôpital&#39;s rule for the case when V is close to -55</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">55.0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-6</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mf">0.1</span>  <span class="c1"># Limit value when V = -55</span>
+        <span class="k">return</span> <span class="mf">0.01</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">55.0</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">55.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">10.0</span><span class="p">))</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">beta_n</span><span class="p">(</span><span class="n">V</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mf">0.125</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">V</span> <span class="o">+</span> <span class="mf">65.0</span><span class="p">)</span> <span class="o">/</span> <span class="mf">80.0</span><span class="p">)</span>
+    
+    <span class="c1"># Simulation loop</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">steps</span><span class="p">):</span>
+        <span class="c1"># Calculate gating variables</span>
+        <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="p">(</span><span class="n">alpha_m</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">beta_m</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="p">(</span><span class="n">alpha_h</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">beta_h</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="p">(</span><span class="n">alpha_n</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">-</span> <span class="n">beta_n</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        
+        <span class="c1"># Calculate conductances and currents</span>
+        <span class="n">g_Na_t</span> <span class="o">=</span> <span class="n">g_Na</span> <span class="o">*</span> <span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">h</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">g_K_t</span> <span class="o">=</span> <span class="n">g_K</span> <span class="o">*</span> <span class="n">n</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">**</span><span class="mi">4</span>
+        
+        <span class="n">I_Na</span> <span class="o">=</span> <span class="n">g_Na_t</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">E_Na</span><span class="p">)</span>
+        <span class="n">I_K</span> <span class="o">=</span> <span class="n">g_K_t</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">E_K</span><span class="p">)</span>
+        <span class="n">I_L</span> <span class="o">=</span> <span class="n">g_L</span> <span class="o">*</span> <span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">E_L</span><span class="p">)</span>
+        
+        <span class="c1"># Update membrane potential</span>
+        <span class="n">dV</span> <span class="o">=</span> <span class="p">(</span><span class="n">I_ext</span> <span class="o">-</span> <span class="n">I_Na</span> <span class="o">-</span> <span class="n">I_K</span> <span class="o">-</span> <span class="n">I_L</span><span class="p">)</span> <span class="o">/</span> <span class="n">C_m</span>
+        <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">V</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span> <span class="o">*</span> <span class="n">dV</span>
+        
+    <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">n</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fixed code defined&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Neurobiological Meaning of Alpha and Beta Functions</strong></p>
+<p>In the Hodgkin-Huxley model, the alpha (α) and beta (β) functions represent voltage-dependent rate constants that control the opening and closing of ion channels:</p>
+<ol class="arabic simple">
+<li><p><strong>Alpha Functions (α_m, α_h, α_n)</strong>:</p>
+<ul class="simple">
+<li><p>Represent the rate at which the corresponding gates transition from closed to open states</p></li>
+<li><p>Neurobiologically, they model the voltage-dependent probability of conformational changes in ion channel proteins that lead to channel opening</p></li>
+<li><p>For example, α_m increases with depolarization, representing faster sodium channel activation as voltage increases</p></li>
+</ul>
+</li>
+<li><p><strong>Beta Functions (β_m, β_h, β_n)</strong>:</p>
+<ul class="simple">
+<li><p>Represent the rate at which the gates transition from open to closed states</p></li>
+<li><p>Neurobiologically, they model the rate at which ion channels return to their resting conformation</p></li>
+<li><p>For example, β_h increases with depolarization, representing faster sodium channel inactivation</p></li>
+</ul>
+</li>
+<li><p><strong>Specific Gating Variables</strong>:</p>
+<ul class="simple">
+<li><p><strong>m</strong>: Controls sodium channel activation (opens quickly with depolarization)</p></li>
+<li><p><strong>h</strong>: Controls sodium channel inactivation (closes slowly with sustained depolarization)</p></li>
+<li><p><strong>n</strong>: Controls potassium channel activation (opens slowly with depolarization)</p></li>
+</ul>
+</li>
+</ol>
+<p>The fixes I implemented use L’Hôpital’s rule to handle the special cases where the denominator becomes zero, which happens at specific voltage values (-40 mV for α_m and -55 mV for α_n). These special cases are important physiologically as they represent critical voltages where channel opening rates undergo significant changes.</p>
+</section>
+<section id="example-4-generating-and-improving-visualizations">
+<h3>Example 4: Generating and Improving Visualizations<a class="headerlink" href="#example-4-generating-and-improving-visualizations" title="Link to this heading">#</a></h3>
+<p>Jupyter AI can help create and enhance visualizations of neural data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">ai</span> anthropic/claude-3-opus
+Generate code to visualize the attention maps in a Vision Transformer model, similar to what we discussed in Chapter 20. The visualization should show both the image and the corresponding attention patterns between patches. Include interactivity to explore different attention heads.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Example output (what Jupyter AI would generate with proper configuration):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">LinearSegmentedColormap</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">fixed</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">io</span><span class="w"> </span><span class="kn">import</span> <span class="n">BytesIO</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">transformers</span><span class="w"> </span><span class="kn">import</span> <span class="n">ViTModel</span><span class="p">,</span> <span class="n">ViTImageProcessor</span>
+
+<span class="c1"># Function to load an image from URL or file path</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">load_image</span><span class="p">(</span><span class="n">image_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Load image from URL or file path&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">image_path</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">):</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">img</span>
+
+<span class="c1"># Function to extract attention maps from ViT model</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_attention_maps</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">processor</span><span class="p">,</span> <span class="n">image</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extract attention maps from Vision Transformer&quot;&quot;&quot;</span>
+    <span class="c1"># Preprocess image</span>
+    <span class="n">inputs</span> <span class="o">=</span> <span class="n">processor</span><span class="p">(</span><span class="n">images</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Forward pass with output_attentions=True</span>
+    <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">,</span> <span class="n">output_attentions</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Get attention maps [layers, heads, tokens, tokens]</span>
+    <span class="n">attention_maps</span> <span class="o">=</span> <span class="n">outputs</span><span class="o">.</span><span class="n">attentions</span>
+    
+    <span class="k">return</span> <span class="n">attention_maps</span><span class="p">,</span> <span class="n">inputs</span><span class="o">.</span><span class="n">pixel_values</span>
+
+<span class="c1"># Function to visualize attention maps</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">visualize_attention</span><span class="p">(</span><span class="n">attention_maps</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="n">head</span><span class="p">,</span> <span class="n">patch_size</span><span class="o">=</span><span class="mi">16</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Visualize attention maps for a specific layer and attention head&quot;&quot;&quot;</span>
+    <span class="c1"># Get the specified attention map</span>
+    <span class="n">attention</span> <span class="o">=</span> <span class="n">attention_maps</span><span class="p">[</span><span class="n">layer</span><span class="p">][</span><span class="mi">0</span><span class="p">,</span> <span class="n">head</span><span class="p">]</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">numpy</span><span class="p">()</span>
+    
+    <span class="c1"># The first token is the [CLS] token, so we exclude it for visualization</span>
+    <span class="n">attention</span> <span class="o">=</span> <span class="n">attention</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:]</span>
+    
+    <span class="c1"># Reshape attention to match image patches</span>
+    <span class="n">num_patches</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">attention</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">attention_map</span> <span class="o">=</span> <span class="n">attention</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">num_patches</span><span class="p">,</span> <span class="n">num_patches</span><span class="p">)</span>
+    
+    <span class="c1"># Create a figure with subplots</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    
+    <span class="c1"># Plot original image</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Original Image&quot;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Create grid to show patches</span>
+    <span class="n">h</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">patch_size</span><span class="p">):</span>
+        <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">patch_size</span><span class="p">):</span>
+        <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    
+    <span class="c1"># Highlight the focus patch (CLS token attends to this patch)</span>
+    <span class="n">focus_i</span><span class="p">,</span> <span class="n">focus_j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>  <span class="c1"># By default, use the top-left patch</span>
+    <span class="n">rect</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="n">focus_j</span><span class="p">,</span> <span class="n">focus_i</span><span class="p">),</span> <span class="n">patch_size</span><span class="p">,</span> <span class="n">patch_size</span><span class="p">,</span>
+                         <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
+    
+    <span class="c1"># Plot attention map</span>
+    <span class="c1"># Create a custom colormap with better contrast</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">LinearSegmentedColormap</span><span class="o">.</span><span class="n">from_list</span><span class="p">(</span><span class="s1">&#39;attention_cmap&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;#0000ff&#39;</span><span class="p">,</span> <span class="s1">&#39;#00ffff&#39;</span><span class="p">,</span> <span class="s1">&#39;#ffff00&#39;</span><span class="p">,</span> <span class="s1">&#39;#ff0000&#39;</span><span class="p">])</span>
+    <span class="n">im</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">attention_map</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Attention Map (Layer </span><span class="si">{</span><span class="n">layer</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">, Head </span><span class="si">{</span><span class="n">head</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Attention Strength&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Add grid to match patches</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">num_patches</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">minor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">num_patches</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">minor</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">fig</span>
+
+<span class="c1"># Interactive visualization function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">interactive_attention_visualization</span><span class="p">(</span><span class="n">image_path</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create interactive widgets to explore ViT attention maps&quot;&quot;&quot;</span>
+    <span class="c1"># Load model and processor</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loading Vision Transformer model...&quot;</span><span class="p">)</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">ViTModel</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;google/vit-base-patch16-224&#39;</span><span class="p">)</span>
+    <span class="n">processor</span> <span class="o">=</span> <span class="n">ViTImageProcessor</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s1">&#39;google/vit-base-patch16-224&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Load image</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">load_image</span><span class="p">(</span><span class="n">image_path</span><span class="p">)</span>
+    
+    <span class="c1"># Get attention maps</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extracting attention maps...&quot;</span><span class="p">)</span>
+    <span class="n">attention_maps</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">get_attention_maps</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">processor</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+    
+    <span class="c1"># Number of layers and heads</span>
+    <span class="n">num_layers</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">attention_maps</span><span class="p">)</span>
+    <span class="n">num_heads</span> <span class="o">=</span> <span class="n">attention_maps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model has </span><span class="si">{</span><span class="n">num_layers</span><span class="si">}</span><span class="s2"> layers with </span><span class="si">{</span><span class="n">num_heads</span><span class="si">}</span><span class="s2"> attention heads each&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Create interactive widgets</span>
+    <span class="n">layer_slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span>
+        <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="nb">max</span><span class="o">=</span><span class="n">num_layers</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Layer:&#39;</span><span class="p">,</span>
+        <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+    
+    <span class="n">head_slider</span> <span class="o">=</span> <span class="n">widgets</span><span class="o">.</span><span class="n">IntSlider</span><span class="p">(</span>
+        <span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="nb">max</span><span class="o">=</span><span class="n">num_heads</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">step</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">description</span><span class="o">=</span><span class="s1">&#39;Head:&#39;</span><span class="p">,</span>
+        <span class="n">continuous_update</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+    
+    <span class="c1"># Create interactive visualization</span>
+    <span class="n">interact</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">layer</span><span class="p">,</span> <span class="n">head</span><span class="p">:</span> <span class="n">visualize_attention</span><span class="p">(</span><span class="n">attention_maps</span><span class="p">,</span> <span class="n">image</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="n">head</span><span class="p">),</span>
+        <span class="n">layer</span><span class="o">=</span><span class="n">layer_slider</span><span class="p">,</span>
+        <span class="n">head</span><span class="o">=</span><span class="n">head_slider</span>
+    <span class="p">)</span>
+
+<span class="c1"># Example usage - enable this to run the interactive visualization</span>
+<span class="c1"># interactive_attention_visualization(&#39;https://storage.googleapis.com/sfr-vision-language-research/BLIP/demo/bobcat.jpg&#39;)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Vision Transformer attention visualization code defined&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="adding-jupyter-ai-to-the-handbook">
+<h2>Adding Jupyter AI to the Handbook<a class="headerlink" href="#adding-jupyter-ai-to-the-handbook" title="Link to this heading">#</a></h2>
+<p>To fully integrate Jupyter AI into the NeuroAI Handbook, we should follow these steps:</p>
+<ol class="arabic simple">
+<li><p><strong>Installation Instructions</strong>: Add clear instructions for users to install and configure Jupyter AI</p></li>
+<li><p><strong>Configuration Guide</strong>: Provide guidance on setting up API keys for different models</p></li>
+<li><p><strong>Usage Examples</strong>: Add examples for common NeuroAI tasks (like those shown above)</p></li>
+<li><p><strong>Integration with Exercises</strong>: Enhance the existing exercises with AI-assisted options</p></li>
+</ol>
+<p>Let’s create a mini-guide for users:</p>
+</section>
+<section id="using-jupyter-ai-with-the-neuroai-handbook">
+<h2>Using Jupyter AI with the NeuroAI Handbook<a class="headerlink" href="#using-jupyter-ai-with-the-neuroai-handbook" title="Link to this heading">#</a></h2>
+<p>Jupyter AI can significantly enhance your learning experience by providing:</p>
+<ul class="simple">
+<li><p>On-demand explanations of complex neuroscience concepts</p></li>
+<li><p>Code generation for implementing models discussed in the handbook</p></li>
+<li><p>Help with debugging and improving your implementations</p></li>
+<li><p>Support for visualizing neural data and model architectures</p></li>
+</ul>
+<section id="quick-start-guide">
+<h3>Quick Start Guide<a class="headerlink" href="#quick-start-guide" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Install the required packages:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>jupyter-ai<span class="w"> </span>jupyter-ai-magics<span class="w"> </span>openai
+</pre></div>
+</div>
+</li>
+<li><p>Configure your API keys (we recommend using environment variables):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># For OpenAI models</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">OPENAI_API_KEY</span><span class="o">=</span><span class="s2">&quot;your-api-key&quot;</span>
+
+<span class="c1"># For Anthropic models</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">ANTHROPIC_API_KEY</span><span class="o">=</span><span class="s2">&quot;your-api-key&quot;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Load the extension in your notebook:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">load_ext</span> <span class="n">jupyter_ai_magics</span>
+</pre></div>
+</div>
+</li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">%%ai</span></code> magic to interact with AI models:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">ai</span> <span class="n">gpt</span><span class="o">-</span><span class="mi">4</span>
+<span class="n">Explain</span> <span class="n">how</span> <span class="n">the</span> <span class="n">PredNet</span> <span class="n">architecture</span> <span class="n">mimics</span> <span class="n">predictive</span> <span class="n">coding</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">visual</span> <span class="n">cortex</span><span class="o">.</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="recommended-use-cases">
+<h3>Recommended Use Cases<a class="headerlink" href="#recommended-use-cases" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Code Assistance</strong>: Get help implementing algorithms from the handbook</p></li>
+<li><p><strong>Concept Clarification</strong>: Ask for detailed explanations of key concepts</p></li>
+<li><p><strong>Exploration</strong>: Ask “what if” questions about model variations</p></li>
+<li><p><strong>Visualization</strong>: Generate code for visualizing model architectures or neural data</p></li>
+<li><p><strong>Debugging</strong>: Get help diagnosing and fixing issues in your implementations</p></li>
+</ol>
+</section>
+<section id="available-models">
+<h3>Available Models<a class="headerlink" href="#available-models" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>OpenAI</strong>: gpt-3.5-turbo, gpt-4</p></li>
+<li><p><strong>Anthropic</strong>: anthropic/claude-3-sonnet, anthropic/claude-3-opus</p></li>
+<li><p><strong>Open Source</strong>: Various models via Hugging Face</p></li>
+</ul>
+<p>For more detailed information, see the <a class="reference external" href="https://jupyter-ai.readthedocs.io/">Jupyter AI documentation</a>.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Jupyter AI provides powerful AI-assisted features that can significantly enhance the interactive learning experience of the NeuroAI Handbook. By integrating these capabilities, readers can:</p>
+<ol class="arabic simple">
+<li><p>Get personalized explanations of complex neuroscience and AI concepts</p></li>
+<li><p>Generate and debug code for implementing models discussed in the handbook</p></li>
+<li><p>Create visualizations to better understand neural data and model architectures</p></li>
+<li><p>Explore variations and extensions of the models presented in the case studies</p></li>
+</ol>
+<p>This integration supports a more dynamic, inquiry-based learning approach that can adapt to each reader’s specific interests and questions.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./part6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch20_interactive.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Interactive Examples for Case Studies in NeuroAI</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="rise_slides_demo.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Creating Presentations with RISE</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-instructions">Setup Instructions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#configuring-jupyter-ai">Configuring Jupyter AI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-jupyter-ai-with-neuroai">Using Jupyter AI with NeuroAI</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-generating-code-for-neuroscience-models">Example 1: Generating Code for Neuroscience Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-getting-explanations-of-complex-concepts">Example 2: Getting Explanations of Complex Concepts</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-3-debugging-and-improving-code">Example 3: Debugging and Improving Code</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-4-generating-and-improving-visualizations">Example 4: Generating and Improving Visualizations</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-jupyter-ai-to-the-handbook">Adding Jupyter AI to the Handbook</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-jupyter-ai-with-the-neuroai-handbook">Using Jupyter AI with the NeuroAI Handbook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-start-guide">Quick Start Guide</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recommended-use-cases">Recommended Use Cases</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#available-models">Available Models</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Richard Young
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

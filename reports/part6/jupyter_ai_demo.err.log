@@ -1,0 +1,195 @@
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/nbclient/client.py", line 1319, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/opt/hostedtoolcache/Python/3.11.12/x64/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+class PredNetLayer(nn.Module):
+    """
+    A single layer of the PredNet architecture
+    
+    Biological inspiration:
+    - Representation units: Similar to neural populations in visual cortex that encode features
+    - Prediction units: Analogous to top-down feedback connections in visual hierarchy
+    - Error units: Mimics error-signaling neurons that respond to unexpected stimuli
+    """
+    def __init__(self, input_channels, representation_channels, prediction_channels):
+        super(PredNetLayer, self).__init__()
+        self.input_channels = input_channels
+        self.representation_channels = representation_channels
+        
+        # Error computation units (biological: error-signaling neurons)
+        # Separate units for positive and negative errors mimics ON/OFF pathways
+        self.error_conv_pos = nn.Conv2d(input_channels, representation_channels, 
+                                        kernel_size=3, padding=1)
+        self.error_conv_neg = nn.Conv2d(input_channels, representation_channels, 
+                                        kernel_size=3, padding=1)
+        
+        # Prediction units (biological: feedback connections)
+        self.prediction_conv = nn.Conv2d(representation_channels, input_channels, 
+                                         kernel_size=3, padding=1)
+        
+        # Representation update network (biological: integration in pyramidal neurons)
+        self.representation_update = nn.Conv2d(2*representation_channels, 
+                                             representation_channels,
+                                             kernel_size=3, padding=1)
+        
+        # Pooling for feeding to next layer (biological: hierarchical processing)
+        self.pool = nn.MaxPool2d(kernel_size=2, stride=2)
+        
+    def forward(self, input_tensor, representation_tensor, top_down_tensor=None):
+        # Generate predictions from current representation
+        predictions = self.prediction_conv(representation_tensor)
+        
+        # Calculate prediction errors (biological: error-signaling neurons)
+        error = input_tensor - predictions
+        error_pos = F.relu(error)  # Positive errors (ON pathway)
+        error_neg = F.relu(-error)  # Negative errors (OFF pathway)
+        
+        # Process errors through convolutional layers
+        error_pos_processed = self.error_conv_pos(error_pos)
+        error_neg_processed = self.error_conv_neg(error_neg)
+        
+        # Combine error signals (biological: integration of error signals)
+        combined_error = torch.cat([error_pos_processed, error_neg_processed], dim=1)
+        
+        # Update representation (biological: synaptic update based on errors)
+        representation_update = self.representation_update(combined_error)
+        updated_representation = representation_tensor + representation_update
+        
+        # If we have top-down input, integrate it (biological: top-down modulation)
+        if top_down_tensor is not None:
+            updated_representation = updated_representation + top_down_tensor
+        
+        # Pool for next layer (biological: increased receptive field sizes in hierarchy)
+        pooled_representation = self.pool(updated_representation)
+        
+        return error, updated_representation, pooled_representation
+
+class PredNet(nn.Module):
+    """
+    Complete PredNet architecture with multiple layers
+    
+    Biological inspiration:
+    - Hierarchical structure: Mimics the visual cortical hierarchy (V1, V2, V4, IT)
+    - Bidirectional processing: Combines bottom-up and top-down information flow
+    - Prediction error emphasis: Focuses learning on surprising/unexpected information
+    """
+    def __init__(self, input_channels, layer_channels):
+        super(PredNet, self).__init__()
+        self.num_layers = len(layer_channels)
+        
+        # Create PredNet layers
+        self.layers = nn.ModuleList()
+        in_channels = input_channels
+        for i, out_channels in enumerate(layer_channels):
+            self.layers.append(PredNetLayer(in_channels, out_channels, out_channels))
+            in_channels = out_channels
+        
+        # Upsampling for top-down connections (biological: feedback projections)
+        self.upsample = nn.ModuleList()
+        for i in range(self.num_layers - 1):
+            self.upsample.append(nn.ConvTranspose2d(
+                layer_channels[i+1], layer_channels[i],
+                kernel_size=4, stride=2, padding=1
+            ))
+    
+    def forward(self, input_sequence):
+        batch_size, seq_length, channels, height, width = input_sequence.shape
+        
+        # Initialize representations for each layer
+        representations = [torch.zeros(batch_size, layer.representation_channels, 
+                                     height // (2**i), width // (2**i),
+                                     device=input_sequence.device)
+                         for i, layer in enumerate(self.layers)]
+        
+        # Initialize errors for each layer
+        errors = [torch.zeros(batch_size, layer.input_channels,
+                            height // (2**i), width // (2**i),
+                            device=input_sequence.device)
+                 for i, layer in enumerate(self.layers)]
+        
+        all_errors = []  # Store errors for all time steps
+        
+        # Process sequence
+        for t in range(seq_length):
+            current_input = input_sequence[:, t]
+            frame_errors = []
+            
+            # Bottom-up pass (biological: feedforward processing)
+            for i, layer in enumerate(self.layers):
+                # Set input for each layer
+                if i == 0:
+                    layer_input = current_input
+                else:
+                    # Input from errors of previous layer (biological: error propagation)
+                    layer_input = errors[i-1]
+                
+                # Process through layer
+                error, updated_rep, pooled_rep = layer(layer_input, representations[i])
+                
+                # Store results
+                errors[i] = error
+                representations[i] = updated_rep
+                frame_errors.append(error.mean().item())
+                
+                # Set input for next layer
+                if i < self.num_layers - 1:
+                    next_layer_input = pooled_rep
+            
+            # Top-down pass (biological: feedback processing)
+            for i in reversed(range(self.num_layers - 1)):
+                # Get top-down signal
+                top_down = self.upsample[i](representations[i+1])
+                
+                # Update representation with top-down input
+                representations[i] = representations[i] + top_down
+                
+            all_errors.append(frame_errors)
+        
+        return errors, representations, all_errors
+
+# Example usage
+def create_prednet_model():
+    """Create a PredNet model for video prediction"""
+    # Input: RGB images
+    input_channels = 3
+    # Layer channels increase with depth (analogous to increasing feature complexity)
+    layer_channels = [32, 64, 128, 256]
+    
+    model = PredNet(input_channels, layer_channels)
+    return model
+
+# Create model
+model = create_prednet_model()
+print(f"PredNet model created with {sum(p.numel() for p in model.parameters())} parameters")
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mModuleNotFoundError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[5][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mtorch[39;00m
+[32m      2[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mtorch[39;00m[34;01m.[39;00m[34;01mnn[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mnn[39;00m
+[32m      3[39m [38;5;28;01mimport[39;00m[38;5;250m [39m[34;01mtorch[39;00m[34;01m.[39;00m[34;01mnn[39;00m[34;01m.[39;00m[34;01mfunctional[39;00m[38;5;250m [39m[38;5;28;01mas[39;00m[38;5;250m [39m[34;01mF[39;00m
+
+[31mModuleNotFoundError[39m: No module named 'torch'
+

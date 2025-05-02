@@ -51,6 +51,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -60,6 +61,8 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'part2/ch07_information_theory';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://neuroai-handbook.github.io/part2/ch07_information_theory.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Chapter 8: Data-Science Pipeline in Python" href="ch08_data_science_pipeline.html" />
@@ -155,8 +158,8 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="The Neuroscience of AI - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="The Neuroscience of AI - Home"/>`);</script>
+    <img src="../_static/nai.png" class="logo__image only-light" alt="The Neuroscience of AI - Home"/>
+    <script>document.write(`<img src="../_static/nai.png" class="logo__image only-dark" alt="The Neuroscience of AI - Home"/>`);</script>
   
   
 </a></div>
@@ -206,15 +209,35 @@
 <li class="toctree-l1"><a class="reference internal" href="../part4/ch12_large_language_models.html">Chapter 12: Large Language Models &amp; Fine-Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part4/ch13_multimodal_models.html">Chapter 13: Multimodal &amp; Diffusion Models</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part V · Reflection &amp; Futures</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part V · Ethics &amp; Futures</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../part5/ch14_future_directions.html">Chapter 14: Where Next for Neuro-AI?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part5/ch15_ethical_ai.html">Chapter 15: Ethical AI - Considerations for NeuroAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part5/ch16_future_directions.html">Chapter 16: Where Next for Neuro-AI?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VI · Advanced Applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch17_bci_human_ai_interfaces.html">Brain-Computer Interfaces and Human-AI Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch18_neuromorphic_computing.html">Chapter 18: Neuromorphic Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch19_cognitive_neuro_dl.html">Cognitive Neuroscience and Deep Learning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part6/ch20_case_studies.html">Case Studies in NeuroAI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part6/ch20_interactive.html">Interactive NeuroAI Case Studies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part6/jupyter_ai_demo.html">AI-Assisted Learning with Jupyter AI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../part6/rise_slides_demo.html">Creating Presentations with RISE</a></li>
+
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch21_ai_for_neuro_discovery.html">Chapter 21: AI for Neuroscience Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch22_embodied_ai_robotics.html">Chapter 22: Embodied AI and Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch23_lifelong_learning.html">Chapter 23: Lifelong Learning</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendices/glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendices/math_python_refresher.html">Appendix A: Math &amp; Python Mini-Refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendices/dataset_catalogue.html">Appendix B: Dataset Catalogue</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../appendices/colab_setup.html">Appendix C: Colab Setup Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/colab_setup.html">Appendix C: Google Colab Setup for NeuroAI</a></li>
 </ul>
 
     </div>
@@ -280,6 +303,23 @@
   <i class="fab fa-github"></i>
   </span>
 <span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/edit/master/docs/part2/ch07_information_theory.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
 </li>
       
@@ -502,12 +542,31 @@ document.write(`
 <p>The central concept in information theory is entropy, which measures the uncertainty or randomness in a probability distribution. For a discrete random variable <span class="math notranslate nohighlight">\(X\)</span> with possible values <span class="math notranslate nohighlight">\(\{x_1, x_2, ..., x_n\}\)</span> and probability mass function <span class="math notranslate nohighlight">\(p(x)\)</span>, the entropy <span class="math notranslate nohighlight">\(H(X)\)</span> is defined as:</p>
 <div class="math notranslate nohighlight">
 \[H(X) = -\sum_{i=1}^{n} p(x_i) \log_2 p(x_i)\]</div>
+<p><img alt="Information Entropy" src="../_images/entropy_illustration.svg" /></p>
+<p><em>Figure 7.1: The binary entropy function showing how uncertainty is maximized at p=0.5 (equal probabilities) and minimized at p=0 or p=1 (complete certainty).</em></p>
 <p>Entropy is measured in bits when using log base 2, and represents the average number of bits needed to encode values of the random variable. A few key properties:</p>
 <ul class="simple">
 <li><p>Entropy is always non-negative</p></li>
 <li><p>Entropy is maximized when all outcomes are equally likely</p></li>
 <li><p>Entropy is minimized (zero) when one outcome has probability 1</p></li>
 </ul>
+<div class="tip admonition">
+<p class="admonition-title">Applications in AI and Real Life</p>
+<p><strong>AI Applications:</strong></p>
+<ul class="simple">
+<li><p><strong>Model Evaluation</strong>: Models with lower entropy predictions are more confident (though not necessarily correct)</p></li>
+<li><p><strong>Model Compression</strong>: Information-theoretic principles guide model pruning and quantization</p></li>
+<li><p><strong>Learning Algorithms</strong>: Maximum entropy methods provide a principled approach to machine learning when knowledge is limited</p></li>
+<li><p><strong>Feature Selection</strong>: High-entropy features typically carry more information for classification tasks</p></li>
+</ul>
+<p><strong>Real-World Applications:</strong></p>
+<ul class="simple">
+<li><p><strong>Data Compression</strong>: ZIP, JPEG, PNG all rely on entropy coding techniques (Huffman, arithmetic coding)</p></li>
+<li><p><strong>Cryptography</strong>: Secure encryption requires high-entropy (unpredictable) keys</p></li>
+<li><p><strong>Natural Language Processing</strong>: Language models estimate word probabilities and maximize entropy for diverse generation</p></li>
+<li><p><strong>Neuroscience</strong>: Neural spike patterns can be analyzed to determine information content</p></li>
+</ul>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
@@ -565,7 +624,26 @@ document.write(`
 <p>Mutual information <span class="math notranslate nohighlight">\(I(X;Y)\)</span> measures the reduction in uncertainty about one variable given knowledge of another:</p>
 <div class="math notranslate nohighlight">
 \[I(X;Y) = H(X) - H(X|Y) = H(Y) - H(Y|X) = H(X) + H(Y) - H(X,Y)\]</div>
+<p><img alt="Mutual Information" src="../_images/mutual_information.svg" /></p>
+<p><em>Figure 7.2: Venn diagram representation of mutual information as the overlap between entropies of X and Y, showing the relationship between joint, conditional, and marginal entropies.</em></p>
 <p>This symmetric measure ranges from 0 (independent variables) to <span class="math notranslate nohighlight">\(\min(H(X), H(Y))\)</span> (one variable completely determines the other).</p>
+<div class="tip admonition">
+<p class="admonition-title">Mutual Information in AI and Neuroscience</p>
+<p><strong>AI Applications:</strong></p>
+<ul class="simple">
+<li><p><strong>Feature Selection</strong>: MI identifies which features provide the most information about target classes</p></li>
+<li><p><strong>Representation Learning</strong>: Maximizing MI between representations and inputs in self-supervised learning (e.g., InfoNCE loss in contrastive learning)</p></li>
+<li><p><strong>Model Interpretability</strong>: MI can measure which neurons/features capture important input attributes</p></li>
+<li><p><strong>Information Bottleneck</strong>: Networks trained to maximize MI with targets while minimizing MI with inputs generalize better</p></li>
+</ul>
+<p><strong>Neuroscience Applications:</strong></p>
+<ul class="simple">
+<li><p><strong>Neural Coding</strong>: Quantifies how much information spike trains carry about stimuli</p></li>
+<li><p><strong>Brain Connectivity</strong>: Functional connectivity between brain regions can be measured using MI</p></li>
+<li><p><strong>Sensory Processing</strong>: MI helps analyze how sensory information is transformed through neural pathways</p></li>
+<li><p><strong>Neural Population Decoding</strong>: Reveals which groups of neurons collectively encode behaviorally relevant information</p></li>
+</ul>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">mutual_information</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate the mutual information between two continuous variables.</span>
 <span class="sd">    </span>
@@ -686,6 +764,23 @@ document.write(`
 <div class="math notranslate nohighlight">
 \[C = \frac{1}{2}\log_2(1 + \frac{P}{N})\]</div>
 <p>This concept is crucial in neuroscience for understanding the information-carrying capacity of neural circuits.</p>
+<div class="tip admonition">
+<p class="admonition-title">Channel Capacity in Neural and Artificial Systems</p>
+<p><strong>Neuroscience Implications:</strong></p>
+<ul class="simple">
+<li><p><strong>Neural Bandwidth</strong>: Limits how much information a single neuron can transmit (typically 2-3 bits per spike)</p></li>
+<li><p><strong>Population Coding</strong>: Brain overcomes single-neuron capacity limits by distributing information across many neurons</p></li>
+<li><p><strong>Energy Constraints</strong>: Neurons balance information transmission against metabolic costs</p></li>
+<li><p><strong>Sensory Bottlenecks</strong>: Optic nerve’s ~1 million axons create an information bottleneck requiring efficient coding</p></li>
+</ul>
+<p><strong>Engineering Applications:</strong></p>
+<ul class="simple">
+<li><p><strong>Communication Systems</strong>: Shannon’s capacity theorem revolutionized telecommunications by establishing fundamental limits</p></li>
+<li><p><strong>5G Networks</strong>: Modern wireless systems approach Shannon capacity with sophisticated coding (LDPC, turbo codes)</p></li>
+<li><p><strong>Neural Interfaces</strong>: Designing optimal neural recording/stimulation devices requires understanding neural channel capacities</p></li>
+<li><p><strong>AI System Design</strong>: Network width and depth choices implicitly reflect channel capacity considerations</p></li>
+</ul>
+</div>
 </section>
 </section>
 <section id="neural-coding-efficiency">
@@ -693,12 +788,32 @@ document.write(`
 <section id="efficient-coding-hypothesis">
 <h3>Efficient Coding Hypothesis<a class="headerlink" href="#efficient-coding-hypothesis" title="Link to this heading">#</a></h3>
 <p>Proposed by Horace Barlow in the 1960s, the efficient coding hypothesis states that sensory systems have evolved to efficiently represent natural stimuli by reducing redundancy and maximizing information transmission given metabolic constraints.</p>
+<p><img alt="Efficient Coding in Neural Systems" src="../_images/efficient_coding.svg" /></p>
+<p><em>Figure 7.3: Efficient coding principles in neural systems. The brain adapts to input statistics to create representations that maximize information while minimizing resources through redundancy reduction and sparse coding.</em></p>
 <p>Key principles:</p>
 <ul class="simple">
 <li><p>Neurons should encode independent features of the environment</p></li>
 <li><p>Neural codes should minimize redundancy</p></li>
 <li><p>Coding strategies should be adapted to the statistics of natural stimuli</p></li>
 </ul>
+<div class="tip admonition">
+<p class="admonition-title">Efficient Coding: From Brains to AI Systems</p>
+<p><strong>Biological Implementations:</strong></p>
+<ul class="simple">
+<li><p><strong>Visual System</strong>: Retinal ganglion cells adapt to luminance statistics; V1 neurons encode oriented edges (sparse components of natural images)</p></li>
+<li><p><strong>Auditory System</strong>: Cochlear filters adapt to natural sound statistics with 1/f power distributions</p></li>
+<li><p><strong>Olfactory System</strong>: Sparse odor coding with minimal overlapping representations</p></li>
+<li><p><strong>Adaptation</strong>: Sensory neurons dynamically adjust to stimulus statistics to maintain optimal information transmission</p></li>
+</ul>
+<p><strong>AI Applications:</strong></p>
+<ul class="simple">
+<li><p><strong>Sparse Autoencoders</strong>: Learn efficient, sparse representations similar to V1 receptive fields</p></li>
+<li><p><strong>Predictive Coding Networks</strong>: Optimize to minimize prediction errors, similar to brain’s predictive processing</p></li>
+<li><p><strong>Model Compression</strong>: Pruning, quantization, and knowledge distillation guided by information-theoretic principles</p></li>
+<li><p><strong>Generative Models</strong>: VAEs and diffusion models incorporate information compression principles</p></li>
+<li><p><strong>Neural Architecture Search</strong>: Information Bottleneck principles guide efficient network design</p></li>
+</ul>
+</div>
 </section>
 <section id="redundancy-reduction">
 <h3>Redundancy Reduction<a class="headerlink" href="#redundancy-reduction" title="Link to this heading">#</a></h3>
@@ -1211,6 +1326,20 @@ document.write(`
 \[\Phi = \min_{P} [ D_{KL}(p(X_t | X_{t-1}) || p^{(P)}(X_t | X_{t-1})) ]\]</div>
 <p>where <span class="math notranslate nohighlight">\(p^{(P)}\)</span> is the product of the probability distributions for the system divided according to partition <span class="math notranslate nohighlight">\(P\)</span>.</p>
 <p>High Φ indicates that the system integrates information in a way that cannot be reduced to its parts, a proposed correlate of consciousness.</p>
+<div class="important admonition">
+<p class="admonition-title">Knowledge Connections</p>
+<p><strong>Looking Back</strong></p>
+<ul class="simple">
+<li><p><strong>Chapter 1 (Introduction)</strong>: The cybernetics section (1.1.1) introduced early information processing concepts that are formalized here as Shannon’s information theory.</p></li>
+<li><p><strong>Chapter 2 (Neuroscience Foundations)</strong>: Neural coding strategies discussed in section 2.1 can be quantitatively analyzed using the information-theoretic measures presented in this chapter.</p></li>
+</ul>
+<p><strong>Looking Forward</strong></p>
+<ul class="simple">
+<li><p><strong>Chapter 10 (Deep Learning)</strong>: The information bottleneck principle covered in section 7.6 provides important theoretical insights into how deep networks learn and generalize.</p></li>
+<li><p><strong>Chapter 11 (Sequence Models)</strong>: Information-theoretic measures like entropy and cross-entropy become critical loss functions for language and sequence modeling.</p></li>
+<li><p><strong>Chapter 12 (LLMs)</strong>: The efficient coding principles in section 7.2 help explain how large language models compress knowledge from training data.</p></li>
+</ul>
+</div>
 </section>
 </section>
 <section id="code-lab-information-analysis-in-python">
@@ -2042,7 +2171,7 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {

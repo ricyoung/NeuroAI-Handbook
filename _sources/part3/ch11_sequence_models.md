@@ -1,10 +1,16 @@
 # Chapter 11: Sequence Models: RNN → Attention → Transformer
 
-## 11.0 Chapter Goals
-- Understand the evolution of sequence models
-- Master recurrent networks, attention, and transformers
-- Connect sequence models to temporal processing in the brain
-- Implement key sequence modeling architectures
+```{admonition} Learning Objectives
+:class: note
+
+By the end of this chapter, you will be able to:
+
+- **Understand** the evolution of sequence models from RNNs to Transformers
+- **Master** the architectures and training methods for recurrent networks, attention mechanisms, and transformer models
+- **Connect** sequence model operations to temporal processing in the brain
+- **Implement** key sequence modeling architectures for various tasks
+- **Compare** different approaches to handling sequential data
+```
 
 ## 11.1 Recurrent Neural Networks
 
@@ -3389,6 +3395,21 @@ To execute an exercise, uncomment the function call at the end of each code bloc
 By understanding these implementations and experimenting with the code, you'll gain deeper insights into how sequence models work and how they can be applied to neuroscience and AI tasks.
 
 ## 11.7 Take-aways
+
+```{admonition} Knowledge Connections
+:class: important
+
+**Looking Back**
+- **Chapter 3 (Spatial Navigation)**: Recurrent neural networks share conceptual similarities with hippocampal place cells' temporal information processing for predictive navigation
+- **Chapter 7 (Information Theory)**: Sequential information processing relies on principles of information flow and entropy across temporal dimensions
+- **Chapter 9 (ML Foundations)**: Classical sequence models like HMMs and CRFs form the statistical foundation for modern sequence processing
+- **Chapter 10 (Deep Learning)**: Core neural network operations and backpropagation principles are extended to sequence domains via backpropagation through time
+
+**Looking Forward**
+- **Chapter 12 (Large Language Models)**: Transformer architectures from this chapter form the foundation for LLMs with scaled attention mechanisms
+- **Chapter 13 (Multimodal Models)**: Sequence processing techniques are extended to handle multiple modalities through cross-attention and embedding alignment
+- **Chapter 14 (Future Directions)**: Innovations in sequence modeling contribute to neuromorphic computing and brain-inspired AI architectures
+```
 
 This chapter has covered the evolution of sequence models from recurrent networks to transformers, connecting these AI architectures to neural processing mechanisms in the brain. Here are the key insights:
 
