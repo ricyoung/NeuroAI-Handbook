@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(jb build:*)",
+      "Bash(jb config:*)",
+      "Bash(sphinx-build:*)",
+      "WebFetch(domain:jupyterbook.org)",
+      "WebFetch(domain:medium.com)",
+      "Bash(pip install:*)",
+      "Bash(brew install:*)",
+      "Bash(python:*)"
+    ],
+    "deny": []
+  }
+}

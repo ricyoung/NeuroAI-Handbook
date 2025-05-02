@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(jb build:*)",
+      "Bash(pip install:*)",
+      "Bash(python:*)",
+      "Bash(/Users/ric/Library/Python/3.9/bin/jb build book --builder pdfhtml)",
+      "Bash(/Users/ric/Library/Python/3.9/bin/jb build . --builder pdfhtml)",
+      "Bash(conda activate:*)"
+    ],
+    "deny": []
+  }
+}
