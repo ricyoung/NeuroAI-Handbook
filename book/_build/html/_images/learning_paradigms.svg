@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="900" height="500" viewBox="0 0 900 500">
+  <style>
+    .title {
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      text-anchor: middle;
+      fill: #333;
+    }
+    .subtitle {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      text-anchor: middle;
+      fill: #555;
+    }
+    .category {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      text-anchor: middle;
+      fill: #333;
+    }
+    .box-title {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      text-anchor: middle;
+      fill: #333;
+    }
+    .box-content {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      text-anchor: middle;
+      fill: #555;
+    }
+    .box {
+      stroke: #333;
+      stroke-width: 2;
+      rx: 10;
+      ry: 10;
+    }
+    .arrow {
+      stroke: #555;
+      stroke-width: 2;
+      fill: none;
+      marker-end: url(#arrowhead);
+    }
+    .supervised {
+      fill: #d4ebf2;
+    }
+    .unsupervised {
+      fill: #fde9d9;
+    }
+    .reinforcement {
+      fill: #e5f1dd;
+    }
+    .brain {
+      fill: #e3daf9;
+    }
+    .neuroscience {
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-style: italic;
+      fill: #6b529f;
+      text-anchor: middle;
+    }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#555"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="450" y="40" class="title">Machine Learning Paradigms and their Neural Parallels</text>
+  
+  <!-- Supervised Learning -->
+  <text x="150" y="90" class="subtitle">Supervised Learning</text>
+  <rect x="40" y="110" width="220" height="150" class="box supervised"/>
+  
+  <text x="150" y="135" class="box-title">Input-Output Mapping</text>
+  <text x="150" y="155" class="box-content">Learn from labeled examples</text>
+  <text x="150" y="175" class="box-content">Minimize prediction error</text>
+  
+  <text x="150" y="205" class="box-title">Applications</text>
+  <text x="150" y="225" class="box-content">Classification</text>
+  <text x="150" y="245" class="box-content">Regression</text>
+  
+  <text x="150" y="280" class="neuroscience">Neural parallel: Associative learning</text>
+  <text x="150" y="300" class="neuroscience">via error-correction mechanisms</text>
+  
+  <!-- Unsupervised Learning -->
+  <text x="450" y="90" class="subtitle">Unsupervised Learning</text>
+  <rect x="340" y="110" width="220" height="150" class="box unsupervised"/>
+  
+  <text x="450" y="135" class="box-title">Pattern Discovery</text>
+  <text x="450" y="155" class="box-content">Find structure without labels</text>
+  <text x="450" y="175" class="box-content">Extract hidden patterns</text>
+  
+  <text x="450" y="205" class="box-title">Applications</text>
+  <text x="450" y="225" class="box-content">Clustering</text>
+  <text x="450" y="245" class="box-content">Dimensionality Reduction</text>
+  
+  <text x="450" y="280" class="neuroscience">Neural parallel: Self-organization</text>
+  <text x="450" y="300" class="neuroscience">in sensory cortices</text>
+  
+  <!-- Reinforcement Learning -->
+  <text x="750" y="90" class="subtitle">Reinforcement Learning</text>
+  <rect x="640" y="110" width="220" height="150" class="box reinforcement"/>
+  
+  <text x="750" y="135" class="box-title">Action-Reward Learning</text>
+  <text x="750" y="155" class="box-content">Learn optimal policy through</text>
+  <text x="750" y="175" class="box-content">interaction with environment</text>
+  
+  <text x="750" y="205" class="box-title">Applications</text>
+  <text x="750" y="225" class="box-content">Decision-making</text>
+  <text x="750" y="245" class="box-content">Game playing</text>
+  
+  <text x="750" y="280" class="neuroscience">Neural parallel: Dopamine-based</text>
+  <text x="750" y="300" class="neuroscience">reward learning in basal ganglia</text>
+  
+  <!-- Brain-Inspired Methods -->
+  <text x="450" y="350" class="subtitle">Brain-Inspired Learning Methods</text>
+  <rect x="190" y="370" width="220" height="110" class="box brain"/>
+  <text x="300" y="390" class="box-title">Hebbian Learning</text>
+  <text x="300" y="410" class="box-content">"Neurons that fire together, wire together"</text>
+  <text x="300" y="430" class="box-content">Unsupervised feature learning</text>
+  <text x="300" y="450" class="box-content">Self-organizing maps</text>
+  
+  <rect x="500" y="370" width="220" height="110" class="box brain"/>
+  <text x="610" y="390" class="box-title">Predictive Coding</text>
+  <text x="610" y="410" class="box-content">Minimize prediction error</text>
+  <text x="610" y="430" class="box-content">Hierarchical processing</text>
+  <text x="610" y="450" class="box-content">Free energy minimization</text>
+  
+  <!-- Arrows -->
+  <path d="M 260 185 L 340 185" class="arrow"/>
+  <path d="M 560 185 L 640 185" class="arrow"/>
+  
+  <path d="M 150 260 C 150 330, 280 330, 280 370" class="arrow"/>
+  <path d="M 450 260 C 450 330, 320 330, 320 370" class="arrow"/>
+  <path d="M 450 260 C 450 330, 580 330, 580 370" class="arrow"/>
+  <path d="M 750 260 C 750 330, 640 330, 640 370" class="arrow"/>
+</svg>

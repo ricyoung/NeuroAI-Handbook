@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Definitions -->
+  <defs>
+    <!-- Neuron Cell Body Gradient -->
+    <radialGradient id="cellGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#f0f8ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#add8e6;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Axon Terminal Gradient -->
+    <radialGradient id="terminalGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#ffecb3;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffcc80;stop-opacity:1" />
+    </radialGradient>
+    
+    <!-- Shadow Filter -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+      <feOffset dx="2" dy="2" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <!-- AMPA Receptor -->
+    <g id="ampa-receptor">
+      <rect width="15" height="8" rx="2" ry="2" fill="#f06292" stroke="#c2185b" stroke-width="1" />
+    </g>
+    
+    <!-- NMDA Receptor -->
+    <g id="nmda-receptor">
+      <rect width="15" height="10" rx="2" ry="2" fill="#ba68c8" stroke="#7b1fa2" stroke-width="1" />
+    </g>
+    
+    <!-- Calcium Ion -->
+    <g id="calcium-ion">
+      <circle r="3" fill="#00bcd4" />
+      <text font-family="Arial, sans-serif" font-size="6" text-anchor="middle" dy="2" fill="white">Ca</text>
+    </g>
+    
+    <!-- Vesicle -->
+    <g id="vesicle">
+      <circle r="5" fill="#ffeb3b" stroke="#fbc02d" stroke-width="1" />
+      <circle r="1" cx="-1" cy="-1" fill="#fff176" />
+    </g>
+    
+    <!-- Neurotransmitter -->
+    <g id="neurotransmitter">
+      <circle r="2" fill="#ff9800" />
+    </g>
+    
+    <!-- Arrow -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" 
+            markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="#fff" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-weight="bold" font-size="24" text-anchor="middle" fill="#333">
+    Neural Plasticity Mechanisms
+  </text>
+  
+  <!-- Top Section: LTP/LTD -->
+  <g id="ltp-ltd" transform="translate(0, 60)">
+    <text x="400" y="30" font-family="Arial, sans-serif" font-weight="bold" font-size="18" text-anchor="middle" fill="#333">
+      Long-Term Potentiation (LTP) and Depression (LTD)
+    </text>
+    
+    <!-- Before LTP/LTD -->
+    <g transform="translate(150, 80)">
+      <text x="50" y="-20" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">
+        Baseline Synapse
+      </text>
+      
+      <!-- Presynaptic Terminal -->
+      <circle cx="0" cy="0" r="20" fill="url(#terminalGradient)" stroke="#f57c00" stroke-width="2" />
+      
+      <!-- Axon -->
+      <path d="M-20,0 L-60,0" fill="none" stroke="#f57c00" stroke-width="3" />
+      
+      <!-- Vesicles -->
+      <use href="#vesicle" x="-5" y="-5" />
+      <use href="#vesicle" x="5" y="5" />
+      <use href="#vesicle" x="5" y="-8" />
+      
+      <!-- Synaptic Cleft -->
+      <rect x="-25" y="20" width="50" height="10" fill="#f0f0f0" stroke="none" />
+      
+      <!-- Postsynaptic Density -->
+      <rect x="-25" y="30" width="50" height="15" rx="2" ry="2" fill="#e0e0e0" stroke="#9e9e9e" stroke-width="1" />
+      
+      <!-- Receptors -->
+      <use href="#ampa-receptor" x="-20" y="32" />
+      <use href="#ampa-receptor" x="-5" y="32" />
+      <use href="#nmda-receptor" x="10" y="32" />
+      
+      <!-- Dendrite -->
+      <path d="M-40,45 L75,45" fill="none" stroke="#64b5f6" stroke-width="4" />
+      
+      <!-- Label -->
+      <text x="0" y="65" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">
+        Normal synaptic strength
+      </text>
+    </g>
+    
+    <!-- LTP -->
+    <g transform="translate(350, 80)">
+      <text x="50" y="-20" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">
+        After LTP
+      </text>
+      
+      <!-- Presynaptic Terminal -->
+      <circle cx="0" cy="0" r="20" fill="url(#terminalGradient)" stroke="#f57c00" stroke-width="2" />
+      
+      <!-- Axon -->
+      <path d="M-20,0 L-60,0" fill="none" stroke="#f57c00" stroke-width="3" />
+      
+      <!-- Vesicles -->
+      <use href="#vesicle" x="-8" y="-5" />
+      <use href="#vesicle" x="5" y="5" />
+      <use href="#vesicle" x="5" y="-8" />
+      <use href="#vesicle" x="-5" y="8" />
+      <use href="#vesicle" x="0" y="-3" />
+      
+      <!-- Active Vesicle Release -->
+      <use href="#neurotransmitter" x="-10" y="15">
+        <animate attributeName="y" values="15;23;23" dur="3s" repeatCount="indefinite" />
+      </use>
+      <use href="#neurotransmitter" x="0" y="15">
+        <animate attributeName="y" values="15;23;23" dur="3s" repeatCount="indefinite" begin="0.2s"/>
+      </use>
+      <use href="#neurotransmitter" x="10" y="15">
+        <animate attributeName="y" values="15;23;23" dur="3s" repeatCount="indefinite" begin="0.4s" />
+      </use>
+      
+      <!-- Synaptic Cleft -->
+      <rect x="-25" y="20" width="50" height="10" fill="#f0f0f0" stroke="none" />
+      
+      <!-- Postsynaptic Density (enlarged) -->
+      <rect x="-30" y="30" width="60" height="15" rx="2" ry="2" fill="#e0e0e0" stroke="#9e9e9e" stroke-width="1" />
+      
+      <!-- More AMPA Receptors -->
+      <use href="#ampa-receptor" x="-25" y="32" />
+      <use href="#ampa-receptor" x="-10" y="32" />
+      <use href="#ampa-receptor" x="5" y="32" />
+      <use href="#ampa-receptor" x="20" y="32" />
+      <use href="#nmda-receptor" x="-17" y="37" />
+      <use href="#nmda-receptor" x="13" y="37" />
+      
+      <!-- Calcium Influx -->
+      <use href="#calcium-ion" x="-5" y="40">
+        <animate attributeName="y" values="40;55;55" dur="2s" repeatCount="indefinite" />
+      </use>
+      <use href="#calcium-ion" x="5" y="40">
+        <animate attributeName="y" values="40;55;55" dur="2s" repeatCount="indefinite" begin="0.3s" />
+      </use>
+      
+      <!-- Dendrite -->
+      <path d="M-40,45 L75,45" fill="none" stroke="#64b5f6" stroke-width="4" />
+      
+      <!-- Label -->
+      <text x="0" y="65" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">
+        Increased synaptic strength
+      </text>
+    </g>
+    
+    <!-- LTD -->
+    <g transform="translate(550, 80)">
+      <text x="50" y="-20" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">
+        After LTD
+      </text>
+      
+      <!-- Presynaptic Terminal -->
+      <circle cx="0" cy="0" r="20" fill="url(#terminalGradient)" stroke="#f57c00" stroke-width="2" />
+      
+      <!-- Axon -->
+      <path d="M-20,0 L-60,0" fill="none" stroke="#f57c00" stroke-width="3" />
+      
+      <!-- Fewer Vesicles -->
+      <use href="#vesicle" x="-5" y="-5" />
+      <use href="#vesicle" x="5" y="5" />
+      
+      <!-- Reduced Neurotransmitter Release -->
+      <use href="#neurotransmitter" x="0" y="15">
+        <animate attributeName="y" values="15;23;23" dur="3s" repeatCount="indefinite" />
+      </use>
+      
+      <!-- Synaptic Cleft -->
+      <rect x="-25" y="20" width="50" height="10" fill="#f0f0f0" stroke="none" />
+      
+      <!-- Postsynaptic Density (reduced) -->
+      <rect x="-20" y="30" width="40" height="15" rx="2" ry="2" fill="#e0e0e0" stroke="#9e9e9e" stroke-width="1" />
+      
+      <!-- Fewer AMPA Receptors -->
+      <use href="#ampa-receptor" x="-15" y="32" />
+      <use href="#nmda-receptor" x="5" y="32" />
+      
+      <!-- Endocytosis of AMPA Receptors -->
+      <path d="M-5,40 C-5,45 -10,50 -15,45" fill="none" stroke="#f06292" stroke-width="1" stroke-dasharray="2,1" marker-end="url(#arrow)" />
+      
+      <!-- Dendrite -->
+      <path d="M-40,45 L75,45" fill="none" stroke="#64b5f6" stroke-width="4" />
+      
+      <!-- Label -->
+      <text x="0" y="65" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">
+        Decreased synaptic strength
+      </text>
+    </g>
+    
+    <!-- LTP Process Description -->
+    <g transform="translate(350, 160)">
+      <rect x="-125" y="0" width="250" height="70" rx="5" ry="5" fill="#f0f7ff" stroke="#64b5f6" stroke-width="1" />
+      <text x="0" y="15" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">
+        <tspan x="0" dy="0">LTP Process:</tspan>
+        <tspan x="0" dy="15">1. Strong stimulation activates NMDA receptors</tspan>
+        <tspan x="0" dy="15">2. Calcium influx activates CaMKII and other kinases</tspan>
+        <tspan x="0" dy="15">3. AMPA receptor insertion and enhanced neurotransmitter release</tspan>
+      </text>
+    </g>
+    
+    <!-- LTD Process Description -->
+    <g transform="translate(550, 160)">
+      <rect x="-100" y="0" width="200" height="70" rx="5" ry="5" fill="#fff5f5" stroke="#f06292" stroke-width="1" />
+      <text x="0" y="15" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">
+        <tspan x="0" dy="0">LTD Process:</tspan>
+        <tspan x="0" dy="15">1. Weak stimulation causes moderate Ca²⁺ influx</tspan>
+        <tspan x="0" dy="15">2. Phosphatases activated instead of kinases</tspan>
+        <tspan x="0" dy="15">3. AMPA receptor endocytosis and removal</tspan>
+      </text>
+    </g>
+  </g>
+  
+  <!-- Middle Section: STDP -->
+  <g id="stdp" transform="translate(0, 300)">
+    <text x="400" y="30" font-family="Arial, sans-serif" font-weight="bold" font-size="18" text-anchor="middle" fill="#333">
+      Spike-Timing-Dependent Plasticity (STDP)
+    </text>
+    
+    <!-- STDP Curve -->
+    <g transform="translate(150, 100)">
+      <!-- Axes -->
+      <line x1="0" y1="0" x2="200" y2="0" stroke="#333" stroke-width="1" marker-end="url(#arrow)" />
+      <line x1="100" y1="70" x2="100" y2="-70" stroke="#333" stroke-width="1" marker-end="url(#arrow)" />
+      
+      <!-- Axis Labels -->
+      <text x="200" y="15" font-family="Arial, sans-serif" font-size="12" fill="#333">Δt (ms)</text>
+      <text x="85" y="-75" font-family="Arial, sans-serif" font-size="12" fill="#333">ΔW</text>
+      <text x="50" y="15" font-family="Arial, sans-serif" font-size="10" fill="#333">Pre before Post</text>
+      <text x="150" y="15" font-family="Arial, sans-serif" font-size="10" fill="#333">Post before Pre</text>
+      <text x="100" y="15" font-family="Arial, sans-serif" font-size="12" fill="#333">0</text>
+      
+      <!-- STDP Curve -->
+      <path d="M40,-40 Q80,-10 100,0 Q120,10 160,30" fill="none" stroke="#673ab7" stroke-width="2" />
+      
+      <!-- Highlight Areas -->
+      <path d="M40,-40 Q80,-10 100,0 L100,0 L40,0 Z" fill="#8c9eff" fill-opacity="0.3" stroke="none" />
+      <path d="M100,0 Q120,10 160,30 L160,0 L100,0 Z" fill="#ff8a80" fill-opacity="0.3" stroke="none" />
+      
+      <!-- Data Points -->
+      <circle cx="60" cy="-30" r="3" fill="#3f51b5" />
+      <circle cx="80" cy="-10" r="3" fill="#3f51b5" />
+      <circle cx="120" cy="10" r="3" fill="#f44336" />
+      <circle cx="140" cy="20" r="3" fill="#f44336" />
+      
+      <!-- Labels for LTP/LTD -->
+      <text x="70" y="-45" font-family="Arial, sans-serif" font-size="12" fill="#3f51b5">LTP</text>
+      <text x="140" y="35" font-family="Arial, sans-serif" font-size="12" fill="#f44336">LTD</text>
+    </g>
+    
+    <!-- STDP Explanation -->
+    <g transform="translate(450, 100)">
+      <rect x="-50" y="-20" width="300" height="120" rx="5" ry="5" fill="#f9f9f9" stroke="#ccc" stroke-width="1" />
+      
+      <text x="100" y="0" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#333">
+        STDP Learning Rule
+      </text>
+      
+      <text x="100" y="30" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">
+        <tspan x="0" dy="0">• When presynaptic neuron fires before postsynaptic</tspan>
+        <tspan x="0" dy="20">  neuron (Δt &gt; 0), synapse strengthens (LTP)</tspan>
+        <tspan x="0" dy="20">• When postsynaptic neuron fires before presynaptic</tspan>
+        <tspan x="0" dy="20">  neuron (Δt &lt; 0), synapse weakens (LTD)</tspan>
+      </text>
+    </g>
+  </g>
+  
+  <!-- Bottom Section: Homeostatic Plasticity -->
+  <g id="homeostatic" transform="translate(400, 500)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-weight="bold" font-size="18" text-anchor="middle" fill="#333">
+      Homeostatic Plasticity
+    </text>
+    
+    <g transform="translate(-200, 40)">
+      <rect x="-100" y="-20" width="200" height="70" rx="5" ry="5" fill="#e8f5e9" stroke="#4caf50" stroke-width="1" />
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">
+        Synaptic Scaling
+      </text>
+      <text x="0" y="25" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">
+        Global adjustment of all synapses to 
+      </text>
+      <text x="0" y="40" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">
+        maintain target activity level
+      </text>
+    </g>
+    
+    <g transform="translate(200, 40)">
+      <rect x="-100" y="-20" width="200" height="70" rx="5" ry="5" fill="#fff3e0" stroke="#ff9800" stroke-width="1" />
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">
+        Metaplasticity
+      </text>
+      <text x="0" y="25" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">
+        Adjustment of plasticity thresholds 
+      </text>
+      <text x="0" y="40" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">
+        based on activity history
+      </text>
+    </g>
+  </g>
+</svg>

@@ -826,6 +826,19 @@ where $p^{(P)}$ is the product of the probability distributions for the system d
 
 High Φ indicates that the system integrates information in a way that cannot be reduced to its parts, a proposed correlate of consciousness.
 
+```{admonition} Knowledge Connections
+:class: important
+
+**Looking Back**
+- **Chapter 1 (Introduction)**: The cybernetics section (1.1.1) introduced early information processing concepts that are formalized here as Shannon's information theory.
+- **Chapter 2 (Neuroscience Foundations)**: Neural coding strategies discussed in section 2.1 can be quantitatively analyzed using the information-theoretic measures presented in this chapter.
+
+**Looking Forward**
+- **Chapter 10 (Deep Learning)**: The information bottleneck principle covered in section 7.6 provides important theoretical insights into how deep networks learn and generalize.
+- **Chapter 11 (Sequence Models)**: Information-theoretic measures like entropy and cross-entropy become critical loss functions for language and sequence modeling.
+- **Chapter 12 (LLMs)**: The efficient coding principles in section 7.2 help explain how large language models compress knowledge from training data.
+```
+
 ## 7.6 Code Lab – Information Analysis in Python
 
 Let's implement some practical information-theoretic analyses on real-world data.

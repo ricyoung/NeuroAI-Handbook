@@ -1,10 +1,16 @@
 # Chapter 10: Deep Learning: Training & Optimisation
 
-## 10.0 Chapter Goals
-- Master deep neural network architectures and training
-- Understand optimization algorithms and challenges
-- Implement key deep learning components
-- Apply best practices for model development
+```{admonition} Learning Objectives
+:class: note
+
+By the end of this chapter, you will be able to:
+
+- **Master** deep neural network architectures and training techniques
+- **Understand** optimization algorithms and their underlying mathematical principles
+- **Implement** key deep learning components from scratch and with frameworks
+- **Apply** best practices for model development and troubleshooting
+- **Compare** biological and artificial optimization approaches
+```
 
 ## 10.1 Neural Network Fundamentals
 
@@ -1595,7 +1601,7 @@ Foundation models have transformed deep learning research and applications, with
 
 ### 10.6.3 Loss Landscapes
 
-![Loss Landscape](../figures/dl_optimization_landscape.svg)
+![Loss Landscape](../figures/ch10/dl_optimization_landscape.svg)
 *Figure 10.6: Visualization of neural network loss landscape showing the complex optimization surface with local minima, saddle points, and flat regions.*
 
 Loss landscapes in deep networks are complex, high-dimensional surfaces with many local minima, saddle points, and flat regions:
@@ -1877,6 +1883,21 @@ While modern deep learning frameworks automate these steps, understanding the un
 - **Optimization Challenges**: Deep learning optimization remains challenging due to non-convex loss landscapes, saddle points, and the need to escape poor local minima.
 
 - **Empirical Focus**: Despite theoretical progress, deep learning remains heavily empirical, with practical techniques often preceding theoretical understanding.
+
+```{admonition} Knowledge Connections
+:class: important
+
+**Looking Back**
+- **Chapter 1 (Introduction)**: The backpropagation algorithm introduced in section 1.1.3 is explored in depth here, showing how it enables training of complex neural networks.
+- **Chapter 2 (Neuroscience Foundations)**: The biological learning mechanisms described in section 2.3 provide an interesting contrast to the optimization algorithms covered in this chapter.
+- **Chapter 7 (Information Theory)**: The information bottleneck principle (section 7.6) provides theoretical insights into how deep networks compress information through layers.
+- **Chapter 9 (ML Foundations)**: The basic learning algorithms from Chapter 9 are extended here to handle deep architectures and large-scale training.
+
+**Looking Forward**
+- **Chapter 11 (Sequence Models)**: The optimization techniques learned here will be applied to the specialized architectures for sequential data.
+- **Chapter 12 (Large Language Models)**: The scaling laws and foundation model concepts introduced in section 10.6.2 become critical for understanding LLM training and capabilities.
+- **Chapter 14 (Future Directions)**: The biological parallels in deep learning (section 10.5) point to neuromorphic approaches that may shape future AI systems.
+```
 
 ## 10.8 Further Reading & Media
 

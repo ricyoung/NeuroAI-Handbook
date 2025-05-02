@@ -39,3 +39,23 @@ requests>=2.30.0
 pillow>=9.5.0
 nbformat>=5.8.0
 plotly>=5.14.0
+
+# Interactive book features
+sphinx-togglebutton>=0.3.2
+sphinx-copybutton>=0.5.1
+sphinx-comments>=0.0.3
+sphinx-thebe>=0.2.1
+sphinxcontrib-bibtex>=2.5.0
+ipywidgets>=8.0.6
+notebook>=6.5.3
+jupyterlab>=4.0.0
+ipython>=8.12.0
+
+# AI-assisted notebook features
+jupyter-ai>=2.5.0
+jupyter-ai-magics>=2.5.0
+openai>=1.3.0
+
+# Presentation tools
+rise>=5.7.1
+notebook>=6.0.0

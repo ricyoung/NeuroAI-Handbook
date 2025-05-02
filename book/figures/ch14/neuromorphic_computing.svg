@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="500" viewBox="0 0 800 500">
+  <style>
+    .title { font: bold 20px sans-serif; }
+    .subtitle { font: bold 16px sans-serif; }
+    .label { font: 14px sans-serif; }
+    .small-label { font: 12px sans-serif; }
+    .caption { font: italic 12px sans-serif; }
+  </style>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f8f8" rx="10" ry="10" />
+  
+  <!-- Title -->
+  <text x="400" y="30" class="title" text-anchor="middle">Neuromorphic Computing: Bridging Brains and Machines</text>
+  
+  <!-- Center dividing line -->
+  <line x1="400" y1="50" x2="400" y2="470" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5" />
+  
+  <!-- Left side: Biological Neurons -->
+  <text x="200" y="70" class="subtitle" text-anchor="middle" fill="#1a5276">Biological Neural Systems</text>
+  
+  <!-- Neuron with parts labeled -->
+  <g transform="translate(50, 140)">
+    <!-- Cell body -->
+    <ellipse cx="150" cy="100" rx="30" ry="25" fill="#85c1e9" stroke="#2e86c1" stroke-width="2" />
+    <text x="150" y="105" class="small-label" text-anchor="middle">Soma</text>
+    
+    <!-- Dendrites -->
+    <path d="M 120 90 C 70 40, 40 110, 90 80" fill="none" stroke="#2e86c1" stroke-width="2" />
+    <path d="M 125 80 C 90 20, 50 50, 70 70" fill="none" stroke="#2e86c1" stroke-width="2" />
+    <path d="M 130 75 C 100 10, 150 30, 120 75" fill="none" stroke="#2e86c1" stroke-width="2" />
+    <text x="80" y="40" class="small-label" text-anchor="middle">Dendrites</text>
+    
+    <!-- Axon -->
+    <path d="M 180 105 C 250 105, 250 145, 300 145" fill="none" stroke="#2e86c1" stroke-width="2" />
+    <text x="240" y="130" class="small-label" text-anchor="middle">Axon</text>
+    
+    <!-- Spike train visualization -->
+    <line x1="200" y1="80" x2="290" y2="80" stroke="#333" stroke-width="1" />
+    <line x1="210" y1="80" x2="210" y2="60" stroke="#e74c3c" stroke-width="2" />
+    <line x1="230" y1="80" x2="230" y2="60" stroke="#e74c3c" stroke-width="2" />
+    <line x1="260" y1="80" x2="260" y2="60" stroke="#e74c3c" stroke-width="2" />
+    <line x1="280" y1="80" x2="280" y2="60" stroke="#e74c3c" stroke-width="2" />
+    <text x="245" y="55" class="small-label" text-anchor="middle" fill="#e74c3c">Spikes</text>
+    
+    <!-- Key properties -->
+    <text x="150" y="180" class="label" text-anchor="middle">Key Properties:</text>
+    <text x="150" y="200" class="small-label" text-anchor="middle">• Spike-based communication</text>
+    <text x="150" y="220" class="small-label" text-anchor="middle">• Massively parallel</text>
+    <text x="150" y="240" class="small-label" text-anchor="middle">• Energy efficient</text>
+    <text x="150" y="260" class="small-label" text-anchor="middle">• Co-located memory & computation</text>
+  </g>
+  
+  <!-- Right side: Neuromorphic Hardware -->
+  <text x="600" y="70" class="subtitle" text-anchor="middle" fill="#6c3483">Neuromorphic Hardware</text>
+  
+  <!-- Chip visualization -->
+  <g transform="translate(450, 100)">
+    <!-- Chip base -->
+    <rect x="50" y="40" width="200" height="150" fill="#d2b4de" stroke="#6c3483" stroke-width="2" rx="5" ry="5" />
+    
+    <!-- Core units -->
+    <rect x="70" y="60" width="35" height="35" fill="#9b59b6" stroke="#6c3483" stroke-width="1" />
+    <rect x="115" y="60" width="35" height="35" fill="#9b59b6" stroke="#6c3483" stroke-width="1" />
+    <rect x="160" y="60" width="35" height="35" fill="#9b59b6" stroke="#6c3483" stroke-width="1" />
+    <rect x="205" y="60" width="35" height="35" fill="#9b59b6" stroke="#6c3483" stroke-width="1" />
+    
+    <rect x="70" y="105" width="35" height="35" fill="#9b59b6" stroke="#6c3483" stroke-width="1" />
+    <rect x="115" y="105" width="35" height="35" fill="#9b59b6" stroke="#6c3483" stroke-width="1" />
+    <rect x="160" y="105" width="35" height="35" fill="#9b59b6" stroke="#6c3483" stroke-width="1" />
+    <rect x="205" y="105" width="35" height="35" fill="#9b59b6" stroke="#6c3483" stroke-width="1" />
+    
+    <rect x="70" y="150" width="35" height="35" fill="#9b59b6" stroke="#6c3483" stroke-width="1" />
+    <rect x="115" y="150" width="35" height="35" fill="#9b59b6" stroke="#6c3483" stroke-width="1" />
+    <rect x="160" y="150" width="35" height="35" fill="#9b59b6" stroke="#6c3483" stroke-width="1" />
+    <rect x="205" y="150" width="35" height="35" fill="#9b59b6" stroke="#6c3483" stroke-width="1" />
+    
+    <text x="150" y="40" class="small-label" text-anchor="middle">Neuromorphic Chip</text>
+    
+    <!-- Technologies -->
+    <text x="150" y="220" class="label" text-anchor="middle">Technologies:</text>
+    <text x="150" y="240" class="small-label" text-anchor="middle">• Spiking Neural Networks (SNNs)</text>
+    <text x="150" y="260" class="small-label" text-anchor="middle">• Memristors/Resistive Computing</text>
+    <text x="150" y="280" class="small-label" text-anchor="middle">• Intel Loihi / IBM TrueNorth</text>
+    <text x="150" y="300" class="small-label" text-anchor="middle">• Event-based sensors (DVS)</text>
+  </g>
+
+  <!-- Bottom row - Advantages comparison -->
+  <rect x="50" y="370" width="300" height="100" fill="#eaeded" stroke="#95a5a6" stroke-width="1" rx="5" ry="5" />
+  <text x="200" y="390" class="label" text-anchor="middle" fill="#2c3e50">Biological Advantages</text>
+  <text x="200" y="410" class="small-label" text-anchor="middle">• Ultra low power consumption</text>
+  <text x="200" y="430" class="small-label" text-anchor="middle">• Robust to component failure</text>
+  <text x="200" y="450" class="small-label" text-anchor="middle">• Continuous learning & adaptation</text>
+  
+  <rect x="450" y="370" width="300" height="100" fill="#eaeded" stroke="#95a5a6" stroke-width="1" rx="5" ry="5" />
+  <text x="600" y="390" class="label" text-anchor="middle" fill="#2c3e50">Neuromorphic Advantages</text>
+  <text x="600" y="410" class="small-label" text-anchor="middle">• 100-1000x more energy efficient</text>
+  <text x="600" y="430" class="small-label" text-anchor="middle">• Real-time processing of sensory data</text>
+  <text x="600" y="450" class="small-label" text-anchor="middle">• Orders of magnitude faster than GPUs</text>
+  
+  <!-- Footer caption -->
+  <text x="400" y="490" class="caption" text-anchor="middle">Neuromorphic computing aims to implement brain-inspired architectures in hardware, capturing the energy efficiency and computational capability of biological neural systems.</text>
+</svg>

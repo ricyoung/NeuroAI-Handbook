@@ -51,6 +51,7 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -58,6 +59,8 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'part2/ch05_brain_networks';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://neuroai-handbook.github.io/part2/ch05_brain_networks.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Chapter 6: Neurostimulation &amp; Plasticity" href="ch06_neurostimulation.html" />
@@ -153,8 +156,8 @@
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="The Neuroscience of AI - Home"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="The Neuroscience of AI - Home"/>`);</script>
+    <img src="../_static/nai.png" class="logo__image only-light" alt="The Neuroscience of AI - Home"/>
+    <script>document.write(`<img src="../_static/nai.png" class="logo__image only-dark" alt="The Neuroscience of AI - Home"/>`);</script>
   
   
 </a></div>
@@ -204,15 +207,31 @@
 <li class="toctree-l1"><a class="reference internal" href="../part4/ch12_large_language_models.html">Chapter 12: Large Language Models &amp; Fine-Tuning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part4/ch13_multimodal_models.html">Chapter 13: Multimodal &amp; Diffusion Models</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part V · Reflection &amp; Futures</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part V · Ethics &amp; Futures</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../part5/ch14_future_directions.html">Chapter 14: Where Next for Neuro-AI?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part5/ch15_ethical_ai.html">Chapter 15: Ethical AI - Considerations for NeuroAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part5/ch16_future_directions.html">Chapter 16: Where Next for Neuro-AI?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VI · Advanced Applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch17_bci_human_ai_interfaces.html">Brain-Computer Interfaces and Human-AI Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch18_neuromorphic_computing.html">Chapter 18: Neuromorphic Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch19_cognitive_neuro_dl.html">Cognitive Neuroscience and Deep Learning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../part6/ch20_case_studies.html">Case Studies in NeuroAI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../part6/ch20_interactive.html">Interactive NeuroAI Case Studies</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch21_ai_for_neuro_discovery.html">Chapter 21: AI for Neuroscience Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch22_embodied_ai_robotics.html">Chapter 22: Embodied AI and Robotics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch23_lifelong_learning.html">Chapter 23: Lifelong Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendices/glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendices/math_python_refresher.html">Appendix A: Math &amp; Python Mini-Refresher</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../appendices/dataset_catalogue.html">Appendix B: Dataset Catalogue</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../appendices/colab_setup.html">Appendix C: Colab Setup Tips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/colab_setup.html">Appendix C: Google Colab Setup for NeuroAI</a></li>
 </ul>
 
     </div>
@@ -278,6 +297,23 @@
   <i class="fab fa-github"></i>
   </span>
 <span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/edit/master/docs/part2/ch05_brain_networks.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
 </a>
 </li>
       
@@ -409,24 +445,59 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-goals">5.0 Chapter Goals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-neuroscience-fundamentals">5.1 Network Neuroscience Fundamentals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-default-mode-network-dmn">5.2 The Default Mode Network (DMN)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executive-control-networks">5.3 Executive Control Networks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-interactions">5.4 Network Interactions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-approaches">5.5 Computational Approaches</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab">5.6 Code Lab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">5.7 Take-aways</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">5.8 Further Reading &amp; Media</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-depth-content">In-Depth Content</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The Default Mode Network (DMN)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Executive Control Networks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-interaction">Dynamic Interaction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transcranial-direct-current-stimulation-tdcs">Transcranial Direct Current Stimulation (tDCS)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-code-examples">Python Code Examples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cognition-in-ai">Cognition in AI</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metacognition-and-self-supervision">Metacognition and Self-Supervision</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suggested-readings">Suggested Readings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-videos-lectures">Supplementary Videos/Lectures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-neuroscience-fundamentals">5.1 Network Neuroscience Fundamentals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-local-circuits-to-distributed-networks">From Local Circuits to Distributed Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-for-studying-brain-networks">Methods for Studying Brain Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-vs-structural-connectivity">Functional vs Structural Connectivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-metrics-and-their-interpretation">Network Metrics and Their Interpretation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-default-mode-network-dmn">5.2 The Default Mode Network (DMN)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discovery-and-components">Discovery and Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-referential-processing">Self-Referential Processing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mind-wandering-and-creativity">Mind-Wandering and Creativity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-to-memory-and-imagination">Relation to Memory and Imagination</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executive-control-networks">5.3 Executive Control Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frontoparietal-control-network">Frontoparietal Control Network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#salience-network">Salience Network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cognitive-control-functions">Cognitive Control Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-memory-and-attention">Working Memory and Attention</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-interactions">5.4 Network Interactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anti-correlation-and-competitive-dynamics">Anti-Correlation and Competitive Dynamics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-positive-vs-task-negative-networks">Task-Positive vs Task-Negative Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-network-reconfiguration">Dynamic Network Reconfiguration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#balance-and-dysregulation-in-disorders">Balance and Dysregulation in Disorders</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-approaches">5.5 Computational Approaches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theoretical-models">Graph Theoretical Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-causal-modeling">Dynamic Causal Modeling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-mass-models">Neural Mass Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links-to-reservoir-computing">Links to Reservoir Computing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab">5.6 Code Lab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-analysis-of-brain-connectivity-data">Network Analysis of Brain Connectivity Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-coupled-oscillator-networks">Simulating Coupled Oscillator Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-network-dynamics">Visualizing Network Dynamics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">5.7 Take-aways</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-function-emerges-from-network-interactions">Brain Function Emerges from Network Interactions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#balance-between-networks-supports-adaptive-cognition">Balance Between Networks Supports Adaptive Cognition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-properties-constrain-and-enable-computation">Network Properties Constrain and Enable Computation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">5.8 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-papers">Key Papers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#books">Books</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#online-resources">Online Resources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#videos-and-lectures">Videos and Lectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorials-and-code">Tutorials and Code</a></li>
 </ul>
 </li>
 </ul>
@@ -449,105 +520,732 @@ document.write(`
 <li><p>Contrast default-mode and executive control networks</p></li>
 <li><p>Connect network dynamics to cognitive functions</p></li>
 <li><p>Explore computational models of brain network interactions</p></li>
+<li><p>Apply network analysis approaches to neural data</p></li>
+<li><p>Draw parallels between brain network dynamics and artificial intelligence</p></li>
 </ul>
 </section>
 <section id="network-neuroscience-fundamentals">
 <h2>5.1 Network Neuroscience Fundamentals<a class="headerlink" href="#network-neuroscience-fundamentals" title="Link to this heading">#</a></h2>
+<section id="from-local-circuits-to-distributed-networks">
+<h3>From Local Circuits to Distributed Networks<a class="headerlink" href="#from-local-circuits-to-distributed-networks" title="Link to this heading">#</a></h3>
+<p>The brain is not a collection of isolated regions but a highly integrated system of networks spanning different spatial scales. While individual neurons form local circuits through synaptic connections, these circuits in turn connect to form large-scale networks that coordinate activity across brain regions.</p>
+<p>Network neuroscience has emerged as a framework to understand how these interconnected systems give rise to cognitive functions and behavior. Rather than focusing on the activity of individual regions, network approaches emphasize the patterns of communication between regions and how these interactions enable complex information processing.</p>
+</section>
+<section id="methods-for-studying-brain-networks">
+<h3>Methods for Studying Brain Networks<a class="headerlink" href="#methods-for-studying-brain-networks" title="Link to this heading">#</a></h3>
+<p>Several complementary techniques allow us to observe brain networks in action:</p>
+<p><strong>Functional MRI (fMRI)</strong> measures blood-oxygen-level-dependent (BOLD) signals across the brain, providing an indirect measure of neural activity. While its temporal resolution is limited (typically 1-2 seconds), its spatial resolution allows researchers to map functional connections across the entire brain.</p>
+<p><strong>Electroencephalography (EEG)</strong> and <strong>Magnetoencephalography (MEG)</strong> detect electrical signals and magnetic fields generated by neuronal activity, respectively. They offer millisecond-level temporal precision but more limited spatial resolution compared to fMRI.</p>
+<p><strong>Diffusion MRI</strong> measures the diffusion of water molecules to map structural connections (white matter tracts) between brain regions, providing the physical substrate for network communication.</p>
+</section>
+<section id="functional-vs-structural-connectivity">
+<h3>Functional vs Structural Connectivity<a class="headerlink" href="#functional-vs-structural-connectivity" title="Link to this heading">#</a></h3>
+<p>Brain networks can be characterized in two fundamental ways:</p>
+<p><strong>Structural connectivity</strong> refers to the physical connections (axonal pathways) linking different brain regions. These anatomical connections, especially long-range white matter tracts, form the physical infrastructure for information transfer.</p>
+<p><strong>Functional connectivity</strong> refers to the statistical dependencies between the activity patterns of different brain regions. Two regions with highly correlated activity are considered functionally connected, regardless of whether they share direct structural connections.</p>
+<p>While structural connections constrain possible functional interactions, functional connectivity is dynamic and context-dependent, changing with cognitive demands and states of consciousness.</p>
+</section>
+<section id="network-metrics-and-their-interpretation">
+<h3>Network Metrics and Their Interpretation<a class="headerlink" href="#network-metrics-and-their-interpretation" title="Link to this heading">#</a></h3>
+<p>Graph theory provides mathematical tools to analyze brain networks, where brain regions are represented as nodes and their connections as edges:</p>
 <ul class="simple">
-<li><p>From local circuits to distributed networks</p></li>
-<li><p>Methods: fMRI, EEG, MEG, graph theory</p></li>
-<li><p>Functional vs structural connectivity</p></li>
-<li><p>Network metrics and their interpretation</p></li>
+<li><p><strong>Degree</strong>: The number of connections a region has, indicating its connectivity importance</p></li>
+<li><p><strong>Clustering coefficient</strong>: The extent to which a region’s neighbors are connected to each other, reflecting local integration</p></li>
+<li><p><strong>Path length</strong>: The minimum number of steps needed to travel between two regions, indicating network efficiency</p></li>
+<li><p><strong>Modularity</strong>: The degree to which a network can be divided into distinct communities or modules</p></li>
+<li><p><strong>Centrality measures</strong>: Metrics that identify hub regions crucial for network communication</p></li>
 </ul>
+<p>These metrics help characterize network organization and reveal principles of brain function, such as small-world architecture (high clustering with short path lengths) and rich-club organization (highly connected hubs that preferentially connect to each other).</p>
+</section>
 </section>
 <section id="the-default-mode-network-dmn">
 <h2>5.2 The Default Mode Network (DMN)<a class="headerlink" href="#the-default-mode-network-dmn" title="Link to this heading">#</a></h2>
+<section id="discovery-and-components">
+<h3>Discovery and Components<a class="headerlink" href="#discovery-and-components" title="Link to this heading">#</a></h3>
+<p>The default mode network (DMN) was discovered serendipitously in the late 1990s. Researchers noticed that certain brain regions consistently showed decreased activity during demanding tasks compared to rest, suggesting a “default mode” of brain function that is active when we are not engaged in explicit tasks.</p>
+<p>The core regions of the DMN include:</p>
 <ul class="simple">
-<li><p>Discovery and components</p></li>
-<li><p>Self-referential processing</p></li>
-<li><p>Mind-wandering and creativity</p></li>
-<li><p>Relation to memory and imagination</p></li>
+<li><p><strong>Medial prefrontal cortex (mPFC)</strong>: Involved in self-referential processing and social cognition</p></li>
+<li><p><strong>Posterior cingulate cortex (PCC)/precuneus</strong>: Associated with autobiographical memory and self-awareness</p></li>
+<li><p><strong>Angular gyri</strong>: Integrative hubs involved in semantic processing and memory</p></li>
+<li><p><strong>Hippocampal formation</strong>: Critical for memory encoding and retrieval</p></li>
+<li><p><strong>Lateral temporal cortex</strong>: Involved in conceptual processing and semantic memory</p></li>
 </ul>
+<p><img alt="Default Mode vs Executive Control Networks" src="../_images/brain_networks.svg" /></p>
+<p>The DMN is often referred to as a “task-negative” network because its activity typically decreases during externally-directed tasks, though this terminology has been debated as our understanding of its functions has evolved.</p>
+</section>
+<section id="self-referential-processing">
+<h3>Self-Referential Processing<a class="headerlink" href="#self-referential-processing" title="Link to this heading">#</a></h3>
+<p>One key function of the DMN is self-referential thinking - reflecting on our own thoughts, feelings, and experiences. The medial prefrontal cortex is particularly active when we think about ourselves, our traits, or our emotional states.</p>
+<p>This introspective capacity may underlie metacognition, the ability to monitor and evaluate our own cognitive processes. Self-referential processing also supports social cognition, as we often understand others by referencing our own experiences and mental states.</p>
+</section>
+<section id="mind-wandering-and-creativity">
+<h3>Mind-Wandering and Creativity<a class="headerlink" href="#mind-wandering-and-creativity" title="Link to this heading">#</a></h3>
+<p>The DMN is highly active during mind-wandering, when our thoughts drift away from the immediate environment to internally generated content. This “stimulus-independent thought” occurs frequently in daily life - studies suggest people spend 30-50% of their waking hours mind-wandering.</p>
+<p>Rather than being purely wasteful, mind-wandering serves important functions:</p>
+<ul class="simple">
+<li><p>Autobiographical planning</p></li>
+<li><p>Creative problem-solving</p></li>
+<li><p>Maintaining a sense of personal identity</p></li>
+<li><p>Simulating social interactions</p></li>
+</ul>
+<p>DMN activity has been linked to creative cognition, particularly during the “incubation” phase when we step away from a problem. The network may facilitate the formation of novel associations between previously unconnected ideas, supporting moments of insight.</p>
+</section>
+<section id="relation-to-memory-and-imagination">
+<h3>Relation to Memory and Imagination<a class="headerlink" href="#relation-to-memory-and-imagination" title="Link to this heading">#</a></h3>
+<p>The DMN plays a crucial role in both remembering the past and imagining the future. This “mental time travel” relies on the construction of scenes and episodes from stored knowledge, engaging similar neural machinery for both retrospection and prospection.</p>
+<p>The hippocampus, which connects with core DMN regions, contributes to this process by retrieving and recombining memory elements into coherent representations. This explains why patients with hippocampal damage show deficits not only in recalling past events but also in imagining novel future scenarios.</p>
+<p>The DMN’s role in imagination extends beyond temporal simulations to counterfactual thinking (considering “what might have been”) and creating fictional scenarios, highlighting its broader involvement in generative mental processes.</p>
+</section>
 </section>
 <section id="executive-control-networks">
 <h2>5.3 Executive Control Networks<a class="headerlink" href="#executive-control-networks" title="Link to this heading">#</a></h2>
+<section id="frontoparietal-control-network">
+<h3>Frontoparietal Control Network<a class="headerlink" href="#frontoparietal-control-network" title="Link to this heading">#</a></h3>
+<p>The frontoparietal control network (FPCN) is a set of regions primarily including:</p>
 <ul class="simple">
-<li><p>Frontoparietal control network</p></li>
-<li><p>Salience network</p></li>
-<li><p>Cognitive control functions</p></li>
-<li><p>Working memory and attention</p></li>
+<li><p><strong>Dorsolateral prefrontal cortex (dlPFC)</strong>: Critical for working memory and cognitive control</p></li>
+<li><p><strong>Anterior cingulate cortex (ACC)</strong>: Involved in performance monitoring and conflict detection</p></li>
+<li><p><strong>Posterior parietal cortex</strong>: Supporting attentional selection and goal-directed behavior</p></li>
+<li><p><strong>Anterior insula</strong>: Contributing to salience detection and network switching</p></li>
 </ul>
+<p>This network activates during tasks requiring cognitive control, such as response inhibition, task switching, and working memory maintenance. It is sometimes called a “task-positive” network because its activity typically increases during externally-directed, goal-oriented tasks.</p>
+<p>The FPCN is particularly engaged when tasks involve:</p>
+<ul class="simple">
+<li><p>Maintaining and manipulating information in working memory</p></li>
+<li><p>Implementing rule-based behaviors</p></li>
+<li><p>Inhibiting prepotent responses</p></li>
+<li><p>Flexibly shifting between task demands</p></li>
+</ul>
+</section>
+<section id="salience-network">
+<h3>Salience Network<a class="headerlink" href="#salience-network" title="Link to this heading">#</a></h3>
+<p>The salience network, anchored by the anterior insula and dorsal anterior cingulate cortex, plays a crucial role in detecting behaviorally relevant stimuli and coordinating network dynamics.</p>
+<p>This network acts as a switch between the DMN and the frontoparietal control network, engaging appropriate resources based on current demands. When salient events are detected, the salience network helps transition from introspective processing to goal-directed executive control.</p>
+<p>The anterior insula, in particular, is involved in interoception - awareness of internal bodily states - suggesting that physiological signals influence network dynamics and cognitive processing.</p>
+</section>
+<section id="cognitive-control-functions">
+<h3>Cognitive Control Functions<a class="headerlink" href="#cognitive-control-functions" title="Link to this heading">#</a></h3>
+<p>Executive control networks support a range of cognitive control functions:</p>
+<p><strong>Inhibitory control</strong> allows us to suppress inappropriate responses and resist interference from distractors, critical for maintaining goal-directed behavior in the face of competing stimuli.</p>
+<p><strong>Conflict monitoring</strong>, primarily associated with the anterior cingulate cortex, detects when our automatic responses conflict with task goals, signaling the need for increased control.</p>
+<p><strong>Task-set maintenance</strong> keeps relevant rules and goals active to guide behavior, while <strong>task-switching</strong> enables flexible shifts between different cognitive operations based on changing demands.</p>
+<p>These functions collectively enable adaptive behavior in complex environments, where goals must be maintained despite distractions, and strategies must be adjusted in response to changing circumstances.</p>
+</section>
+<section id="working-memory-and-attention">
+<h3>Working Memory and Attention<a class="headerlink" href="#working-memory-and-attention" title="Link to this heading">#</a></h3>
+<p>Working memory—the ability to temporarily maintain and manipulate information—is a core function supported by executive networks, particularly the dorsolateral prefrontal cortex.</p>
+<p>Models of working memory have evolved from static “storage buffers” to dynamic processes involving the selective maintenance of relevant information through sustained attention. The frontoparietal network implements this process by:</p>
+<ol class="arabic simple">
+<li><p>Selecting relevant information for processing</p></li>
+<li><p>Maintaining representations through persistent neural activity</p></li>
+<li><p>Protecting these representations from interference</p></li>
+<li><p>Manipulating information according to task demands</p></li>
+</ol>
+<p>Attention, closely linked to working memory, involves selecting certain stimuli for enhanced processing while filtering out irrelevant information. Executive networks implement both top-down attentional control (based on goals and expectations) and bottom-up capture (based on stimulus salience).</p>
+</section>
 </section>
 <section id="network-interactions">
 <h2>5.4 Network Interactions<a class="headerlink" href="#network-interactions" title="Link to this heading">#</a></h2>
+<section id="anti-correlation-and-competitive-dynamics">
+<h3>Anti-Correlation and Competitive Dynamics<a class="headerlink" href="#anti-correlation-and-competitive-dynamics" title="Link to this heading">#</a></h3>
+<p>One of the most striking findings in network neuroscience is the anti-correlated relationship between the default mode network and executive control networks. When one network increases in activity, the other typically decreases.</p>
+<p><img alt="Network Dynamics" src="../_images/network_dynamics.svg" /></p>
+<p>This pattern, first observed in resting-state fMRI studies, suggests a competitive relationship between internal, self-generated cognition and external, task-focused attention. The anti-correlation is strongest during demanding cognitive tasks but persists even during rest.</p>
+<p>The degree of segregation between these networks has functional significance—reduced anti-correlation has been observed in conditions including aging, ADHD, and schizophrenia, suggesting that appropriate network segregation supports optimal cognitive functioning.</p>
+</section>
+<section id="task-positive-vs-task-negative-networks">
+<h3>Task-Positive vs Task-Negative Networks<a class="headerlink" href="#task-positive-vs-task-negative-networks" title="Link to this heading">#</a></h3>
+<p>The terms “task-positive” and “task-negative” emerged from early observations that executive networks increase activity during tasks while the DMN decreases. However, this dichotomy has been challenged by more nuanced findings:</p>
+<ol class="arabic simple">
+<li><p>The DMN activates during certain types of tasks, particularly those involving social cognition, autobiographical memory, or semantic processing</p></li>
+<li><p>Different portions of the DMN show distinct activation patterns during different cognitive states</p></li>
+<li><p>The relationship between networks depends on task demands and individual differences</p></li>
+</ol>
+<p>Rather than strict opposition, these networks may represent complementary modes of cognition that are differentially engaged based on current demands and priorities.</p>
+</section>
+<section id="dynamic-network-reconfiguration">
+<h3>Dynamic Network Reconfiguration<a class="headerlink" href="#dynamic-network-reconfiguration" title="Link to this heading">#</a></h3>
+<p>Brain networks are not static but undergo continuous reconfiguration in response to changing cognitive demands. This dynamic reorganization occurs across multiple timescales:</p>
 <ul class="simple">
-<li><p>Anti-correlation and competitive dynamics</p></li>
-<li><p>Task-positive vs task-negative networks</p></li>
-<li><p>Dynamic network reconfiguration</p></li>
-<li><p>Balance and dysregulation in disorders</p></li>
+<li><p>Rapid (millisecond to second) reconfiguration in response to immediate demands</p></li>
+<li><p>Medium-term (minutes to hours) adjustments reflecting learning or fatigue</p></li>
+<li><p>Long-term (days to years) changes corresponding to development or skill acquisition</p></li>
 </ul>
+<p>Network reconfiguration involves changes in both the strength of connections and the patterns of interaction between networks. Periods of transition between cognitive states show unique network configurations, suggesting that the brain passes through specific “network states” as it shifts between different cognitive operations.</p>
+<p>Modern approaches to studying these dynamics include sliding-window analyses, dynamic functional connectivity, and state-space models that capture moment-to-moment fluctuations in network organization.</p>
+</section>
+<section id="balance-and-dysregulation-in-disorders">
+<h3>Balance and Dysregulation in Disorders<a class="headerlink" href="#balance-and-dysregulation-in-disorders" title="Link to this heading">#</a></h3>
+<p>The appropriate balance between networks supports adaptive cognition, while dysregulation contributes to various neuropsychiatric conditions:</p>
+<ul class="simple">
+<li><p><strong>Depression</strong> often involves hyperactivity of the DMN, particularly in regions involved in rumination</p></li>
+<li><p><strong>ADHD</strong> is associated with reduced anti-correlation between DMN and executive networks, perhaps contributing to attentional lapses</p></li>
+<li><p><strong>Schizophrenia</strong> shows altered connectivity within and between networks, potentially underlying disrupted thought processes</p></li>
+<li><p><strong>Autism</strong> features atypical connectivity patterns, particularly in networks supporting social cognition</p></li>
+</ul>
+<p>These observations have led to reconceptualizing many disorders as “network pathologies” rather than dysfunction of isolated regions. This perspective helps explain why diverse symptoms often co-occur within disorders and why interventions that modulate network dynamics may have broad therapeutic effects.</p>
+</section>
 </section>
 <section id="computational-approaches">
 <h2>5.5 Computational Approaches<a class="headerlink" href="#computational-approaches" title="Link to this heading">#</a></h2>
+<section id="graph-theoretical-models">
+<h3>Graph Theoretical Models<a class="headerlink" href="#graph-theoretical-models" title="Link to this heading">#</a></h3>
+<p>Graph theory provides a powerful framework for modeling and analyzing brain networks. In this approach, brain regions are represented as nodes, and their functional or structural connections as edges.</p>
+<p>Key graph-theoretical measures applied to brain networks include:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># Create a simple brain network graph</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_brain_network</span><span class="p">(</span><span class="n">num_regions</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">connection_density</span><span class="o">=</span><span class="mf">0.3</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Create a simple brain network using random connections with community structure.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        num_regions: Number of brain regions (nodes)</span>
+<span class="sd">        connection_density: Probability of connection between regions</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        G: NetworkX graph representing brain network</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Create random adjacency matrix with some structure</span>
+    <span class="c1"># (DMN community and Executive community)</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># For reproducibility</span>
+    <span class="n">adj_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_regions</span><span class="p">,</span> <span class="n">num_regions</span><span class="p">))</span>
+    
+    <span class="c1"># DMN community (first half of nodes)</span>
+    <span class="n">dmn_size</span> <span class="o">=</span> <span class="n">num_regions</span> <span class="o">//</span> <span class="mi">2</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dmn_size</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dmn_size</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">connection_density</span> <span class="o">*</span> <span class="mf">1.5</span><span class="p">:</span>  <span class="c1"># Higher within-community density</span>
+                <span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="mf">0.5</span>  <span class="c1"># Stronger weights (0.5-1.0)</span>
+                <span class="n">adj_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">weight</span>
+                <span class="n">adj_matrix</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">weight</span>  <span class="c1"># Symmetric</span>
+    
+    <span class="c1"># Executive community (second half of nodes)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dmn_size</span><span class="p">,</span> <span class="n">num_regions</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_regions</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">connection_density</span> <span class="o">*</span> <span class="mf">1.5</span><span class="p">:</span>
+                <span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="mf">0.5</span>
+                <span class="n">adj_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">weight</span>
+                <span class="n">adj_matrix</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">weight</span>
+    
+    <span class="c1"># Between-community connections (sparser)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dmn_size</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">dmn_size</span><span class="p">,</span> <span class="n">num_regions</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">connection_density</span> <span class="o">*</span> <span class="mf">0.5</span><span class="p">:</span>  <span class="c1"># Lower between-community density</span>
+                <span class="n">weight</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.3</span> <span class="o">+</span> <span class="mf">0.1</span>  <span class="c1"># Weaker weights (0.1-0.4)</span>
+                <span class="n">adj_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">weight</span>
+                <span class="n">adj_matrix</span><span class="p">[</span><span class="n">j</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">weight</span>
+    
+    <span class="c1"># Create graph from adjacency matrix</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_array</span><span class="p">(</span><span class="n">adj_matrix</span><span class="p">)</span>
+    
+    <span class="c1"># Add attributes to nodes</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_regions</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">dmn_size</span><span class="p">:</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;DMN&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Executive&#39;</span>
+    
+    <span class="k">return</span> <span class="n">G</span><span class="p">,</span> <span class="n">adj_matrix</span>
+
+<span class="c1"># Calculate common graph theory metrics</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">calculate_network_metrics</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate common graph theoretical metrics for the brain network.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        G: NetworkX graph representing brain network</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        metrics: Dictionary of network metrics</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">metrics</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="c1"># Node-level metrics</span>
+    <span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;degree&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">G</span><span class="p">))</span>
+    <span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;clustering&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;betweenness&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    
+    <span class="c1"># Network-level metrics</span>
+    <span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;avg_path_length&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+    <span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;global_efficiency&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">global_efficiency</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;modularity&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">community</span><span class="o">.</span><span class="n">modularity</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> 
+                                                  <span class="p">[{</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+                                                    <span class="k">if</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;DMN&#39;</span><span class="p">},</span>
+                                                   <span class="p">{</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+                                                    <span class="k">if</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Executive&#39;</span><span class="p">}])</span>
+    
+    <span class="c1"># Small-worldness (approximation)</span>
+    <span class="c1"># Compare clustering and path length to random graph</span>
+    <span class="n">G_rand</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">random_reference</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">niter</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">C_rand</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">average_clustering</span><span class="p">(</span><span class="n">G_rand</span><span class="p">)</span>
+    <span class="n">L_rand</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">G_rand</span><span class="p">)</span>
+    
+    <span class="n">C</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">average_clustering</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">average_shortest_path_length</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    
+    <span class="n">metrics</span><span class="p">[</span><span class="s1">&#39;small_worldness&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">C</span><span class="o">/</span><span class="n">C_rand</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">L</span><span class="o">/</span><span class="n">L_rand</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">metrics</span>
+
+<span class="c1"># Example usage:</span>
+<span class="c1"># G, adj_matrix = create_brain_network(num_regions=20)</span>
+<span class="c1"># metrics = calculate_network_metrics(G)</span>
+</pre></div>
+</div>
+<p>These metrics capture important organizational principles:</p>
+<ol class="arabic simple">
+<li><p><strong>Small-world architecture</strong>: Brain networks show high clustering (efficient local processing) combined with short path lengths (efficient global communication)</p></li>
+<li><p><strong>Modularity</strong>: Networks organize into communities with dense within-module connections and sparser between-module connections</p></li>
+<li><p><strong>Hub organization</strong>: Certain regions act as highly connected hubs that facilitate communication between modules</p></li>
+</ol>
+<p>These properties support the efficient integration of information while maintaining specialized processing, balancing segregation and integration.</p>
+</section>
+<section id="dynamic-causal-modeling">
+<h3>Dynamic Causal Modeling<a class="headerlink" href="#dynamic-causal-modeling" title="Link to this heading">#</a></h3>
+<p>Dynamic Causal Modeling (DCM) provides a framework for inferring causal interactions between brain regions based on their observed activity. Unlike functional connectivity, which only captures statistical dependencies, DCM attempts to model the directional influence of one region on another.</p>
+<p>DCM combines a neural model (describing how neural populations interact) with a hemodynamic model (describing how neural activity translates to measured signals like BOLD responses). This allows researchers to test hypotheses about the directionality and strength of connections.</p>
+<p>For example, DCM can help determine whether activity in the salience network causally influences the switching between default mode and executive networks, or whether these dynamics emerge from other processes.</p>
+<p>The approach involves:</p>
+<ol class="arabic simple">
+<li><p>Defining a set of candidate models with different connection architectures</p></li>
+<li><p>Estimating parameters for each model based on observed data</p></li>
+<li><p>Comparing models to determine which best explains the observed dynamics</p></li>
+</ol>
+</section>
+<section id="neural-mass-models">
+<h3>Neural Mass Models<a class="headerlink" href="#neural-mass-models" title="Link to this heading">#</a></h3>
+<p>Neural mass models aim to capture the collective behavior of large neural populations, bridging the gap between single-neuron dynamics and whole-brain networks.</p>
+<p>These models typically represent each brain region as a dynamical system characterized by a few state variables (such as mean membrane potential and firing rate). Regions are coupled through excitatory and inhibitory connections to form networks.</p>
+<p>A simple neural mass model for coupled brain regions might be described by equations like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">neural_mass_model</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">state</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    A simplified neural mass model for two coupled brain regions </span>
+<span class="sd">    (DMN and Executive Network)</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        t: Time point</span>
+<span class="sd">        state: Current state variables [E1, I1, E2, I2]</span>
+<span class="sd">               E1, I1: Excitatory and inhibitory populations in region 1 (DMN)</span>
+<span class="sd">               E2, I2: Excitatory and inhibitory populations in region 2 (Executive)</span>
+<span class="sd">        params: Dictionary of parameters</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        derivatives: Rate of change for each state variable</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">E1</span><span class="p">,</span> <span class="n">I1</span><span class="p">,</span> <span class="n">E2</span><span class="p">,</span> <span class="n">I2</span> <span class="o">=</span> <span class="n">state</span>
+    
+    <span class="c1"># Extract parameters</span>
+    <span class="n">tau_e</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;tau_e&#39;</span><span class="p">]</span>  <span class="c1"># Time constant for excitatory populations</span>
+    <span class="n">tau_i</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;tau_i&#39;</span><span class="p">]</span>  <span class="c1"># Time constant for inhibitory populations</span>
+    <span class="n">w_ee</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;w_ee&#39;</span><span class="p">]</span>    <span class="c1"># Excitatory to excitatory weight (within-region)</span>
+    <span class="n">w_ei</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;w_ei&#39;</span><span class="p">]</span>    <span class="c1"># Excitatory to inhibitory weight (within-region)</span>
+    <span class="n">w_ie</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;w_ie&#39;</span><span class="p">]</span>    <span class="c1"># Inhibitory to excitatory weight (within-region)</span>
+    <span class="n">w_ii</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;w_ii&#39;</span><span class="p">]</span>    <span class="c1"># Inhibitory to inhibitory weight (within-region)</span>
+    <span class="n">w_12</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;w_12&#39;</span><span class="p">]</span>    <span class="c1"># Connection weight from region 1 to 2 (negative for anti-correlation)</span>
+    <span class="n">w_21</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;w_21&#39;</span><span class="p">]</span>    <span class="c1"># Connection weight from region 2 to 1 (negative for anti-correlation)</span>
+    <span class="n">I_ext1</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;I_ext1&#39;</span><span class="p">]</span>  <span class="c1"># External input to region 1</span>
+    <span class="n">I_ext2</span> <span class="o">=</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;I_ext2&#39;</span><span class="p">]</span>  <span class="c1"># External input to region 2</span>
+    
+    <span class="c1"># Sigmoid activation function</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">sigmoid</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+    
+    <span class="c1"># Compute derivatives</span>
+    <span class="n">dE1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">tau_e</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="n">E1</span> <span class="o">+</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">w_ee</span><span class="o">*</span><span class="n">E1</span> <span class="o">-</span> <span class="n">w_ie</span><span class="o">*</span><span class="n">I1</span> <span class="o">+</span> <span class="n">w_21</span><span class="o">*</span><span class="n">E2</span> <span class="o">+</span> <span class="n">I_ext1</span><span class="p">))</span>
+    <span class="n">dI1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">tau_i</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="n">I1</span> <span class="o">+</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">w_ei</span><span class="o">*</span><span class="n">E1</span> <span class="o">-</span> <span class="n">w_ii</span><span class="o">*</span><span class="n">I1</span><span class="p">))</span>
+    <span class="n">dE2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">tau_e</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="n">E2</span> <span class="o">+</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">w_ee</span><span class="o">*</span><span class="n">E2</span> <span class="o">-</span> <span class="n">w_ie</span><span class="o">*</span><span class="n">I2</span> <span class="o">+</span> <span class="n">w_12</span><span class="o">*</span><span class="n">E1</span> <span class="o">+</span> <span class="n">I_ext2</span><span class="p">))</span>
+    <span class="n">dI2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">tau_i</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="n">I2</span> <span class="o">+</span> <span class="n">sigmoid</span><span class="p">(</span><span class="n">w_ei</span><span class="o">*</span><span class="n">E2</span> <span class="o">-</span> <span class="n">w_ii</span><span class="o">*</span><span class="n">I2</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="p">[</span><span class="n">dE1</span><span class="p">,</span> <span class="n">dI1</span><span class="p">,</span> <span class="n">dE2</span><span class="p">,</span> <span class="n">dI2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>These models can reproduce key features of brain dynamics, including:</p>
 <ul class="simple">
-<li><p>Graph theoretical models</p></li>
-<li><p>Dynamic causal modeling</p></li>
-<li><p>Neural mass models</p></li>
-<li><p>Links to reservoir computing</p></li>
+<li><p>Oscillatory behavior at different frequencies</p></li>
+<li><p>Phase synchronization between regions</p></li>
+<li><p>State transitions in response to parameter changes</p></li>
+<li><p>Complex spatiotemporal patterns of activity</p></li>
 </ul>
+<p>By adjusting connection strengths and other parameters, researchers can explore how network architecture influences dynamics and test hypotheses about mechanisms underlying observed phenomena.</p>
+</section>
+<section id="links-to-reservoir-computing">
+<h3>Links to Reservoir Computing<a class="headerlink" href="#links-to-reservoir-computing" title="Link to this heading">#</a></h3>
+<p>The brain’s recurrent network architecture has inspired artificial neural network approaches like reservoir computing. Reservoir computing systems consist of:</p>
+<ol class="arabic simple">
+<li><p>A large, randomly connected recurrent neural network (the “reservoir”)</p></li>
+<li><p>Input connections that feed signals into the reservoir</p></li>
+<li><p>Output connections that read out from the reservoir’s activity</p></li>
+</ol>
+<p>The key insight is that complex, dynamic reservoirs can transform inputs into high-dimensional representations that make classification or prediction tasks easier to solve. The reservoir itself remains fixed (untrained), while only the output connections are adjusted through learning.</p>
+<p>This approach bears interesting parallels to brain network dynamics:</p>
+<ul class="simple">
+<li><p>The intrinsic activity of brain networks provides a complex, high-dimensional state space</p></li>
+<li><p>Different cognitive tasks may utilize different readouts from this ongoing activity</p></li>
+<li><p>The anti-correlation between default mode and executive networks might represent different operating regimes within this dynamical system</p></li>
+</ul>
+<p>Echo State Networks and Liquid State Machines are two common implementations of reservoir computing that have been used to model aspects of brain function, including working memory, sequence learning, and temporal integration.</p>
+</section>
 </section>
 <section id="code-lab">
 <h2>5.6 Code Lab<a class="headerlink" href="#code-lab" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Network analysis of brain connectivity data</p></li>
-<li><p>Simulating coupled oscillator networks</p></li>
-<li><p>Visualizing network dynamics</p></li>
-</ul>
-</section>
-<section id="take-aways">
-<h2>5.7 Take-aways<a class="headerlink" href="#take-aways" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Brain function emerges from network interactions</p></li>
-<li><p>Balance between networks supports adaptive cognition</p></li>
-<li><p>Network properties constrain and enable computation</p></li>
-</ul>
-</section>
-<section id="further-reading-media">
-<h2>5.8 Further Reading &amp; Media<a class="headerlink" href="#further-reading-media" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Raichle (2015) - “The Brain’s Default Mode Network”</p></li>
-<li><p>Cole et al. (2014) - “Intrinsic and Task-Evoked Network Architectures of the Human Brain”</p></li>
-<li><p>Bassett &amp; Sporns (2017) - “Network neuroscience”</p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="in-depth-content">
-<h2>In-Depth Content<a class="headerlink" href="#in-depth-content" title="Link to this heading">#</a></h2>
-<section id="id1">
-<h3>The Default Mode Network (DMN)<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
-<p>The Default Mode Network (DMN) is a set of brain regions (medial prefrontal cortex, posterior cingulate, precuneus, angular gyrus, etc.) that consistently show high activity during rest and self-referential thought. The DMN is most active when we recall memories, imagine the future, or reflect on ourselves – essentially, when we are not focused on an external task. It is often called the brain’s “task-negative” or introspective network.</p>
-<p>Key point: The DMN activates in the resting state and is involved in self-referential and introspective thought. It deactivates during external goal-driven tasks, suggesting a toggle between internal and external modes of cognition.</p>
-</section>
-<section id="id2">
-<h3>Executive Control Networks<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
-<p>In contrast, when the brain engages in a demanding task, other networks kick in – e.g., the Fronto-Parietal Network (FPN) or dorsal attention network – which handle attention, problem-solving, and working memory. These can be seen as the brain’s “task-positive” networks, directing focus to external goals.</p>
-</section>
-<section id="dynamic-interaction">
-<h3>Dynamic Interaction<a class="headerlink" href="#dynamic-interaction" title="Link to this heading">#</a></h3>
-<p>The DMN and executive networks are often anti-correlated (when one is active, the other quiets down). This balance might be analogous to how an AI agent could have a mode for planning (internally simulate scenarios) versus a mode for direct action/perception. We consider whether today’s AI models have an equivalent of a default mode – for instance, a language model generating text without a prompt could be likened to “daydreaming,” or generative models creating data akin to imagination.</p>
-</section>
-<section id="transcranial-direct-current-stimulation-tdcs">
-<h3>Transcranial Direct Current Stimulation (tDCS)<a class="headerlink" href="#transcranial-direct-current-stimulation-tdcs" title="Link to this heading">#</a></h3>
-<p>Transcranial Direct Current Stimulation (tDCS) is a form of non-invasive brain stimulation that uses a weak electrical current applied to the scalp to change the likelihood of neuronal firing and modulate brain activity. Stimulating regions of the DMN or executive network can alter cognitive performance (some studies attempt to enhance learning or creativity by targeting these networks). This raises an interesting parallel: in AI, we sometimes “fine-tune” or adjust parts of a network externally – could ideas from tDCS inform non-gradient interventions in AI models?</p>
-</section>
-<section id="python-code-examples">
-<h3>Python Code Examples<a class="headerlink" href="#python-code-examples" title="Link to this heading">#</a></h3>
+<section id="network-analysis-of-brain-connectivity-data">
+<h3>Network Analysis of Brain Connectivity Data<a class="headerlink" href="#network-analysis-of-brain-connectivity-data" title="Link to this heading">#</a></h3>
+<p>Let’s explore how to analyze brain connectivity data using Python. We’ll simulate a dataset representing functional connectivity between brain regions and apply network analysis techniques:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+
+<span class="c1"># Create simulated connectivity matrix for 10 brain regions</span>
+<span class="c1"># (5 DMN regions, 5 Executive regions)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">generate_connectivity_matrix</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Generate a simulated functional connectivity matrix between brain regions</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        conn_matrix: Connectivity matrix (correlation values)</span>
+<span class="sd">        region_names: List of region names</span>
+<span class="sd">        network_labels: Network assignment for each region</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span>
+    
+    <span class="c1"># Define regions</span>
+    <span class="n">dmn_regions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mPFC&#39;</span><span class="p">,</span> <span class="s1">&#39;PCC&#39;</span><span class="p">,</span> <span class="s1">&#39;Precuneus&#39;</span><span class="p">,</span> <span class="s1">&#39;AngularL&#39;</span><span class="p">,</span> <span class="s1">&#39;AngularR&#39;</span><span class="p">]</span>
+    <span class="n">exec_regions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dlPFC_L&#39;</span><span class="p">,</span> <span class="s1">&#39;dlPFC_R&#39;</span><span class="p">,</span> <span class="s1">&#39;IPS_L&#39;</span><span class="p">,</span> <span class="s1">&#39;IPS_R&#39;</span><span class="p">,</span> <span class="s1">&#39;ACC&#39;</span><span class="p">]</span>
+    <span class="n">region_names</span> <span class="o">=</span> <span class="n">dmn_regions</span> <span class="o">+</span> <span class="n">exec_regions</span>
+    <span class="n">network_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;DMN&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;Executive&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">5</span>
+    
+    <span class="n">n_regions</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">region_names</span><span class="p">)</span>
+    
+    <span class="c1"># Start with random correlation matrix</span>
+    <span class="n">random_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n_regions</span><span class="p">,</span> <span class="n">n_regions</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.3</span>
+    <span class="n">conn_matrix</span> <span class="o">=</span> <span class="n">random_matrix</span> <span class="o">+</span> <span class="n">random_matrix</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># Make it symmetric</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">fill_diagonal</span><span class="p">(</span><span class="n">conn_matrix</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>  <span class="c1"># Diagonal is 1 (self-correlation)</span>
+    
+    <span class="c1"># Set high within-network connectivity</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>
+                <span class="c1"># High DMN internal connectivity</span>
+                <span class="n">conn_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.3</span>
+                
+                <span class="c1"># High Executive internal connectivity</span>
+                <span class="n">conn_matrix</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">5</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.3</span>
+    
+    <span class="c1"># Set negative between-network connectivity (anti-correlation)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+            <span class="n">conn_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.2</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">*</span> <span class="mf">0.4</span>
+            <span class="n">conn_matrix</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">5</span><span class="p">,</span> <span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">conn_matrix</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="o">+</span><span class="mi">5</span><span class="p">]</span>  <span class="c1"># Ensure symmetry</span>
+    
+    <span class="c1"># Ensure values are in [-1, 1] range</span>
+    <span class="n">conn_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">conn_matrix</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">conn_matrix</span><span class="p">,</span> <span class="n">region_names</span><span class="p">,</span> <span class="n">network_labels</span>
+
+<span class="c1"># Plot connectivity matrix as a heatmap</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">plot_connectivity_heatmap</span><span class="p">(</span><span class="n">conn_matrix</span><span class="p">,</span> <span class="n">region_names</span><span class="p">,</span> <span class="n">network_labels</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Visualize connectivity matrix as a heatmap with network boundaries</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    
+    <span class="c1"># Create a mask for the upper triangle (redundant in symmetric matrix)</span>
+    <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">conn_matrix</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">))</span>
+    
+    <span class="c1"># Set up custom colormap with white center</span>
+    <span class="n">cmap</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">diverging_palette</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="n">as_cmap</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Plot heatmap</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">conn_matrix</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> 
+                <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="n">square</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">.5</span><span class="p">,</span> 
+                <span class="n">xticklabels</span><span class="o">=</span><span class="n">region_names</span><span class="p">,</span> <span class="n">yticklabels</span><span class="o">=</span><span class="n">region_names</span><span class="p">,</span>
+                <span class="n">cbar_kws</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;shrink&quot;</span><span class="p">:</span> <span class="mf">.5</span><span class="p">})</span>
+    
+    <span class="c1"># Add network boundary lines</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="c1"># Add network labels</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">2.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;DMN&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">7.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="s1">&#39;Executive&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="s1">&#39;DMN&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="s1">&#39;Executive&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Functional Connectivity Matrix&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Calculate and visualize network metrics</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">analyze_brain_network</span><span class="p">(</span><span class="n">conn_matrix</span><span class="p">,</span> <span class="n">region_names</span><span class="p">,</span> <span class="n">network_labels</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.3</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Convert connectivity matrix to a graph and analyze network properties</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        conn_matrix: Connectivity matrix</span>
+<span class="sd">        region_names: Names of brain regions</span>
+<span class="sd">        network_labels: Network assignment for each region</span>
+<span class="sd">        threshold: Threshold for including connections</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Create weighted graph from absolute connectivity values</span>
+    <span class="c1"># (direction of correlation doesn&#39;t affect network measures)</span>
+    <span class="n">adj_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">conn_matrix</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">conn_matrix</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">threshold</span><span class="p">)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_array</span><span class="p">(</span><span class="n">adj_matrix</span><span class="p">)</span>
+    
+    <span class="c1"># Add node attributes</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">network</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">region_names</span><span class="p">,</span> <span class="n">network_labels</span><span class="p">)):</span>
+        <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">network</span>
+    
+    <span class="c1"># Calculate network metrics</span>
+    <span class="n">degree</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">nx</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">))</span>
+    <span class="n">clustering</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">clustering</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">)</span>
+    <span class="n">betweenness</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">betweenness_centrality</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="s1">&#39;weight&#39;</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Compile results</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;Region&#39;</span><span class="p">:</span> <span class="n">region_names</span><span class="p">,</span>
+        <span class="s1">&#39;Network&#39;</span><span class="p">:</span> <span class="n">network_labels</span><span class="p">,</span>
+        <span class="s1">&#39;Degree&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">degree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">region_names</span><span class="p">))],</span>
+        <span class="s1">&#39;Clustering&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">clustering</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">region_names</span><span class="p">))],</span>
+        <span class="s1">&#39;Betweenness&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">betweenness</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">region_names</span><span class="p">))]</span>
+    <span class="p">})</span>
+    
+    <span class="c1"># Calculate community structure</span>
+    <span class="n">communities</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">community</span><span class="o">.</span><span class="n">greedy_modularity_communities</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Detected communities:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">comm</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">communities</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Community </span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="p">[</span><span class="n">region_names</span><span class="p">[</span><span class="n">node</span><span class="p">]</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">node</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">comm</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Visualize the network</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+    
+    <span class="c1"># Define positions (circular layout with DMN and Executive separated)</span>
+    <span class="n">pos</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">dmn_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">network_labels</span><span class="p">)</span> <span class="k">if</span> <span class="n">label</span> <span class="o">==</span> <span class="s1">&#39;DMN&#39;</span><span class="p">]</span>
+    <span class="n">exec_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">network_labels</span><span class="p">)</span> <span class="k">if</span> <span class="n">label</span> <span class="o">==</span> <span class="s1">&#39;Executive&#39;</span><span class="p">]</span>
+    
+    <span class="c1"># DMN nodes on the left</span>
+    <span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dmn_indices</span><span class="p">),</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">radius</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dmn_indices</span><span class="p">):</span>
+        <span class="n">pos</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angles</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">6</span><span class="p">,</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angles</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span>
+    
+    <span class="c1"># Executive nodes on the right</span>
+    <span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">exec_indices</span><span class="p">),</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">exec_indices</span><span class="p">):</span>
+        <span class="n">pos</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angles</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="mi">6</span><span class="p">,</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angles</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span>
+    
+    <span class="c1"># Node colors by network</span>
+    <span class="n">node_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;skyblue&#39;</span> <span class="k">if</span> <span class="n">label</span> <span class="o">==</span> <span class="s1">&#39;DMN&#39;</span> <span class="k">else</span> <span class="s1">&#39;salmon&#39;</span> <span class="k">for</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">network_labels</span><span class="p">]</span>
+    
+    <span class="c1"># Node sizes by betweenness centrality</span>
+    <span class="n">node_sizes</span> <span class="o">=</span> <span class="p">[</span><span class="n">betweenness</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3000</span> <span class="o">+</span> <span class="mi">500</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">region_names</span><span class="p">))]</span>
+    
+    <span class="c1"># Edge weights for width</span>
+    <span class="n">edge_weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">()]</span>
+    
+    <span class="c1"># Draw the graph</span>
+    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">pos</span><span class="p">,</span> 
+                    <span class="n">node_color</span><span class="o">=</span><span class="n">node_colors</span><span class="p">,</span> 
+                    <span class="n">node_size</span><span class="o">=</span><span class="n">node_sizes</span><span class="p">,</span>
+                    <span class="n">width</span><span class="o">=</span><span class="n">edge_weights</span><span class="p">,</span>
+                    <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()},</span>
+                    <span class="n">font_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                    <span class="n">font_weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span>
+                    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Brain Network Graph&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="c1"># Plot metrics by network</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    
+    <span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Degree&#39;</span><span class="p">,</span> <span class="s1">&#39;Clustering&#39;</span><span class="p">,</span> <span class="s1">&#39;Betweenness&#39;</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">metric</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">metrics</span><span class="p">):</span>
+        <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Network&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">metric</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">metric</span><span class="si">}</span><span class="s1"> by Network&#39;</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">df</span><span class="p">,</span> <span class="n">G</span>
+
+<span class="c1"># Example usage:</span>
+<span class="c1"># conn_matrix, region_names, network_labels = generate_connectivity_matrix()</span>
+<span class="c1"># plot_connectivity_heatmap(conn_matrix, region_names, network_labels)</span>
+<span class="c1"># metrics_df, G = analyze_brain_network(conn_matrix, region_names, network_labels)</span>
+</pre></div>
+</div>
+</section>
+<section id="simulating-coupled-oscillator-networks">
+<h3>Simulating Coupled Oscillator Networks<a class="headerlink" href="#simulating-coupled-oscillator-networks" title="Link to this heading">#</a></h3>
+<p>Brain networks can be modeled as systems of coupled oscillators, where each oscillator represents a brain region with its own intrinsic frequency. The following code simulates this type of system to explore how coupling affects network dynamics:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve_ivp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.animation</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">animation</span>
+
+<span class="c1"># Kuramoto model of coupled oscillators</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">kuramoto_model</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phases</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Kuramoto model of coupled oscillators</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        t: Time point</span>
+<span class="sd">        phases: Current phase of each oscillator (in radians)</span>
+<span class="sd">        omega: Natural frequencies of oscillators</span>
+<span class="sd">        K: Coupling strength</span>
+<span class="sd">        A: Adjacency matrix defining connections</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        dphases: Rate of change of phases</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">phases</span><span class="p">)</span>
+    <span class="n">dphases</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">dphases</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">omega</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>  <span class="c1"># Natural frequency</span>
+        
+        <span class="c1"># Add coupling terms</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">dphases</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">K</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phases</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">phases</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            
+    <span class="k">return</span> <span class="n">dphases</span>
+
+<span class="c1"># Simulating network dynamics with Kuramoto model</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">simulate_brain_oscillators</span><span class="p">(</span><span class="n">conn_matrix</span><span class="p">,</span> <span class="n">region_names</span><span class="p">,</span> <span class="n">network_labels</span><span class="p">,</span> 
+                               <span class="n">duration</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">K</span><span class="o">=</span><span class="mf">0.8</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Simulate brain regions as coupled oscillators using the Kuramoto model</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        conn_matrix: Connectivity matrix</span>
+<span class="sd">        region_names: Names of brain regions</span>
+<span class="sd">        network_labels: Network assignment for each region</span>
+<span class="sd">        duration: Simulation duration (seconds)</span>
+<span class="sd">        dt: Time step</span>
+<span class="sd">        K: Coupling strength</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        t: Time points</span>
+<span class="sd">        phases: Phases of oscillators over time</span>
+<span class="sd">        order_param: Order parameter (synchronization measure) over time</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">n_regions</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">region_names</span><span class="p">)</span>
+    
+    <span class="c1"># Set natural frequencies - different frequency bands for DMN and Executive</span>
+    <span class="c1"># DMN regions: slower oscillations (alpha/theta range)</span>
+    <span class="c1"># Executive regions: faster oscillations (beta range)</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_regions</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_regions</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">network_labels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;DMN&#39;</span><span class="p">:</span>
+            <span class="n">omega</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">*</span> <span class="mi">4</span>  <span class="c1"># 8-12 Hz (alpha)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">omega</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">15</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">*</span> <span class="mi">10</span>  <span class="c1"># 15-25 Hz (beta)</span>
+    
+    <span class="c1"># Normalize by 2π for phase calculations</span>
+    <span class="n">omega</span> <span class="o">=</span> <span class="n">omega</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    
+    <span class="c1"># Use absolute connectivity values for coupling (negative correlations still couple)</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">conn_matrix</span><span class="p">)</span>
+    
+    <span class="c1"># Initial phases (random)</span>
+    <span class="n">phases_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">n_regions</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+    
+    <span class="c1"># Time points</span>
+    <span class="n">t_span</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">duration</span><span class="p">)</span>
+    <span class="n">t_eval</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">duration</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+    
+    <span class="c1"># Solve the differential equations</span>
+    <span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">kuramoto_model</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">A</span><span class="p">),</span>
+        <span class="n">t_span</span><span class="p">,</span>
+        <span class="n">phases_0</span><span class="p">,</span>
+        <span class="n">method</span><span class="o">=</span><span class="s1">&#39;RK45&#39;</span><span class="p">,</span>
+        <span class="n">t_eval</span><span class="o">=</span><span class="n">t_eval</span>
+    <span class="p">)</span>
+    
+    <span class="c1"># Calculate order parameter (measure of synchronization)</span>
+    <span class="c1"># r = 1 means perfect synchronization, r = 0 means no synchronization</span>
+    <span class="n">phases</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">y</span>
+    <span class="n">order_param</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t_eval</span><span class="p">))</span>
+    <span class="n">dmn_order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t_eval</span><span class="p">))</span>
+    <span class="n">exec_order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t_eval</span><span class="p">))</span>
+    
+    <span class="n">dmn_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">network_labels</span><span class="p">)</span> <span class="k">if</span> <span class="n">label</span> <span class="o">==</span> <span class="s1">&#39;DMN&#39;</span><span class="p">]</span>
+    <span class="n">exec_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">network_labels</span><span class="p">)</span> <span class="k">if</span> <span class="n">label</span> <span class="o">==</span> <span class="s1">&#39;Executive&#39;</span><span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t_eval</span><span class="p">)):</span>
+        <span class="c1"># Global synchronization</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phases</span><span class="p">[:,</span> <span class="n">t</span><span class="p">]))</span> <span class="o">/</span> <span class="n">n_regions</span><span class="p">)</span>
+        <span class="n">order_param</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">r</span>
+        
+        <span class="c1"># DMN synchronization</span>
+        <span class="n">r_dmn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phases</span><span class="p">[</span><span class="n">dmn_indices</span><span class="p">,</span> <span class="n">t</span><span class="p">]))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">dmn_indices</span><span class="p">))</span>
+        <span class="n">dmn_order</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">r_dmn</span>
+        
+        <span class="c1"># Executive synchronization</span>
+        <span class="n">r_exec</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">phases</span><span class="p">[</span><span class="n">exec_indices</span><span class="p">,</span> <span class="n">t</span><span class="p">]))</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">exec_indices</span><span class="p">))</span>
+        <span class="n">exec_order</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">r_exec</span>
+    
+    <span class="c1"># Plot results</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    
+    <span class="c1"># Plot individual phases</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">211</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_regions</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">network_labels</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;DMN&#39;</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unwrap</span><span class="p">(</span><span class="n">phases</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;_nolegend_&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unwrap</span><span class="p">(</span><span class="n">phases</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">),</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;_nolegend_&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Add legend entries (only once)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;DMN&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([],</span> <span class="p">[],</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Executive&#39;</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Phase / 2π&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Oscillator Phases&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    
+    <span class="c1"># Plot order parameters</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">212</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">order_param</span><span class="p">,</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Global&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">dmn_order</span><span class="p">,</span> <span class="s1">&#39;b-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;DMN&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">exec_order</span><span class="p">,</span> <span class="s1">&#39;r-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Executive&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Order Parameter&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Synchronization&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">phases</span><span class="p">,</span> <span class="n">order_param</span><span class="p">,</span> <span class="n">dmn_order</span><span class="p">,</span> <span class="n">exec_order</span>
+
+<span class="c1"># Example usage:</span>
+<span class="c1"># conn_matrix, region_names, network_labels = generate_connectivity_matrix()</span>
+<span class="c1"># t, phases, order_param, dmn_order, exec_order = simulate_brain_oscillators(conn_matrix, region_names, network_labels)</span>
+</pre></div>
+</div>
+</section>
+<section id="visualizing-network-dynamics">
+<h3>Visualizing Network Dynamics<a class="headerlink" href="#visualizing-network-dynamics" title="Link to this heading">#</a></h3>
+<p>Let’s simulate how external tasks or stimulation might affect the balance between DMN and executive networks:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
 
 <span class="c1"># Simulate a simple brain network model with DMN and Executive Network dynamics</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">simulate_brain_networks</span><span class="p">(</span><span class="n">duration</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">sampling_rate</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">noise_level</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">task_timing</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
@@ -632,81 +1330,34 @@ document.write(`
     <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-<span class="c1"># Create a graph visualization of brain networks</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">visualize_brain_networks</span><span class="p">():</span>
-    <span class="c1"># Create graph</span>
-    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
     
-    <span class="c1"># Define network nodes</span>
-    <span class="n">dmn_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;mPFC&#39;</span><span class="p">,</span> <span class="s1">&#39;PCC&#39;</span><span class="p">,</span> <span class="s1">&#39;Precuneus&#39;</span><span class="p">,</span> <span class="s1">&#39;Angular_L&#39;</span><span class="p">,</span> <span class="s1">&#39;Angular_R&#39;</span><span class="p">,</span> <span class="s1">&#39;MTL_L&#39;</span><span class="p">,</span> <span class="s1">&#39;MTL_R&#39;</span><span class="p">]</span>
-    <span class="n">exec_nodes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;dlPFC_L&#39;</span><span class="p">,</span> <span class="s1">&#39;dlPFC_R&#39;</span><span class="p">,</span> <span class="s1">&#39;IPS_L&#39;</span><span class="p">,</span> <span class="s1">&#39;IPS_R&#39;</span><span class="p">,</span> <span class="s1">&#39;ACC&#39;</span><span class="p">,</span> <span class="s1">&#39;pre-SMA&#39;</span><span class="p">]</span>
+    <span class="c1"># Plot a sliding window correlation analysis</span>
+    <span class="n">window_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)</span> <span class="o">//</span> <span class="mi">10</span>
+    <span class="n">step_size</span> <span class="o">=</span> <span class="n">window_size</span> <span class="o">//</span> <span class="mi">2</span>
     
-    <span class="c1"># Add nodes</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([(</span><span class="n">node</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;network&#39;</span><span class="p">:</span> <span class="s1">&#39;DMN&#39;</span><span class="p">})</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">dmn_nodes</span><span class="p">])</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">add_nodes_from</span><span class="p">([(</span><span class="n">node</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;network&#39;</span><span class="p">:</span> <span class="s1">&#39;Executive&#39;</span><span class="p">})</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">exec_nodes</span><span class="p">])</span>
+    <span class="n">sliding_corr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">window_centers</span> <span class="o">=</span> <span class="p">[]</span>
     
-    <span class="c1"># Add intra-network edges (strong connections)</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dmn_nodes</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">node2</span> <span class="ow">in</span> <span class="n">dmn_nodes</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:]:</span>
-            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">time</span><span class="p">)</span> <span class="o">-</span> <span class="n">window_size</span><span class="p">,</span> <span class="n">step_size</span><span class="p">):</span>
+        <span class="n">window_dmn</span> <span class="o">=</span> <span class="n">dmn_activity</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">window_size</span><span class="p">]</span>
+        <span class="n">window_exec</span> <span class="o">=</span> <span class="n">exec_activity</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">window_size</span><span class="p">]</span>
+        <span class="n">corr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">window_dmn</span><span class="p">,</span> <span class="n">window_exec</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">sliding_corr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">corr</span><span class="p">)</span>
+        <span class="n">window_centers</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">window_size</span><span class="o">//</span><span class="mi">2</span><span class="p">])</span>
     
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node1</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">exec_nodes</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">node2</span> <span class="ow">in</span> <span class="n">exec_nodes</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:]:</span>
-            <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">window_centers</span><span class="p">,</span> <span class="n">sliding_corr</span><span class="p">,</span> <span class="s1">&#39;k-&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (seconds)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;DMN-Executive Correlation&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sliding Window Correlation Analysis&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
     
-    <span class="c1"># Add inter-network edges (weaker connections)</span>
-    <span class="k">for</span> <span class="n">node1</span> <span class="ow">in</span> <span class="n">dmn_nodes</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">node2</span> <span class="ow">in</span> <span class="n">exec_nodes</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.3</span><span class="p">:</span>  <span class="c1"># Only some inter-network connections</span>
-                <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">))</span>
+    <span class="c1"># Highlight task periods</span>
+    <span class="k">if</span> <span class="n">task_timing</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="ow">in</span> <span class="n">task_timing</span><span class="p">:</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">axvspan</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
     
-    <span class="c1"># Create positions</span>
-    <span class="n">pos</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="c1"># DMN nodes in a circle on the left</span>
-    <span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dmn_nodes</span><span class="p">),</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">radius</span> <span class="o">=</span> <span class="mi">10</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">dmn_nodes</span><span class="p">):</span>
-        <span class="n">pos</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angles</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="mi">15</span><span class="p">,</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angles</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span>
-    
-    <span class="c1"># Executive nodes in a circle on the right</span>
-    <span class="n">angles</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">exec_nodes</span><span class="p">),</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">node</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">exec_nodes</span><span class="p">):</span>
-        <span class="n">pos</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angles</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">+</span> <span class="mi">15</span><span class="p">,</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angles</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span>
-    
-    <span class="c1"># Prepare for visualization</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-    
-    <span class="c1"># Draw nodes</span>
-    <span class="n">dmn_nodes_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;DMN&#39;</span><span class="p">]</span>
-    <span class="n">exec_nodes_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">node</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">node</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Executive&#39;</span><span class="p">]</span>
-    
-    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="n">dmn_nodes_list</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> 
-                          <span class="n">node_size</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;DMN&#39;</span><span class="p">)</span>
-    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">nodelist</span><span class="o">=</span><span class="n">exec_nodes_list</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span>
-                          <span class="n">node_size</span><span class="o">=</span><span class="mi">700</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Executive Network&#39;</span><span class="p">)</span>
-    
-    <span class="c1"># Draw within-network edges</span>
-    <span class="n">dmn_edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;DMN&#39;</span> <span class="ow">and</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;DMN&#39;</span><span class="p">]</span>
-    <span class="n">exec_edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Executive&#39;</span> <span class="ow">and</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Executive&#39;</span><span class="p">]</span>
-    <span class="n">between_edges</span> <span class="o">=</span> <span class="p">[(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span> <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;network&#39;</span><span class="p">]]</span>
-    
-    <span class="c1"># Get weights for edge thickness</span>
-    <span class="n">dmn_weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">dmn_edges</span><span class="p">]</span>
-    <span class="n">exec_weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">exec_edges</span><span class="p">]</span>
-    <span class="n">between_weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="s1">&#39;weight&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">between_edges</span><span class="p">]</span>
-    
-    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edgelist</span><span class="o">=</span><span class="n">dmn_edges</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">dmn_weights</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edgelist</span><span class="o">=</span><span class="n">exec_edges</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">exec_weights</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edgelist</span><span class="o">=</span><span class="n">between_edges</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">between_weights</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> 
-                           <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">)</span>
-    
-    <span class="c1"># Draw labels</span>
-    <span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">font_weight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
-    
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Brain Networks: Default Mode Network &amp; Executive Control Network&quot;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
@@ -801,35 +1452,152 @@ document.write(`
 <span class="c1"># Example calls:</span>
 <span class="c1"># time_series, dmn, exec_net = simulate_brain_networks(task_timing=[(100, 150), (300, 350)])</span>
 <span class="c1"># plot_network_timeseries(time_series, dmn, exec_net, task_timing=[(100, 150), (300, 350)])</span>
-<span class="c1"># visualize_brain_networks()</span>
 <span class="c1"># simulate_tdcs_effect(target_network=&#39;Executive&#39;)</span>
 </pre></div>
 </div>
 </section>
-<section id="cognition-in-ai">
-<h3>Cognition in AI<a class="headerlink" href="#cognition-in-ai" title="Link to this heading">#</a></h3>
-<p>Exploring whether AI architectures explicitly incorporate something analogous to DMN: Some advanced AI might have a planning module (imagination) separate from perception modules. Research on generative models that simulate possible futures (planning algorithms in reinforcement learning that use Monte Carlo rollouts – conceptually similar to imagining scenarios) provides interesting parallels. While not a direct analog, it sparks discussion on modularizing AI cognition.</p>
 </section>
-<section id="metacognition-and-self-supervision">
-<h3>Metacognition and Self-Supervision<a class="headerlink" href="#metacognition-and-self-supervision" title="Link to this heading">#</a></h3>
-<p>The brain’s ability to introspect (think about its own thoughts) via networks like the DMN can be loosely tied to AI models that evaluate or explain their own decisions. Current research on AI “metacognition” or self-monitoring (e.g., models that can detect when they might be wrong) represents an exciting area at the intersection of neuroscience-inspired AI.</p>
+<section id="take-aways">
+<h2>5.7 Take-aways<a class="headerlink" href="#take-aways" title="Link to this heading">#</a></h2>
+<section id="brain-function-emerges-from-network-interactions">
+<h3>Brain Function Emerges from Network Interactions<a class="headerlink" href="#brain-function-emerges-from-network-interactions" title="Link to this heading">#</a></h3>
+<p>The brain’s complex functions emerge not from isolated regions but from the dynamic interactions between distributed networks. The default mode and executive control networks represent complementary systems that support different modes of cognition, with the former specialized for internal, self-referential processing and the latter for external, goal-directed behavior.</p>
+<p>The anti-correlated relationship between these networks highlights the brain’s ability to shift resources based on current demands. This dynamic reconfiguration allows for rapid transitions between different cognitive states—from focused attention to mind-wandering, from perception to introspection.</p>
+<p>Network neuroscience provides a framework for understanding how these interactions give rise to cognitive functions, moving beyond traditional region-based approaches toward a more integrative understanding of brain dynamics.</p>
 </section>
-<section id="suggested-readings">
-<h3>Suggested Readings<a class="headerlink" href="#suggested-readings" title="Link to this heading">#</a></h3>
+<section id="balance-between-networks-supports-adaptive-cognition">
+<h3>Balance Between Networks Supports Adaptive Cognition<a class="headerlink" href="#balance-between-networks-supports-adaptive-cognition" title="Link to this heading">#</a></h3>
+<p>The appropriate balance between networks is critical for adaptive cognition. Excessive dominance of either network may lead to maladaptive function:</p>
 <ul class="simple">
-<li><p>Raichle et al. (2001), “A default mode of brain function,” PNAS – Seminal paper that first named the Default Mode Network, discussing its discovery and functions.</p></li>
-<li><p>Buckner et al. (2008), “The brain’s default network: Anatomy, function, and relevance to disease,” Annals of the NY Academy of Sciences – Reviews the DMN and its role in internal mentation and how it contrasts with active tasks.</p></li>
-<li><p>Bzdok et al. (2015), “Intrinsic brain activity reveals memory states and predictive recall,” Frontiers in Human Neuroscience – Connects DMN activity to memory and future imagination, relevant for thinking how an AI might simulate data (imagination) when not perceiving input.</p></li>
-<li><p>Nitsche &amp; Paulus (2000), “Excitability changes induced in the human motor cortex by weak tDCS,” Journal of Physiology – foundational study of tDCS effects.</p></li>
+<li><p>Overactivation of executive networks without adequate DMN activity might impair creativity, self-reflection, and long-term planning</p></li>
+<li><p>Overactivation of the DMN without sufficient executive control might lead to rumination, difficulty with focused attention, and reduced task performance</p></li>
+</ul>
+<p>This balance shifts appropriately in healthy individuals, allowing for focused attention when needed and constructive mind-wandering when appropriate. Disruption of this balance contributes to various disorders, including ADHD, depression, and schizophrenia.</p>
+<p>The dynamic coupling between networks also supports transitions between exploration (broadly sampling possibilities) and exploitation (focusing on optimal solutions), a tension relevant to both biological and artificial intelligence.</p>
+</section>
+<section id="network-properties-constrain-and-enable-computation">
+<h3>Network Properties Constrain and Enable Computation<a class="headerlink" href="#network-properties-constrain-and-enable-computation" title="Link to this heading">#</a></h3>
+<p>The structural and functional organization of brain networks both constrains and enables cognitive computation. Properties such as small-world architecture, modularity, and rich-club organization support efficient information processing by balancing integration and segregation.</p>
+<p>These principles may inform artificial intelligence design:</p>
+<ol class="arabic simple">
+<li><p><strong>Modular, semi-specialized networks</strong> may outperform monolithic architectures for certain tasks, mirroring the brain’s specialized yet integrated networks</p></li>
+<li><p><strong>Dynamic resource allocation</strong> between different processing modes might enhance adaptive learning and problem-solving</p></li>
+<li><p><strong>Graph-theoretic properties</strong> like small-world organization could inspire more efficient neural network architectures</p></li>
+<li><p><strong>Anti-correlated systems</strong> may provide useful tension between complementary processing modes</p></li>
+</ol>
+<p>The brain’s network architecture represents an evolutionary solution to complex information processing under biological constraints. Understanding these organizing principles may inspire new approaches to artificial intelligence that incorporate lessons from network neuroscience.</p>
+</section>
+</section>
+<section id="further-reading-media">
+<h2>5.8 Further Reading &amp; Media<a class="headerlink" href="#further-reading-media" title="Link to this heading">#</a></h2>
+<section id="key-papers">
+<h3>Key Papers<a class="headerlink" href="#key-papers" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Raichle, M. E., MacLeod, A. M., Snyder, A. Z., Powers, W. J., Gusnard, D. A., &amp; Shulman, G. L. (2001). A default mode of brain function. <em>Proceedings of the National Academy of Sciences</em>, 98(2), 676-682.</p>
+<ul>
+<li><p>The foundational paper that first identified the default mode network and its unique properties</p></li>
+</ul>
+</li>
+<li><p>Fox, M. D., Snyder, A. Z., Vincent, J. L., Corbetta, M., Van Essen, D. C., &amp; Raichle, M. E. (2005). The human brain is intrinsically organized into dynamic, anticorrelated functional networks. <em>Proceedings of the National Academy of Sciences</em>, 102(27), 9673-9678.</p>
+<ul>
+<li><p>Classic paper demonstrating the anti-correlation between default mode and task-positive networks</p></li>
+</ul>
+</li>
+<li><p>Cole, M. W., Reynolds, J. R., Power, J. D., Repovs, G., Anticevic, A., &amp; Braver, T. S. (2013). Multi-task connectivity reveals flexible hubs for adaptive task control. <em>Nature Neuroscience</em>, 16(9), 1348-1355.</p>
+<ul>
+<li><p>Explores how executive control networks flexibly reconfigure based on task demands</p></li>
+</ul>
+</li>
+<li><p>Bassett, D. S., &amp; Sporns, O. (2017). Network neuroscience. <em>Nature Neuroscience</em>, 20(3), 353-364.</p>
+<ul>
+<li><p>Comprehensive review of network approaches to understanding brain organization</p></li>
+</ul>
+</li>
+<li><p>Buckner, R. L., Andrews-Hanna, J. R., &amp; Schacter, D. L. (2008). The brain’s default network: Anatomy, function, and relevance to disease. <em>Annals of the New York Academy of Sciences</em>, 1124(1), 1-38.</p>
+<ul>
+<li><p>Detailed exploration of DMN functions and their relevance to clinical conditions</p></li>
+</ul>
+</li>
 </ul>
 </section>
-<section id="supplementary-videos-lectures">
-<h3>Supplementary Videos/Lectures<a class="headerlink" href="#supplementary-videos-lectures" title="Link to this heading">#</a></h3>
+<section id="books">
+<h3>Books<a class="headerlink" href="#books" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p>Marcus Raichle – “The Brain’s Default Mode Network” (lecture) – A talk by the scientist who coined the term “DMN,” explaining its discovery and significance in accessible terms.</p></li>
-<li><p>YouTube: “Default Mode Network explained” (Psychology/Biology channel videos) – short videos describing what the DMN is and its link to daydreaming and self-referential thought.</p></li>
-<li><p>MIT Lecture – “Attention and Executive Control” – covers brain networks for attention (dorsal/ventral attention systems) and can complement understanding of task-positive networks in contrast to the DMN.</p></li>
-<li><p>BrainCraft video on tDCS – “Can Electricity Make You Smarter?” – a gentle introduction to what tDCS is, how people use it (even DIY), and what science says about its effects (cautioning that results are mixed).</p></li>
+<li><p>Sporns, O. (2010). <em>Networks of the Brain</em>. MIT Press.</p>
+<ul>
+<li><p>Comprehensive introduction to network neuroscience principles and applications</p></li>
+</ul>
+</li>
+<li><p>Northoff, G. (2013). <em>Unlocking the Brain: Volume 2: Consciousness</em>. Oxford University Press.</p>
+<ul>
+<li><p>Explores connections between brain networks and consciousness, with emphasis on DMN</p></li>
+</ul>
+</li>
+<li><p>Petersen, S. E., &amp; Sporns, O. (2015). <em>Brain Networks and Cognitive Architectures</em>. Oxford University Press.</p>
+<ul>
+<li><p>Connects brain network organization to cognitive functions</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="online-resources">
+<h3>Online Resources<a class="headerlink" href="#online-resources" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.humanconnectome.org/">Human Connectome Project</a></p>
+<ul>
+<li><p>Large-scale project mapping brain connectivity with extensive data resources</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.coursera.org/learn/network-neuroscience">Brain Networks Course</a></p>
+<ul>
+<li><p>Online course covering foundations of network neuroscience</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/brain-networks/brainnetworks">Network Neuroscience Tools</a></p>
+<ul>
+<li><p>GitHub repository with tools for brain network analysis</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="videos-and-lectures">
+<h3>Videos and Lectures<a class="headerlink" href="#videos-and-lectures" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=n1CeFv1wJAA">“Default Mode Network” by Marcus Raichle</a></p>
+<ul>
+<li><p>Lecture by the scientist who first identified the DMN</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=ApmRl9urTbM">“Functional Brain Networks” by Olaf Sporns</a></p>
+<ul>
+<li><p>Overview of network approaches to studying brain function</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=n82PFe3bogM">“Resting State fMRI” by Stephen Smith</a></p>
+<ul>
+<li><p>Explanation of resting-state functional connectivity methods</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="tutorials-and-code">
+<h3>Tutorials and Code<a class="headerlink" href="#tutorials-and-code" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://sites.google.com/site/bctnet/">Brain Connectivity Toolbox</a></p>
+<ul>
+<li><p>MATLAB toolbox for network analysis of connectivity data</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://nilearn.github.io/stable/index.html">Nilearn</a></p>
+<ul>
+<li><p>Python library for statistical analysis of neuroimaging data, including network analysis</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://networkx.org/">NetworkX</a></p>
+<ul>
+<li><p>Python library for complex network analysis applicable to brain networks</p></li>
+</ul>
+</li>
 </ul>
 </section>
 </section>
@@ -839,7 +1607,7 @@ document.write(`
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "executablebooks/jupyter-book",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -900,24 +1668,59 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-goals">5.0 Chapter Goals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-neuroscience-fundamentals">5.1 Network Neuroscience Fundamentals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-default-mode-network-dmn">5.2 The Default Mode Network (DMN)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executive-control-networks">5.3 Executive Control Networks</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-interactions">5.4 Network Interactions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-approaches">5.5 Computational Approaches</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab">5.6 Code Lab</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">5.7 Take-aways</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">5.8 Further Reading &amp; Media</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#in-depth-content">In-Depth Content</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">The Default Mode Network (DMN)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Executive Control Networks</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-interaction">Dynamic Interaction</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transcranial-direct-current-stimulation-tdcs">Transcranial Direct Current Stimulation (tDCS)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-code-examples">Python Code Examples</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cognition-in-ai">Cognition in AI</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metacognition-and-self-supervision">Metacognition and Self-Supervision</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suggested-readings">Suggested Readings</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supplementary-videos-lectures">Supplementary Videos/Lectures</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-neuroscience-fundamentals">5.1 Network Neuroscience Fundamentals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-local-circuits-to-distributed-networks">From Local Circuits to Distributed Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-for-studying-brain-networks">Methods for Studying Brain Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functional-vs-structural-connectivity">Functional vs Structural Connectivity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-metrics-and-their-interpretation">Network Metrics and Their Interpretation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-default-mode-network-dmn">5.2 The Default Mode Network (DMN)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discovery-and-components">Discovery and Components</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#self-referential-processing">Self-Referential Processing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mind-wandering-and-creativity">Mind-Wandering and Creativity</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relation-to-memory-and-imagination">Relation to Memory and Imagination</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#executive-control-networks">5.3 Executive Control Networks</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frontoparietal-control-network">Frontoparietal Control Network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#salience-network">Salience Network</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cognitive-control-functions">Cognitive Control Functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-memory-and-attention">Working Memory and Attention</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-interactions">5.4 Network Interactions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#anti-correlation-and-competitive-dynamics">Anti-Correlation and Competitive Dynamics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#task-positive-vs-task-negative-networks">Task-Positive vs Task-Negative Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-network-reconfiguration">Dynamic Network Reconfiguration</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#balance-and-dysregulation-in-disorders">Balance and Dysregulation in Disorders</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-approaches">5.5 Computational Approaches</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graph-theoretical-models">Graph Theoretical Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dynamic-causal-modeling">Dynamic Causal Modeling</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-mass-models">Neural Mass Models</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#links-to-reservoir-computing">Links to Reservoir Computing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab">5.6 Code Lab</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-analysis-of-brain-connectivity-data">Network Analysis of Brain Connectivity Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulating-coupled-oscillator-networks">Simulating Coupled Oscillator Networks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizing-network-dynamics">Visualizing Network Dynamics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">5.7 Take-aways</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#brain-function-emerges-from-network-interactions">Brain Function Emerges from Network Interactions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#balance-between-networks-supports-adaptive-cognition">Balance Between Networks Supports Adaptive Cognition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#network-properties-constrain-and-enable-computation">Network Properties Constrain and Enable Computation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading-media">5.8 Further Reading &amp; Media</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-papers">Key Papers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#books">Books</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#online-resources">Online Resources</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#videos-and-lectures">Videos and Lectures</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorials-and-code">Tutorials and Code</a></li>
 </ul>
 </li>
 </ul>

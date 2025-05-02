@@ -1,8 +1,8 @@
 # The Neuroscience of AI Handbook
 
-[![build-and-deploy-book](https://github.com/YOUR_USERNAME/NeuroAI-Handbook/actions/workflows/book.yml/badge.svg)](https://github.com/YOUR_USERNAME/NeuroAI-Handbook/actions/workflows/book.yml)
+[![build-and-deploy-book](https://github.com/neuralinterfacinglab/NeuroAI-Handbook/actions/workflows/book.yml/badge.svg)](https://github.com/neuralinterfacinglab/NeuroAI-Handbook/actions/workflows/book.yml)
 
-A comprehensive handbook bridging neuroscience and artificial intelligence concepts, with practical Python implementations.
+A comprehensive handbook bridging neuroscience and artificial intelligence concepts, with practical Python implementations and interactive code examples.
 
 ## About This Book
 
@@ -35,6 +35,7 @@ This handbook explores the intersection of neuroscience and artificial intellige
    - ✅ Where Next for Neuro-AI?
 
 6. **Appendices**
+   - ✅ Comprehensive glossary with cross-references
    - ✅ Math & Python mini-refresher
    - ✅ Dataset catalogue
    - ✅ Colab setup tips
@@ -52,7 +53,7 @@ This handbook explores the intersection of neuroscience and artificial intellige
 - **Chapter 7: Information Theory Essentials** - Mathematical foundations of information theory with applications to neural coding and AI, including implementations for entropy, mutual information, and efficient coding.
 - **Chapter 8: Data-Science Pipeline in Python** - Comprehensive workflow for neural data analysis, including preprocessing, feature extraction, and machine learning applications with detailed code examples.
 - **Chapter 9: Classical Machine-Learning Foundations** - Implementation of key ML algorithms with neural data applications, including supervised and unsupervised learning techniques, with visual diagrams illustrating learning paradigms, bias-variance tradeoff, feature selection methods, and neuroscience-ML parallels.
-- **Chapter 10: Deep Learning: Training & Optimisation** - Foundations of neural networks, backpropagation, optimization techniques, regularization methods, and connections to biological learning with PyTorch implementations.
+- **Chapter 10: Deep Learning: Training & Optimisation** - Foundations of neural networks, backpropagation, optimization techniques, regularization methods, and connections to biological learning with PyTorch implementations. Features comprehensive SVG diagrams illustrating neural network architectures, optimization algorithms, regularization techniques, advanced architectures, and biological parallels.
 - **Chapter 11: Sequence Models: RNN → Attention → Transformer** - Evolution of sequence processing from RNNs through attention mechanisms to transformer architectures, with biological parallels and practical implementations.
 - **Chapter 12: Large Language Models & Fine-Tuning** - Comprehensive overview of LLM architectures, fine-tuning approaches (including LoRA and RLHF), prompting techniques, and connections to neural language processing, with practical code labs for implementation.
 - **Chapter 13: Multimodal & Diffusion Models** - In-depth exploration of multimodal learning architectures, diffusion model principles, text-to-image generation, and neural multimodal integration, with detailed Python implementations and connections to biological multisensory processing.
@@ -60,9 +61,10 @@ This handbook explores the intersection of neuroscience and artificial intellige
 
 #### Appendices
 
-- **Appendix A: Math & Python Mini-Refresher** - Comprehensive review of essential mathematical concepts (linear algebra, calculus, probability) and Python programming fundamentals for NeuroAI research, with practical examples using NumPy, SciPy, Matplotlib, and other scientific computing libraries.
-- **Appendix B: Dataset Catalogue** - Extensive collection of neuroscience datasets (Allen Brain Atlas, Human Connectome Project), AI benchmark datasets, and NeuroAI-specific datasets with examples for data loading, preprocessing, and analysis.
-- **Appendix C: Colab Setup for NeuroAI** - Detailed guide for setting up and optimizing Google Colab for neuroscience and AI research, including environment configuration, GPU utilization, data management, memory optimization, and visualization techniques specific to NeuroAI applications.
+- **Appendix A: Comprehensive Glossary** - Alphabetically organized glossary of key terms in neuroscience, information theory, machine learning, and artificial intelligence with cross-references to relevant chapters where concepts are discussed in detail.
+- **Appendix B: Math & Python Mini-Refresher** - Comprehensive review of essential mathematical concepts (linear algebra, calculus, probability) and Python programming fundamentals for NeuroAI research, with practical examples using NumPy, SciPy, Matplotlib, and other scientific computing libraries.
+- **Appendix C: Dataset Catalogue** - Extensive collection of neuroscience datasets (Allen Brain Atlas, Human Connectome Project), AI benchmark datasets, and NeuroAI-specific datasets with examples for data loading, preprocessing, and analysis.
+- **Appendix D: Colab Setup for NeuroAI** - Detailed guide for setting up and optimizing Google Colab for neuroscience and AI research, including environment configuration, GPU utilization, data management, memory optimization, and visualization techniques specific to NeuroAI applications.
 
 ## Getting Started
 
@@ -70,17 +72,36 @@ This handbook explores the intersection of neuroscience and artificial intellige
 
 - Python 3.8 or higher
 - Jupyter notebook/lab
+- JupyterBook (for building the book)
 
 ### Installation
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/NeuroAI-Handbook.git
+git clone https://github.com/neuralinterfacinglab/NeuroAI-Handbook.git
 cd NeuroAI-Handbook
 
 # Install dependencies
 pip install -r book/requirements.txt
+
+# Install JupyterBook if you plan to build the book locally
+pip install jupyter-book
 ```
+
+### Initialization Script
+
+For a more convenient setup, use the provided initialization script:
+
+```bash
+# Run the initialization script to set up the environment
+python init_neuroai.py --all
+```
+
+The initialization script provides several options:
+- `--install-deps`: Install required dependencies
+- `--check-env`: Check the environment for required packages
+- `--create-dirs`: Create standard directory structure for exercises
+- `--all`: Perform all setup tasks (default if no flags provided)
 
 ### Building the Book
 
@@ -88,8 +109,17 @@ pip install -r book/requirements.txt
 # Build the book
 jb build book
 
-# View the book locally
+# View the book locally (open http://localhost:8000 in your browser)
 python -m http.server -d book/_build/html
+```
+
+### Running the Examples
+
+Each chapter contains executable code examples that can be run directly in the Jupyter Book interface or in Jupyter notebooks:
+
+1. **Interactive Web Version**: Visit the [online version](https://neuralinterfacinglab.github.io/NeuroAI-Handbook) to run code examples directly in your browser
+2. **Google Colab**: Most examples include "Open in Colab" buttons for easy execution in the cloud
+3. **Local Execution**: Run the notebooks locally from the `book/` directory
 ```
 
 ### Required Libraries
@@ -123,6 +153,22 @@ The examples in this handbook use the following Python libraries:
 - **Information Theoretic Learning** and **pyEntropy** for information theory applications
 - **Optuna** for hyperparameter optimization
 - **Biopython** for biological sequence analysis
+
+## Contributing
+
+We welcome contributions to the NeuroAI Handbook! Here's how you can help:
+
+1. **Report Issues**: If you find errors or have suggestions, please [open an issue](https://github.com/neuralinterfacinglab/NeuroAI-Handbook/issues)
+2. **Submit Improvements**: Feel free to submit pull requests with corrections or additional content
+3. **Share Examples**: If you have interesting neuroscience or AI examples, consider contributing them
+
+### Contribution Guidelines
+
+- Follow the existing code style and documentation patterns
+- For new content, maintain consistency with the handbook's structure
+- Include appropriate citations for scientific claims
+- Test any code examples before submitting
+- Update relevant documentation when adding features
 
 ## License
 

@@ -1,5 +1,17 @@
 # Chapter 2: Neuroscience Foundations for AI
 
+```{admonition} Learning Objectives
+:class: note
+
+By the end of this chapter, you will be able to:
+
+- **Identify** the key components of biological neurons and their computational analogs
+- **Explain** the processes of neural signaling, synaptic transmission, and plasticity
+- **Compare** biological learning mechanisms with artificial neural network training approaches
+- **Describe** the functional organization of major brain systems and their AI counterparts
+- **Implement** basic neuron simulations and Hebbian learning rules in Python
+```
+
 ## 2.0 Why This Chapter?
 
 Before we leap into convolutional networks, policy gradients, or billion-parameter transformers, we need mental "ground truth" about the biological machine that inspired all of them. By the end of this chapter you should be able to:
@@ -42,6 +54,36 @@ An arriving spike triggers Ca²⁺ influx, vesicles fuse, and transmitter molecu
 ![Neuronal Signaling Mechanisms](../figures/ch02/neuronal_signaling.svg)
 
 *Figure 2.1: Neuronal signaling mechanisms showing ion channels, action potential generation, and neurotransmitter release at the synapse.*
+
+```{admonition} Real-World Application: Neuromorphic Computing
+:class: tip
+
+The unique properties of biological neurons have inspired specialized hardware implementations:
+
+**IBM's TrueNorth Chip**
+- 1 million digital neurons and 256 million synapses
+- 4,096 neurosynaptic cores
+- Uses only 70mW of power (compared to ~100W for GPUs)
+- Applications: pattern recognition, anomaly detection, real-time sensing
+
+**Intel's Loihi Chip**
+- Implements spiking neural networks (SNNs) in hardware
+- Self-learning capabilities through STDP-based plasticity
+- 125× more energy efficient than GPU implementations for certain workloads
+- Applications: gesture recognition, robotic control, sparse data processing
+
+**SpiNNaker (Spiking Neural Network Architecture)**
+- Many-core computer architecture designed for brain modeling
+- Can simulate up to a billion neurons in real-time
+- Used in the Human Brain Project for detailed neural simulations
+- Applications: computational neuroscience, robot control, edge AI
+
+These systems capture key aspects of neural computation including:
+- Event-driven processing (only compute when signals arrive)
+- Massive parallelism with simple processing units
+- Co-location of memory and computation (avoiding the von Neumann bottleneck)
+- Inherent fault tolerance and graceful degradation
+```
 - Firing threshold → activation function f(⋅)
 - All-or-nothing spike → binary output y
 
@@ -215,6 +257,20 @@ Complete code for this lab is available in the accompanying `ch02_demo.py` file.
 - Biological neurons fire at kilohertz at best, yet 86 billion of them work in parallel while consuming only 20 W—roughly a dim light bulb.
 - Plasticity is local and continuous. Back-prop is global and episodic. Bridging the gap is an active frontier (see "feedback alignment").
 - Studying the real brain supplies "design priors" that have already birthed convolution, recurrence, attention, and spiking ASICs. Ignoring biology wholesale risks reinventing wheels—or worse, building brittle systems that fail outside curated datasets.
+
+```{admonition} Knowledge Connections
+:class: important
+
+**Looking Back**
+- **Chapter 1 (Introduction)**: This chapter expands on the historical biological inspirations for artificial neural networks introduced in Chapter 1's sections on key parallels and historical context.
+
+**Looking Forward**
+- **Chapter 3 (Spatial Navigation)**: The hippocampus, introduced in section 2.4, plays a critical role in spatial navigation through place cells, which will be explored in detail in Chapter 3.
+- **Chapter 4 (Perception Pipeline)**: The cortical circuit organization (section 2.2) provides the foundation for understanding how visual perception is organized in the brain.
+- **Chapter 7 (Information Theory)**: Hebbian plasticity and neural coding concepts connect to information-theoretic principles of efficient coding and redundancy reduction.
+- **Chapter 10 (Deep Learning)**: The discussion of biological learning (section 2.3) contrasts with deep learning optimization algorithms like backpropagation covered in Chapter 10.
+- **Chapter 11 (Sequence Models)**: Recurrent connections described in section 2.2 form the biological basis for sequence processing that inspired artificial recurrent neural networks.
+```
 
 ## 2.7 Further Reading & Media
 

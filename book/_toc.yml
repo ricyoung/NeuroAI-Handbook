@@ -30,12 +30,33 @@ parts:
       - file: part4/ch12_large_language_models
       - file: part4/ch13_multimodal_models
   
-  - caption: Part V · Reflection & Futures
+  - caption: Part V · Ethics & Futures
     chapters:
-      - file: part5/ch14_future_directions
+      - file: part5/ch15_ethical_ai
+      - file: part5/ch16_future_directions
+  
+  - caption: Part VI · Advanced Applications
+    chapters:
+      - file: part6/ch17_bci_human_ai_interfaces
+      - file: part6/ch18_neuromorphic_computing
+      - file: part6/ch19_cognitive_neuro_dl
+      - file: part6/ch20_case_studies
+        title: Case Studies in NeuroAI
+        sections:
+          - file: part6/ch20_interactive
+            title: Interactive NeuroAI Case Studies
+          - file: part6/jupyter_ai_demo
+            title: AI-Assisted Learning with Jupyter AI
+          - file: part6/rise_slides_demo
+            title: Creating Presentations with RISE
+      - file: part6/ch21_ai_for_neuro_discovery
+      - file: part6/ch22_embodied_ai_robotics
+      - file: part6/ch24_quantum_computing_neuroai
+      - file: part6/ch23_lifelong_learning
   
   - caption: Appendices
     chapters:
+      - file: appendices/glossary
       - file: appendices/math_python_refresher
       - file: appendices/dataset_catalogue
       - file: appendices/colab_setup

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="500" viewBox="0 0 800 500">
+  <style>
+    .title { font: bold 20px sans-serif; }
+    .subtitle { font: bold 16px sans-serif; }
+    .label { font: 14px sans-serif; }
+    .small-label { font: 12px sans-serif; }
+    .tiny-label { font: 10px sans-serif; }
+    .caption { font: italic 12px sans-serif; }
+    .arrow { fill: none; stroke: #666; stroke-width: 2; marker-end: url(#arrowhead); }
+    .dashed-arrow { fill: none; stroke: #666; stroke-width: 2; stroke-dasharray: 5,5; marker-end: url(#arrowhead); }
+  </style>
+  
+  <!-- Markers for arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f8f8" rx="10" ry="10" />
+  
+  <!-- Title -->
+  <text x="400" y="30" class="title" text-anchor="middle">Whole-Brain Integration: From Neural Specialization to Global Computation</text>
+  
+  <!-- Brain outline -->
+  <ellipse cx="400" cy="230" rx="300" ry="180" fill="#f5eef8" stroke="#8e44ad" stroke-width="2" />
+  
+  <!-- Global Workspace -->
+  <ellipse cx="400" cy="230" rx="100" ry="60" fill="#d2b4de" stroke="#8e44ad" stroke-width="2" />
+  <text x="400" y="225" class="subtitle" text-anchor="middle" fill="#4a235a">Global Workspace</text>
+  <text x="400" y="245" class="small-label" text-anchor="middle">(Conscious Processing)</text>
+  
+  <!-- Specialized modules -->
+  
+  <!-- Visual system -->
+  <ellipse cx="190" cy="170" rx="50" ry="40" fill="#aed6f1" stroke="#2980b9" stroke-width="2" />
+  <text x="190" y="170" class="label" text-anchor="middle" fill="#2c3e50">Visual</text>
+  <text x="190" y="185" class="small-label" text-anchor="middle">Processing</text>
+  
+  <!-- Auditory system -->
+  <ellipse cx="190" cy="290" rx="50" ry="40" fill="#aed6f1" stroke="#2980b9" stroke-width="2" />
+  <text x="190" y="290" class="label" text-anchor="middle" fill="#2c3e50">Auditory</text>
+  <text x="190" y="305" class="small-label" text-anchor="middle">Processing</text>
+  
+  <!-- Motor system -->
+  <ellipse cx="610" cy="170" rx="50" ry="40" fill="#aed6f1" stroke="#2980b9" stroke-width="2" />
+  <text x="610" y="170" class="label" text-anchor="middle" fill="#2c3e50">Motor</text>
+  <text x="610" y="185" class="small-label" text-anchor="middle">Control</text>
+  
+  <!-- Language system -->
+  <ellipse cx="610" cy="290" rx="50" ry="40" fill="#aed6f1" stroke="#2980b9" stroke-width="2" />
+  <text x="610" y="290" class="label" text-anchor="middle" fill="#2c3e50">Language</text>
+  <text x="610" y="305" class="small-label" text-anchor="middle">Processing</text>
+  
+  <!-- Memory system -->
+  <ellipse cx="400" cy="120" rx="50" ry="40" fill="#aed6f1" stroke="#2980b9" stroke-width="2" />
+  <text x="400" y="120" class="label" text-anchor="middle" fill="#2c3e50">Memory</text>
+  <text x="400" y="135" class="small-label" text-anchor="middle">Systems</text>
+  
+  <!-- Executive control -->
+  <ellipse cx="400" cy="340" rx="50" ry="40" fill="#aed6f1" stroke="#2980b9" stroke-width="2" />
+  <text x="400" y="340" class="label" text-anchor="middle" fill="#2c3e50">Executive</text>
+  <text x="400" y="355" class="small-label" text-anchor="middle">Control</text>
+  
+  <!-- Connections -->
+  <path d="M 235,156 C 280,160 320,170 350,200" class="arrow" />
+  <path d="M 235,304 C 280,300 320,290 350,260" class="arrow" />
+  <path d="M 565,156 C 520,160 480,170 450,200" class="arrow" />
+  <path d="M 565,304 C 520,300 480,290 450,260" class="arrow" />
+  <path d="M 400,160 C 400,180 400,190 400,200" class="arrow" />
+  <path d="M 400,300 C 400,310 400,320 400,340" class="dashed-arrow" />
+  
+  <!-- External connections -->
+  <rect x="140" y="50" width="100" height="40" fill="#d5f5e3" stroke="#27ae60" stroke-width="2" rx="5" ry="5" />
+  <text x="190" y="75" class="small-label" text-anchor="middle">Environmental</text>
+  <text x="190" y="90" class="small-label" text-anchor="middle">Input</text>
+  <path d="M 190,90 C 190,110 190,120 190,130" class="arrow" />
+  
+  <rect x="560" y="50" width="100" height="40" fill="#d5f5e3" stroke="#27ae60" stroke-width="2" rx="5" ry="5" />
+  <text x="610" y="75" class="small-label" text-anchor="middle">Action</text>
+  <text x="610" y="90" class="small-label" text-anchor="middle">Output</text>
+  <path d="M 610,90 C 610,110 610,120 610,130" class="arrow" />
+  
+  <!-- AI systems parallels -->
+  <rect x="50" y="420" width="700" height="60" fill="#eaeded" stroke="#95a5a6" stroke-width="2" rx="5" ry="5" />
+  <text x="400" y="440" class="subtitle" text-anchor="middle" fill="#34495e">Parallel AI System Integration Approaches</text>
+  
+  <text x="125" y="465" class="small-label" text-anchor="middle">Modular</text>
+  <text x="125" y="480" class="small-label" text-anchor="middle">Neural Networks</text>
+  
+  <text x="275" y="465" class="small-label" text-anchor="middle">Attention</text>
+  <text x="275" y="480" class="small-label" text-anchor="middle">Mechanisms</text>
+  
+  <text x="400" y="465" class="small-label" text-anchor="middle">Multimodal</text>
+  <text x="400" y="480" class="small-label" text-anchor="middle">Integration</text>
+  
+  <text x="525" y="465" class="small-label" text-anchor="middle">Meta-learning</text>
+  <text x="525" y="480" class="small-label" text-anchor="middle">(Learning to Learn)</text>
+  
+  <text x="650" y="465" class="small-label" text-anchor="middle">Self-supervised</text>
+  <text x="650" y="480" class="small-label" text-anchor="middle">Objectives</text>
+  
+  <!-- Connecting lines -->
+  <line x1="200" y1="465" x2="200" y2="465" stroke="#95a5a6" stroke-width="1" />
+  <line x1="350" y1="465" x2="350" y2="465" stroke="#95a5a6" stroke-width="1" />
+  <line x1="450" y1="465" x2="450" y2="465" stroke="#95a5a6" stroke-width="1" />
+  <line x1="600" y1="465" x2="600" y2="465" stroke="#95a5a6" stroke-width="1" />
+  
+  <!-- Key concepts annotations -->
+  <rect x="60" y="220" width="80" height="60" fill="#fadbd8" stroke="#e74c3c" stroke-width="1" rx="5" ry="5" opacity="0.9" />
+  <text x="100" y="240" class="small-label" text-anchor="middle">Distributed</text>
+  <text x="100" y="255" class="small-label" text-anchor="middle">Specialized</text>
+  <text x="100" y="270" class="small-label" text-anchor="middle">Processing</text>
+  
+  <rect x="660" y="220" width="80" height="60" fill="#fadbd8" stroke="#e74c3c" stroke-width="1" rx="5" ry="5" opacity="0.9" />
+  <text x="700" y="240" class="small-label" text-anchor="middle">Integrated</text>
+  <text x="700" y="255" class="small-label" text-anchor="middle">Conscious</text>
+  <text x="700" y="270" class="small-label" text-anchor="middle">Experience</text>
+  
+  <rect x="360" y="40" width="80" height="40" fill="#fadbd8" stroke="#e74c3c" stroke-width="1" rx="5" ry="5" opacity="0.9" />
+  <text x="400" y="55" class="small-label" text-anchor="middle">Attention</text>
+  <text x="400" y="70" class="small-label" text-anchor="middle">Control</text>
+  
+  <!-- Footer notes -->
+  <text x="400" y="390" class="caption" text-anchor="middle">Global Workspace Theory proposes that specialized neural modules compete for access to a</text>
+  <text x="400" y="405" class="caption" text-anchor="middle">limited-capacity workspace where information becomes consciously available.</text>
+</svg>

@@ -1,0 +1,1474 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 23: Lifelong Learning &#8212; The Neuroscience of AI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'part6/ch23_lifelong_learning';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://neuroai-handbook.github.io/part6/ch23_lifelong_learning.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Chapter 24: Quantum Computing and NeuroAI" href="ch24_quantum_computing_neuroai.html" />
+    <link rel="prev" title="Chapter 22: Embodied AI and Robotics" href="ch22_embodied_ai_robotics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/nai.png" class="logo__image only-light" alt="The Neuroscience of AI - Home"/>
+    <script>document.write(`<img src="../_static/nai.png" class="logo__image only-dark" alt="The Neuroscience of AI - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Neuroscience of AI
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I · Brains &amp; Inspiration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part1/ch01_intro.html">Chapter 1: Introduction to Neuroscience ↔ AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part1/ch02_neuro_foundations.html">Chapter 2: Neuroscience Foundations for AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part1/ch03_spatial_navigation.html">Chapter 3: Spatial Navigation – Place &amp; Grid Cells</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part1/ch04_perception_pipeline.html">Chapter 4: Perception Pipeline – Visual Cortex → CNNs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part II · Brains Meet Math &amp; Data</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part2/ch05_brain_networks.html">Chapter 5: Default-Mode vs Executive Control Networks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part2/ch06_neurostimulation.html">Chapter 6: Neurostimulation &amp; Plasticity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part2/ch07_information_theory.html">Chapter 7: Information Theory Essentials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part2/ch08_data_science_pipeline.html">Chapter 8: Data-Science Pipeline in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part III · Learning Machines</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part3/ch09_ml_foundations.html">Chapter 9: Classical Machine-Learning Foundations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part3/ch10_deep_learning.html">Chapter 10: Deep Learning: Training &amp; Optimisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part3/ch11_sequence_models.html">Chapter 11: Sequence Models: RNN → Attention → Transformer</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part IV · Frontier Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part4/ch12_large_language_models.html">Chapter 12: Large Language Models &amp; Fine-Tuning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part4/ch13_multimodal_models.html">Chapter 13: Multimodal &amp; Diffusion Models</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part V · Ethics &amp; Futures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../part5/ch15_ethical_ai.html">Chapter 15: Ethical AI - Considerations for NeuroAI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part5/ch16_future_directions.html">Chapter 16: Where Next for Neuro-AI?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VI · Advanced Applications</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ch17_bci_human_ai_interfaces.html">Brain-Computer Interfaces and Human-AI Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch18_neuromorphic_computing.html">Chapter 18: Neuromorphic Computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch19_cognitive_neuro_dl.html">Cognitive Neuroscience and Deep Learning</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ch20_case_studies.html">Case Studies in NeuroAI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="ch20_interactive.html">Interactive NeuroAI Case Studies</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="ch21_ai_for_neuro_discovery.html">Chapter 21: AI for Neuroscience Discovery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch22_embodied_ai_robotics.html">Chapter 22: Embodied AI and Robotics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 23: Lifelong Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../appendices/glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/math_python_refresher.html">Appendix A: Math &amp; Python Mini-Refresher</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/dataset_catalogue.html">Appendix B: Dataset Catalogue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../appendices/colab_setup.html">Appendix C: Google Colab Setup for NeuroAI</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/edit/master/docs/part6/ch23_lifelong_learning.md" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpart6/ch23_lifelong_learning.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/part6/ch23_lifelong_learning.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 23: Lifelong Learning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-goals">23.0 Chapter Goals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-stability-plasticity-dilemma">23.1 The Stability-Plasticity Dilemma</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catastrophic-forgetting-problem">23.1.1 Catastrophic Forgetting Problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biological-solutions-for-lifelong-learning">23.2 Biological Solutions for Lifelong Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complementary-learning-systems">23.2.1 Complementary Learning Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#synaptic-consolidation-mechanisms">23.2.2 Synaptic Consolidation Mechanisms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromodulation-of-learning-rates">23.2.3 Neuromodulation of Learning Rates</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-approaches-to-continual-learning">23.3 Computational Approaches to Continual Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-replay-techniques">23.3.1 Memory Replay Techniques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization-based-methods">23.3.2 Regularization-Based Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-based-approaches">23.3.3 Architecture-Based Approaches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-learning-approaches">23.3.4 Meta-Learning Approaches</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications-of-lifelong-learning">23.4 Practical Applications of Lifelong Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robotics-and-embodied-ai">23.4.1 Robotics and Embodied AI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#personal-ai-assistants">23.4.2 Personal AI Assistants</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomous-systems">23.4.3 Autonomous Systems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab-implementing-a-replay-based-continual-learning-system">23.5 Code Lab: Implementing a Replay-Based Continual Learning System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">23.6 Take-aways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">23.7 Further Reading</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-23-lifelong-learning">
+<h1>Chapter 23: Lifelong Learning<a class="headerlink" href="#chapter-23-lifelong-learning" title="Link to this heading">#</a></h1>
+<section id="chapter-goals">
+<h2>23.0 Chapter Goals<a class="headerlink" href="#chapter-goals" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Understand the challenge of catastrophic forgetting in artificial neural networks</p></li>
+<li><p>Explore biological solutions to the stability-plasticity dilemma</p></li>
+<li><p>Learn about computational approaches for continual learning</p></li>
+<li><p>Implement mechanisms for memory consolidation and replay</p></li>
+</ul>
+</section>
+<section id="the-stability-plasticity-dilemma">
+<h2>23.1 The Stability-Plasticity Dilemma<a class="headerlink" href="#the-stability-plasticity-dilemma" title="Link to this heading">#</a></h2>
+<p>One of the major limitations of current artificial neural networks is their inability to learn continuously throughout their lifecycle. While humans and other animals can accumulate knowledge over time, neural networks typically suffer from “catastrophic forgetting” - when trained on new tasks, they tend to rapidly overwrite previously learned information.</p>
+<p><img alt="Continual Learning" src="../_images/continual_learning1.svg" /></p>
+<p>This tension between maintaining stability (preserving existing knowledge) and having plasticity (acquiring new information) is fundamental to any learning system:</p>
+<ul class="simple">
+<li><p><strong>Too much stability</strong>: The system becomes rigid and unable to learn new information</p></li>
+<li><p><strong>Too much plasticity</strong>: The system constantly overwrites old knowledge with new experiences</p></li>
+</ul>
+<section id="catastrophic-forgetting-problem">
+<h3>23.1.1 Catastrophic Forgetting Problem<a class="headerlink" href="#catastrophic-forgetting-problem" title="Link to this heading">#</a></h3>
+<p>When an artificial neural network is trained sequentially on different tasks, learning new tasks can overwrite weights that were critical for previous tasks:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.optim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">optim</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">demonstrate_catastrophic_forgetting</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Demonstrate catastrophic forgetting in a simple network</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Simplified experiment</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+        <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="p">)</span>
+    
+    <span class="c1"># Generate two synthetic tasks</span>
+    <span class="n">task_A_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">task_A_targets</span> <span class="o">=</span> <span class="p">(</span><span class="n">task_A_data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+    
+    <span class="n">task_B_data</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">task_B_targets</span> <span class="o">=</span> <span class="p">(</span><span class="n">task_B_data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+    
+    <span class="c1"># Training loop</span>
+    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+    <span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">BCEWithLogitsLoss</span><span class="p">()</span>
+    
+    <span class="n">task_A_accuracy</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">task_B_accuracy</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="c1"># Initial training on task A</span>
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">task_A_data</span><span class="p">)[:,</span> <span class="mi">0</span><span class="p">]</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">task_A_targets</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        
+        <span class="c1"># Evaluate</span>
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">pred_A</span> <span class="o">=</span> <span class="p">(</span><span class="n">output</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+            <span class="n">acc_A</span> <span class="o">=</span> <span class="p">(</span><span class="n">pred_A</span> <span class="o">==</span> <span class="n">task_A_targets</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+            <span class="n">task_A_accuracy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">acc_A</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+            
+            <span class="n">output_B</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">task_B_data</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="n">pred_B</span> <span class="o">=</span> <span class="p">(</span><span class="n">output_B</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+            <span class="n">acc_B</span> <span class="o">=</span> <span class="p">(</span><span class="n">pred_B</span> <span class="o">==</span> <span class="n">task_B_targets</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+            <span class="n">task_B_accuracy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">acc_B</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+    
+    <span class="c1"># Switch to training on task B</span>
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">task_B_data</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">task_B_targets</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        
+        <span class="c1"># Evaluate</span>
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="n">pred_A</span> <span class="o">=</span> <span class="p">(</span><span class="n">model</span><span class="p">(</span><span class="n">task_A_data</span><span class="p">)[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+            <span class="n">acc_A</span> <span class="o">=</span> <span class="p">(</span><span class="n">pred_A</span> <span class="o">==</span> <span class="n">task_A_targets</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+            <span class="n">task_A_accuracy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">acc_A</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+            
+            <span class="n">pred_B</span> <span class="o">=</span> <span class="p">(</span><span class="n">output</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span>
+            <span class="n">acc_B</span> <span class="o">=</span> <span class="p">(</span><span class="n">pred_B</span> <span class="o">==</span> <span class="n">task_B_targets</span><span class="p">)</span><span class="o">.</span><span class="n">float</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+            <span class="n">task_B_accuracy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">acc_B</span><span class="o">.</span><span class="n">item</span><span class="p">())</span>
+    
+    <span class="c1"># Plot results</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">task_A_accuracy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Task A Accuracy&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">task_B_accuracy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Task B Accuracy&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Switch to Task B&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Training Steps&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Catastrophic Forgetting Demonstration&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">plt</span>
+
+<span class="c1"># Running this function would show how accuracy on Task A drops rapidly </span>
+<span class="c1"># when the model is trained on Task B</span>
+</pre></div>
+</div>
+<p>This code demonstrates the classic catastrophic forgetting problem: as the network learns Task B, its performance on Task A deteriorates rapidly. This is because the network parameters needed for Task A are overwritten by those needed for Task B.</p>
+</section>
+</section>
+<section id="biological-solutions-for-lifelong-learning">
+<h2>23.2 Biological Solutions for Lifelong Learning<a class="headerlink" href="#biological-solutions-for-lifelong-learning" title="Link to this heading">#</a></h2>
+<p>The brain employs several mechanisms to balance stability and plasticity, allowing humans and animals to learn continuously throughout life without catastrophic forgetting.</p>
+<section id="complementary-learning-systems">
+<h3>23.2.1 Complementary Learning Systems<a class="headerlink" href="#complementary-learning-systems" title="Link to this heading">#</a></h3>
+<p>The brain manages memory through complementary systems that operate at different timescales:</p>
+<ol class="arabic simple">
+<li><p><strong>Hippocampus</strong>: Fast-learning system for episodic memories</p>
+<ul class="simple">
+<li><p>Rapidly encodes new experiences</p></li>
+<li><p>High plasticity but limited capacity</p></li>
+<li><p>Temporary storage for recent experiences</p></li>
+</ul>
+</li>
+<li><p><strong>Neocortex</strong>: Slow-learning system for semantic knowledge</p>
+<ul class="simple">
+<li><p>Gradually integrates information over time</p></li>
+<li><p>More stable weights for long-term storage</p></li>
+<li><p>Learns general patterns across many experiences</p></li>
+</ul>
+</li>
+</ol>
+<p>This division allows new information to be quickly stored in the hippocampus while being slowly transferred to the neocortex through a process called “consolidation.”</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ComplementaryLearningSystems</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">fast_learn_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">slow_learn_rate</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">consolidation_strength</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hippocampus</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># Fast-learning episodic memory</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">neocortex</span> <span class="o">=</span> <span class="p">{}</span>  <span class="c1"># Slow-learning semantic memory</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fast_learn_rate</span> <span class="o">=</span> <span class="n">fast_learn_rate</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">slow_learn_rate</span> <span class="o">=</span> <span class="n">slow_learn_rate</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">consolidation_strength</span> <span class="o">=</span> <span class="n">consolidation_strength</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">learn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experience</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Learn a new experience&quot;&quot;&quot;</span>
+        <span class="c1"># First, store in hippocampus (fast learning)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hippocampus</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">experience</span><span class="p">)</span>
+        
+        <span class="c1"># Then, slowly integrate into neocortex</span>
+        <span class="k">if</span> <span class="n">experience</span><span class="p">[</span><span class="s2">&quot;concept&quot;</span><span class="p">]</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">neocortex</span><span class="p">:</span>
+            <span class="c1"># Update existing knowledge</span>
+            <span class="n">current</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">neocortex</span><span class="p">[</span><span class="n">experience</span><span class="p">[</span><span class="s2">&quot;concept&quot;</span><span class="p">]]</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">neocortex</span><span class="p">[</span><span class="n">experience</span><span class="p">[</span><span class="s2">&quot;concept&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;features&quot;</span><span class="p">:</span> <span class="n">current</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">slow_learn_rate</span><span class="p">)</span> <span class="o">+</span> 
+                           <span class="n">experience</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">slow_learn_rate</span><span class="p">,</span>
+                <span class="s2">&quot;importance&quot;</span><span class="p">:</span> <span class="n">current</span><span class="p">[</span><span class="s2">&quot;importance&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">consolidation_strength</span>
+            <span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Create new knowledge</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">neocortex</span><span class="p">[</span><span class="n">experience</span><span class="p">[</span><span class="s2">&quot;concept&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;features&quot;</span><span class="p">:</span> <span class="n">experience</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;importance&quot;</span><span class="p">:</span> <span class="mf">1.0</span>
+            <span class="p">}</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">consolidate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">replay_count</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Consolidate memories from hippocampus to neocortex&quot;&quot;&quot;</span>
+        <span class="c1"># Simulate memory replay during sleep</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">replay_count</span><span class="p">):</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hippocampus</span><span class="p">:</span>
+                <span class="c1"># Replay random experiences from hippocampus</span>
+                <span class="n">replay_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hippocampus</span><span class="p">))</span>
+                <span class="n">replay_experience</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hippocampus</span><span class="p">[</span><span class="n">replay_idx</span><span class="p">]</span>
+                
+                <span class="c1"># Strengthen in neocortex</span>
+                <span class="n">concept</span> <span class="o">=</span> <span class="n">replay_experience</span><span class="p">[</span><span class="s2">&quot;concept&quot;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">concept</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">neocortex</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">neocortex</span><span class="p">[</span><span class="n">concept</span><span class="p">][</span><span class="s2">&quot;importance&quot;</span><span class="p">]</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">consolidation_strength</span>
+</pre></div>
+</div>
+</section>
+<section id="synaptic-consolidation-mechanisms">
+<h3>23.2.2 Synaptic Consolidation Mechanisms<a class="headerlink" href="#synaptic-consolidation-mechanisms" title="Link to this heading">#</a></h3>
+<p>In biological brains, synapses important for existing memories become less plastic over time through several mechanisms:</p>
+<ol class="arabic simple">
+<li><p><strong>Structural changes</strong>: Formation of dendritic spines and physical growth of synaptic connections</p></li>
+<li><p><strong>Protein synthesis</strong>: Creation of proteins that stabilize important synapses</p></li>
+<li><p><strong>Synaptic tagging</strong>: “Tagging” of important synapses for later consolidation</p></li>
+</ol>
+<p>These mechanisms create a “continuum of plasticity” across the brain’s synapses, where some connections remain plastic while others become more stable.</p>
+</section>
+<section id="neuromodulation-of-learning-rates">
+<h3>23.2.3 Neuromodulation of Learning Rates<a class="headerlink" href="#neuromodulation-of-learning-rates" title="Link to this heading">#</a></h3>
+<p>Neuromodulatory systems (using chemicals like dopamine, acetylcholine, and norepinephrine) regulate plasticity based on context:</p>
+<ul class="simple">
+<li><p><strong>Dopamine</strong>: Signals importance/reward, enhancing learning for valuable experiences</p></li>
+<li><p><strong>Acetylcholine</strong>: Modulates attention and encoding of new information</p></li>
+<li><p><strong>Norepinephrine</strong>: Adjusts overall plasticity based on surprise/novelty</p></li>
+</ul>
+<p>This adaptive regulation helps prioritize what should be learned and retained.</p>
+</section>
+</section>
+<section id="computational-approaches-to-continual-learning">
+<h2>23.3 Computational Approaches to Continual Learning<a class="headerlink" href="#computational-approaches-to-continual-learning" title="Link to this heading">#</a></h2>
+<p>Inspired by biological mechanisms, several computational approaches have been developed to enable continual learning in artificial systems.</p>
+<section id="memory-replay-techniques">
+<h3>23.3.1 Memory Replay Techniques<a class="headerlink" href="#memory-replay-techniques" title="Link to this heading">#</a></h3>
+<p>One of the most successful approaches involves replaying past experiences to maintain performance on previous tasks:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ExperienceReplayBuffer</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">capacity</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Experience replay buffer for continual learning</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        - capacity: Maximum number of experiences to store</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">capacity</span> <span class="o">=</span> <span class="n">capacity</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">experience</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add an experience to the buffer&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">capacity</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span><span class="p">]</span> <span class="o">=</span> <span class="n">experience</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">capacity</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Sample a batch of experiences randomly&quot;&quot;&quot;</span>
+        <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">),</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">]</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_empty</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Check if buffer is empty&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">buffer</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">train_with_replay</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">new_data</span><span class="p">,</span> <span class="n">replay_buffer</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">,</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Train a model using experience replay to prevent forgetting&quot;&quot;&quot;</span>
+    <span class="c1"># Add new experiences to buffer</span>
+    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">new_data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">new_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+        <span class="n">replay_buffer</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+    
+    <span class="c1"># Train with a mix of new data and replayed experiences</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>  <span class="c1"># Multiple passes through the data</span>
+        <span class="c1"># Sample from replay buffer</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">replay_buffer</span><span class="o">.</span><span class="n">is_empty</span><span class="p">():</span>
+            <span class="n">replayed</span> <span class="o">=</span> <span class="n">replay_buffer</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">batch_size</span><span class="p">)</span>
+            <span class="n">x_replay</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">replayed</span><span class="p">])</span>
+            <span class="n">y_replay</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">y</span> <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">replayed</span><span class="p">])</span>
+            
+            <span class="c1"># Update model with replayed data</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+            <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x_replay</span><span class="p">)</span>
+            <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">y_replay</span><span class="p">)</span>
+            <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+            <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">model</span>
+</pre></div>
+</div>
+<p>There are various forms of replay:</p>
+<ol class="arabic simple">
+<li><p><strong>Exact Replay</strong>: Store and replay actual data points</p></li>
+<li><p><strong>Generative Replay</strong>: Train a generative model to produce synthetic examples of past tasks</p></li>
+<li><p><strong>Feature Replay</strong>: Store and replay high-level features rather than raw inputs</p></li>
+</ol>
+</section>
+<section id="regularization-based-methods">
+<h3>23.3.2 Regularization-Based Methods<a class="headerlink" href="#regularization-based-methods" title="Link to this heading">#</a></h3>
+<p>Instead of explicitly storing past data, regularization methods constrain weight updates to prevent overwriting important parameters:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">elastic_weight_consolidation</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">new_data</span><span class="p">,</span> <span class="n">fisher_diag</span><span class="p">,</span> <span class="n">old_params</span><span class="p">,</span> 
+                                <span class="n">lambda_reg</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">criterion</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Implement Elastic Weight Consolidation (EWC) for continual learning</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    - model: Neural network model</span>
+<span class="sd">    - new_data: Data for the new task (x, y)</span>
+<span class="sd">    - fisher_diag: Diagonal of the Fisher information matrix from previous task</span>
+<span class="sd">    - old_params: Parameters from after learning the previous task</span>
+<span class="sd">    - lambda_reg: Regularization strength</span>
+<span class="sd">    - optimizer: Optimizer for new task</span>
+<span class="sd">    - criterion: Loss function</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    - Updated model</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># If no optimizer is provided, create one</span>
+    <span class="k">if</span> <span class="n">optimizer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+    
+    <span class="c1"># If no criterion is provided, use MSE</span>
+    <span class="k">if</span> <span class="n">criterion</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">criterion</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+    
+    <span class="c1"># Training loop</span>
+    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">new_data</span>
+        
+        <span class="c1"># Forward pass</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        
+        <span class="c1"># Task loss</span>
+        <span class="n">task_loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+        
+        <span class="c1"># EWC regularization loss</span>
+        <span class="n">ewc_loss</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">named_parameters</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">fisher_diag</span><span class="p">:</span>
+                <span class="c1"># Calculate weighted squared distance from old parameters</span>
+                <span class="n">ewc_loss</span> <span class="o">+=</span> <span class="p">(</span><span class="n">fisher_diag</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">*</span> 
+                            <span class="p">(</span><span class="n">param</span> <span class="o">-</span> <span class="n">old_params</span><span class="p">[</span><span class="n">name</span><span class="p">])</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+        
+        <span class="c1"># Combined loss</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">task_loss</span> <span class="o">+</span> <span class="n">lambda_reg</span> <span class="o">*</span> <span class="n">ewc_loss</span>
+        
+        <span class="c1"># Backward pass and optimization</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">model</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">compute_fisher_diagonal</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">criterion</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Compute diagonal of the Fisher Information Matrix</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    - model: Neural network model</span>
+<span class="sd">    - data: Data samples (x, y)</span>
+<span class="sd">    - criterion: Loss function</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    - fisher_diag: Dictionary of parameter names to Fisher diagonal values</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fisher_diag</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="c1"># Store current parameters</span>
+    <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">named_parameters</span><span class="p">():</span>
+        <span class="n">fisher_diag</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">param</span><span class="p">)</span>
+    
+    <span class="c1"># Compute Fisher diagonal</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>  <span class="c1"># Set to evaluation mode</span>
+    
+    <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">):</span>
+        <span class="c1"># Forward pass</span>
+        <span class="n">model</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+        
+        <span class="c1"># Compute loss</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+        
+        <span class="c1"># Backward pass to get gradients</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        
+        <span class="c1"># Add squared gradients to Fisher diagonal</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">named_parameters</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">param</span><span class="o">.</span><span class="n">grad</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">fisher_diag</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">+=</span> <span class="n">param</span><span class="o">.</span><span class="n">grad</span><span class="o">.</span><span class="n">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="c1"># Normalize by number of samples</span>
+    <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">fisher_diag</span><span class="p">:</span>
+        <span class="n">fisher_diag</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">/=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    
+    <span class="k">return</span> <span class="n">fisher_diag</span>
+</pre></div>
+</div>
+<p>Popular regularization methods include:</p>
+<ol class="arabic simple">
+<li><p><strong>Elastic Weight Consolidation (EWC)</strong>: Uses Fisher information to estimate parameter importance</p></li>
+<li><p><strong>Synaptic Intelligence</strong>: Measures the contribution of each parameter during training</p></li>
+<li><p><strong>Memory Aware Synapses</strong>: Estimates importance based on the sensitivity of output to each weight</p></li>
+</ol>
+</section>
+<section id="architecture-based-approaches">
+<h3>23.3.3 Architecture-Based Approaches<a class="headerlink" href="#architecture-based-approaches" title="Link to this heading">#</a></h3>
+<p>Some approaches modify the network architecture itself to accommodate continual learning:</p>
+<ol class="arabic simple">
+<li><p><strong>Progressive Neural Networks</strong>: Add new columns for each new task while freezing previous ones</p></li>
+<li><p><strong>Dynamically Expanding Networks</strong>: Grow the network when needed for new tasks</p></li>
+<li><p><strong>Context-Dependent Gating</strong>: Route information differently depending on the task</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ProgressiveNetwork</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Progressive Neural Network that adds columns for new tasks</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        - input_size: Dimension of input features</span>
+<span class="sd">        - hidden_size: Dimension of hidden layer</span>
+<span class="sd">        - output_size: Dimension of output</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">adapters</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_size</span> <span class="o">=</span> <span class="n">input_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hidden_size</span> <span class="o">=</span> <span class="n">hidden_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_size</span> <span class="o">=</span> <span class="n">output_size</span>
+        
+        <span class="c1"># Add first column</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_column</span><span class="p">()</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_column</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a new column for a new task&quot;&quot;&quot;</span>
+        <span class="n">column_id</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        
+        <span class="c1"># Create new column</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_size</span><span class="p">),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_size</span><span class="p">)</span>
+        <span class="p">)</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">column</span><span class="p">)</span>
+        
+        <span class="c1"># Create lateral connections from previous columns</span>
+        <span class="k">if</span> <span class="n">column_id</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">adapters</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ModuleList</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">prev_col</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">column_id</span><span class="p">):</span>
+                <span class="c1"># Create adapter from previous column&#39;s hidden layer</span>
+                <span class="n">adapter</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_size</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="n">adapters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">adapter</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">adapters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">adapters</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">task_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Forward pass through the network</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        - x: Input tensor</span>
+<span class="sd">        - task_id: ID of the task to perform</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">        - output: Network output for the specified task</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">task_id</span> <span class="o">&gt;=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Task ID </span><span class="si">{</span><span class="n">task_id</span><span class="si">}</span><span class="s2"> out of range (only </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="si">}</span><span class="s2"> tasks learned)&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Get the column for this task</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span>
+        
+        <span class="c1"># For the first column, just do a standard forward pass</span>
+        <span class="k">if</span> <span class="n">task_id</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">column</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        
+        <span class="c1"># For later columns, need to include lateral connections</span>
+        <span class="c1"># Extract features from first layer of current column</span>
+        <span class="n">first_layer</span> <span class="o">=</span> <span class="n">column</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">h</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">first_layer</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        
+        <span class="c1"># Add features from lateral connections</span>
+        <span class="n">adapters</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">adapters</span><span class="p">[</span><span class="n">task_id</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">adapter</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">adapters</span><span class="p">):</span>
+            <span class="n">prev_h</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">](</span><span class="n">x</span><span class="p">))</span>
+            <span class="n">h</span> <span class="o">+=</span> <span class="n">adapter</span><span class="p">(</span><span class="n">prev_h</span><span class="p">)</span>
+        
+        <span class="c1"># Apply final layer</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">column</span><span class="p">[</span><span class="mi">2</span><span class="p">](</span><span class="n">h</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+</section>
+<section id="meta-learning-approaches">
+<h3>23.3.4 Meta-Learning Approaches<a class="headerlink" href="#meta-learning-approaches" title="Link to this heading">#</a></h3>
+<p>Meta-learning (“learning to learn”) approaches aim to discover algorithms or network structures that naturally resist catastrophic forgetting:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MetaContinualLearner</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">meta_lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Meta-learning approach for continual learning</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        - model: Base model to train</span>
+<span class="sd">        - meta_lr: Meta-learning rate</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meta_optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">meta_lr</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task_optimizers</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task_losses</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">learn_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_id</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Learn a specific task&quot;&quot;&quot;</span>
+        <span class="c1"># Create optimizer for this task if it doesn&#39;t exist</span>
+        <span class="k">if</span> <span class="n">task_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">task_optimizers</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">task_optimizers</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">task_losses</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">MSELoss</span><span class="p">()</span>
+        
+        <span class="n">optimizer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">task_optimizers</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span>
+        <span class="n">criterion</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">task_losses</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span>
+        
+        <span class="c1"># Save initial weights</span>
+        <span class="n">initial_weights</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="n">param</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">named_parameters</span><span class="p">()}</span>
+        
+        <span class="c1"># First, compute gradients on the current task</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">outputs</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
+        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+        
+        <span class="c1"># Meta-update: consider performance on all previous tasks</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meta_optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+        <span class="n">meta_loss</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="k">for</span> <span class="n">prev_task_id</span><span class="p">,</span> <span class="n">prev_optimizer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">task_optimizers</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">prev_task_id</span> <span class="o">!=</span> <span class="n">task_id</span><span class="p">:</span>
+                <span class="c1"># Sample data from previous task (simplified)</span>
+                <span class="n">prev_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_task_sample</span><span class="p">(</span><span class="n">prev_task_id</span><span class="p">)</span>
+                <span class="n">prev_targets</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_task_targets</span><span class="p">(</span><span class="n">prev_task_id</span><span class="p">)</span>
+                
+                <span class="c1"># Evaluate on previous task</span>
+                <span class="n">prev_outputs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">prev_data</span><span class="p">)</span>
+                <span class="n">prev_loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">task_losses</span><span class="p">[</span><span class="n">prev_task_id</span><span class="p">](</span><span class="n">prev_outputs</span><span class="p">,</span> <span class="n">prev_targets</span><span class="p">)</span>
+                <span class="n">meta_loss</span> <span class="o">+=</span> <span class="n">prev_loss</span>
+        
+        <span class="c1"># Include current task loss</span>
+        <span class="n">meta_loss</span> <span class="o">+=</span> <span class="n">loss</span>
+        
+        <span class="c1"># Update model using meta-loss</span>
+        <span class="n">meta_loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meta_optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_task_sample</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a sample from a task (placeholder)&quot;&quot;&quot;</span>
+        <span class="c1"># In a real implementation, this would retrieve stored examples</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_task_targets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_id</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get targets for a task sample (placeholder)&quot;&quot;&quot;</span>
+        <span class="c1"># In a real implementation, this would retrieve stored targets</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="practical-applications-of-lifelong-learning">
+<h2>23.4 Practical Applications of Lifelong Learning<a class="headerlink" href="#practical-applications-of-lifelong-learning" title="Link to this heading">#</a></h2>
+<section id="robotics-and-embodied-ai">
+<h3>23.4.1 Robotics and Embodied AI<a class="headerlink" href="#robotics-and-embodied-ai" title="Link to this heading">#</a></h3>
+<p>Continual learning is crucial for robots that need to adapt to new environments and tasks without forgetting previously acquired skills:</p>
+<ul class="simple">
+<li><p><strong>Skill composition</strong>: Learning new skills while reusing components of existing ones</p></li>
+<li><p><strong>Environmental adaptation</strong>: Adjusting to changes in the physical environment</p></li>
+<li><p><strong>Human interaction</strong>: Learning from ongoing human feedback and demonstration</p></li>
+</ul>
+</section>
+<section id="personal-ai-assistants">
+<h3>23.4.2 Personal AI Assistants<a class="headerlink" href="#personal-ai-assistants" title="Link to this heading">#</a></h3>
+<p>Personalized AI systems must learn continuously from interactions with their users:</p>
+<ul class="simple">
+<li><p><strong>Preference adaptation</strong>: Learning user preferences without forgetting basic functionality</p></li>
+<li><p><strong>Contextual awareness</strong>: Adapting to changing user needs across different contexts</p></li>
+<li><p><strong>Knowledge accumulation</strong>: Building a growing knowledge base about the user and their world</p></li>
+</ul>
+</section>
+<section id="autonomous-systems">
+<h3>23.4.3 Autonomous Systems<a class="headerlink" href="#autonomous-systems" title="Link to this heading">#</a></h3>
+<p>Systems operating in the real world need to learn and adapt throughout their operational lifetime:</p>
+<ul class="simple">
+<li><p><strong>Self-driving vehicles</strong>: Adapting to new road conditions, traffic patterns, etc.</p></li>
+<li><p><strong>Manufacturing systems</strong>: Learning new production tasks while maintaining existing capabilities</p></li>
+<li><p><strong>Medical diagnosis systems</strong>: Updating diagnostic models with new medical knowledge</p></li>
+</ul>
+</section>
+</section>
+<section id="code-lab-implementing-a-replay-based-continual-learning-system">
+<h2>23.5 Code Lab: Implementing a Replay-Based Continual Learning System<a class="headerlink" href="#code-lab-implementing-a-replay-based-continual-learning-system" title="Link to this heading">#</a></h2>
+<p>Let’s implement a simple experience replay-based continual learning system and test it on a sequence of tasks:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">torch</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.nn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nn</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">torch.optim</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">optim</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">torch.utils.data</span><span class="w"> </span><span class="kn">import</span> <span class="n">TensorDataset</span><span class="p">,</span> <span class="n">DataLoader</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SimpleNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_size</span><span class="o">=</span><span class="mi">28</span><span class="o">*</span><span class="mi">28</span><span class="p">,</span> <span class="n">hidden_size</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">output_size</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_size</span><span class="p">,</span> <span class="n">hidden_size</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">relu</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_size</span><span class="p">,</span> <span class="n">output_size</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># Flatten</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fc1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ContinualLearner</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">memory_size</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">criterion</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Continual learning system using experience replay</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        - model: Neural network model</span>
+<span class="sd">        - memory_size: Maximum size of memory buffer</span>
+<span class="sd">        - optimizer: Optimizer function (will create Adam if None)</span>
+<span class="sd">        - criterion: Loss function (will create CrossEntropyLoss if None)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memory_size</span> <span class="o">=</span> <span class="n">memory_size</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memory_x</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memory_y</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="c1"># Create optimizer and loss function if not provided</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">optimizer</span> <span class="k">if</span> <span class="n">optimizer</span> <span class="k">else</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">criterion</span> <span class="o">=</span> <span class="n">criterion</span> <span class="k">if</span> <span class="n">criterion</span> <span class="k">else</span> <span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+        
+        <span class="c1"># Track performance</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task_accuracies</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_to_memory</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add examples to memory buffer&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">):</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">detach</span><span class="p">()</span><span class="o">.</span><span class="n">cpu</span><span class="p">()</span>
+            
+        <span class="c1"># Convert single examples to lists if needed</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>  <span class="c1"># Single image [C,H,W]</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="n">y</span><span class="p">])</span>
+        
+        <span class="c1"># Add examples to memory</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">memory_x</span><span class="p">)</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">memory_size</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">memory_x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">memory_y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Replace random item</span>
+                <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">memory_size</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">memory_x</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">memory_y</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_memory_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch_size</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a batch of examples from memory&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">memory_x</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+            
+        <span class="c1"># Sample indices</span>
+        <span class="n">indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">memory_x</span><span class="p">),</span> <span class="nb">min</span><span class="p">(</span><span class="n">batch_size</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">memory_x</span><span class="p">)),</span> <span class="n">replace</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        
+        <span class="c1"># Gather examples</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">memory_x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">])</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">memory_y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">indices</span><span class="p">])</span>
+        
+        <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">train_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_id</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">memory_batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cpu&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Train on a new task while using memory replay</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        - task_id: Identifier for the task</span>
+<span class="sd">        - train_loader: DataLoader for training data</span>
+<span class="sd">        - epochs: Number of training epochs</span>
+<span class="sd">        - memory_batch_size: Batch size for memory replay</span>
+<span class="sd">        - device: Device to use for training</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+        
+        <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+            <span class="n">total_loss</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+            <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+            
+            <span class="k">for</span> <span class="n">batch_idx</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">train_loader</span><span class="p">):</span>
+                <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">target</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+                
+                <span class="c1"># Regular update on current task data</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+                <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                <span class="n">loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+                <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+                
+                <span class="c1"># Update using memory replay</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">memory_x</span><span class="p">:</span>
+                    <span class="n">memory_x</span><span class="p">,</span> <span class="n">memory_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_memory_batch</span><span class="p">(</span><span class="n">memory_batch_size</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">memory_x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="n">memory_x</span><span class="p">,</span> <span class="n">memory_y</span> <span class="o">=</span> <span class="n">memory_x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">memory_y</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+                        
+                        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+                        <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">memory_x</span><span class="p">)</span>
+                        <span class="n">replay_loss</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">criterion</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">memory_y</span><span class="p">)</span>
+                        <span class="n">replay_loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+                
+                <span class="c1"># Calculate accuracy</span>
+                <span class="n">_</span><span class="p">,</span> <span class="n">predicted</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">total</span> <span class="o">+=</span> <span class="n">target</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">correct</span> <span class="o">+=</span> <span class="n">predicted</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+                
+                <span class="c1"># Store examples in memory</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">add_to_memory</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+                
+            <span class="c1"># Print epoch statistics</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Task </span><span class="si">{</span><span class="n">task_id</span><span class="si">}</span><span class="s1">, Epoch </span><span class="si">{</span><span class="n">epoch</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">epochs</span><span class="si">}</span><span class="s1">: Accuracy: </span><span class="si">{</span><span class="mf">100.</span><span class="o">*</span><span class="n">correct</span><span class="o">/</span><span class="n">total</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">evaluate_task</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_id</span><span class="p">,</span> <span class="n">test_loader</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cpu&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Evaluate performance on a specific task&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">eval</span><span class="p">()</span>
+        
+        <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+        
+        <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">test_loader</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">),</span> <span class="n">target</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+                <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+                
+                <span class="n">_</span><span class="p">,</span> <span class="n">predicted</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">total</span> <span class="o">+=</span> <span class="n">target</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">correct</span> <span class="o">+=</span> <span class="n">predicted</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">target</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+        
+        <span class="n">accuracy</span> <span class="o">=</span> <span class="mf">100.</span> <span class="o">*</span> <span class="n">correct</span> <span class="o">/</span> <span class="n">total</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">task_accuracies</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Task </span><span class="si">{</span><span class="n">task_id</span><span class="si">}</span><span class="s1"> Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s1">.2f</span><span class="si">}</span><span class="s1">%&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">accuracy</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">evaluate_all_tasks</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">task_loaders</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cpu&#39;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Evaluate performance on all tasks&quot;&quot;&quot;</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">task_id</span><span class="p">,</span> <span class="n">loader</span> <span class="ow">in</span> <span class="n">task_loaders</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">accuracy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">evaluate_task</span><span class="p">(</span><span class="n">task_id</span><span class="p">,</span> <span class="n">loader</span><span class="p">,</span> <span class="n">device</span><span class="p">)</span>
+            <span class="n">results</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">accuracy</span>
+        <span class="k">return</span> <span class="n">results</span>
+
+<span class="c1"># Example usage (with placeholder data)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">create_rotated_mnist_tasks</span><span class="p">(</span><span class="n">n_tasks</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a series of tasks based on rotated MNIST digits&quot;&quot;&quot;</span>
+    <span class="c1"># This is a placeholder - in a real implementation, you would load MNIST</span>
+    <span class="c1"># and create rotated versions</span>
+    
+    <span class="n">task_loaders</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="k">for</span> <span class="n">task_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_tasks</span><span class="p">):</span>
+        <span class="c1"># Simulate different rotations of MNIST</span>
+        <span class="n">angle</span> <span class="o">=</span> <span class="n">task_id</span> <span class="o">*</span> <span class="mi">15</span>  <span class="c1"># Rotate by 0°, 15°, 30°, etc.</span>
+        
+        <span class="c1"># Placeholder data - in real code, you would load and rotate MNIST</span>
+        <span class="c1"># Here we just create random tensors of the right shape</span>
+        <span class="n">train_x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+        <span class="n">train_y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">1000</span><span class="p">,))</span>
+        <span class="n">test_x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+        <span class="n">test_y</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">(</span><span class="mi">200</span><span class="p">,))</span>
+        
+        <span class="c1"># Create data loaders</span>
+        <span class="n">train_dataset</span> <span class="o">=</span> <span class="n">TensorDataset</span><span class="p">(</span><span class="n">train_x</span><span class="p">,</span> <span class="n">train_y</span><span class="p">)</span>
+        <span class="n">test_dataset</span> <span class="o">=</span> <span class="n">TensorDataset</span><span class="p">(</span><span class="n">test_x</span><span class="p">,</span> <span class="n">test_y</span><span class="p">)</span>
+        
+        <span class="n">train_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">test_loader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">test_dataset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        
+        <span class="n">task_loaders</span><span class="p">[</span><span class="n">task_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;train&#39;</span><span class="p">:</span> <span class="n">train_loader</span><span class="p">,</span>
+            <span class="s1">&#39;test&#39;</span><span class="p">:</span> <span class="n">test_loader</span>
+        <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">task_loaders</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">run_continual_learning_experiment</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Run a complete continual learning experiment&quot;&quot;&quot;</span>
+    <span class="c1"># Create model</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="n">SimpleNN</span><span class="p">()</span>
+    
+    <span class="c1"># Create learning systems</span>
+    <span class="n">replay_learner</span> <span class="o">=</span> <span class="n">ContinualLearner</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">memory_size</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+    <span class="n">vanilla_learner</span> <span class="o">=</span> <span class="n">ContinualLearner</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">memory_size</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># No replay</span>
+    
+    <span class="c1"># Create tasks</span>
+    <span class="n">task_loaders</span> <span class="o">=</span> <span class="n">create_rotated_mnist_tasks</span><span class="p">(</span><span class="n">n_tasks</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    
+    <span class="c1"># Training and evaluation</span>
+    <span class="k">for</span> <span class="n">task_id</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Training on task </span><span class="si">{</span><span class="n">task_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">train_loader</span> <span class="o">=</span> <span class="n">task_loaders</span><span class="p">[</span><span class="n">task_id</span><span class="p">][</span><span class="s1">&#39;train&#39;</span><span class="p">]</span>
+        
+        <span class="c1"># Train on the task</span>
+        <span class="n">replay_learner</span><span class="o">.</span><span class="n">train_task</span><span class="p">(</span><span class="n">task_id</span><span class="p">,</span> <span class="n">train_loader</span><span class="p">)</span>
+        
+        <span class="c1"># Evaluate on all previous tasks</span>
+        <span class="n">test_loaders</span> <span class="o">=</span> <span class="p">{</span><span class="n">i</span><span class="p">:</span> <span class="n">task_loaders</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="s1">&#39;test&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">task_id</span><span class="o">+</span><span class="mi">1</span><span class="p">)}</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">replay_learner</span><span class="o">.</span><span class="n">evaluate_all_tasks</span><span class="p">(</span><span class="n">test_loaders</span><span class="p">)</span>
+        
+        <span class="c1"># Display current results</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Task </span><span class="si">{</span><span class="n">task_id</span><span class="si">}</span><span class="s2"> complete. Current accuracies:&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">t</span><span class="p">,</span> <span class="n">acc</span> <span class="ow">in</span> <span class="n">results</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  Task </span><span class="si">{</span><span class="n">t</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">acc</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Plot final results</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">replay_learner</span><span class="o">.</span><span class="n">task_accuracies</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+    <span class="n">accs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">replay_learner</span><span class="o">.</span><span class="n">task_accuracies</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">tasks</span><span class="p">,</span> <span class="n">accs</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Task ID&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy (%)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Final Performance Across Tasks&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">tasks</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">plt</span>
+
+<span class="c1"># Calling this function would run the complete experiment</span>
+<span class="c1"># run_continual_learning_experiment()</span>
+</pre></div>
+</div>
+<p>This implementation demonstrates a simple replay-based approach to continual learning. The system maintains a buffer of past experiences and regularly replays them alongside new data to prevent catastrophic forgetting.</p>
+</section>
+<section id="take-aways">
+<h2>23.6 Take-aways<a class="headerlink" href="#take-aways" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Catastrophic forgetting is a major challenge</strong> for neural networks, preventing them from learning continuously like humans do</p></li>
+<li><p><strong>Biological brains solve the stability-plasticity dilemma</strong> through complementary learning systems, synaptic consolidation, and neuromodulation</p></li>
+<li><p><strong>Computational approaches to lifelong learning include</strong>:</p>
+<ul>
+<li><p>Memory replay methods that revisit past experiences</p></li>
+<li><p>Regularization techniques that constrain important weights</p></li>
+<li><p>Architectural approaches that allocate new capacity for new tasks</p></li>
+<li><p>Meta-learning strategies that learn how to avoid forgetting</p></li>
+</ul>
+</li>
+<li><p><strong>Practical applications of lifelong learning</strong> are numerous in robotics, personal AI assistants, and autonomous systems</p></li>
+<li><p><strong>Combining multiple approaches</strong> often yields the best performance for real-world continual learning systems</p></li>
+</ul>
+</section>
+<section id="further-reading">
+<h2>23.7 Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Kirkpatrick, J., et al. (2017). <a class="reference external" href="https://www.pnas.org/content/114/13/3521">Overcoming catastrophic forgetting in neural networks</a>. Proceedings of the National Academy of Sciences, 114(13), 3521-3526.</p></li>
+<li><p>McClelland, J. L., McNaughton, B. L., &amp; O’Reilly, R. C. (1995). <a class="reference external" href="https://psycnet.apa.org/record/1995-42327-001">Why there are complementary learning systems in the hippocampus and neocortex: Insights from the successes and failures of connectionist models of learning and memory</a>. Psychological Review, 102(3), 419-457.</p></li>
+<li><p>Parisi, G. I., Kemker, R., Part, J. L., Kanan, C., &amp; Wermter, S. (2019). <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0893608019300231">Continual lifelong learning with neural networks: A review</a>. Neural Networks, 113, 54-71.</p></li>
+<li><p>Zenke, F., Poole, B., &amp; Ganguli, S. (2017). <a class="reference external" href="http://proceedings.mlr.press/v70/zenke17a.html">Continual learning through synaptic intelligence</a>. In Proceedings of the 34th International Conference on Machine Learning, 3987-3995.</p></li>
+<li><p>Lopez-Paz, D., &amp; Ranzato, M. (2017). <a class="reference external" href="https://papers.nips.cc/paper/2017/hash/f87522788a2be2d171666752f97ddebb-Abstract.html">Gradient episodic memory for continual learning</a>. In Advances in Neural Information Processing Systems, 6467-6476.</p></li>
+<li><p>van de Ven, G. M., &amp; Tolias, A. S. (2019). <a class="reference external" href="https://arxiv.org/abs/1904.07734">Three scenarios for continual learning</a>. arXiv preprint arXiv:1904.07734.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./part6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ch22_embodied_ai_robotics.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 22: Embodied AI and Robotics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ch24_quantum_computing_neuroai.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 24: Quantum Computing and NeuroAI</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-goals">23.0 Chapter Goals</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-stability-plasticity-dilemma">23.1 The Stability-Plasticity Dilemma</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#catastrophic-forgetting-problem">23.1.1 Catastrophic Forgetting Problem</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#biological-solutions-for-lifelong-learning">23.2 Biological Solutions for Lifelong Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complementary-learning-systems">23.2.1 Complementary Learning Systems</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#synaptic-consolidation-mechanisms">23.2.2 Synaptic Consolidation Mechanisms</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neuromodulation-of-learning-rates">23.2.3 Neuromodulation of Learning Rates</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computational-approaches-to-continual-learning">23.3 Computational Approaches to Continual Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memory-replay-techniques">23.3.1 Memory Replay Techniques</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regularization-based-methods">23.3.2 Regularization-Based Methods</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#architecture-based-approaches">23.3.3 Architecture-Based Approaches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#meta-learning-approaches">23.3.4 Meta-Learning Approaches</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-applications-of-lifelong-learning">23.4 Practical Applications of Lifelong Learning</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#robotics-and-embodied-ai">23.4.1 Robotics and Embodied AI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#personal-ai-assistants">23.4.2 Personal AI Assistants</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#autonomous-systems">23.4.3 Autonomous Systems</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-lab-implementing-a-replay-based-continual-learning-system">23.5 Code Lab: Implementing a Replay-Based Continual Learning System</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#take-aways">23.6 Take-aways</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-reading">23.7 Further Reading</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Richard Young
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

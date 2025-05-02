@@ -1,0 +1,42 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+
+parts:
+  - caption: Part I · Brains & Inspiration
+    chapters:
+      - file: part1/ch01_intro
+      - file: part1/ch02_neuro_foundations
+      - file: part1/ch03_spatial_navigation
+      - file: part1/ch04_perception_pipeline
+  
+  - caption: Part II · Brains Meet Math & Data
+    chapters:
+      - file: part2/ch05_brain_networks
+      - file: part2/ch06_neurostimulation
+      - file: part2/ch07_information_theory
+      - file: part2/ch08_data_science_pipeline
+  
+  - caption: Part III · Learning Machines
+    chapters:
+      - file: part3/ch09_ml_foundations
+      - file: part3/ch10_deep_learning
+      - file: part3/ch11_sequence_models
+  
+  - caption: Part IV · Frontier Models
+    chapters:
+      - file: part4/ch12_large_language_models
+      - file: part4/ch13_multimodal_models
+  
+  - caption: Part V · Reflection & Futures
+    chapters:
+      - file: part5/ch14_future_directions
+  
+  - caption: Appendices
+    chapters:
+      - file: appendices/glossary
+      - file: appendices/math_python_refresher
+      - file: appendices/dataset_catalogue
+      - file: appendices/colab_setup

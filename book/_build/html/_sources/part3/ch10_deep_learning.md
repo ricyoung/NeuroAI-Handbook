@@ -1,14 +1,23 @@
 # Chapter 10: Deep Learning: Training & Optimisation
 
-## 10.0 Chapter Goals
-- Master deep neural network architectures and training
-- Understand optimization algorithms and challenges
-- Implement key deep learning components
-- Apply best practices for model development
+```{admonition} Learning Objectives
+:class: note
+
+By the end of this chapter, you will be able to:
+
+- **Master** deep neural network architectures and training techniques
+- **Understand** optimization algorithms and their underlying mathematical principles
+- **Implement** key deep learning components from scratch and with frameworks
+- **Apply** best practices for model development and troubleshooting
+- **Compare** biological and artificial optimization approaches
+```
 
 ## 10.1 Neural Network Fundamentals
 
 Deep learning has revolutionized AI by enabling models to learn hierarchical representations directly from data. At its core, deep learning is built on neural networks with multiple layers that progressively extract higher-level features.
+
+![Neural Network Architecture](../figures/ch10/neural_network_architecture.svg)
+*Figure 10.1: A multilayer perceptron with two hidden layers, showing how neurons connect between layers and activate through non-linear functions.*
 
 ### 10.1.1 Multilayer Perceptrons
 
@@ -250,6 +259,9 @@ Solutions to these gradient problems include:
 ## 10.2 Optimization Techniques
 
 Training deep neural networks requires effective optimization algorithms. The choice of optimizer significantly impacts training speed and model performance.
+
+![Optimization Algorithms](../figures/ch10/optimization_algorithms.svg)
+*Figure 10.2: Comparison of different optimization algorithms showing convergence paths in a loss landscape. Modern approaches like Adam and RMSprop often converge faster and more reliably than vanilla SGD.*
 
 ### 10.2.1 Stochastic Gradient Descent
 
@@ -559,6 +571,9 @@ While second-order methods offer theoretical advantages, their computational req
 ## 10.3 Regularization Strategies
 
 Regularization helps prevent overfitting by constraining the model's capacity or adding noise to the training process.
+
+![Regularization Techniques](../figures/ch10/regularization_techniques.svg)
+*Figure 10.3: Common regularization methods in deep learning, including dropout, weight decay (L2), batch normalization, data augmentation, early stopping, and label smoothing.*
 
 ### 10.3.1 Dropout and Batch Normalization
 
@@ -956,6 +971,9 @@ Benefits include:
 
 Modern deep learning has evolved sophisticated architectures for different domains.
 
+![Advanced Architectures](../figures/ch10/advanced_architectures.svg)
+*Figure 10.4: Key architectural patterns in modern deep learning, including CNNs, ResNets, Inception modules, and Transformer blocks, each addressing specific model design challenges.*
+
 ### 10.4.1 Convolutional Neural Networks
 
 ```python
@@ -1258,29 +1276,333 @@ Modern activation functions improve on traditional ones like sigmoid and tanh:
 - **Swish/SiLU**: Self-gated activation $x \cdot \sigma(x)$, often outperforms ReLU
 - **Mish**: Smooth alternative to Swish with better performance
 
-## 10.5 Training Dynamics
+## 10.5 Biological Parallels in Deep Learning
 
-Understanding the training dynamics of deep networks provides insights into optimization challenges and generalization.
+Deep learning draws significant inspiration from neuroscience, though the connections are often overlooked in technical discussions. This section explores the parallels between neural networks and biological neural systems.
 
-### 10.5.1 Loss Landscapes
+![Biological Parallels in Deep Learning](../figures/ch10/bio_dl_parallels.svg)
+*Figure 10.5: Comparison of biological and artificial neurons, highlighting similarities and differences in structure and learning mechanisms.*
+
+### 10.5.1 Neural Architectures and Brain Organization
+
+While artificial neural networks are highly simplified compared to biological neurons, several architectural principles are shared:
+
+- **Hierarchical Processing**: Both biological visual systems and CNNs process information in a hierarchical manner, with early layers detecting simple features and deeper layers representing more complex patterns.
+  
+- **Recurrent Connections**: Recurrent neural networks parallel the recurrent connectivity in cortical circuits, allowing for temporal processing and memory.
+  
+- **Attention Mechanisms**: Neural attention mechanisms are inspired by biological attention systems that selectively focus computational resources on relevant input features.
 
 ```python
-def loss_landscape_visualization():
-    """Create visual representation of neural network loss landscape."""
-    # Display the SVG figure
-    from IPython.display import SVG, display
-    fig_path = '/Volumes/data_bolt/_github/NeuroAI-Handbook/book/figures/dl_optimization_landscape.svg'
+def biological_vs_artificial_neurons():
+    """Compare biological and artificial neurons."""
+    # Create a simple diagram
+    fig, ax = plt.subplots(2, 1, figsize=(10, 8))
     
-    # Create a placeholder figure with text directing to the SVG
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.text(0.5, 0.5, "Loss Landscape Visualization\n\nSee figure: dl_optimization_landscape.svg", 
-            ha='center', va='center', fontsize=14)
-    ax.axis('off')
+    # Biological neuron (simplified)
+    ax[0].set_title("Biological Neuron")
+    ax[0].axis('off')
+    ax[0].text(0.1, 0.7, "Dendrites", fontsize=12)
+    ax[0].text(0.5, 0.7, "Soma", fontsize=12)
+    ax[0].text(0.8, 0.7, "Axon", fontsize=12)
+    ax[0].text(0.9, 0.4, "Synapses", fontsize=12)
     
-    # Return instructions to view the actual figure
-    print("Please refer to the figure: dl_optimization_landscape.svg")
+    # Draw simplified neuron
+    ax[0].plot([0.1, 0.4], [0.5, 0.5], 'k-', linewidth=2)  # Dendrite
+    ax[0].plot([0.2, 0.35], [0.6, 0.5], 'k-', linewidth=2)  # Dendrite
+    ax[0].plot([0.3, 0.4], [0.4, 0.5], 'k-', linewidth=2)  # Dendrite
+    circle = plt.Circle((0.5, 0.5), 0.1, fill=True, color='lightgray')
+    ax[0].add_patch(circle)  # Soma
+    ax[0].plot([0.6, 0.9], [0.5, 0.5], 'k-', linewidth=2)  # Axon
+    ax[0].plot([0.9, 0.95], [0.5, 0.3], 'k-', linewidth=1)  # Synapse
+    ax[0].plot([0.9, 0.95], [0.5, 0.5], 'k-', linewidth=1)  # Synapse
+    ax[0].plot([0.9, 0.95], [0.5, 0.7], 'k-', linewidth=1)  # Synapse
+    
+    # Artificial neuron
+    ax[1].set_title("Artificial Neuron")
+    ax[1].axis('off')
+    ax[1].text(0.05, 0.6, "x₁", fontsize=12)
+    ax[1].text(0.05, 0.5, "x₂", fontsize=12)
+    ax[1].text(0.05, 0.3, "xₙ", fontsize=12)
+    ax[1].text(0.3, 0.7, "w₁", fontsize=10)
+    ax[1].text(0.3, 0.55, "w₂", fontsize=10)
+    ax[1].text(0.3, 0.3, "wₙ", fontsize=10)
+    ax[1].text(0.4, 0.2, "Bias", fontsize=10)
+    ax[1].text(0.5, 0.5, "∑", fontsize=18)
+    ax[1].text(0.7, 0.5, "σ", fontsize=16)
+    ax[1].text(0.9, 0.5, "Output", fontsize=12)
+    
+    # Draw artificial neuron
+    ax[1].plot([0.1, 0.4], [0.6, 0.5], 'k-', linewidth=1)  # Input 1
+    ax[1].plot([0.1, 0.4], [0.5, 0.5], 'k-', linewidth=1)  # Input 2
+    ax[1].plot([0.1, 0.4], [0.3, 0.5], 'k-', linewidth=1)  # Input n
+    ax[1].plot([0.4, 0.4], [0.3, 0.5], 'k:', linewidth=1)  # ...
+    ax[1].plot([0.4, 0.5], [0.3, 0.5], 'k-', linewidth=1)  # Input n connection
+    circle1 = plt.Circle((0.5, 0.5), 0.05, fill=True, color='lightgray')
+    ax[1].add_patch(circle1)  # Summation
+    ax[1].plot([0.55, 0.65], [0.5, 0.5], 'k-', linewidth=1)  # To activation
+    circle2 = plt.Circle((0.7, 0.5), 0.05, fill=True, color='lightgray')
+    ax[1].add_patch(circle2)  # Activation
+    ax[1].plot([0.75, 0.85], [0.5, 0.5], 'k-', linewidth=1)  # Output
+    
+    plt.tight_layout()
     return fig
 ```
+
+### 10.5.2 Learning Mechanisms
+
+The brain employs various learning mechanisms that have counterparts in deep learning:
+
+- **Hebbian Learning vs. Backpropagation**: Hebbian learning ("neurons that fire together, wire together") is a local learning rule, while backpropagation propagates errors globally. Recent research explores biologically plausible alternatives to backpropagation, such as target propagation and feedback alignment.
+
+- **Neuromodulation vs. Adaptive Learning Rates**: Neuromodulatory systems in the brain (dopamine, acetylcholine, etc.) regulate plasticity and learning, similar to how adaptive learning rate methods (Adam, RMSProp) modulate weight updates.
+
+- **Homeostatic Plasticity vs. Regularization**: The brain employs homeostatic mechanisms to maintain stability, paralleling regularization techniques like weight decay and normalization in artificial networks.
+
+### 10.5.3 Credit Assignment Problem
+
+Both biological and artificial systems face the fundamental problem of credit assignment: determining which components contributed to an outcome.
+
+```python
+def credit_assignment_comparison():
+    """Compare credit assignment in biological and artificial systems."""
+    fig, ax = plt.subplots(1, 2, figsize=(12, 5))
+    
+    # Biological credit assignment
+    ax[0].set_title("Biological Credit Assignment")
+    ax[0].axis('off')
+    
+    # Create a simple network diagram
+    pos = {'A': (0.2, 0.8), 'B': (0.5, 0.8), 'C': (0.8, 0.8),
+           'D': (0.2, 0.5), 'E': (0.5, 0.5), 'F': (0.8, 0.5),
+           'G': (0.2, 0.2), 'H': (0.5, 0.2), 'I': (0.8, 0.2)}
+    
+    # Draw nodes
+    for node, position in pos.items():
+        circle = plt.Circle(position, 0.05, fill=True, 
+                         color='lightgray' if node not in ['A', 'I'] else 'lightblue')
+        ax[0].add_patch(circle)
+        ax[0].text(position[0], position[1], node, 
+                 ha='center', va='center', fontsize=12)
+    
+    # Draw edges
+    edges = [('A', 'D'), ('A', 'E'), ('B', 'D'), ('B', 'E'), ('B', 'F'), 
+             ('C', 'E'), ('C', 'F'), ('D', 'G'), ('D', 'H'), 
+             ('E', 'G'), ('E', 'H'), ('E', 'I'), ('F', 'H'), ('F', 'I'),
+             ('G', 'H'), ('G', 'I'), ('H', 'I')]
+    
+    for edge in edges:
+        ax[0].plot([pos[edge[0]][0], pos[edge[1]][0]], 
+                 [pos[edge[0]][1], pos[edge[1]][1]], 
+                 'k-', alpha=0.6, linewidth=1)
+    
+    # Highlight local feedback paths
+    ax[0].plot([pos['I'][0], pos['F'][0]], [pos['I'][1], pos['F'][1]], 
+             'r-', alpha=0.7, linewidth=2)
+    ax[0].plot([pos['F'][0], pos['C'][0]], [pos['F'][1], pos['C'][1]], 
+             'r-', alpha=0.7, linewidth=2)
+    
+    # Add text explanation
+    ax[0].text(0.5, 0.02, "Relies on local feedback signals and reward modulation", 
+             ha='center', fontsize=11)
+    
+    # Artificial credit assignment
+    ax[1].set_title("Artificial Credit Assignment (Backpropagation)")
+    ax[1].axis('off')
+    
+    # Use the same network layout
+    for node, position in pos.items():
+        circle = plt.Circle(position, 0.05, fill=True, 
+                         color='lightgray' if node not in ['A', 'I'] else 'lightblue')
+        ax[1].add_patch(circle)
+        ax[1].text(position[0], position[1], node, 
+                 ha='center', va='center', fontsize=12)
+    
+    # Draw forward pass edges
+    for edge in edges:
+        ax[1].plot([pos[edge[0]][0], pos[edge[1]][0]], 
+                 [pos[edge[0]][1], pos[edge[1]][1]], 
+                 'k-', alpha=0.6, linewidth=1)
+    
+    # Draw backward pass (gradient flow)
+    backward_edges = [('I', 'F'), ('I', 'E'), ('I', 'H'), ('I', 'G'),
+                      ('H', 'E'), ('H', 'D'), ('H', 'F'),
+                      ('G', 'D'), ('G', 'E'),
+                      ('F', 'C'), ('F', 'B'),
+                      ('E', 'B'), ('E', 'A'), ('E', 'C'),
+                      ('D', 'A'), ('D', 'B')]
+    
+    for edge in backward_edges:
+        ax[1].plot([pos[edge[0]][0], pos[edge[1]][0]], 
+                 [pos[edge[0]][1], pos[edge[1]][1]], 
+                 'r-', alpha=0.4, linewidth=1, linestyle='--')
+    
+    # Add text explanation
+    ax[1].text(0.5, 0.02, "Propagates error backwards through entire network", 
+             ha='center', fontsize=11)
+    
+    plt.tight_layout()
+    return fig
+```
+
+Backpropagation in artificial neural networks provides a mathematically precise solution to credit assignment but is not biologically plausible due to:
+
+1. The need for symmetric weight matrices
+2. Requiring precise storage of forward pass activations
+3. Non-local weight updates
+
+Neuroscience research explores alternatives like:
+
+- **Three-factor Hebbian learning**: Combining pre/post-synaptic activity with a global modulation signal
+- **Predictive coding**: Using prediction errors to drive learning
+- **Feedback alignment**: Using random feedback weights for credit assignment
+
+## 10.6 Modern Deep Learning Paradigms
+
+Deep learning has evolved rapidly in recent years, with several important new paradigms emerging.
+
+### 10.6.1 Self-Supervised Learning
+
+Self-supervised learning has emerged as a powerful paradigm that leverages unlabeled data by creating "pseudo-labels" from the data itself.
+
+```python
+def self_supervised_paradigms():
+    """Illustrate different self-supervised learning approaches."""
+    fig, axes = plt.subplots(2, 2, figsize=(12, 10))
+    
+    # Masked Language Modeling
+    axes[0, 0].set_title("Masked Language Modeling")
+    axes[0, 0].axis('off')
+    text = "The [MASK] jumped over the lazy dog."
+    axes[0, 0].text(0.5, 0.7, text, ha='center', fontsize=12)
+    axes[0, 0].text(0.5, 0.4, "↓", ha='center', fontsize=20)
+    axes[0, 0].text(0.5, 0.2, "The fox jumped over the lazy dog.", 
+                  ha='center', fontsize=12, color='green')
+    
+    # Contrastive Learning
+    axes[0, 1].set_title("Contrastive Learning")
+    axes[0, 1].axis('off')
+    # Draw an anchor image
+    rect1 = plt.Rectangle((0.3, 0.6), 0.4, 0.3, fill=True, color='lightblue')
+    axes[0, 1].add_patch(rect1)
+    axes[0, 1].text(0.5, 0.75, "Anchor", ha='center')
+    
+    # Draw positive and negative examples
+    rect2 = plt.Rectangle((0.1, 0.2), 0.3, 0.2, fill=True, color='lightblue')
+    axes[0, 1].add_patch(rect2)
+    axes[0, 1].text(0.25, 0.3, "Positive", ha='center')
+    
+    rect3 = plt.Rectangle((0.6, 0.2), 0.3, 0.2, fill=True, color='lightcoral')
+    axes[0, 1].add_patch(rect3)
+    axes[0, 1].text(0.75, 0.3, "Negative", ha='center')
+    
+    # Draw attraction/repulsion arrows
+    axes[0, 1].arrow(0.4, 0.6, -0.1, -0.25, head_width=0.02, head_length=0.02, 
+                   fc='green', ec='green')
+    axes[0, 1].arrow(0.6, 0.6, 0.1, -0.25, head_width=0.02, head_length=0.02, 
+                   fc='red', ec='red')
+    
+    # Autoregressive Prediction
+    axes[1, 0].set_title("Autoregressive Prediction")
+    axes[1, 0].axis('off')
+    text = "The fox jumped over the"
+    axes[1, 0].text(0.5, 0.7, text, ha='center', fontsize=12)
+    axes[1, 0].text(0.5, 0.4, "↓", ha='center', fontsize=20)
+    axes[1, 0].text(0.5, 0.2, "lazy dog.", 
+                  ha='center', fontsize=12, color='green')
+    
+    # Rotation/Colorization
+    axes[1, 1].set_title("Image Restoration")
+    axes[1, 1].axis('off')
+    
+    # Draw a grayscale or corrupted image
+    rect4 = plt.Rectangle((0.1, 0.6), 0.3, 0.3, fill=True, color='lightgray')
+    axes[1, 1].add_patch(rect4)
+    axes[1, 1].text(0.25, 0.5, "Corrupted Input", ha='center')
+    
+    # Draw arrow
+    axes[1, 1].text(0.5, 0.7, "→", ha='center', fontsize=20)
+    
+    # Draw restored image
+    rect5 = plt.Rectangle((0.6, 0.6), 0.3, 0.3, fill=True, color='lightblue')
+    axes[1, 1].add_patch(rect5)
+    axes[1, 1].text(0.75, 0.5, "Restored Image", ha='center')
+    
+    plt.tight_layout()
+    return fig
+```
+
+Key self-supervised paradigms include:
+
+- **Masked Language/Image Modeling**: Predicting masked tokens from surrounding context
+- **Contrastive Learning**: Learning to distinguish between similar and dissimilar examples
+- **Autoregressive Prediction**: Predicting next elements in a sequence
+- **Data Restoration**: Reconstructing corrupted or modified versions of the input
+
+Self-supervised learning has enabled state-of-the-art results across domains with limited labeled data, and forms the foundation of modern foundation models.
+
+### 10.6.2 Foundation Models and Scaling Laws
+
+Recent years have witnessed the emergence of foundation models: large-scale models pre-trained on vast amounts of data that can be adapted to various downstream tasks.
+
+```python
+def scaling_laws():
+    """Visualize scaling laws in deep learning."""
+    fig, ax = plt.subplots(figsize=(10, 6))
+    
+    # Log scales
+    ax.set_xscale('log')
+    ax.set_yscale('log')
+    
+    # Compute data points
+    x = np.logspace(0, 4, 100)
+    y_params = 0.5 * x**(-0.3)  # Performance improves with model size
+    y_data = 0.5 * x**(-0.25)   # Performance improves with data
+    y_compute = 0.5 * x**(-0.2) # Performance improves with compute
+    
+    # Plot scaling curves
+    ax.plot(x, y_params, 'b-', label='Model Size Scaling')
+    ax.plot(x, y_data, 'r-', label='Dataset Size Scaling')
+    ax.plot(x, y_compute, 'g-', label='Compute Scaling')
+    
+    # Add scaling regimes markers
+    ax.axvline(x=10, color='gray', linestyle='--', alpha=0.5)
+    ax.axvline(x=1000, color='gray', linestyle='--', alpha=0.5)
+    
+    ax.text(5, 0.01, "Small\nModels", ha='right')
+    ax.text(500, 0.01, "Medium\nModels", ha='center')
+    ax.text(5000, 0.01, "Large\nModels", ha='left')
+    
+    # Labels
+    ax.set_xlabel('Scale Factor (log)')
+    ax.set_ylabel('Loss (log)')
+    ax.set_title('Scaling Laws in Deep Learning')
+    ax.legend()
+    
+    # Emergent abilities annotation
+    ax.annotate('Emergent\nAbilities', xy=(1000, 0.05), xytext=(500, 0.15),
+               arrowprops=dict(arrowstyle='->'))
+    
+    plt.grid(True, which="both", ls="-", alpha=0.2)
+    return fig
+```
+
+Key insights from scaling research include:
+
+- **Predictable Scaling Laws**: Model performance improves following power laws with increases in model size, data, and compute.
+- **Emergent Abilities**: Beyond certain scale thresholds, models demonstrate qualitatively new capabilities not present in smaller models.
+- **Transfer Learning Efficiency**: Large pre-trained models can be efficiently fine-tuned for downstream tasks with relatively little task-specific data.
+
+Foundation models have transformed deep learning research and applications, with models like:
+
+- **Large Language Models**: GPT, LLaMA, Claude
+- **Vision-Language Models**: CLIP, DALL-E, Stable Diffusion
+- **Multimodal Models**: GPT-4, Gemini
+
+### 10.6.3 Loss Landscapes
+
+![Loss Landscape](../figures/ch10/dl_optimization_landscape.svg)
+*Figure 10.6: Visualization of neural network loss landscape showing the complex optimization surface with local minima, saddle points, and flat regions.*
 
 Loss landscapes in deep networks are complex, high-dimensional surfaces with many local minima, saddle points, and flat regions:
 
@@ -1561,6 +1883,21 @@ While modern deep learning frameworks automate these steps, understanding the un
 - **Optimization Challenges**: Deep learning optimization remains challenging due to non-convex loss landscapes, saddle points, and the need to escape poor local minima.
 
 - **Empirical Focus**: Despite theoretical progress, deep learning remains heavily empirical, with practical techniques often preceding theoretical understanding.
+
+```{admonition} Knowledge Connections
+:class: important
+
+**Looking Back**
+- **Chapter 1 (Introduction)**: The backpropagation algorithm introduced in section 1.1.3 is explored in depth here, showing how it enables training of complex neural networks.
+- **Chapter 2 (Neuroscience Foundations)**: The biological learning mechanisms described in section 2.3 provide an interesting contrast to the optimization algorithms covered in this chapter.
+- **Chapter 7 (Information Theory)**: The information bottleneck principle (section 7.6) provides theoretical insights into how deep networks compress information through layers.
+- **Chapter 9 (ML Foundations)**: The basic learning algorithms from Chapter 9 are extended here to handle deep architectures and large-scale training.
+
+**Looking Forward**
+- **Chapter 11 (Sequence Models)**: The optimization techniques learned here will be applied to the specialized architectures for sequential data.
+- **Chapter 12 (Large Language Models)**: The scaling laws and foundation model concepts introduced in section 10.6.2 become critical for understanding LLM training and capabilities.
+- **Chapter 14 (Future Directions)**: The biological parallels in deep learning (section 10.5) point to neuromorphic approaches that may shape future AI systems.
+```
 
 ## 10.8 Further Reading & Media
 

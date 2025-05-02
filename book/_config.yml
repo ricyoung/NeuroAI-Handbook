@@ -5,7 +5,7 @@ title: The Neuroscience of AI
 author: Richard Young
 copyright: "2025"
 
-logo: logo.png
+logo: nai.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -32,3 +32,44 @@ repository:
 html:
   use_issues_button: true
   use_repository_button: true
+  use_edit_page_button: true
+  use_download_button: true
+  home_page_in_navbar: true
+  baseurl: https://neuroai-handbook.github.io
+  comments:
+    hypothesis: true
+
+# Launch button settings
+launch_buttons:
+  notebook_interface: jupyterlab
+  binderhub_url: https://mybinder.org
+  thebe: true  # Enable thebe for interactive code cells
+
+# Enable MyST-NB features
+parse:
+  myst_enable_extensions:
+    - colon_fence
+    - dollarmath
+    - substitution
+    - tasklist
+    - linkify
+    - html_image
+    
+sphinx:
+  extra_extensions:
+    - sphinx_togglebutton
+    - sphinx_copybutton
+    - sphinx.ext.intersphinx
+    - sphinxcontrib.bibtex
+    - sphinx_comments
+    - sphinx_thebe
+  config:
+    html_js_files:
+      - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
+
+# Files to exclude from auto-toc generation  
+exclude_patterns:
+  - "figures/README.md"
+  - "markdown.md"
+  - "markdown-notebooks.md"
+  - "notebooks.ipynb"

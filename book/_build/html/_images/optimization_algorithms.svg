@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 24px Arial; fill: #333; text-anchor: middle; }
+    .subtitle { font: 18px Arial; fill: #666; text-anchor: middle; }
+    .axis-label { font: 14px Arial; fill: #333; text-anchor: middle; }
+    .optimizer-label { font: bold 16px Arial; fill: #333; text-anchor: start; }
+    .formula { font: italic 14px Arial; fill: #333; text-anchor: start; }
+    .contour { fill: none; stroke: #999; stroke-width: 1; }
+    .path { fill: none; stroke-width: 3; }
+    .sgd-path { stroke: #d62728; }
+    .momentum-path { stroke: #ff7f0e; }
+    .adagrad-path { stroke: #2ca02c; }
+    .rmsprop-path { stroke: #9467bd; }
+    .adam-path { stroke: #1f77b4; }
+    .dot { fill: #000; r: 4; }
+    .dot-end { r: 6; }
+    .sgd-dot { fill: #d62728; }
+    .momentum-dot { fill: #ff7f0e; }
+    .adagrad-dot { fill: #2ca02c; }
+    .rmsprop-dot { fill: #9467bd; }
+    .adam-dot { fill: #1f77b4; }
+    .property { font: 13px Arial; fill: #555; text-anchor: start; }
+    .divider { stroke: #ddd; stroke-width: 1; }
+  </style>
+  
+  <!-- Title -->
+  <text x="400" y="40" class="title">Optimization Algorithms Comparison</text>
+  <text x="400" y="70" class="subtitle">Convergence paths in loss landscape</text>
+  
+  <!-- Contour Plot (Loss Landscape) -->
+  <g transform="translate(50, 100)">
+    <rect x="0" y="0" width="400" height="400" fill="#f9f9f9" stroke="#ccc" stroke-width="1" />
+    
+    <!-- Contour lines (simplified representation) -->
+    <ellipse cx="300" cy="250" rx="280" ry="200" class="contour" />
+    <ellipse cx="300" cy="250" rx="220" ry="160" class="contour" />
+    <ellipse cx="300" cy="250" rx="160" ry="120" class="contour" />
+    <ellipse cx="300" cy="250" rx="100" ry="80" class="contour" />
+    <ellipse cx="300" cy="250" rx="50" ry="40" class="contour" />
+    <ellipse cx="300" cy="250" rx="20" ry="15" class="contour" />
+    
+    <!-- Optimization Paths -->
+    <!-- SGD path (zigzag) -->
+    <path d="M 50 350 L 90 330 L 120 345 L 150 320 L 170 335 L 200 310 L 230 325 L 260 290 L 280 270 L 290 255 L 300 250" 
+          class="path sgd-path" />
+    
+    <!-- Momentum path (smoother) -->
+    <path d="M 50 350 C 130 350, 150 320, 180 300 C 220 280, 240 270, 300 250" 
+          class="path momentum-path" />
+    
+    <!-- AdaGrad path (faster initial, slower later) -->
+    <path d="M 50 350 C 150 280, 220 260, 250 255 C 280 250, 290 250, 300 250" 
+          class="path adagrad-path" />
+    
+    <!-- RMSprop path (adaptive) -->
+    <path d="M 50 350 C 100 320, 150 290, 190 280 C 230 270, 270 260, 300 250" 
+          class="path rmsprop-path" />
+    
+    <!-- Adam path (direct) -->
+    <path d="M 50 350 C 120 310, 180 280, 230 265 C 260 255, 280 250, 300 250" 
+          class="path adam-path" />
+    
+    <!-- Starting point -->
+    <circle cx="50" cy="350" r="6" fill="#333" />
+    <text x="40" y="370" class="axis-label">Start</text>
+    
+    <!-- Minimum point -->
+    <circle cx="300" cy="250" r="6" fill="#333" />
+    <text x="310" y="240" class="axis-label">Minimum</text>
+    
+    <!-- Path dots to show steps -->
+    <!-- SGD dots -->
+    <circle cx="50" cy="350" class="dot sgd-dot" />
+    <circle cx="90" cy="330" class="dot sgd-dot" />
+    <circle cx="120" cy="345" class="dot sgd-dot" />
+    <circle cx="150" cy="320" class="dot sgd-dot" />
+    <circle cx="170" cy="335" class="dot sgd-dot" />
+    <circle cx="200" cy="310" class="dot sgd-dot" />
+    <circle cx="230" cy="325" class="dot sgd-dot" />
+    <circle cx="260" cy="290" class="dot sgd-dot" />
+    <circle cx="280" cy="270" class="dot sgd-dot" />
+    <circle cx="290" cy="255" class="dot sgd-dot" />
+    <circle cx="300" cy="250" class="dot sgd-dot dot-end" />
+    
+    <!-- Momentum dots (fewer, bigger steps) -->
+    <circle cx="50" cy="350" class="dot momentum-dot" />
+    <circle cx="130" cy="320" class="dot momentum-dot" />
+    <circle cx="200" cy="280" class="dot momentum-dot" />
+    <circle cx="260" cy="260" class="dot momentum-dot" />
+    <circle cx="300" cy="250" class="dot momentum-dot dot-end" />
+    
+    <!-- AdaGrad dots -->
+    <circle cx="50" cy="350" class="dot adagrad-dot" />
+    <circle cx="150" cy="280" class="dot adagrad-dot" />
+    <circle cx="220" cy="260" class="dot adagrad-dot" />
+    <circle cx="250" cy="255" class="dot adagrad-dot" />
+    <circle cx="280" cy="252" class="dot adagrad-dot" />
+    <circle cx="300" cy="250" class="dot adagrad-dot dot-end" />
+    
+    <!-- RMSprop dots -->
+    <circle cx="50" cy="350" class="dot rmsprop-dot" />
+    <circle cx="120" cy="300" class="dot rmsprop-dot" />
+    <circle cx="190" cy="280" class="dot rmsprop-dot" />
+    <circle cx="250" cy="260" class="dot rmsprop-dot" />
+    <circle cx="300" cy="250" class="dot rmsprop-dot dot-end" />
+    
+    <!-- Adam dots -->
+    <circle cx="50" cy="350" class="dot adam-dot" />
+    <circle cx="120" cy="310" class="dot adam-dot" />
+    <circle cx="180" cy="280" class="dot adam-dot" />
+    <circle cx="240" cy="260" class="dot adam-dot" />
+    <circle cx="300" cy="250" class="dot adam-dot dot-end" />
+    
+    <!-- Axes labels -->
+    <text x="200" y="420" class="axis-label">Weight 1</text>
+    <text x="-20" y="200" class="axis-label" transform="rotate(-90, -20, 200)">Weight 2</text>
+  </g>
+  
+  <!-- Optimizer Descriptions -->
+  <g transform="translate(500, 100)">
+    <!-- SGD -->
+    <text x="0" y="20" class="optimizer-label" fill="#d62728">SGD</text>
+    <text x="0" y="45" class="formula">θₜ₊₁ = θₜ - η∇f(θₜ)</text>
+    <text x="0" y="70" class="property">• Simple, high variance</text>
+    <text x="0" y="90" class="property">• Oscillates in ravines</text>
+    
+    <line x1="0" y1="105" x2="250" y2="105" class="divider" />
+    
+    <!-- Momentum -->
+    <text x="0" y="125" class="optimizer-label" fill="#ff7f0e">SGD with Momentum</text>
+    <text x="0" y="150" class="formula">vₜ = γvₜ₋₁ + η∇f(θₜ)</text>
+    <text x="0" y="170" class="formula">θₜ₊₁ = θₜ - vₜ</text>
+    <text x="0" y="195" class="property">• Accelerates in consistent directions</text>
+    <text x="0" y="215" class="property">• Reduces oscillations</text>
+    
+    <line x1="0" y1="230" x2="250" y2="230" class="divider" />
+    
+    <!-- AdaGrad -->
+    <text x="0" y="250" class="optimizer-label" fill="#2ca02c">AdaGrad</text>
+    <text x="0" y="275" class="formula">Gₜ = Gₜ₋₁ + (∇f(θₜ))²</text>
+    <text x="0" y="295" class="formula">θₜ₊₁ = θₜ - η∇f(θₜ)/√(Gₜ+ε)</text>
+    <text x="0" y="320" class="property">• Adaptive learning rates</text>
+    <text x="0" y="340" class="property">• Can stop learning too early</text>
+    
+    <line x1="0" y1="355" x2="250" y2="355" class="divider" />
+    
+    <!-- RMSprop -->
+    <text x="0" y="375" class="optimizer-label" fill="#9467bd">RMSprop</text>
+    <text x="0" y="400" class="formula">Gₜ = βGₜ₋₁ + (1-β)(∇f(θₜ))²</text>
+    <text x="0" y="420" class="formula">θₜ₊₁ = θₜ - η∇f(θₜ)/√(Gₜ+ε)</text>
+    <text x="0" y="445" class="property">• Fixes AdaGrad's learning decay</text>
+    <text x="0" y="465" class="property">• Works well for RNNs</text>
+    
+    <line x1="0" y1="480" x2="250" y2="480" class="divider" />
+    
+    <!-- Adam -->
+    <text x="0" y="500" class="optimizer-label" fill="#1f77b4">Adam</text>
+    <text x="0" y="525" class="formula">mₜ = β₁mₜ₋₁ + (1-β₁)∇f(θₜ)</text>
+    <text x="0" y="545" class="formula">vₜ = β₂vₜ₋₁ + (1-β₂)(∇f(θₜ))²</text>
+    <text x="0" y="565" class="formula">θₜ₊₁ = θₜ - η·m̂ₜ/√(v̂ₜ+ε)</text>
+    <text x="0" y="590" class="property">• Combines momentum and RMSprop</text>
+    <text x="0" y="610" class="property">• State-of-the-art performance</text>
+  </g>
+</svg>

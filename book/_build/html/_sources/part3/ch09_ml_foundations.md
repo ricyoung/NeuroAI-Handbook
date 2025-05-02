@@ -14,6 +14,9 @@ This chapter provides a foundation for understanding machine learning algorithms
 
 Machine learning approaches can be categorized into different paradigms based on the nature of the learning signal and goal.
 
+![Learning Paradigms](../figures/ch09/learning_paradigms.svg)
+*Figure 9.1: Comparison of supervised, unsupervised, and reinforcement learning paradigms with their neuroscience parallels.*
+
 ### Supervised Learning
 
 In supervised learning, the algorithm learns a mapping from inputs to outputs based on labeled examples. This parallels associative learning in biological systems, where organisms learn to associate stimuli with outcomes.
@@ -970,6 +973,9 @@ The bias-variance decomposition helps understand model errors:
 
 More complex models have higher variance but lower bias, leading to a trade-off.
 
+![Bias-Variance Tradeoff](../figures/ch09/bias_variance_tradeoff.svg)
+*Figure 9.2: The bias-variance tradeoff illustrating how error changes with model complexity. Simple models can underfit (high bias), while complex models can overfit (high variance).*
+
 ```python
 # Simulate bias-variance tradeoff
 def simulate_bias_variance_tradeoff():
@@ -1063,6 +1069,9 @@ Choose metrics based on the task and what errors are most important:
 ### Feature Selection Methods
 
 Feature selection improves model performance and interpretability:
+
+![Feature Selection Methods](../figures/ch09/feature_selection.svg)
+*Figure 9.4: Comparison of different feature selection approaches (filter, wrapper, and embedded methods) for identifying relevant features in high-dimensional data.*
 
 - **Filter methods**: Select features based on their relationship with the target (correlation, mutual information)
 - **Wrapper methods**: Use a model's performance to evaluate feature subsets (recursive feature elimination)
@@ -1239,6 +1248,9 @@ Feature scaling ensures that all features contribute appropriately:
 - **Normalizer**: Scales samples to unit norm
 
 ## 9.5 Neural Basis of ML
+
+![Neuroscience-ML Parallels](../figures/ch09/neuroscience_ml_parallels.svg)
+*Figure 9.3: Key parallels between machine learning concepts and their biological counterparts in neuroscience.*
 
 ### Biological Parallels to Supervised Learning
 

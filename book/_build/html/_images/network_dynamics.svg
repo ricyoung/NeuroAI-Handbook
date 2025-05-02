@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#fff"/>
+
+  <!-- Graph Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle">Anti-Correlated Network Dynamics</text>
+  <text x="400" y="70" font-family="Arial, sans-serif" font-size="16" text-anchor="middle">Default Mode Network vs. Executive Control Network</text>
+
+  <!-- Axes -->
+  <line x1="100" y1="400" x2="700" y2="400" stroke="#333" stroke-width="2"/>
+  <line x1="100" y1="400" x2="100" y2="100" stroke="#333" stroke-width="2"/>
+  
+  <!-- X-axis ticks and labels -->
+  <line x1="100" y1="400" x2="100" y2="405" stroke="#333" stroke-width="2"/>
+  <text x="100" y="425" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">0</text>
+  
+  <line x1="200" y1="400" x2="200" y2="405" stroke="#333" stroke-width="2"/>
+  <text x="200" y="425" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">50</text>
+  
+  <line x1="300" y1="400" x2="300" y2="405" stroke="#333" stroke-width="2"/>
+  <text x="300" y="425" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">100</text>
+  
+  <line x1="400" y1="400" x2="400" y2="405" stroke="#333" stroke-width="2"/>
+  <text x="400" y="425" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">150</text>
+  
+  <line x1="500" y1="400" x2="500" y2="405" stroke="#333" stroke-width="2"/>
+  <text x="500" y="425" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">200</text>
+  
+  <line x1="600" y1="400" x2="600" y2="405" stroke="#333" stroke-width="2"/>
+  <text x="600" y="425" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">250</text>
+  
+  <line x1="700" y1="400" x2="700" y2="405" stroke="#333" stroke-width="2"/>
+  <text x="700" y="425" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">300</text>
+  
+  <!-- Y-axis ticks and labels -->
+  <line x1="95" y1="350" x2="100" y2="350" stroke="#333" stroke-width="2"/>
+  <text x="85" y="355" font-family="Arial, sans-serif" font-size="12" text-anchor="end">-1</text>
+  
+  <line x1="95" y1="300" x2="100" y2="300" stroke="#333" stroke-width="2"/>
+  <text x="85" y="305" font-family="Arial, sans-serif" font-size="12" text-anchor="end">-0.5</text>
+  
+  <line x1="95" y1="250" x2="100" y2="250" stroke="#333" stroke-width="2"/>
+  <text x="85" y="255" font-family="Arial, sans-serif" font-size="12" text-anchor="end">0</text>
+  
+  <line x1="95" y1="200" x2="100" y2="200" stroke="#333" stroke-width="2"/>
+  <text x="85" y="205" font-family="Arial, sans-serif" font-size="12" text-anchor="end">0.5</text>
+  
+  <line x1="95" y1="150" x2="100" y2="150" stroke="#333" stroke-width="2"/>
+  <text x="85" y="155" font-family="Arial, sans-serif" font-size="12" text-anchor="end">1</text>
+  
+  <line x1="95" y1="100" x2="100" y2="100" stroke="#333" stroke-width="2"/>
+  <text x="85" y="105" font-family="Arial, sans-serif" font-size="12" text-anchor="end">1.5</text>
+  
+  <!-- Axis titles -->
+  <text x="400" y="450" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Time (seconds)</text>
+  <text x="40" y="250" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" transform="rotate(-90, 40, 250)">Network Activity (z-score)</text>
+
+  <!-- Reference line for zero -->
+  <line x1="100" y1="250" x2="700" y2="250" stroke="#aaa" stroke-width="1" stroke-dasharray="5,5"/>
+
+  <!-- Task periods (highlighted) -->
+  <rect x="200" y="100" width="100" height="300" fill="rgba(200, 200, 200, 0.2)"/>
+  <text x="250" y="120" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Task 1</text>
+  
+  <rect x="500" y="100" width="100" height="300" fill="rgba(200, 200, 200, 0.2)"/>
+  <text x="550" y="120" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Task 2</text>
+
+  <!-- Activity curves -->
+  <!-- DMN activity (blue) -->
+  <path d="M100,250 
+           C120,230 140,180 160,190 
+           C180,200 190,230 200,270
+           C210,310 220,330 230,320
+           C240,310 250,290 260,270
+           C270,250 280,230 290,220
+           C300,210 310,200 320,190
+           C330,180 340,170 350,160
+           C360,150 370,145 380,150
+           C390,155 400,170 410,190
+           C420,210 430,230 440,240
+           C450,250 460,260 470,270
+           C480,280 490,290 500,310
+           C510,330 520,350 530,345
+           C540,340 550,330 560,310
+           C570,290 580,270 590,250
+           C600,230 610,210 620,200
+           C630,190 640,180 650,170
+           C660,160 670,150 680,160
+           C690,170 700,190 700,210"
+        fill="none" stroke="#36c" stroke-width="3" filter="url(#dropShadow)"/>
+
+  <!-- Executive activity (red) -->
+  <path d="M100,250 
+           C120,260 140,270 160,260
+           C180,250 190,240 200,210
+           C210,180 220,160 230,170
+           C240,180 250,200 260,220
+           C270,240 280,260 290,270
+           C300,280 310,290 320,300
+           C330,310 340,320 350,330
+           C360,340 370,345 380,340
+           C390,335 400,320 410,290
+           C420,260 430,240 440,230
+           C450,220 460,210 470,200
+           C480,190 490,180 500,160
+           C510,140 520,120 530,125
+           C540,130 550,140 560,160
+           C570,180 580,200 590,220
+           C600,240 610,260 620,270
+           C630,280 640,290 650,300
+           C660,310 670,315 680,310
+           C690,305 700,290 700,280"
+        fill="none" stroke="#c33" stroke-width="3" filter="url(#dropShadow)"/>
+
+  <!-- Legend -->
+  <rect x="580" y="130" width="160" height="80" fill="rgba(255, 255, 255, 0.8)" stroke="#aaa" stroke-width="1" rx="5" ry="5"/>
+  <line x1="600" y1="150" x2="640" y2="150" stroke="#36c" stroke-width="3"/>
+  <text x="650" y="155" font-family="Arial, sans-serif" font-size="14">Default Mode</text>
+  
+  <line x1="600" y1="180" x2="640" y2="180" stroke="#c33" stroke-width="3"/>
+  <text x="650" y="185" font-family="Arial, sans-serif" font-size="14">Executive Control</text>
+  
+  <!-- Correlation coefficient -->
+  <rect x="120" y="120" width="150" height="30" fill="rgba(255, 255, 255, 0.8)" stroke="#aaa" stroke-width="1" rx="5" ry="5"/>
+  <text x="140" y="140" font-family="Arial, sans-serif" font-size="14">Correlation: -0.76</text>
+
+  <!-- Descriptors -->
+  <text x="250" y="350" font-family="Arial, sans-serif" font-size="14" fill="#c33" font-weight="bold">Task Engagement</text>
+  <text x="250" y="370" font-family="Arial, sans-serif" font-size="12" fill="#c33">Executive Network ↑</text>
+  <text x="250" y="390" font-family="Arial, sans-serif" font-size="12" fill="#36c">Default Mode ↓</text>
+  
+  <text x="400" y="170" font-family="Arial, sans-serif" font-size="14" fill="#36c" font-weight="bold">Rest Period</text>
+  <text x="400" y="190" font-family="Arial, sans-serif" font-size="12" fill="#36c">Default Mode ↑</text>
+  <text x="400" y="210" font-family="Arial, sans-serif" font-size="12" fill="#c33">Executive Network ↓</text>
+  
+  <text x="550" y="350" font-family="Arial, sans-serif" font-size="14" fill="#c33" font-weight="bold">Task Engagement</text>
+  <text x="550" y="370" font-family="Arial, sans-serif" font-size="12" fill="#c33">Executive Network ↑</text>
+  <text x="550" y="390" font-family="Arial, sans-serif" font-size="12" fill="#36c">Default Mode ↓</text>
+</svg>

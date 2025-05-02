@@ -43,7 +43,7 @@ print("TPU Available:", tf.config.list_physical_devices('TPU'))
 
 ### Cloning the NeuroAI-Handbook Repository
 
-```python
+```ipython
 # Clone the repository
 !git clone https://github.com/yourusername/NeuroAI-Handbook.git
 
@@ -58,7 +58,7 @@ print("TPU Available:", tf.config.list_physical_devices('TPU'))
 
 For the exercises in this handbook, you'll need various neuroscience and ML libraries:
 
-```python
+```ipython
 # Install essential packages for NeuroAI
 !pip install -q torch torchvision tensorflow matplotlib numpy pandas scipy scikit-learn
 
@@ -86,7 +86,7 @@ print(f"AllenSDK version: {allensdk.__version__}")
 
 ### GPU Configuration and Management
 
-```python
+```ipython
 # Check GPU details
 !nvidia-smi
 
@@ -107,7 +107,7 @@ print(f"PyTorch is using: {device}")
 
 ### Directory Structure Setup
 
-```python
+```ipython
 # Create standard directory structure for NeuroAI projects
 !mkdir -p ./data/raw ./data/processed ./models ./results ./figures
 
@@ -137,7 +137,7 @@ ensure_directories([RAW_DATA_PATH, PROCESSED_DATA_PATH, MODEL_PATH, RESULTS_PATH
 
 For persistent storage, mount your Google Drive:
 
-```python
+```ipython
 from google.colab import drive
 drive.mount('/content/drive')
 
@@ -156,14 +156,14 @@ print(f"Google Drive mounted at: {DRIVE_PATH}")
 
 #### From Google Drive to Colab VM
 
-```python
+```ipython
 # Copy datasets from Drive to Colab (faster processing)
 !cp -r /content/drive/MyDrive/NeuroAI-Handbook/data/raw/* ./data/raw/
 ```
 
 #### From External Sources
 
-```python
+```ipython
 # Method 1: Download using wget
 !wget -P $RAW_DATA_PATH https://openneuro.org/crn/datasets/ds003031/snapshots/2.0.0/files/sub-01:func:sub-01_task-imagery_run-01_bold.nii.gz
 
@@ -187,7 +187,7 @@ print(f"Google Drive mounted at: {DRIVE_PATH}")
 
 ### Saving Results Back to Drive
 
-```python
+```ipython
 # Save processed data and models to Google Drive for persistence
 def save_to_drive(source_path, drive_destination):
     """Save files to Google Drive with logging."""
@@ -221,7 +221,7 @@ if os.path.exists(model_path):
 
 ### Memory Management
 
-```python
+```ipython
 # Check and monitor memory usage
 !pip install -q psutil
 import psutil
@@ -266,7 +266,7 @@ def optimize_memory():
 
 ### Session Management
 
-```python
+```ipython
 # Function to prevent Colab from disconnecting (prevents idle timeouts)
 from IPython.display import display, Javascript
 import time
@@ -292,7 +292,7 @@ def keep_alive(delay_minutes=55):
 
 ### Visualization Configuration for Neuroscience
 
-```python
+```ipython
 # Standardized visualization setup for NeuroAI plots
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -336,7 +336,7 @@ print("Visualization environment configured for NeuroAI")
 
 ### Example: Loading and Processing MRI Data
 
-```python
+```ipython
 # Install necessary libraries
 !pip install -q nibabel nilearn matplotlib
 
@@ -390,7 +390,7 @@ brain_img, brain_data = load_and_view_mri(mri_path)
 
 ### Example: Working with EEG Data
 
-```python
+```ipython
 # Install MNE for EEG/MEG data analysis
 !pip install -q mne
 
@@ -437,7 +437,7 @@ eeg_data = explore_eeg_data(eeg_path)
 
 ### Sharing Your Notebooks
 
-```python
+```ipython
 # Generate a link to share your notebook
 from google.colab import files
 from IPython.display import HTML, display
@@ -468,7 +468,7 @@ get_share_link()
 
 ### Exporting Your Work
 
-```python
+```ipython
 # Export notebook to different formats
 from google.colab import files
 
@@ -520,7 +520,7 @@ def export_notebook(format_type='ipynb'):
 
 If you encounter GPU memory errors:
 
-```python
+```ipython
 # Check current GPU memory usage
 !nvidia-smi
 

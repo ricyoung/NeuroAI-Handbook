@@ -44,6 +44,10 @@ The pyramidal cell architecture parallels the computational structure seen in ar
 
 Place cells are pyramidal neurons in the hippocampus (primarily in regions CA1 and CA3) that exhibit location-specific firing patterns.
 
+![Place Cells vs. Grid Cells](../figures/ch03/place_grid_cells.svg)
+
+*Figure 3.1: Comparison of place cell and grid cell activity patterns. Place cells fire in specific locations within an environment, while grid cells exhibit repeating hexagonal firing patterns across the entire space.*
+
 ### Discovery and Properties
 
 John O'Keefe discovered place cells in 1971 while recording from freely moving rats. These neurons show remarkable properties:
@@ -484,6 +488,10 @@ plt.show()
 ## 3.7 Neural Representations and CNN Principles
 
 This section directly connects the brain's spatial representation system to the principles underlying convolutional neural networks.
+
+![Cognitive Maps in the Brain](../figures/ch03/cognitive_maps.svg)
+
+*Figure 3.2: Cognitive maps in the brain and their AI applications. The hippocampus, entorhinal cortex, prefrontal cortex, and parietal cortex work together to form a neural representation of space that can be modeled as a graph structure for navigation.*
 
 ### Shared Computational Motifs
 

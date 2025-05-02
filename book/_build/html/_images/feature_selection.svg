@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 24px Arial; fill: #333; }
+    .subtitle { font: bold 18px Arial; fill: #555; }
+    .header { font: bold 16px Arial; fill: #444; }
+    .text { font: 14px Arial; fill: #333; }
+    .data-point { fill-opacity: 0.6; }
+    .axis { stroke: #333; stroke-width: 2; }
+    .method-title { font: bold 16px Arial; fill: #333; }
+    .method-desc { font: 13px Arial; fill: #555; }
+    .arrow { stroke: #666; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="40" class="title" text-anchor="middle">Feature Selection Methods</text>
+  <text x="400" y="70" class="subtitle" text-anchor="middle">Identifying relevant features from high-dimensional data</text>
+  
+  <!-- Original Dataset Visualization -->
+  <rect x="50" y="100" width="700" height="160" fill="#f5f5f5" stroke="#999" stroke-width="1" rx="5" ry="5" />
+  <text x="400" y="125" class="header" text-anchor="middle">High-Dimensional Data with Many Features</text>
+  
+  <!-- Visualize data points in high dimensions (simplified 2D projection) -->
+  <g transform="translate(90, 160)">
+    <!-- X and Y axes -->
+    <line x1="0" y1="0" x2="620" y2="0" class="axis" />
+    <line x1="0" y1="0" x2="0" y2="70" class="axis" />
+    
+    <!-- Axis labels -->
+    <text x="310" y="25" text-anchor="middle" class="text">Feature Dimensions</text>
+    <text x="-25" y="35" text-anchor="middle" class="text" transform="rotate(-90 -25 35)">Data Points</text>
+    
+    <!-- Data columns representing features -->
+    <g transform="translate(30, 0)">
+      <rect width="25" height="55" y="-55" fill="#3366cc" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F1</text>
+    </g>
+    <g transform="translate(65, 0)">
+      <rect width="25" height="35" y="-35" fill="#dc3912" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F2</text>
+    </g>
+    <g transform="translate(100, 0)">
+      <rect width="25" height="20" y="-20" fill="#ff9900" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F3</text>
+    </g>
+    <g transform="translate(135, 0)">
+      <rect width="25" height="50" y="-50" fill="#109618" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F4</text>
+    </g>
+    <g transform="translate(170, 0)">
+      <rect width="25" height="15" y="-15" fill="#990099" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F5</text>
+    </g>
+    <g transform="translate(205, 0)">
+      <rect width="25" height="45" y="-45" fill="#0099c6" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F6</text>
+    </g>
+    <g transform="translate(240, 0)">
+      <rect width="25" height="25" y="-25" fill="#dd4477" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F7</text>
+    </g>
+    <g transform="translate(275, 0)">
+      <rect width="25" height="10" y="-10" fill="#66aa00" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F8</text>
+    </g>
+    <g transform="translate(310, 0)">
+      <rect width="25" height="60" y="-60" fill="#b82e2e" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F9</text>
+    </g>
+    <g transform="translate(345, 0)">
+      <rect width="25" height="30" y="-30" fill="#316395" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F10</text>
+    </g>
+    <g transform="translate(380, 0)">
+      <rect width="25" height="40" y="-40" fill="#994499" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F11</text>
+    </g>
+    <g transform="translate(415, 0)">
+      <rect width="25" height="5" y="-5" fill="#22aa99" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F12</text>
+    </g>
+    <g transform="translate(450, 0)">
+      <rect width="25" height="65" y="-65" fill="#aaaa11" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F13</text>
+    </g>
+    <g transform="translate(485, 0)">
+      <rect width="25" height="25" y="-25" fill="#6633cc" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F14</text>
+    </g>
+    <g transform="translate(520, 0)">
+      <rect width="25" height="15" y="-15" fill="#e67300" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F15</text>
+    </g>
+    <g transform="translate(555, 0)">
+      <rect width="25" height="40" y="-40" fill="#8b0707" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F16</text>
+    </g>
+  </g>
+  
+  <!-- Arrow pointing down -->
+  <path d="M 400,270 L 400,290" class="arrow" />
+  
+  <!-- Feature Selection Methods -->
+  <g transform="translate(50, 300)">
+    <!-- Filter Methods -->
+    <rect x="0" y="0" width="220" height="250" fill="#e6f2ff" stroke="#3366cc" stroke-width="2" rx="5" ry="5" />
+    <text x="110" y="30" class="method-title" text-anchor="middle">Filter Methods</text>
+    <text x="20" y="60" class="method-desc">• Correlation with target</text>
+    <text x="20" y="85" class="method-desc">• Mutual information</text>
+    <text x="20" y="110" class="method-desc">• Chi-squared tests</text>
+    <text x="20" y="135" class="method-desc">• ANOVA F-value</text>
+    <text x="20" y="170" class="header">Characteristics:</text>
+    <text x="20" y="195" class="method-desc">• Independent of ML algorithm</text>
+    <text x="20" y="220" class="method-desc">• Fast computation</text>
+    <text x="20" y="245" class="method-desc">• May miss feature interactions</text>
+    
+    <!-- Selected features visualization -->
+    <g transform="translate(30, 280)">
+      <rect width="25" height="55" y="-55" fill="#3366cc" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F1</text>
+    </g>
+    <g transform="translate(65, 280)">
+      <rect width="25" height="50" y="-50" fill="#109618" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F4</text>
+    </g>
+    <g transform="translate(100, 280)">
+      <rect width="25" height="60" y="-60" fill="#b82e2e" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F9</text>
+    </g>
+    <g transform="translate(135, 280)">
+      <rect width="25" height="65" y="-65" fill="#aaaa11" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F13</text>
+    </g>
+  </g>
+  
+  <g transform="translate(290, 300)">
+    <!-- Wrapper Methods -->
+    <rect x="0" y="0" width="220" height="250" fill="#fff2cc" stroke="#ff9900" stroke-width="2" rx="5" ry="5" />
+    <text x="110" y="30" class="method-title" text-anchor="middle">Wrapper Methods</text>
+    <text x="20" y="60" class="method-desc">• Forward selection</text>
+    <text x="20" y="85" class="method-desc">• Backward elimination</text>
+    <text x="20" y="110" class="method-desc">• Recursive feature elimination</text>
+    <text x="20" y="135" class="method-desc">• Genetic algorithms</text>
+    <text x="20" y="170" class="header">Characteristics:</text>
+    <text x="20" y="195" class="method-desc">• Uses ML model accuracy</text>
+    <text x="20" y="220" class="method-desc">• Computationally intensive</text>
+    <text x="20" y="245" class="method-desc">• Captures feature interactions</text>
+    
+    <!-- Selected features visualization -->
+    <g transform="translate(30, 280)">
+      <rect width="25" height="55" y="-55" fill="#3366cc" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F1</text>
+    </g>
+    <g transform="translate(65, 280)">
+      <rect width="25" height="45" y="-45" fill="#0099c6" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F6</text>
+    </g>
+    <g transform="translate(100, 280)">
+      <rect width="25" height="60" y="-60" fill="#b82e2e" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F9</text>
+    </g>
+    <g transform="translate(135, 280)">
+      <rect width="25" height="40" y="-40" fill="#994499" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F11</text>
+    </g>
+    <g transform="translate(170, 280)">
+      <rect width="25" height="40" y="-40" fill="#8b0707" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F16</text>
+    </g>
+  </g>
+  
+  <g transform="translate(530, 300)">
+    <!-- Embedded Methods -->
+    <rect x="0" y="0" width="220" height="250" fill="#e6ffe6" stroke="#00cc66" stroke-width="2" rx="5" ry="5" />
+    <text x="110" y="30" class="method-title" text-anchor="middle">Embedded Methods</text>
+    <text x="20" y="60" class="method-desc">• LASSO (L1 regularization)</text>
+    <text x="20" y="85" class="method-desc">• Ridge regression (L2)</text>
+    <text x="20" y="110" class="method-desc">• Elastic Net</text>
+    <text x="20" y="135" class="method-desc">• Decision tree feature importance</text>
+    <text x="20" y="170" class="header">Characteristics:</text>
+    <text x="20" y="195" class="method-desc">• Feature selection within model</text>
+    <text x="20" y="220" class="method-desc">• Learning algorithm specific</text>
+    <text x="20" y="245" class="method-desc">• Good computational efficiency</text>
+    
+    <!-- Selected features visualization -->
+    <g transform="translate(30, 280)">
+      <rect width="25" height="55" y="-55" fill="#3366cc" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F1</text>
+    </g>
+    <g transform="translate(65, 280)">
+      <rect width="25" height="35" y="-35" fill="#dc3912" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F2</text>
+    </g>
+    <g transform="translate(100, 280)">
+      <rect width="25" height="50" y="-50" fill="#109618" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F4</text>
+    </g>
+    <g transform="translate(135, 280)">
+      <rect width="25" height="60" y="-60" fill="#b82e2e" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F9</text>
+    </g>
+    <g transform="translate(170, 280)">
+      <rect width="25" height="65" y="-65" fill="#aaaa11" class="data-point" />
+      <text x="12.5" y="20" text-anchor="middle" class="text">F13</text>
+    </g>
+  </g>
+  
+  <!-- Neural Relevance -->
+  <rect x="50" y="560" width="700" height="30" fill="#ffe6cc" stroke="#ff9933" stroke-width="1" rx="5" ry="5" />
+  <text x="400" y="580" class="text" text-anchor="middle">Neural Parallel: Feature selectivity in brain (receptive fields, tuning curves, attention mechanisms)</text>
+</svg>

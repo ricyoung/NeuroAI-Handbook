@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <title>Receptive Fields in Visual System</title>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">Receptive Fields in the Visual System</text>
+  <text x="400" y="70" font-family="Arial" font-size="16" text-anchor="middle">From Retina to Cortex</text>
+  
+  <!-- Visual world input -->
+  <g id="visual-input">
+    <rect x="30" y="120" width="140" height="100" fill="#f9f9f9" stroke="#666666" stroke-width="2"/>
+    <text x="100" y="110" font-family="Arial" font-size="14" text-anchor="middle">Visual Stimulus</text>
+    
+    <!-- Simple scene with objects -->
+    <rect x="50" y="140" width="100" height="60" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+    <circle cx="70" cy="160" r="10" fill="#ff6666" stroke="#cc0000" stroke-width="1"/>
+    <rect x="100" y="150" width="30" height="30" fill="#6666ff" stroke="#0000cc" stroke-width="1"/>
+    <line x1="60" y1="190" x2="140" y2="190" stroke="#000000" stroke-width="2"/>
+  </g>
+  
+  <!-- First stage: Retina -->
+  <g id="retina">
+    <rect x="220" y="100" width="160" height="140" fill="#ffeeee" stroke="#cc0000" stroke-width="2" rx="10" ry="10"/>
+    <text x="300" y="125" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Retina</text>
+    
+    <!-- Center-surround receptive fields -->
+    <circle cx="260" cy="165" r="25" fill="#f0f0f0" stroke="#666666" stroke-width="1"/>
+    <circle cx="260" cy="165" r="15" fill="#000000" stroke="none"/>
+    <text x="260" y="200" font-family="Arial" font-size="12" text-anchor="middle">ON-center</text>
+    
+    <circle cx="340" cy="165" r="25" fill="#000000" stroke="#666666" stroke-width="1"/>
+    <circle cx="340" cy="165" r="15" fill="#ffffff" stroke="none"/>
+    <text x="340" y="200" font-family="Arial" font-size="12" text-anchor="middle">OFF-center</text>
+    
+    <text x="300" y="230" font-family="Arial" font-size="11" text-anchor="middle" font-style="italic">Center-surround receptive fields</text>
+  </g>
+  
+  <!-- Second stage: LGN -->
+  <g id="lgn">
+    <rect x="430" y="100" width="160" height="140" fill="#eeeeff" stroke="#0000cc" stroke-width="2" rx="10" ry="10"/>
+    <text x="510" y="125" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">LGN</text>
+    
+    <!-- Similar receptive fields as retina but organized differently -->
+    <circle cx="470" cy="165" r="25" fill="#f0f0f0" stroke="#666666" stroke-width="1"/>
+    <circle cx="470" cy="165" r="12" fill="#000000" stroke="none"/>
+    <text x="470" y="200" font-family="Arial" font-size="12" text-anchor="middle">Refined</text>
+    <text x="470" y="215" font-family="Arial" font-size="12" text-anchor="middle">ON-center</text>
+    
+    <circle cx="550" cy="165" r="25" fill="#000000" stroke="#666666" stroke-width="1"/>
+    <circle cx="550" cy="165" r="12" fill="#ffffff" stroke="none"/>
+    <text x="550" y="200" font-family="Arial" font-size="12" text-anchor="middle">Refined</text>
+    <text x="550" y="215" font-family="Arial" font-size="12" text-anchor="middle">OFF-center</text>
+  </g>
+  
+  <!-- Third stage: V1 -->
+  <g id="v1">
+    <rect x="640" y="100" width="140" height="350" fill="#eeffee" stroke="#006600" stroke-width="2" rx="10" ry="10"/>
+    <text x="710" y="125" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">V1 Cortex</text>
+    
+    <!-- Simple cells - line detectors -->
+    <text x="710" y="150" font-family="Arial" font-size="14" text-anchor="middle">Simple Cells</text>
+    
+    <rect x="665" y="165" width="90" height="50" fill="#ffffff" stroke="#666666" stroke-width="1"/>
+    <line x1="680" y1="175" x2="740" y2="205" stroke="#000000" stroke-width="3"/>
+    <text x="710" y="230" font-family="Arial" font-size="11" text-anchor="middle">Orientation Selectivity</text>
+    
+    <!-- Complex cells -->
+    <text x="710" y="260" font-family="Arial" font-size="14" text-anchor="middle">Complex Cells</text>
+    
+    <rect x="665" y="275" width="90" height="50" fill="#ffffff" stroke="#666666" stroke-width="1"/>
+    <line x1="680" y1="285" x2="740" y2="315" stroke="#000000" stroke-width="3"/>
+    <line x1="690" y1="285" x2="750" y2="315" stroke="#000000" stroke-width="1" stroke-dasharray="5,3"/>
+    <line x1="670" y1="285" x2="730" y2="315" stroke="#000000" stroke-width="1" stroke-dasharray="5,3"/>
+    <text x="710" y="340" font-family="Arial" font-size="11" text-anchor="middle">Position Invariance</text>
+    
+    <!-- Hypercomplex cells -->
+    <text x="710" y="370" font-family="Arial" font-size="14" text-anchor="middle">Hypercomplex</text>
+    
+    <rect x="665" y="385" width="90" height="50" fill="#ffffff" stroke="#666666" stroke-width="1"/>
+    <line x1="680" y1="395" x2="740" y2="425" stroke="#000000" stroke-width="3"/>
+    <circle cx="710" cy="410" r="4" fill="#ff0000"/>
+    <text x="710" y="450" font-family="Arial" font-size="11" text-anchor="middle">End-stopped cells</text>
+  </g>
+  
+  <!-- Processing pathways -->
+  <g id="pathways">
+    <!-- Retina to LGN -->
+    <path d="M 380,170 L 430,170" fill="none" stroke="#333333" stroke-width="2"/>
+    <polygon points="430,170 424,166 424,174" fill="#333333"/>
+    
+    <!-- LGN to V1 -->
+    <path d="M 590,170 L 640,170" fill="none" stroke="#333333" stroke-width="2"/>
+    <polygon points="640,170 634,166 634,174" fill="#333333"/>
+    
+    <!-- Visual input to retina -->
+    <path d="M 170,170 L 220,170" fill="none" stroke="#333333" stroke-width="2"/>
+    <polygon points="220,170 214,166 214,174" fill="#333333"/>
+  </g>
+  
+  <!-- Higher visual areas -->
+  <g id="higher-areas">
+    <rect x="210" y="300" width="380" height="150" fill="#f9f9f9" stroke="#666666" stroke-width="2" rx="10" ry="10"/>
+    <text x="400" y="325" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Hierarchical Feature Extraction</text>
+    
+    <!-- Feature hierarchy examples -->
+    <rect x="230" y="345" width="80" height="80" fill="#ffffff" stroke="#999999" stroke-width="1"/>
+    <text x="270" y="435" font-family="Arial" font-size="14" text-anchor="middle">Edges</text>
+    <line x1="250" y1="365" x2="290" y2="405" stroke="#000000" stroke-width="2"/>
+    
+    <rect x="330" y="345" width="80" height="80" fill="#ffffff" stroke="#999999" stroke-width="1"/>
+    <text x="370" y="435" font-family="Arial" font-size="14" text-anchor="middle">Corners/Junctions</text>
+    <line x1="350" y1="365" x2="365" y2="380" stroke="#000000" stroke-width="2"/>
+    <line x1="365" y1="380" x2="390" y2="380" stroke="#000000" stroke-width="2"/>
+    
+    <rect x="430" y="345" width="80" height="80" fill="#ffffff" stroke="#999999" stroke-width="1"/>
+    <text x="470" y="435" font-family="Arial" font-size="14" text-anchor="middle">Object Parts</text>
+    <circle cx="470" cy="385" r="20" fill="none" stroke="#000000" stroke-width="2"/>
+    <line x1="460" y1="375" x2="480" y2="395" stroke="#000000" stroke-width="2"/>
+    
+    <!-- Connecting arrows -->
+    <path d="M 310,385 L 330,385" fill="none" stroke="#333333" stroke-width="2"/>
+    <polygon points="330,385 324,381 324,389" fill="#333333"/>
+    
+    <path d="M 410,385 L 430,385" fill="none" stroke="#333333" stroke-width="2"/>
+    <polygon points="430,385 424,381 424,389" fill="#333333"/>
+  </g>
+  
+  <!-- Connection to CNN similarity -->
+  <text x="400" y="520" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Parallels with Convolutional Neural Networks</text>
+  <text x="400" y="545" font-family="Arial" font-size="14" text-anchor="middle">The visual hierarchy's feature extraction inspires CNN architecture</text>
+  <text x="400" y="570" font-family="Arial" font-size="14" text-anchor="middle">with increasing abstraction in deeper layers</text>
+</svg>

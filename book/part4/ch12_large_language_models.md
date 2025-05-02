@@ -1,10 +1,16 @@
 # Chapter 12: Large Language Models & Fine-Tuning
 
-## 12.0 Chapter Goals
-- Understand LLM architectures and training approaches
-- Master fine-tuning techniques and parameter-efficient methods
-- Connect language models to human language processing
-- Implement prompting and adaptation strategies
+```{admonition} Learning Objectives
+:class: note
+
+By the end of this chapter, you will be able to:
+
+- **Understand** large language model architectures and pretraining strategies
+- **Master** fine-tuning techniques and parameter-efficient adaptation methods
+- **Connect** computational language models to human language processing mechanisms
+- **Implement** effective prompting strategies and model adaptations
+- **Evaluate** LLM performance across multiple dimensions and tasks
+```
 
 ## 12.1 Large Language Model Fundamentals
 
@@ -2471,6 +2477,20 @@ def evaluate_llm_outputs():
 Through these exercises, we've explored practical implementations of the key concepts covered in this chapter, from parameter-efficient fine-tuning with LoRA to advanced prompting techniques, RAG systems for factual grounding, domain adaptation, and comprehensive evaluation approaches.
 
 ## 12.7 Take-aways
+
+```{admonition} Knowledge Connections
+:class: important
+
+**Looking Back**
+- **Chapter 7 (Information Theory Essentials)**: Information-theoretic principles like entropy and KL divergence underpin LLM training objectives and evaluation metrics, connecting statistical learning to language modeling.
+- **Chapter 9 (Classical Machine-Learning Foundations)**: LLMs build upon supervised learning paradigms but extend them to self-supervised pretraining, where the model generates its own supervision signal.
+- **Chapter 10 (Deep Learning)**: The optimization techniques covered in Chapter 10 are essential for training LLMs, with additional considerations for the extreme scale of parameters and compute.
+- **Chapter 11 (Sequence Models)**: LLMs are direct descendants of transformer architectures from Chapter 11, scaling up the core architecture while introducing innovations to handle longer contexts.
+
+**Looking Forward**
+- **Chapter 13 (Multimodal Models)**: LLMs serve as a foundation for multimodal architectures that integrate language understanding with other modalities like vision and audio.
+- **Chapter 14 (Future Directions)**: The scaling laws and emergent abilities of LLMs shown in the scaling law figure point toward future research directions in AI capabilities and limitations.
+```
 
 This chapter explored the fundamentals, fine-tuning approaches, and advanced applications of Large Language Models, bridging AI capabilities with neuroscience insights:
 

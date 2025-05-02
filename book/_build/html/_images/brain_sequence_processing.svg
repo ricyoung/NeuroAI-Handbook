@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 24px Arial; fill: #333; text-anchor: middle; }
+    .subtitle { font: 18px Arial; fill: #666; text-anchor: middle; }
+    .box-title { font: bold 16px Arial; fill: #333; text-anchor: middle; }
+    .section-title { font: bold 16px Arial; fill: #333; text-anchor: start; }
+    .label { font: 14px Arial; fill: #333; text-anchor: middle; }
+    .sublabel { font: 12px Arial; fill: #666; text-anchor: middle; }
+    .brain { fill: #ffe6cc; stroke: #ff9933; stroke-width: 1.5; }
+    .ai { fill: #e6f3ff; stroke: #3366cc; stroke-width: 1.5; }
+    .neuron { fill: #ffe6cc; stroke: #ff9933; stroke-width: 1; }
+    .neural-path { stroke: #ff9933; stroke-width: 1.5; fill: none; }
+    .model-block { fill: #e6f3ff; stroke: #3366cc; stroke-width: 1.5; }
+    .connection { stroke: #666; stroke-width: 1.5; fill: none; }
+    .arrow { stroke: #666; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+    .parallel { stroke: #009933; stroke-width: 1.5; stroke-dasharray: 5,3; fill: none; marker-end: url(#arrowhead-green); }
+    .feature { fill: #f9f9f9; stroke: #ccc; stroke-width: 1; rx: 5; ry: 5; }
+    .spike { stroke: #ff3333; stroke-width: 1.5; fill: none; }
+    .activation { stroke: #3366cc; stroke-width: 1.5; fill: none; }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+    <marker id="arrowhead-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#009933" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" class="title">Neural Sequence Processing</text>
+  <text x="400" y="60" class="subtitle">Parallels between the Brain and AI Sequence Models</text>
+  
+  <!-- Left side: Temporal processing in the brain -->
+  <g transform="translate(50, 90)">
+    <rect x="0" y="0" width="320" height="470" fill="#f9f9f9" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+    <text x="160" y="25" class="box-title">The Brain</text>
+    
+    <!-- Brain areas involved in sequential processing -->
+    <path d="M 100,80 C 50,100 70,150 100,170 C 150,200 250,190 280,170 C 320,140 300,100 280,80 C 250,60 150,60 100,80" 
+          class="brain" />
+    <text x="160" y="120" class="label">Prefrontal</text>
+    <text x="160" y="140" class="label">Cortex</text>
+    
+    <ellipse cx="90" cy="220" rx="40" ry="25" class="brain" />
+    <text x="90" y="220" class="label">Hippocampus</text>
+    
+    <ellipse cx="230" cy="220" rx="40" ry="25" class="brain" />
+    <text x="230" y="220" class="label">Basal Ganglia</text>
+    
+    <path d="M 100,270 C 80,280 70,310 100,320 C 140,335 180,335 220,320 C 250,310 240,280 220,270 C 180,255 140,255 100,270" 
+          class="brain" />
+    <text x="160" y="295" class="label">Temporal Cortex</text>
+    
+    <!-- Neuronal activity patterns -->
+    <text x="20" y="360" class="section-title">Neuronal Dynamics:</text>
+    
+    <!-- Recurrent connections -->
+    <circle cx="70" cy="390" r="10" class="neuron" />
+    <circle cx="100" cy="390" r="10" class="neuron" />
+    <circle cx="130" cy="390" r="10" class="neuron" />
+    <circle cx="160" cy="390" r="10" class="neuron" />
+    
+    <path d="M 80,390 L 90,390" class="neural-path" marker-end="url(#arrowhead)" />
+    <path d="M 110,390 L 120,390" class="neural-path" marker-end="url(#arrowhead)" />
+    <path d="M 140,390 L 150,390" class="neural-path" marker-end="url(#arrowhead)" />
+    
+    <path d="M 160,390 C 190,390 190,370 160,370 C 130,370 40,370 70,370 C 40,370 40,390 70,390" 
+          class="neural-path" marker-end="url(#arrowhead)" />
+    
+    <text x="160" y="415" class="sublabel">Recurrent Circuits</text>
+    
+    <!-- Spike timing -->
+    <path d="M 220,380 L 240,380 L 240,370 L 250,390 L 240,410 L 240,400 L 220,400 Z" class="neuron" />
+    <path d="M 260,390 L 300,390" class="connection" />
+    
+    <path d="M 260,380 L 260,400" class="connection" />
+    <path d="M 270,380 L 270,400" class="connection" />
+    <path d="M 280,380 L 280,400" class="connection" />
+    <path d="M 290,380 L 290,400" class="connection" />
+    <path d="M 300,380 L 300,400" class="connection" />
+    
+    <path d="M 260,385 L 265,385 L 265,375 L 265,395" class="spike" />
+    <path d="M 280,385 L 285,385 L 285,375 L 285,395" class="spike" />
+    <path d="M 290,385 L 295,385 L 295,375 L 295,395" class="spike" />
+    
+    <text x="280" y="415" class="sublabel">Spike Timing</text>
+    
+    <!-- Working memory -->
+    <text x="20" y="440" class="section-title">Key Features:</text>
+    <text x="80" y="460" class="sublabel" text-anchor="start">• Persistent neuronal activity</text>
+    <text x="80" y="480" class="sublabel" text-anchor="start">• Hierarchical temporal processing</text>
+    <text x="80" y="500" class="sublabel" text-anchor="start">• Predictive coding mechanisms</text>
+    <text x="80" y="520" class="sublabel" text-anchor="start">• Selective attention to sequences</text>
+  </g>
+  
+  <!-- Right side: AI sequence models -->
+  <g transform="translate(430, 90)">
+    <rect x="0" y="0" width="320" height="470" fill="#f9f9f9" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+    <text x="160" y="25" class="box-title">AI Sequence Models</text>
+    
+    <!-- Evolution of sequence models -->
+    <rect x="60" y="70" width="200" height="50" class="model-block" />
+    <text x="160" y="95" class="label">Recurrent Neural Networks</text>
+    <text x="160" y="115" class="sublabel">(Sequential Processing)</text>
+    
+    <rect x="60" y="150" width="200" height="50" class="model-block" />
+    <text x="160" y="175" class="label">LSTM/GRU</text>
+    <text x="160" y="195" class="sublabel">(Long-term Dependencies)</text>
+    
+    <rect x="60" y="230" width="200" height="50" class="model-block" />
+    <text x="160" y="255" class="label">Attention Mechanisms</text>
+    <text x="160" y="275" class="sublabel">(Selective Focus)</text>
+    
+    <rect x="60" y="310" width="200" height="50" class="model-block" />
+    <text x="160" y="335" class="label">Transformers</text>
+    <text x="160" y="355" class="sublabel">(Parallel Sequence Processing)</text>
+    
+    <!-- Evolution arrows -->
+    <line x1="160" y1="120" x2="160" y2="150" class="arrow" />
+    <line x1="160" y1="200" x2="160" y2="230" class="arrow" />
+    <line x1="160" y1="280" x2="160" y2="310" class="arrow" />
+    
+    <!-- Key features -->
+    <text x="20" y="390" class="section-title">Key Features:</text>
+    <text x="80" y="410" class="sublabel" text-anchor="start">• Memory cells and gates</text>
+    <text x="80" y="430" class="sublabel" text-anchor="start">• Self-attention mechanisms</text>
+    <text x="80" y="450" class="sublabel" text-anchor="start">• Positional encodings</text>
+    <text x="80" y="470" class="sublabel" text-anchor="start">• Parallel computation</text>
+    <text x="80" y="490" class="sublabel" text-anchor="start">• Hierarchical representations</text>
+    <text x="80" y="510" class="sublabel" text-anchor="start">• Context-dependent processing</text>
+  </g>
+  
+  <!-- Cross-connections between brain and AI -->
+  <path d="M 370,130 L 430,95" class="parallel" />
+  <path d="M 370,220 L 430,175" class="parallel" />
+  <path d="M 370,295 L 430,255" class="parallel" />
+  <path d="M 370,390 L 430,335" class="parallel" />
+  
+  <!-- Bottom: Key parallels -->
+  <g transform="translate(50, 570)">
+    <rect x="0" y="0" width="700" height="25" fill="#f5f5f5" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+    <text x="10" y="17" class="sublabel" text-anchor="start">• Recurrent circuits ↔ RNNs</text>
+    <text x="180" y="17" class="sublabel" text-anchor="start">• Working memory ↔ LSTM gates</text>
+    <text x="370" y="17" class="sublabel" text-anchor="start">• Selective attention ↔ Attention mechanisms</text>
+    <text x="620" y="17" class="sublabel" text-anchor="start">• Hierarchical processing ↔ Transformers</text>
+  </g>
+</svg>

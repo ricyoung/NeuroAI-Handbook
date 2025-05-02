@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f9f9f9"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">Brain-Computer Interface System Architecture</text>
+  
+  <!-- Brain -->
+  <ellipse cx="140" cy="300" rx="80" ry="100" fill="#ffcccc" stroke="#cc0000" stroke-width="2"/>
+  <path d="M 120 250 C 110 240, 110 260, 120 250 Z" fill="#cc0000"/>
+  <path d="M 160 250 C 170 240, 170 260, 160 250 Z" fill="#cc0000"/>
+  <path d="M 130 230 C 120 220, 140 220, 130 230 Z" fill="#cc0000"/>
+  <path d="M 150 230 C 140 220, 160 220, 150 230 Z" fill="#cc0000"/>
+  <text x="140" y="340" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Brain</text>
+  
+  <!-- Signal Acquisition -->
+  <rect x="250" y="250" width="120" height="100" rx="10" ry="10" fill="#ffcccc" fill-opacity="0.7" stroke="#cc0000" stroke-width="2"/>
+  <text x="310" y="280" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Signal</text>
+  <text x="310" y="300" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Acquisition</text>
+  <text x="310" y="330" font-family="Arial" font-size="12" text-anchor="middle">(EEG, ECoG, LFPs)</text>
+  
+  <!-- Signal Processing -->
+  <rect x="400" y="250" width="120" height="100" rx="10" ry="10" fill="#ccccff" fill-opacity="0.7" stroke="#0066cc" stroke-width="2"/>
+  <text x="460" y="280" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Signal</text>
+  <text x="460" y="300" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Processing</text>
+  <text x="460" y="330" font-family="Arial" font-size="12" text-anchor="middle">(Filtering, Feature</text>
+  <text x="460" y="345" font-family="Arial" font-size="12" text-anchor="middle">Extraction)</text>
+  
+  <!-- Decoding/Translation -->
+  <rect x="550" y="250" width="120" height="100" rx="10" ry="10" fill="#9966cc" fill-opacity="0.7" stroke="#9966cc" stroke-width="2"/>
+  <text x="610" y="280" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Neural</text>
+  <text x="610" y="300" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Decoding</text>
+  <text x="610" y="330" font-family="Arial" font-size="12" text-anchor="middle">(ML Algorithms,</text>
+  <text x="610" y="345" font-family="Arial" font-size="12" text-anchor="middle">Classification)</text>
+  
+  <!-- Output Device -->
+  <rect x="550" y="150" width="120" height="70" rx="10" ry="10" fill="#ccccff" fill-opacity="0.7" stroke="#0066cc" stroke-width="2"/>
+  <text x="610" y="175" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Output</text>
+  <text x="610" y="195" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Device</text>
+  <text x="610" y="215" font-family="Arial" font-size="12" text-anchor="middle">(Cursor, Prosthetic)</text>
+  
+  <!-- Application -->
+  <rect x="550" y="50" width="120" height="70" rx="10" ry="10" fill="#ccccff" fill-opacity="0.7" stroke="#0066cc" stroke-width="2"/>
+  <text x="610" y="75" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Application</text>
+  <text x="610" y="95" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Interface</text>
+  <text x="610" y="115" font-family="Arial" font-size="12" text-anchor="middle">(User Experience)</text>
+  
+  <!-- Feedback Loop -->
+  <rect x="250" y="150" width="120" height="70" rx="10" ry="10" fill="#ffcccc" fill-opacity="0.7" stroke="#cc0000" stroke-width="2"/>
+  <text x="310" y="175" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Feedback</text>
+  <text x="310" y="195" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Mechanism</text>
+  <text x="310" y="215" font-family="Arial" font-size="12" text-anchor="middle">(Neurofeedback)</text>
+  
+  <!-- Connections -->
+  <!-- Brain to Signal Acquisition -->
+  <line x1="220" y1="300" x2="250" y2="300" stroke="#cc0000" stroke-width="2"/>
+  <polygon points="245,296 255,300 245,304" fill="#cc0000"/>
+  
+  <!-- Signal Path -->
+  <line x1="370" y1="300" x2="400" y2="300" stroke="#9966cc" stroke-width="2"/>
+  <polygon points="395,296 405,300 395,304" fill="#9966cc"/>
+  
+  <line x1="520" y1="300" x2="550" y2="300" stroke="#9966cc" stroke-width="2"/>
+  <polygon points="545,296 555,300 545,304" fill="#9966cc"/>
+  
+  <line x1="610" y1="250" x2="610" y2="220" stroke="#9966cc" stroke-width="2"/>
+  <polygon points="606,225 610,215 614,225" fill="#9966cc"/>
+  
+  <line x1="610" y1="150" x2="610" y2="120" stroke="#9966cc" stroke-width="2"/>
+  <polygon points="606,125 610,115 614,125" fill="#9966cc"/>
+  
+  <!-- Feedback Loop -->
+  <path d="M 310 220 L 310 240" stroke="#cc0000" stroke-width="2"/>
+  <polygon points="306,235 310,245 314,235" fill="#cc0000"/>
+  
+  <path d="M 550 85 C 450 85, 450 155, 370 155" stroke="#cc0000" stroke-width="2" stroke-dasharray="5,5"/>
+  <polygon points="375,151 365,155 375,159" fill="#cc0000"/>
+  
+  <!-- Online/Offline Processing Label -->
+  <rect x="400" y="380" width="270" height="80" rx="10" ry="10" fill="#f9f9f9" stroke="#9966cc" stroke-width="2"/>
+  <line x1="400" y1="410" x2="670" y2="410" stroke="#000000" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="535" y="400" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Processing Modes</text>
+  <text x="460" y="430" font-family="Arial" font-size="14" text-anchor="middle" fill="#0066cc">Online</text>
+  <text x="460" y="450" font-family="Arial" font-size="12" text-anchor="middle">(Real-time)</text>
+  <text x="600" y="430" font-family="Arial" font-size="14" text-anchor="middle" fill="#cc0000">Offline</text>
+  <text x="600" y="450" font-family="Arial" font-size="12" text-anchor="middle">(Analysis)</text>
+  
+  <!-- Neural Signal Types -->
+  <rect x="100" y="380" width="270" height="80" rx="10" ry="10" fill="#f9f9f9" stroke="#cc0000" stroke-width="2"/>
+  <text x="235" y="400" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Neural Signal Types</text>
+  <text x="135" y="425" font-family="Arial" font-size="12" text-anchor="middle">• Spikes (Single/Multi-Unit)</text>
+  <text x="135" y="445" font-family="Arial" font-size="12" text-anchor="middle">• Local Field Potentials (LFPs)</text>
+  <text x="335" y="425" font-family="Arial" font-size="12" text-anchor="middle">• ECoG (Electrocorticography)</text>
+  <text x="335" y="445" font-family="Arial" font-size="12" text-anchor="middle">• EEG (Electroencephalography)</text>
+  
+  <!-- BCI Types -->
+  <rect x="250" y="480" width="300" height="60" rx="10" ry="10" fill="#f9f9f9" stroke="#0066cc" stroke-width="2"/>
+  <text x="400" y="500" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">BCI Types</text>
+  <text x="320" y="525" font-family="Arial" font-size="12" text-anchor="middle">• Non-invasive (EEG, fNIRS)</text>
+  <text x="480" y="525" font-family="Arial" font-size="12" text-anchor="middle">• Invasive (ECoG, Microelectrodes)</text>
+  
+  <!-- Legend -->
+  <rect x="600" y="480" width="170" height="80" fill="#f9f9f9" stroke="#000000" stroke-width="1"/>
+  <text x="685" y="500" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Legend</text>
+  
+  <rect x="610" y="510" width="12" height="12" fill="#ffcccc" stroke="#cc0000" stroke-width="1"/>
+  <text x="695" y="520" font-family="Arial" font-size="12" text-anchor="middle">Neural Components</text>
+  
+  <rect x="610" y="530" width="12" height="12" fill="#ccccff" stroke="#0066cc" stroke-width="1"/>
+  <text x="695" y="540" font-family="Arial" font-size="12" text-anchor="middle">Computational Components</text>
+  
+  <rect x="610" y="550" width="12" height="12" fill="#9966cc" stroke="#9966cc" stroke-width="1"/>
+  <text x="695" y="560" font-family="Arial" font-size="12" text-anchor="middle">Interface Components</text>
+  
+  <!-- Figure Caption -->
+  <text x="400" y="580" font-family="Arial" font-size="12" text-anchor="middle">Figure 17.1: Components and information flow in a brain-computer interface system</text>
+</svg>

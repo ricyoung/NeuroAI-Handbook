@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <!-- Filter for shadow effect -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+      <feOffset dx="2" dy="2" result="offsetBlur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="offsetBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- Gradients for each modality -->
+    <linearGradient id="imageGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1976D2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#64B5F6;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#388E3C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#81C784;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="audioGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D32F2F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EF5350;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="embeddingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7B1FA2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#BA68C8;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Arrow marker definition -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="#fff"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold" fill="#333">
+    Multimodal Learning Architecture
+  </text>
+  
+  <!-- Input Modalities -->
+  <!-- Image Input -->
+  <rect x="100" y="100" width="100" height="80" rx="5" ry="5" fill="url(#imageGradient)" filter="url(#shadow)"/>
+  <text x="150" y="145" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#fff" font-weight="bold">
+    Image
+  </text>
+  <text x="150" y="200" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#1976D2">
+    Visual Modality
+  </text>
+  
+  <!-- Text Input -->
+  <rect x="350" y="100" width="100" height="80" rx="5" ry="5" fill="url(#textGradient)" filter="url(#shadow)"/>
+  <text x="400" y="145" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#fff" font-weight="bold">
+    Text
+  </text>
+  <text x="400" y="200" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#388E3C">
+    Language Modality
+  </text>
+  
+  <!-- Audio Input -->
+  <rect x="600" y="100" width="100" height="80" rx="5" ry="5" fill="url(#audioGradient)" filter="url(#shadow)"/>
+  <text x="650" y="145" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#fff" font-weight="bold">
+    Audio
+  </text>
+  <text x="650" y="200" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#D32F2F">
+    Acoustic Modality
+  </text>
+  
+  <!-- Modality-Specific Encoders -->
+  <!-- Image Encoder -->
+  <rect x="80" y="240" width="140" height="60" rx="5" ry="5" fill="#E3F2FD" stroke="#1976D2" stroke-width="2" filter="url(#shadow)"/>
+  <text x="150" y="275" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#1976D2" font-weight="bold">
+    Image Encoder (CNN)
+  </text>
+  
+  <!-- Text Encoder -->
+  <rect x="330" y="240" width="140" height="60" rx="5" ry="5" fill="#E8F5E9" stroke="#388E3C" stroke-width="2" filter="url(#shadow)"/>
+  <text x="400" y="275" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#388E3C" font-weight="bold">
+    Text Encoder (BERT)
+  </text>
+  
+  <!-- Audio Encoder -->
+  <rect x="580" y="240" width="140" height="60" rx="5" ry="5" fill="#FFEBEE" stroke="#D32F2F" stroke-width="2" filter="url(#shadow)"/>
+  <text x="650" y="275" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#D32F2F" font-weight="bold">
+    Audio Encoder (Wav2Vec)
+  </text>
+  
+  <!-- Joint Embedding Space / Fusion Layer -->
+  <rect x="250" y="350" width="300" height="70" rx="5" ry="5" fill="url(#embeddingGradient)" filter="url(#shadow)"/>
+  <text x="400" y="385" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#fff" font-weight="bold">
+    Joint Multimodal Embedding Space
+  </text>
+  <text x="400" y="405" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#fff">
+    (Fusion, Contrastive Learning, Cross-Attention)
+  </text>
+  
+  <!-- Output Tasks -->
+  <rect x="50" y="450" width="140" height="40" rx="5" ry="5" fill="#F5F5F5" stroke="#333" stroke-width="1" filter="url(#shadow)"/>
+  <text x="120" y="475" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">
+    Cross-Modal Retrieval
+  </text>
+  
+  <rect x="220" y="450" width="140" height="40" rx="5" ry="5" fill="#F5F5F5" stroke="#333" stroke-width="1" filter="url(#shadow)"/>
+  <text x="290" y="475" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">
+    Visual Question Answering
+  </text>
+  
+  <rect x="390" y="450" width="140" height="40" rx="5" ry="5" fill="#F5F5F5" stroke="#333" stroke-width="1" filter="url(#shadow)"/>
+  <text x="460" y="475" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">
+    Image/Text Generation
+  </text>
+  
+  <rect x="560" y="450" width="140" height="40" rx="5" ry="5" fill="#F5F5F5" stroke="#333" stroke-width="1" filter="url(#shadow)"/>
+  <text x="630" y="475" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">
+    Audio Captioning
+  </text>
+  
+  <!-- Connections -->
+  <!-- Input to Encoder connections -->
+  <line x1="150" y1="180" x2="150" y2="240" stroke="#1976D2" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="180" x2="400" y2="240" stroke="#388E3C" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="650" y1="180" x2="650" y2="240" stroke="#D32F2F" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Encoder to Joint Embedding connections -->
+  <line x1="150" y1="300" x2="250" y2="380" stroke="#1976D2" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="190" y="330" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#1976D2">
+    Image Features
+  </text>
+  
+  <line x1="400" y1="300" x2="400" y2="350" stroke="#388E3C" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="420" y="330" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#388E3C">
+    Text Features
+  </text>
+  
+  <line x1="650" y1="300" x2="550" y2="380" stroke="#D32F2F" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="610" y="330" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#D32F2F">
+    Audio Features
+  </text>
+  
+  <!-- Joint Embedding to Output connections -->
+  <line x1="300" y1="420" x2="120" y2="450" stroke="#7B1FA2" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="350" y1="420" x2="290" y2="450" stroke="#7B1FA2" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="450" y1="420" x2="460" y2="450" stroke="#7B1FA2" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="500" y1="420" x2="630" y2="450" stroke="#7B1FA2" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Contrastive Learning Concept -->
+  <ellipse cx="400" cy="320" rx="80" ry="25" fill="#f5f5f5" fill-opacity="0.7" stroke="#7B1FA2" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="400" y="325" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#7B1FA2">
+    Contrastive Learning
+  </text>
+</svg>
