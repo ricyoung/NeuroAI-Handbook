@@ -1,5 +1,7 @@
 # Brain-Computer Interfaces and Human-AI Interaction
 
+<div style="page-break-before:always;"></div>
+
 ## Chapter Goals
 
 After completing this chapter, you will be able to:
@@ -79,6 +81,8 @@ class BrainComputerInterface:
         
         return output
 ```
+
+<div style="page-break-before:always;"></div>
 
 ## 17.2 Neurophysiological Bases for BCIs
 

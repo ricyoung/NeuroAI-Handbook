@@ -12,6 +12,8 @@ By the end of this chapter, you will be able to:
 - **Compare** different approaches to handling sequential data
 ```
 
+<div style="page-break-before:always;"></div>
+
 ## 11.1 Recurrent Neural Networks
 
 Recurrent Neural Networks (RNNs) are specialized neural networks designed to process sequential data by maintaining an internal state (memory) that captures information about previous inputs. Unlike feedforward networks, RNNs have connections that loop back on themselves, allowing them to persist information across time steps.
@@ -3438,6 +3440,27 @@ This chapter has covered the evolution of sequence models from recurrent network
 7. **Applications Bridging Fields**: Sequence models provide a shared framework for applications spanning neuroscience and AI, from neural decoding and brain-computer interfaces to natural language processing and time series forecasting.
 
 The rapid advancement of sequence models represents one of the most successful areas of cross-fertilization between neuroscience and artificial intelligence, with each field benefiting from insights gained in the other.
+
+<div style="page-break-before:always;"></div>
+
+```{admonition} Chapter Summary
+:class: important
+
+In this chapter, we explored:
+
+- **Recurrent neural networks (RNNs)** and their fundamental approach to processing sequential information
+- **LSTM and GRU architectures** that address the vanishing gradient problem in sequential processing
+- **Attention mechanisms** that enable models to focus on relevant parts of input sequences
+- **The transformer architecture** with its parallel computation and scaled dot-product attention
+- **Positional encodings** that inject sequential order information into parallel attention models
+- **Neural correlates of sequential processing** in cortical circuits and working memory systems
+- **Predictive processing** frameworks in both the brain and artificial sequence models
+- **Applications** spanning natural language processing, time series forecasting, and neural decoding
+- **Implementation details** of sequence models through hands-on code examples
+- **The evolution from RNNs to transformers** representing different computational trade-offs
+
+This chapter traces the remarkable evolution of sequence modeling approaches in artificial intelligence, highlighting their biological inspirations and showing how these models have revolutionized our ability to process sequential data across domains.
+```
 
 ## 11.8 Further Reading & Media
 

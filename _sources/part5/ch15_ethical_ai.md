@@ -1,13 +1,19 @@
 # Chapter 15: Ethical AI - Considerations for NeuroAI
 
-The integration of neuroscience and artificial intelligence raises unique ethical considerations that require careful attention. This chapter explores the ethical dimensions of NeuroAI, providing a framework for responsible development and application.
+```{admonition} Learning Objectives
+:class: note
 
-## 15.0 Chapter Goals
-- Understand key ethical considerations in neuroscience-inspired AI systems
-- Explore frameworks for privacy and data protection in neural applications
-- Examine bias, fairness, and transparency challenges specific to NeuroAI
-- Develop approaches for responsible innovation in this emerging field
-- Implement practical frameworks for ethical assessment and governance
+By the end of this chapter, you will be able to:
+
+- **Identify** key ethical considerations specific to neuroscience-inspired AI systems
+- **Analyze** frameworks for privacy and data protection in neural applications
+- **Evaluate** bias, fairness, and transparency challenges in NeuroAI systems
+- **Develop** approaches for responsible innovation in this emerging interdisciplinary field
+- **Apply** practical frameworks for ethical assessment and governance
+- **Design** NeuroAI systems with ethical principles integrated from the start
+```
+
+The integration of neuroscience and artificial intelligence raises unique ethical considerations that require careful attention. This chapter explores the ethical dimensions of NeuroAI, providing a framework for responsible development and application.
 
 ## Ethical Frameworks for NeuroAI
 
@@ -1008,3 +1014,24 @@ To summarize the ethical principles for NeuroAI development:
 7. **Inclusivity** - Include diverse stakeholders throughout development
 
 Implementing these principles requires technical approaches (like differential privacy and explainable models) as well as governance frameworks and inclusive development processes. Only by addressing ethical considerations throughout the entire development lifecycle can we ensure that NeuroAI benefits humanity while respecting fundamental rights and values.
+
+<div style="page-break-before:always;"></div>
+
+```{admonition} Chapter Summary
+:class: important
+
+In this chapter, we explored:
+
+- **Ethical frameworks** specifically tailored to the unique challenges of NeuroAI
+- **Neural privacy concerns** and methods like differential privacy to protect brain data
+- **Bias assessment frameworks** to identify and mitigate unfairness in NeuroAI systems
+- **Transparency and explainability** approaches for making black-box models interpretable
+- **Dual-use concerns** and methodologies for assessing potential misuse of technologies
+- **Responsible innovation guidelines** that integrate ethics throughout development cycles
+- **Ethical impact assessments** to systematically evaluate potential harms and benefits
+- **Case studies** examining ethical challenges in brain-computer interfaces and predictive models
+- **Consciousness considerations** for increasingly brain-like artificial systems
+- **Key ethical principles** that should guide the development of NeuroAI technologies
+
+This chapter provides a comprehensive framework for addressing the profound ethical questions raised by technologies that bridge neuroscience and artificial intelligence, emphasizing how ethical considerations are not obstacles but essential components of responsible innovation in this rapidly evolving field.
+```

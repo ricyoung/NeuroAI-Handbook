@@ -1,10 +1,18 @@
 # Chapter 3: Spatial Navigation – Place & Grid Cells
 
-## 3.0 Chapter Goals
-- Understand the neural basis of spatial navigation
-- Explore the organizational principles of place and grid cells
-- Connect spatial coding in the brain to computational principles in AI
-- Implement simple models of neural spatial representation
+```{admonition} Learning Objectives
+:class: note
+
+By the end of this chapter, you will be able to:
+
+- **Understand** the neural basis of spatial navigation and memory
+- **Identify** key organizational principles of place and grid cells
+- **Connect** spatial coding in the brain to computational principles in AI
+- **Analyze** how animals create and use cognitive maps of their environment
+- **Implement** simple models of neural spatial representation
+```
+
+<div style="page-break-before:always;"></div>
 
 ## 3.1 Hippocampal Formation: Organization and Cell Types
 
@@ -535,6 +543,26 @@ These principles have informed developments in AI:
 - Neural systems balance competing demands: specificity vs. generalization, precision vs. efficiency
 - Understanding biological implementations of spatial processing has directly informed AI architecture design
 - Conversely, computational models help us understand biological systems through testable predictions
+
+<div style="page-break-before:always;"></div>
+
+```{admonition} Chapter Summary
+:class: important
+
+In this chapter, we explored:
+
+- The **hippocampal formation's organization** and its role in spatial navigation and memory
+- **Place cells** that fire in specific locations, forming a spatial address system
+- **Grid cells** with their hexagonal firing patterns that create a precise coordinate system
+- **Supporting cell types** including head direction cells, border cells, and conjunctive cells
+- The **neural basis of path integration** for tracking movement without external cues
+- **Parallel computational principles** between spatial navigation systems and CNNs
+- **Implementation of place and grid cell models** in code to simulate spatial representations
+- **AI applications** inspired by neural navigation systems, including memory-augmented networks
+- How **multi-scale, hierarchical representations** enable efficient spatial encoding in both neural and artificial systems
+
+This chapter bridges neuroscience concepts with computational implementations, demonstrating how the brain's spatial navigation mechanisms have influenced AI architectures and vice versa.
+```
 
 ## 3.9 Further Reading & Media
 

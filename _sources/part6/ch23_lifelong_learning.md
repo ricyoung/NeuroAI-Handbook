@@ -1,5 +1,7 @@
 # Chapter 23: Lifelong Learning
 
+<div style="page-break-before:always;"></div>
+
 ## 23.0 Chapter Goals
 - Understand the challenge of catastrophic forgetting in artificial neural networks
 - Explore biological solutions to the stability-plasticity dilemma
@@ -531,6 +533,8 @@ class MetaContinualLearner:
         # In a real implementation, this would retrieve stored targets
         return torch.randn(10, 2)
 ```
+
+<div style="page-break-before:always;"></div>
 
 ## 23.4 Practical Applications of Lifelong Learning
 

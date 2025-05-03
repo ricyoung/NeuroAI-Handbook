@@ -1,5 +1,7 @@
 # Chapter 20: Case Studies in NeuroAI
 
+<div style="page-break-before:always;"></div>
+
 ## Chapter Goals
 
 After completing this chapter, you will be able to:
@@ -20,6 +22,8 @@ This chapter features interactive examples to help you explore key concepts. Cli
 
 For an enhanced learning experience, we've also integrated [Jupyter AI assistance](jupyter_ai_demo.ipynb) to help you generate code, get explanations, and create visualizations based on the case studies.
 ```
+
+<div style="page-break-before:always;"></div>
 
 ## 20.1 Introduction: From Theory to Practice
 

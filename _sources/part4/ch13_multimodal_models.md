@@ -1,10 +1,19 @@
 # Chapter 13: Multimodal & Diffusion Models
 
-## 13.0 Chapter Goals
-- Understand multimodal learning architectures and their parallels to multisensory integration in the brain
-- Master diffusion model principles and their mathematical foundations
-- Connect multimodal integration in AI to multisensory processing in biological systems
-- Implement basic generative models with controlled generation capabilities
+```{admonition} Learning Objectives
+:class: note
+
+By the end of this chapter, you will be able to:
+
+- **Understand** multimodal learning architectures and their parallels to multisensory integration in the brain
+- **Master** diffusion model principles and their mathematical foundations
+- **Connect** multimodal integration in AI to multisensory processing in biological systems
+- **Analyze** cross-modal representations and fusion techniques
+- **Explain** generative modeling approaches for different data modalities
+- **Implement** basic generative models with controlled generation capabilities
+```
+
+<div style="page-break-before:always;"></div>
 
 ## 13.1 Multimodal Learning Foundations
 
@@ -709,6 +718,27 @@ def sample_from_model(model, scheduler, shape, device="cpu", steps=None):
 - **Combining modalities enhances representation quality** by leveraging complementary information across domains, similar to how the brain integrates vision, hearing, and touch to create a unified perception of reality.
 
 - **Cross-modal binding mechanisms** in both artificial and biological systems enable the creation of coherent representations that span multiple sensory domains.
+
+<div style="page-break-before:always;"></div>
+
+```{admonition} Chapter Summary
+:class: important
+
+In this chapter, we explored:
+
+- **Multimodal learning foundations** that enable models to work across different data types
+- **Cross-modal representations** that create shared embedding spaces between modalities
+- **Contrastive learning approaches** like CLIP that align visual and textual information
+- **Diffusion models** with their forward and reverse processes for high-quality generation
+- **Denoising score matching** as the mathematical foundation of diffusion models
+- **Sampling techniques** that control the generation process in diffusion models
+- **Text-to-image models** like DALL-E, Stable Diffusion, and Midjourney
+- **Video and audio generation** through temporal extensions of diffusion approaches
+- **Neural multimodal integration** in the brain's multisensory processing areas
+- **Implementation details** of a simple diffusion model for image generation
+
+This chapter connects cutting-edge AI generative methods with the brain's multimodal processing systems, highlighting how both artificial and biological intelligence benefit from integrating information across sensory domains.
+```
 
 ## 13.8 Further Reading & Media
 

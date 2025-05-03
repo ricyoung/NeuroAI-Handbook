@@ -12,6 +12,8 @@ By the end of this chapter, you will be able to:
 - **Compare** biological and artificial optimization approaches
 ```
 
+<div style="page-break-before:always;"></div>
+
 ## 10.1 Neural Network Fundamentals
 
 Deep learning has revolutionized AI by enabling models to learn hierarchical representations directly from data. At its core, deep learning is built on neural networks with multiple layers that progressively extract higher-level features.
@@ -1883,6 +1885,27 @@ While modern deep learning frameworks automate these steps, understanding the un
 - **Optimization Challenges**: Deep learning optimization remains challenging due to non-convex loss landscapes, saddle points, and the need to escape poor local minima.
 
 - **Empirical Focus**: Despite theoretical progress, deep learning remains heavily empirical, with practical techniques often preceding theoretical understanding.
+
+<div style="page-break-before:always;"></div>
+
+```{admonition} Chapter Summary
+:class: important
+
+In this chapter, we explored:
+
+- **Neural network fundamentals** including multilayer perceptrons and the mathematics of backpropagation
+- **Activation functions** from sigmoid and tanh to modern variants like ReLU, GELU, and Swish
+- **The vanishing/exploding gradient problem** and techniques to address it
+- **Optimization algorithms** such as SGD, momentum, Adam, and second-order methods
+- **Learning rate scheduling** approaches that adapt optimization dynamics during training
+- **Regularization techniques** including dropout, batch normalization, and weight decay
+- **Advanced architectures** like convolutional neural networks and residual networks
+- **Biological parallels** between deep learning systems and neural computations in the brain
+- **Modern paradigms** such as self-supervised learning and foundation models
+- **Theoretical frameworks** including loss landscapes, generalization theory, and neural tangent kernels
+
+This chapter provides a comprehensive overview of deep learning fundamentals, from the mathematical principles that enable training to practical techniques that improve performance, while highlighting both the technological innovations and biological inspirations that shape modern neural networks.
+```
 
 ```{admonition} Knowledge Connections
 :class: important

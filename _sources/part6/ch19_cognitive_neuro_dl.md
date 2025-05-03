@@ -1,5 +1,7 @@
 # Cognitive Neuroscience and Deep Learning
 
+<div style="page-break-before:always;"></div>
+
 ## Chapter Goals
 
 After completing this chapter, you will be able to:
@@ -68,6 +70,8 @@ def visualize_field_relationship():
     
     plt.show()
 ```
+
+<div style="page-break-before:always;"></div>
 
 ## 19.2 Cognitive Science Principles in Deep Learning
 
