@@ -1,10 +1,18 @@
 # Chapter 4: Perception Pipeline – Visual Cortex → CNNs
 
-## 4.0 Chapter Goals
-- Trace the visual processing pipeline from retina to higher cortical areas
-- Understand receptive fields and hierarchical feature extraction
-- Connect biological vision to convolutional neural networks
-- Implement simple visual filters and feature detectors
+```{admonition} Learning Objectives
+:class: note
+
+By the end of this chapter, you will be able to:
+
+- **Trace** the visual processing pipeline from retina to higher cortical areas
+- **Understand** receptive fields and hierarchical feature extraction principles
+- **Connect** biological vision mechanisms to convolutional neural network architectures
+- **Compare** feature representation in the visual cortex with CNN feature maps
+- **Implement** simple visual filters and feature detectors in code
+```
+
+<div style="page-break-before:always;"></div>
 
 ## 4.1 Visual System Architecture
 
@@ -1264,6 +1272,28 @@ The relationship between biological vision and CNNs demonstrates the power of ne
 6. **Bidirectional Insights**: Neuroscience continues to inspire AI innovations, while AI implementations help test and refine theories about biological vision.
 
 This bidirectional flow of insights exemplifies the value of interdisciplinary research between neuroscience and artificial intelligence.
+
+<div style="page-break-before:always;"></div>
+
+```{admonition} Chapter Summary
+:class: important
+
+In this chapter, we explored:
+
+- The **visual system architecture** from retina through thalamus to cortical hierarchies
+- **Receptive field properties** of visual neurons, from center-surround to orientation selectivity
+- **Gabor filters** as mathematical models of V1 simple cell responses
+- The **ventral (what) and dorsal (where) pathways** for object recognition and spatial processing
+- **Cortical hierarchies** that transform simple features into complex object representations
+- **Direct parallels between biology and CNNs** in architecture and learned features
+- **Convolutional layers** as computational analogs to visual receptive fields
+- **Pooling operations** that create translation invariance similar to complex cells
+- The **historical development** from Hubel & Wiesel to modern deep networks
+- **Advanced concepts** like recurrence, attention, and predictive coding in both systems
+- **Practical implementations** of biologically-inspired visual processing in code
+
+This chapter demonstrates how the study of biological vision has fundamentally shaped computer vision, and how artificial networks are now helping us better understand the brain's visual system.
+```
 
 ## 4.8 Further Reading & Media
 

@@ -12,17 +12,21 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Open the built PDF: `python open_pdf.py`
 
 ## PDF Build Process
-The PDF build process uses three main scripts:
+The PDF build process uses these main components:
 1. `01_build_chapters.py`: Builds individual chapter PDFs
-2. `02_build_supporting.py`: Creates supporting pages (cover, TOC, dividers)
-3. `03_merge_final.py`: Combines everything into a single PDF
+2. `export_frontmatter.sh`: Exports frontmatter pages from JupyterBook (copyright, acknowledgments, about)
+3. `02_build_supporting.py`: Creates supporting pages (cover, TOC, dividers)
+4. `03_merge_final.py`: Combines everything into a single PDF
 
-To use a custom cover page, place a `cover.pdf` file in the `_assets` directory.
+Custom assets can be placed in the `_assets` directory:
+- For a custom cover page, place a `cover.pdf` file in the `_assets` directory
+- For frontmatter content, edit the markdown files in `book/frontmatter/`
 
 ## Project Structure
 - Content in `book/` directory
 - Configure book settings in `book/_config.yml`
 - Manage table of contents in `book/_toc.yml`
+- Frontmatter content in `book/frontmatter/` directory
 - Python code examples in `book/part1/` directory
 - SVG figures in `book/figures/` organized by chapter
 - Reference management with `book/references.bib`

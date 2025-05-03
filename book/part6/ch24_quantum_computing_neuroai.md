@@ -1,5 +1,7 @@
 # Chapter 24: Quantum Computing and NeuroAI
 
+<div style="page-break-before:always;"></div>
+
 ## 24.0 Chapter Goals
 - Understand the fundamentals of quantum computing relevant to neural processing
 - Explore potential synergies between quantum computing and neuroscience-inspired AI

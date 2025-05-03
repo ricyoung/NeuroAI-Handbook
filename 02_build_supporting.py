@@ -8,12 +8,14 @@ This script creates:
 3. Table of contents
 4. Part divider pages
 5. Acknowledgments page
-6. Other front/back matter
+6. Exports frontmatter from JupyterBook (integrating export_frontmatter.sh)
+7. Other front/back matter
 """
 
 import os
 import sys
 import subprocess
+import glob
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.units import inch
@@ -30,7 +32,9 @@ OUTPUT_DIR = os.path.join(BASE_DIR, "pdf_components")
 SUPPORTING_DIR = os.path.join(OUTPUT_DIR, "supporting")
 PDF_EXPORTS_DIR = os.path.join(BASE_DIR, "pdf_exports")
 PDF_SUPPORTING_DIR = os.path.join(PDF_EXPORTS_DIR, "supporting")
+PDF_FRONTMATTER_DIR = os.path.join(PDF_EXPORTS_DIR, "frontmatter")
 ASSETS_DIR = os.path.join(BASE_DIR, "_assets")
+BOOK_DIR = os.path.join(BASE_DIR, "book")
 
 # Book metadata
 BOOK_TITLE = "NeuroAI Handbook"
@@ -435,6 +439,81 @@ def create_acknowledgments():
     print_status("Acknowledgments page created successfully")
     return True
 
+def export_frontmatter():
+    """Export frontmatter pages from JupyterBook to PDF.
+    
+    This function replaces the functionality of export_frontmatter.sh by:
+    1. Building the frontmatter pages using jupyter-book
+    2. Copying PDFs to the appropriate locations for inclusion in the final handbook
+    """
+    print_status("Exporting frontmatter pages from JupyterBook")
+    
+    # Create necessary directories
+    os.makedirs(PDF_FRONTMATTER_DIR, exist_ok=True)
+    
+    # Define frontmatter files to process
+    frontmatter_files = {
+        "copyright": {"src": "frontmatter/copyright.md", "dest_name": "01_copyright.pdf"},
+        "acknowledgments": {"src": "frontmatter/acknowledgments.md", "dest_name": "acknowledgments.pdf"},
+        "about": {"src": "frontmatter/about.md", "dest_name": "about.pdf"}
+    }
+    
+    success = True
+    
+    # Build each frontmatter file with jupyter-book
+    for name, info in frontmatter_files.items():
+        source_path = os.path.join(BOOK_DIR, info["src"])
+        if not os.path.exists(source_path):
+            print_status(f"WARNING: Frontmatter file not found: {source_path}")
+            success = False
+            continue
+            
+        print_status(f"Building {name} with jupyter-book")
+        cmd = f"jupyter-book build {source_path} --builder pdfhtml"
+        try:
+            subprocess.run(cmd, shell=True, check=True, 
+                          stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        except subprocess.CalledProcessError as e:
+            print_status(f"ERROR: Failed to build {name}: {e}")
+            print_status(f"STDERR: {e.stderr.decode('utf-8')}")
+            success = False
+            continue
+            
+        # Find the PDF file that was created (in _build/_page)
+        pdf_name = f"{os.path.basename(info['src']).replace('.md', '.pdf')}"
+        build_dir = os.path.join(BOOK_DIR, "_build/_page")
+        pdf_paths = glob.glob(f"{build_dir}/**/{pdf_name}", recursive=True)
+        
+        if not pdf_paths:
+            print_status(f"ERROR: Could not find built PDF for {name}")
+            success = False
+            continue
+            
+        # Copy to frontmatter export directory
+        export_path = os.path.join(PDF_FRONTMATTER_DIR, pdf_name)
+        try:
+            subprocess.run(f"cp {pdf_paths[0]} {export_path}", shell=True, check=True)
+            print_status(f"Copied {pdf_name} to {PDF_FRONTMATTER_DIR}")
+        except subprocess.CalledProcessError:
+            print_status(f"ERROR: Failed to copy {pdf_name} to export directory")
+            success = False
+            
+        # Also copy to supporting directory for merging
+        supporting_path = os.path.join(SUPPORTING_DIR, info["dest_name"])
+        try:
+            subprocess.run(f"cp {pdf_paths[0]} {supporting_path}", shell=True, check=True)
+            print_status(f"Copied {pdf_name} to {supporting_path}")
+        except subprocess.CalledProcessError:
+            print_status(f"ERROR: Failed to copy {pdf_name} to supporting directory")
+            success = False
+    
+    if success:
+        print_status("Successfully exported all frontmatter from JupyterBook")
+    else:
+        print_status("WARNING: Some frontmatter exports failed. Check output for details.")
+        
+    return success
+
 def copy_to_exports(filename):
     """Copy a supporting file to the pdf_exports directory."""
     source = os.path.join(SUPPORTING_DIR, filename)
@@ -461,9 +540,11 @@ def build_all_supporting():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     os.makedirs(SUPPORTING_DIR, exist_ok=True)
     os.makedirs(PDF_SUPPORTING_DIR, exist_ok=True)
+    os.makedirs(PDF_FRONTMATTER_DIR, exist_ok=True)
     
     print_status(f"Supporting pages will be saved to: {SUPPORTING_DIR}")
     print_status(f"Copies will also be saved to: {PDF_SUPPORTING_DIR}")
+    print_status(f"Frontmatter pages will be saved to: {PDF_FRONTMATTER_DIR}")
     
     # Create all supporting pages
     success = (
@@ -471,7 +552,8 @@ def build_all_supporting():
         create_copyright_page() and
         create_toc() and
         create_part_dividers() and
-        create_acknowledgments()
+        create_acknowledgments() and
+        export_frontmatter()
     )
     
     # Copy files to pdf_exports directory

@@ -64,15 +64,10 @@ def main():
     if not run_command(f"cd {script_dir} && python3 01_build_chapters.py",
                       "Step 1: Building chapter PDFs"):
         return False
-        
-    # Step 1.5: Export frontmatter from JupyterBook
-    if not run_command(f"cd {script_dir} && bash export_frontmatter.sh",
-                      "Step 1.5: Exporting frontmatter pages from JupyterBook"):
-        return False
     
-    # Step 2: Create supporting pages
+    # Step 2: Create supporting pages (now includes frontmatter export)
     if not run_command(f"cd {script_dir} && python3 02_build_supporting.py",
-                      "Step 2: Creating supporting pages"):
+                      "Step 2: Creating supporting pages and exporting frontmatter"):
         return False
     
     # Step 3: Merge the final handbook

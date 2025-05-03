@@ -2,6 +2,8 @@
 
 This chapter examines how artificial intelligence is accelerating neuroscience research and enabling new discoveries about brain function and organization. While neuroscience has heavily inspired AI, AI is now increasingly being used to advance neuroscience in a virtuous cycle of innovation.
 
+<div style="page-break-before:always;"></div>
+
 ## 21.0 Chapter Goals
 - Understand how AI approaches are transforming neural data analysis
 - Explore computational brain simulations enabled by machine learning
@@ -909,6 +911,8 @@ def infer_circuit_mechanisms(neural_activity, behaviors):
     
     return model
 ```
+
+<div style="page-break-before:always;"></div>
 
 ## 21.5 Neuromorphic Applications
 

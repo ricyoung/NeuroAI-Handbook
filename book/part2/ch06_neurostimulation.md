@@ -1,12 +1,19 @@
 # Chapter 6: Neurostimulation & Plasticity
 
-## 6.0 Chapter Goals
-- Understand mechanisms of neural plasticity
-- Explore neuromodulatory systems (dopamine, acetylcholine, etc.)
-- Connect plasticity to learning algorithms
-- Investigate non-invasive brain stimulation techniques
-- Explore computational models of neural plasticity and stimulation
-- Apply neuroscience concepts to AI systems
+```{admonition} Learning Objectives
+:class: note
+
+By the end of this chapter, you will be able to:
+
+- **Understand** fundamental mechanisms of neural plasticity and synaptic modification
+- **Describe** key neuromodulatory systems (dopamine, acetylcholine, etc.) and their effects
+- **Connect** biological plasticity principles to machine learning algorithms
+- **Evaluate** non-invasive brain stimulation techniques and their applications
+- **Implement** computational models of neural plasticity and stimulation
+- **Apply** neuroscience-inspired plasticity concepts to improve AI systems
+```
+
+<div style="page-break-before:always;"></div>
 
 ## 6.1 Neural Plasticity Mechanisms
 
@@ -1006,6 +1013,26 @@ This chapter has explored the fundamental mechanisms of neural plasticity, the n
    - Clinical applications for rehabilitation, treatment, and cognitive preservation
 
 Understanding the interplay between plasticity mechanisms, neuromodulatory systems, and external stimulation not only advances our knowledge of the brain but also inspires new approaches to artificial intelligence. As these fields continue to converge, we can expect increasingly sophisticated models of learning and adaptation that draw from the remarkable flexibility of biological neural systems.
+
+<div style="page-break-before:always;"></div>
+
+```{admonition} Chapter Summary
+:class: important
+
+In this chapter, we explored:
+
+- **Neural plasticity mechanisms** including Hebbian learning, LTP/LTD, STDP, and homeostatic processes
+- **Neuromodulatory systems** such as dopamine, acetylcholine, norepinephrine, and serotonin that regulate learning
+- **Brain stimulation techniques** like tDCS, TMS, and DBS that can modulate neural activity and enhance plasticity
+- The **biological basis of reinforcement learning** through dopaminergic signaling of reward prediction errors
+- **Computational models** that bridge biological plasticity with machine learning algorithms
+- **Meta-learning approaches** that parallel the brain's adaptation to different learning contexts
+- **Cognitive enhancement applications** spanning memory, attention, and motor learning
+- **Clinical applications** of neurostimulation for rehabilitation and treatment
+- **Simulations and code** demonstrating the effects of stimulation and neuromodulation on learning
+
+This chapter connects fundamental neuroscience concepts of plasticity with both practical neurostimulation applications and their algorithmic parallels in artificial intelligence, highlighting how understanding the brain's adaptive mechanisms can inspire new approaches to machine learning.
+```
 
 ## 6.8 Further Reading & Media
 

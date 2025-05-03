@@ -1,5 +1,7 @@
 # Chapter 22: Embodied AI and Robotics
 
+<div style="page-break-before:always;"></div>
+
 ## 22.0 Chapter Goals
 - Understand how neuroscience principles inform embodied AI and robotics
 - Explore brain-inspired approaches to sensorimotor learning and control
@@ -269,6 +271,8 @@ class GoalSeeking(Behavior):
             'angular_velocity': heading_error * 0.5  # Turn toward goal
         }
 ```
+
+<div style="page-break-before:always;"></div>
 
 ## 22.2 Neuroscience-Inspired Sensorimotor Control
 

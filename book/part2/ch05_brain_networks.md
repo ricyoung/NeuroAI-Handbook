@@ -1,12 +1,19 @@
 # Chapter 5: Default-Mode vs Executive Control Networks
 
-## 5.0 Chapter Goals
-- Understand large-scale brain networks and their functional significance
-- Contrast default-mode and executive control networks
-- Connect network dynamics to cognitive functions
-- Explore computational models of brain network interactions
-- Apply network analysis approaches to neural data
-- Draw parallels between brain network dynamics and artificial intelligence
+```{admonition} Learning Objectives
+:class: note
+
+By the end of this chapter, you will be able to:
+
+- **Understand** large-scale brain networks and their functional significance
+- **Contrast** default-mode and executive control networks and their complementary roles
+- **Connect** network dynamics to cognitive functions and behavior
+- **Explore** computational models of brain network interactions and transitions
+- **Apply** network analysis approaches to neural data
+- **Draw** parallels between brain network dynamics and artificial intelligence systems
+```
+
+<div style="page-break-before:always;"></div>
 
 ## 5.1 Network Neuroscience Fundamentals
 
@@ -1001,6 +1008,26 @@ These principles may inform artificial intelligence design:
 4. **Anti-correlated systems** may provide useful tension between complementary processing modes
 
 The brain's network architecture represents an evolutionary solution to complex information processing under biological constraints. Understanding these organizing principles may inspire new approaches to artificial intelligence that incorporate lessons from network neuroscience.
+
+<div style="page-break-before:always;"></div>
+
+```{admonition} Chapter Summary
+:class: important
+
+In this chapter, we explored:
+
+- **Network neuroscience fundamentals** and methods for analyzing brain connectivity
+- The **default mode network (DMN)** with its role in self-reference, mind-wandering, and creativity
+- **Executive control networks** that manage goal-directed behavior, attention, and cognitive control
+- The **anti-correlation and dynamic interactions** between these complementary systems
+- How **network balance** supports adaptive cognition and is disrupted in neurological disorders
+- **Computational approaches** including graph theory, neural mass models, and reservoir computing
+- **Implementation of network analysis tools** in code, including simulations of network dynamics
+- **Applications of brain network principles** to artificial intelligence design
+- How **modularity, small-world architecture, and dynamic resource allocation** optimize neural processing
+
+This chapter bridges systems neuroscience with network science, showing how cognitive functions emerge from interactions between distributed brain systems rather than isolated regions.
+```
 
 ## 5.8 Further Reading & Media
 

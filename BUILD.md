@@ -25,11 +25,12 @@ The current tagline used in the generated cover is:
 
 ## Build Process Components
 
-The build system is organized into three main scripts:
+The build system is organized into several main components:
 
 1. `01_build_chapters.py`: Builds individual chapter PDFs
-2. `02_build_supporting.py`: Creates supporting pages (cover, TOC, dividers)
-3. `03_merge_final.py`: Combines everything into the final handbook
+2. `export_frontmatter.sh`: Exports frontmatter pages from JupyterBook (copyright, acknowledgments, about)
+3. `02_build_supporting.py`: Creates supporting pages (cover, TOC, dividers)
+4. `03_merge_final.py`: Combines everything into the final handbook
 
 ### 1. Building Chapters
 
@@ -43,9 +44,22 @@ This processes all markdown files using JupyterBook and places the resulting PDF
 - `pdf_components/chapters/` (numbered with prefixes)
 - `pdf_exports/chapters/` (without prefixes, for individual reference)
 
-### 2. Creating Supporting Pages
+### 2. Exporting Frontmatter
 
-The second script creates all supporting pages:
+The frontmatter script exports pages from JupyterBook:
+
+```bash
+bash export_frontmatter.sh
+```
+
+This exports:
+- Copyright page
+- Acknowledgments page
+- About This Book page
+
+### 3. Creating Supporting Pages
+
+The supporting pages script creates additional pages:
 
 ```bash
 python 02_build_supporting.py
@@ -53,18 +67,16 @@ python 02_build_supporting.py
 
 This creates:
 - Cover page
-- Copyright page
 - Table of contents
 - Part divider pages
-- Acknowledgments page
 
 These files are placed in:
 - `pdf_components/supporting/`
 - `pdf_exports/supporting/`
 
-### 3. Merging the Final Handbook
+### 4. Merging the Final Handbook
 
-The third script combines everything into the final handbook:
+The merge script combines everything into the final handbook:
 
 ```bash
 python 03_merge_final.py [options]
@@ -72,13 +84,9 @@ python 03_merge_final.py [options]
 
 Options:
 - `--output DIR`: Specify output directory (default: `pdf_exports/complete_handbook/`)
-- `--basic`: Create only a basic version (no page numbers)
-- `--acrobat-only`: Create only the Acrobat-compatible version
 
-By default, this creates three versions of the handbook:
-1. Complete version with page numbers (`neuroai_handbook.pdf`)
-2. Acrobat-compatible version without page modifications (`neuroai_handbook_acrobat.pdf`)
-3. Basic version for reference (`neuroai_handbook_basic.pdf`)
+This creates a single comprehensive handbook PDF:
+- Complete version with page numbers and all components (`neuroai_handbook.pdf`)
 
 ## Output Files
 
@@ -115,10 +123,21 @@ If figure quality issues are encountered:
 
 ## Complete Build Script
 
-The `build_neuroai_handbook.py` script runs all three components in sequence:
+The `build_neuroai_handbook.py` script runs all components in sequence:
 
 ```bash
-python build_neuroai_handbook.py [--output DIR] [--acrobat-only] [--basic]
+python build_neuroai_handbook.py [--output DIR]
 ```
 
 This is recommended for most use cases as it ensures all components are built consistently.
+
+## Frontmatter in JupyterBook
+
+The frontmatter pages (copyright, acknowledgments, about) are now part of the JupyterBook content in the `book/frontmatter/` directory. This means:
+
+1. These pages appear in the HTML version of the book when served
+2. They follow the same styling as the rest of the book
+3. Content can be edited using markdown in the `book/frontmatter/` directory files
+4. They're automatically exported to PDF during the build process
+
+This integration ensures consistency between the online and PDF versions of the handbook.

@@ -12,6 +12,8 @@ By the end of this chapter, you will be able to:
 - **Implement** basic simulations demonstrating bio-inspired computational principles
 ```
 
+<div style="page-break-before:always;"></div>
+
 ## 1.1 Historical Context
 
 The relationship between neuroscience and artificial intelligence is deeply intertwined, with each field influencing the other across decades of research. Understanding this history helps frame modern developments in both disciplines.
@@ -616,6 +618,8 @@ The ongoing dialogue between neuroscience and AI yields insights in both directi
 
 As both fields advance, their ongoing collaboration promises deeper understanding of intelligence in both natural and artificial systems.
 
+<div style="page-break-before:always;"></div>
+
 ```{admonition} Chapter Summary
 :class: important
 
@@ -633,6 +637,8 @@ In this chapter, we explored:
 This chapter provides the foundation for the detailed explorations of specific neural systems and their artificial counterparts in subsequent chapters.
 ```
 
+<div style="page-break-before:always;"></div>
+
 ```{admonition} Knowledge Connections
 :class: important
 
@@ -643,6 +649,8 @@ This chapter provides the foundation for the detailed explorations of specific n
 - **Chapter 10 (Deep Learning)**: The backpropagation algorithm mentioned in section 1.1.3 becomes central to training the deep networks discussed in Chapter 10.
 - **Chapter 14 (Future Directions)**: The challenges identified in section 1.5 inform many of the research directions explored in the final chapter.
 ```
+
+<div style="page-break-before:always;"></div>
 
 ## 1.7 Further Reading & Media
 

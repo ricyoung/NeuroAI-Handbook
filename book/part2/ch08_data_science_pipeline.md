@@ -1,10 +1,19 @@
 # Chapter 8: Data-Science Pipeline in Python
 
-## 8.0 Chapter Goals
-- Master the data science workflow for neuroscience applications
-- Implement robust preprocessing, analysis, visualization, and modeling techniques
-- Work with real neural datasets through practical examples
-- Create reproducible analysis pipelines for neuroscience experiments
+```{admonition} Learning Objectives
+:class: note
+
+By the end of this chapter, you will be able to:
+
+- **Master** the complete data science workflow for neuroscience applications
+- **Implement** robust preprocessing, analysis, visualization, and modeling techniques
+- **Apply** statistical methods appropriate for neural data analysis
+- **Work** with real neural datasets through practical examples
+- **Create** reproducible analysis pipelines for neuroscience experiments
+- **Integrate** machine learning approaches with neuroscience data
+```
+
+<div style="page-break-before:always;"></div>
 
 ## 8.1 Neural Data Types & Sources
 
@@ -1860,6 +1869,27 @@ The future neuroscientist will be less a programmer and more an analytical strat
 - **Python Ecosystem**: Python's rich ecosystem of libraries and tools makes it uniquely suited for neural data analysis.
 
 - **AI-Augmented Analysis**: The future of neural data science involves AI assistants that handle routine coding tasks, allowing neuroscientists to focus on higher-level questions and interpretations.
+
+<div style="page-break-before:always;"></div>
+
+```{admonition} Chapter Summary
+:class: important
+
+In this chapter, we explored:
+
+- **Different neural data types** including spike trains, local field potentials, EEG/MEG, fMRI, and calcium imaging
+- **Essential preprocessing techniques** for filtering, artifact removal, and normalizing neural signals
+- **Feature extraction methods** that transform raw neural data into meaningful quantitative representations
+- **Dimensionality reduction approaches** for visualizing high-dimensional neural datasets
+- **Statistical modeling techniques** including generalized linear models and point process models
+- **Machine learning applications** for neural decoding and pattern discovery in brain activity
+- **Deep learning architectures** tailored to the temporal and spatial structure of neural data
+- **End-to-end data analysis pipelines** from raw data to scientific insights
+- **AI-augmented programming** workflows that represent the future of neural data science
+- **Best practices for reproducibility** in computational neuroscience analysis
+
+This chapter provides a comprehensive framework for analyzing neural data using modern computational tools, with particular emphasis on Python-based workflows that can handle the complexity and scale of contemporary neuroscience datasets.
+```
 
 ## 8.9 Further Reading & Media
 

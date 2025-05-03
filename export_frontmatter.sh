@@ -1,24 +1,10 @@
 #!/bin/bash
-# Script to export frontmatter pages from JupyterBook to PDF
+# DEPRECATED: This script has been integrated into 02_build_supporting.py
+# Please use python3 02_build_supporting.py instead
 
-# Create output directories
-mkdir -p pdf_exports/frontmatter
+echo "WARNING: export_frontmatter.sh is deprecated and has been integrated into 02_build_supporting.py"
+echo "Please use 'python3 02_build_supporting.py' instead."
+echo "This script is kept for backward compatibility but may be removed in the future."
 
-echo "Exporting frontmatter pages..."
-
-# Export the frontmatter pages
-jupyter-book build book/frontmatter/copyright.md --builder pdfhtml
-jupyter-book build book/frontmatter/acknowledgments.md --builder pdfhtml
-jupyter-book build book/frontmatter/about.md --builder pdfhtml
-
-# Move the PDFs to the appropriate location
-echo "Moving PDFs to pdf_exports/frontmatter directory..."
-find book/_build/_page/frontmatter -name "*.pdf" -exec cp {} pdf_exports/frontmatter/ \;
-
-# Copy to pdf_components for merging
-mkdir -p pdf_components/frontmatter
-cp pdf_exports/frontmatter/copyright.pdf pdf_components/supporting/01_copyright.pdf
-cp pdf_exports/frontmatter/acknowledgments.pdf pdf_components/supporting/acknowledgments.pdf
-cp pdf_exports/frontmatter/about.pdf pdf_components/supporting/about.pdf
-
-echo "Frontmatter export complete. PDFs are in pdf_exports/frontmatter and pdf_components/supporting directories."
+# Call the new integrated script to maintain backward compatibility
+python3 $(dirname "$0")/02_build_supporting.py

@@ -1,5 +1,7 @@
 # Chapter 9: Classical Machine-Learning Foundations
 
+<div style="page-break-before:always;"></div>
+
 ## 9.0 Chapter Goals
 
 This chapter provides a foundation for understanding machine learning algorithms with connections to neuroscience. By the end of this chapter, you should be able to:
@@ -788,6 +790,8 @@ plt.grid(alpha=0.3)
 plt.show()
 ```
 
+<div style="page-break-before:always;"></div>
+
 ## 9.3 Model Evaluation
 
 ### Cross-validation Techniques
@@ -1573,6 +1577,27 @@ feature_selection_neuroscience()
 - The bias-variance tradeoff guides model selection and regularization choices.
 - Neuroscience can benefit from ML for neural decoding and pattern discovery, while ML can be inspired by neural computation principles.
 - Understanding both domains enables the development of more effective and biologically plausible algorithms.
+
+<div style="page-break-before:always;"></div>
+
+```{admonition} Chapter Summary
+:class: important
+
+In this chapter, we explored:
+
+- **Learning paradigms** including supervised, unsupervised, reinforcement, and transfer learning
+- **Linear models** such as linear and logistic regression implemented from scratch
+- **Decision trees and random forests** with their hierarchical decision-making process
+- **Support vector machines** that find optimal separating hyperplanes between classes
+- **Clustering algorithms** including k-means and hierarchical clustering approaches
+- **Model evaluation techniques** such as cross-validation and regularization methods
+- **The bias-variance tradeoff** that guides model complexity and generalization ability
+- **Feature engineering methods** like feature selection and dimensionality reduction
+- **Neurobiological parallels** to various machine learning approaches
+- **Practical applications** such as neural decoding from spike train data
+
+This chapter provides the foundational machine learning concepts necessary for understanding more advanced neural network approaches, while highlighting the connections between classical machine learning algorithms and their biological counterparts in neural systems.
+```
 
 ## 9.8 Further Reading & Media
 

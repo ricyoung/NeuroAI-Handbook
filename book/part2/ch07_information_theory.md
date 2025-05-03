@@ -1,5 +1,7 @@
 # Chapter 7: Information Theory Essentials
 
+<div style="page-break-before:always;"></div>
+
 ## 7.0 Chapter Goals
 
 Information theory provides essential mathematical tools for quantifying and analyzing information processing in both neural and artificial systems. By the end of this chapter, you should be able to:
@@ -266,6 +268,8 @@ This concept is crucial in neuroscience for understanding the information-carryi
 - **Neural Interfaces**: Designing optimal neural recording/stimulation devices requires understanding neural channel capacities
 - **AI System Design**: Network width and depth choices implicitly reflect channel capacity considerations
 ```
+
+<div style="page-break-before:always;"></div>
 
 ## 7.2 Neural Coding & Efficiency
 
@@ -1600,6 +1604,27 @@ Information theory has informed several advancements in deep learning:
 - Information-theoretic measures can reveal the causal structure of neural networks and provide insights into integrated information processing.
 - Modern deep learning can be understood through information-theoretic principles, with layers performing progressive compression while preserving task-relevant information.
 - Both brains and artificial neural networks appear to optimize similar information-theoretic objectives under different constraints.
+
+<div style="page-break-before:always;"></div>
+
+```{admonition} Chapter Summary
+:class: important
+
+In this chapter, we explored:
+
+- **Information theory fundamentals** including entropy, mutual information, and Kullback-Leibler divergence
+- **Efficient coding principles** that explain how neural systems optimize information transmission
+- **Redundancy reduction and sparse coding** as biological strategies for efficient neural representation
+- **Neural coding** approaches and how to measure information in spike trains
+- **Noise and variability** in neural systems and their impact on information processing
+- **Population coding strategies** that distribute information across groups of neurons
+- **Directional measures** like transfer entropy that quantify causal information flow in networks
+- **The information bottleneck principle** as a theoretical framework linking compression and prediction
+- **Applications in deep learning** including variational methods and information-theoretic bounds
+- **Implementations of information-theoretic analyses** in code with practical examples
+
+This chapter bridges theoretical information theory with its applications in both computational neuroscience and machine learning, demonstrating how these seemingly different fields share fundamental principles of efficient information processing.
+```
 
 ## 7.9 Further Reading & Media
 
