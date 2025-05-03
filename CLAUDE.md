@@ -45,3 +45,21 @@ Custom assets can be placed in the `_assets` directory:
 - Jupyter notebooks: Clear outputs before committing
 - Markdown: ATX-style headers (# for headings)
 - Citations: Use bibtex format in references.bib
+
+## SVG Figure Guidelines
+- Always escape special characters in SVG text elements:
+  - Replace `&` with `&amp;`
+  - Replace `<` with `&lt;`
+  - Replace `>` with `&gt;`
+  - Replace `"` with `&quot;`
+- Check SVG files with a validator before committing changes
+- Use standard fonts or embed fonts in SVG files
+- Maintain consistent design patterns across similar figures
+- Ensure SVG files have appropriate viewBox and dimensions
+- Use semantic class/id names instead of inline styles when possible
+
+## Troubleshooting
+- If figures don't display in the HTML output, check for unescaped special characters in SVG files
+- For notebook execution errors, verify that required packages are installed in the environment
+- If PDFs aren't building correctly, check the logs in the `logs/` directory
+- For specific page breaks or layout issues, use `<div style="page-break-before:always;"></div>` tags
