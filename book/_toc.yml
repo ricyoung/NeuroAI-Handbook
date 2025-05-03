@@ -63,8 +63,8 @@ parts:
             title: Creating Presentations with RISE
       - file: part6/ch21_ai_for_neuro_discovery
       - file: part6/ch22_embodied_ai_robotics
-      - file: part6/ch24_quantum_computing_neuroai
       - file: part6/ch23_lifelong_learning
+      - file: part6/ch24_quantum_computing_neuroai
   
   - caption: Appendices
     chapters:

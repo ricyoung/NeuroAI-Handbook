@@ -35,7 +35,8 @@
       "WebFetchTool(domain:www.nature.com)",
       "Bash(bash:*)",
       "Bash(jupyter-book clean:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(/Volumes/data_bolt/_github/NeuroAI-Handbook/book/part*/ch*.md)"
     ],
     "deny": []
   }

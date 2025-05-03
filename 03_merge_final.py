@@ -102,8 +102,8 @@ STRUCTURE = [
     {"type": "chapter_pattern", "pattern": "20_*", "required": True},
     {"type": "chapter_pattern", "pattern": "21_*", "required": True},
     {"type": "chapter_pattern", "pattern": "22_*", "required": True},
-    {"type": "chapter_pattern", "pattern": "24_*", "required": True},
     {"type": "chapter_pattern", "pattern": "23_*", "required": True},
+    {"type": "chapter_pattern", "pattern": "24_*", "required": True},
     
     # Appendices
     {"type": "supporting", "file": "partVII_divider.pdf", "required": False},

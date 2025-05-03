@@ -66,7 +66,7 @@ John O'Keefe discovered place cells in 1971 while recording from freely moving r
 - The collection of all place cells forms a complete representation of the environment
 
 <figure>
-<img src="../figures/brain_regions_table.svg" width="500"/>
+<img src="../figures/ch03/place_grid_cells.svg" width="500"/>
 <figcaption>Place cell firing fields. The colored regions show where individual hippocampal neurons become active as an animal explores its environment.</figcaption>
 </figure>
 

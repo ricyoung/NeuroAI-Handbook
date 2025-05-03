@@ -57,8 +57,8 @@ CHAPTERS = [
     {"path": "part6/ch20_case_studies.md", "order": "20"},
     {"path": "part6/ch21_ai_for_neuro_discovery.md", "order": "21"},
     {"path": "part6/ch22_embodied_ai_robotics.md", "order": "22"},
-    {"path": "part6/ch24_quantum_computing_neuroai.md", "order": "24"},
     {"path": "part6/ch23_lifelong_learning.md", "order": "23"},
+    {"path": "part6/ch24_quantum_computing_neuroai.md", "order": "24"},
     
     # Appendices
     {"path": "appendices/glossary.md", "order": "A1"},
