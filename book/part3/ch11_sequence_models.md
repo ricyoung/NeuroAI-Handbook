@@ -10,6 +10,8 @@ By the end of this chapter, you will be able to:
 - **Connect** sequence model operations to temporal processing in the brain
 - **Implement** key sequence modeling architectures for various tasks
 - **Compare** different approaches to handling sequential data
+- **Apply** sequence models to healthcare time series data for clinical applications
+- **Address** challenges unique to healthcare sequences such as irregularity and missing data
 ```
 
 <div style="page-break-before:always;"></div>
@@ -3627,6 +3629,8 @@ By understanding these implementations and experimenting with the code, you'll g
 - **Chapter 12 (Large Language Models)**: Transformer architectures from this chapter form the foundation for LLMs with scaled attention mechanisms
 - **Chapter 13 (Multimodal Models)**: Sequence processing techniques are extended to handle multiple modalities through cross-attention and embedding alignment
 - **Chapter 14 (Future Directions)**: Innovations in sequence modeling contribute to neuromorphic computing and brain-inspired AI architectures
+- **Chapter 20 (Case Studies)**: Healthcare applications of sequence models are demonstrated in neurological disorder prediction
+- **Chapter 21 (AI for Neuro Discovery)**: Sequence models are applied to neuroimaging time series for clinical applications
 ```
 
 This chapter has covered the evolution of sequence models from recurrent networks to transformers, connecting these AI architectures to neural processing mechanisms in the brain. Here are the key insights:
@@ -3655,6 +3659,13 @@ This chapter has covered the evolution of sequence models from recurrent network
 
 7. **Applications Bridging Fields**: Sequence models provide a shared framework for applications spanning neuroscience and AI, from neural decoding and brain-computer interfaces to natural language processing and time series forecasting.
 
+8. **Healthcare Applications**: Sequence models are particularly valuable for healthcare time series analysis:
+   - Handling irregular sampling intervals in clinical data
+   - Managing missing values common in patient monitoring
+   - Detecting early signs of clinical deterioration
+   - Modeling multivariate physiological signals like EEG and ECG
+   - Predicting disease progression trajectories in neurological disorders
+
 The rapid advancement of sequence models represents one of the most successful areas of cross-fertilization between neuroscience and artificial intelligence, with each field benefiting from insights gained in the other.
 
 <div style="page-break-before:always;"></div>
@@ -3672,10 +3683,11 @@ In this chapter, we explored:
 - **Neural correlates of sequential processing** in cortical circuits and working memory systems
 - **Predictive processing** frameworks in both the brain and artificial sequence models
 - **Applications** spanning natural language processing, time series forecasting, and neural decoding
+- **Healthcare time series applications** that address clinical challenges like irregular sampling, missing data, and early detection of deterioration
 - **Implementation details** of sequence models through hands-on code examples
 - **The evolution from RNNs to transformers** representing different computational trade-offs
 
-This chapter traces the remarkable evolution of sequence modeling approaches in artificial intelligence, highlighting their biological inspirations and showing how these models have revolutionized our ability to process sequential data across domains.
+This chapter traces the remarkable evolution of sequence modeling approaches in artificial intelligence, highlighting their biological inspirations and showing how these models have revolutionized our ability to process sequential data across domains from neuroscience to healthcare.
 ```
 
 ## 11.8 Further Reading & Media

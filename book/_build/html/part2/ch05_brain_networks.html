@@ -186,6 +186,12 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cover.html">Cover</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/copyright.html">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/acknowledgments.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/about.html">About This Book</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I · Brains &amp; Inspiration</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../part1/ch01_intro.html">Chapter 1: Introduction to Neuroscience ↔ AI</a></li>
@@ -218,9 +224,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VI · Advanced Applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../part6/ch17_bci_human_ai_interfaces.html">Brain-Computer Interfaces and Human-AI Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch17_bci_human_ai_interfaces.html">Chapter 17: Brain-Computer Interfaces and Human-AI Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch18_neuromorphic_computing.html">Chapter 18: Neuromorphic Computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../part6/ch19_cognitive_neuro_dl.html">Cognitive Neuroscience and Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch19_cognitive_neuro_dl.html">Chapter 19: Cognitive Neuroscience and Deep Learning</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../part6/ch20_case_studies.html">Case Studies in NeuroAI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../part6/ch20_interactive.html">Interactive NeuroAI Case Studies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../part6/jupyter_ai_demo.html">AI-Assisted Learning with Jupyter AI</a></li>
@@ -231,8 +237,8 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch21_ai_for_neuro_discovery.html">Chapter 21: AI for Neuroscience Discovery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch22_embodied_ai_robotics.html">Chapter 22: Embodied AI and Robotics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../part6/ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch23_lifelong_learning.html">Chapter 23: Lifelong Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -452,7 +458,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-goals">5.0 Chapter Goals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-neuroscience-fundamentals">5.1 Network Neuroscience Fundamentals</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-local-circuits-to-distributed-networks">From Local Circuits to Distributed Networks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-for-studying-brain-networks">Methods for Studying Brain Networks</a></li>
@@ -521,17 +526,19 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-5-default-mode-vs-executive-control-networks">
 <h1>Chapter 5: Default-Mode vs Executive Control Networks<a class="headerlink" href="#chapter-5-default-mode-vs-executive-control-networks" title="Link to this heading">#</a></h1>
-<section id="chapter-goals">
-<h2>5.0 Chapter Goals<a class="headerlink" href="#chapter-goals" title="Link to this heading">#</a></h2>
+<div class="note admonition">
+<p class="admonition-title">Learning Objectives</p>
+<p>By the end of this chapter, you will be able to:</p>
 <ul class="simple">
-<li><p>Understand large-scale brain networks and their functional significance</p></li>
-<li><p>Contrast default-mode and executive control networks</p></li>
-<li><p>Connect network dynamics to cognitive functions</p></li>
-<li><p>Explore computational models of brain network interactions</p></li>
-<li><p>Apply network analysis approaches to neural data</p></li>
-<li><p>Draw parallels between brain network dynamics and artificial intelligence</p></li>
+<li><p><strong>Understand</strong> large-scale brain networks and their functional significance</p></li>
+<li><p><strong>Contrast</strong> default-mode and executive control networks and their complementary roles</p></li>
+<li><p><strong>Connect</strong> network dynamics to cognitive functions and behavior</p></li>
+<li><p><strong>Explore</strong> computational models of brain network interactions and transitions</p></li>
+<li><p><strong>Apply</strong> network analysis approaches to neural data</p></li>
+<li><p><strong>Draw</strong> parallels between brain network dynamics and artificial intelligence systems</p></li>
 </ul>
-</section>
+</div>
+<div style="page-break-before:always;"></div>
 <section id="network-neuroscience-fundamentals">
 <h2>5.1 Network Neuroscience Fundamentals<a class="headerlink" href="#network-neuroscience-fundamentals" title="Link to this heading">#</a></h2>
 <section id="from-local-circuits-to-distributed-networks">
@@ -1494,6 +1501,23 @@ document.write(`
 <li><p><strong>Anti-correlated systems</strong> may provide useful tension between complementary processing modes</p></li>
 </ol>
 <p>The brain’s network architecture represents an evolutionary solution to complex information processing under biological constraints. Understanding these organizing principles may inspire new approaches to artificial intelligence that incorporate lessons from network neuroscience.</p>
+<div style="page-break-before:always;"></div>
+<div class="important admonition">
+<p class="admonition-title">Chapter Summary</p>
+<p>In this chapter, we explored:</p>
+<ul class="simple">
+<li><p><strong>Network neuroscience fundamentals</strong> and methods for analyzing brain connectivity</p></li>
+<li><p>The <strong>default mode network (DMN)</strong> with its role in self-reference, mind-wandering, and creativity</p></li>
+<li><p><strong>Executive control networks</strong> that manage goal-directed behavior, attention, and cognitive control</p></li>
+<li><p>The <strong>anti-correlation and dynamic interactions</strong> between these complementary systems</p></li>
+<li><p>How <strong>network balance</strong> supports adaptive cognition and is disrupted in neurological disorders</p></li>
+<li><p><strong>Computational approaches</strong> including graph theory, neural mass models, and reservoir computing</p></li>
+<li><p><strong>Implementation of network analysis tools</strong> in code, including simulations of network dynamics</p></li>
+<li><p><strong>Applications of brain network principles</strong> to artificial intelligence design</p></li>
+<li><p>How <strong>modularity, small-world architecture, and dynamic resource allocation</strong> optimize neural processing</p></li>
+</ul>
+<p>This chapter bridges systems neuroscience with network science, showing how cognitive functions emerge from interactions between distributed brain systems rather than isolated regions.</p>
+</div>
 </section>
 </section>
 <section id="further-reading-media">
@@ -1675,7 +1699,6 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-goals">5.0 Chapter Goals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#network-neuroscience-fundamentals">5.1 Network Neuroscience Fundamentals</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#from-local-circuits-to-distributed-networks">From Local Circuits to Distributed Networks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#methods-for-studying-brain-networks">Methods for Studying Brain Networks</a></li>

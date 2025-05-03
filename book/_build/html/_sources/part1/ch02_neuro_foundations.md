@@ -12,6 +12,8 @@ By the end of this chapter, you will be able to:
 - **Implement** basic neuron simulations and Hebbian learning rules in Python
 ```
 
+<div style="page-break-before:always;"></div>
+
 ## 2.0 Why This Chapter?
 
 Before we leap into convolutional networks, policy gradients, or billion-parameter transformers, we need mental "ground truth" about the biological machine that inspired all of them. By the end of this chapter you should be able to:
@@ -257,6 +259,25 @@ Complete code for this lab is available in the accompanying `ch02_demo.py` file.
 - Biological neurons fire at kilohertz at best, yet 86 billion of them work in parallel while consuming only 20 W—roughly a dim light bulb.
 - Plasticity is local and continuous. Back-prop is global and episodic. Bridging the gap is an active frontier (see "feedback alignment").
 - Studying the real brain supplies "design priors" that have already birthed convolution, recurrence, attention, and spiking ASICs. Ignoring biology wholesale risks reinventing wheels—or worse, building brittle systems that fail outside curated datasets.
+
+<div style="page-break-before:always;"></div>
+
+```{admonition} Chapter Summary
+:class: important
+
+In this chapter, we explored:
+
+- **Neuron anatomy and function**, including dendrites, soma, axons, and how they map to artificial neuron components
+- **Electrophysiological properties** of neurons, from resting potentials to action potentials
+- **Neural circuits and layered organization** in the cortex, with feedforward and recurrent connections
+- **Learning and plasticity mechanisms** like Hebbian learning, STDP, and LTP/LTD
+- **Different brain regions** and their computational roles (cortex, hippocampus, basal ganglia, cerebellum)
+- **Implementing biological principles** in code with a leaky-integrate-and-fire neuron model
+- **Energy efficiency and parallel processing** advantages of biological neural systems
+- **The gap between biological and artificial learning** algorithms and efforts to bridge them
+
+This chapter provides the foundational understanding of neural systems that will inform our exploration of both brain function and AI architectures in subsequent chapters.
+```
 
 ```{admonition} Knowledge Connections
 :class: important

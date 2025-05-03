@@ -188,6 +188,12 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cover.html">Cover</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/copyright.html">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/acknowledgments.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/about.html">About This Book</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I · Brains &amp; Inspiration</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../part1/ch01_intro.html">Chapter 1: Introduction to Neuroscience ↔ AI</a></li>
@@ -220,9 +226,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VI · Advanced Applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../part6/ch17_bci_human_ai_interfaces.html">Brain-Computer Interfaces and Human-AI Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch17_bci_human_ai_interfaces.html">Chapter 17: Brain-Computer Interfaces and Human-AI Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch18_neuromorphic_computing.html">Chapter 18: Neuromorphic Computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../part6/ch19_cognitive_neuro_dl.html">Cognitive Neuroscience and Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch19_cognitive_neuro_dl.html">Chapter 19: Cognitive Neuroscience and Deep Learning</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../part6/ch20_case_studies.html">Case Studies in NeuroAI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../part6/ch20_interactive.html">Interactive NeuroAI Case Studies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../part6/jupyter_ai_demo.html">AI-Assisted Learning with Jupyter AI</a></li>
@@ -233,8 +239,8 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch21_ai_for_neuro_discovery.html">Chapter 21: AI for Neuroscience Discovery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch22_embodied_ai_robotics.html">Chapter 22: Embodied AI and Robotics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../part6/ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch23_lifelong_learning.html">Chapter 23: Lifelong Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -528,6 +534,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-7-information-theory-essentials">
 <h1>Chapter 7: Information Theory Essentials<a class="headerlink" href="#chapter-7-information-theory-essentials" title="Link to this heading">#</a></h1>
+<div style="page-break-before:always;"></div>
 <section id="chapter-goals">
 <h2>7.0 Chapter Goals<a class="headerlink" href="#chapter-goals" title="Link to this heading">#</a></h2>
 <p>Information theory provides essential mathematical tools for quantifying and analyzing information processing in both neural and artificial systems. By the end of this chapter, you should be able to:</p>
@@ -785,6 +792,7 @@ document.write(`
 <li><p><strong>AI System Design</strong>: Network width and depth choices implicitly reflect channel capacity considerations</p></li>
 </ul>
 </div>
+<div style="page-break-before:always;"></div>
 </section>
 </section>
 <section id="neural-coding-efficiency">
@@ -2106,6 +2114,24 @@ document.write(`
 <li><p>Modern deep learning can be understood through information-theoretic principles, with layers performing progressive compression while preserving task-relevant information.</p></li>
 <li><p>Both brains and artificial neural networks appear to optimize similar information-theoretic objectives under different constraints.</p></li>
 </ul>
+<div style="page-break-before:always;"></div>
+<div class="important admonition">
+<p class="admonition-title">Chapter Summary</p>
+<p>In this chapter, we explored:</p>
+<ul class="simple">
+<li><p><strong>Information theory fundamentals</strong> including entropy, mutual information, and Kullback-Leibler divergence</p></li>
+<li><p><strong>Efficient coding principles</strong> that explain how neural systems optimize information transmission</p></li>
+<li><p><strong>Redundancy reduction and sparse coding</strong> as biological strategies for efficient neural representation</p></li>
+<li><p><strong>Neural coding</strong> approaches and how to measure information in spike trains</p></li>
+<li><p><strong>Noise and variability</strong> in neural systems and their impact on information processing</p></li>
+<li><p><strong>Population coding strategies</strong> that distribute information across groups of neurons</p></li>
+<li><p><strong>Directional measures</strong> like transfer entropy that quantify causal information flow in networks</p></li>
+<li><p><strong>The information bottleneck principle</strong> as a theoretical framework linking compression and prediction</p></li>
+<li><p><strong>Applications in deep learning</strong> including variational methods and information-theoretic bounds</p></li>
+<li><p><strong>Implementations of information-theoretic analyses</strong> in code with practical examples</p></li>
+</ul>
+<p>This chapter bridges theoretical information theory with its applications in both computational neuroscience and machine learning, demonstrating how these seemingly different fields share fundamental principles of efficient information processing.</p>
+</div>
 </section>
 <section id="further-reading-media">
 <h2>7.9 Further Reading &amp; Media<a class="headerlink" href="#further-reading-media" title="Link to this heading">#</a></h2>

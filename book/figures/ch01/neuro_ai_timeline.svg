@@ -100,7 +100,7 @@
   <text x="220" y="360" class="event-text">network (1957)</text>
   
   <rect x="260" y="360" width="80" height="60" class="ai-box" rx="5" ry="5" />
-  <text x="300" y="380" class="event-title">Minsky & Papert</text>
+  <text x="300" y="380" class="event-title">Minsky &amp; Papert</text>
   <text x="300" y="395" class="event-text">"Perceptrons" book</text>
   <text x="300" y="410" class="event-text">(1969)</text>
   

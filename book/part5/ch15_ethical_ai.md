@@ -11,9 +11,10 @@ By the end of this chapter, you will be able to:
 - **Develop** approaches for responsible innovation in this emerging interdisciplinary field
 - **Apply** practical frameworks for ethical assessment and governance
 - **Design** NeuroAI systems with ethical principles integrated from the start
+- **Implement** healthcare data privacy protections for neural data in clinical settings
 ```
 
-The integration of neuroscience and artificial intelligence raises unique ethical considerations that require careful attention. This chapter explores the ethical dimensions of NeuroAI, providing a framework for responsible development and application.
+The integration of neuroscience and artificial intelligence raises unique ethical considerations that require careful attention. This chapter explores the ethical dimensions of NeuroAI, providing a framework for responsible development and application. Special attention is given to healthcare applications where neural data privacy presents additional regulatory challenges and requires robust protection mechanisms due to the sensitive nature of clinical information.
 
 ## Ethical Frameworks for NeuroAI
 
@@ -1445,6 +1446,8 @@ In this chapter, we explored:
 
 - **Ethical frameworks** specifically tailored to the unique challenges of NeuroAI
 - **Neural privacy concerns** and methods like differential privacy to protect brain data
+- **Healthcare data privacy considerations** for applying NeuroAI in clinical settings, with specific implementation frameworks for HIPAA, GDPR, and other regulatory requirements
+- **Special privacy requirements** for different types of neural healthcare data including EEG, fMRI, and neural implant data
 - **Bias assessment frameworks** to identify and mitigate unfairness in NeuroAI systems
 - **Transparency and explainability** approaches for making black-box models interpretable
 - **Dual-use concerns** and methodologies for assessing potential misuse of technologies
@@ -1454,5 +1457,5 @@ In this chapter, we explored:
 - **Consciousness considerations** for increasingly brain-like artificial systems
 - **Key ethical principles** that should guide the development of NeuroAI technologies
 
-This chapter provides a comprehensive framework for addressing the profound ethical questions raised by technologies that bridge neuroscience and artificial intelligence, emphasizing how ethical considerations are not obstacles but essential components of responsible innovation in this rapidly evolving field.
+This chapter provides a comprehensive framework for addressing the profound ethical questions raised by technologies that bridge neuroscience and artificial intelligence, emphasizing how ethical considerations are not obstacles but essential components of responsible innovation in this rapidly evolving field. The healthcare-specific guidance adds practical implementation strategies for clinical applications where privacy protections are particularly critical due to sensitive patient neural data.
 ```

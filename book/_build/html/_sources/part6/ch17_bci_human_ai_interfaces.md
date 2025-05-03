@@ -1,4 +1,6 @@
-# Brain-Computer Interfaces and Human-AI Interaction
+# Chapter 17: Brain-Computer Interfaces and Human-AI Interaction
+
+<div style="page-break-before:always;"></div>
 
 ## Chapter Goals
 
@@ -11,12 +13,13 @@ After completing this chapter, you will be able to:
 - Describe how AI enhances BCI performance and capabilities
 - Design interactive systems that integrate BCIs with AI assistants
 - Evaluate ethical considerations and future directions in BCI development
+- Understand the clinical applications of BCIs in treating conditions like paralysis, locked-in syndrome, stroke, and treatment-resistant depression
 
 ## 17.1 Introduction: Connecting Brains and Machines
 
 Brain-Computer Interfaces represent one of the most direct applications of neuroscience to technology, creating communication pathways between neural activity and external devices. These systems measure brain activity, interpret neural signals, and translate them into commands that can control computers, prosthetics, or other devices.
 
-In recent years, BCIs have evolved from relatively simple systems to sophisticated neural interfaces enhanced by artificial intelligence. This evolution has transformed BCIs from specialized medical tools to potentially mainstream technologies that could fundamentally alter human-computer interaction.
+In recent years, BCIs have evolved from relatively simple systems to sophisticated neural interfaces enhanced by artificial intelligence. This evolution has transformed BCIs from specialized medical tools to potentially mainstream technologies that could fundamentally alter human-computer interaction. In healthcare settings, advanced BCIs are creating new possibilities for treating previously intractable conditions, from severe paralysis to locked-in syndrome, by establishing direct neural pathways that bypass damaged systems and restore function.
 
 ```python
 # Conceptual overview of a BCI system
@@ -79,6 +82,8 @@ class BrainComputerInterface:
         
         return output
 ```
+
+<div style="page-break-before:always;"></div>
 
 ## 17.2 Neurophysiological Bases for BCIs
 
@@ -1050,6 +1055,919 @@ BCIs are transforming clinical care for various conditions:
 - **Cognitive rehabilitation**: BCIs for stroke and traumatic brain injury
 - **Mental health interventions**: BCIs for depression and anxiety disorders
 
+#### 17.6.1.1 Advanced Paralysis Treatment with BCIs
+
+BCIs show particular promise for treating paralysis by bypassing damaged neural pathways, creating new connections between the brain and limbs or assistive devices:
+
+```python
+class MotorDecoderBCI:
+    """
+    Motor decoder for restoring movement in paralysis patients
+    """
+    def __init__(self, n_channels=96, n_dof=7, adaptation_rate=0.1):
+        """
+        Initialize motor decoder BCI system
+        
+        Parameters:
+        -----------
+        n_channels : int
+            Number of neural recording channels
+        n_dof : int
+            Degrees of freedom for control (e.g., 7 for full arm movement)
+        adaptation_rate : float
+            Rate of decoder adaptation to user intent
+        """
+        self.n_channels = n_channels
+        self.n_dof = n_dof
+        self.adaptation_rate = adaptation_rate
+        
+        # Initialize Kalman filter parameters
+        self.A = np.eye(n_dof)  # State transition model
+        self.W = np.eye(n_dof) * 0.1  # Process noise covariance
+        self.H = np.random.randn(n_channels, n_dof) * 0.1  # Observation model
+        self.Q = np.eye(n_channels) * 0.5  # Observation noise covariance
+        
+        # Current state estimate and covariance
+        self.x = np.zeros(n_dof)  # Current state estimate
+        self.P = np.eye(n_dof)  # State estimate covariance
+        
+        # Adaptation parameters
+        self.adaptation_buffer = []
+        self.buffer_size = 100
+        
+    def decode_movement(self, neural_activity):
+        """
+        Decode movement intentions from neural activity
+        
+        Parameters:
+        -----------
+        neural_activity : numpy.ndarray
+            Neural activity array [n_channels]
+            
+        Returns:
+        --------
+        movement : numpy.ndarray
+            Decoded movement commands [n_dof]
+        """
+        # Prediction step
+        x_pred = np.dot(self.A, self.x)
+        P_pred = np.dot(np.dot(self.A, self.P), self.A.T) + self.W
+        
+        # Update step
+        K = np.dot(np.dot(P_pred, self.H.T), 
+                  np.linalg.inv(np.dot(np.dot(self.H, P_pred), self.H.T) + self.Q))
+        
+        self.x = x_pred + np.dot(K, (neural_activity - np.dot(self.H, x_pred)))
+        self.P = P_pred - np.dot(np.dot(K, self.H), P_pred)
+        
+        # Apply constraints (e.g., joint limits, velocity limits)
+        self.x = np.clip(self.x, -1.0, 1.0)
+        
+        return self.x
+    
+    def update_model(self, neural_activity, intended_movement):
+        """
+        Update decoder model based on intended movement
+        
+        Parameters:
+        -----------
+        neural_activity : numpy.ndarray
+            Neural activity array [n_channels]
+        intended_movement : numpy.ndarray
+            Intended movement vector [n_dof]
+        """
+        # Add to adaptation buffer
+        self.adaptation_buffer.append((neural_activity, intended_movement))
+        if len(self.adaptation_buffer) > self.buffer_size:
+            self.adaptation_buffer.pop(0)
+        
+        # If enough data, update observation model
+        if len(self.adaptation_buffer) >= 10:
+            # Extract data from buffer
+            neural_data = np.array([x[0] for x in self.adaptation_buffer])
+            movement_data = np.array([x[1] for x in self.adaptation_buffer])
+            
+            # Update observation model (H) using regression
+            H_new = np.zeros_like(self.H)
+            for i in range(self.n_dof):
+                # Ridge regression for each DoF
+                from sklearn.linear_model import Ridge
+                model = Ridge(alpha=1.0)
+                model.fit(neural_data, movement_data[:, i])
+                H_new[:, i] = model.coef_
+            
+            # Blend new and old models
+            self.H = (1 - self.adaptation_rate) * self.H + self.adaptation_rate * H_new
+    
+    def simulate_control(self, recording_time=60, sampling_rate=100, target_positions=None):
+        """
+        Simulate BCI control of prosthetic device
+        
+        Parameters:
+        -----------
+        recording_time : float
+            Simulation time in seconds
+        sampling_rate : int
+            Neural data sampling rate in Hz
+        target_positions : list of numpy.ndarray
+            List of target positions to reach
+            
+        Returns:
+        --------
+        performance_metrics : dict
+            Dictionary of performance metrics
+        """
+        n_samples = int(recording_time * sampling_rate)
+        
+        # Default targets if not provided
+        if target_positions is None:
+            target_positions = [
+                np.array([0.5, 0.5, 0.5, 0, 0, 0, 0]),  # Example target position
+                np.array([-0.5, 0.3, 0.7, 0, 0, 0, 0]),
+                np.array([0, -0.5, 0.2, 0, 0, 0, 0])
+            ]
+        
+        # Initialize trajectory tracking
+        trajectory = np.zeros((n_samples, self.n_dof))
+        current_target_idx = 0
+        current_target = target_positions[current_target_idx]
+        target_reached_times = []
+        
+        # Run simulation
+        for i in range(n_samples):
+            # Current time in seconds
+            t = i / sampling_rate
+            
+            # Generate simulated neural activity based on intention to reach target
+            # In a real system, this would be recorded neural data
+            direction_to_target = current_target - self.x
+            distance_to_target = np.linalg.norm(direction_to_target[:3])  # Position components
+            
+            # Check if target reached
+            if distance_to_target < 0.1:
+                target_reached_times.append(t)
+                current_target_idx = (current_target_idx + 1) % len(target_positions)
+                current_target = target_positions[current_target_idx]
+                direction_to_target = current_target - self.x
+            
+            # Simulate neural activity encoding movement direction
+            neural_activity = np.dot(self.H, direction_to_target) + np.random.randn(self.n_channels) * 0.3
+            
+            # Decode movement command
+            decoded_movement = self.decode_movement(neural_activity)
+            
+            # Update model (closed-loop learning)
+            if i % 10 == 0:  # Update every 10 samples
+                self.update_model(neural_activity, direction_to_target)
+            
+            # Store trajectory
+            trajectory[i] = self.x.copy()
+        
+        # Calculate performance metrics
+        avg_time_to_target = np.mean(np.diff([0] + target_reached_times)) if target_reached_times else float('inf')
+        n_targets_reached = len(target_reached_times)
+        
+        performance_metrics = {
+            'avg_time_to_target': avg_time_to_target,
+            'n_targets_reached': n_targets_reached,
+            'trajectory': trajectory,
+            'target_reached_times': target_reached_times
+        }
+        
+        return performance_metrics
+```
+
+Clinical impact of motor BCIs:
+
+1. **Spinal Cord Injury Treatment**: 
+   BCIs enable patients with spinal cord injuries to control robotic limbs, exoskeletons, or even their own limbs through electrical stimulation systems. Recent clinical trials have demonstrated the restoration of functional arm and hand movement in tetraplegic patients using cortical implants connected to muscle stimulation systems.
+
+2. **Stroke Rehabilitation**: 
+   BCI-assisted rehabilitation accelerates motor recovery by strengthening neural pathways. By combining mental motor imagery with physical feedback, BCIs create a closed-loop system that enhances neuroplasticity and promotes motor relearning in stroke-affected limbs.
+
+3. **Progressive Neuromuscular Disease Management**:
+   For patients with progressive conditions like ALS, BCIs provide increasingly critical support as the disease advances. Early intervention with non-invasive BCIs for communication can transition to more advanced systems for controlling wheelchairs, home environments, and eventually full robotic assistance.
+
+4. **Neuroprosthetic Integration**:
+   Advanced sensorimotor BCIs provide both motor control and sensory feedback, creating a bidirectional interface with prosthetic limbs. The addition of sensory feedback through direct neural stimulation dramatically improves prosthetic control precision and enhances embodiment of the artificial limb.
+
+#### 17.6.1.2 Communication Systems for Locked-in Syndrome
+
+For patients with locked-in syndrome who retain cognitive function but lack motor control, BCIs provide critical communication capabilities:
+
+```python
+class BCICommunicator:
+    """
+    BCI-based communication system for patients with severe motor impairments
+    """
+    def __init__(self, interface_type="P300", vocabulary_size=100, adaptive=True):
+        """
+        Initialize BCI communication system
+        
+        Parameters:
+        -----------
+        interface_type : str
+            Type of BCI paradigm ('P300', 'SSVEP', 'Motor_Imagery')
+        vocabulary_size : int
+            Number of words/phrases in the system vocabulary
+        adaptive : bool
+            Whether to use adaptive algorithms that learn user patterns
+        """
+        self.interface_type = interface_type
+        self.adaptive = adaptive
+        
+        # Initialize vocabulary
+        self.core_vocabulary = self._generate_core_vocabulary(vocabulary_size)
+        self.user_vocabulary = {}  # Personalized vocabulary with usage stats
+        
+        # Interface-specific parameters
+        if interface_type == "P300":
+            self.flash_duration = 0.125  # seconds
+            self.isi = 0.125  # Inter-stimulus interval
+            self.sequence_length = 10  # Number of flashes per item
+            self.classifier = self._initialize_p300_classifier()
+        elif interface_type == "SSVEP":
+            self.frequencies = np.linspace(6, 15, 10)  # Hz
+            self.classifier = self._initialize_ssvep_classifier()
+        elif interface_type == "Motor_Imagery":
+            self.mental_actions = ["left", "right", "up", "down", "select"]
+            self.classifier = self._initialize_mi_classifier()
+        
+        # Communication metrics
+        self.communication_rate = 0  # Characters per minute
+        self.selection_accuracy = 0  # Accuracy of selections
+        self.error_history = []
+        
+        # Adaptive parameters
+        if adaptive:
+            self.adaptation_rate = 0.1
+            self.user_history = []
+    
+    def _generate_core_vocabulary(self, size):
+        """Generate core vocabulary of common words/phrases"""
+        # In a real system, this would be a proper core vocabulary
+        # Here we'll just use placeholder entries
+        vocabulary = {
+            'basic_needs': ["water", "food", "bathroom", "pain", "position", "cold", "hot"],
+            'people': ["doctor", "nurse", "family", "spouse", "children"],
+            'responses': ["yes", "no", "maybe", "later", "thank you", "help"],
+            'medical': ["medication", "uncomfortable", "breathing", "suction"],
+            'time': ["morning", "afternoon", "evening", "night", "time"],
+            'alphabet': list("abcdefghijklmnopqrstuvwxyz"),
+            'numbers': [str(i) for i in range(10)]
+        }
+        return vocabulary
+    
+    def _initialize_p300_classifier(self):
+        """Initialize a P300 classifier"""
+        from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+        return LinearDiscriminantAnalysis()
+    
+    def _initialize_ssvep_classifier(self):
+        """Initialize an SSVEP classifier"""
+        from sklearn.svm import SVC
+        return SVC(kernel='linear', probability=True)
+    
+    def _initialize_mi_classifier(self):
+        """Initialize a motor imagery classifier"""
+        from sklearn.ensemble import RandomForestClassifier
+        return RandomForestClassifier(n_estimators=100)
+    
+    def simulate_p300_selection(self, target_item, n_items=36, noise_level=0.5):
+        """
+        Simulate P300 speller selection process
+        
+        Parameters:
+        -----------
+        target_item : int
+            Index of the target item
+        n_items : int
+            Total number of items in the display
+        noise_level : float
+            Level of noise in the EEG signal
+            
+        Returns:
+        --------
+        selected_item : int
+            Index of the selected item
+        confidence : float
+            Confidence in the selection
+        """
+        # Simulate a sequence of flashes
+        n_sequences = self.sequence_length
+        flash_order = []
+        item_flashes = {i: 0 for i in range(n_items)}
+        
+        p300_responses = []
+        
+        for seq in range(n_sequences):
+            # Generate random flash order (row/column for P300 speller)
+            items = list(range(n_items))
+            np.random.shuffle(items)
+            flash_order.extend(items)
+            
+            for item in items:
+                item_flashes[item] += 1
+                
+                # Simulate EEG response
+                if item == target_item:
+                    # Target flash produces P300 (with noise)
+                    p300_response = 1.0 + np.random.randn() * noise_level
+                else:
+                    # Non-target flash
+                    p300_response = 0.0 + np.random.randn() * noise_level
+                
+                p300_responses.append((item, p300_response))
+        
+        # Aggregate P300 responses by item
+        item_scores = {i: 0 for i in range(n_items)}
+        for item, response in p300_responses:
+            item_scores[item] += response
+        
+        # Normalize by number of flashes per item
+        for item in item_scores:
+            item_scores[item] /= item_flashes[item]
+        
+        # Select item with highest score
+        selected_item = max(item_scores, key=item_scores.get)
+        max_score = item_scores[selected_item]
+        
+        # Calculate a confidence metric
+        sorted_scores = sorted(item_scores.values(), reverse=True)
+        confidence = (sorted_scores[0] - sorted_scores[1]) / (sorted_scores[0] + 1e-10)
+        
+        return selected_item, confidence
+    
+    def update_classifier(self, eeg_data, target):
+        """
+        Update classifier with new labeled data
+        
+        Parameters:
+        -----------
+        eeg_data : numpy.ndarray
+            EEG data from recent selections
+        target : int or str
+            Target class/item
+        """
+        # In a real system, this would update the classifier with new data
+        # For simulation, we'll just assume the classifier improves over time
+        if self.adaptive:
+            self.noise_reduction = min(0.9, self.noise_reduction + 0.01)
+    
+    def predict_next_items(self, current_context):
+        """
+        Predict next likely items based on user history
+        
+        Parameters:
+        -----------
+        current_context : str
+            Current text or context
+            
+        Returns:
+        --------
+        predictions : list
+            List of likely next selections
+        """
+        # This would use language modeling in a real system
+        # For now, return some default predictions
+        return ["thank", "you", "help", "yes", "no"]
+    
+    def simulate_communication_session(self, target_phrase, session_duration=300):
+        """
+        Simulate a communication session
+        
+        Parameters:
+        -----------
+        target_phrase : str
+            Phrase the user wants to communicate
+        session_duration : int
+            Session duration in seconds
+            
+        Returns:
+        --------
+        metrics : dict
+            Performance metrics for the session
+        """
+        words = target_phrase.split()
+        output_text = ""
+        selections = []
+        selection_times = []
+        accuracies = []
+        
+        time_elapsed = 0
+        word_idx = 0
+        
+        # Simulate selection process
+        while time_elapsed < session_duration and word_idx < len(words):
+            target_word = words[word_idx]
+            
+            # Find word in vocabulary or spell it
+            if any(target_word in category for category in self.core_vocabulary.values()):
+                # Word is in vocabulary, select it directly
+                selection_time = 5.0  # Average time to select a word
+                selection_accuracy = 0.9  # High accuracy for direct selection
+            else:
+                # Need to spell the word letter by letter
+                selection_time = len(target_word) * 8.0  # Time to spell
+                selection_accuracy = 0.85 ** len(target_word)  # Compound accuracy
+            
+            # Account for adaptive improvements
+            if self.adaptive:
+                # Improve speed and accuracy over time
+                experience_factor = min(1.0, len(selections) / 50.0)
+                selection_time *= (1.0 - 0.3 * experience_factor)
+                selection_accuracy = 1.0 - (1.0 - selection_accuracy) * (1.0 - 0.3 * experience_factor)
+            
+            # Update metrics
+            time_elapsed += selection_time
+            if time_elapsed <= session_duration:
+                output_text += " " + target_word if output_text else target_word
+                selections.append(target_word)
+                selection_times.append(selection_time)
+                accuracies.append(selection_accuracy)
+                word_idx += 1
+                
+                # Simulate adaptive updates
+                if self.adaptive:
+                    self.user_vocabulary[target_word] = self.user_vocabulary.get(target_word, 0) + 1
+        
+        # Calculate metrics
+        total_characters = sum(len(word) for word in selections)
+        if selection_times:
+            chars_per_minute = (total_characters / sum(selection_times)) * 60
+            avg_accuracy = np.mean(accuracies)
+        else:
+            chars_per_minute = 0
+            avg_accuracy = 0
+        
+        metrics = {
+            'output_text': output_text,
+            'target_phrase': target_phrase,
+            'completion_ratio': word_idx / len(words),
+            'chars_per_minute': chars_per_minute,
+            'average_accuracy': avg_accuracy,
+            'total_time': time_elapsed
+        }
+        
+        return metrics
+```
+
+Clinical impact of communication BCIs:
+
+1. **Complete Locked-In Syndrome (CLIS) Communication**: 
+   For patients with CLIS who cannot communicate through any voluntary movement, BCIs offer the only pathway for communication. Recent advances have enabled reliable yes/no communication even in CLIS patients using fNIRS and EEG-based BCIs.
+
+2. **ALS Progression Support**:
+   BCI systems can adapt to the progression of ALS, starting with eye-tracking when oculomotor control is preserved and transitioning to neural interfaces as the disease advances. This provides continuity of communication ability throughout disease progression.
+
+3. **Acute Care Communication**:
+   For temporarily intubated or ventilated patients who cannot speak, rapid-deployment BCIs provide critical communication capabilities in intensive care settings, reducing patient distress and improving clinical decision-making.
+
+4. **Quality of Life Enhancement**:
+   Beyond basic needs, modern BCI communication systems support rich expression including emotion communication, environmental control, and social media access, significantly enhancing quality of life for locked-in patients.
+
+#### 17.6.1.3 Neurorehabilitation for Stroke Recovery
+
+BCIs are proving valuable for stroke rehabilitation by engaging neural plasticity mechanisms:
+
+```python
+class NeurorehabilitionBCI:
+    """
+    BCI system for stroke rehabilitation
+    """
+    def __init__(self, target_function="upper_limb", protocol="MI_FES", sessions_planned=20):
+        """
+        Initialize neurorehabilitation BCI
+        
+        Parameters:
+        -----------
+        target_function : str
+            Target function to rehabilitate ('upper_limb', 'lower_limb', 'speech')
+        protocol : str
+            Rehabilitation protocol ('MI_FES', 'EEG_Robot', 'Closed_Loop')
+        sessions_planned : int
+            Number of planned rehabilitation sessions
+        """
+        self.target_function = target_function
+        self.protocol = protocol
+        self.sessions_planned = sessions_planned
+        
+        # Patient state tracking
+        self.baseline_assessment = {}
+        self.session_history = []
+        self.current_session = 0
+        
+        # Adaptive difficulty parameters
+        self.success_threshold = 0.7  # Success rate threshold for increasing difficulty
+        self.difficulty = 1  # Current difficulty level (1-10)
+        
+        # Rehabilitation protocol parameters
+        if protocol == "MI_FES":
+            # Motor Imagery with Functional Electrical Stimulation
+            self.mi_detection_threshold = 0.6  # Threshold for detecting motor imagery
+            self.stimulation_intensity = 5  # mA
+            self.stimulation_duration = 1.0  # seconds
+        elif protocol == "EEG_Robot":
+            # EEG-controlled robotic assistance
+            self.assistance_level = 0.8  # 80% assistance
+            self.movement_velocity = 0.2  # normalized
+        elif protocol == "Closed_Loop":
+            # Closed-loop BCI with multimodal feedback
+            self.feedback_modalities = ["visual", "tactile", "auditory"]
+            self.adaptation_rate = 0.1
+    
+    def assess_patient(self, clinical_scores):
+        """
+        Record baseline assessment and track progress
+        
+        Parameters:
+        -----------
+        clinical_scores : dict
+            Dictionary of clinical assessment scores
+            
+        Returns:
+        --------
+        summary : dict
+            Summary of patient status
+        """
+        if not self.baseline_assessment:
+            # First assessment becomes baseline
+            self.baseline_assessment = clinical_scores.copy()
+        
+        # Calculate improvement from baseline
+        improvement = {}
+        for measure, score in clinical_scores.items():
+            if measure in self.baseline_assessment:
+                baseline = self.baseline_assessment[measure]
+                if isinstance(score, (int, float)) and isinstance(baseline, (int, float)):
+                    improvement[measure] = ((score - baseline) / baseline) * 100
+        
+        summary = {
+            'current_scores': clinical_scores,
+            'baseline': self.baseline_assessment,
+            'improvement_percentage': improvement,
+            'sessions_completed': self.current_session,
+            'difficulty_level': self.difficulty
+        }
+        
+        return summary
+    
+    def detect_motor_imagery(self, eeg_data, target_movement):
+        """
+        Detect motor imagery from EEG data
+        
+        Parameters:
+        -----------
+        eeg_data : numpy.ndarray
+            EEG data array
+        target_movement : str
+            Target movement being imagined
+            
+        Returns:
+        --------
+        detection : dict
+            Detection results
+        """
+        # In a real system, this would implement proper MI detection
+        # Here we'll simulate detection with random success based on difficulty
+        
+        # Success probability decreases with difficulty
+        base_success_prob = 0.9 - (self.difficulty - 1) * 0.05
+        
+        # Simulate detection
+        is_detected = np.random.random() < base_success_prob
+        confidence = np.random.uniform(0.6, 0.9) if is_detected else np.random.uniform(0.1, 0.5)
+        
+        detection = {
+            'movement_detected': is_detected,
+            'target_movement': target_movement,
+            'confidence': confidence,
+            'latency': np.random.uniform(0.2, 1.0)  # seconds
+        }
+        
+        return detection
+    
+    def deliver_neurofeedback(self, detection_result):
+        """
+        Deliver appropriate neurofeedback based on detection result
+        
+        Parameters:
+        -----------
+        detection_result : dict
+            Result from motor imagery detection
+            
+        Returns:
+        --------
+        feedback : dict
+            Feedback delivered to patient
+        """
+        feedback = {'modalities': []}
+        
+        if self.protocol == "MI_FES" and detection_result['movement_detected']:
+            # Deliver electrical stimulation
+            feedback['modalities'].append('electrical_stimulation')
+            feedback['stimulation_intensity'] = self.stimulation_intensity
+            feedback['stimulation_duration'] = self.stimulation_duration
+            
+        elif self.protocol == "EEG_Robot":
+            # Control robotic assistance
+            assistance = self.assistance_level
+            if detection_result['movement_detected']:
+                # Reduce assistance if movement detected successfully
+                assistance *= (1.0 - detection_result['confidence'])
+            
+            feedback['modalities'].append('robotic_assistance')
+            feedback['assistance_level'] = assistance
+            feedback['movement_velocity'] = self.movement_velocity
+            
+        elif self.protocol == "Closed_Loop":
+            # Multimodal feedback
+            if detection_result['movement_detected']:
+                feedback['modalities'].append('visual')
+                feedback['visual_feedback'] = "success"
+                
+                if detection_result['confidence'] > 0.7:
+                    feedback['modalities'].append('tactile')
+                    feedback['tactile_feedback'] = "vibration"
+                    
+                    if self.difficulty > 5:
+                        feedback['modalities'].append('auditory')
+                        feedback['auditory_feedback'] = "success_tone"
+        
+        return feedback
+    
+    def run_training_session(self, n_trials=20):
+        """
+        Run a complete rehabilitation training session
+        
+        Parameters:
+        -----------
+        n_trials : int
+            Number of training trials in the session
+            
+        Returns:
+        --------
+        session_results : dict
+            Results and metrics from the session
+        """
+        # Initialize session metrics
+        successful_trials = 0
+        trial_results = []
+        
+        # Determine target movements based on function
+        if self.target_function == "upper_limb":
+            movements = ["hand_open", "hand_close", "wrist_extension", "elbow_flexion"]
+        elif self.target_function == "lower_limb":
+            movements = ["ankle_flexion", "knee_extension", "hip_flexion"]
+        else:
+            movements = ["tongue_movement", "lip_pursing"]
+        
+        # Run trials
+        for trial in range(n_trials):
+            # Select random target movement
+            target = random.choice(movements)
+            
+            # Simulate EEG data
+            eeg_data = np.random.randn(64, 512)  # 64 channels, 512 timepoints
+            
+            # Detect motor imagery
+            detection = self.detect_motor_imagery(eeg_data, target)
+            
+            # Deliver feedback
+            feedback = self.deliver_neurofeedback(detection)
+            
+            # Track success
+            if detection['movement_detected'] and detection['confidence'] > self.mi_detection_threshold:
+                successful_trials += 1
+            
+            # Store trial result
+            trial_results.append({
+                'trial': trial,
+                'target': target,
+                'detection': detection,
+                'feedback': feedback
+            })
+        
+        # Calculate success rate
+        success_rate = successful_trials / n_trials
+        
+        # Adjust difficulty for next session
+        if success_rate > self.success_threshold and self.difficulty < 10:
+            self.difficulty += 1
+        elif success_rate < 0.3 and self.difficulty > 1:
+            self.difficulty -= 1
+        
+        # Update session history
+        self.current_session += 1
+        session_summary = {
+            'session': self.current_session,
+            'trials': n_trials,
+            'success_rate': success_rate,
+            'successful_trials': successful_trials,
+            'difficulty': self.difficulty,
+            'protocol': self.protocol,
+            'trial_details': trial_results
+        }
+        
+        self.session_history.append(session_summary)
+        
+        return session_summary
+    
+    def predict_recovery_trajectory(self):
+        """
+        Predict recovery trajectory based on session history
+        
+        Returns:
+        --------
+        prediction : dict
+            Predicted recovery outcomes
+        """
+        if len(self.session_history) < 3:
+            return {"error": "Insufficient session data for prediction"}
+        
+        # Extract success rates from completed sessions
+        success_rates = [session['success_rate'] for session in self.session_history]
+        
+        # Simple linear regression to predict future success rates
+        from sklearn.linear_model import LinearRegression
+        import numpy as np
+        
+        X = np.array(range(len(success_rates))).reshape(-1, 1)
+        y = np.array(success_rates)
+        
+        model = LinearRegression().fit(X, y)
+        
+        # Predict future sessions
+        remaining_sessions = self.sessions_planned - self.current_session
+        future_sessions = np.array(range(self.current_session, self.sessions_planned)).reshape(-1, 1)
+        predicted_rates = model.predict(future_sessions)
+        
+        # Estimate functional improvement
+        # This is highly simplified - real prediction would be much more complex
+        current_improvement = success_rates[-1] / success_rates[0] if success_rates[0] > 0 else 1.0
+        rate_of_improvement = model.coef_[0] / success_rates[0] if success_rates[0] > 0 else 0
+        
+        estimated_functional_gain = min(0.9, current_improvement + rate_of_improvement * remaining_sessions)
+        
+        prediction = {
+            'completed_sessions': self.current_session,
+            'remaining_sessions': remaining_sessions,
+            'current_success_rate': success_rates[-1],
+            'predicted_final_success_rate': predicted_rates[-1] if len(predicted_rates) > 0 else success_rates[-1],
+            'estimated_functional_improvement': estimated_functional_gain,
+            'success_rate_trajectory': list(predicted_rates)
+        }
+        
+        return prediction
+```
+
+Clinical impact of neurorehabilitation BCIs:
+
+1. **Enhanced Neuroplasticity**: 
+   BCI-triggered functional electrical stimulation creates a tight temporal association between motor intent and sensory feedback, strengthening neural pathways through Hebbian plasticity mechanisms. Studies show 25-30% greater motor improvement with BCI rehabilitation compared to conventional therapy alone.
+
+2. **Engaging Partially Damaged Pathways**:
+   For patients with incomplete spinal cord injuries or stroke, BCIs can detect even weak motor signals and amplify them through assistive devices, actively engaging and strengthening partially damaged neural pathways that might otherwise remain dormant.
+
+3. **Maintaining Neural Circuits**:
+   In early post-stroke rehabilitation, BCIs help maintain motor circuit functionality during the period when direct movement is impossible, preventing the maladaptive plasticity and circuit deterioration that typically occurs during prolonged disuse.
+
+4. **Customized Rehabilitation Protocols**:
+   AI-enhanced BCIs can adapt difficulty levels, identify optimal training targets, and provide precisely calibrated assistance based on real-time neural signals, creating highly personalized rehabilitation protocols that maximize recovery potential.
+
+#### 17.6.1.4 Treatment-Resistant Depression Therapy
+
+Emerging applications of BCIs include treatment of psychiatric conditions like depression:
+
+```python
+def simulate_depression_neurofeedback(n_sessions=20, session_duration=30, 
+                                     patient_profile="treatment_resistant"):
+    """
+    Simulate a neurofeedback BCI protocol for depression treatment
+    
+    Parameters:
+    -----------
+    n_sessions : int
+        Number of treatment sessions
+    session_duration : int
+        Duration of each session in minutes
+    patient_profile : str
+        Patient characteristics ('treatment_resistant', 'moderate', 'mild')
+        
+    Returns:
+    --------
+    results : dict
+        Simulated treatment results
+    """
+    import numpy as np
+    import matplotlib.pyplot as plt
+    
+    # Set response parameters based on patient profile
+    if patient_profile == "treatment_resistant":
+        baseline_severity = np.random.uniform(20, 25)  # HDRS score
+        max_improvement = np.random.uniform(0.3, 0.5)  # Maximum possible improvement
+        response_delay = np.random.randint(8, 12)  # Sessions before response
+    elif patient_profile == "moderate":
+        baseline_severity = np.random.uniform(15, 20)
+        max_improvement = np.random.uniform(0.5, 0.7)
+        response_delay = np.random.randint(5, 8)
+    else:  # mild
+        baseline_severity = np.random.uniform(10, 15)
+        max_improvement = np.random.uniform(0.7, 0.9)
+        response_delay = np.random.randint(2, 5)
+    
+    # Generate response curve
+    sessions = np.arange(n_sessions + 1)
+    severity_scores = np.zeros(n_sessions + 1)
+    severity_scores[0] = baseline_severity
+    
+    # Simulate neurofeedback learning curve
+    alpha_power_increase = np.zeros(n_sessions + 1)
+    
+    for i in range(1, n_sessions + 1):
+        # Simulate alpha power regulation (target for depression treatment)
+        if i < response_delay:
+            # Minimal improvement during delay period
+            learning_factor = np.random.uniform(0, 0.1)
+        else:
+            # More substantial improvement after delay
+            progress = (i - response_delay) / (n_sessions - response_delay)
+            learning_factor = min(0.9, progress * np.random.uniform(0.8, 1.0))
+        
+        # Add randomness to learning process
+        daily_variation = np.random.normal(0, 0.05)
+        
+        # Calculate alpha power increase (normalized 0-1)
+        alpha_power_increase[i] = min(1.0, alpha_power_increase[i-1] + 
+                                     learning_factor * 0.1 + daily_variation)
+        
+        # Calculate clinical improvement
+        clinical_improvement = alpha_power_increase[i] * max_improvement
+        
+        # Update severity score
+        severity_scores[i] = baseline_severity * (1 - clinical_improvement)
+    
+    # Determine clinical outcome
+    final_score = severity_scores[-1]
+    
+    if final_score < 7:
+        outcome = "Remission"
+    elif final_score < 0.5 * baseline_severity:
+        outcome = "Response"
+    else:
+        outcome = "Partial Response"
+    
+    # Calculate percent reduction
+    percent_reduction = (baseline_severity - final_score) / baseline_severity * 100
+    
+    # Plot results
+    plt.figure(figsize=(12, 8))
+    
+    plt.subplot(2, 1, 1)
+    plt.plot(sessions, severity_scores, 'o-', color='blue')
+    plt.axhline(y=7, color='green', linestyle='--', label='Remission Threshold')
+    plt.axhline(y=0.5 * baseline_severity, color='orange', linestyle='--', 
+               label='Response Threshold')
+    plt.ylabel('Depression Severity (HDRS)')
+    plt.title(f'Depression Treatment Outcome: {outcome} ({percent_reduction:.1f}% reduction)')
+    plt.legend()
+    
+    plt.subplot(2, 1, 2)
+    plt.plot(sessions, alpha_power_increase, 'o-', color='purple')
+    plt.ylabel('Normalized Alpha Power Increase')
+    plt.xlabel('Session Number')
+    
+    plt.tight_layout()
+    
+    # Compile results
+    results = {
+        'baseline_severity': baseline_severity,
+        'final_severity': final_score,
+        'percent_reduction': percent_reduction,
+        'outcome': outcome,
+        'severity_trajectory': severity_scores.tolist(),
+        'alpha_power_trajectory': alpha_power_increase.tolist(),
+        'patient_profile': patient_profile,
+        'response_delay': response_delay
+    }
+    
+    return results
+```
+
+Clinical impact of mental health BCIs:
+
+1. **Treatment-Resistant Depression**: 
+   Alpha/theta neurofeedback protocols targeting anterior cingulate cortex (ACC) and left prefrontal cortex show promising results for patients who haven't responded to medication or conventional therapy. Early clinical trials show remission rates of 30-40% in previously treatment-resistant cases.
+
+2. **Anxiety Disorder Treatment**:
+   BCI systems targeting amygdala activity through real-time fMRI neurofeedback help patients gain control over emotional regulation circuits, providing significant anxiety reduction with effects persisting months after treatment completion.
+
+3. **PTSD Symptom Management**:
+   BCIs offer trauma-focused therapies where patients can moderate their autonomic responses while processing traumatic memories, reducing hyperarousal symptoms without the overwhelming distress often experienced in conventional exposure therapy.
+
+4. **Chronic Pain Management**:
+   Neurofeedback targeting pain processing regions provides an alternative to opioid medications, with clinical trials demonstrating 40-60% reductions in pain intensity and improvements in daily functioning for conditions like fibromyalgia and neuropathic pain.
+
 ### 17.6.2 Non-medical Applications
 
 BCIs have expanding applications beyond medicine:
@@ -1327,6 +2245,8 @@ if __name__ == "__main__":
 - AI enhances BCIs through improved neural decoding, adaptation, and user interaction
 - Neural interfaces enable novel forms of human-AI collaboration, from direct control to cognitive augmentation
 - BCIs have applications in clinical care, workplace augmentation, education, and entertainment
+- Medical applications of BCIs are creating new therapeutic approaches for conditions like paralysis, locked-in syndrome, stroke recovery, and treatment-resistant depression
+- Advanced clinical BCIs incorporate neural decoding algorithms, adaptive learning, and feedback mechanisms tailored to individual patient needs
 - Ethical considerations include neural privacy, cognitive liberty, and equitable access
 - Future BCIs will feature minimally invasive technologies, bidirectional interfaces, and deeper AI integration
 

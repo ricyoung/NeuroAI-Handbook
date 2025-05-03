@@ -2,6 +2,8 @@
 
 This chapter delves into neuromorphic computing systems, hardware architectures inspired by the structure and function of biological neural systems. These approaches offer potentially revolutionary advantages in energy efficiency and computational capability for specific tasks.
 
+<div style="page-break-before:always;"></div>
+
 ## 18.0 Chapter Goals
 - Understand the principles and advantages of neuromorphic computing
 - Explore spiking neural networks as a brain-inspired computational paradigm
@@ -215,6 +217,8 @@ def compare_energy_efficiency():
         efficiency = stats["accuracy"] / stats["joules_per_inference"]
         print(f"{arch}: {efficiency:.1f} accuracy/joule")
 ```
+
+<div style="page-break-before:always;"></div>
 
 ## 18.2 Applications of Neuromorphic Computing
 

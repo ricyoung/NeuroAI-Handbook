@@ -1,4 +1,6 @@
-# Cognitive Neuroscience and Deep Learning
+# Chapter 19: Cognitive Neuroscience and Deep Learning
+
+<div style="page-break-before:always;"></div>
 
 ## Chapter Goals
 
@@ -68,6 +70,8 @@ def visualize_field_relationship():
     
     plt.show()
 ```
+
+<div style="page-break-before:always;"></div>
 
 ## 19.2 Cognitive Science Principles in Deep Learning
 

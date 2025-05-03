@@ -84,7 +84,7 @@
   <!-- Column Headers -->
   <text x="200" y="470" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Experiment Design</text>
   <text x="400" y="470" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Data Acquisition</text>
-  <text x="600" y="470" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Analysis & Feedback</text>
+  <text x="600" y="470" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Analysis &amp; Feedback</text>
   
   <!-- AI Method Boxes - Column 1 -->
   <rect x="125" y="480" width="150" height="30" rx="5" ry="5" fill="#ccccff" fill-opacity="0.3" stroke="#0066cc" stroke-width="1"/>

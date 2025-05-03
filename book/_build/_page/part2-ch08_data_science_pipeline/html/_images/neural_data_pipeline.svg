@@ -108,12 +108,12 @@
     <text x="60" y="80" class="box-content">• Causal</text>
   </g>
   
-  <!-- Publication & Sharing -->
+  <!-- Publication &amp; Sharing -->
   <g transform="translate(550, 240)">
     <rect width="120" height="80" class="box integration"/>
     <text x="60" y="30" class="box-title">Publication</text>
     <text x="60" y="50" class="box-content">• Results</text>
-    <text x="60" y="65" class="box-content">• Code & Data</text>
+    <text x="60" y="65" class="box-content">• Code &amp; Data</text>
     <text x="60" y="80" class="box-content">• Reproducibility</text>
   </g>
   

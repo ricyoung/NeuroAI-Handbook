@@ -188,6 +188,12 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cover.html">Cover</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/copyright.html">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/acknowledgments.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/about.html">About This Book</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I · Brains &amp; Inspiration</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../part1/ch01_intro.html">Chapter 1: Introduction to Neuroscience ↔ AI</a></li>
@@ -220,9 +226,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VI · Advanced Applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../part6/ch17_bci_human_ai_interfaces.html">Brain-Computer Interfaces and Human-AI Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch17_bci_human_ai_interfaces.html">Chapter 17: Brain-Computer Interfaces and Human-AI Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch18_neuromorphic_computing.html">Chapter 18: Neuromorphic Computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../part6/ch19_cognitive_neuro_dl.html">Cognitive Neuroscience and Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch19_cognitive_neuro_dl.html">Chapter 19: Cognitive Neuroscience and Deep Learning</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../part6/ch20_case_studies.html">Case Studies in NeuroAI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../part6/ch20_interactive.html">Interactive NeuroAI Case Studies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../part6/jupyter_ai_demo.html">AI-Assisted Learning with Jupyter AI</a></li>
@@ -233,8 +239,8 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch21_ai_for_neuro_discovery.html">Chapter 21: AI for Neuroscience Discovery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch22_embodied_ai_robotics.html">Chapter 22: Embodied AI and Robotics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../part6/ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch23_lifelong_learning.html">Chapter 23: Lifelong Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -497,7 +503,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">11.5 Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-language-processing">11.5.1 Natural Language Processing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-forecasting">11.5.2 Time Series Forecasting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-forecasting">11.5.2 Time Series Forecasting</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#healthcare-time-series-applications">11.5.2.1 Healthcare Time Series Applications</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-sequence-decoding">11.5.3 Neural Sequence Decoding</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-sequence-models">11.5.4 Generative Sequence Models</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#application-design-principles">11.5.5 Application Design Principles</a></li>
@@ -550,8 +559,11 @@ document.write(`
 <li><p><strong>Connect</strong> sequence model operations to temporal processing in the brain</p></li>
 <li><p><strong>Implement</strong> key sequence modeling architectures for various tasks</p></li>
 <li><p><strong>Compare</strong> different approaches to handling sequential data</p></li>
+<li><p><strong>Apply</strong> sequence models to healthcare time series data for clinical applications</p></li>
+<li><p><strong>Address</strong> challenges unique to healthcare sequences such as irregularity and missing data</p></li>
 </ul>
 </div>
+<div style="page-break-before:always;"></div>
 <section id="recurrent-neural-networks">
 <h2>11.1 Recurrent Neural Networks<a class="headerlink" href="#recurrent-neural-networks" title="Link to this heading">#</a></h2>
 <p>Recurrent Neural Networks (RNNs) are specialized neural networks designed to process sequential data by maintaining an internal state (memory) that captures information about previous inputs. Unlike feedforward networks, RNNs have connections that loop back on themselves, allowing them to persist information across time steps.</p>
@@ -2661,6 +2673,223 @@ document.write(`
 <li><p><strong>Movement Prediction</strong>: Forecasting limb movements from neural activity for prosthetics.</p></li>
 </ol>
 <p>The biological parallel lies in how the brain itself constantly predicts future sensory inputs and outcomes based on current and past information.</p>
+<section id="healthcare-time-series-applications">
+<h4>11.5.2.1 Healthcare Time Series Applications<a class="headerlink" href="#healthcare-time-series-applications" title="Link to this heading">#</a></h4>
+<p>Healthcare generates massive amounts of sequential data, making it an ideal domain for sequence models. These models help detect patterns, predict outcomes, and monitor patient health over time.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">healthcare_time_series_applications</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Demonstrate sequence models in healthcare applications.&quot;&quot;&quot;</span>
+    <span class="c1"># Simulate multivariate physiological time series (e.g., ICU monitoring)</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+    <span class="n">n_hours</span> <span class="o">=</span> <span class="mi">96</span>  <span class="c1"># 4 days of hourly measurements</span>
+    
+    <span class="c1"># Create time points</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">n_hours</span><span class="p">)</span>
+    
+    <span class="c1"># Define normal physiological rhythms</span>
+    <span class="c1"># Heart rate with circadian pattern</span>
+    <span class="n">heart_rate_base</span> <span class="o">=</span> <span class="mi">70</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">time</span> <span class="o">/</span> <span class="mi">24</span><span class="p">)</span>
+    
+    <span class="c1"># Blood pressure with similar circadian pattern but different phase</span>
+    <span class="n">systolic_bp_base</span> <span class="o">=</span> <span class="mi">120</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">time</span> <span class="o">/</span> <span class="mi">24</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">))</span>
+    <span class="n">diastolic_bp_base</span> <span class="o">=</span> <span class="mi">80</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">time</span> <span class="o">/</span> <span class="mi">24</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">))</span>
+    
+    <span class="c1"># Blood glucose with meal patterns (3 meals per day)</span>
+    <span class="n">glucose_base</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">time</span> <span class="o">/</span> <span class="mi">8</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">time</span> <span class="o">/</span> <span class="mi">24</span><span class="p">)</span>
+    
+    <span class="c1"># Body temperature with subtle circadian rhythm</span>
+    <span class="n">temperature_base</span> <span class="o">=</span> <span class="mi">37</span> <span class="o">+</span> <span class="mf">0.3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="p">(</span><span class="n">time</span> <span class="o">/</span> <span class="mi">24</span> <span class="o">-</span> <span class="mf">0.1</span><span class="p">))</span>
+    
+    <span class="c1"># Add normal variability</span>
+    <span class="n">heart_rate</span> <span class="o">=</span> <span class="n">heart_rate_base</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n_hours</span><span class="p">)</span>
+    <span class="n">systolic_bp</span> <span class="o">=</span> <span class="n">systolic_bp_base</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">n_hours</span><span class="p">)</span>
+    <span class="n">diastolic_bp</span> <span class="o">=</span> <span class="n">diastolic_bp_base</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">n_hours</span><span class="p">)</span>
+    <span class="n">glucose</span> <span class="o">=</span> <span class="n">glucose_base</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">n_hours</span><span class="p">)</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="n">temperature_base</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">n_hours</span><span class="p">)</span>
+    
+    <span class="c1"># Create abnormal pattern for last day (sepsis onset example)</span>
+    <span class="n">onset</span> <span class="o">=</span> <span class="mi">72</span>  <span class="c1"># Start of deterioration</span>
+    
+    <span class="c1"># Gradual changes in vital signs typical of sepsis</span>
+    <span class="n">heart_rate</span><span class="p">[</span><span class="n">onset</span><span class="p">:]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="n">n_hours</span><span class="o">-</span><span class="n">onset</span><span class="p">)</span>  <span class="c1"># Increasing tachycardia</span>
+    <span class="n">systolic_bp</span><span class="p">[</span><span class="n">onset</span><span class="p">:]</span> <span class="o">-=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="n">n_hours</span><span class="o">-</span><span class="n">onset</span><span class="p">)</span>  <span class="c1"># Decreasing BP</span>
+    <span class="n">diastolic_bp</span><span class="p">[</span><span class="n">onset</span><span class="p">:]</span> <span class="o">-=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">n_hours</span><span class="o">-</span><span class="n">onset</span><span class="p">)</span>
+    <span class="n">temperature</span><span class="p">[</span><span class="n">onset</span><span class="p">:]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="n">n_hours</span><span class="o">-</span><span class="n">onset</span><span class="p">)</span>  <span class="c1"># Fever</span>
+    <span class="n">glucose</span><span class="p">[</span><span class="n">onset</span><span class="p">:]</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">n_hours</span><span class="o">-</span><span class="n">onset</span><span class="p">)</span>  <span class="c1"># Hyperglycemia</span>
+    
+    <span class="c1"># Combine into multivariate time series</span>
+    <span class="n">vitals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">([</span><span class="n">heart_rate</span><span class="p">,</span> <span class="n">systolic_bp</span><span class="p">,</span> <span class="n">diastolic_bp</span><span class="p">,</span> <span class="n">glucose</span><span class="p">,</span> <span class="n">temperature</span><span class="p">])</span>
+    
+    <span class="c1"># Define a deep learning model for early detection of clinical deterioration</span>
+    <span class="k">class</span><span class="w"> </span><span class="nc">ClinicalDeterioration</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;LSTM-based model for early detection of clinical deterioration.&quot;&quot;&quot;</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">,</span> <span class="n">output_dim</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">ClinicalDeterioration</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lstm1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lstm2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">attention</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dim</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dim</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">)</span>
+            
+        <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+            <span class="c1"># Initial LSTM layer</span>
+            <span class="n">lstm1_out</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lstm1</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+            
+            <span class="c1"># Second LSTM layer</span>
+            <span class="n">lstm2_out</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lstm2</span><span class="p">(</span><span class="n">lstm1_out</span><span class="p">)</span>
+            
+            <span class="c1"># Attention mechanism - focus on relevant time steps</span>
+            <span class="n">attention_weights</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">attention</span><span class="p">(</span><span class="n">lstm2_out</span><span class="p">),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">context</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">attention_weights</span> <span class="o">*</span> <span class="n">lstm2_out</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            
+            <span class="c1"># Final prediction</span>
+            <span class="n">prediction</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">(</span><span class="n">context</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">prediction</span><span class="p">,</span> <span class="n">attention_weights</span>
+    
+    <span class="c1"># Visualize the data and prediction example</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+    
+    <span class="c1"># Plot vital signs</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="n">vitals_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Heart Rate&#39;</span><span class="p">,</span> <span class="s1">&#39;Systolic BP&#39;</span><span class="p">,</span> <span class="s1">&#39;Diastolic BP&#39;</span><span class="p">,</span> <span class="s1">&#39;Glucose&#39;</span><span class="p">,</span> <span class="s1">&#39;Temperature&#39;</span><span class="p">]</span>
+    
+    <span class="c1"># Normalize for visualization</span>
+    <span class="n">vitals_norm</span> <span class="o">=</span> <span class="p">(</span><span class="n">vitals</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">vitals</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">vitals</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">vitals_norm</span><span class="p">[:,</span> <span class="n">i</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="n">vitals_labels</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">onset</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Deterioration Onset&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time (hours)&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Normalized Value&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Multivariate Healthcare Time Series&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Illustrate the time series analysis principles</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">)</span>
+    
+    <span class="n">info_text</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;Healthcare Time Series Applications of Sequence Models</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;1. Early Warning Systems</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;   • Predict clinical deterioration 4-6 hours before traditional methods</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;   • Reduce false alarms by 60% through multivariate pattern recognition</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;2. Personalized Risk Stratification</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;   • Continuous risk scoring adapts to individual baselines</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;   • Account for circadian rhythms and medication effects</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;3. Treatment Response Monitoring</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;   • Track efficacy of interventions through vital sign trajectories</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;   • Predict recovery times and detect delayed responses</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;4. Neurological Monitoring</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;   • Seizure prediction from EEG with 92</span><span class="si">% s</span><span class="s2">ensitivity</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;   • Sleep stage classification from polysomnography</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;Neural Correlates: Sequence models mirror how clinicians process patient data—</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;integrating temporal patterns, detecting deviations from expected trajectories,</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="s2">&quot;and maintaining contextual memory of patient history.&quot;</span>
+    <span class="p">)</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">info_text</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span>
+             <span class="n">bbox</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;#e6f7ff&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span> <span class="n">boxstyle</span><span class="o">=</span><span class="s1">&#39;round,pad=1&#39;</span><span class="p">))</span>
+    
+    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">plt</span>
+</pre></div>
+</div>
+<p>Healthcare time series applications benefit from different sequence model architectures:</p>
+<ol class="arabic simple">
+<li><p><strong>EHR-based Clinical Predictions</strong></p>
+<ul class="simple">
+<li><p><strong>Architecture</strong>: Bidirectional LSTMs with attention</p></li>
+<li><p><strong>Application</strong>: Predicting hospital readmission and length of stay</p></li>
+<li><p><strong>Advantage</strong>: Can handle irregular sampling intervals and incorporate long-term dependencies</p></li>
+</ul>
+</li>
+<li><p><strong>Continuous Monitoring Systems</strong></p>
+<ul class="simple">
+<li><p><strong>Architecture</strong>: Transformer-based models with time embeddings</p></li>
+<li><p><strong>Application</strong>: Real-time sepsis prediction in ICU settings</p></li>
+<li><p><strong>Advantage</strong>: Context windows up to 72 hours with maintained accuracy</p></li>
+</ul>
+</li>
+<li><p><strong>Multimodal Neurological Monitoring</strong></p>
+<ul class="simple">
+<li><p><strong>Architecture</strong>: Hybrid CNN-LSTM models</p></li>
+<li><p><strong>Application</strong>: Seizure detection from EEG, behavioral, and autonomic signals</p></li>
+<li><p><strong>Advantage</strong>: Integrates signals across modalities and timescales</p></li>
+</ul>
+</li>
+<li><p><strong>Physiological Waveform Analysis</strong></p>
+<ul class="simple">
+<li><p><strong>Architecture</strong>: Temporal convolutional networks (TCNs)</p></li>
+<li><p><strong>Application</strong>: Arrhythmia detection from ECG</p></li>
+<li><p><strong>Advantage</strong>: Efficient parallel processing of high-frequency waveform data</p></li>
+</ul>
+</li>
+</ol>
+<p>Implementation considerations for healthcare sequence models include:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">healthcare_sequence_model_considerations</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Illustrate implementation considerations for healthcare sequence models.&quot;&quot;&quot;</span>
+    <span class="c1"># Sample code outline for healthcare-specific sequence model implementation</span>
+    
+    <span class="k">class</span><span class="w"> </span><span class="nc">IrregularTimeSeriesModel</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Model for irregularly sampled healthcare time series.&quot;&quot;&quot;</span>
+        <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">):</span>
+            <span class="nb">super</span><span class="p">(</span><span class="n">IrregularTimeSeriesModel</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">feature_encoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">time_encoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">lstm</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LSTM</span><span class="p">(</span><span class="n">hidden_dim</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">attention</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+            
+        <span class="k">def</span><span class="w"> </span><span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">values</span><span class="p">,</span> <span class="n">timestamps</span><span class="p">,</span> <span class="n">lengths</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Forward pass handling irregular sampling</span>
+<span class="sd">            </span>
+<span class="sd">            Args:</span>
+<span class="sd">                values: Feature values [batch, max_seq, features]</span>
+<span class="sd">                timestamps: Time points [batch, max_seq, 1]</span>
+<span class="sd">                lengths: Actual sequence lengths [batch]</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="c1"># Create time gap features</span>
+            <span class="n">time_gaps</span> <span class="o">=</span> <span class="n">timestamps</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">:]</span> <span class="o">-</span> <span class="n">timestamps</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">padded_gaps</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">time_gaps</span><span class="p">[:,</span> <span class="p">:</span><span class="mi">1</span><span class="p">]),</span> <span class="n">time_gaps</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            
+            <span class="c1"># Encode values and time information</span>
+            <span class="n">value_encoded</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">feature_encoder</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+            <span class="n">time_encoded</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">time_encoder</span><span class="p">(</span><span class="n">padded_gaps</span><span class="p">)</span>
+            
+            <span class="c1"># Concatenate value and time features</span>
+            <span class="n">combined</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">value_encoded</span><span class="p">,</span> <span class="n">time_encoded</span><span class="p">],</span> <span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+            
+            <span class="c1"># Pack padded sequence for variable length handling</span>
+            <span class="n">packed</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">rnn</span><span class="o">.</span><span class="n">pack_padded_sequence</span><span class="p">(</span>
+                <span class="n">combined</span><span class="p">,</span> <span class="n">lengths</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">enforce_sorted</span><span class="o">=</span><span class="kc">False</span>
+            <span class="p">)</span>
+            
+            <span class="c1"># Process with LSTM</span>
+            <span class="n">lstm_out</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">lstm</span><span class="p">(</span><span class="n">packed</span><span class="p">)</span>
+            
+            <span class="c1"># Unpack sequence</span>
+            <span class="n">unpacked</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">rnn</span><span class="o">.</span><span class="n">pad_packed_sequence</span><span class="p">(</span><span class="n">lstm_out</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            
+            <span class="c1"># Apply attention mechanism</span>
+            <span class="n">attention_weights</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">attention</span><span class="p">(</span><span class="n">unpacked</span><span class="p">),</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">context</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">attention_weights</span> <span class="o">*</span> <span class="n">unpacked</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            
+            <span class="c1"># Final classification</span>
+            <span class="n">prediction</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">(</span><span class="n">context</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">prediction</span><span class="p">,</span> <span class="n">attention_weights</span>
+</pre></div>
+</div>
+<p>The integration of healthcare time series methods with sequence models demonstrates how domain-specific knowledge enhances model design. In particular, healthcare applications must address:</p>
+<ol class="arabic simple">
+<li><p><strong>Missing data and irregular sampling</strong>: Clinical measurements occur at irregular intervals, requiring specialized handling of time gaps.</p></li>
+<li><p><strong>Interpretability requirements</strong>: Healthcare decisions need explanations, making attention mechanisms especially valuable.</p></li>
+<li><p><strong>Class imbalance</strong>: Clinical events of interest (e.g., sepsis, cardiac arrest) are rare, necessitating specialized loss functions and sampling strategies.</p></li>
+<li><p><strong>Temporal concept drift</strong>: Physiological patterns change with treatment, requiring adaptive models that recognize shifts in baseline.</p></li>
+<li><p><strong>Personalization</strong>: Individual variations in “normal” readings require models that adjust to patient-specific baselines.</p></li>
+</ol>
+<p>These healthcare applications demonstrate the versatility of sequence models across prediction horizons - from ultra-short-term (arrhythmia detection, seconds), to medium-term (clinical deterioration, hours), to long-term (disease progression, months).</p>
+</section>
 </section>
 <section id="neural-sequence-decoding">
 <h3>11.5.3 Neural Sequence Decoding<a class="headerlink" href="#neural-sequence-decoding" title="Link to this heading">#</a></h3>
@@ -3861,6 +4090,8 @@ document.write(`
 <li><p><strong>Chapter 12 (Large Language Models)</strong>: Transformer architectures from this chapter form the foundation for LLMs with scaled attention mechanisms</p></li>
 <li><p><strong>Chapter 13 (Multimodal Models)</strong>: Sequence processing techniques are extended to handle multiple modalities through cross-attention and embedding alignment</p></li>
 <li><p><strong>Chapter 14 (Future Directions)</strong>: Innovations in sequence modeling contribute to neuromorphic computing and brain-inspired AI architectures</p></li>
+<li><p><strong>Chapter 20 (Case Studies)</strong>: Healthcare applications of sequence models are demonstrated in neurological disorder prediction</p></li>
+<li><p><strong>Chapter 21 (AI for Neuro Discovery)</strong>: Sequence models are applied to neuroimaging time series for clinical applications</p></li>
 </ul>
 </div>
 <p>This chapter has covered the evolution of sequence models from recurrent networks to transformers, connecting these AI architectures to neural processing mechanisms in the brain. Here are the key insights:</p>
@@ -3891,8 +4122,36 @@ document.write(`
 </li>
 <li><p><strong>Emergent Properties</strong>: As sequence models scale up, they demonstrate emergent capabilities that weren’t explicitly programmed, similar to how neural systems show emergent cognitive abilities. This has led to foundation models that capture complex sequential dependencies across multiple domains.</p></li>
 <li><p><strong>Applications Bridging Fields</strong>: Sequence models provide a shared framework for applications spanning neuroscience and AI, from neural decoding and brain-computer interfaces to natural language processing and time series forecasting.</p></li>
+<li><p><strong>Healthcare Applications</strong>: Sequence models are particularly valuable for healthcare time series analysis:</p>
+<ul class="simple">
+<li><p>Handling irregular sampling intervals in clinical data</p></li>
+<li><p>Managing missing values common in patient monitoring</p></li>
+<li><p>Detecting early signs of clinical deterioration</p></li>
+<li><p>Modeling multivariate physiological signals like EEG and ECG</p></li>
+<li><p>Predicting disease progression trajectories in neurological disorders</p></li>
+</ul>
+</li>
 </ol>
 <p>The rapid advancement of sequence models represents one of the most successful areas of cross-fertilization between neuroscience and artificial intelligence, with each field benefiting from insights gained in the other.</p>
+<div style="page-break-before:always;"></div>
+<div class="important admonition">
+<p class="admonition-title">Chapter Summary</p>
+<p>In this chapter, we explored:</p>
+<ul class="simple">
+<li><p><strong>Recurrent neural networks (RNNs)</strong> and their fundamental approach to processing sequential information</p></li>
+<li><p><strong>LSTM and GRU architectures</strong> that address the vanishing gradient problem in sequential processing</p></li>
+<li><p><strong>Attention mechanisms</strong> that enable models to focus on relevant parts of input sequences</p></li>
+<li><p><strong>The transformer architecture</strong> with its parallel computation and scaled dot-product attention</p></li>
+<li><p><strong>Positional encodings</strong> that inject sequential order information into parallel attention models</p></li>
+<li><p><strong>Neural correlates of sequential processing</strong> in cortical circuits and working memory systems</p></li>
+<li><p><strong>Predictive processing</strong> frameworks in both the brain and artificial sequence models</p></li>
+<li><p><strong>Applications</strong> spanning natural language processing, time series forecasting, and neural decoding</p></li>
+<li><p><strong>Healthcare time series applications</strong> that address clinical challenges like irregular sampling, missing data, and early detection of deterioration</p></li>
+<li><p><strong>Implementation details</strong> of sequence models through hands-on code examples</p></li>
+<li><p><strong>The evolution from RNNs to transformers</strong> representing different computational trade-offs</p></li>
+</ul>
+<p>This chapter traces the remarkable evolution of sequence modeling approaches in artificial intelligence, highlighting their biological inspirations and showing how these models have revolutionized our ability to process sequential data across domains from neuroscience to healthcare.</p>
+</div>
 </section>
 <section id="further-reading-media">
 <h2>11.8 Further Reading &amp; Media<a class="headerlink" href="#further-reading-media" title="Link to this heading">#</a></h2>
@@ -4073,7 +4332,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applications">11.5 Applications</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#natural-language-processing">11.5.1 Natural Language Processing</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-forecasting">11.5.2 Time Series Forecasting</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#time-series-forecasting">11.5.2 Time Series Forecasting</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#healthcare-time-series-applications">11.5.2.1 Healthcare Time Series Applications</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-sequence-decoding">11.5.3 Neural Sequence Decoding</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generative-sequence-models">11.5.4 Generative Sequence Models</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#application-design-principles">11.5.5 Application Design Principles</a></li>

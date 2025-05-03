@@ -186,6 +186,12 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cover.html">Cover</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/copyright.html">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/acknowledgments.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/about.html">About This Book</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I · Brains &amp; Inspiration</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="ch01_intro.html">Chapter 1: Introduction to Neuroscience ↔ AI</a></li>
@@ -218,9 +224,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VI · Advanced Applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../part6/ch17_bci_human_ai_interfaces.html">Brain-Computer Interfaces and Human-AI Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch17_bci_human_ai_interfaces.html">Chapter 17: Brain-Computer Interfaces and Human-AI Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch18_neuromorphic_computing.html">Chapter 18: Neuromorphic Computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../part6/ch19_cognitive_neuro_dl.html">Cognitive Neuroscience and Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch19_cognitive_neuro_dl.html">Chapter 19: Cognitive Neuroscience and Deep Learning</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../part6/ch20_case_studies.html">Case Studies in NeuroAI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../part6/ch20_interactive.html">Interactive NeuroAI Case Studies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../part6/jupyter_ai_demo.html">AI-Assisted Learning with Jupyter AI</a></li>
@@ -231,8 +237,8 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch21_ai_for_neuro_discovery.html">Chapter 21: AI for Neuroscience Discovery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch22_embodied_ai_robotics.html">Chapter 22: Embodied AI and Robotics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../part6/ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch23_lifelong_learning.html">Chapter 23: Lifelong Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -509,6 +515,7 @@ document.write(`
 <li><p><strong>Implement</strong> basic neuron simulations and Hebbian learning rules in Python</p></li>
 </ul>
 </div>
+<div style="page-break-before:always;"></div>
 <section id="why-this-chapter">
 <h2>2.0 Why This Chapter?<a class="headerlink" href="#why-this-chapter" title="Link to this heading">#</a></h2>
 <p>Before we leap into convolutional networks, policy gradients, or billion-parameter transformers, we need mental “ground truth” about the biological machine that inspired all of them. By the end of this chapter you should be able to:</p>
@@ -769,6 +776,22 @@ document.write(`
 <li><p>Plasticity is local and continuous. Back-prop is global and episodic. Bridging the gap is an active frontier (see “feedback alignment”).</p></li>
 <li><p>Studying the real brain supplies “design priors” that have already birthed convolution, recurrence, attention, and spiking ASICs. Ignoring biology wholesale risks reinventing wheels—or worse, building brittle systems that fail outside curated datasets.</p></li>
 </ul>
+<div style="page-break-before:always;"></div>
+<div class="important admonition">
+<p class="admonition-title">Chapter Summary</p>
+<p>In this chapter, we explored:</p>
+<ul class="simple">
+<li><p><strong>Neuron anatomy and function</strong>, including dendrites, soma, axons, and how they map to artificial neuron components</p></li>
+<li><p><strong>Electrophysiological properties</strong> of neurons, from resting potentials to action potentials</p></li>
+<li><p><strong>Neural circuits and layered organization</strong> in the cortex, with feedforward and recurrent connections</p></li>
+<li><p><strong>Learning and plasticity mechanisms</strong> like Hebbian learning, STDP, and LTP/LTD</p></li>
+<li><p><strong>Different brain regions</strong> and their computational roles (cortex, hippocampus, basal ganglia, cerebellum)</p></li>
+<li><p><strong>Implementing biological principles</strong> in code with a leaky-integrate-and-fire neuron model</p></li>
+<li><p><strong>Energy efficiency and parallel processing</strong> advantages of biological neural systems</p></li>
+<li><p><strong>The gap between biological and artificial learning</strong> algorithms and efforts to bridge them</p></li>
+</ul>
+<p>This chapter provides the foundational understanding of neural systems that will inform our exploration of both brain function and AI architectures in subsequent chapters.</p>
+</div>
 <div class="important admonition">
 <p class="admonition-title">Knowledge Connections</p>
 <p><strong>Looking Back</strong></p>

@@ -36,7 +36,9 @@
       "Bash(bash:*)",
       "Bash(jupyter-book clean:*)",
       "Bash(cat:*)",
-      "Bash(/Volumes/data_bolt/_github/NeuroAI-Handbook/book/part*/ch*.md)"
+      "Bash(/Volumes/data_bolt/_github/NeuroAI-Handbook/book/part*/ch*.md)",
+      "Bash(open:*)",
+      "Bash(book/figures/ch01/*.svg)"
     ],
     "deny": []
   }

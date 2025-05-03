@@ -1,6 +1,8 @@
 # Chapter 21: AI for Neuroscience Discovery
 
-This chapter examines how artificial intelligence is accelerating neuroscience research and enabling new discoveries about brain function and organization. While neuroscience has heavily inspired AI, AI is now increasingly being used to advance neuroscience in a virtuous cycle of innovation.
+This chapter examines how artificial intelligence is accelerating neuroscience research and enabling new discoveries about brain function and organization. While neuroscience has heavily inspired AI, AI is now increasingly being used to advance neuroscience in a virtuous cycle of innovation. This includes not only fundamental research but also clinical applications that translate neuroscience insights into healthcare solutions for neurological disorders and conditions.
+
+<div style="page-break-before:always;"></div>
 
 ## 21.0 Chapter Goals
 - Understand how AI approaches are transforming neural data analysis
@@ -8,10 +10,307 @@ This chapter examines how artificial intelligence is accelerating neuroscience r
 - Learn how AI assists in connectome reconstruction and cellular morphology analysis
 - Discover how machine learning helps develop theories of brain function
 - Implement neural data analysis tools using deep learning techniques
+- Apply AI techniques to clinical neuroimaging for disease diagnosis and treatment planning
 
 ## 21.1 Neural Data Analysis with Deep Learning
 
 The exponential growth in neural recording technologies has created a data analysis challenge that AI is uniquely positioned to address. Deep learning approaches can extract patterns and insights from complex, high-dimensional neural data that would be difficult or impossible to identify with traditional methods.
+
+### 21.1.0 Clinical Neuroimaging Analysis
+
+Modern healthcare relies heavily on neuroimaging for diagnosis, treatment planning, and monitoring of neurological conditions. AI techniques have revolutionized these analyses, making them more accurate, efficient, and clinically applicable.
+
+```python
+def analyze_clinical_neuroimaging(imaging_data, modality="fMRI", task="classification"):
+    """
+    Analyze clinical neuroimaging data with deep learning approaches
+    
+    Parameters:
+    - imaging_data: Neuroimaging data (format depends on modality)
+    - modality: Imaging modality ('fMRI', 'EEG', 'MRI', 'CT', 'PET')
+    - task: Analysis task ('classification', 'segmentation', 'prediction')
+    
+    Returns:
+    - results: Analysis results and visualization
+    """
+    import numpy as np
+    import tensorflow as tf
+    from tensorflow.keras import layers, Model
+    import matplotlib.pyplot as plt
+    
+    # Preprocessing based on modality
+    if modality == "fMRI":
+        # Spatial and temporal preprocessing for fMRI
+        preprocessed_data = preprocess_fmri(imaging_data)
+        model = build_fmri_model(task)
+    elif modality == "EEG":
+        # Filter and artifact removal for EEG
+        preprocessed_data = preprocess_eeg(imaging_data)
+        model = build_eeg_model(task)
+    elif modality in ["MRI", "CT", "PET"]:
+        # Structural image preprocessing
+        preprocessed_data = preprocess_structural(imaging_data, modality)
+        model = build_structural_model(modality, task)
+    else:
+        raise ValueError(f"Unsupported modality: {modality}")
+    
+    # Perform analysis based on task
+    if task == "classification":
+        # Disease classification (e.g., Alzheimer's, tumor, stroke)
+        results = perform_classification(model, preprocessed_data)
+    elif task == "segmentation":
+        # Segment abnormalities (e.g., lesions, tumors)
+        results = perform_segmentation(model, preprocessed_data)
+    elif task == "prediction":
+        # Predict disease progression or treatment response
+        results = perform_prediction(model, preprocessed_data)
+    else:
+        raise ValueError(f"Unsupported task: {task}")
+    
+    return results
+
+def build_fmri_model(task):
+    """Build a deep learning model for fMRI analysis"""
+    inputs = tf.keras.Input(shape=(91, 109, 91, 20))  # Example: (x, y, z, time)
+    
+    # 3D CNN + LSTM for spatiotemporal features
+    x = layers.Conv3D(32, kernel_size=3, activation="relu")(inputs)
+    x = layers.MaxPooling3D(pool_size=2)(x)
+    x = layers.Conv3D(64, kernel_size=3, activation="relu")(x)
+    x = layers.MaxPooling3D(pool_size=2)(x)
+    
+    # Reshape for sequence processing
+    x = layers.Reshape((-1, 64))(x)
+    x = layers.LSTM(128, return_sequences=False)(x)
+    
+    if task == "classification":
+        outputs = layers.Dense(2, activation="softmax")(x)  # Binary classification
+    elif task == "segmentation":
+        # Upsampling path for segmentation
+        x = layers.Dense(91*109*91, activation="relu")(x)
+        x = layers.Reshape((91, 109, 91))(x)
+        outputs = layers.Conv3D(1, kernel_size=1, activation="sigmoid")(x)
+    else:  # prediction
+        outputs = layers.Dense(1, activation="linear")(x)  # Regression
+        
+    return Model(inputs=inputs, outputs=outputs)
+
+def build_eeg_model(task):
+    """Build a deep learning model for EEG analysis"""
+    inputs = tf.keras.Input(shape=(64, 1000))  # Example: (channels, time)
+    
+    # Temporal convolutional network
+    x = layers.Conv1D(32, kernel_size=10, activation="relu")(inputs)
+    x = layers.MaxPooling1D(pool_size=2)(x)
+    x = layers.Conv1D(64, kernel_size=10, activation="relu")(x)
+    x = layers.MaxPooling1D(pool_size=2)(x)
+    x = layers.Conv1D(128, kernel_size=10, activation="relu")(x)
+    x = layers.GlobalAveragePooling1D()(x)
+    
+    if task == "classification":
+        outputs = layers.Dense(2, activation="softmax")(x)  # Binary classification
+    else:  # prediction
+        outputs = layers.Dense(1, activation="linear")(x)  # Regression
+        
+    return Model(inputs=inputs, outputs=outputs)
+
+def alzheimers_fmri_classification():
+    """Example of Alzheimer's disease classification from fMRI data"""
+    import numpy as np
+    
+    # Simulate data for demonstration (in practice, would load real data)
+    n_samples = 100
+    n_x, n_y, n_z, n_t = 91, 109, 91, 20
+    
+    # Generate synthetic data
+    X = np.random.randn(n_samples, n_x, n_y, n_z, n_t) * 0.1
+    
+    # Add disease-specific patterns to half the samples
+    y = np.zeros(n_samples)
+    for i in range(n_samples // 2, n_samples):
+        # Simulate hippocampal atrophy in Alzheimer's patients
+        pattern = np.zeros((n_x, n_y, n_z, n_t))
+        pattern[40:50, 45:55, 40:50, :] = np.random.randn(10, 10, 10, n_t) * 0.5
+        X[i] += pattern
+        y[i] = 1  # Alzheimer's positive
+    
+    # Build model
+    model = build_fmri_model("classification")
+    model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
+    
+    # Train/test split
+    from sklearn.model_selection import train_test_split
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+    
+    # Train model (in practice, would use more epochs)
+    model.fit(X_train, y_train, batch_size=8, epochs=5, validation_split=0.2)
+    
+    # Evaluate
+    results = model.evaluate(X_test, y_test)
+    print(f"Test accuracy: {results[1]:.4f}")
+    
+    # Generate visualization for model interpretation
+    grad_cam_visualization(model, X_test[0:1], class_idx=1)
+    
+    return model, results
+
+def epilepsy_eeg_detection():
+    """Example of epileptic seizure detection from EEG data"""
+    import numpy as np
+    
+    # Simulate data for demonstration
+    n_samples = 200
+    n_channels, n_timepoints = 64, 1000
+    
+    # Generate synthetic data
+    X = np.random.randn(n_samples, n_channels, n_timepoints) * 0.1
+    
+    # Add seizure patterns to half the samples
+    y = np.zeros(n_samples)
+    for i in range(n_samples // 2, n_samples):
+        # Simulate spike-and-wave discharges characteristic of seizures
+        for j in range(5, n_timepoints, 20):
+            # Add spike pattern
+            X[i, :, j:j+3] += np.random.randn(n_channels, 3) * 2.0
+            # Add slow wave
+            t = np.arange(10) / 10.0
+            wave = np.sin(2 * np.pi * t)
+            X[i, :, j+3:j+13] += np.expand_dims(wave, 0) * 0.5
+        y[i] = 1  # Seizure positive
+    
+    # Build model
+    model = build_eeg_model("classification")
+    model.compile(optimizer="adam", loss="sparse_categorical_crossentropy", metrics=["accuracy"])
+    
+    # Train/test split
+    from sklearn.model_selection import train_test_split
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+    
+    # Train model (in practice, would use more epochs)
+    model.fit(X_train, y_train, batch_size=16, epochs=5, validation_split=0.2)
+    
+    # Evaluate
+    results = model.evaluate(X_test, y_test)
+    print(f"Test accuracy: {results[1]:.4f}")
+    
+    # Visualize model attention
+    visualize_eeg_attention(model, X_test[0], y_test[0])
+    
+    return model, results
+
+def stroke_outcome_prediction():
+    """Example of stroke outcome prediction from multimodal imaging"""
+    import numpy as np
+    
+    # Simulate data for demonstration
+    n_samples = 150
+    n_x, n_y, n_z = 91, 109, 91
+    
+    # Generate synthetic structural MRI data
+    X_mri = np.random.randn(n_samples, n_x, n_y, n_z) * 0.1
+    
+    # Generate synthetic diffusion tensor imaging (DTI) data
+    X_dti = np.random.randn(n_samples, n_x, n_y, n_z, 6) * 0.1  # 6 DTI measures
+    
+    # Add lesion patterns with varying sizes
+    lesion_sizes = np.random.randint(5, 20, size=n_samples)
+    
+    # Create outcome scores (modified Rankin Scale, 0-6 where higher is worse)
+    y = np.zeros(n_samples)
+    
+    for i in range(n_samples):
+        lesion_size = lesion_sizes[i]
+        
+        # Random lesion location
+        x_loc = np.random.randint(30, 60)
+        y_loc = np.random.randint(30, 60)
+        z_loc = np.random.randint(30, 60)
+        
+        # Add lesion to MRI
+        X_mri[i, x_loc:x_loc+lesion_size, y_loc:y_loc+lesion_size, z_loc:z_loc+lesion_size] = -0.5
+        
+        # Add corresponding DTI changes
+        X_dti[i, x_loc:x_loc+lesion_size, y_loc:y_loc+lesion_size, z_loc:z_loc+lesion_size, :] = -0.3
+        
+        # Outcome depends on lesion size and location
+        # Lesions near center (motor pathways) are more impactful
+        center_distance = np.sqrt((x_loc-45)**2 + (y_loc-45)**2 + (z_loc-45)**2)
+        location_factor = 1.0 - (center_distance / 50.0)  # Normalize to 0-1
+        
+        # Compute outcome score
+        outcome = (lesion_size / 20.0) * 6 * location_factor
+        y[i] = min(6, max(0, outcome + np.random.randn() * 0.5))  # Add noise
+    
+    # Build a multimodal model
+    inputs_mri = tf.keras.Input(shape=(n_x, n_y, n_z))
+    inputs_dti = tf.keras.Input(shape=(n_x, n_y, n_z, 6))
+    
+    # MRI processing branch
+    x_mri = layers.Conv3D(16, kernel_size=3, activation="relu")(inputs_mri[:,:,:,:,tf.newaxis])
+    x_mri = layers.MaxPooling3D(pool_size=2)(x_mri)
+    x_mri = layers.Conv3D(32, kernel_size=3, activation="relu")(x_mri)
+    x_mri = layers.GlobalAveragePooling3D()(x_mri)
+    
+    # DTI processing branch
+    x_dti = layers.Conv3D(16, kernel_size=3, activation="relu")(inputs_dti)
+    x_dti = layers.MaxPooling3D(pool_size=2)(x_dti)
+    x_dti = layers.Conv3D(32, kernel_size=3, activation="relu")(x_dti)
+    x_dti = layers.GlobalAveragePooling3D()(x_dti)
+    
+    # Combine modalities
+    x = layers.concatenate([x_mri, x_dti])
+    x = layers.Dense(64, activation="relu")(x)
+    outputs = layers.Dense(1, activation="linear")(x)  # Regression
+    
+    model = Model(inputs=[inputs_mri, inputs_dti], outputs=outputs)
+    model.compile(optimizer="adam", loss="mse", metrics=["mae"])
+    
+    # Train/test split
+    from sklearn.model_selection import train_test_split
+    X_train_mri, X_test_mri, X_train_dti, X_test_dti, y_train, y_test = train_test_split(
+        X_mri, X_dti, y, test_size=0.3, random_state=42)
+    
+    # Train model
+    model.fit(
+        [X_train_mri, X_train_dti], y_train,
+        batch_size=8, epochs=5, validation_split=0.2
+    )
+    
+    # Evaluate
+    results = model.evaluate([X_test_mri, X_test_dti], y_test)
+    print(f"Test MAE: {results[1]:.4f}")
+    
+    # Visualize feature importance
+    visualize_feature_importance(model, [X_test_mri[0:1], X_test_dti[0:1]])
+    
+    return model, results
+```
+
+Clinical applications of AI for neuroimaging analysis include:
+
+1. **Disease Classification**:
+   - Alzheimer's disease and dementia detection
+   - Brain tumor classification
+   - Stroke diagnosis
+   - Epilepsy focus localization
+
+2. **Disease Progression Monitoring**:
+   - Multiple sclerosis lesion tracking
+   - Parkinson's disease progression
+   - Post-stroke recovery assessment
+   - Treatment response prediction
+
+3. **Anatomical Segmentation**:
+   - Tumor boundary delineation
+   - White matter lesion quantification
+   - Hippocampal volumetry for dementia
+   - Cortical thickness measurement
+
+4. **Multimodal Integration**:
+   - Combining structural MRI with functional data
+   - Integrating EEG with fMRI for epilepsy
+   - Fusing PET and MRI for Alzheimer's characterization
+   - Multiparametric analysis for enhanced diagnosis
 
 ### 21.1.1 Decoding Neural Activity
 
@@ -910,6 +1209,8 @@ def infer_circuit_mechanisms(neural_activity, behaviors):
     return model
 ```
 
+<div style="page-break-before:always;"></div>
+
 ## 21.5 Neuromorphic Applications
 
 AI-derived insights about the brain can be applied to develop new neuromorphic computing architectures.
@@ -1223,6 +1524,10 @@ def neural_data_analysis_pipeline(neural_data_file):
 - **AI techniques are transforming neural data analysis**, enabling the extraction of meaningful patterns from complex recordings of brain activity.
 
 - **Deep learning models make powerful decoders** that can predict behavior, perception, and cognitive states from neural activity.
+
+- **Clinical neuroimaging applications** are leveraging AI for more accurate diagnosis and treatment of neurological disorders, enabling earlier detection of conditions like Alzheimer's disease and more precise surgical planning for epilepsy.
+
+- **Multimodal integration of clinical data** with AI techniques provides comprehensive views of neurological conditions, combining structural, functional, genetic, and behavioral information for personalized medicine approaches.
 
 - **Dimensionality reduction reveals low-dimensional neural manifolds** that capture the essential dynamics of neural population activity.
 

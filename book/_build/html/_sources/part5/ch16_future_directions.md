@@ -1,5 +1,7 @@
 # Chapter 16: Where Next for Neuro-AI?
 
+<div style="page-break-before:always;"></div>
+
 ## 16.0 Chapter Goals
 - Explore frontier research directions at the intersection of neuroscience and AI
 - Understand neuromorphic computing approaches and their advantages
@@ -185,6 +187,8 @@ def compare_energy_efficiency():
         efficiency = stats["accuracy"] / stats["joules_per_inference"]
         print(f"{arch}: {efficiency:.1f} accuracy/joule")
 ```
+
+<div style="page-break-before:always;"></div>
 
 ## 16.2 Continual Learning
 
@@ -1782,6 +1786,27 @@ def run_snn_demo():
 - **Whole-brain integration** approaches that combine specialized systems may be crucial for achieving more general artificial intelligence with human-like flexibility.
 
 - **Ethical considerations should guide development** of neuro-AI technologies, with frameworks for neural privacy, responsible innovation, and potential consciousness in advanced systems.
+
+<div style="page-break-before:always;"></div>
+
+```{admonition} Chapter Summary
+:class: important
+
+In this chapter, we explored:
+
+- **Neuromorphic hardware** including spiking neural networks and brain-inspired chips that offer energy-efficient alternatives to traditional computing
+- **Continual learning approaches** that address catastrophic forgetting through mechanisms inspired by biological memory consolidation
+- **The application of AI to neuroscience** for neural data analysis, brain simulation, and connectome reconstruction
+- **Whole-brain integration frameworks** such as Global Workspace Theory that could guide development of more general AI systems
+- **Attention and conscious processing** mechanisms that may be critical for next-generation AI architectures
+- **Metacognition and introspection** capabilities that enable systems to monitor and regulate their own processing
+- **Ethical considerations** specific to advanced neuro-inspired AI, including neural privacy and consciousness concerns
+- **Implementation examples** of spiking neural networks that demonstrate neuromorphic computing principles
+- **Potential future directions** for the convergence of neuroscience and artificial intelligence
+- **Responsible innovation frameworks** that can guide development of these powerful technologies
+
+This chapter charts possible future trajectories for the field of neuro-AI, highlighting how deeper integration between neuroscience and artificial intelligence could lead to more efficient, capable, and ethically-aligned systems that better serve humanity.
+```
 
 ## 16.8 Further Reading & Media
 

@@ -12,6 +12,8 @@ By the end of this chapter, you will be able to:
 - **Evaluate** LLM performance across multiple dimensions and tasks
 ```
 
+<div style="page-break-before:always;"></div>
+
 ## 12.1 Large Language Model Fundamentals
 
 Large Language Models (LLMs) represent a transformative development in artificial intelligence, capable of generating human-like text, translating languages, writing creative content, and answering questions in an informative way. This section explores the foundational elements that make these models possible.
@@ -2530,6 +2532,27 @@ This chapter explored the fundamentals, fine-tuning approaches, and advanced app
    - Trade-offs between efficiency, accuracy, and flexibility guide system design
 
 The integration of neuroscience principles with LLM development creates a virtuous cycle, where brain-inspired mechanisms enhance AI capabilities while AI insights deepen our understanding of human language processing. This cross-disciplinary approach promises continued advances in both fields.
+
+<div style="page-break-before:always;"></div>
+
+```{admonition} Chapter Summary
+:class: important
+
+In this chapter, we explored:
+
+- **Transformer-based architecture** principles that power large language models
+- **Scaling laws** showing how model performance scales with parameters, data, and compute
+- **Pre-training objectives** like next-token prediction that enable self-supervised learning
+- **Tokenization strategies** that transform text into a format processable by neural networks
+- **Fine-tuning techniques** from full model adaptation to parameter-efficient methods like LoRA
+- **Instruction fine-tuning and RLHF** methods that align models with human preferences
+- **Prompting strategies** including zero-shot, few-shot, and chain-of-thought approaches
+- **Neural correlates of language** in the brain's predictive processing mechanisms
+- **Current limitations** such as hallucinations, bias, context constraints, and reasoning gaps
+- **Practical implementations** of LLM techniques through hands-on code examples
+
+This chapter bridges the computational foundation of large language models with biological language processing, demonstrating how each field informs the other while providing practical guidance for adapting these powerful models to specialized domains.
+```
 
 ## 12.8 Further Reading & Media
 

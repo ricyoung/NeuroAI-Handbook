@@ -186,6 +186,12 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../cover.html">Cover</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Front Matter</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/copyright.html">Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/acknowledgments.html">Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../frontmatter/about.html">About This Book</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part I · Brains &amp; Inspiration</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../part1/ch01_intro.html">Chapter 1: Introduction to Neuroscience ↔ AI</a></li>
@@ -218,9 +224,9 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part VI · Advanced Applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../part6/ch17_bci_human_ai_interfaces.html">Brain-Computer Interfaces and Human-AI Interaction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch17_bci_human_ai_interfaces.html">Chapter 17: Brain-Computer Interfaces and Human-AI Interaction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch18_neuromorphic_computing.html">Chapter 18: Neuromorphic Computing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../part6/ch19_cognitive_neuro_dl.html">Cognitive Neuroscience and Deep Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch19_cognitive_neuro_dl.html">Chapter 19: Cognitive Neuroscience and Deep Learning</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../part6/ch20_case_studies.html">Case Studies in NeuroAI</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../part6/ch20_interactive.html">Interactive NeuroAI Case Studies</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../part6/jupyter_ai_demo.html">AI-Assisted Learning with Jupyter AI</a></li>
@@ -231,8 +237,8 @@
 </details></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch21_ai_for_neuro_discovery.html">Chapter 21: AI for Neuroscience Discovery</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch22_embodied_ai_robotics.html">Chapter 22: Embodied AI and Robotics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../part6/ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../part6/ch23_lifelong_learning.html">Chapter 23: Lifelong Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../part6/ch24_quantum_computing_neuroai.html">Chapter 24: Quantum Computing and NeuroAI</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendices</span></p>
 <ul class="nav bd-sidenav">
@@ -452,9 +458,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-goals">15.0 Chapter Goals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethical-frameworks-for-neuroai">Ethical Frameworks for NeuroAI</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-and-brain-data">15.1 Privacy and Brain Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#healthcare-data-privacy-considerations">15.1.0 Healthcare Data Privacy Considerations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#special-considerations-for-healthcare-neural-data">15.1.0.1 Special Considerations for Healthcare Neural Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-frameworks-for-healthcare-data">15.1.0.2 Regulatory Frameworks for Healthcare Data</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-privacy-frameworks">15.1.1 Neural Privacy Frameworks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-privacy-for-neural-data">15.1.2 Differential Privacy for Neural Data</a></li>
 </ul>
@@ -499,17 +509,20 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="chapter-15-ethical-ai-considerations-for-neuroai">
 <h1>Chapter 15: Ethical AI - Considerations for NeuroAI<a class="headerlink" href="#chapter-15-ethical-ai-considerations-for-neuroai" title="Link to this heading">#</a></h1>
-<p>The integration of neuroscience and artificial intelligence raises unique ethical considerations that require careful attention. This chapter explores the ethical dimensions of NeuroAI, providing a framework for responsible development and application.</p>
-<section id="chapter-goals">
-<h2>15.0 Chapter Goals<a class="headerlink" href="#chapter-goals" title="Link to this heading">#</a></h2>
+<div class="note admonition">
+<p class="admonition-title">Learning Objectives</p>
+<p>By the end of this chapter, you will be able to:</p>
 <ul class="simple">
-<li><p>Understand key ethical considerations in neuroscience-inspired AI systems</p></li>
-<li><p>Explore frameworks for privacy and data protection in neural applications</p></li>
-<li><p>Examine bias, fairness, and transparency challenges specific to NeuroAI</p></li>
-<li><p>Develop approaches for responsible innovation in this emerging field</p></li>
-<li><p>Implement practical frameworks for ethical assessment and governance</p></li>
+<li><p><strong>Identify</strong> key ethical considerations specific to neuroscience-inspired AI systems</p></li>
+<li><p><strong>Analyze</strong> frameworks for privacy and data protection in neural applications</p></li>
+<li><p><strong>Evaluate</strong> bias, fairness, and transparency challenges in NeuroAI systems</p></li>
+<li><p><strong>Develop</strong> approaches for responsible innovation in this emerging interdisciplinary field</p></li>
+<li><p><strong>Apply</strong> practical frameworks for ethical assessment and governance</p></li>
+<li><p><strong>Design</strong> NeuroAI systems with ethical principles integrated from the start</p></li>
+<li><p><strong>Implement</strong> healthcare data privacy protections for neural data in clinical settings</p></li>
 </ul>
-</section>
+</div>
+<p>The integration of neuroscience and artificial intelligence raises unique ethical considerations that require careful attention. This chapter explores the ethical dimensions of NeuroAI, providing a framework for responsible development and application. Special attention is given to healthcare applications where neural data privacy presents additional regulatory challenges and requires robust protection mechanisms due to the sensitive nature of clinical information.</p>
 <section id="ethical-frameworks-for-neuroai">
 <h2>Ethical Frameworks for NeuroAI<a class="headerlink" href="#ethical-frameworks-for-neuroai" title="Link to this heading">#</a></h2>
 <p>NeuroAI research and applications exist at the intersection of multiple ethical domains, including:</p>
@@ -538,6 +551,457 @@ document.write(`
 <li><p><strong>Secure storage</strong>: Implementing robust protections for brain data repositories</p></li>
 <li><p><strong>De-identification</strong>: Removing personally identifiable information when possible</p></li>
 </ol>
+<section id="healthcare-data-privacy-considerations">
+<h3>15.1.0 Healthcare Data Privacy Considerations<a class="headerlink" href="#healthcare-data-privacy-considerations" title="Link to this heading">#</a></h3>
+<p>Healthcare applications of NeuroAI raise additional privacy concerns due to their clinical nature and regulatory oversight. These systems must comply with healthcare privacy laws like HIPAA (US), GDPR (EU), and other regional regulations.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">HealthcareDataPrivacyManager</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Framework for managing privacy of healthcare neural data</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_type</span><span class="o">=</span><span class="s2">&quot;clinical_eeg&quot;</span><span class="p">,</span> <span class="n">jurisdiction</span><span class="o">=</span><span class="s2">&quot;US&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Initialize healthcare data privacy management system</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        - data_type: Type of healthcare neural data</span>
+<span class="sd">        - jurisdiction: Legal jurisdiction for compliance</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data_type</span> <span class="o">=</span> <span class="n">data_type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">jurisdiction</span> <span class="o">=</span> <span class="n">jurisdiction</span>
+        
+        <span class="c1"># Set privacy controls based on data type</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">privacy_controls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_initialize_privacy_controls</span><span class="p">()</span>
+        
+        <span class="c1"># Set regulatory requirements based on jurisdiction</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">regulatory_requirements</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_regulatory_requirements</span><span class="p">()</span>
+        
+        <span class="c1"># Initialize compliance status</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">compliance_status</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;consent_verified&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">&quot;deidentification_applied&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">&quot;purpose_verified&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">&quot;access_controls_verified&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">&quot;audit_logs_enabled&quot;</span><span class="p">:</span> <span class="kc">False</span>
+        <span class="p">}</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_initialize_privacy_controls</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set appropriate privacy controls for the data type&quot;&quot;&quot;</span>
+        <span class="n">base_controls</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;deidentification_required&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;access_logging_required&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;encryption_required&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;retention_limit_days&quot;</span><span class="p">:</span> <span class="mi">365</span><span class="p">,</span>
+            <span class="s2">&quot;consent_verification_required&quot;</span><span class="p">:</span> <span class="kc">True</span>
+        <span class="p">}</span>
+        
+        <span class="c1"># Add data type specific controls</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_type</span> <span class="o">==</span> <span class="s2">&quot;clinical_eeg&quot;</span><span class="p">:</span>
+            <span class="n">base_controls</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+                <span class="s2">&quot;patient_matching_prohibited&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;frequency_bands_only&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="s2">&quot;hide_demographic_data&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;min_aggregation_size&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="s2">&quot;max_temporal_resolution&quot;</span><span class="p">:</span> <span class="s2">&quot;1s&quot;</span>
+            <span class="p">})</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_type</span> <span class="o">==</span> <span class="s2">&quot;fmri_diagnostic&quot;</span><span class="p">:</span>
+            <span class="n">base_controls</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+                <span class="s2">&quot;roi_only_access&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="c1"># Only provide region of interest data</span>
+                <span class="s2">&quot;atlas_normalization_required&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;spatial_blur_minimum&quot;</span><span class="p">:</span> <span class="s2">&quot;5mm&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;hide_demographic_data&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;min_aggregation_size&quot;</span><span class="p">:</span> <span class="mi">5</span>
+            <span class="p">})</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_type</span> <span class="o">==</span> <span class="s2">&quot;neural_implant&quot;</span><span class="p">:</span>
+            <span class="n">base_controls</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+                <span class="s2">&quot;real_time_monitoring_consent&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;device_id_separation&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;local_processing_preferred&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;emergency_access_protocol&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;data_deletion_right&quot;</span><span class="p">:</span> <span class="kc">True</span>
+            <span class="p">})</span>
+        
+        <span class="k">return</span> <span class="n">base_controls</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_regulatory_requirements</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get regulatory requirements for the jurisdiction&quot;&quot;&quot;</span>
+        <span class="n">requirements</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">jurisdiction</span> <span class="o">==</span> <span class="s2">&quot;US&quot;</span><span class="p">:</span>
+            <span class="n">requirements</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;hipaa_compliance&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;phi_protection&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;part2_requirement&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;neural_addiction&quot;</span><span class="p">,</span> <span class="s2">&quot;neural_psychiatry&quot;</span><span class="p">],</span>
+                <span class="s2">&quot;state_law_additions&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;california&quot;</span><span class="p">:</span> <span class="s2">&quot;CMIA&quot;</span><span class="p">,</span> <span class="s2">&quot;texas&quot;</span><span class="p">:</span> <span class="s2">&quot;Texas Medical Privacy Act&quot;</span><span class="p">},</span>
+                <span class="s2">&quot;breach_notification&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;business_associate_agreement&quot;</span><span class="p">:</span> <span class="kc">True</span>
+            <span class="p">}</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">jurisdiction</span> <span class="o">==</span> <span class="s2">&quot;EU&quot;</span><span class="p">:</span>
+            <span class="n">requirements</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;gdpr_compliance&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;right_to_be_forgotten&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;data_portability&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;legitimate_purpose&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;special_category_data&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;dpo_required&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;cross_border_restrictions&quot;</span><span class="p">:</span> <span class="kc">True</span>
+            <span class="p">}</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">jurisdiction</span> <span class="o">==</span> <span class="s2">&quot;International&quot;</span><span class="p">:</span>
+            <span class="n">requirements</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;iso_27001&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;minimal_standards&quot;</span><span class="p">:</span> <span class="kc">True</span>
+            <span class="p">}</span>
+        
+        <span class="k">return</span> <span class="n">requirements</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">verify_compliance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">implementation_details</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Verify compliance of implementation with privacy requirements</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        - implementation_details: Dictionary of implementation details</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">        - compliance_result: Compliance assessment</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">compliance_result</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Pending&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;gaps&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;recommendations&quot;</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">}</span>
+        
+        <span class="c1"># Check consent implementation</span>
+        <span class="k">if</span> <span class="s2">&quot;consent_process&quot;</span> <span class="ow">in</span> <span class="n">implementation_details</span><span class="p">:</span>
+            <span class="n">consent</span> <span class="o">=</span> <span class="n">implementation_details</span><span class="p">[</span><span class="s2">&quot;consent_process&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">consent</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;explicit_neural_data_consent&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+                <span class="n">compliance_result</span><span class="p">[</span><span class="s2">&quot;gaps&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Missing explicit consent for neural data use&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">consent</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;purpose_specification&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+                <span class="n">compliance_result</span><span class="p">[</span><span class="s2">&quot;gaps&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Missing specific purpose in consent&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">consent</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;opt_out_mechanism&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+                <span class="n">compliance_result</span><span class="p">[</span><span class="s2">&quot;recommendations&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Add opt-out mechanism&quot;</span><span class="p">)</span>
+            
+            <span class="bp">self</span><span class="o">.</span><span class="n">compliance_status</span><span class="p">[</span><span class="s2">&quot;consent_verified&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">g</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">compliance_result</span><span class="p">[</span><span class="s2">&quot;gaps&quot;</span><span class="p">]</span> 
+                                                         <span class="k">if</span> <span class="s2">&quot;consent&quot;</span> <span class="ow">in</span> <span class="n">g</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span>
+        
+        <span class="c1"># Check deidentification</span>
+        <span class="k">if</span> <span class="s2">&quot;deidentification&quot;</span> <span class="ow">in</span> <span class="n">implementation_details</span><span class="p">:</span>
+            <span class="n">deident</span> <span class="o">=</span> <span class="n">implementation_details</span><span class="p">[</span><span class="s2">&quot;deidentification&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">deident</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;phi_removal&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+                <span class="n">compliance_result</span><span class="p">[</span><span class="s2">&quot;gaps&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Personal health identifiers not removed&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">deident</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;k_anonymity&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">jurisdiction</span> <span class="o">==</span> <span class="s2">&quot;EU&quot;</span><span class="p">:</span>
+                <span class="n">compliance_result</span><span class="p">[</span><span class="s2">&quot;gaps&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;K-anonymity not implemented (GDPR requirement)&quot;</span><span class="p">)</span>
+            
+            <span class="bp">self</span><span class="o">.</span><span class="n">compliance_status</span><span class="p">[</span><span class="s2">&quot;deidentification_applied&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">g</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">compliance_result</span><span class="p">[</span><span class="s2">&quot;gaps&quot;</span><span class="p">]</span> 
+                                                                 <span class="k">if</span> <span class="s2">&quot;identif&quot;</span> <span class="ow">in</span> <span class="n">g</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span>
+        
+        <span class="c1"># Check access controls</span>
+        <span class="k">if</span> <span class="s2">&quot;access_controls&quot;</span> <span class="ow">in</span> <span class="n">implementation_details</span><span class="p">:</span>
+            <span class="n">access</span> <span class="o">=</span> <span class="n">implementation_details</span><span class="p">[</span><span class="s2">&quot;access_controls&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">access</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;role_based_access&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+                <span class="n">compliance_result</span><span class="p">[</span><span class="s2">&quot;gaps&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Role-based access control not implemented&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">access</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;minimum_necessary&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+                <span class="n">compliance_result</span><span class="p">[</span><span class="s2">&quot;gaps&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Minimum necessary principle not applied&quot;</span><span class="p">)</span>
+            
+            <span class="bp">self</span><span class="o">.</span><span class="n">compliance_status</span><span class="p">[</span><span class="s2">&quot;access_controls_verified&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">g</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">compliance_result</span><span class="p">[</span><span class="s2">&quot;gaps&quot;</span><span class="p">]</span> 
+                                                                 <span class="k">if</span> <span class="s2">&quot;access&quot;</span> <span class="ow">in</span> <span class="n">g</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span>
+        
+        <span class="c1"># Check purpose verification</span>
+        <span class="k">if</span> <span class="s2">&quot;purpose_limitation&quot;</span> <span class="ow">in</span> <span class="n">implementation_details</span><span class="p">:</span>
+            <span class="n">purpose</span> <span class="o">=</span> <span class="n">implementation_details</span><span class="p">[</span><span class="s2">&quot;purpose_limitation&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">purpose</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;purpose_validation&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+                <span class="n">compliance_result</span><span class="p">[</span><span class="s2">&quot;gaps&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;No validation of data access purpose&quot;</span><span class="p">)</span>
+            
+            <span class="bp">self</span><span class="o">.</span><span class="n">compliance_status</span><span class="p">[</span><span class="s2">&quot;purpose_verified&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">([</span><span class="n">g</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">compliance_result</span><span class="p">[</span><span class="s2">&quot;gaps&quot;</span><span class="p">]</span> 
+                                                         <span class="k">if</span> <span class="s2">&quot;purpose&quot;</span> <span class="ow">in</span> <span class="n">g</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span>
+        
+        <span class="c1"># Overall compliance status</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">compliance_result</span><span class="p">[</span><span class="s2">&quot;gaps&quot;</span><span class="p">]:</span>
+            <span class="n">compliance_result</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Compliant&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">compliance_result</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Non-compliant&quot;</span>
+            
+        <span class="k">return</span> <span class="n">compliance_result</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">de_identify_neural_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">neural_data</span><span class="p">,</span> <span class="n">metadata</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;safe_harbor&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        De-identify neural data according to privacy requirements</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        - neural_data: The neural data to de-identify</span>
+<span class="sd">        - metadata: Metadata associated with the neural data</span>
+<span class="sd">        - strategy: De-identification strategy</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">        - de_identified_data: De-identified data</span>
+<span class="sd">        - modified_metadata: Modified metadata</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Copy data to avoid modifying original</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+        <span class="n">modified_data</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">neural_data</span><span class="p">)</span>
+        <span class="n">modified_metadata</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">metadata</span><span class="p">)</span>
+        
+        <span class="c1"># Apply de-identification based on strategy</span>
+        <span class="k">if</span> <span class="n">strategy</span> <span class="o">==</span> <span class="s2">&quot;safe_harbor&quot;</span><span class="p">:</span>
+            <span class="c1"># Remove all explicitly identified PHI from metadata</span>
+            <span class="k">for</span> <span class="n">phi_field</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;mrn&quot;</span><span class="p">,</span> <span class="s2">&quot;dob&quot;</span><span class="p">,</span> <span class="s2">&quot;address&quot;</span><span class="p">,</span> <span class="s2">&quot;phone&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;ssn&quot;</span><span class="p">,</span> 
+                             <span class="s2">&quot;medical_record_number&quot;</span><span class="p">,</span> <span class="s2">&quot;device_id&quot;</span><span class="p">,</span> <span class="s2">&quot;biometric_id&quot;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">phi_field</span> <span class="ow">in</span> <span class="n">modified_metadata</span><span class="p">:</span>
+                    <span class="k">del</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="n">phi_field</span><span class="p">]</span>
+            
+            <span class="c1"># Generate research ID to replace patient ID</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">hashlib</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+            
+            <span class="c1"># Create deterministic but irreversible ID if original ID exists</span>
+            <span class="k">if</span> <span class="s2">&quot;patient_id&quot;</span> <span class="ow">in</span> <span class="n">modified_metadata</span><span class="p">:</span>
+                <span class="n">salt</span> <span class="o">=</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">hex</span>
+                <span class="n">hash_obj</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">((</span><span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;patient_id&quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">salt</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+                <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;research_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">hash_obj</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+                <span class="k">del</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;patient_id&quot;</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;research_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
+            
+            <span class="c1"># Generalize age (5-year intervals) if present</span>
+            <span class="k">if</span> <span class="s2">&quot;age&quot;</span> <span class="ow">in</span> <span class="n">modified_metadata</span><span class="p">:</span>
+                <span class="n">age</span> <span class="o">=</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;</span> <span class="mi">89</span><span class="p">:</span>
+                    <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;age_group&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;90+&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;age_group&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">4</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="k">del</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span>
+            
+            <span class="c1"># Generalize geography to first 3 digits of zip if present</span>
+            <span class="k">if</span> <span class="s2">&quot;zip_code&quot;</span> <span class="ow">in</span> <span class="n">modified_metadata</span><span class="p">:</span>
+                <span class="n">zip_code</span> <span class="o">=</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;zip_code&quot;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">zip_code</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">zip_code</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+                    <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;zip3&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zip_code</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+                <span class="k">del</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;zip_code&quot;</span><span class="p">]</span>
+            
+            <span class="c1"># Modify date precision to year only</span>
+            <span class="k">for</span> <span class="n">date_field</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;recording_date&quot;</span><span class="p">,</span> <span class="s2">&quot;procedure_date&quot;</span><span class="p">,</span> <span class="s2">&quot;admission_date&quot;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="n">date_field</span> <span class="ow">in</span> <span class="n">modified_metadata</span> <span class="ow">and</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="n">date_field</span><span class="p">]:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+                        <span class="n">date_value</span> <span class="o">=</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="n">date_field</span><span class="p">]</span>
+                        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">date_value</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+                            <span class="c1"># Handle different date formats</span>
+                            <span class="k">for</span> <span class="n">fmt</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;%m/</span><span class="si">%d</span><span class="s2">/%Y&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">%d</span><span class="s2">-%m-%Y&quot;</span><span class="p">]:</span>
+                                <span class="k">try</span><span class="p">:</span>
+                                    <span class="n">date_obj</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">date_value</span><span class="p">,</span> <span class="n">fmt</span><span class="p">)</span>
+                                    <span class="n">modified_metadata</span><span class="p">[</span><span class="n">date_field</span> <span class="o">+</span> <span class="s2">&quot;_year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">date_obj</span><span class="o">.</span><span class="n">year</span>
+                                    <span class="k">break</span>
+                                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                                    <span class="k">continue</span>
+                        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">date_value</span><span class="p">,</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">):</span>
+                            <span class="n">modified_metadata</span><span class="p">[</span><span class="n">date_field</span> <span class="o">+</span> <span class="s2">&quot;_year&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">date_value</span><span class="o">.</span><span class="n">year</span>
+                        
+                        <span class="k">del</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="n">date_field</span><span class="p">]</span>
+                    <span class="k">except</span><span class="p">:</span>
+                        <span class="c1"># If date parsing fails, remove the field entirely</span>
+                        <span class="k">del</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="n">date_field</span><span class="p">]</span>
+            
+        <span class="k">elif</span> <span class="n">strategy</span> <span class="o">==</span> <span class="s2">&quot;statistical&quot;</span><span class="p">:</span>
+            <span class="c1"># Statistical de-identification adds noise to the neural data itself</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+            
+            <span class="c1"># Add Gaussian noise to neural data</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">modified_data</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+                <span class="c1"># Calculate signal std</span>
+                <span class="n">signal_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">modified_data</span><span class="p">)</span>
+                <span class="c1"># Add noise with 5% of signal std</span>
+                <span class="n">noise_level</span> <span class="o">=</span> <span class="n">signal_std</span> <span class="o">*</span> <span class="mf">0.05</span>
+                <span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">noise_level</span><span class="p">,</span> <span class="n">modified_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+                <span class="n">modified_data</span> <span class="o">+=</span> <span class="n">noise</span>
+            
+            <span class="c1"># Remove all direct identifiers from metadata</span>
+            <span class="n">direct_identifiers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;mrn&quot;</span><span class="p">,</span> <span class="s2">&quot;dob&quot;</span><span class="p">,</span> <span class="s2">&quot;address&quot;</span><span class="p">,</span> <span class="s2">&quot;phone&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;ssn&quot;</span><span class="p">,</span>
+                                 <span class="s2">&quot;medical_record_number&quot;</span><span class="p">,</span> <span class="s2">&quot;patient_id&quot;</span><span class="p">,</span> <span class="s2">&quot;device_id&quot;</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">direct_identifiers</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">modified_metadata</span><span class="p">:</span>
+                    <span class="k">del</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="n">field</span><span class="p">]</span>
+            
+            <span class="c1"># Generate random research ID</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">uuid</span>
+            <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;research_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
+        
+        <span class="k">elif</span> <span class="n">strategy</span> <span class="o">==</span> <span class="s2">&quot;k_anonymity&quot;</span><span class="p">:</span>
+            <span class="c1"># K-anonymity requires considering the entire dataset, not just one record</span>
+            <span class="c1"># This is a simplified version for demonstration</span>
+            <span class="c1"># Remove direct identifiers</span>
+            <span class="n">direct_identifiers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;mrn&quot;</span><span class="p">,</span> <span class="s2">&quot;dob&quot;</span><span class="p">,</span> <span class="s2">&quot;address&quot;</span><span class="p">,</span> <span class="s2">&quot;phone&quot;</span><span class="p">,</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span> <span class="s2">&quot;ssn&quot;</span><span class="p">,</span>
+                                 <span class="s2">&quot;medical_record_number&quot;</span><span class="p">,</span> <span class="s2">&quot;patient_id&quot;</span><span class="p">,</span> <span class="s2">&quot;device_id&quot;</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">direct_identifiers</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">modified_metadata</span><span class="p">:</span>
+                    <span class="k">del</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="n">field</span><span class="p">]</span>
+            
+            <span class="c1"># Generalize quasi-identifiers</span>
+            <span class="k">if</span> <span class="s2">&quot;age&quot;</span> <span class="ow">in</span> <span class="n">modified_metadata</span><span class="p">:</span>
+                <span class="n">age</span> <span class="o">=</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span>
+                <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;age_range&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="p">(</span><span class="n">age</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">9</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="k">del</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;age&quot;</span><span class="p">]</span>
+            
+            <span class="k">if</span> <span class="s2">&quot;zip_code&quot;</span> <span class="ow">in</span> <span class="n">modified_metadata</span><span class="p">:</span>
+                <span class="n">zip_code</span> <span class="o">=</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;zip_code&quot;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">zip_code</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">zip_code</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">:</span>
+                    <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">zip_code</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+                <span class="k">del</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;zip_code&quot;</span><span class="p">]</span>
+            
+            <span class="k">if</span> <span class="s2">&quot;gender&quot;</span> <span class="ow">in</span> <span class="n">modified_metadata</span><span class="p">:</span>
+                <span class="c1"># In some cases, even gender might need to be removed for k-anonymity</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">privacy_controls</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;high_sensitivity&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+                    <span class="k">del</span> <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;gender&quot;</span><span class="p">]</span>
+        
+        <span class="c1"># Mark data as de-identified</span>
+        <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;deidentified&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;deidentification_strategy&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">strategy</span>
+        <span class="n">modified_metadata</span><span class="p">[</span><span class="s2">&quot;deidentification_date&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_current_date_string</span><span class="p">()</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">compliance_status</span><span class="p">[</span><span class="s2">&quot;deidentification_applied&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+        
+        <span class="k">return</span> <span class="n">modified_data</span><span class="p">,</span> <span class="n">modified_metadata</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_current_date_string</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get current date as string&quot;&quot;&quot;</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">datetime</span>
+        <span class="k">return</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_privacy_impact_assessment</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a privacy impact assessment report</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">        - pia_report: Privacy Impact Assessment report</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pia_report</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;data_type&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_type</span><span class="p">,</span>
+            <span class="s2">&quot;jurisdiction&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">jurisdiction</span><span class="p">,</span>
+            <span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_current_date_string</span><span class="p">(),</span>
+            <span class="s2">&quot;privacy_risks&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;mitigation_measures&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;compliance_status&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">compliance_status</span>
+        <span class="p">}</span>
+        
+        <span class="c1"># Identify privacy risks based on data type</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_type</span> <span class="o">==</span> <span class="s2">&quot;clinical_eeg&quot;</span><span class="p">:</span>
+            <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;privacy_risks&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+                <span class="s2">&quot;Potential revelation of neurological conditions&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Pattern analysis could reveal cognitive state&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Linkage to other clinical data increases reidentification risk&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Longitudinal data may show progression of condition&quot;</span>
+            <span class="p">])</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_type</span> <span class="o">==</span> <span class="s2">&quot;fmri_diagnostic&quot;</span><span class="p">:</span>
+            <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;privacy_risks&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+                <span class="s2">&quot;High spatial resolution may reveal unique brain anatomy&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Potential for emotional/cognitive state detection&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Certain conditions create distinct activation patterns&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Research findings may reveal unexpected conditions&quot;</span>
+            <span class="p">])</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_type</span> <span class="o">==</span> <span class="s2">&quot;neural_implant&quot;</span><span class="p">:</span>
+            <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;privacy_risks&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+                <span class="s2">&quot;Continuous monitoring generates comprehensive profile&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Real-time data could reveal current thoughts/intentions&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Implant identifiers create persistent tracking risk&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Wireless transmission introduces interception risk&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Integration with other health systems increases exposure&quot;</span>
+            <span class="p">])</span>
+        
+        <span class="c1"># Propose mitigation measures based on risks and controls</span>
+        <span class="k">if</span> <span class="s2">&quot;Potential revelation of neurological conditions&quot;</span> <span class="ow">in</span> <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;privacy_risks&quot;</span><span class="p">]:</span>
+            <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;mitigation_measures&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Apply differential privacy to aggregated data analysis&quot;</span><span class="p">)</span>
+            <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;mitigation_measures&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Limit feature extraction to relevant biomarkers only&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="s2">&quot;cognitive state&quot;</span> <span class="ow">in</span> <span class="n">risk</span> <span class="k">for</span> <span class="n">risk</span> <span class="ow">in</span> <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;privacy_risks&quot;</span><span class="p">]):</span>
+            <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;mitigation_measures&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Obtain explicit consent for cognitive state analysis&quot;</span><span class="p">)</span>
+            <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;mitigation_measures&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Implement time-limited data retention&quot;</span><span class="p">)</span>
+            <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;mitigation_measures&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Restrict raw data access to treating clinicians only&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="s2">&quot;reidentification&quot;</span> <span class="ow">in</span> <span class="n">risk</span> <span class="k">for</span> <span class="n">risk</span> <span class="ow">in</span> <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;privacy_risks&quot;</span><span class="p">]):</span>
+            <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;mitigation_measures&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Implement k-anonymity for patient cohorts&quot;</span><span class="p">)</span>
+            <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;mitigation_measures&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Maintain separation between research and clinical data&quot;</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="s2">&quot;tracking&quot;</span> <span class="ow">in</span> <span class="n">risk</span> <span class="k">for</span> <span class="n">risk</span> <span class="ow">in</span> <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;privacy_risks&quot;</span><span class="p">]):</span>
+            <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;mitigation_measures&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Use rotating identifiers for measurement sessions&quot;</span><span class="p">)</span>
+            <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;mitigation_measures&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Create separate secure enclave for identity linking&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Additional jurisdiction-specific requirements</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">jurisdiction</span> <span class="o">==</span> <span class="s2">&quot;EU&quot;</span><span class="p">:</span>
+            <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;mitigation_measures&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Implement data portability mechanism&quot;</span><span class="p">)</span>
+            <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;mitigation_measures&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Establish process for right to be forgotten requests&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">jurisdiction</span> <span class="o">==</span> <span class="s2">&quot;US&quot;</span><span class="p">:</span>
+            <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;mitigation_measures&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;HIPAA-compliant authorization for data sharing&quot;</span><span class="p">)</span>
+            <span class="n">pia_report</span><span class="p">[</span><span class="s2">&quot;mitigation_measures&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Business Associate Agreements for all data processors&quot;</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">pia_report</span>
+</pre></div>
+</div>
+<section id="special-considerations-for-healthcare-neural-data">
+<h4>15.1.0.1 Special Considerations for Healthcare Neural Data<a class="headerlink" href="#special-considerations-for-healthcare-neural-data" title="Link to this heading">#</a></h4>
+<p>Healthcare applications introduce specific privacy challenges beyond those in research contexts:</p>
+<ol class="arabic simple">
+<li><p><strong>Diagnostic Disclosure Risk</strong>:
+Neural data analysis might reveal conditions the patient doesn’t know about, creating difficult disclosure decisions. For example, an AI system analyzing EEG data for epilepsy might detect early signs of dementia. Healthcare systems must establish clear protocols for handling such incidental findings.</p></li>
+<li><p><strong>Insurance Discrimination Concerns</strong>:
+Neural biomarkers for cognitive decline or psychiatric conditions could potentially be used for insurance discrimination if inadequately protected. Healthcare NeuroAI systems should implement technical safeguards to prevent unauthorized access to predictive indicators.</p></li>
+<li><p><strong>Clinical Decision Audit Trails</strong>:
+When neural data influences clinical decisions, comprehensive, tamper-proof audit trails must document which data points and algorithms contributed to recommendations. This is critical for both clinical accountability and potential medical-legal reviews.</p></li>
+<li><p><strong>Shared Decision Models</strong>:
+Healthcare institutions may benefit from shared machine learning models trained across institutions, but this creates privacy risks when neural data characteristics might be memorized. Federated learning approaches and differential privacy techniques are essential for such collaborations.</p></li>
+<li><p><strong>Long-term Data Governance</strong>:
+As patients’ neural data accumulates over years or decades, governance policies must adapt to changing regulations, evolving consent preferences, and new potential uses of historical data.</p></li>
+</ol>
+</section>
+<section id="regulatory-frameworks-for-healthcare-data">
+<h4>15.1.0.2 Regulatory Frameworks for Healthcare Data<a class="headerlink" href="#regulatory-frameworks-for-healthcare-data" title="Link to this heading">#</a></h4>
+<p>Healthcare NeuroAI must navigate complex regulatory environments:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Jurisdiction</p></th>
+<th class="head"><p>Key Regulations</p></th>
+<th class="head"><p>Neural Data Implications</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>United States</p></td>
+<td><p>HIPAA Privacy Rule</p></td>
+<td><p>Neural data is Protected Health Information (PHI) requiring authorization for non-treatment uses</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>FDA (SaMD/SiMD)</p></td>
+<td><p>Neural algorithms for diagnosis/treatment are regulated as Software as Medical Device</p></td>
+</tr>
+<tr class="row-even"><td><p>European Union</p></td>
+<td><p>GDPR</p></td>
+<td><p>Neural data classified as special category health data with explicit consent requirements</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>MDR/IVDR</p></td>
+<td><p>Neural-based diagnostic systems require clinical evidence and risk management</p></td>
+</tr>
+<tr class="row-even"><td><p>United Kingdom</p></td>
+<td><p>Data Protection Act</p></td>
+<td><p>Enhanced requirements for automated processing of neural data</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>UK MHRA</p></td>
+<td><p>Post-Brexit regulatory pathway for NeuroAI medical devices</p></td>
+</tr>
+<tr class="row-even"><td><p>Canada</p></td>
+<td><p>PIPEDA/Provincial</p></td>
+<td><p>Health information privacy varies by province with specific rules for electronic systems</p></td>
+</tr>
+<tr class="row-odd"><td><p>International</p></td>
+<td><p>ISO 27001/27701</p></td>
+<td><p>Information security frameworks relevant to neural data protection</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>ISO/IEC 62304</p></td>
+<td><p>Software lifecycle processes for neural software with medical functions</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Healthcare institutions implementing NeuroAI should appoint specialized privacy officers familiar with the unique challenges of neural data to ensure these complex regulatory requirements are met.</p>
+</section>
+</section>
 <section id="neural-privacy-frameworks">
 <h3>15.1.1 Neural Privacy Frameworks<a class="headerlink" href="#neural-privacy-frameworks" title="Link to this heading">#</a></h3>
 <p>Implementing robust privacy safeguards is crucial for brain-computer interfaces (BCIs) and neural data systems. Here’s an example framework for neural data privacy protection:</p>
@@ -1519,6 +1983,26 @@ document.write(`
 <li><p><strong>Inclusivity</strong> - Include diverse stakeholders throughout development</p></li>
 </ol>
 <p>Implementing these principles requires technical approaches (like differential privacy and explainable models) as well as governance frameworks and inclusive development processes. Only by addressing ethical considerations throughout the entire development lifecycle can we ensure that NeuroAI benefits humanity while respecting fundamental rights and values.</p>
+<div style="page-break-before:always;"></div>
+<div class="important admonition">
+<p class="admonition-title">Chapter Summary</p>
+<p>In this chapter, we explored:</p>
+<ul class="simple">
+<li><p><strong>Ethical frameworks</strong> specifically tailored to the unique challenges of NeuroAI</p></li>
+<li><p><strong>Neural privacy concerns</strong> and methods like differential privacy to protect brain data</p></li>
+<li><p><strong>Healthcare data privacy considerations</strong> for applying NeuroAI in clinical settings, with specific implementation frameworks for HIPAA, GDPR, and other regulatory requirements</p></li>
+<li><p><strong>Special privacy requirements</strong> for different types of neural healthcare data including EEG, fMRI, and neural implant data</p></li>
+<li><p><strong>Bias assessment frameworks</strong> to identify and mitigate unfairness in NeuroAI systems</p></li>
+<li><p><strong>Transparency and explainability</strong> approaches for making black-box models interpretable</p></li>
+<li><p><strong>Dual-use concerns</strong> and methodologies for assessing potential misuse of technologies</p></li>
+<li><p><strong>Responsible innovation guidelines</strong> that integrate ethics throughout development cycles</p></li>
+<li><p><strong>Ethical impact assessments</strong> to systematically evaluate potential harms and benefits</p></li>
+<li><p><strong>Case studies</strong> examining ethical challenges in brain-computer interfaces and predictive models</p></li>
+<li><p><strong>Consciousness considerations</strong> for increasingly brain-like artificial systems</p></li>
+<li><p><strong>Key ethical principles</strong> that should guide the development of NeuroAI technologies</p></li>
+</ul>
+<p>This chapter provides a comprehensive framework for addressing the profound ethical questions raised by technologies that bridge neuroscience and artificial intelligence, emphasizing how ethical considerations are not obstacles but essential components of responsible innovation in this rapidly evolving field. The healthcare-specific guidance adds practical implementation strategies for clinical applications where privacy protections are particularly critical due to sensitive patient neural data.</p>
+</div>
 </section>
 </section>
 </section>
@@ -1587,9 +2071,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-goals">15.0 Chapter Goals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethical-frameworks-for-neuroai">Ethical Frameworks for NeuroAI</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-and-brain-data">15.1 Privacy and Brain Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#healthcare-data-privacy-considerations">15.1.0 Healthcare Data Privacy Considerations</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#special-considerations-for-healthcare-neural-data">15.1.0.1 Special Considerations for Healthcare Neural Data</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#regulatory-frameworks-for-healthcare-data">15.1.0.2 Regulatory Frameworks for Healthcare Data</a></li>
+</ul>
+</li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-privacy-frameworks">15.1.1 Neural Privacy Frameworks</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differential-privacy-for-neural-data">15.1.2 Differential Privacy for Neural Data</a></li>
 </ul>

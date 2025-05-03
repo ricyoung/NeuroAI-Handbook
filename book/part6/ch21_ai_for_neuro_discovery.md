@@ -1,6 +1,6 @@
 # Chapter 21: AI for Neuroscience Discovery
 
-This chapter examines how artificial intelligence is accelerating neuroscience research and enabling new discoveries about brain function and organization. While neuroscience has heavily inspired AI, AI is now increasingly being used to advance neuroscience in a virtuous cycle of innovation.
+This chapter examines how artificial intelligence is accelerating neuroscience research and enabling new discoveries about brain function and organization. While neuroscience has heavily inspired AI, AI is now increasingly being used to advance neuroscience in a virtuous cycle of innovation. This includes not only fundamental research but also clinical applications that translate neuroscience insights into healthcare solutions for neurological disorders and conditions.
 
 <div style="page-break-before:always;"></div>
 
@@ -10,6 +10,7 @@ This chapter examines how artificial intelligence is accelerating neuroscience r
 - Learn how AI assists in connectome reconstruction and cellular morphology analysis
 - Discover how machine learning helps develop theories of brain function
 - Implement neural data analysis tools using deep learning techniques
+- Apply AI techniques to clinical neuroimaging for disease diagnosis and treatment planning
 
 ## 21.1 Neural Data Analysis with Deep Learning
 
@@ -1523,6 +1524,10 @@ def neural_data_analysis_pipeline(neural_data_file):
 - **AI techniques are transforming neural data analysis**, enabling the extraction of meaningful patterns from complex recordings of brain activity.
 
 - **Deep learning models make powerful decoders** that can predict behavior, perception, and cognitive states from neural activity.
+
+- **Clinical neuroimaging applications** are leveraging AI for more accurate diagnosis and treatment of neurological disorders, enabling earlier detection of conditions like Alzheimer's disease and more precise surgical planning for epilepsy.
+
+- **Multimodal integration of clinical data** with AI techniques provides comprehensive views of neurological conditions, combining structural, functional, genetic, and behavioral information for personalized medicine approaches.
 
 - **Dimensionality reduction reveals low-dimensional neural manifolds** that capture the essential dynamics of neural population activity.
 

@@ -1,0 +1,115 @@
+2025-05-03 14:50:27 - INFO - HEADER: NeuroAI Handbook - Final Merge
+2025-05-03 14:50:27 - INFO - Log file created at: /Volumes/data_bolt/_github/NeuroAI-Handbook/logs/merge_final_20250503_145027.log
+2025-05-03 14:50:27 - INFO - HEADER: CREATING NEUROAI HANDBOOK
+2025-05-03 14:50:27 - INFO - Identifying component files
+2025-05-03 14:50:27 - INFO - WARNING: Chapter order issue - ch23 comes before ch24 in STRUCTURE
+2025-05-03 14:50:27 - INFO -          Please check the STRUCTURE list to ensure ch24 comes before ch23
+2025-05-03 14:50:27 - INFO - Found supporting file: 00_cover.pdf
+2025-05-03 14:50:27 - INFO - Found supporting file: 01_copyright.pdf
+2025-05-03 14:50:27 - INFO - Found supporting file: 02_toc.pdf
+2025-05-03 14:50:27 - INFO - Found supporting file: acknowledgments.pdf
+2025-05-03 14:50:27 - INFO - Found supporting file: about.pdf
+2025-05-03 14:50:27 - INFO - Found supporting file: partI_divider.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 01_ch01_intro.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 02_ch02_neuro_foundations.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 03_ch03_spatial_navigation.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 04_ch04_perception_pipeline.pdf
+2025-05-03 14:50:27 - INFO - Found supporting file: partII_divider.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 05_ch05_brain_networks.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 06_ch06_neurostimulation.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 07_ch07_information_theory.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 08_ch08_data_science_pipeline.pdf
+2025-05-03 14:50:27 - INFO - Found supporting file: partIII_divider.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 09_ch09_ml_foundations.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 10_ch10_deep_learning.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 11_ch11_sequence_models.pdf
+2025-05-03 14:50:27 - INFO - Found supporting file: partIV_divider.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 12_ch12_large_language_models.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 13_ch13_multimodal_models.pdf
+2025-05-03 14:50:27 - INFO - Found supporting file: partV_divider.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 15_ch15_ethical_ai.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 16_ch16_future_directions.pdf
+2025-05-03 14:50:27 - INFO - Found supporting file: partVI_divider.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 17_ch17_bci_human_ai_interfaces.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 18_ch18_neuromorphic_computing.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 19_ch19_cognitive_neuro_dl.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 20_ch20_case_studies.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 21_ch21_ai_for_neuro_discovery.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 22_ch22_embodied_ai_robotics.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 23_ch23_lifelong_learning.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: 24_ch24_quantum_computing_neuroai.pdf
+2025-05-03 14:50:27 - INFO - Found supporting file: partVII_divider.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: A1_glossary.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: A2_math_python_refresher.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: A3_dataset_catalogue.pdf
+2025-05-03 14:50:27 - INFO - Found chapter file: A4_colab_setup.pdf
+2025-05-03 14:50:27 - INFO - Creating comprehensive PDF...
+2025-05-03 14:50:27 - INFO - Adding file: 00_cover.pdf
+2025-05-03 14:50:27 - INFO - Adding file: 01_copyright.pdf
+2025-05-03 14:50:27 - INFO - Adding file: 02_toc.pdf
+2025-05-03 14:50:27 - INFO - Adding file: acknowledgments.pdf
+2025-05-03 14:50:27 - INFO - Adding file: about.pdf
+2025-05-03 14:50:27 - INFO - Adding file: partI_divider.pdf
+2025-05-03 14:50:27 - INFO - Adding file: 01_ch01_intro.pdf
+2025-05-03 14:50:28 - INFO - Adding file: 02_ch02_neuro_foundations.pdf
+2025-05-03 14:50:28 - INFO - Adding file: 03_ch03_spatial_navigation.pdf
+2025-05-03 14:50:28 - INFO - Adding file: 04_ch04_perception_pipeline.pdf
+2025-05-03 14:50:28 - INFO - Adding file: partII_divider.pdf
+2025-05-03 14:50:28 - INFO - Adding file: 05_ch05_brain_networks.pdf
+2025-05-03 14:50:28 - INFO - Adding file: 06_ch06_neurostimulation.pdf
+2025-05-03 14:50:28 - INFO - Adding file: 07_ch07_information_theory.pdf
+2025-05-03 14:50:28 - INFO - Adding file: 08_ch08_data_science_pipeline.pdf
+2025-05-03 14:50:28 - INFO - Adding file: partIII_divider.pdf
+2025-05-03 14:50:28 - INFO - Adding file: 09_ch09_ml_foundations.pdf
+2025-05-03 14:50:28 - INFO - Adding file: 10_ch10_deep_learning.pdf
+2025-05-03 14:50:29 - INFO - Adding file: 11_ch11_sequence_models.pdf
+2025-05-03 14:50:29 - INFO - Adding file: partIV_divider.pdf
+2025-05-03 14:50:29 - INFO - Adding file: 12_ch12_large_language_models.pdf
+2025-05-03 14:50:29 - INFO - Adding file: 13_ch13_multimodal_models.pdf
+2025-05-03 14:50:29 - INFO - Adding file: partV_divider.pdf
+2025-05-03 14:50:29 - INFO - Adding file: 15_ch15_ethical_ai.pdf
+2025-05-03 14:50:29 - INFO - Adding file: 16_ch16_future_directions.pdf
+2025-05-03 14:50:29 - INFO - Adding file: partVI_divider.pdf
+2025-05-03 14:50:29 - INFO - Adding file: 17_ch17_bci_human_ai_interfaces.pdf
+2025-05-03 14:50:29 - INFO - Adding file: 18_ch18_neuromorphic_computing.pdf
+2025-05-03 14:50:29 - INFO - Adding file: 19_ch19_cognitive_neuro_dl.pdf
+2025-05-03 14:50:29 - INFO - Adding file: 20_ch20_case_studies.pdf
+2025-05-03 14:50:30 - INFO - Adding file: 21_ch21_ai_for_neuro_discovery.pdf
+2025-05-03 14:50:30 - INFO - Adding file: 22_ch22_embodied_ai_robotics.pdf
+2025-05-03 14:50:30 - INFO - Adding file: 23_ch23_lifelong_learning.pdf
+2025-05-03 14:50:30 - INFO - Adding file: 24_ch24_quantum_computing_neuroai.pdf
+2025-05-03 14:50:30 - INFO - Adding file: partVII_divider.pdf
+2025-05-03 14:50:30 - INFO - Adding file: A1_glossary.pdf
+2025-05-03 14:50:30 - INFO - Adding file: A2_math_python_refresher.pdf
+2025-05-03 14:50:30 - INFO - Adding file: A3_dataset_catalogue.pdf
+2025-05-03 14:50:30 - INFO - Adding file: A4_colab_setup.pdf
+2025-05-03 14:50:31 - INFO - Adding page numbers to PDF...
+2025-05-03 14:50:31 - INFO - Adding page numbers to PDF: temp_merged.pdf
+2025-05-03 14:50:31 - INFO - Copying 1121 pages from source document
+2025-05-03 14:50:34 - INFO - Adding page numbers to 1118 pages, starting after page 3
+2025-05-03 14:50:34 - INFO - Processed 50 pages...
+2025-05-03 14:50:34 - INFO - Processed 100 pages...
+2025-05-03 14:50:34 - INFO - Processed 150 pages...
+2025-05-03 14:50:34 - INFO - Processed 200 pages...
+2025-05-03 14:50:34 - INFO - Processed 250 pages...
+2025-05-03 14:50:34 - INFO - Processed 300 pages...
+2025-05-03 14:50:34 - INFO - Processed 350 pages...
+2025-05-03 14:50:34 - INFO - Processed 400 pages...
+2025-05-03 14:50:34 - INFO - Processed 450 pages...
+2025-05-03 14:50:34 - INFO - Processed 500 pages...
+2025-05-03 14:50:34 - INFO - Processed 550 pages...
+2025-05-03 14:50:34 - INFO - Processed 600 pages...
+2025-05-03 14:50:34 - INFO - Processed 650 pages...
+2025-05-03 14:50:35 - INFO - Processed 700 pages...
+2025-05-03 14:50:35 - INFO - Processed 750 pages...
+2025-05-03 14:50:35 - INFO - Processed 800 pages...
+2025-05-03 14:50:35 - INFO - Processed 850 pages...
+2025-05-03 14:50:35 - INFO - Processed 900 pages...
+2025-05-03 14:50:35 - INFO - Processed 950 pages...
+2025-05-03 14:50:35 - INFO - Processed 1000 pages...
+2025-05-03 14:50:35 - INFO - Processed 1050 pages...
+2025-05-03 14:50:35 - INFO - Processed 1100 pages...
+2025-05-03 14:50:35 - INFO - Writing file with page numbers to: /Volumes/data_bolt/_github/NeuroAI-Handbook/pdf_exports/complete_handbook/neuroai_handbook.pdf
+2025-05-03 14:50:36 - INFO - HEADER: BUILD COMPLETE
+2025-05-03 14:50:36 - INFO - PDF creation completed successfully
+2025-05-03 14:50:36 - INFO - PDF creation completed successfully
