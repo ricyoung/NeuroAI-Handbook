@@ -1,4 +1,4 @@
-# Cognitive Neuroscience and Deep Learning
+# Chapter 19: Cognitive Neuroscience and Deep Learning
 
 <div style="page-break-before:always;"></div>
 
