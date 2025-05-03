@@ -198,6 +198,32 @@ We welcome contributions to the NeuroAI Handbook! Here's how you can help:
 - Test any code examples before submitting
 - Update relevant documentation when adding features
 
+## Maintenance and Troubleshooting
+
+### SVG Figure Maintenance
+
+When creating or editing SVG figures, be aware of these common issues:
+
+1. **XML Escaping**: Always properly escape special characters in SVG files:
+   - Replace `&` with `&amp;`
+   - Replace `<` with `&lt;`
+   - Replace `>` with `&gt;`
+   - Replace `"` with `&quot;`
+
+2. **SVG Validation**: Consider validating SVG files with a tool like [W3C Validator](https://validator.w3.org/) before including them in the book.
+
+3. **Troubleshooting Display Issues**: If a figure doesn't display correctly:
+   - Check for unescaped special characters (especially `&` in text elements)
+   - Verify that fonts used in the SVG are standard or embedded
+   - Check for invalid XML in the SVG file
+
+### Interactive Content Requirements
+
+For running the interactive Jupyter notebooks:
+- Ensure all required packages are installed (`torch`, `matplotlib`, etc.)
+- Some notebooks require specific Python packages that need to be installed manually
+- Check `book/requirements.txt` for core dependencies
+
 ## License
 
 This project is licensed under multiple licenses:
