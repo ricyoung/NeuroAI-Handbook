@@ -33,7 +33,8 @@
       "Bash(then echo \"Colab setup page built successfully!\")",
       "Bash(touch:*)",
       "WebFetchTool(domain:www.nature.com)",
-      "Bash(bash:*)"
+      "Bash(bash:*)",
+      "Bash(jupyter-book clean:*)"
     ],
     "deny": []
   }
