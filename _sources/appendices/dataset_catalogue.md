@@ -1411,3 +1411,979 @@ plt.show()
 ```
 
 These examples and resources should provide a comprehensive starting point for working with a wide range of neuroscience and AI datasets.
+
+## B.5 Neurological and Neurodegenerative Disease Datasets
+
+This section catalogs datasets specifically focused on neurological and neurodegenerative diseases, which are valuable resources for developing diagnostic, prognostic, and treatment monitoring AI systems.
+
+### Alzheimer's Disease
+
+#### Alzheimer's Disease Neuroimaging Initiative (ADNI)
+- **Description**: Longitudinal multimodal data to track Alzheimer's progression
+- **Contents**: MRI, PET, cognitive assessments, biospecimen data from 800+ subjects
+- **Access**: http://adni.loni.usc.edu/ (requires application)
+- **Documentation**: http://adni.loni.usc.edu/methods/
+
+```python
+# Example: Working with ADNI MRI data
+# Note: You need approved access to ADNI to download data
+import nibabel as nib
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+
+def visualize_adni_mri(filepath):
+    """Visualize a 3D MRI from ADNI dataset."""
+    # Load MRI volume
+    img = nib.load(filepath)
+    data = img.get_fdata()
+    
+    # Get middle slices for each plane
+    x_mid = data.shape[0] // 2
+    y_mid = data.shape[1] // 2
+    z_mid = data.shape[2] // 2
+    
+    # Create a figure with three subplots
+    fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+    
+    # Sagittal view (YZ plane)
+    axes[0].imshow(data[x_mid, :, :].T, cmap='gray', origin='lower')
+    axes[0].set_title('Sagittal View')
+    
+    # Coronal view (XZ plane)
+    axes[1].imshow(data[:, y_mid, :].T, cmap='gray', origin='lower')
+    axes[1].set_title('Coronal View')
+    
+    # Axial view (XY plane)
+    axes[2].imshow(data[:, :, z_mid].T, cmap='gray', origin='lower')
+    axes[2].set_title('Axial View')
+    
+    plt.tight_layout()
+    plt.show()
+
+# Example of preprocessing ADNI data for machine learning
+def preprocess_adni_for_ml(mri_files, diagnoses):
+    """
+    Preprocess ADNI MRI files for ML classification.
+    
+    Parameters:
+    mri_files: List of paths to MRI files
+    diagnoses: List of diagnoses (e.g., 'CN', 'MCI', 'AD')
+    
+    Returns:
+    features: Extracted features for each MRI
+    labels: Corresponding diagnostic labels
+    """
+    # For demonstration - would require actual data
+    features = []
+    
+    for mri_file in mri_files:
+        # Load MRI
+        img = nib.load(mri_file)
+        data = img.get_fdata()
+        
+        # Example feature extraction (hippocampal ROI)
+        # This is simplified - real implementation would use proper segmentation
+        x_range = slice(90, 110)  # Example hippocampal coordinates
+        y_range = slice(60, 80)
+        z_range = slice(60, 80)
+        
+        hippocampus_roi = data[x_range, y_range, z_range]
+        
+        # Extract features (e.g., mean, variance, etc.)
+        features.append([
+            np.mean(hippocampus_roi),
+            np.var(hippocampus_roi),
+            np.max(hippocampus_roi),
+            np.min(hippocampus_roi)
+        ])
+    
+    # Convert diagnoses to numeric labels
+    label_map = {'CN': 0, 'MCI': 1, 'AD': 2}  # Control, Mild Cognitive Impairment, Alzheimer's
+    labels = [label_map[d] for d in diagnoses]
+    
+    return np.array(features), np.array(labels)
+
+# Usage example (pseudocode)
+# mri_files = ['/path/to/adni/001.nii', '/path/to/adni/002.nii', ...]
+# diagnoses = ['CN', 'MCI', 'AD', ...]
+# features, labels = preprocess_adni_for_ml(mri_files, diagnoses)
+```
+
+#### OASIS (Open Access Series of Imaging Studies)
+- **Description**: Free datasets for brain aging and Alzheimer's research
+- **Contents**: MRI scans, demographics, clinical data for 400+ subjects
+- **Access**: https://www.oasis-brains.org/
+- **Documentation**: https://www.oasis-brains.org/#data
+
+```python
+# Example: Downloading and visualizing OASIS-3 data
+# !pip install nilearn nibabel matplotlib
+import os
+import nibabel as nib
+import numpy as np
+import matplotlib.pyplot as plt
+from nilearn import datasets, plotting
+
+# OASIS data can be accessed via nilearn
+oasis_dataset = datasets.fetch_oasis_vbm(n_subjects=5)
+print(f"Dataset directory: {oasis_dataset.dirname}")
+print(f"Gray matter anatomy: {len(oasis_dataset.gray_matter_maps)}")
+
+# Visualize a gray matter map
+gm_img = oasis_dataset.gray_matter_maps[0]
+plotting.plot_img(gm_img, title="OASIS Gray Matter Map")
+plt.show()
+
+# Plot the first 5 subject MRIs
+fig, axes = plt.subplots(1, min(5, len(oasis_dataset.gray_matter_maps)), figsize=(15, 5))
+
+for i, gm_file in enumerate(oasis_dataset.gray_matter_maps[:5]):
+    # Load the image
+    img = nib.load(gm_file)
+    # Get a slice at the middle of the 3rd dimension
+    data = img.get_fdata()
+    slice_idx = data.shape[2] // 2
+    # Plot on the corresponding axis
+    axes[i].imshow(data[:, :, slice_idx], cmap='gray')
+    axes[i].set_title(f'Subject {i+1}')
+    axes[i].axis('off')
+
+plt.tight_layout()
+plt.show()
+
+# Plot clinical information
+y = oasis_dataset.ext_vars['y']  # Mini-Mental State Examination (MMSE) scores
+age = oasis_dataset.ext_vars['age']
+plt.figure(figsize=(10, 6))
+plt.scatter(age, y)
+plt.xlabel('Age')
+plt.ylabel('MMSE Score')
+plt.title('Age vs. Cognitive Function in OASIS Dataset')
+plt.grid(True)
+plt.show()
+```
+
+### Parkinson's Disease
+
+#### Parkinson's Progression Markers Initiative (PPMI)
+- **Description**: Comprehensive dataset for Parkinson's disease biomarkers
+- **Contents**: Clinical, imaging, genetic, and biospecimen data from 1,400+ subjects
+- **Access**: https://www.ppmi-info.org/ (requires application)
+- **Documentation**: https://www.ppmi-info.org/access-data-specimens/
+
+```python
+# Example: Analyzing PPMI clinical data
+# Note: You need approved access to PPMI to download data
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+def analyze_ppmi_clinical(clinical_file):
+    """Analyze PPMI clinical data from CSV file."""
+    # Load clinical data
+    df = pd.read_csv(clinical_file)
+    
+    # Example exploratory analysis
+    print(f"Number of participants: {df['PATNO'].nunique()}")
+    print(f"Average age: {df['AGE'].mean():.1f} years")
+    
+    # UPDRS (Unified Parkinson's Disease Rating Scale) analysis
+    if 'UPDRS_TOT' in df.columns:
+        # Distribution of UPDRS scores
+        plt.figure(figsize=(10, 6))
+        sns.histplot(df['UPDRS_TOT'].dropna(), kde=True)
+        plt.xlabel('Total UPDRS Score')
+        plt.ylabel('Frequency')
+        plt.title('Distribution of UPDRS Scores in PPMI Dataset')
+        plt.show()
+    
+    # Compare scores between different disease stages
+    if 'DIAGNOSIS' in df.columns and 'UPDRS_TOT' in df.columns:
+        plt.figure(figsize=(10, 6))
+        sns.boxplot(x='DIAGNOSIS', y='UPDRS_TOT', data=df)
+        plt.xlabel('Diagnosis Group')
+        plt.ylabel('UPDRS Score')
+        plt.title('UPDRS Scores by Diagnosis Group')
+        plt.show()
+    
+    return df
+
+# Example of accessing DaTscan images
+def visualize_datscan(datscan_file):
+    """Visualize a DaTscan SPECT image from PPMI."""
+    # Load DaTscan image
+    img = nib.load(datscan_file)
+    data = img.get_fdata()
+    
+    # Get middle slice
+    slice_idx = data.shape[2] // 2
+    
+    # Display
+    plt.figure(figsize=(8, 8))
+    plt.imshow(data[:, :, slice_idx], cmap='hot')
+    plt.colorbar(label='Intensity')
+    plt.title('DaTscan SPECT Image (Axial Slice)')
+    plt.axis('off')
+    plt.show()
+
+# Usage example (pseudocode)
+# clinical_data = analyze_ppmi_clinical('/path/to/ppmi/clinical.csv')
+# visualize_datscan('/path/to/ppmi/datscan.nii')
+```
+
+#### PhysioNet Freeze-Gait in Parkinson's Disease
+- **Description**: Gait data for patients with and without freezing of gait
+- **Contents**: Accelerometer data from 16 PD patients during various activities
+- **Access**: https://physionet.org/content/freeze-gait-pd/1.0.0/
+- **Documentation**: https://physionet.org/content/freeze-gait-pd/1.0.0/
+
+```python
+# Example: Analyzing freezing of gait data from PhysioNet
+# !pip install wfdb
+import wfdb
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import signal
+
+# Path to the dataset (update with your path or download)
+# data_path = '/path/to/physionet/freeze-gait-pd/1.0.0/'
+data_path = 'freeze-gait-pd/1.0.0/'
+
+def analyze_freeze_gait(record_name, data_path):
+    """Analyze a freeze of gait recording."""
+    try:
+        # Load the data
+        record = wfdb.rdrecord(data_path + record_name)
+        signals = record.p_signal
+        
+        # Extract the acceleration channels
+        # Typically channels are x, y, z acceleration
+        x_acc = signals[:, 0]
+        y_acc = signals[:, 1]
+        z_acc = signals[:, 2]
+        
+        # Time vector
+        fs = record.fs  # Sampling frequency
+        t = np.arange(len(x_acc)) / fs
+        
+        # Compute the frequency spectrum
+        f, Pxx_x = signal.welch(x_acc, fs, nperseg=1024)
+        _, Pxx_y = signal.welch(y_acc, fs, nperseg=1024)
+        _, Pxx_z = signal.welch(z_acc, fs, nperseg=1024)
+        
+        # Plot time domain signals
+        plt.figure(figsize=(15, 10))
+        
+        plt.subplot(2, 1, 1)
+        plt.plot(t, x_acc, label='X')
+        plt.plot(t, y_acc, label='Y')
+        plt.plot(t, z_acc, label='Z')
+        plt.xlabel('Time (s)')
+        plt.ylabel('Acceleration')
+        plt.title(f'Acceleration Data - {record_name}')
+        plt.legend()
+        plt.grid(True)
+        
+        # Plot frequency domain - useful for detecting freezing frequency bands
+        plt.subplot(2, 1, 2)
+        plt.semilogy(f, Pxx_x, label='X')
+        plt.semilogy(f, Pxx_y, label='Y')
+        plt.semilogy(f, Pxx_z, label='Z')
+        plt.xlabel('Frequency (Hz)')
+        plt.ylabel('PSD (g²/Hz)')
+        plt.title('Power Spectral Density')
+        plt.axvspan(3, 8, color='r', alpha=0.3, label='Freezing Band')
+        plt.legend()
+        plt.grid(True)
+        
+        plt.tight_layout()
+        plt.show()
+        
+        # Calculate freezing index
+        # Freezing Index = Power in freezing band (3-8 Hz) / Power in locomotion band (0.5-3 Hz)
+        freeze_band = (f >= 3) & (f <= 8)
+        locomotion_band = (f >= 0.5) & (f <= 3)
+        
+        freeze_power = np.mean(Pxx_y[freeze_band])
+        locomotion_power = np.mean(Pxx_y[locomotion_band])
+        
+        freezing_index = freeze_power / locomotion_power if locomotion_power > 0 else 0
+        
+        print(f"Freezing Index: {freezing_index:.2f}")
+        
+        return freezing_index
+    
+    except Exception as e:
+        print(f"Error processing record {record_name}: {e}")
+        return None
+
+# Example usage (uncomment to use)
+# analyze_freeze_gait('S01R01', data_path)
+```
+
+### Epilepsy
+
+#### Temple University EEG Corpus
+- **Description**: Massive clinical EEG dataset from Temple University Hospital
+- **Contents**: 30,000+ EEG recordings from 16,000+ patients, including many with epilepsy
+- **Access**: https://isip.piconepress.com/projects/tuh_eeg/
+- **Documentation**: https://isip.piconepress.com/projects/tuh_eeg/html/downloads.shtml
+
+```python
+# Example: Working with Temple University EEG data
+# !pip install pyedflib numpy matplotlib
+import pyedflib
+import numpy as np
+import matplotlib.pyplot as plt
+
+def read_eeg_file(edf_file):
+    """Read and plot EEG data from EDF file."""
+    try:
+        # Open the EDF file
+        f = pyedflib.EdfReader(edf_file)
+        
+        # Get information about the file
+        n_channels = f.signals_in_file
+        channel_names = f.getSignalLabels()
+        fs = f.getSampleFrequency(0)  # Assuming same sampling rate for all channels
+        
+        print(f"File: {edf_file}")
+        print(f"Number of channels: {n_channels}")
+        print(f"Channel names: {channel_names}")
+        print(f"Sampling frequency: {fs} Hz")
+        
+        # Read a subset of channels (e.g., first 8)
+        n_display = min(8, n_channels)
+        signals = np.zeros((n_display, f.getNSamples()[0]))
+        
+        for i in range(n_display):
+            signals[i, :] = f.readSignal(i)
+        
+        # Calculate time vector
+        seconds = len(signals[0]) / fs
+        t = np.linspace(0, seconds, len(signals[0]))
+        
+        # Plot the signals
+        plt.figure(figsize=(15, 10))
+        
+        # Default display: 10 seconds window with appropriate scaling
+        window_size = min(10, seconds)
+        samples_to_display = int(window_size * fs)
+        
+        for i in range(n_display):
+            plt.subplot(n_display, 1, i+1)
+            
+            # Z-score normalize for display
+            signal_std = np.std(signals[i][:samples_to_display])
+            signal_mean = np.mean(signals[i][:samples_to_display])
+            normalized_signal = (signals[i][:samples_to_display] - signal_mean) / (signal_std if signal_std > 0 else 1)
+            
+            plt.plot(t[:samples_to_display], normalized_signal)
+            plt.ylabel(channel_names[i])
+            plt.xlim(0, window_size)
+            
+            # Only show x-axis for bottom plot
+            if i < n_display - 1:
+                plt.xticks([])
+        
+        plt.xlabel('Time (s)')
+        plt.tight_layout()
+        plt.show()
+        
+        # Close the file
+        f.close()
+        
+        return signals, channel_names, fs
+    
+    except Exception as e:
+        print(f"Error reading EEG file: {e}")
+        return None, None, None
+
+# Example seizure detection function
+def detect_seizures(eeg_signal, fs, window_size=1.0, overlap=0.5):
+    """
+    Basic seizure detection based on signal energy and line length.
+    
+    Parameters:
+    eeg_signal: EEG signal (single channel)
+    fs: Sampling frequency
+    window_size: Analysis window size in seconds
+    overlap: Window overlap fraction
+    
+    Returns:
+    detection_times: List of potential seizure onset times
+    """
+    # Convert window size from seconds to samples
+    window_samples = int(window_size * fs)
+    step_samples = int(window_samples * (1 - overlap))
+    
+    # Features
+    energy = []
+    line_length = []
+    
+    # Process windows
+    for i in range(0, len(eeg_signal) - window_samples, step_samples):
+        window = eeg_signal[i:i + window_samples]
+        
+        # Calculate energy (sum of squared amplitudes)
+        energy.append(np.sum(window**2) / window_samples)
+        
+        # Calculate line length (sum of absolute differences)
+        line_length.append(np.sum(np.abs(np.diff(window))) / window_samples)
+    
+    # Normalize features
+    energy = np.array(energy)
+    energy_norm = (energy - np.mean(energy)) / (np.std(energy) if np.std(energy) > 0 else 1)
+    
+    line_length = np.array(line_length)
+    ll_norm = (line_length - np.mean(line_length)) / (np.std(line_length) if np.std(line_length) > 0 else 1)
+    
+    # Combined feature
+    combined = energy_norm + ll_norm
+    
+    # Threshold for detection (this is a simple approach, real detection would use more sophisticated methods)
+    threshold = 3.0
+    
+    # Find potential seizures
+    detection_indices = np.where(combined > threshold)[0]
+    
+    # Convert indices to times
+    detection_times = []
+    if len(detection_indices) > 0:
+        # Group consecutive detections
+        groups = np.split(detection_indices, np.where(np.diff(detection_indices) != 1)[0] + 1)
+        
+        for group in groups:
+            if len(group) > 0:
+                # Convert from window index to time
+                onset_time = (group[0] * step_samples) / fs
+                detection_times.append(onset_time)
+    
+    return detection_times, combined
+
+# Example usage (pseudocode)
+# signals, channel_names, fs = read_eeg_file('/path/to/tuh_eeg/patient/eeg.edf')
+# if signals is not None:
+#     # Analyze a specific channel (e.g., channel index 2)
+#     channel_idx = 2
+#     detection_times, feature = detect_seizures(signals[channel_idx], fs)
+#     print(f"Potential seizure onsets at: {detection_times} seconds")
+```
+
+### Stroke
+
+#### International Stroke Perfusion Imaging Registry (INSPIRE)
+- **Description**: Multi-center dataset for stroke imaging
+- **Contents**: CT, MRI, and clinical data from stroke patients
+- **Access**: https://inspire.app/
+- **Documentation**: Available upon registration
+
+```python
+# Example: Simulated analysis of stroke perfusion images
+import numpy as np
+import matplotlib.pyplot as plt
+from skimage import filters, measure
+import nibabel as nib
+
+def analyze_stroke_perfusion(perfusion_file, t_max_threshold=6.0):
+    """
+    Analyze perfusion imaging (Tmax map) to identify potential stroke penumbra.
+    
+    Parameters:
+    perfusion_file: Path to the perfusion Tmax map
+    t_max_threshold: Threshold in seconds for penumbra definition
+    
+    Returns:
+    penumbra_volume: Volume of tissue with Tmax > threshold
+    """
+    # Load the perfusion map
+    img = nib.load(perfusion_file)
+    tmax_data = img.get_fdata()
+    
+    # Get voxel dimensions to calculate volume
+    voxel_size = np.prod(img.header.get_zooms())
+    
+    # Threshold the image to identify penumbra
+    penumbra_mask = tmax_data > t_max_threshold
+    
+    # Calculate penumbra volume in ml
+    penumbra_volume = np.sum(penumbra_mask) * voxel_size / 1000.0
+    
+    # Get a middle slice for visualization
+    slice_idx = tmax_data.shape[2] // 2
+    
+    # Visualize the perfusion map and penumbra
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
+    
+    # Perfusion map
+    im1 = ax1.imshow(tmax_data[:, :, slice_idx], cmap='jet')
+    ax1.set_title('Tmax Perfusion Map')
+    ax1.axis('off')
+    plt.colorbar(im1, ax=ax1, label='Tmax (s)')
+    
+    # Penumbra overlay
+    ax2.imshow(tmax_data[:, :, slice_idx], cmap='gray')
+    penumbra_overlay = np.ma.masked_where(
+        ~penumbra_mask[:, :, slice_idx], 
+        np.ones_like(tmax_data[:, :, slice_idx])
+    )
+    ax2.imshow(penumbra_overlay, cmap='autumn', alpha=0.7)
+    ax2.set_title(f'Penumbra (Tmax > {t_max_threshold}s)')
+    ax2.axis('off')
+    
+    plt.tight_layout()
+    plt.show()
+    
+    print(f"Estimated penumbra volume: {penumbra_volume:.2f} ml")
+    
+    return penumbra_volume
+
+# Example of decision support for stroke treatment
+def stroke_treatment_decision(penumbra_volume, core_volume, onset_time):
+    """
+    Simple decision support for stroke treatment based on imaging and clinical factors.
+    
+    Parameters:
+    penumbra_volume: Volume of salvageable tissue (ml)
+    core_volume: Volume of infarcted core (ml)
+    onset_time: Time since stroke onset (hours)
+    
+    Returns:
+    recommendation: Treatment recommendation
+    """
+    mismatch_ratio = penumbra_volume / core_volume if core_volume > 0 else float('inf')
+    
+    # Decision logic (simplified for demonstration)
+    if onset_time <= 4.5:
+        if core_volume < 70:
+            recommendation = "Consider IV thrombolysis"
+        else:
+            recommendation = "Large core infarct. Consider mechanical thrombectomy evaluation."
+    elif onset_time <= 24:
+        if mismatch_ratio >= 1.8 and penumbra_volume >= 15:
+            recommendation = "Consider extended window mechanical thrombectomy"
+        else:
+            recommendation = "Insufficient penumbra for endovascular treatment"
+    else:
+        recommendation = "Outside treatment window"
+    
+    # Visualization
+    plt.figure(figsize=(10, 6))
+    plt.bar(['Core', 'Penumbra'], [core_volume, penumbra_volume], color=['red', 'orange'])
+    plt.axhline(y=70, linestyle='--', color='black', label='Core Volume Threshold (70ml)')
+    plt.ylabel('Volume (ml)')
+    plt.title(f'Stroke Tissue Volumes\nMismatch Ratio: {mismatch_ratio:.1f}, Time from Onset: {onset_time}h')
+    plt.legend()
+    plt.show()
+    
+    print(f"Treatment recommendation: {recommendation}")
+    
+    return recommendation
+
+# Usage example (pseudocode)
+# penumbra_volume = analyze_stroke_perfusion('/path/to/tmax.nii.gz')
+# stroke_treatment_decision(penumbra_volume=45, core_volume=15, onset_time=3.5)
+```
+
+### Multiple Sclerosis
+
+#### Multiple Sclerosis Lesion Segmentation Challenge Dataset
+- **Description**: Public dataset for evaluating MS lesion segmentation algorithms
+- **Contents**: MRI scans with manual lesion segmentations from multiple centers
+- **Access**: https://smart-stats-tools.org/lesion-challenge
+- **Documentation**: https://smart-stats-tools.org/lesion-challenge-dataset
+
+```python
+# Example: MS lesion segmentation
+import nibabel as nib
+import numpy as np
+import matplotlib.pyplot as plt
+from skimage import measure, filters
+
+def segment_ms_lesions(flair_file, t1_file, t2_file, threshold_factor=2.5):
+    """
+    Simple MS lesion segmentation using FLAIR hyperintensities.
+    
+    Parameters:
+    flair_file: Path to FLAIR MRI
+    t1_file: Path to T1 MRI
+    t2_file: Path to T2 MRI
+    threshold_factor: Multiplier for intensity threshold
+    
+    Returns:
+    lesion_mask: Binary mask of detected lesions
+    """
+    # Load MRI sequences
+    flair_img = nib.load(flair_file)
+    flair_data = flair_img.get_fdata()
+    
+    t1_data = nib.load(t1_file).get_fdata()
+    t2_data = nib.load(t2_file).get_fdata()
+    
+    # Simple lesion segmentation based on FLAIR hyperintensities
+    # Real segmentation would use more sophisticated methods
+    
+    # Calculate brain mask (simple thresholding)
+    brain_mask = t1_data > np.percentile(t1_data, 15)
+    
+    # Threshold FLAIR within brain mask
+    flair_brain = flair_data * brain_mask
+    flair_threshold = np.mean(flair_brain[flair_brain > 0]) + threshold_factor * np.std(flair_brain[flair_brain > 0])
+    
+    # Initial lesion segmentation
+    lesion_mask = (flair_data > flair_threshold) & brain_mask
+    
+    # Remove small lesions (noise)
+    # Label connected components
+    labels = measure.label(lesion_mask)
+    
+    # Calculate properties for each lesion candidate
+    props = measure.regionprops(labels)
+    
+    # Filter by size (remove very small objects)
+    min_size = 10  # voxels
+    lesion_mask = np.zeros_like(lesion_mask)
+    
+    for prop in props:
+        if prop.area >= min_size:
+            lesion_mask[labels == prop.label] = 1
+    
+    # Visualize results (middle slice)
+    slice_idx = flair_data.shape[2] // 2
+    
+    fig, axes = plt.subplots(2, 2, figsize=(15, 12))
+    
+    # FLAIR image
+    axes[0, 0].imshow(flair_data[:, :, slice_idx], cmap='gray')
+    axes[0, 0].set_title('FLAIR Image')
+    axes[0, 0].axis('off')
+    
+    # T1 image
+    axes[0, 1].imshow(t1_data[:, :, slice_idx], cmap='gray')
+    axes[0, 1].set_title('T1 Image')
+    axes[0, 1].axis('off')
+    
+    # T2 image
+    axes[1, 0].imshow(t2_data[:, :, slice_idx], cmap='gray')
+    axes[1, 0].set_title('T2 Image')
+    axes[1, 0].axis('off')
+    
+    # FLAIR with lesion overlay
+    axes[1, 1].imshow(flair_data[:, :, slice_idx], cmap='gray')
+    lesion_overlay = np.ma.masked_where(
+        ~lesion_mask[:, :, slice_idx],
+        np.ones_like(flair_data[:, :, slice_idx])
+    )
+    axes[1, 1].imshow(lesion_overlay, cmap='hot', alpha=0.7)
+    axes[1, 1].set_title('Lesion Segmentation')
+    axes[1, 1].axis('off')
+    
+    plt.tight_layout()
+    plt.show()
+    
+    # Calculate total lesion volume
+    voxel_size = np.prod(flair_img.header.get_zooms())
+    lesion_volume = np.sum(lesion_mask) * voxel_size / 1000.0  # ml
+    
+    print(f"Estimated MS lesion volume: {lesion_volume:.2f} ml")
+    
+    return lesion_mask, lesion_volume
+
+# Example of lesion load progression analysis
+def analyze_lesion_progression(lesion_volumes, scan_dates):
+    """Analyze progression of MS lesion volumes over time."""
+    # Convert dates to numeric (days since first scan)
+    from datetime import datetime
+    dates = [datetime.strptime(d, '%Y-%m-%d') for d in scan_dates]
+    days = [(d - dates[0]).days for d in dates]
+    
+    # Visualize progression
+    plt.figure(figsize=(10, 6))
+    plt.plot(days, lesion_volumes, 'o-', linewidth=2)
+    plt.xlabel('Days from Baseline')
+    plt.ylabel('Lesion Volume (ml)')
+    plt.title('MS Lesion Volume Progression')
+    plt.grid(True)
+    
+    # Calculate rate of change
+    if len(lesion_volumes) > 1:
+        annual_change = 365.0 * (lesion_volumes[-1] - lesion_volumes[0]) / days[-1]
+        plt.axline((0, lesion_volumes[0]), slope=annual_change/365.0, 
+                  color='r', linestyle='--', label=f'Trend: {annual_change:.2f} ml/year')
+        plt.legend()
+    
+    plt.show()
+
+# Usage example (pseudocode)
+# lesion_mask, volume = segment_ms_lesions(
+#     '/path/to/flair.nii.gz', 
+#     '/path/to/t1.nii.gz', 
+#     '/path/to/t2.nii.gz'
+# )
+
+# Lesion progression analysis example
+# analyze_lesion_progression(
+#     [10.5, 12.3, 15.7, 14.9, 18.2],
+#     ['2020-01-15', '2020-07-20', '2021-01-10', '2021-07-05', '2022-01-12']
+# )
+```
+
+### Other Neurological Disorders
+
+#### Brain Tumor Segmentation (BraTS) Challenge
+- **Description**: Multimodal brain tumor MRI dataset
+- **Contents**: T1, T1ce, T2, and FLAIR MRIs with expert segmentations
+- **Access**: http://braintumorsegmentation.org/
+- **Documentation**: https://www.med.upenn.edu/cbica/brats2020/data.html
+
+```python
+# Example: Brain tumor visualization and segmentation
+import nibabel as nib
+import numpy as np
+import matplotlib.pyplot as plt
+
+def visualize_brain_tumor(t1_file, t1ce_file, t2_file, flair_file, seg_file=None):
+    """
+    Visualize multimodal brain tumor MRI data.
+    
+    Parameters:
+    t1_file: Path to T1 MRI
+    t1ce_file: Path to T1 contrast-enhanced MRI
+    t2_file: Path to T2 MRI
+    flair_file: Path to FLAIR MRI
+    seg_file: Path to segmentation (optional)
+    """
+    # Load MRI data
+    t1 = nib.load(t1_file).get_fdata()
+    t1ce = nib.load(t1ce_file).get_fdata()
+    t2 = nib.load(t2_file).get_fdata()
+    flair = nib.load(flair_file).get_fdata()
+    
+    # Load segmentation if available
+    if seg_file:
+        seg = nib.load(seg_file).get_fdata()
+        has_seg = True
+    else:
+        has_seg = False
+    
+    # Get the middle slice for each dimension
+    axial_slice = t1.shape[2] // 2
+    
+    # Create a figure
+    fig, axes = plt.subplots(2, 3 if has_seg else 2, figsize=(15, 10))
+    
+    # Display T1
+    axes[0, 0].imshow(t1[:, :, axial_slice], cmap='gray')
+    axes[0, 0].set_title('T1')
+    axes[0, 0].axis('off')
+    
+    # Display T1ce
+    axes[0, 1].imshow(t1ce[:, :, axial_slice], cmap='gray')
+    axes[0, 1].set_title('T1ce')
+    axes[0, 1].axis('off')
+    
+    # Display T2
+    axes[1, 0].imshow(t2[:, :, axial_slice], cmap='gray')
+    axes[1, 0].set_title('T2')
+    axes[1, 0].axis('off')
+    
+    # Display FLAIR
+    axes[1, 1].imshow(flair[:, :, axial_slice], cmap='gray')
+    axes[1, 1].set_title('FLAIR')
+    axes[1, 1].axis('off')
+    
+    # Display segmentation if available
+    if has_seg:
+        axes[0, 2].imshow(t1ce[:, :, axial_slice], cmap='gray')
+        
+        # Create a colored overlay for different tumor components
+        # In BraTS: 1=necrotic core, 2=edema, 4=enhancing tumor
+        seg_slice = seg[:, :, axial_slice]
+        
+        # Necrotic core (red)
+        necrotic = np.ma.masked_where(seg_slice != 1, np.ones_like(seg_slice))
+        axes[0, 2].imshow(necrotic, cmap='Reds', alpha=0.7)
+        
+        # Edema (green)
+        edema = np.ma.masked_where(seg_slice != 2, np.ones_like(seg_slice))
+        axes[0, 2].imshow(edema, cmap='Greens', alpha=0.7)
+        
+        # Enhancing tumor (blue)
+        enhancing = np.ma.masked_where(seg_slice != 4, np.ones_like(seg_slice))
+        axes[0, 2].imshow(enhancing, cmap='Blues', alpha=0.7)
+        
+        axes[0, 2].set_title('Tumor Segmentation')
+        axes[0, 2].axis('off')
+        
+        # Calculate tumor volumes
+        voxel_size = 1.0  # mm³, adjust based on actual voxel size
+        necrotic_vol = np.sum(seg == 1) * voxel_size / 1000.0  # ml
+        edema_vol = np.sum(seg == 2) * voxel_size / 1000.0  # ml
+        enhancing_vol = np.sum(seg == 4) * voxel_size / 1000.0  # ml
+        total_vol = necrotic_vol + edema_vol + enhancing_vol
+        
+        # Display volumes
+        text = (f"Tumor Components:\n"
+                f"Necrotic core: {necrotic_vol:.2f} ml\n"
+                f"Edema: {edema_vol:.2f} ml\n"
+                f"Enhancing tumor: {enhancing_vol:.2f} ml\n"
+                f"Total volume: {total_vol:.2f} ml")
+        
+        axes[1, 2].axis('off')
+        axes[1, 2].text(0.1, 0.5, text, fontsize=12)
+    
+    plt.tight_layout()
+    plt.show()
+
+# Usage example (pseudocode)
+# visualize_brain_tumor(
+#     '/path/to/t1.nii.gz',
+#     '/path/to/t1ce.nii.gz',
+#     '/path/to/t2.nii.gz',
+#     '/path/to/flair.nii.gz',
+#     '/path/to/seg.nii.gz'
+# )
+```
+
+#### Sleep-EDF Database
+- **Description**: Sleep recordings with annotations for normal and abnormal sleep
+- **Contents**: PSG and EEG recordings with sleep stage annotations
+- **Access**: https://physionet.org/content/sleep-edfx/1.0.0/
+- **Documentation**: https://physionet.org/content/sleep-edfx/1.0.0/
+
+```python
+# Example: Sleep stage classification from EEG
+import numpy as np
+import matplotlib.pyplot as plt
+import pyedflib
+from scipy import signal
+
+def analyze_sleep_edf(edf_file, hypnogram_file):
+    """
+    Analyze Sleep-EDF data with sleep stage annotations.
+    
+    Parameters:
+    edf_file: Path to EEG recording
+    hypnogram_file: Path to sleep stage annotations
+    """
+    # Load EEG data
+    try:
+        f = pyedflib.EdfReader(edf_file)
+        
+        # Get signal information
+        n_channels = f.signals_in_file
+        channel_names = f.getSignalLabels()
+        
+        # Find EEG channels (typically Fpz-Cz and Pz-Oz in Sleep-EDF)
+        eeg_channels = [i for i, name in enumerate(channel_names) if 'EEG' in name]
+        
+        if not eeg_channels:
+            print("No EEG channels found")
+            return
+        
+        # Read EEG data from first EEG channel
+        eeg_channel = eeg_channels[0]
+        fs = f.getSampleFrequency(eeg_channel)
+        eeg_signal = f.readSignal(eeg_channel)
+        
+        # Load hypnogram (sleep stages)
+        with open(hypnogram_file, 'r') as hyp_file:
+            hypnogram = hyp_file.readlines()
+        
+        # Parse sleep stages (simplified, actual parsing depends on hypnogram format)
+        # In Sleep-EDF annotations: 0=Wake, 1=REM, 2=N1, 3=N2, 4=N3/N4
+        sleep_stages = []
+        for line in hypnogram:
+            if line.strip() and line[0].isdigit():
+                sleep_stages.append(int(line[0]))
+        
+        sleep_stages = np.array(sleep_stages)
+        
+        # Calculate time vectors
+        eeg_time = np.arange(len(eeg_signal)) / fs  # seconds
+        stage_time = np.arange(len(sleep_stages)) * 30  # 30-second epochs
+        
+        # Extract features for visualization
+        # (in real application, would extract features for each epoch)
+        
+        # Power spectral density (whole signal)
+        f, psd = signal.welch(eeg_signal, fs, nperseg=fs*4)
+        
+        # Find frequency bands
+        delta_mask = (f >= 0.5) & (f <= 4)
+        theta_mask = (f >= 4) & (f <= 8)
+        alpha_mask = (f >= 8) & (f <= 13)
+        beta_mask = (f >= 13) & (f <= 30)
+        
+        # Visualize data
+        fig, axes = plt.subplots(3, 1, figsize=(15, 12))
+        
+        # Plot EEG signal (first 60 seconds)
+        plot_duration = min(60, len(eeg_signal) / fs)
+        plot_samples = int(plot_duration * fs)
+        
+        axes[0].plot(eeg_time[:plot_samples], eeg_signal[:plot_samples])
+        axes[0].set_xlabel('Time (s)')
+        axes[0].set_ylabel('Amplitude')
+        axes[0].set_title(f'EEG Signal ({channel_names[eeg_channel]})')
+        
+        # Plot sleep stages
+        stage_labels = ['Wake', 'REM', 'N1', 'N2', 'N3/N4']
+        
+        axes[1].step(stage_time / 3600, sleep_stages, where='post')
+        axes[1].set_yticks(range(5))
+        axes[1].set_yticklabels(stage_labels)
+        axes[1].set_xlabel('Time (hours)')
+        axes[1].set_ylabel('Sleep Stage')
+        axes[1].set_title('Hypnogram')
+        axes[1].grid(True)
+        
+        # Plot power spectral density
+        axes[2].semilogy(f, psd)
+        axes[2].set_xlabel('Frequency (Hz)')
+        axes[2].set_ylabel('PSD (µV²/Hz)')
+        axes[2].set_title('Power Spectral Density')
+        
+        # Highlight frequency bands
+        axes[2].fill_between(f[delta_mask], 0, psd[delta_mask], alpha=0.3, label='Delta (0.5-4 Hz)')
+        axes[2].fill_between(f[theta_mask], 0, psd[theta_mask], alpha=0.3, label='Theta (4-8 Hz)')
+        axes[2].fill_between(f[alpha_mask], 0, psd[alpha_mask], alpha=0.3, label='Alpha (8-13 Hz)')
+        axes[2].fill_between(f[beta_mask], 0, psd[beta_mask], alpha=0.3, label='Beta (13-30 Hz)')
+        axes[2].legend()
+        
+        plt.tight_layout()
+        plt.show()
+        
+        # Calculate sleep metrics
+        total_epochs = len(sleep_stages)
+        total_sleep_time = sum(sleep_stages != 0) * 30 / 60  # minutes
+        
+        # Sleep efficiency (total sleep time / time in bed)
+        sleep_efficiency = sum(sleep_stages != 0) / total_epochs * 100
+        
+        # Time in each stage
+        stage_minutes = {
+            stage_labels[i]: sum(sleep_stages == i) * 30 / 60
+            for i in range(5)
+        }
+        
+        # Print sleep metrics
+        print(f"Sleep Metrics:")
+        print(f"Total recording time: {total_epochs * 30 / 60:.1f} minutes")
+        print(f"Total sleep time: {total_sleep_time:.1f} minutes")
+        print(f"Sleep efficiency: {sleep_efficiency:.1f}%")
+        print("Time in each stage:")
+        for stage, minutes in stage_minutes.items():
+            print(f"  {stage}: {minutes:.1f} minutes ({minutes/total_sleep_time*100:.1f}%)")
+        
+        f.close()
+        
+    except Exception as e:
+        print(f"Error analyzing Sleep-EDF data: {e}")
+
+# Usage example (pseudocode)
+# analyze_sleep_edf('/path/to/sleep_edf.edf', '/path/to/hypnogram.txt')
+```
+
+These neurological and neurodegenerative disease datasets provide valuable resources for developing and validating AI systems for diagnosis, treatment planning, and monitoring disease progression. The examples demonstrate basic approaches to working with these diverse data types and highlight the potential for AI applications in clinical neurology.

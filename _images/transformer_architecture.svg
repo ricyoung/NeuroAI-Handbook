@@ -60,13 +60,13 @@
     <text x="120" y="185" class="label">Multi-Head Attention</text>
     
     <rect x="45" y="210" width="150" height="20" class="norm-block" />
-    <text x="120" y="225" class="sublabel">Add & Norm</text>
+    <text x="120" y="225" class="sublabel">Add &amp; Norm</text>
     
     <rect x="45" y="240" width="150" height="40" class="ffn-block" />
     <text x="120" y="265" class="label">Feed Forward</text>
     
     <rect x="45" y="290" width="150" height="20" class="norm-block" />
-    <text x="120" y="305" class="sublabel">Add & Norm</text>
+    <text x="120" y="305" class="sublabel">Add &amp; Norm</text>
     
     <!-- Skip connections -->
     <path d="M 20,160 C 10,160 10,210 20,210" class="skip-connection" />
@@ -94,20 +94,20 @@
     <text x="120" y="190" class="small-label">Attention</text>
     
     <rect x="45" y="210" width="150" height="20" class="norm-block" />
-    <text x="120" y="225" class="sublabel">Add & Norm</text>
+    <text x="120" y="225" class="sublabel">Add &amp; Norm</text>
     
     <rect x="45" y="240" width="150" height="40" class="attention-block" />
     <text x="120" y="255" class="small-label">Multi-Head Attention</text>
     <text x="120" y="270" class="small-label">(Encoder-Decoder)</text>
     
     <rect x="45" y="290" width="150" height="20" class="norm-block" />
-    <text x="120" y="305" class="sublabel">Add & Norm</text>
+    <text x="120" y="305" class="sublabel">Add &amp; Norm</text>
     
     <rect x="45" y="320" width="150" height="40" class="ffn-block" />
     <text x="120" y="345" class="label">Feed Forward</text>
     
     <rect x="45" y="370" width="150" height="20" class="norm-block" />
-    <text x="120" y="385" class="sublabel">Add & Norm</text>
+    <text x="120" y="385" class="sublabel">Add &amp; Norm</text>
     
     <!-- Skip connections -->
     <path d="M 20,160 C 10,160 10,210 20,210" class="skip-connection" />

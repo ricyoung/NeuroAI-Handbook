@@ -12,6 +12,8 @@ After completing this chapter, you will be able to:
 - Apply lessons from case studies to your own research or development projects
 - Understand the specific challenges and solutions in translating neuroscience insights to AI implementations
 - Recognize key success factors for interdisciplinary collaboration between neuroscience and AI
+- Design multimodal approaches for neurological disorder prediction in healthcare applications
+- Evaluate AI models for clinical neuroimaging analysis and neurodegenerative disease detection
 
 ```{note}
 This chapter features interactive examples to help you explore key concepts. Click the "launch binder" button at the top of the page or access the [interactive notebook](ch20_interactive.ipynb) to experiment with:
@@ -30,6 +32,8 @@ For an enhanced learning experience, we've also integrated [Jupyter AI assistanc
 Throughout this handbook, we've explored the theoretical foundations of both neuroscience and artificial intelligence, examining how these fields inform and enrich each other. This chapter shifts our focus to real-world implementations, presenting detailed case studies that demonstrate how neuroscience principles have been successfully translated into practical AI systems.
 
 These case studies represent the cutting edge of NeuroAI—where theory meets application, where biological insights drive technological innovation, and where interdisciplinary collaboration yields solutions that neither field could achieve alone. By examining these concrete examples, we gain valuable insights into the practical challenges and benefits of neuroscience-inspired AI approaches.
+
+Of particular importance are the healthcare applications of NeuroAI, which we explore through case studies in neurological disorder prediction using multimodal data. These examples demonstrate how combining neuroimaging, clinical, genetic, and sensor data with deep learning models can advance early detection and precision treatment planning for conditions like Alzheimer's disease, Parkinson's disease, epilepsy, and stroke. These healthcare-focused applications highlight the life-changing potential of NeuroAI technologies when applied to clinical challenges.
 
 ## 20.2 Case Study: Deep Predictive Coding Networks
 
@@ -3110,6 +3114,28 @@ Future directions include:
 3. **Closed-loop systems**: Creating integrated monitoring and intervention systems that respond dynamically to patient states.
 
 4. **Digital biomarkers**: Developing novel digital measures from ubiquitous sensors that can serve as early warning signs.
+
+## 20.11 Chapter Summary and Key Takeaways
+
+Throughout this chapter, we've explored a diverse range of case studies highlighting the successful implementation of neuroscience principles in AI systems. These examples demonstrate both the theoretical and practical value of the NeuroAI approach across different domains and applications.
+
+### Key Takeaways:
+
+1. **Biological inspiration drives innovation**: Neuroscience-inspired mechanisms like predictive coding, hippocampal replay, and attention have led to significant improvements in AI performance and efficiency.
+
+2. **Multi-scale integration is powerful**: Many successful NeuroAI systems operate across multiple spatial and temporal scales, mirroring the brain's hierarchical organization.
+
+3. **Specialized architectures excel at specific tasks**: Task-specific neural mechanisms can inspire specialized AI architectures that outperform general-purpose solutions.
+
+4. **Implementation challenges require creative solutions**: Translating neuroscience principles to working code involves important design decisions and computational trade-offs.
+
+5. **Healthcare applications demonstrate real-world impact**: Multimodal approaches for neurological disorder prediction show the potential of NeuroAI to transform clinical practice through early detection and personalized treatment planning.
+
+6. **Clinical neuroimaging analysis benefits from deep learning**: AI systems trained on neuroimaging data can detect subtle patterns associated with neurodegenerative and neurological disorders before clinical symptoms appear.
+
+7. **Future directions are promising**: The continued integration of neuroscience and AI promises advances in neuromorphic computing, closed-loop systems, and federated learning approaches that will further expand the capabilities and applications of NeuroAI.
+
+As these case studies illustrate, the NeuroAI approach doesn't just produce incremental improvements to existing AI systems—it enables fundamentally new capabilities and approaches that can address previously intractable problems in both research and real-world applications.
 
 ## 20.11 Further Reading
 
