@@ -1,0 +1,740 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Neuroscience of AI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=720ed60b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=60c0e2ec"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch02_neuro_foundations';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://neuroai-handbook.github.io/ch02_neuro_foundations.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">None</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Chapter 2: Neuroscience Foundations for AI
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch02_neuro_foundations.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 2: Neuroscience Foundations for AI</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-2-neuroscience-foundations-for-ai">
+<h1>Chapter 2: Neuroscience Foundations for AI<a class="headerlink" href="#chapter-2-neuroscience-foundations-for-ai" title="Link to this heading">#</a></h1>
+<div class="note admonition">
+<p class="admonition-title">Learning Objectives</p>
+<p>By the end of this chapter, you will be able to:</p>
+<ul class="simple">
+<li><p><strong>Identify</strong> the key components of biological neurons and their computational analogs</p></li>
+<li><p><strong>Explain</strong> the processes of neural signaling, synaptic transmission, and plasticity</p></li>
+<li><p><strong>Compare</strong> biological learning mechanisms with artificial neural network training approaches</p></li>
+<li><p><strong>Describe</strong> the functional organization of major brain systems and their AI counterparts</p></li>
+<li><p><strong>Implement</strong> basic neuron simulations and Hebbian learning rules in Python</p></li>
+</ul>
+</div>
+<section id="why-this-chapter">
+<h2>2.0 Why This Chapter?<a class="headerlink" href="#why-this-chapter" title="Link to this heading">#</a></h2>
+<p>Before we leap into convolutional networks, policy gradients, or billion-parameter transformers, we need mental “ground truth” about the biological machine that inspired all of them. By the end of this chapter you should be able to:</p>
+<ul class="simple">
+<li><p>Sketch a real neuron and label the parts that correspond (roughly!) to weights, bias, and activation in an artificial unit.</p></li>
+<li><p>Explain why Hebb’s 1949 slogan “cells that fire together wire together” foreshadows the weight-update rule inside a modern optimiser.</p></li>
+<li><p>Map the cortex–hippocampus–basal-ganglia trio onto supervised, episodic-memory, and reinforcement-learning motifs.</p></li>
+<li><p>Run—and modify—a minimal leaky-integrate-and-fire simulator with a local Hebbian learning rule.</p></li>
+</ul>
+<p>Keep two caveats in mind throughout:</p>
+<ul class="simple">
+<li><p>The metaphors run in both directions but never line up perfectly; equivalence is neither the goal nor the reality.</p></li>
+<li><p>Biological plausibility is a spectrum, not a binary. Sometimes we pursue it to understand brains, sometimes to inspire better silicon algorithms, and sometimes we happily ignore it for the sake of performance.</p></li>
+</ul>
+</section>
+<section id="neuron-anatomy-electrophysiology">
+<h2>2.1 Neuron Anatomy &amp; Electrophysiology<a class="headerlink" href="#neuron-anatomy-electrophysiology" title="Link to this heading">#</a></h2>
+<p>At the basic level, brains and computers both traffic in “bits” of information, but their substrates look very different.</p>
+<section id="structure-cheat-sheet">
+<h3>Structure cheat-sheet<a class="headerlink" href="#structure-cheat-sheet" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Dendrites</strong>: tree-like input fibres. Thousands of synapses live on tiny protrusions called spines.</p></li>
+<li><p><strong>Soma</strong> (cell body): sums incoming currents; site of most protein synthesis.</p></li>
+<li><p><strong>Axon hillock</strong>: narrow neck where action potentials are born if the membrane hits threshold.</p></li>
+<li><p><strong>Axon</strong>: long cable (up to a metre in the human motor neuron) that propagates spikes.</p></li>
+<li><p><strong>Synaptic terminal</strong>: packs vesicles filled with neurotransmitter; releases them into the synaptic cleft.</p></li>
+</ul>
+</section>
+<section id="electrical-basics">
+<h3>Electrical basics<a class="headerlink" href="#electrical-basics" title="Link to this heading">#</a></h3>
+<p>At rest a neuron sits ≈ –70 mV inside relative to outside. Ion channels act as nano-switches for Na⁺, K⁺, Ca²⁺, Cl⁻. When excitatory post-synaptic potentials (EPSPs) depolarise the membrane to roughly –55 mV, voltage-gated Na⁺ channels open, causing a 1 ms “action potential” hump. After the refractory period the game can restart, making a spike train whose frequency encodes information.</p>
+</section>
+<section id="chemical-messenger-story">
+<h3>Chemical messenger story<a class="headerlink" href="#chemical-messenger-story" title="Link to this heading">#</a></h3>
+<p>An arriving spike triggers Ca²⁺ influx, vesicles fuse, and transmitter molecules (e.g. glutamate, GABA, dopamine) drift across a 20 nm synaptic cleft. The postsynaptic membrane hosts ligand-gated channels that either depolarise (excitatory) or hyperpolarise (inhibitory). Note that the sign of the synapse is fixed by receptor type; a glutamatergic synapse never “turns negative.”</p>
+</section>
+<section id="analogy-to-an-artificial-perceptron">
+<h3>Analogy to an artificial perceptron<a class="headerlink" href="#analogy-to-an-artificial-perceptron" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Dendritic spine → input line xᵢ</p></li>
+<li><p>Synaptic strength (number &amp; efficacy of receptors) → weight wᵢ</p></li>
+<li><p>Somatic integration → weighted sum Σ wᵢxᵢ</p></li>
+</ul>
+<p><img alt="Neuronal Signaling Mechanisms" src="_images/neuronal_signaling.svg" /></p>
+<p><em>Figure 2.1: Neuronal signaling mechanisms showing ion channels, action potential generation, and neurotransmitter release at the synapse.</em></p>
+<div class="tip admonition">
+<p class="admonition-title">Real-World Application: Neuromorphic Computing</p>
+<p>The unique properties of biological neurons have inspired specialized hardware implementations:</p>
+<p><strong>IBM’s TrueNorth Chip</strong></p>
+<ul class="simple">
+<li><p>1 million digital neurons and 256 million synapses</p></li>
+<li><p>4,096 neurosynaptic cores</p></li>
+<li><p>Uses only 70mW of power (compared to ~100W for GPUs)</p></li>
+<li><p>Applications: pattern recognition, anomaly detection, real-time sensing</p></li>
+</ul>
+<p><strong>Intel’s Loihi Chip</strong></p>
+<ul class="simple">
+<li><p>Implements spiking neural networks (SNNs) in hardware</p></li>
+<li><p>Self-learning capabilities through STDP-based plasticity</p></li>
+<li><p>125× more energy efficient than GPU implementations for certain workloads</p></li>
+<li><p>Applications: gesture recognition, robotic control, sparse data processing</p></li>
+</ul>
+<p><strong>SpiNNaker (Spiking Neural Network Architecture)</strong></p>
+<ul class="simple">
+<li><p>Many-core computer architecture designed for brain modeling</p></li>
+<li><p>Can simulate up to a billion neurons in real-time</p></li>
+<li><p>Used in the Human Brain Project for detailed neural simulations</p></li>
+<li><p>Applications: computational neuroscience, robot control, edge AI</p></li>
+</ul>
+<p>These systems capture key aspects of neural computation including:</p>
+<ul class="simple">
+<li><p>Event-driven processing (only compute when signals arrive)</p></li>
+<li><p>Massive parallelism with simple processing units</p></li>
+<li><p>Co-location of memory and computation (avoiding the von Neumann bottleneck)</p></li>
+<li><p>Inherent fault tolerance and graceful degradation</p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>Firing threshold → activation function f(⋅)</p></li>
+<li><p>All-or-nothing spike → binary output y</p></li>
+</ul>
+<figure class="align-default" id="neuron-vs-perceptron">
+<a class="reference internal image-reference" href="_images/neuron_vs_perceptron.svg"><img alt="_images/neuron_vs_perceptron.svg" src="_images/neuron_vs_perceptron.svg" style="height: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Side-by-side cartoon: biological neuron (labelled) vs perceptron diagram.</span><a class="headerlink" href="#neuron-vs-perceptron" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>But note three mismatches:</p>
+<ol class="arabic simple">
+<li><p><strong>Time</strong>: ANNs usually compute in static passes; real neurons integrate continuously.</p></li>
+<li><p><strong>Signal space</strong>: Perceptron inputs are dimensionless numbers; dendrites receive precise spike timings and neuro-chemical signatures.</p></li>
+<li><p><strong>Activation</strong>: An action potential is always the same height; in ANNs the output can vary (sigmoid, ReLU, etc.). Information in brains is carried more by timing and rate than amplitude.</p></li>
+</ol>
+</section>
+</section>
+<section id="neural-circuits-layers">
+<h2>2.2 Neural Circuits &amp; Layers<a class="headerlink" href="#neural-circuits-layers" title="Link to this heading">#</a></h2>
+<p>The human cerebral cortex folds a 2-mm-thick sheet into six histological layers. A canonical microcircuit (largely conserved across vision, audition, touch) routes signals like a clever factory conveyor belt.</p>
+<section id="layer-guide-sensory-cortex-example">
+<h3>Layer guide (sensory cortex example)<a class="headerlink" href="#layer-guide-sensory-cortex-example" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>L4</strong>: main input station from thalamus; packed with spiny stellate cells.</p></li>
+<li><p><strong>L2/3</strong>: intra-cortical relay; outputs to neighbouring columns.</p></li>
+<li><p><strong>L5</strong>: thick pyramidal neurons project to sub-cortical targets and back to thalamus.</p></li>
+<li><p><strong>L6</strong>: feedback to thalamus; modulates gain.</p></li>
+</ul>
+</section>
+<section id="feed-forward-vs-recurrent">
+<h3>Feed-forward vs recurrent<a class="headerlink" href="#feed-forward-vs-recurrent" title="Link to this heading">#</a></h3>
+<p>Early textbooks sold the cortex as a stack of feed-forward filters. We now know that ~80% of synapses are horizontal or feedback. This recurrence enables context, expectation, and predictive coding—features still being imported into AI via ResNets, U-Nets, and transformers.</p>
+</section>
+<section id="convergence-divergence">
+<h3>Convergence &amp; divergence<a class="headerlink" href="#convergence-divergence" title="Link to this heading">#</a></h3>
+<p>A macaque V1 neuron might receive 6,000 synapses and send its axon to tens of thousands. Fan-in/out mirrors the fully-connected layers in a multilayer perceptron (MLP). However, cortical networks balance excitation with ~20% inhibitory interneurons that sculpt activity and prevent runaway excitation—a biological answer to the exploding-gradient problem.</p>
+<figure class="align-default" id="cortical-column-vs-ann">
+<a class="reference internal image-reference" href="_images/cortical_column_vs_ann.svg"><img alt="_images/cortical_column_vs_ann.svg" src="_images/cortical_column_vs_ann.svg" style="height: 350px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Schematic of a cortical column with arrows marking feed-forward, lateral, and feedback paths; alongside a 3-layer ANN highlighting similar motifs.</span><a class="headerlink" href="#cortical-column-vs-ann" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="learning-plasticity">
+<h2>2.3 Learning &amp; Plasticity<a class="headerlink" href="#learning-plasticity" title="Link to this heading">#</a></h2>
+<p>Donald Hebb (1949) proposed: “When an axon of cell A is near enough to excite cell B and repeatedly or persistently takes part in firing it, some growth process or metabolic change takes place in one or both cells.” Translation: correlated activity strengthens the synapse.</p>
+<section id="flavours-you-ll-encounter">
+<h3>3 flavours you’ll encounter:<a class="headerlink" href="#flavours-you-ll-encounter" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Classical Hebbian</strong>: Δwᵢⱼ = η·xᵢ·yⱼ (pre × post).</p></li>
+<li><p><strong>Spike-Timing-Dependent Plasticity (STDP)</strong>: weight change depends on Δt = t_post – t_pre. Δw ∝ exp(–|Δt|/τ) with positive sign if pre leads post, negative otherwise.</p></li>
+<li><p><strong>BCM Theory</strong> (Bienenstock, Cooper, Munro): introduces a sliding threshold ϑ_M; synapses potentiate above it and depress below, producing competition and homeostasis.</p></li>
+</ol>
+</section>
+<section id="long-term-potentiation-depression">
+<h3>Long-term potentiation &amp; depression<a class="headerlink" href="#long-term-potentiation-depression" title="Link to this heading">#</a></h3>
+<p>In hippocampal slices, high-frequency bursts (≈ 100 Hz) can double EPSP size for hours—a cellular memory trace called LTP. Low-frequency trains (≈ 1 Hz) cause LTD. Molecular mediators include NMDA-receptor-gated Ca²⁺ entry and cascades that add or remove AMPA receptors.</p>
+</section>
+<section id="gradient-descent-vs-plasticity">
+<h3>Gradient descent vs. plasticity<a class="headerlink" href="#gradient-descent-vs-plasticity" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Locality</strong>: Hebbian rules need only xᵢ and yⱼ; back-prop needs global error δ.</p></li>
+<li><p><strong>Signs</strong>: LTP/LTD gate only the learning rate, not the instantaneous error direction.</p></li>
+<li><p><strong>Timing</strong>: STDP encodes millisecond precision; SGD deals in batch steps.</p></li>
+</ul>
+<p>Research crossroads: can we design learning algorithms that marry back-prop efficiency with Hebbian locality? Ideas include feedback alignment, target propagation, and predictive coding networks.</p>
+</section>
+</section>
+<section id="brain-organisation-cheat-sheet">
+<h2>2.4 Brain Organisation Cheat-sheet<a class="headerlink" href="#brain-organisation-cheat-sheet" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Cortex</strong>: hierarchical feature extractor &amp; planner. ANN analogy = deep feed-forward &amp; recurrent stacks.</p></li>
+<li><p><strong>Hippocampus</strong>: indexes episodes via place cells and pattern separation. Analogy = content-addressable memory / auto-encoder bottleneck.</p></li>
+<li><p><strong>Basal ganglia</strong>: dopamine-gated winner-take-all loop that learns action values. Analogy = actor-critic reinforcement learner.</p></li>
+<li><p><strong>Cerebellum</strong>: supervised error-corrector for timing &amp; coordination; millions of tiny granule cells converge on Purkinje output. Analogy = massively parallel shallow learners (think ensemble boosting).</p></li>
+<li><p><strong>Thalamus</strong>: smart relay &amp; attention gate, not just a dumb switchboard. Analogy = transformer attention head that routes information based on context.</p></li>
+</ul>
+<figure class="align-default" id="brain-regions-table">
+<a class="reference internal image-reference" href="_images/brain_regions_table.svg"><img alt="_images/brain_regions_table.svg" src="_images/brain_regions_table.svg" style="height: 300px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 3 </span><span class="caption-text">Table with five rows (region, main job, canonical cell type, ML metaphor).</span><a class="headerlink" href="#brain-regions-table" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Evolution re-uses building blocks. The same Hebbian synapse supports vision in occipital cortex and monetary reward learning in orbitofrontal cortex—proof that algorithmic principles scale.</p>
+</div>
+</section>
+<section id="code-lab-spikes-hebbian-learning">
+<h2>2.5 Code Lab – Spikes &amp; Hebbian Learning<a class="headerlink" href="#code-lab-spikes-hebbian-learning" title="Link to this heading">#</a></h2>
+<p>Fire up Python 3.10+, NumPy, and Matplotlib. The following single cell is intentionally explicit rather than hyper-optimised so readers can tweak each line.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Leaky-Integrate-and-Fire neuron + Hebbian 2-neuron network</span>
+<span class="c1"># Author: R. Young &amp; ChatGPT, 2025</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="c1"># ---------- Part A: single LIF neuron ----------</span>
+<span class="n">T</span> <span class="o">=</span> <span class="mi">300</span>      <span class="c1"># ms total simulation time</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="mf">0.1</span>     <span class="c1"># ms time step</span>
+<span class="n">steps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">T</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="n">tau_m</span> <span class="o">=</span> <span class="mf">20.0</span>       <span class="c1"># membrane time constant (ms)</span>
+<span class="n">V_rest</span> <span class="o">=</span> <span class="o">-</span><span class="mf">70.0</span>     <span class="c1"># mV</span>
+<span class="n">V_thresh</span> <span class="o">=</span> <span class="o">-</span><span class="mf">54.0</span>   <span class="c1"># spike threshold (mV)</span>
+<span class="n">V_reset</span> <span class="o">=</span> <span class="o">-</span><span class="mf">80.0</span>    <span class="c1"># reset potential (mV)</span>
+<span class="n">R_m</span> <span class="o">=</span> <span class="mf">10.0</span>         <span class="c1"># MΩ</span>
+<span class="n">I_ext</span> <span class="o">=</span> <span class="mf">1.8</span>        <span class="c1"># nA external current</span>
+
+<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span>
+<span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">V_rest</span>
+<span class="n">spikes</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">steps</span><span class="p">):</span>
+    <span class="n">dV</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">V</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">V_rest</span><span class="p">)</span> <span class="o">+</span> <span class="n">R_m</span><span class="o">*</span><span class="n">I_ext</span><span class="p">)</span> <span class="o">/</span> <span class="n">tau_m</span>
+    <span class="n">V</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">V</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">dt</span><span class="o">*</span><span class="n">dV</span>
+    <span class="k">if</span> <span class="n">V</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">V_thresh</span><span class="p">:</span>
+        <span class="n">V</span><span class="p">[</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">20.0</span>     <span class="c1"># for pretty spike in plot</span>
+        <span class="n">V</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">V_reset</span>
+        <span class="n">spikes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">dt</span><span class="p">)</span>
+
+<span class="c1"># ---------- Part B: 2-neuron Hebbian network ----------</span>
+<span class="n">eta</span> <span class="o">=</span> <span class="mf">0.01</span>                <span class="c1"># learning rate</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="mf">0.1</span>   <span class="c1"># weight matrix</span>
+<span class="n">pre_spike_prob</span> <span class="o">=</span> <span class="mf">0.05</span>     <span class="c1"># probability pre neuron fires each ms</span>
+
+<span class="n">w_history</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>        <span class="c1"># training epochs</span>
+    <span class="n">pre</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">pre_spike_prob</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
+    <span class="n">post_input</span> <span class="o">=</span> <span class="n">pre</span> <span class="o">@</span> <span class="n">w</span>        <span class="c1"># simple linear sum</span>
+    <span class="n">post</span> <span class="o">=</span> <span class="p">(</span><span class="n">post_input</span> <span class="o">&gt;</span> <span class="mf">0.3</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>   <span class="c1"># threshold non-linearity</span>
+    
+    <span class="c1"># Hebbian update: Δw = η * pre^T * post</span>
+    <span class="n">dw</span> <span class="o">=</span> <span class="n">eta</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">pre</span><span class="p">,</span> <span class="n">post</span><span class="p">)</span>
+    <span class="n">w</span> <span class="o">+=</span> <span class="n">dw</span>
+    <span class="n">w_history</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+
+<span class="n">w_history</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">w_history</span><span class="p">)</span>
+
+<span class="c1"># ---------- Visualisation ----------</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Membrane potential trace</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">steps</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span><span class="p">,</span> <span class="n">V</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Leaky-Integrate-and-Fire Trace&quot;</span><span class="p">,</span>
+          <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Time (ms)&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Membrane potential (mV)&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">spikes</span><span class="p">:</span>
+    <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="c1"># Weight matrix evolution heat-map</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">w_history</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span>
+                  <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;magma&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Hebbian Weight Growth&quot;</span><span class="p">,</span>
+          <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Training step&quot;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Weight index&quot;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;w value&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+<section id="try-this-now-exercises">
+<h3>Try-this-now exercises<a class="headerlink" href="#try-this-now-exercises" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Increase τₘ to 40 ms; observe slower decay &amp; higher firing rate.</p></li>
+<li><p>Make one synapse inhibitory in Part B by initialising it negative; trace how competition evolves.</p></li>
+<li><p>Replace the binary post-neuron with a noisy sigmoid: σ(β · input) and watch weight saturation.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Complete code for this lab is available in the accompanying <code class="docutils literal notranslate"><span class="pre">ch02_demo.py</span></code> file.</p>
+</div>
+</section>
+</section>
+<section id="key-take-aways">
+<h2>2.6 Key Take-aways<a class="headerlink" href="#key-take-aways" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Biological neurons fire at kilohertz at best, yet 86 billion of them work in parallel while consuming only 20 W—roughly a dim light bulb.</p></li>
+<li><p>Plasticity is local and continuous. Back-prop is global and episodic. Bridging the gap is an active frontier (see “feedback alignment”).</p></li>
+<li><p>Studying the real brain supplies “design priors” that have already birthed convolution, recurrence, attention, and spiking ASICs. Ignoring biology wholesale risks reinventing wheels—or worse, building brittle systems that fail outside curated datasets.</p></li>
+</ul>
+<div class="important admonition">
+<p class="admonition-title">Knowledge Connections</p>
+<p><strong>Looking Back</strong></p>
+<ul class="simple">
+<li><p><strong>Chapter 1 (Introduction)</strong>: This chapter expands on the historical biological inspirations for artificial neural networks introduced in Chapter 1’s sections on key parallels and historical context.</p></li>
+</ul>
+<p><strong>Looking Forward</strong></p>
+<ul class="simple">
+<li><p><strong>Chapter 3 (Spatial Navigation)</strong>: The hippocampus, introduced in section 2.4, plays a critical role in spatial navigation through place cells, which will be explored in detail in Chapter 3.</p></li>
+<li><p><strong>Chapter 4 (Perception Pipeline)</strong>: The cortical circuit organization (section 2.2) provides the foundation for understanding how visual perception is organized in the brain.</p></li>
+<li><p><strong>Chapter 7 (Information Theory)</strong>: Hebbian plasticity and neural coding concepts connect to information-theoretic principles of efficient coding and redundancy reduction.</p></li>
+<li><p><strong>Chapter 10 (Deep Learning)</strong>: The discussion of biological learning (section 2.3) contrasts with deep learning optimization algorithms like backpropagation covered in Chapter 10.</p></li>
+<li><p><strong>Chapter 11 (Sequence Models)</strong>: Recurrent connections described in section 2.2 form the biological basis for sequence processing that inspired artificial recurrent neural networks.</p></li>
+</ul>
+</div>
+</section>
+<section id="further-reading-media">
+<h2>2.7 Further Reading &amp; Media<a class="headerlink" href="#further-reading-media" title="Link to this heading">#</a></h2>
+<section id="books">
+<h3>Books<a class="headerlink" href="#books" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Bear, Connors &amp; Paradiso – <em>Neuroscience: Exploring the Brain</em>, 4th ed., Ch 2-3, 23-27.</p></li>
+<li><p>Dayan &amp; Abbott – <em>Theoretical Neuroscience</em>, Ch 8 (spike-based plasticity).</p></li>
+</ul>
+</section>
+<section id="articles">
+<h3>Articles<a class="headerlink" href="#articles" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Song, Miller &amp; Abbott (2000) – “Competitive Hebbian Learning Through STDP”, <em>Nat. Neuro</em>.</p></li>
+<li><p>Lillicrap et al. (2020) – “Backpropagation and the Brain”, <em>Nat. Rev. Neurosci</em>.</p></li>
+</ul>
+</section>
+<section id="videos-moocs">
+<h3>Videos / MOOCs<a class="headerlink" href="#videos-moocs" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Crash Course Neuroscience Ep 1-3 (Intro &amp; Neuron Anatomy).</p></li>
+<li><p>3Blue1Brown – “What is a Neural Network?” for the ANN perspective.</p></li>
+<li><p>Neuromatch Academy (YouTube) – Model neurons &amp; STDP day.</p></li>
+</ul>
+</section>
+<section id="software-demos">
+<h3>Software / Demos<a class="headerlink" href="#software-demos" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Brian2 simulator (Python) – friendly spiking-network sandbox.</p></li>
+<li><p>NEST / NEURON – large-scale brain simulators if you crave HPC.</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Richard Young
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

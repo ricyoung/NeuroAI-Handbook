@@ -16,6 +16,16 @@ execute:
 latex:
   latex_documents:
     targetname: book.tex
+  latex_elements:
+    preamble: |
+      \usepackage{graphicx}
+      \graphicspath{{../}}
+      \usepackage{titling}
+      \usepackage{fancyhdr}
+      \pagestyle{fancy}
+      \fancyhead[LE,RO]{The Neuroscience of AI}
+      \fancyhead[RE,LO]{Richard Young}
+  logo: nai_transparent.png
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:

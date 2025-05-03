@@ -5,6 +5,10 @@ format: jb-book
 root: intro
 
 parts:
+  - caption: Cover
+    chapters:
+      - file: cover
+        title: Cover
   - caption: Part I · Brains & Inspiration
     chapters:
       - file: part1/ch01_intro

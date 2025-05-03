@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="400" viewBox="0 0 800 400">
+  <style>
+    .title {
+      font-family: Arial, sans-serif;
+      font-size: 20px;
+      font-weight: bold;
+      text-anchor: middle;
+      fill: #333;
+    }
+    .subtitle {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      text-anchor: middle;
+      fill: #555;
+    }
+    .axis-label {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      text-anchor: middle;
+      fill: #666;
+    }
+    .point {
+      stroke: #333;
+      stroke-width: 1;
+    }
+    .arrow {
+      stroke: #666;
+      stroke-width: 2;
+      fill: none;
+      marker-end: url(#arrowhead);
+    }
+    .dimension-line {
+      stroke: #999;
+      stroke-width: 1;
+      stroke-dasharray: 4 4;
+    }
+    .dimension-text {
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      text-anchor: end;
+      fill: #666;
+    }
+    .pca {
+      fill: #5cb85c;
+      opacity: 0.6;
+    }
+    .tsne {
+      fill: #f0ad4e;
+      opacity: 0.6;
+    }
+    .umap {
+      fill: #d9534f;
+      opacity: 0.6;
+    }
+    .legend-text {
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      fill: #333;
+    }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" class="title">Dimensionality Reduction Techniques for Neural Data</text>
+  
+  <!-- High-dimensional data visualization -->
+  <text x="175" y="70" class="subtitle">High-Dimensional Neural Data</text>
+  <rect x="50" y="85" width="250" height="220" fill="#f9f9f9" stroke="#ccc" rx="5" ry="5"/>
+  
+  <!-- Simulated high-dimensional axes -->
+  <line x1="80" y1="280" x2="80" y2="110" class="dimension-line"/>
+  <text x="75" y="110" class="dimension-text">Channel 1</text>
+  
+  <line x1="110" y1="280" x2="110" y2="110" class="dimension-line"/>
+  <text x="105" y="110" class="dimension-text">Channel 2</text>
+  
+  <line x1="140" y1="280" x2="140" y2="110" class="dimension-line"/>
+  <text x="135" y="110" class="dimension-text">Channel 3</text>
+  
+  <line x1="170" y1="280" x2="170" y2="110" class="dimension-line"/>
+  <text x="165" y="110" class="dimension-text">Channel n</text>
+  
+  <line x1="200" y1="280" x2="200" y2="110" class="dimension-line"/>
+  <text x="195" y="110" class="dimension-text">Time 1</text>
+  
+  <line x1="230" y1="280" x2="230" y2="110" class="dimension-line"/>
+  <text x="225" y="110" class="dimension-text">Time 2</text>
+  
+  <line x1="260" y1="280" x2="260" y2="110" class="dimension-line"/>
+  <text x="255" y="110" class="dimension-text">Time m</text>
+  
+  <!-- Label for too many dimensions -->
+  <text x="175" y="200" class="axis-label" style="font-style: italic;">Hundreds of dimensions</text>
+  <text x="175" y="215" class="axis-label" style="font-style: italic;">difficult to visualize</text>
+  
+  <!-- Middle arrow -->
+  <path d="M 310 190 L 370 190" class="arrow"/>
+  <text x="340" y="175" class="axis-label">Dimensionality</text>
+  <text x="340" y="190" class="axis-label">Reduction</text>
+  
+  <!-- Reduced dimensions visualization -->
+  <text x="550" y="70" class="subtitle">Low-Dimensional Representations</text>
+  
+  <!-- PCA Plot -->
+  <rect x="380" y="90" width="140" height="120" fill="#f9f9f9" stroke="#ccc" rx="5" ry="5"/>
+  <text x="450" y="110" class="axis-label">PCA</text>
+  
+  <!-- PCA points -->
+  <circle cx="410" cy="130" r="5" class="point pca"/>
+  <circle cx="430" cy="150" r="5" class="point pca"/>
+  <circle cx="440" cy="130" r="5" class="point pca"/>
+  <circle cx="460" cy="140" r="5" class="point pca"/>
+  <circle cx="470" cy="150" r="5" class="point pca"/>
+  <circle cx="480" cy="170" r="5" class="point pca"/>
+  <circle cx="420" cy="170" r="5" class="point pca"/>
+  <circle cx="450" cy="160" r="5" class="point pca"/>
+  <circle cx="430" cy="130" r="5" class="point pca"/>
+  <circle cx="450" cy="140" r="5" class="point pca"/>
+  
+  <!-- PCA axes -->
+  <line x1="450" y1="170" x2="450" y2="120" stroke="#666" stroke-width="1" stroke-dasharray="2 2"/>
+  <line x1="400" y1="145" x2="500" y2="145" stroke="#666" stroke-width="1" stroke-dasharray="2 2"/>
+  <text x="455" y="122" class="dimension-text" style="text-anchor: start; font-size: 9px;">PC1</text>
+  <text x="497" y="141" class="dimension-text" style="text-anchor: start; font-size: 9px;">PC2</text>
+  
+  <!-- t-SNE Plot -->
+  <rect x="530" y="90" width="140" height="120" fill="#f9f9f9" stroke="#ccc" rx="5" ry="5"/>
+  <text x="600" y="110" class="axis-label">t-SNE</text>
+  
+  <!-- t-SNE clusters -->
+  <circle cx="560" cy="130" r="5" class="point tsne"/>
+  <circle cx="570" cy="140" r="5" class="point tsne"/>
+  <circle cx="565" cy="135" r="5" class="point tsne"/>
+  <circle cx="572" cy="125" r="5" class="point tsne"/>
+  
+  <circle cx="600" cy="170" r="5" class="point tsne"/>
+  <circle cx="610" cy="165" r="5" class="point tsne"/>
+  <circle cx="605" cy="175" r="5" class="point tsne"/>
+  <circle cx="595" cy="160" r="5" class="point tsne"/>
+  
+  <circle cx="640" cy="140" r="5" class="point tsne"/>
+  <circle cx="635" cy="135" r="5" class="point tsne"/>
+  <circle cx="645" cy="130" r="5" class="point tsne"/>
+  <circle cx="635" cy="125" r="5" class="point tsne"/>
+  
+  <!-- UMAP Plot -->
+  <rect x="455" y="220" width="140" height="120" fill="#f9f9f9" stroke="#ccc" rx="5" ry="5"/>
+  <text x="525" y="240" class="axis-label">UMAP</text>
+  
+  <!-- UMAP clusters -->
+  <circle cx="485" cy="260" r="5" class="point umap"/>
+  <circle cx="490" cy="265" r="5" class="point umap"/>
+  <circle cx="480" cy="270" r="5" class="point umap"/>
+  <circle cx="475" cy="260" r="5" class="point umap"/>
+  
+  <circle cx="545" cy="290" r="5" class="point umap"/>
+  <circle cx="550" cy="295" r="5" class="point umap"/>
+  <circle cx="540" cy="300" r="5" class="point umap"/>
+  <circle cx="535" cy="290" r="5" class="point umap"/>
+  
+  <circle cx="515" cy="270" r="5" class="point umap"/>
+  <circle cx="520" cy="275" r="5" class="point umap"/>
+  <circle cx="525" cy="265" r="5" class="point umap"/>
+  <circle cx="515" cy="260" r="5" class="point umap"/>
+  
+  <!-- Legend -->
+  <rect x="550" y="350" width="200" height="30" fill="white" stroke="none"/>
+  
+  <circle cx="560" cy="365" r="5" class="point pca"/>
+  <text x="580" y="370" class="legend-text">PCA (linear)</text>
+  
+  <circle cx="630" cy="365" r="5" class="point tsne"/>
+  <text x="650" y="370" class="legend-text">t-SNE (non-linear)</text>
+  
+  <circle cx="700" cy="365" r="5" class="point umap"/>
+  <text x="720" y="370" class="legend-text">UMAP (non-linear)</text>
+  
+  <!-- Key Points -->
+  <text x="175" y="320" class="axis-label">Advantages:</text>
+  <text x="175" y="340" class="axis-label" style="font-size: 10px;">• Visualization of high-dimensional data</text>
+  <text x="175" y="355" class="axis-label" style="font-size: 10px;">• Noise reduction</text>
+  <text x="175" y="370" class="axis-label" style="font-size: 10px;">• Feature extraction</text>
+</svg>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800px" height="400px" viewBox="0 0 800 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>NeuroAI Timeline</title>
+    <g id="Timeline" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <!-- Timeline axis -->
+        <line x1="50" y1="200" x2="750" y2="200" stroke="#333333" stroke-width="3"/>
+        
+        <!-- Time periods -->
+        <text x="100" y="230" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">1940s</text>
+        <text x="200" y="230" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">1950s</text>
+        <text x="300" y="230" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">1960s</text>
+        <text x="400" y="230" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">1970s</text>
+        <text x="500" y="230" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">1980s</text>
+        <text x="600" y="230" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">1990s</text>
+        <text x="700" y="230" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">2000s+</text>
+        
+        <!-- Timeline markers -->
+        <line x1="100" y1="195" x2="100" y2="205" stroke="#333333" stroke-width="2"/>
+        <line x1="200" y1="195" x2="200" y2="205" stroke="#333333" stroke-width="2"/>
+        <line x1="300" y1="195" x2="300" y2="205" stroke="#333333" stroke-width="2"/>
+        <line x1="400" y1="195" x2="400" y2="205" stroke="#333333" stroke-width="2"/>
+        <line x1="500" y1="195" x2="500" y2="205" stroke="#333333" stroke-width="2"/>
+        <line x1="600" y1="195" x2="600" y2="205" stroke="#333333" stroke-width="2"/>
+        <line x1="700" y1="195" x2="700" y2="205" stroke="#333333" stroke-width="2"/>
+        
+        <!-- Title -->
+        <text x="400" y="30" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">Neuroscience and AI Timeline</text>
+        
+        <!-- AI Events (above the line) -->
+        <circle cx="90" cy="120" r="8" fill="#0066cc"/>
+        <text x="90" y="105" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">McCulloch-Pitts</text>
+        <text x="90" y="90" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Neuron (1943)</text>
+        
+        <circle cx="180" cy="150" r="8" fill="#0066cc"/>
+        <text x="180" y="135" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Perceptron</text>
+        <text x="180" y="120" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">(1957)</text>
+        
+        <circle cx="300" cy="120" r="8" fill="#0066cc"/>
+        <text x="300" y="105" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Minsky & Papert</text>
+        <text x="300" y="90" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">"Perceptrons" (1969)</text>
+        
+        <circle cx="505" cy="150" r="8" fill="#0066cc"/>
+        <text x="505" y="135" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Backpropagation</text>
+        <text x="505" y="120" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">(1986)</text>
+        
+        <circle cx="590" cy="120" r="8" fill="#0066cc"/>
+        <text x="590" y="105" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">CNN LeNet</text>
+        <text x="590" y="90" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">(1989)</text>
+        
+        <circle cx="690" cy="150" r="8" fill="#0066cc"/>
+        <text x="690" y="135" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Deep Learning</text>
+        <text x="690" y="120" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Revolution (2006+)</text>
+        
+        <rect x="90" y="60" width="70" height="20" rx="5" ry="5" fill="#e6f2ff" stroke="#0066cc"/>
+        <text x="125" y="74" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Cybernetics</text>
+        
+        <rect x="430" y="60" width="220" height="20" rx="5" ry="5" fill="#e6f2ff" stroke="#0066cc"/>
+        <text x="540" y="74" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Neural Network Renaissance</text>
+        
+        <rect x="660" y="60" width="90" height="20" rx="5" ry="5" fill="#e6f2ff" stroke="#0066cc"/>
+        <text x="705" y="74" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Modern AI Era</text>
+        
+        <text x="150" y="40" font-family="Arial" font-size="18" text-anchor="middle" fill="#0066cc" font-weight="bold">Artificial Intelligence</text>
+        
+        <!-- Neuroscience Events (below the line) -->
+        <circle cx="120" cy="280" r="8" fill="#cc0066"/>
+        <text x="120" y="295" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Hebb's Rule</text>
+        <text x="120" y="310" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">(1949)</text>
+        
+        <circle cx="180" cy="250" r="8" fill="#cc0066"/>
+        <text x="180" y="265" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Hodgkin-Huxley</text>
+        <text x="180" y="280" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Model (1952)</text>
+        
+        <circle cx="350" cy="280" r="8" fill="#cc0066"/>
+        <text x="350" y="295" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Place Cells</text>
+        <text x="350" y="310" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">(1971)</text>
+        
+        <circle cx="480" cy="250" r="8" fill="#cc0066"/>
+        <text x="480" y="265" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">LTP Discovery</text>
+        <text x="480" y="280" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">(1983)</text>
+        
+        <circle cx="580" cy="280" r="8" fill="#cc0066"/>
+        <text x="580" y="295" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">fMRI Development</text>
+        <text x="580" y="310" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">(1990s)</text>
+        
+        <circle cx="700" cy="250" r="8" fill="#cc0066"/>
+        <text x="700" y="265" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Grid Cells</text>
+        <text x="700" y="280" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">(2005)</text>
+        
+        <rect x="130" y="320" width="120" height="25" rx="5" ry="5" fill="#ffe6f0" stroke="#cc0066"/>
+        <text x="190" y="337" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Cellular Neuroscience</text>
+        
+        <rect x="440" y="320" width="170" height="25" rx="5" ry="5" fill="#ffe6f0" stroke="#cc0066"/>
+        <text x="525" y="337" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Systems Neuroscience</text>
+        
+        <rect x="650" y="320" width="90" height="25" rx="5" ry="5" fill="#ffe6f0" stroke="#cc0066"/>
+        <text x="695" y="337" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Big Data Era</text>
+        
+        <text x="650" y="370" font-family="Arial" font-size="18" text-anchor="middle" fill="#cc0066" font-weight="bold">Neuroscience</text>
+        
+        <!-- Cross-connections -->
+        <path d="M 120,280 C 130,240 140,240 150,200 C 160,160 170,160 180,150" stroke="#666666" stroke-width="2" stroke-dasharray="5,3"/>
+        <text x="170" y="185" font-family="Arial" font-size="14" fill="#666666" text-anchor="middle" font-weight="bold">Inspired</text>
+        
+        <path d="M 505,150 C 500,170 495,170 490,200 C 485,230 480,230 480,250" stroke="#666666" stroke-width="2" stroke-dasharray="5,3"/>
+        <text x="500" y="200" font-family="Arial" font-size="14" fill="#666666" text-anchor="middle" font-weight="bold">Parallels</text>
+        
+        <path d="M 700,250 C 695,230 690,230 685,200 C 680,170 685,160 690,150" stroke="#666666" stroke-width="2" stroke-dasharray="5,3"/>
+        <text x="675" y="200" font-family="Arial" font-size="14" fill="#666666" text-anchor="middle" font-weight="bold">Informs</text>
+    </g>
+</svg>

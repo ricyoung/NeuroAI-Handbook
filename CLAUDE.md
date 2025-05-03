@@ -9,6 +9,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Install dependencies: `pip install -r book/requirements.txt`
 - Initialize environment: `python init_neuroai.py --all`
 - Export PDFs: `bash export_pdfs.sh`
+- Create cover page: `bash create_cover_pdf.sh`
+- Add covers to PDFs: `bash add_covers_to_pdfs.sh`
 
 ## Project Structure
 - Content in `book/` directory

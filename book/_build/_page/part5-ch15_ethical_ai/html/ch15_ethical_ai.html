@@ -1,0 +1,1443 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Neuroscience of AI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=720ed60b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=60c0e2ec"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ch15_ethical_ai';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://neuroai-handbook.github.io/ch15_ethical_ai.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">None</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Chapter 15: Ethical AI - Considerations for NeuroAI
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fch15_ethical_ai.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 15: Ethical AI - Considerations for NeuroAI</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-15-ethical-ai-considerations-for-neuroai">
+<h1>Chapter 15: Ethical AI - Considerations for NeuroAI<a class="headerlink" href="#chapter-15-ethical-ai-considerations-for-neuroai" title="Link to this heading">#</a></h1>
+<p>The integration of neuroscience and artificial intelligence raises unique ethical considerations that require careful attention. This chapter explores the ethical dimensions of NeuroAI, providing a framework for responsible development and application.</p>
+<section id="chapter-goals">
+<h2>15.0 Chapter Goals<a class="headerlink" href="#chapter-goals" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Understand key ethical considerations in neuroscience-inspired AI systems</p></li>
+<li><p>Explore frameworks for privacy and data protection in neural applications</p></li>
+<li><p>Examine bias, fairness, and transparency challenges specific to NeuroAI</p></li>
+<li><p>Develop approaches for responsible innovation in this emerging field</p></li>
+<li><p>Implement practical frameworks for ethical assessment and governance</p></li>
+</ul>
+</section>
+<section id="ethical-frameworks-for-neuroai">
+<h2>Ethical Frameworks for NeuroAI<a class="headerlink" href="#ethical-frameworks-for-neuroai" title="Link to this heading">#</a></h2>
+<p>NeuroAI research and applications exist at the intersection of multiple ethical domains, including:</p>
+<ul class="simple">
+<li><p>Neuroscience ethics</p></li>
+<li><p>AI ethics</p></li>
+<li><p>Medical ethics</p></li>
+<li><p>Data privacy</p></li>
+<li><p>Research integrity</p></li>
+</ul>
+<p>These domains contribute important perspectives on how NeuroAI systems should be designed, deployed, and governed.</p>
+</section>
+<section id="privacy-and-brain-data">
+<h2>15.1 Privacy and Brain Data<a class="headerlink" href="#privacy-and-brain-data" title="Link to this heading">#</a></h2>
+<p>Brain data represents some of the most sensitive personal information possible:</p>
+<ul class="simple">
+<li><p>Neural activity can reveal thoughts, emotions, and cognitive states</p></li>
+<li><p>Brain imaging can potentially expose medical conditions</p></li>
+<li><p>Longitudinal brain data may predict future neurological conditions</p></li>
+</ul>
+<p>Principles for ethical brain data handling include:</p>
+<ol class="arabic simple">
+<li><p><strong>Informed consent</strong>: Ensuring participants fully understand how their brain data will be used</p></li>
+<li><p><strong>Data minimization</strong>: Collecting only essential data for the specific research purpose</p></li>
+<li><p><strong>Purpose limitation</strong>: Using data only for explicitly stated purposes</p></li>
+<li><p><strong>Secure storage</strong>: Implementing robust protections for brain data repositories</p></li>
+<li><p><strong>De-identification</strong>: Removing personally identifiable information when possible</p></li>
+</ol>
+<section id="neural-privacy-frameworks">
+<h3>15.1.1 Neural Privacy Frameworks<a class="headerlink" href="#neural-privacy-frameworks" title="Link to this heading">#</a></h3>
+<p>Implementing robust privacy safeguards is crucial for brain-computer interfaces (BCIs) and neural data systems. Here’s an example framework for neural data privacy protection:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">NeuralPrivacyFramework</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Framework for neural data privacy protection</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">consent_levels</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;identifiable&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>     <span class="c1"># Share personally identifiable neural data</span>
+            <span class="s2">&quot;pseudonymized&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>    <span class="c1"># Share with personally identifying info removed</span>
+            <span class="s2">&quot;aggregate_only&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>    <span class="c1"># Share only data aggregated across individuals</span>
+            <span class="s2">&quot;model_only&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>        <span class="c1"># Share only models trained on data, not data itself</span>
+            <span class="s2">&quot;no_sharing&quot;</span><span class="p">:</span> <span class="kc">False</span>        <span class="c1"># No sharing of any kind</span>
+        <span class="p">}</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">data_types</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;motor&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;sensitivity&quot;</span><span class="p">:</span> <span class="s2">&quot;low&quot;</span><span class="p">,</span> <span class="s2">&quot;sharing_allowed&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">},</span>
+            <span class="s2">&quot;emotion&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;sensitivity&quot;</span><span class="p">:</span> <span class="s2">&quot;high&quot;</span><span class="p">,</span> <span class="s2">&quot;sharing_allowed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+            <span class="s2">&quot;thoughts&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;sensitivity&quot;</span><span class="p">:</span> <span class="s2">&quot;very_high&quot;</span><span class="p">,</span> <span class="s2">&quot;sharing_allowed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
+            <span class="s2">&quot;personal_memories&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;sensitivity&quot;</span><span class="p">:</span> <span class="s2">&quot;very_high&quot;</span><span class="p">,</span> <span class="s2">&quot;sharing_allowed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span>
+        <span class="p">}</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">authorized_purposes</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;medical_treatment&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;basic_research&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+            <span class="s2">&quot;commercial_development&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">&quot;advertising&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+            <span class="s2">&quot;law_enforcement&quot;</span><span class="p">:</span> <span class="kc">False</span>
+        <span class="p">}</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">check_access_permitted</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_type</span><span class="p">,</span> <span class="n">purpose</span><span class="p">,</span> <span class="n">sharing_level</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Check if data access is permitted under the framework</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        - data_type: Type of neural data</span>
+<span class="sd">        - purpose: Purpose of data use</span>
+<span class="sd">        - sharing_level: Level of data sharing</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">        - permitted: Whether access is permitted</span>
+<span class="sd">        - reason: Reason for decision</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">data_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_types</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Unknown data type: </span><span class="si">{</span><span class="n">data_type</span><span class="si">}</span><span class="s2">&quot;</span>
+        
+        <span class="k">if</span> <span class="n">purpose</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">authorized_purposes</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Unknown purpose: </span><span class="si">{</span><span class="n">purpose</span><span class="si">}</span><span class="s2">&quot;</span>
+        
+        <span class="k">if</span> <span class="n">sharing_level</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">consent_levels</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Unknown sharing level: </span><span class="si">{</span><span class="n">sharing_level</span><span class="si">}</span><span class="s2">&quot;</span>
+        
+        <span class="c1"># Check if data type can be shared at all</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_types</span><span class="p">[</span><span class="n">data_type</span><span class="p">][</span><span class="s2">&quot;sharing_allowed&quot;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">data_type</span><span class="si">}</span><span class="s2"> data cannot be shared due to sensitivity&quot;</span>
+        
+        <span class="c1"># Check if purpose is authorized</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">authorized_purposes</span><span class="p">[</span><span class="n">purpose</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Purpose &#39;</span><span class="si">{</span><span class="n">purpose</span><span class="si">}</span><span class="s2">&#39; is not authorized&quot;</span>
+        
+        <span class="c1"># Check if sharing level is consented to</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">consent_levels</span><span class="p">[</span><span class="n">sharing_level</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;No consent for sharing level: </span><span class="si">{</span><span class="n">sharing_level</span><span class="si">}</span><span class="s2">&quot;</span>
+        
+        <span class="c1"># Special cases</span>
+        <span class="k">if</span> <span class="n">data_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;thoughts&quot;</span><span class="p">,</span> <span class="s2">&quot;personal_memories&quot;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">sharing_level</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;identifiable&quot;</span><span class="p">,</span> <span class="s2">&quot;pseudonymized&quot;</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">False</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;Higher-level anonymization required for </span><span class="si">{</span><span class="n">data_type</span><span class="si">}</span><span class="s2">&quot;</span>
+        
+        <span class="c1"># Access permitted</span>
+        <span class="k">return</span> <span class="kc">True</span><span class="p">,</span> <span class="s2">&quot;Access permitted under framework&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="differential-privacy-for-neural-data">
+<h3>15.1.2 Differential Privacy for Neural Data<a class="headerlink" href="#differential-privacy-for-neural-data" title="Link to this heading">#</a></h3>
+<p>When sharing neural data, differential privacy provides mathematical guarantees of privacy protection by adding calibrated noise:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">apply_differential_privacy</span><span class="p">(</span><span class="n">neural_data</span><span class="p">,</span> <span class="n">epsilon</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Apply differential privacy to neural data</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    - neural_data: Raw neural data</span>
+<span class="sd">    - epsilon: Privacy parameter (lower = more privacy)</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    - private_data: Privacy-protected version of the data</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Differential privacy implementation</span>
+    <span class="c1"># Add calibrated noise to guarantee privacy</span>
+    <span class="n">sensitivity</span> <span class="o">=</span> <span class="mf">1.0</span>  <span class="c1"># Maximum change one individual can have on output</span>
+    <span class="n">scale</span> <span class="o">=</span> <span class="n">sensitivity</span> <span class="o">/</span> <span class="n">epsilon</span>
+    
+    <span class="c1"># Add Laplace noise to each value</span>
+    <span class="n">noise</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">laplace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">scale</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">neural_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">private_data</span> <span class="o">=</span> <span class="n">neural_data</span> <span class="o">+</span> <span class="n">noise</span>
+    
+    <span class="k">return</span> <span class="n">private_data</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="bias-and-fairness">
+<h2>15.2 Bias and Fairness<a class="headerlink" href="#bias-and-fairness" title="Link to this heading">#</a></h2>
+<p>NeuroAI systems can perpetuate or amplify biases in several ways:</p>
+<ul class="simple">
+<li><p>Training data may underrepresent certain demographic groups</p></li>
+<li><p>Neural diversity may not be adequately captured in models</p></li>
+<li><p>Algorithms may perform differently across different populations</p></li>
+<li><p>Interpretations of results may reflect researchers’ biases</p></li>
+</ul>
+<p>Approaches to mitigate bias include:</p>
+<ul class="simple">
+<li><p>Diverse and representative training datasets</p></li>
+<li><p>Regular bias audits throughout development</p></li>
+<li><p>Inclusive research teams</p></li>
+<li><p>Community engagement with affected populations</p></li>
+</ul>
+<section id="bias-assessment-framework">
+<h3>15.2.1 Bias Assessment Framework<a class="headerlink" href="#bias-assessment-framework" title="Link to this heading">#</a></h3>
+<p>Bias assessment should be integrated throughout the development lifecycle:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">assess_neural_dataset_bias</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">demographic_fields</span><span class="p">,</span> <span class="n">neural_measures</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Assess potential bias in neural datasets</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    - dataset: Dataset containing demographic information and neural measures</span>
+<span class="sd">    - demographic_fields: List of demographic variables to check for bias</span>
+<span class="sd">    - neural_measures: List of neural measures to analyze for bias</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    - bias_report: Dictionary containing bias assessment results</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">bias_report</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;representation&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;performance_disparities&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;recommendations&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">}</span>
+    
+    <span class="c1"># Check for demographic representation bias</span>
+    <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">demographic_fields</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">distribution</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="n">field</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">bias_report</span><span class="p">[</span><span class="s2">&quot;representation&quot;</span><span class="p">][</span><span class="n">field</span><span class="p">]</span> <span class="o">=</span> <span class="n">distribution</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+            
+            <span class="c1"># Check for severe underrepresentation (less than 10%)</span>
+            <span class="k">for</span> <span class="n">category</span><span class="p">,</span> <span class="n">percentage</span> <span class="ow">in</span> <span class="n">distribution</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="k">if</span> <span class="n">percentage</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">:</span>
+                    <span class="n">bias_report</span><span class="p">[</span><span class="s2">&quot;recommendations&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;Underrepresentation of </span><span class="si">{</span><span class="n">category</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2"> (only </span><span class="si">{</span><span class="n">percentage</span><span class="si">:</span><span class="s2">.1%</span><span class="si">}</span><span class="s2">)&quot;</span>
+                    <span class="p">)</span>
+    
+    <span class="c1"># Check for performance disparities across groups</span>
+    <span class="k">for</span> <span class="n">measure</span> <span class="ow">in</span> <span class="n">neural_measures</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">measure</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="n">disparities</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">demographic_fields</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">field</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+                    <span class="n">group_means</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">field</span><span class="p">)[</span><span class="n">measure</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+                    <span class="n">group_stds</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">field</span><span class="p">)[</span><span class="n">measure</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+                    
+                    <span class="c1"># Calculate max disparity ratio</span>
+                    <span class="n">max_val</span> <span class="o">=</span> <span class="n">group_means</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+                    <span class="n">min_val</span> <span class="o">=</span> <span class="n">group_means</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> 
+                    <span class="k">if</span> <span class="n">min_val</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                        <span class="n">disparity_ratio</span> <span class="o">=</span> <span class="n">max_val</span> <span class="o">/</span> <span class="n">min_val</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">disparity_ratio</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+                    
+                    <span class="n">disparities</span><span class="p">[</span><span class="n">field</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                        <span class="s2">&quot;means&quot;</span><span class="p">:</span> <span class="n">group_means</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+                        <span class="s2">&quot;stds&quot;</span><span class="p">:</span> <span class="n">group_stds</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+                        <span class="s2">&quot;disparity_ratio&quot;</span><span class="p">:</span> <span class="n">disparity_ratio</span>
+                    <span class="p">}</span>
+                    
+                    <span class="c1"># Flag high disparities</span>
+                    <span class="k">if</span> <span class="n">disparity_ratio</span> <span class="o">&gt;</span> <span class="mf">1.5</span><span class="p">:</span>
+                        <span class="n">bias_report</span><span class="p">[</span><span class="s2">&quot;recommendations&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;High disparity in </span><span class="si">{</span><span class="n">measure</span><span class="si">}</span><span class="s2"> across </span><span class="si">{</span><span class="n">field</span><span class="si">}</span><span class="s2"> groups &quot;</span> <span class="o">+</span>
+                            <span class="sa">f</span><span class="s2">&quot;(ratio: </span><span class="si">{</span><span class="n">disparity_ratio</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">)&quot;</span>
+                        <span class="p">)</span>
+            
+            <span class="n">bias_report</span><span class="p">[</span><span class="s2">&quot;performance_disparities&quot;</span><span class="p">][</span><span class="n">measure</span><span class="p">]</span> <span class="o">=</span> <span class="n">disparities</span>
+    
+    <span class="k">return</span> <span class="n">bias_report</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="transparency-and-explainability">
+<h2>15.3 Transparency and Explainability<a class="headerlink" href="#transparency-and-explainability" title="Link to this heading">#</a></h2>
+<p>The complexity of both neural and AI systems creates significant challenges for transparency:</p>
+<ul class="simple">
+<li><p>Deep learning models often function as “black boxes”</p></li>
+<li><p>Brain-inspired architectures add additional layers of complexity</p></li>
+<li><p>Correlations between brain activity and model behavior may be difficult to interpret</p></li>
+</ul>
+<p>Best practices include:</p>
+<ul class="simple">
+<li><p>Documentation of model architecture and training procedures</p></li>
+<li><p>Explainable AI techniques that clarify decision processes</p></li>
+<li><p>Clear communication of model limitations</p></li>
+<li><p>Open science practices when possible</p></li>
+</ul>
+<section id="explainability-methods-for-neuroai">
+<h3>15.3.1 Explainability Methods for NeuroAI<a class="headerlink" href="#explainability-methods-for-neuroai" title="Link to this heading">#</a></h3>
+<p>Specialized techniques can help interpret complex NeuroAI systems:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">NeuroAIExplainer</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Explainability toolkit for NeuroAI models</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        - model: Trained model to explain</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
+        
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_saliency_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">,</span> <span class="n">target_class</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a saliency map using gradient-based attribution</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        - input_data: Input to explain (e.g., neural recording, image)</span>
+<span class="sd">        - target_class: Target class to explain (defaults to predicted class)</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">        - saliency_map: Attribution scores for each input feature</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># This would be implemented with actual gradient computation</span>
+        <span class="c1"># For illustration, we&#39;ll create a simple placeholder</span>
+        
+        <span class="c1"># Simulate gradient calculation (in practice, use autograd)</span>
+        <span class="n">saliency_map</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="p">))</span> <span class="o">*</span> <span class="n">input_data</span>
+        
+        <span class="c1"># Normalize for visualization</span>
+        <span class="n">saliency_map</span> <span class="o">=</span> <span class="p">(</span><span class="n">saliency_map</span> <span class="o">-</span> <span class="n">saliency_map</span><span class="o">.</span><span class="n">min</span><span class="p">())</span> <span class="o">/</span> <span class="p">(</span><span class="n">saliency_map</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">-</span> <span class="n">saliency_map</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+        
+        <span class="k">return</span> <span class="n">saliency_map</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">plot_feature_importance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">,</span> <span class="n">attribution_scores</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Plot feature importance based on attribution scores</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        - feature_names: Names of input features</span>
+<span class="sd">        - attribution_scores: Attribution scores for each feature</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Sort features by attribution score</span>
+        <span class="n">sorted_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">attribution_scores</span><span class="p">)</span>
+        <span class="n">sorted_features</span> <span class="o">=</span> <span class="p">[</span><span class="n">feature_names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">sorted_indices</span><span class="p">]</span>
+        <span class="n">sorted_scores</span> <span class="o">=</span> <span class="n">attribution_scores</span><span class="p">[</span><span class="n">sorted_indices</span><span class="p">]</span>
+        
+        <span class="c1"># Plot</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">sorted_features</span><span class="p">,</span> <span class="n">sorted_scores</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Attribution Score&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Feature Importance&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+        
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate_counterfactual</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_data</span><span class="p">,</span> <span class="n">target_outcome</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Generate a counterfactual example - closest possible input that</span>
+<span class="sd">        would lead to the target outcome</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        - input_data: Original input</span>
+<span class="sd">        - target_outcome: Desired output</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">        - counterfactual: Modified input that produces target outcome</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># In practice, this would optimize the input to change the model prediction</span>
+        <span class="c1"># For illustration, we create a synthetic example</span>
+        
+        <span class="c1"># Simple perturbation (in practice, use optimization)</span>
+        <span class="n">counterfactual</span> <span class="o">=</span> <span class="n">input_data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="n">perturbation</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="o">*</span><span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.1</span>
+        <span class="n">counterfactual</span> <span class="o">+=</span> <span class="n">perturbation</span>
+        
+        <span class="k">return</span> <span class="n">counterfactual</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="dual-use-concerns">
+<h2>15.4 Dual-Use Concerns<a class="headerlink" href="#dual-use-concerns" title="Link to this heading">#</a></h2>
+<p>NeuroAI technologies have potential for both beneficial and harmful applications:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Beneficial Applications</p></th>
+<th class="head"><p>Potential Misuse</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Brain disorder diagnosis</p></td>
+<td><p>Manipulation of cognition</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cognitive enhancement for disability</p></td>
+<td><p>Unauthorized surveillance</p></td>
+</tr>
+<tr class="row-even"><td><p>Personalized learning tools</p></td>
+<td><p>Deception detection without consent</p></td>
+</tr>
+<tr class="row-odd"><td><p>Neural rehabilitation</p></td>
+<td><p>Military applications</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Researchers and developers should:</p>
+<ul class="simple">
+<li><p>Conduct risk assessments during design phases</p></li>
+<li><p>Develop safeguards against misuse</p></li>
+<li><p>Engage with policymakers on appropriate regulations</p></li>
+<li><p>Consider implementing technical limitations when warranted</p></li>
+</ul>
+<section id="dual-use-risk-assessment">
+<h3>15.4.1 Dual-Use Risk Assessment<a class="headerlink" href="#dual-use-risk-assessment" title="Link to this heading">#</a></h3>
+<p>A formal risk assessment framework can help identify and mitigate potential harms:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">assess_dual_use_risk</span><span class="p">(</span><span class="n">technology_description</span><span class="p">,</span> <span class="n">capabilities</span><span class="p">,</span> <span class="n">stakeholders</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Assess dual-use risks of NeuroAI technologies</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    - technology_description: Description of the technology</span>
+<span class="sd">    - capabilities: List of technology capabilities</span>
+<span class="sd">    - stakeholders: List of affected stakeholder groups</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    - risk_assessment: Structured risk assessment</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">risk_assessment</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;technology&quot;</span><span class="p">:</span> <span class="n">technology_description</span><span class="p">,</span>
+        <span class="s2">&quot;identified_risks&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;risk_ratings&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;mitigation_strategies&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;recommendations&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">}</span>
+    
+    <span class="c1"># Common dual-use risk categories for NeuroAI</span>
+    <span class="n">risk_categories</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;privacy_violation&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Risk of exposing private neural or cognitive data&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;indicators&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;collects neural data&quot;</span><span class="p">,</span> <span class="s2">&quot;stores patterns of thought&quot;</span><span class="p">,</span> <span class="s2">&quot;identifies individuals&quot;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;manipulation&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Risk of manipulating thoughts, emotions, or behavior&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;indicators&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;influences decision-making&quot;</span><span class="p">,</span> <span class="s2">&quot;alters emotional state&quot;</span><span class="p">,</span> <span class="s2">&quot;modifies preferences&quot;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;surveillance&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Risk of unauthorized monitoring of cognitive states&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;indicators&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;continuous monitoring&quot;</span><span class="p">,</span> <span class="s2">&quot;detects deception&quot;</span><span class="p">,</span> <span class="s2">&quot;tracks attention&quot;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;discrimination&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Risk of unfair treatment based on neural characteristics&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;indicators&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;classifies neural patterns&quot;</span><span class="p">,</span> <span class="s2">&quot;makes access decisions&quot;</span><span class="p">,</span> <span class="s2">&quot;predicts capabilities&quot;</span><span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;weaponization&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Risk of use in military or law enforcement applications&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;indicators&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;enhances targeting&quot;</span><span class="p">,</span> <span class="s2">&quot;incapacitates subjects&quot;</span><span class="p">,</span> <span class="s2">&quot;extracts information&quot;</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="c1"># Identify applicable risks based on technology capabilities</span>
+    <span class="k">for</span> <span class="n">cap</span> <span class="ow">in</span> <span class="n">capabilities</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">risk_type</span><span class="p">,</span> <span class="n">risk_info</span> <span class="ow">in</span> <span class="n">risk_categories</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="c1"># Check if capability matches risk indicators</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">indicator</span> <span class="ow">in</span> <span class="n">cap</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">indicator</span> <span class="ow">in</span> <span class="n">risk_info</span><span class="p">[</span><span class="s2">&quot;indicators&quot;</span><span class="p">]):</span>
+                <span class="n">risk</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">risk_type</span><span class="p">,</span>
+                    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="n">risk_info</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;related_capability&quot;</span><span class="p">:</span> <span class="n">cap</span><span class="p">,</span>
+                    <span class="s2">&quot;affected_stakeholders&quot;</span><span class="p">:</span> <span class="p">[]</span>
+                <span class="p">}</span>
+                
+                <span class="c1"># Identify affected stakeholders</span>
+                <span class="k">for</span> <span class="n">stakeholder</span> <span class="ow">in</span> <span class="n">stakeholders</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">risk_type</span> <span class="o">==</span> <span class="s2">&quot;privacy_violation&quot;</span> <span class="ow">or</span> <span class="n">risk_type</span> <span class="o">==</span> <span class="s2">&quot;surveillance&quot;</span><span class="p">:</span>
+                        <span class="c1"># All stakeholders are affected by privacy/surveillance risks</span>
+                        <span class="n">risk</span><span class="p">[</span><span class="s2">&quot;affected_stakeholders&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stakeholder</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">risk_type</span> <span class="o">==</span> <span class="s2">&quot;discrimination&quot;</span> <span class="ow">and</span> <span class="s2">&quot;vulnerable&quot;</span> <span class="ow">in</span> <span class="n">stakeholder</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                        <span class="c1"># Discrimination especially affects vulnerable stakeholders</span>
+                        <span class="n">risk</span><span class="p">[</span><span class="s2">&quot;affected_stakeholders&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stakeholder</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">risk_type</span> <span class="o">==</span> <span class="s2">&quot;manipulation&quot;</span> <span class="ow">and</span> <span class="s2">&quot;user&quot;</span> <span class="ow">in</span> <span class="n">stakeholder</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+                        <span class="c1"># Manipulation especially affects direct users</span>
+                        <span class="n">risk</span><span class="p">[</span><span class="s2">&quot;affected_stakeholders&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stakeholder</span><span class="p">)</span>
+                
+                <span class="c1"># Only add risk if it affects stakeholders</span>
+                <span class="k">if</span> <span class="n">risk</span><span class="p">[</span><span class="s2">&quot;affected_stakeholders&quot;</span><span class="p">]:</span>
+                    <span class="n">risk_assessment</span><span class="p">[</span><span class="s2">&quot;identified_risks&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">risk</span><span class="p">)</span>
+    
+    <span class="c1"># Rate each identified risk (severity × likelihood)</span>
+    <span class="k">for</span> <span class="n">risk</span> <span class="ow">in</span> <span class="n">risk_assessment</span><span class="p">[</span><span class="s2">&quot;identified_risks&quot;</span><span class="p">]:</span>
+        <span class="c1"># This is a simplified heuristic - in practice, this would use expert judgment</span>
+        <span class="n">severity</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">risk</span><span class="p">[</span><span class="s2">&quot;affected_stakeholders&quot;</span><span class="p">])</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">stakeholders</span><span class="p">)</span>
+        
+        <span class="c1"># Heuristic for likelihood based on specificity of capability match</span>
+        <span class="n">likelihood_indicators</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">indicator</span> <span class="ow">in</span> <span class="n">risk_categories</span><span class="p">[</span><span class="n">risk</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]][</span><span class="s2">&quot;indicators&quot;</span><span class="p">]</span> 
+                                 <span class="k">if</span> <span class="n">indicator</span> <span class="ow">in</span> <span class="n">risk</span><span class="p">[</span><span class="s2">&quot;related_capability&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="n">likelihood</span> <span class="o">=</span> <span class="n">likelihood_indicators</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">risk_categories</span><span class="p">[</span><span class="n">risk</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]][</span><span class="s2">&quot;indicators&quot;</span><span class="p">])</span>
+        
+        <span class="c1"># Calculate risk score (0-1 scale)</span>
+        <span class="n">risk_score</span> <span class="o">=</span> <span class="n">severity</span> <span class="o">*</span> <span class="n">likelihood</span>
+        
+        <span class="c1"># Add rating to assessment</span>
+        <span class="n">risk_assessment</span><span class="p">[</span><span class="s2">&quot;risk_ratings&quot;</span><span class="p">][</span><span class="n">risk</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;severity&quot;</span><span class="p">:</span> <span class="n">severity</span><span class="p">,</span>
+            <span class="s2">&quot;likelihood&quot;</span><span class="p">:</span> <span class="n">likelihood</span><span class="p">,</span>
+            <span class="s2">&quot;risk_score&quot;</span><span class="p">:</span> <span class="n">risk_score</span>
+        <span class="p">}</span>
+        
+        <span class="c1"># Generate mitigation strategies based on risk type and score</span>
+        <span class="k">if</span> <span class="n">risk_score</span> <span class="o">&gt;</span> <span class="mf">0.6</span><span class="p">:</span>  <span class="c1"># High risk</span>
+            <span class="k">if</span> <span class="n">risk</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;privacy_violation&quot;</span><span class="p">:</span>
+                <span class="n">risk_assessment</span><span class="p">[</span><span class="s2">&quot;mitigation_strategies&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Implement differential privacy with epsilon &lt; 0.1 for </span><span class="si">{</span><span class="n">risk</span><span class="p">[</span><span class="s1">&#39;related_capability&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">risk</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;manipulation&quot;</span><span class="p">:</span>
+                <span class="n">risk_assessment</span><span class="p">[</span><span class="s2">&quot;mitigation_strategies&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Add human oversight and approval for all </span><span class="si">{</span><span class="n">risk</span><span class="p">[</span><span class="s1">&#39;related_capability&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> operations&quot;</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">risk</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;discrimination&quot;</span><span class="p">:</span>
+                <span class="n">risk_assessment</span><span class="p">[</span><span class="s2">&quot;mitigation_strategies&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;Conduct regular bias audits on </span><span class="si">{</span><span class="n">risk</span><span class="p">[</span><span class="s1">&#39;related_capability&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> and retrain if necessary&quot;</span>
+                <span class="p">)</span>
+            
+            <span class="c1"># Add to recommendations for high-risk items</span>
+            <span class="n">risk_assessment</span><span class="p">[</span><span class="s2">&quot;recommendations&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;HIGH RISK: </span><span class="si">{</span><span class="n">risk</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">risk_score</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">) - </span><span class="si">{</span><span class="n">risk</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">risk_assessment</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="responsible-innovation">
+<h2>15.5 Responsible Innovation<a class="headerlink" href="#responsible-innovation" title="Link to this heading">#</a></h2>
+<p>The path forward requires integrating ethical considerations throughout the research and development process:</p>
+<ol class="arabic simple">
+<li><p><strong>Ethics by design</strong>: Building ethical considerations into systems from the beginning</p></li>
+<li><p><strong>Inclusive development</strong>: Ensuring diverse stakeholder participation</p></li>
+<li><p><strong>Ongoing assessment</strong>: Regular evaluation of ethical implications as systems evolve</p></li>
+<li><p><strong>Governance frameworks</strong>: Developing appropriate oversight mechanisms</p></li>
+</ol>
+<section id="responsible-innovation-guidelines">
+<h3>15.5.1 Responsible Innovation Guidelines<a class="headerlink" href="#responsible-innovation-guidelines" title="Link to this heading">#</a></h3>
+<p>Responsible innovation frameworks provide a structured approach to ethical technology development:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ResponsibleInnovationGuidelines</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Guidelines for responsible innovation in neuro-AI</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">principles</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;transparency&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Clear documentation of capabilities and limitations&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;requirements&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;Publication of technical specifications&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Accessible explanation of function&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Disclosure of training data sources&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Clear indication of AI-generated content&quot;</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;accountability&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Clear lines of responsibility for system outcomes&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;requirements&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;Defined responsibility for errors&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Auditing mechanisms&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Recourse for affected individuals&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Regular impact assessments&quot;</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;inclusivity&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Development with diverse stakeholder input&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;requirements&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;Engagement with potentially affected communities&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Diverse development team&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Consideration of varied cultural perspectives&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Testing across diverse populations&quot;</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;non_maleficence&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Prevention of harm from system operation&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;requirements&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;Safety testing protocols&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Risk assessment framework&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Ongoing monitoring&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Kill switch mechanisms&quot;</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;autonomy&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Respect for human decision-making authority&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;requirements&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;Informed consent processes&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Opt-out mechanisms&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Control over personal data&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Avoidance of manipulative design&quot;</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">evaluate_technology</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tech_description</span><span class="p">,</span> <span class="n">principles_assessment</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Evaluate a technology against responsible innovation principles</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters:</span>
+<span class="sd">        - tech_description: Description of the technology</span>
+<span class="sd">        - principles_assessment: Dictionary with ratings for each principle</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">        - evaluation: Detailed evaluation against principles</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">evaluation</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;technology&quot;</span><span class="p">:</span> <span class="n">tech_description</span><span class="p">,</span>
+            <span class="s2">&quot;principles&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="s2">&quot;overall_adherence&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;recommendations&quot;</span><span class="p">:</span> <span class="p">[]</span>
+        <span class="p">}</span>
+        
+        <span class="n">total_score</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">for</span> <span class="n">principle</span><span class="p">,</span> <span class="n">details</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">principles</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">principle</span> <span class="ow">in</span> <span class="n">principles_assessment</span><span class="p">:</span>
+                <span class="n">score</span> <span class="o">=</span> <span class="n">principles_assessment</span><span class="p">[</span><span class="n">principle</span><span class="p">]</span>
+                <span class="n">total_score</span> <span class="o">+=</span> <span class="n">score</span>
+                
+                <span class="n">evaluation</span><span class="p">[</span><span class="s2">&quot;principles&quot;</span><span class="p">][</span><span class="n">principle</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="n">score</span><span class="p">,</span>
+                    <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="n">details</span><span class="p">,</span>
+                    <span class="s2">&quot;strengths&quot;</span><span class="p">:</span> <span class="n">principles_assessment</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">principle</span><span class="si">}</span><span class="s2">_strengths&quot;</span><span class="p">,</span> <span class="p">[]),</span>
+                    <span class="s2">&quot;weaknesses&quot;</span><span class="p">:</span> <span class="n">principles_assessment</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">principle</span><span class="si">}</span><span class="s2">_weaknesses&quot;</span><span class="p">,</span> <span class="p">[])</span>
+                <span class="p">}</span>
+                
+                <span class="c1"># Generate recommendations for low scores</span>
+                <span class="k">if</span> <span class="n">score</span> <span class="o">&lt;</span> <span class="mf">0.7</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">req</span> <span class="ow">in</span> <span class="n">details</span><span class="p">[</span><span class="s2">&quot;requirements&quot;</span><span class="p">]:</span>
+                        <span class="n">evaluation</span><span class="p">[</span><span class="s2">&quot;recommendations&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;Improve </span><span class="si">{</span><span class="n">principle</span><span class="si">}</span><span class="s2"> by addressing: </span><span class="si">{</span><span class="n">req</span><span class="si">}</span><span class="s2">&quot;</span>
+                        <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">evaluation</span><span class="p">[</span><span class="s2">&quot;principles&quot;</span><span class="p">][</span><span class="n">principle</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="n">details</span><span class="p">,</span>
+                    <span class="s2">&quot;note&quot;</span><span class="p">:</span> <span class="s2">&quot;Not assessed&quot;</span>
+                <span class="p">}</span>
+        
+        <span class="c1"># Calculate overall adherence</span>
+        <span class="n">evaluation</span><span class="p">[</span><span class="s2">&quot;overall_adherence&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">total_score</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">principles</span><span class="p">)</span>
+        
+        <span class="c1"># Overall assessment</span>
+        <span class="k">if</span> <span class="n">evaluation</span><span class="p">[</span><span class="s2">&quot;overall_adherence&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.8</span><span class="p">:</span>
+            <span class="n">evaluation</span><span class="p">[</span><span class="s2">&quot;summary&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;High adherence to responsible innovation principles&quot;</span>
+        <span class="k">elif</span> <span class="n">evaluation</span><span class="p">[</span><span class="s2">&quot;overall_adherence&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.6</span><span class="p">:</span>
+            <span class="n">evaluation</span><span class="p">[</span><span class="s2">&quot;summary&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Moderate adherence with specific areas needing improvement&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">evaluation</span><span class="p">[</span><span class="s2">&quot;summary&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;Low adherence - significant revisions recommended&quot;</span>
+        
+        <span class="k">return</span> <span class="n">evaluation</span>
+</pre></div>
+</div>
+</section>
+<section id="ethical-impact-assessment">
+<h3>15.5.2 Ethical Impact Assessment<a class="headerlink" href="#ethical-impact-assessment" title="Link to this heading">#</a></h3>
+<p>Structured impact assessments help anticipate and address potential ethical issues:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">ethical_impact_assessment</span><span class="p">(</span><span class="n">technology_description</span><span class="p">,</span> <span class="n">stakeholders</span><span class="p">,</span> <span class="n">societal_domains</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Conduct an ethical impact assessment for a neuro-AI technology</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    - technology_description: Description of the technology</span>
+<span class="sd">    - stakeholders: List of stakeholder groups</span>
+<span class="sd">    - societal_domains: Domains to assess impact on</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    - assessment: Impact assessment results</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">assessment</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;technology&quot;</span><span class="p">:</span> <span class="n">technology_description</span><span class="p">,</span>
+        <span class="s2">&quot;stakeholder_impacts&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;domain_impacts&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;risk_factors&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;benefit_factors&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;uncertainty_factors&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">}</span>
+    
+    <span class="c1"># Assess impact on each stakeholder group</span>
+    <span class="k">for</span> <span class="n">stakeholder</span> <span class="ow">in</span> <span class="n">stakeholders</span><span class="p">:</span>
+        <span class="c1"># This would involve stakeholder consultation in practice</span>
+        <span class="n">impact</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;direct_benefits&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;direct_risks&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;indirect_effects&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;power_dynamics&quot;</span><span class="p">:</span> <span class="p">{},</span>
+            <span class="s2">&quot;summary&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+        <span class="p">}</span>
+        <span class="n">assessment</span><span class="p">[</span><span class="s2">&quot;stakeholder_impacts&quot;</span><span class="p">][</span><span class="n">stakeholder</span><span class="p">]</span> <span class="o">=</span> <span class="n">impact</span>
+    
+    <span class="c1"># Assess impact on each societal domain</span>
+    <span class="k">for</span> <span class="n">domain</span> <span class="ow">in</span> <span class="n">societal_domains</span><span class="p">:</span>
+        <span class="c1"># This would involve domain expert input in practice</span>
+        <span class="n">impact</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;short_term_effects&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;long_term_effects&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;structural_changes&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;summary&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+        <span class="p">}</span>
+        <span class="n">assessment</span><span class="p">[</span><span class="s2">&quot;domain_impacts&quot;</span><span class="p">][</span><span class="n">domain</span><span class="p">]</span> <span class="o">=</span> <span class="n">impact</span>
+    
+    <span class="c1"># Key factors would be identified through stakeholder engagement</span>
+    <span class="n">assessment</span><span class="p">[</span><span class="s2">&quot;risk_factors&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Privacy implications of neural data collection&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Potential for creating new social inequalities&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Risk of misuse for manipulation or control&quot;</span>
+    <span class="p">]</span>
+    
+    <span class="n">assessment</span><span class="p">[</span><span class="s2">&quot;benefit_factors&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Potential for new treatments for neurological conditions&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Improved human-computer interaction&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Enhanced understanding of neural processes&quot;</span>
+    <span class="p">]</span>
+    
+    <span class="n">assessment</span><span class="p">[</span><span class="s2">&quot;uncertainty_factors&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Long-term effects on neural plasticity&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Potential for emergent behaviors in advanced systems&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Future regulatory frameworks&quot;</span>
+    <span class="p">]</span>
+    
+    <span class="c1"># Generate recommendations based on assessment</span>
+    <span class="n">assessment</span><span class="p">[</span><span class="s2">&quot;recommendations&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Implement stringent data privacy protections&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Establish inclusive governance mechanisms&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Ensure accessible distribution of benefits&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Develop monitoring frameworks for long-term effects&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Create clear boundaries for acceptable use cases&quot;</span>
+    <span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">assessment</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="case-studies-in-neuroai-ethics">
+<h2>15.6 Case Studies in NeuroAI Ethics<a class="headerlink" href="#case-studies-in-neuroai-ethics" title="Link to this heading">#</a></h2>
+<section id="brain-computer-interfaces">
+<h3>15.6.1 Brain-Computer Interfaces<a class="headerlink" href="#brain-computer-interfaces" title="Link to this heading">#</a></h3>
+<p>Brain-computer interfaces (BCIs) exemplify many ethical challenges in NeuroAI:</p>
+<ul class="simple">
+<li><p>Agency and autonomy when machines interpret neural signals</p></li>
+<li><p>Long-term safety of invasive interfaces</p></li>
+<li><p>Equitable access to potentially life-changing technology</p></li>
+<li><p>Privacy of neural data streams</p></li>
+<li><p>Potential for unauthorized access or “brain hacking”</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">assess_bci_ethical_considerations</span><span class="p">(</span><span class="n">bci_type</span><span class="p">,</span> <span class="n">target_population</span><span class="p">,</span> <span class="n">intended_use</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Assess ethical considerations specific to brain-computer interfaces</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    - bci_type: Type of BCI (e.g., &quot;invasive&quot;, &quot;non-invasive&quot;, &quot;bidirectional&quot;)</span>
+<span class="sd">    - target_population: Population the BCI is designed for</span>
+<span class="sd">    - intended_use: Purpose of the BCI</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    - assessment: BCI-specific ethical assessment</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">assessment</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;primary_concerns&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;additional_safeguards&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;autonomy_considerations&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;justice_implications&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">}</span>
+    
+    <span class="c1"># Invasive BCIs have additional safety and reversibility concerns</span>
+    <span class="k">if</span> <span class="s2">&quot;invasive&quot;</span> <span class="ow">in</span> <span class="n">bci_type</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="n">assessment</span><span class="p">[</span><span class="s2">&quot;primary_concerns&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+            <span class="s2">&quot;Long-term tissue response to implanted electrodes&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Risk of infection or rejection&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Difficulty of removal or replacement&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Permanence of neural changes&quot;</span>
+        <span class="p">])</span>
+        
+        <span class="n">assessment</span><span class="p">[</span><span class="s2">&quot;additional_safeguards&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+            <span class="s2">&quot;Regular monitoring of neural tissue health&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Clear protocol for device removal if needed&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Long-term clinical follow-up&quot;</span>
+        <span class="p">])</span>
+    
+    <span class="c1"># Bidirectional BCIs (read and write) raise additional agency concerns</span>
+    <span class="k">if</span> <span class="s2">&quot;bidirectional&quot;</span> <span class="ow">in</span> <span class="n">bci_type</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;stimulation&quot;</span> <span class="ow">in</span> <span class="n">bci_type</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="n">assessment</span><span class="p">[</span><span class="s2">&quot;primary_concerns&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+            <span class="s2">&quot;Potential for manipulation of thoughts or behavior&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Unclear boundaries between assisted and imposed actions&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Difficulty distinguishing internally vs. externally generated thoughts&quot;</span>
+        <span class="p">])</span>
+        
+        <span class="n">assessment</span><span class="p">[</span><span class="s2">&quot;additional_safeguards&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+            <span class="s2">&quot;Real-time feedback about stimulation activity&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;User-controlled lockout mechanisms&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Stimulation intensity limits&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Independent ethical oversight&quot;</span>
+        <span class="p">])</span>
+    
+    <span class="c1"># Autonomy considerations depend on intended use</span>
+    <span class="k">if</span> <span class="s2">&quot;assistive&quot;</span> <span class="ow">in</span> <span class="n">intended_use</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">or</span> <span class="s2">&quot;medical&quot;</span> <span class="ow">in</span> <span class="n">intended_use</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="n">assessment</span><span class="p">[</span><span class="s2">&quot;autonomy_considerations&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;autonomy_enhancement&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;May restore lost capabilities&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Could enable new forms of expression&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;May reduce dependence on caregivers&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;autonomy_risks&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;Potential for technical dependencies&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Risk of device abandonment if not well-designed&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Unclear liability for device-assisted actions&quot;</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="k">elif</span> <span class="s2">&quot;enhancement&quot;</span> <span class="ow">in</span> <span class="n">intended_use</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="n">assessment</span><span class="p">[</span><span class="s2">&quot;autonomy_considerations&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;autonomy_enhancement&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;May extend human capabilities&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Could enable new forms of expression&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;autonomy_risks&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;May create societal pressure to enhance&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Risk of creating two-tiered society&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Potential for exacerbating existing inequalities&quot;</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    
+    <span class="c1"># Justice implications focusing on access and fairness</span>
+    <span class="n">vulnerable_population</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">group</span> <span class="ow">in</span> <span class="n">target_population</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> 
+                               <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;disability&quot;</span><span class="p">,</span> <span class="s2">&quot;disorder&quot;</span><span class="p">,</span> <span class="s2">&quot;impairment&quot;</span><span class="p">,</span> <span class="s2">&quot;patient&quot;</span><span class="p">])</span>
+    
+    <span class="k">if</span> <span class="n">vulnerable_population</span><span class="p">:</span>
+        <span class="n">assessment</span><span class="p">[</span><span class="s2">&quot;justice_implications&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+            <span class="s2">&quot;Ensure device development prioritizes needs of target population&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Address affordability and insurance coverage&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Avoid exploitation of vulnerable groups in testing&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Include target population in design process&quot;</span>
+        <span class="p">])</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">assessment</span><span class="p">[</span><span class="s2">&quot;justice_implications&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+            <span class="s2">&quot;Consider social stratification risks&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Address workplace coercion concerns&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Develop frameworks for fair access&quot;</span>
+        <span class="p">])</span>
+    
+    <span class="k">return</span> <span class="n">assessment</span>
+</pre></div>
+</div>
+</section>
+<section id="predictive-models-for-neurological-conditions">
+<h3>15.6.2 Predictive Models for Neurological Conditions<a class="headerlink" href="#predictive-models-for-neurological-conditions" title="Link to this heading">#</a></h3>
+<p>AI systems that predict neurological conditions raise important questions:</p>
+<ul class="simple">
+<li><p>How to handle incidental findings</p></li>
+<li><p>Right to know vs. right not to know about future conditions</p></li>
+<li><p>Insurance discrimination concerns</p></li>
+<li><p>Appropriate clinical pathways for AI-flagged risks</p></li>
+<li><p>Statistical vs. clinical significance of predictions</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">develop_neurological_prediction_guidelines</span><span class="p">(</span><span class="n">condition</span><span class="p">,</span> <span class="n">prediction_horizon</span><span class="p">,</span> <span class="n">accuracy_metrics</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Develop ethical guidelines for neurological prediction models</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    - condition: Neurological condition being predicted</span>
+<span class="sd">    - prediction_horizon: Timeframe of prediction (e.g., &quot;1 year&quot;, &quot;5 years&quot;, &quot;lifetime&quot;)</span>
+<span class="sd">    - accuracy_metrics: Dictionary with model accuracy metrics (sensitivity, specificity, etc.)</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    - guidelines: Guidelines for ethical use of the predictive model</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">guidelines</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;disclosure_protocol&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;required_accuracy_thresholds&quot;</span><span class="p">:</span> <span class="p">{},</span>
+        <span class="s2">&quot;data_protection_requirements&quot;</span><span class="p">:</span> <span class="p">[],</span>
+        <span class="s2">&quot;clinical_pathway_recommendations&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">}</span>
+    
+    <span class="c1"># Disclosure thresholds depend on prediction horizon and condition severity</span>
+    <span class="n">long_term</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">term</span> <span class="ow">in</span> <span class="n">prediction_horizon</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;lifetime&quot;</span><span class="p">,</span> <span class="s2">&quot;decade&quot;</span><span class="p">,</span> <span class="s2">&quot;years&quot;</span><span class="p">,</span> <span class="s2">&quot;5-year&quot;</span><span class="p">])</span>
+    <span class="n">severe_condition</span> <span class="o">=</span> <span class="nb">any</span><span class="p">(</span><span class="n">term</span> <span class="ow">in</span> <span class="n">condition</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;dementia&quot;</span><span class="p">,</span> <span class="s2">&quot;parkinson&quot;</span><span class="p">,</span> <span class="s2">&quot;huntington&quot;</span><span class="p">,</span> 
+                                                                <span class="s2">&quot;alzheimer&quot;</span><span class="p">,</span> <span class="s2">&quot;fatal&quot;</span><span class="p">,</span> <span class="s2">&quot;untreatable&quot;</span><span class="p">])</span>
+    
+    <span class="k">if</span> <span class="n">long_term</span> <span class="ow">and</span> <span class="n">severe_condition</span><span class="p">:</span>
+        <span class="n">guidelines</span><span class="p">[</span><span class="s2">&quot;disclosure_protocol&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;approach&quot;</span><span class="p">:</span> <span class="s2">&quot;Opt-in disclosure with genetic counseling model&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;requirements&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;Pre-test counseling about implications&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Explicit consent for receiving results&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Post-disclosure support resources&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Option to receive partial results&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;justification&quot;</span><span class="p">:</span> <span class="s2">&quot;Long-term predictions of severe conditions have significant &quot;</span> <span class="o">+</span>
+                           <span class="s2">&quot;psychological impact and limited actionability&quot;</span>
+        <span class="p">}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">guidelines</span><span class="p">[</span><span class="s2">&quot;disclosure_protocol&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;approach&quot;</span><span class="p">:</span> <span class="s2">&quot;Default disclosure with opt-out option&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;requirements&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;Clear explanation of prediction meaning&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Context for understanding risk levels&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Available interventions information&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Option to decline receiving results&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;justification&quot;</span><span class="p">:</span> <span class="s2">&quot;Near-term or non-severe predictions may be more actionable &quot;</span> <span class="o">+</span>
+                           <span class="s2">&quot;with fewer psychological risks&quot;</span>
+        <span class="p">}</span>
+    
+    <span class="c1"># Required accuracy thresholds based on consequence severity</span>
+    <span class="k">if</span> <span class="n">severe_condition</span><span class="p">:</span>
+        <span class="n">guidelines</span><span class="p">[</span><span class="s2">&quot;required_accuracy_thresholds&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;sensitivity&quot;</span><span class="p">:</span> <span class="mf">0.90</span><span class="p">,</span>  <span class="c1"># High sensitivity to avoid missing cases</span>
+            <span class="s2">&quot;specificity&quot;</span><span class="p">:</span> <span class="mf">0.95</span><span class="p">,</span>  <span class="c1"># Very high specificity to avoid false alarms</span>
+            <span class="s2">&quot;ppv_minimum&quot;</span><span class="p">:</span> <span class="mf">0.80</span><span class="p">,</span>  <span class="c1"># Positive predictive value minimum</span>
+            <span class="s2">&quot;validation_requirement&quot;</span><span class="p">:</span> <span class="s2">&quot;External validation in three independent cohorts&quot;</span>
+        <span class="p">}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">guidelines</span><span class="p">[</span><span class="s2">&quot;required_accuracy_thresholds&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;sensitivity&quot;</span><span class="p">:</span> <span class="mf">0.80</span><span class="p">,</span>
+            <span class="s2">&quot;specificity&quot;</span><span class="p">:</span> <span class="mf">0.85</span><span class="p">,</span>
+            <span class="s2">&quot;ppv_minimum&quot;</span><span class="p">:</span> <span class="mf">0.70</span><span class="p">,</span>
+            <span class="s2">&quot;validation_requirement&quot;</span><span class="p">:</span> <span class="s2">&quot;External validation in at least one independent cohort&quot;</span>
+        <span class="p">}</span>
+    
+    <span class="c1"># Data protection requirements</span>
+    <span class="n">guidelines</span><span class="p">[</span><span class="s2">&quot;data_protection_requirements&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;Genetic non-discrimination protections&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Prohibition on sharing with insurers/employers&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Secure storage with access controls&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Privacy-preserving computation when possible&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Time-limited data retention&quot;</span>
+    <span class="p">]</span>
+    
+    <span class="c1"># Clinical pathway recommendations</span>
+    <span class="k">if</span> <span class="n">long_term</span><span class="p">:</span>
+        <span class="n">guidelines</span><span class="p">[</span><span class="s2">&quot;clinical_pathway_recommendations&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&quot;Regular monitoring rather than immediate intervention&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Lifestyle modification guidance&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Research participation opportunities&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Psychological support resources&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Family planning resources when relevant&quot;</span>
+        <span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">guidelines</span><span class="p">[</span><span class="s2">&quot;clinical_pathway_recommendations&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&quot;Clear next steps for clinical confirmation&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Standardized intervention protocols&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Defined specialist referral pathway&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Follow-up schedule with decreasing frequency if stable&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Clear negative result communication protocol&quot;</span>
+        <span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">guidelines</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="brain-like-ai-consciousness-considerations">
+<h2>15.7 Brain-Like AI Consciousness Considerations<a class="headerlink" href="#brain-like-ai-consciousness-considerations" title="Link to this heading">#</a></h2>
+<p>As AI systems become more brain-like, new ethical questions about machine consciousness may arise:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">analyze_ai_consciousness_criteria</span><span class="p">(</span><span class="n">system_properties</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Analyze an AI system against criteria for consciousness</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    - system_properties: Dictionary of properties and their values</span>
+<span class="sd">    </span>
+<span class="sd">    Returns:</span>
+<span class="sd">    - evaluation: Assessment against consciousness criteria</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Proposed criteria for consciousness (philosophical framework)</span>
+    <span class="n">criteria</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;integration&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Information integration across subsystems&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;measurement&quot;</span><span class="p">:</span> <span class="s2">&quot;φ (phi) from Integrated Information Theory&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;threshold&quot;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
+            <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mf">0.2</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;reportability&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Ability to report on internal states&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;measurement&quot;</span><span class="p">:</span> <span class="s2">&quot;Accuracy of self-monitoring&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;threshold&quot;</span><span class="p">:</span> <span class="mf">0.7</span><span class="p">,</span>
+            <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mf">0.15</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;self_model&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Representation of self as distinct from environment&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;measurement&quot;</span><span class="p">:</span> <span class="s2">&quot;Internal model calibration score&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;threshold&quot;</span><span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span>
+            <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mf">0.2</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;intentionality&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;States are about something (have content)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;measurement&quot;</span><span class="p">:</span> <span class="s2">&quot;Semantic coherence of internal states&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;threshold&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+            <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mf">0.15</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;adaptation&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Flexible response to novel situations&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;measurement&quot;</span><span class="p">:</span> <span class="s2">&quot;Performance on out-of-distribution tasks&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;threshold&quot;</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span>
+            <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mf">0.1</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;temporality&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Temporal integration of experience&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;measurement&quot;</span><span class="p">:</span> <span class="s2">&quot;Memory coherence score&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;threshold&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+            <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mf">0.1</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;qualia&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Subjective experience (hardest to measure)&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;measurement&quot;</span><span class="p">:</span> <span class="s2">&quot;Behavioral indicators of experience&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;threshold&quot;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
+            <span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mf">0.1</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="c1"># Evaluate system against criteria</span>
+    <span class="n">evaluation</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">total_score</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">max_score</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="k">for</span> <span class="n">criterion</span><span class="p">,</span> <span class="n">details</span> <span class="ow">in</span> <span class="n">criteria</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">criterion</span> <span class="ow">in</span> <span class="n">system_properties</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">system_properties</span><span class="p">[</span><span class="n">criterion</span><span class="p">]</span>
+            <span class="c1"># Calculate score (0-1)</span>
+            <span class="n">meets_threshold</span> <span class="o">=</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="n">details</span><span class="p">[</span><span class="s2">&quot;threshold&quot;</span><span class="p">]</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="n">value</span> <span class="o">*</span> <span class="n">details</span><span class="p">[</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span>
+            
+            <span class="n">evaluation</span><span class="p">[</span><span class="n">criterion</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="n">value</span><span class="p">,</span>
+                <span class="s2">&quot;meets_threshold&quot;</span><span class="p">:</span> <span class="n">meets_threshold</span><span class="p">,</span>
+                <span class="s2">&quot;weighted_score&quot;</span><span class="p">:</span> <span class="n">score</span><span class="p">,</span>
+                <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="n">details</span>
+            <span class="p">}</span>
+            
+            <span class="n">total_score</span> <span class="o">+=</span> <span class="n">score</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">evaluation</span><span class="p">[</span><span class="n">criterion</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s2">&quot;meets_threshold&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                <span class="s2">&quot;weighted_score&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="n">details</span>
+            <span class="p">}</span>
+        
+        <span class="n">max_score</span> <span class="o">+=</span> <span class="n">details</span><span class="p">[</span><span class="s2">&quot;weight&quot;</span><span class="p">]</span>
+    
+    <span class="c1"># Overall assessment</span>
+    <span class="n">evaluation</span><span class="p">[</span><span class="s2">&quot;overall&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s2">&quot;total_score&quot;</span><span class="p">:</span> <span class="n">total_score</span><span class="p">,</span>
+        <span class="s2">&quot;max_possible&quot;</span><span class="p">:</span> <span class="n">max_score</span><span class="p">,</span>
+        <span class="s2">&quot;percentage&quot;</span><span class="p">:</span> <span class="n">total_score</span> <span class="o">/</span> <span class="n">max_score</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
+        <span class="s2">&quot;summary&quot;</span><span class="p">:</span> <span class="s2">&quot;This framework does not claim to definitively determine consciousness, &quot;</span>
+                  <span class="s2">&quot;but provides a structured approach to evaluating systems against proposed criteria.&quot;</span>
+    <span class="p">}</span>
+    
+    <span class="k">return</span> <span class="n">evaluation</span>
+</pre></div>
+</div>
+</section>
+<section id="conclusion">
+<h2>15.8 Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Ethical considerations in NeuroAI are not obstacles to innovation but essential components of responsible development. By integrating ethics throughout the research and development process, the field can advance in ways that respect human rights, promote wellbeing, and distribute benefits equitably.</p>
+<p>As NeuroAI technologies continue to evolve, ongoing ethical dialogue among researchers, clinicians, policymakers, and the public will be crucial to ensuring these powerful tools serve humanity’s best interests.</p>
+<section id="key-ethical-principles-for-neuroai">
+<h3>15.8.1 Key Ethical Principles for NeuroAI<a class="headerlink" href="#key-ethical-principles-for-neuroai" title="Link to this heading">#</a></h3>
+<p>To summarize the ethical principles for NeuroAI development:</p>
+<ol class="arabic simple">
+<li><p><strong>Neural privacy</strong> - Protect the most personal data possible</p></li>
+<li><p><strong>Autonomy</strong> - Preserve human agency and decision-making</p></li>
+<li><p><strong>Transparency</strong> - Make systems interpretable and explainable</p></li>
+<li><p><strong>Justice</strong> - Ensure fair access and prevent discrimination</p></li>
+<li><p><strong>Non-maleficence</strong> - Prevent harm and misuse</p></li>
+<li><p><strong>Beneficence</strong> - Prioritize applications with clear benefits</p></li>
+<li><p><strong>Inclusivity</strong> - Include diverse stakeholders throughout development</p></li>
+</ol>
+<p>Implementing these principles requires technical approaches (like differential privacy and explainable models) as well as governance frameworks and inclusive development processes. Only by addressing ethical considerations throughout the entire development lifecycle can we ensure that NeuroAI benefits humanity while respecting fundamental rights and values.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Richard Young
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

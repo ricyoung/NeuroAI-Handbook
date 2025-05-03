@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 24px Arial; fill: #333; text-anchor: middle; }
+    .subtitle { font: 18px Arial; fill: #666; text-anchor: middle; }
+    .box-title { font: bold 16px Arial; fill: #333; text-anchor: middle; }
+    .label { font: 14px Arial; fill: #333; text-anchor: middle; }
+    .sublabel { font: 12px Arial; fill: #666; text-anchor: middle; }
+    .small-label { font: 11px Arial; fill: #666; text-anchor: middle; }
+    .input { fill: #ffffcc; stroke: #999; stroke-width: 1.5; }
+    .output { fill: #ccffcc; stroke: #339933; stroke-width: 1.5; }
+    .encoder-block { fill: #e6f3ff; stroke: #3366cc; stroke-width: 2; }
+    .decoder-block { fill: #ffe6cc; stroke: #ff9933; stroke-width: 2; }
+    .attention-block { fill: #ffcccc; stroke: #993333; stroke-width: 1.5; }
+    .ffn-block { fill: #e6ffe6; stroke: #339933; stroke-width: 1.5; }
+    .norm-block { fill: #f5f5f5; stroke: #666; stroke-width: 1; }
+    .pos-encoding { fill: #ccccff; stroke: #6666cc; stroke-width: 1.5; }
+    .embedding { fill: #ccccff; stroke: #6666cc; stroke-width: 1.5; }
+    .arrow { stroke: #666; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+    .skip-connection { stroke: #ff6600; stroke-width: 2; fill: none; stroke-dasharray: 5,3; }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" class="title">Transformer Architecture</text>
+  <text x="400" y="60" class="subtitle">Encoder-Decoder Model with Attention</text>
+  
+  <!-- Input and Output -->
+  <rect x="100" y="100" width="240" height="30" class="input" />
+  <text x="220" y="120" class="label">Input Sequence</text>
+  
+  <rect x="460" y="100" width="240" height="30" class="input" />
+  <text x="580" y="120" class="label">Output Sequence (Shifted Right)</text>
+  
+  <rect x="460" y="520" width="240" height="30" class="output" />
+  <text x="580" y="540" class="label">Output Probabilities</text>
+  
+  <!-- Encoder Stack -->
+  <g transform="translate(100, 150)">
+    <rect x="0" y="0" width="240" height="320" fill="#f9f9f9" stroke="#ccc" stroke-width="1" />
+    <text x="120" y="20" class="box-title">Encoder</text>
+    
+    <!-- Embedding and Positional Encoding -->
+    <rect x="70" y="40" width="100" height="30" class="embedding" />
+    <text x="120" y="60" class="label">Embeddings</text>
+    
+    <rect x="70" y="80" width="100" height="20" class="pos-encoding" />
+    <text x="120" y="95" class="sublabel">Positional Encoding</text>
+    
+    <!-- Encoder blocks -->
+    <rect x="20" y="120" width="200" height="160" class="encoder-block" />
+    <text x="120" y="140" class="box-title">Encoder Block × N</text>
+    
+    <rect x="45" y="160" width="150" height="40" class="attention-block" />
+    <text x="120" y="185" class="label">Multi-Head Attention</text>
+    
+    <rect x="45" y="210" width="150" height="20" class="norm-block" />
+    <text x="120" y="225" class="sublabel">Add & Norm</text>
+    
+    <rect x="45" y="240" width="150" height="40" class="ffn-block" />
+    <text x="120" y="265" class="label">Feed Forward</text>
+    
+    <rect x="45" y="290" width="150" height="20" class="norm-block" />
+    <text x="120" y="305" class="sublabel">Add & Norm</text>
+    
+    <!-- Skip connections -->
+    <path d="M 20,160 C 10,160 10,210 20,210" class="skip-connection" />
+    <path d="M 20,240 C 10,240 10,290 20,290" class="skip-connection" />
+  </g>
+  
+  <!-- Decoder Stack -->
+  <g transform="translate(460, 150)">
+    <rect x="0" y="0" width="240" height="320" fill="#f9f9f9" stroke="#ccc" stroke-width="1" />
+    <text x="120" y="20" class="box-title">Decoder</text>
+    
+    <!-- Embedding and Positional Encoding -->
+    <rect x="70" y="40" width="100" height="30" class="embedding" />
+    <text x="120" y="60" class="label">Embeddings</text>
+    
+    <rect x="70" y="80" width="100" height="20" class="pos-encoding" />
+    <text x="120" y="95" class="sublabel">Positional Encoding</text>
+    
+    <!-- Decoder blocks -->
+    <rect x="20" y="120" width="200" height="220" class="decoder-block" />
+    <text x="120" y="140" class="box-title">Decoder Block × N</text>
+    
+    <rect x="45" y="160" width="150" height="40" class="attention-block" />
+    <text x="120" y="175" class="small-label">Masked Multi-Head</text>
+    <text x="120" y="190" class="small-label">Attention</text>
+    
+    <rect x="45" y="210" width="150" height="20" class="norm-block" />
+    <text x="120" y="225" class="sublabel">Add & Norm</text>
+    
+    <rect x="45" y="240" width="150" height="40" class="attention-block" />
+    <text x="120" y="255" class="small-label">Multi-Head Attention</text>
+    <text x="120" y="270" class="small-label">(Encoder-Decoder)</text>
+    
+    <rect x="45" y="290" width="150" height="20" class="norm-block" />
+    <text x="120" y="305" class="sublabel">Add & Norm</text>
+    
+    <rect x="45" y="320" width="150" height="40" class="ffn-block" />
+    <text x="120" y="345" class="label">Feed Forward</text>
+    
+    <rect x="45" y="370" width="150" height="20" class="norm-block" />
+    <text x="120" y="385" class="sublabel">Add & Norm</text>
+    
+    <!-- Skip connections -->
+    <path d="M 20,160 C 10,160 10,210 20,210" class="skip-connection" />
+    <path d="M 20,240 C 10,240 10,290 20,290" class="skip-connection" />
+    <path d="M 20,320 C 10,320 10,370 20,370" class="skip-connection" />
+  </g>
+  
+  <!-- Final linear and softmax -->
+  <rect x="510" y="480" width="140" height="30" fill="#f5f5f5" stroke="#666" stroke-width="1" />
+  <text x="580" y="500" class="label">Linear + Softmax</text>
+  
+  <!-- Connections -->
+  <line x1="220" y1="130" x2="220" y2="150" class="arrow" />
+  <line x1="580" y1="130" x2="580" y2="150" class="arrow" />
+  
+  <line x1="220" y1="470" x2="220" y2="490" class="arrow" />
+  <line x1="580" y1="470" x2="580" y2="480" class="arrow" />
+  <line x1="580" y1="510" x2="580" y2="520" class="arrow" />
+  
+  <!-- Cross connections -->
+  <path d="M 340,260 L 460,260" class="arrow" />
+  
+  <!-- Small key details at bottom -->
+  <g transform="translate(50, 565)">
+    <rect x="0" y="0" width="700" height="25" fill="#f5f5f5" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+    <text x="20" y="17" class="sublabel" text-anchor="start">• Each encoder/decoder has its own weights</text>
+    <text x="250" y="17" class="sublabel" text-anchor="start">• Positional encoding adds sequence order information</text>
+    <text x="530" y="17" class="sublabel" text-anchor="start">• Skip connections help gradient flow</text>
+  </g>
+</svg>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="600" viewBox="0 0 800 600">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#444" />
+    </marker>
+    <marker id="redArrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c33" />
+    </marker>
+    <marker id="blueArrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#36c" />
+    </marker>
+    <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff7c7c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c33;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7c9fff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#36c;stop-opacity:1" />
+    </linearGradient>
+    <!-- Brain silhouette -->
+    <path id="brain-silhouette" d="M320,150 C290,120 270,100 250,90 C230,80 200,75 180,85 C160,95 150,120 160,140 C170,160 190,170 200,190 C210,210 200,220 190,240 C180,260 175,280 180,300 C185,320 200,330 215,335 C230,340 240,350 245,365 C250,380 248,395 240,405 C232,415 220,420 215,430 C210,440 215,450 225,455 C235,460 250,458 265,450 C280,442 295,435 310,430 C325,425 340,420 355,415 C370,410 390,400 410,400 C430,400 445,410 455,420 C465,430 470,450 465,470 C460,490 445,500 430,500 C415,500 405,490 395,480 C385,470 370,465 350,470 C330,475 320,485 315,500 C310,515 315,530 330,535 C345,540 370,535 390,525 C410,515 430,505 450,495 C470,485 490,475 510,470 C530,465 550,470 565,480 C580,490 590,510 585,530 C580,550 565,565 545,570 C525,575 505,565 485,560 C465,555 445,555 425,560 C405,565 395,575 395,590 C395,605 405,620 425,625 C445,630 470,620 495,610 C520,600 550,590 580,585 C610,580 640,585 660,600 C680,615 690,640 685,665 C680,690 660,710 630,715 C600,720 570,705 540,695 C510,685 480,680 450,685 C420,690 400,705 395,725 C390,745 400,765 420,775 C440,785 465,780 490,770 C515,760 540,745 565,735 C590,725 615,720 640,725 C665,730 690,745 705,765 C720,785 725,805 720,825 C715,845 695,860 675,865 C655,870 635,860 615,850 C595,840 575,830 555,825 C535,820 515,820 495,825 C475,830 455,840 440,855 C425,870 420,890 430,910 C440,930 465,945 490,950 C515,955 540,945 565,935 C590,925 615,915 640,910 C665,905 690,910 715,920 C740,930 760,950 775,975"/>
+    <clipPath id="brain-clip">
+      <use xlink:href="#brain-silhouette"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#fff"/>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" fill="#333" text-anchor="middle" font-weight="bold">Default Mode vs Executive Control Networks</text>
+  
+  <!-- Brain outline -->
+  <use xlink:href="#brain-silhouette" fill="none" stroke="#ddd" stroke-width="3"/>
+
+  <!-- Network regions: DMN -->
+  <g class="dmn-network">
+    <!-- mPFC: Medial Prefrontal Cortex -->
+    <circle cx="390" cy="210" r="30" fill="url(#blueGradient)" stroke="#36c" stroke-width="2"/>
+    <text x="390" y="210" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white" font-weight="bold">mPFC</text>
+    
+    <!-- PCC: Posterior Cingulate Cortex -->
+    <circle cx="380" cy="350" r="30" fill="url(#blueGradient)" stroke="#36c" stroke-width="2"/>
+    <text x="380" y="350" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white" font-weight="bold">PCC</text>
+    
+    <!-- Angular Gyrus L -->
+    <circle cx="280" cy="390" r="25" fill="url(#blueGradient)" stroke="#36c" stroke-width="2"/>
+    <text x="280" y="390" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white" font-weight="bold">AG-L</text>
+    
+    <!-- Angular Gyrus R -->
+    <circle cx="490" cy="390" r="25" fill="url(#blueGradient)" stroke="#36c" stroke-width="2"/>
+    <text x="490" y="390" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white" font-weight="bold">AG-R</text>
+    
+    <!-- MTL L: Medial Temporal Lobe Left -->
+    <circle cx="315" cy="310" r="20" fill="url(#blueGradient)" stroke="#36c" stroke-width="2"/>
+    <text x="315" y="310" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white" font-weight="bold">MTL-L</text>
+    
+    <!-- MTL R: Medial Temporal Lobe Right -->
+    <circle cx="455" cy="310" r="20" fill="url(#blueGradient)" stroke="#36c" stroke-width="2"/>
+    <text x="455" y="310" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white" font-weight="bold">MTL-R</text>
+  </g>
+
+  <!-- Network regions: Executive Control -->
+  <g class="executive-network">
+    <!-- dlPFC L: Dorsolateral Prefrontal Cortex Left -->
+    <circle cx="300" cy="190" r="25" fill="url(#redGradient)" stroke="#c33" stroke-width="2"/>
+    <text x="300" y="190" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white" font-weight="bold">dlPFC-L</text>
+    
+    <!-- dlPFC R: Dorsolateral Prefrontal Cortex Right -->
+    <circle cx="490" cy="190" r="25" fill="url(#redGradient)" stroke="#c33" stroke-width="2"/>
+    <text x="490" y="190" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white" font-weight="bold">dlPFC-R</text>
+    
+    <!-- ACC: Anterior Cingulate Cortex -->
+    <circle cx="390" cy="250" r="25" fill="url(#redGradient)" stroke="#c33" stroke-width="2"/>
+    <text x="390" y="250" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white" font-weight="bold">ACC</text>
+    
+    <!-- IPS L: Intraparietal Sulcus Left -->
+    <circle cx="250" cy="320" r="25" fill="url(#redGradient)" stroke="#c33" stroke-width="2"/>
+    <text x="250" y="320" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white" font-weight="bold">IPS-L</text>
+    
+    <!-- IPS R: Intraparietal Sulcus Right -->
+    <circle cx="520" cy="320" r="25" fill="url(#redGradient)" stroke="#c33" stroke-width="2"/>
+    <text x="520" y="320" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white" font-weight="bold">IPS-R</text>
+    
+    <!-- Pre-SMA: Pre-Supplementary Motor Area -->
+    <circle cx="390" cy="170" r="20" fill="url(#redGradient)" stroke="#c33" stroke-width="2"/>
+    <text x="390" y="170" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white" font-weight="bold">preSMA</text>
+  </g>
+
+  <!-- Connections within DMN -->
+  <g class="dmn-connections">
+    <line x1="390" y1="210" x2="380" y2="350" stroke="#36c" stroke-width="3" stroke-opacity="0.6" marker-end="url(#blueArrowhead)"/>
+    <line x1="380" y1="350" x2="280" y2="390" stroke="#36c" stroke-width="3" stroke-opacity="0.6" marker-end="url(#blueArrowhead)"/>
+    <line x1="380" y1="350" x2="490" y2="390" stroke="#36c" stroke-width="3" stroke-opacity="0.6" marker-end="url(#blueArrowhead)"/>
+    <line x1="380" y1="350" x2="315" y2="310" stroke="#36c" stroke-width="2" stroke-opacity="0.6" marker-end="url(#blueArrowhead)"/>
+    <line x1="380" y1="350" x2="455" y2="310" stroke="#36c" stroke-width="2" stroke-opacity="0.6" marker-end="url(#blueArrowhead)"/>
+    <line x1="390" y1="210" x2="315" y2="310" stroke="#36c" stroke-width="2" stroke-opacity="0.6" marker-end="url(#blueArrowhead)"/>
+    <line x1="390" y1="210" x2="455" y2="310" stroke="#36c" stroke-width="2" stroke-opacity="0.6" marker-end="url(#blueArrowhead)"/>
+  </g>
+
+  <!-- Connections within Executive Control Network -->
+  <g class="exec-connections">
+    <line x1="300" y1="190" x2="490" y2="190" stroke="#c33" stroke-width="3" stroke-opacity="0.6" marker-end="url(#redArrowhead)"/>
+    <line x1="300" y1="190" x2="390" y2="250" stroke="#c33" stroke-width="3" stroke-opacity="0.6" marker-end="url(#redArrowhead)"/>
+    <line x1="490" y1="190" x2="390" y2="250" stroke="#c33" stroke-width="3" stroke-opacity="0.6" marker-end="url(#redArrowhead)"/>
+    <line x1="300" y1="190" x2="250" y2="320" stroke="#c33" stroke-width="2" stroke-opacity="0.6" marker-end="url(#redArrowhead)"/>
+    <line x1="490" y1="190" x2="520" y2="320" stroke="#c33" stroke-width="2" stroke-opacity="0.6" marker-end="url(#redArrowhead)"/>
+    <line x1="250" y1="320" x2="520" y2="320" stroke="#c33" stroke-width="3" stroke-opacity="0.6" marker-end="url(#redArrowhead)"/>
+    <line x1="390" y1="170" x2="390" y2="250" stroke="#c33" stroke-width="2" stroke-opacity="0.6" marker-end="url(#redArrowhead)"/>
+    <line x1="390" y1="170" x2="300" y2="190" stroke="#c33" stroke-width="2" stroke-opacity="0.6" marker-end="url(#redArrowhead)"/>
+    <line x1="390" y1="170" x2="490" y2="190" stroke="#c33" stroke-width="2" stroke-opacity="0.6" marker-end="url(#redArrowhead)"/>
+  </g>
+
+  <!-- Inter-network (inhibitory) connections -->
+  <g class="inhibitory-connections">
+    <line x1="390" y1="210" x2="390" y2="250" stroke="#666" stroke-width="2" stroke-dasharray="5,3" stroke-opacity="0.7"/>
+    <line x1="300" y1="190" x2="390" y2="210" stroke="#666" stroke-width="2" stroke-dasharray="5,3" stroke-opacity="0.7"/>
+    <line x1="490" y1="190" x2="390" y2="210" stroke="#666" stroke-width="2" stroke-dasharray="5,3" stroke-opacity="0.7"/>
+    <line x1="380" y1="350" x2="250" y2="320" stroke="#666" stroke-width="2" stroke-dasharray="5,3" stroke-opacity="0.7"/>
+    <line x1="380" y1="350" x2="520" y2="320" stroke="#666" stroke-width="2" stroke-dasharray="5,3" stroke-opacity="0.7"/>
+  </g>
+
+  <!-- Legend -->
+  <g class="legend" transform="translate(600, 150)">
+    <rect x="0" y="0" width="175" height="140" fill="white" stroke="#ccc" stroke-width="1" rx="5" ry="5"/>
+    <text x="85" y="20" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold">Legend</text>
+
+    <!-- DMN -->
+    <circle cx="20" cy="40" r="10" fill="url(#blueGradient)" stroke="#36c" stroke-width="1"/>
+    <text x="35" y="45" font-family="Arial, sans-serif" font-size="12">Default Mode Network</text>
+
+    <!-- Executive -->
+    <circle cx="20" cy="70" r="10" fill="url(#redGradient)" stroke="#c33" stroke-width="1"/>
+    <text x="35" y="75" font-family="Arial, sans-serif" font-size="12">Executive Control</text>
+
+    <!-- Strong connection -->
+    <line x1="10" y1="100" x2="30" y2="100" stroke="#36c" stroke-width="3" stroke-opacity="0.6" marker-end="url(#blueArrowhead)"/>
+    <text x="35" y="105" font-family="Arial, sans-serif" font-size="12">Intra-network</text>
+
+    <!-- Inhibitory -->
+    <line x1="10" y1="130" x2="30" y2="130" stroke="#666" stroke-width="2" stroke-dasharray="5,3" stroke-opacity="0.7"/>
+    <text x="35" y="135" font-family="Arial, sans-serif" font-size="12">Inter-network</text>
+  </g>
+
+  <!-- Information boxes -->
+  <g class="function-boxes">
+    <!-- DMN Functions -->
+    <rect x="50" y="430" width="200" height="120" fill="#f0f8ff" stroke="#36c" stroke-width="2" rx="10" ry="10"/>
+    <text x="150" y="450" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Default Mode Network</text>
+    <text x="60" y="475" font-family="Arial, sans-serif" font-size="12">• Self-referential processing</text>
+    <text x="60" y="495" font-family="Arial, sans-serif" font-size="12">• Autobiographical memory</text>
+    <text x="60" y="515" font-family="Arial, sans-serif" font-size="12">• Mind-wandering</text>
+    <text x="60" y="535" font-family="Arial, sans-serif" font-size="12">• Future imagination</text>
+    
+    <!-- Executive Functions -->
+    <rect x="550" y="430" width="200" height="120" fill="#fff0f0" stroke="#c33" stroke-width="2" rx="10" ry="10"/>
+    <text x="650" y="450" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Executive Control</text>
+    <text x="560" y="475" font-family="Arial, sans-serif" font-size="12">• Working memory</text>
+    <text x="560" y="495" font-family="Arial, sans-serif" font-size="12">• Focused attention</text>
+    <text x="560" y="515" font-family="Arial, sans-serif" font-size="12">• Task monitoring</text>
+    <text x="560" y="535" font-family="Arial, sans-serif" font-size="12">• Response inhibition</text>
+    
+    <!-- Network Dynamics -->
+    <rect x="300" y="450" width="200" height="100" fill="#f5f5f5" stroke="#444" stroke-width="2" rx="10" ry="10"/>
+    <text x="400" y="470" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">Network Dynamics</text>
+    <text x="310" y="495" font-family="Arial, sans-serif" font-size="12">• Anti-correlated activity</text>
+    <text x="310" y="515" font-family="Arial, sans-serif" font-size="12">• Task-positive vs. task-negative</text>
+    <text x="310" y="535" font-family="Arial, sans-serif" font-size="12">• Dynamic reconfiguration</text>
+  </g>
+</svg>

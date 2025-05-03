@@ -16,11 +16,14 @@ By the end of this chapter, you will be able to:
 
 The relationship between neuroscience and artificial intelligence is deeply intertwined, with each field influencing the other across decades of research. Understanding this history helps frame modern developments in both disciplines.
 
-![Neuroscience and AI Timeline](../figures/ch01/neuro_ai_timeline.svg)
+![Neuroscience and AI Timeline](../figures/ch01/neuro_ai_timeline_large.svg)
 *Figure 1.1: Historical timeline showing the parallel development of neuroscience and AI, with key moments of cross-fertilization.*
 
-![Historical Convergence of Neuroscience and AI](../figures/ch01/neuro_ai_history.svg)
+![Historical Convergence of Neuroscience and AI](../figures/ch01/neuro_ai_history_large.svg)
 *Figure 1.2: Key milestones in the parallel development of neuroscience and artificial intelligence, showing how the fields have converged over time.*
+
+![Biological Neuron vs Artificial Perceptron](../figures/ch01/neuron_vs_perceptron_large.svg)
+*Figure 1.3: Comparison between a biological neuron and an artificial perceptron, showing structural and functional parallels.*
 
 ### 1.1.1 Early Foundations
 

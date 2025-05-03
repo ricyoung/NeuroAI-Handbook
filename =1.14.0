@@ -1,0 +1,21 @@
+Collecting jupytext
+  Using cached jupytext-1.17.1-py3-none-any.whl.metadata (14 kB)
+Requirement already satisfied: markdown-it-py>=1.0 in /opt/homebrew/Caskroom/miniconda/base/envs/NeuroAI-Handbook/lib/python3.12/site-packages (from jupytext) (3.0.0)
+Requirement already satisfied: mdit-py-plugins in /opt/homebrew/Caskroom/miniconda/base/envs/NeuroAI-Handbook/lib/python3.12/site-packages (from jupytext) (0.4.2)
+Requirement already satisfied: nbformat in /opt/homebrew/Caskroom/miniconda/base/envs/NeuroAI-Handbook/lib/python3.12/site-packages (from jupytext) (5.10.4)
+Requirement already satisfied: packaging in /Users/ric/.local/lib/python3.12/site-packages (from jupytext) (24.2)
+Requirement already satisfied: pyyaml in /opt/homebrew/Caskroom/miniconda/base/envs/NeuroAI-Handbook/lib/python3.12/site-packages (from jupytext) (6.0.2)
+Requirement already satisfied: mdurl~=0.1 in /opt/homebrew/Caskroom/miniconda/base/envs/NeuroAI-Handbook/lib/python3.12/site-packages (from markdown-it-py>=1.0->jupytext) (0.1.2)
+Requirement already satisfied: fastjsonschema>=2.15 in /opt/homebrew/Caskroom/miniconda/base/envs/NeuroAI-Handbook/lib/python3.12/site-packages (from nbformat->jupytext) (2.21.1)
+Requirement already satisfied: jsonschema>=2.6 in /opt/homebrew/Caskroom/miniconda/base/envs/NeuroAI-Handbook/lib/python3.12/site-packages (from nbformat->jupytext) (4.23.0)
+Requirement already satisfied: jupyter-core!=5.0.*,>=4.12 in /Users/ric/.local/lib/python3.12/site-packages (from nbformat->jupytext) (5.7.2)
+Requirement already satisfied: traitlets>=5.1 in /Users/ric/.local/lib/python3.12/site-packages (from nbformat->jupytext) (5.14.3)
+Requirement already satisfied: attrs>=22.2.0 in /opt/homebrew/Caskroom/miniconda/base/envs/NeuroAI-Handbook/lib/python3.12/site-packages (from jsonschema>=2.6->nbformat->jupytext) (25.3.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in /opt/homebrew/Caskroom/miniconda/base/envs/NeuroAI-Handbook/lib/python3.12/site-packages (from jsonschema>=2.6->nbformat->jupytext) (2024.10.1)
+Requirement already satisfied: referencing>=0.28.4 in /opt/homebrew/Caskroom/miniconda/base/envs/NeuroAI-Handbook/lib/python3.12/site-packages (from jsonschema>=2.6->nbformat->jupytext) (0.36.2)
+Requirement already satisfied: rpds-py>=0.7.1 in /opt/homebrew/Caskroom/miniconda/base/envs/NeuroAI-Handbook/lib/python3.12/site-packages (from jsonschema>=2.6->nbformat->jupytext) (0.24.0)
+Requirement already satisfied: platformdirs>=2.5 in /Users/ric/.local/lib/python3.12/site-packages (from jupyter-core!=5.0.*,>=4.12->nbformat->jupytext) (4.3.6)
+Requirement already satisfied: typing-extensions>=4.4.0 in /opt/homebrew/Caskroom/miniconda/base/envs/NeuroAI-Handbook/lib/python3.12/site-packages (from referencing>=0.28.4->jsonschema>=2.6->nbformat->jupytext) (4.13.2)
+Using cached jupytext-1.17.1-py3-none-any.whl (164 kB)
+Installing collected packages: jupytext
+Successfully installed jupytext-1.17.1

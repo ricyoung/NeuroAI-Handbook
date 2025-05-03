@@ -1,44 +1,12 @@
-# Core dependencies
+# Core requirements for building the book
 jupyter-book>=0.15.1
-jupytext>=1.16.0
-matplotlib>=3.7.1
-numpy>=1.24.3
-pandas>=2.0.1
-scipy>=1.10.1
-seaborn>=0.12.2
-ipywidgets>=8.0.6
-
-# Machine Learning & AI
-scikit-learn>=1.2.2
-torch>=2.0.1
-torchvision>=0.15.2
-transformers>=4.30.0
-diffusers>=0.16.1
-tensorflow>=2.12.0
-keras>=2.12.0
-optuna>=3.2.0
-
-# Neuroscience tools
-mne>=1.4.0
-nibabel>=5.0.0
-nilearn>=0.10.0
-allensdk>=2.13.5
-neurom>=3.2.0
-networkx>=3.1
-statsmodels>=0.14.0
-pyentropy>=0.6.0
-pynn>=0.10.0
-neo>=0.12.0
-bctpy>=0.6.0  # Brain Connectivity Toolbox for Python
-brian2>=2.5.1  # Spiking neural network simulator
-
-# Utilities
-tqdm>=4.65.0
-h5py>=3.8.0
-requests>=2.30.0
-pillow>=9.5.0
-nbformat>=5.8.0
-plotly>=5.14.0
+jupytext>=1.14.0
+matplotlib>=3.5.0
+numpy>=1.22.0
+pandas>=1.4.0
+scipy>=1.8.0
+nbformat>=5.4.0
+ipywidgets>=7.7.0
 
 # Interactive book features
 sphinx-togglebutton>=0.3.2
@@ -46,16 +14,14 @@ sphinx-copybutton>=0.5.1
 sphinx-comments>=0.0.3
 sphinx-thebe>=0.2.1
 sphinxcontrib-bibtex>=2.5.0
-ipywidgets>=8.0.6
-notebook>=6.5.3
-jupyterlab>=4.0.0
-ipython>=8.12.0
+notebook>=6.4.0
 
-# AI-assisted notebook features
-jupyter-ai>=2.5.0
-jupyter-ai-magics>=2.5.0
-openai>=1.3.0
-
-# Presentation tools
-rise>=5.7.1
-notebook>=6.0.0
+# Optional dependencies - install as needed
+# For specific functionality, you may install the following
+# jupyter-ai>=2.5.0 # For AI-assisted notebooks
+# pyentropy # Not available on PyPI, install from GitHub if needed
+# torch>=2.0.1 # For neural network examples
+# tensorflow>=2.12.0 # For neural network examples 
+# scikit-learn>=1.2.2 # For machine learning examples
+# mne>=1.4.0 # For neuroscience data processing
+# nilearn<0.10.0 # For neuroimaging

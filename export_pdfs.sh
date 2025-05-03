@@ -29,9 +29,21 @@ echo "Exporting Part 4 chapters..."
 jupyter-book build book/part4/ch12_large_language_models.md --builder pdfhtml
 jupyter-book build book/part4/ch13_multimodal_models.md --builder pdfhtml
 
-# Part 5: Reflection & Futures
-echo "Exporting Part 5 chapter..."
-jupyter-book build book/part5/ch14_future_directions.md --builder pdfhtml
+# Part 5: Ethics & Futures
+echo "Exporting Part 5 chapters..."
+jupyter-book build book/part5/ch15_ethical_ai.md --builder pdfhtml
+jupyter-book build book/part5/ch16_future_directions.md --builder pdfhtml
+
+# Part 6: Advanced Applications
+echo "Exporting Part 6 chapters..."
+jupyter-book build book/part6/ch17_bci_human_ai_interfaces.md --builder pdfhtml
+jupyter-book build book/part6/ch18_neuromorphic_computing.md --builder pdfhtml
+jupyter-book build book/part6/ch19_cognitive_neuro_dl.md --builder pdfhtml
+jupyter-book build book/part6/ch20_case_studies.md --builder pdfhtml
+jupyter-book build book/part6/ch21_ai_for_neuro_discovery.md --builder pdfhtml
+jupyter-book build book/part6/ch22_embodied_ai_robotics.md --builder pdfhtml
+jupyter-book build book/part6/ch23_lifelong_learning.md --builder pdfhtml
+jupyter-book build book/part6/ch24_quantum_computing_neuroai.md --builder pdfhtml
 
 # Appendices
 echo "Exporting Appendices..."
@@ -42,5 +54,13 @@ jupyter-book build book/appendices/colab_setup.md --builder pdfhtml
 # Move all PDFs to the pdf_exports directory
 echo "Moving PDFs to pdf_exports directory..."
 find book/_build/_page -name "*.pdf" -exec cp {} pdf_exports/ \;
+
+# Build the full book with cover
+echo "Building full book PDF with cover..."
+jupyter-book build book --builder pdflatex
+
+# Copy the full book PDF to the pdf_exports directory
+echo "Moving full book PDF to pdf_exports directory..."
+cp book/_build/latex/book.pdf pdf_exports/neuroai_handbook_full.pdf
 
 echo "PDF export complete. All PDFs are in the pdf_exports directory."

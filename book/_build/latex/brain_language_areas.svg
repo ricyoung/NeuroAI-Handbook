@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 24px Arial; fill: #333; text-anchor: middle; }
+    .subtitle { font: 18px Arial; fill: #666; text-anchor: middle; }
+    .region-title { font: bold 14px Arial; fill: #333; text-anchor: middle; }
+    .label { font: 14px Arial; fill: #333; text-anchor: middle; }
+    .sublabel { font: 12px Arial; fill: #666; text-anchor: middle; }
+    .function { font: 12px Arial; fill: #333; text-anchor: start; }
+    .llm { font: 12px Arial; fill: #006699; text-anchor: start; }
+    .broca { fill: #ffcccc; stroke: #cc3333; stroke-width: 1.5; }
+    .wernicke { fill: #cce6ff; stroke: #3366cc; stroke-width: 1.5; }
+    .angular { fill: #e6ffcc; stroke: #66cc33; stroke-width: 1.5; }
+    .temporal { fill: #ffe6cc; stroke: #cc6633; stroke-width: 1.5; }
+    .frontal { fill: #e6ccff; stroke: #6633cc; stroke-width: 1.5; opacity: 0.5; }
+    .brain { fill: #f2f2f2; stroke: #999999; stroke-width: 1; }
+    .arrow { stroke: #666; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+    .dashed-arrow { stroke: #666; stroke-width: 1.5; fill: none; stroke-dasharray: 5,5; marker-end: url(#arrowhead); }
+    .connection { stroke: #999; stroke-width: 2; fill: none; }
+    .parallel-box { fill: #f9f9f9; stroke: #999; stroke-width: 1; rx: 5; ry: 5; }
+    .model-box { fill: #f0f8ff; stroke: #3366cc; stroke-width: 1; rx: 5; ry: 5; }
+    .model-component { fill: #e6f2ff; stroke: #99ccff; stroke-width: 1; rx: 3; ry: 3; }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" class="title">Language Processing: Brain vs. LLM</text>
+  <text x="400" y="60" class="subtitle">Key Areas and Functional Parallels</text>
+  
+  <!-- Brain outline -->
+  <path d="M 180,120 C 120,140 100,240 110,320 C 130,420 200,450 250,460 C 350,470 380,450 400,430 C 420,450 450,470 550,460 
+           C 600,450 670,420 690,320 C 700,240 680,140 620,120 C 500,90 300,90 180,120 Z" class="brain" />
+  
+  <!-- Language regions -->
+  <path d="M 220,240 C 200,250 180,270 190,310 C 200,340 240,350 270,330 C 290,310 280,270 260,250 C 250,240 230,235 220,240 Z" class="broca" />
+  <text x="230" y="290" class="region-title">Broca's Area</text>
+  
+  <path d="M 420,320 C 400,330 380,350 390,380 C 400,410 440,420 470,400 C 490,380 480,340 460,330 C 450,320 430,315 420,320 Z" class="wernicke" />
+  <text x="430" y="370" class="region-title">Wernicke's Area</text>
+  
+  <path d="M 370,390 C 350,400 340,420 350,440 C 360,460 390,470 420,450 C 440,430 430,400 410,390 C 400,385 380,385 370,390 Z" class="angular" />
+  <text x="385" y="425" class="region-title">Angular Gyrus</text>
+  
+  <path d="M 550,300 C 530,310 520,330 530,360 C 540,390 580,400 610,380 C 630,360 620,320 600,310 C 590,300 560,295 550,300 Z" class="temporal" />
+  <text x="570" y="340" class="region-title">Temporal Lobe</text>
+  
+  <path d="M 160,160 C 140,180 130,240 140,270 C 150,310 180,330 240,310 C 300,290 310,240 300,210 C 290,190 270,180 240,170 C 220,165 180,155 160,160 Z" 
+        class="frontal" />
+  <text x="220" y="220" class="region-title">Prefrontal Cortex</text>
+  
+  <!-- Neural connections -->
+  <path d="M 270,320 C 320,350 350,360 390,370" class="connection" />
+  <path d="M 470,400 C 520,375 530,345 550,320" class="connection" />
+  <path d="M 410,440 C 350,410 300,350 250,330" class="connection" />
+  
+  <!-- Functions -->
+  <rect x="80" y="170" width="120" height="20" class="parallel-box" />
+  <text x="85" y="185" class="function">Speech Production</text>
+  
+  <rect x="280" y="260" width="120" height="20" class="parallel-box" />
+  <text x="285" y="275" class="function">Grammar Processing</text>
+  
+  <rect x="500" y="220" width="120" height="20" class="parallel-box" />
+  <text x="505" y="235" class="function">Word Meaning</text>
+  
+  <rect x="500" y="420" width="140" height="20" class="parallel-box" />
+  <text x="505" y="435" class="function">Semantic Memory</text>
+  
+  <rect x="280" y="450" width="140" height="20" class="parallel-box" />
+  <text x="285" y="465" class="function">Multimodal Integration</text>
+  
+  <!-- LLM Architecture -->
+  <rect x="80" y="490" width="640" height="100" class="model-box" />
+  <text x="400" y="510" class="region-title">LLM Architectural Parallels</text>
+  
+  <rect x="100" y="530" width="120" height="40" class="model-component" />
+  <text x="160" y="555" class="label">Output Layer</text>
+  <path d="M 160,530 L 220,240" class="dashed-arrow" />
+  <text x="170" y="510" class="llm">≈ Broca's Area</text>
+  
+  <rect x="240" y="530" width="140" height="40" class="model-component" />
+  <text x="310" y="555" class="label">Attention Mechanism</text>
+  <path d="M 310,530 L 430,370" class="dashed-arrow" />
+  <text x="300" y="490" class="llm">≈ Wernicke's Area</text>
+  
+  <rect x="400" y="530" width="140" height="40" class="model-component" />
+  <text x="470" y="555" class="label">Cross-Attention</text>
+  <path d="M 470,530 L 385,425" class="dashed-arrow" />
+  <text x="460" y="510" class="llm">≈ Angular Gyrus</text>
+  
+  <rect x="560" y="530" width="140" height="40" class="model-component" />
+  <text x="630" y="555" class="label">Embedding Space</text>
+  <path d="M 630,530 L 570,340" class="dashed-arrow" />
+  <text x="615" y="510" class="llm">≈ Temporal Lobe</text>
+  
+  <!-- Key functions -->
+  <rect x="100" y="120" width="600" height="30" fill="none" stroke="none" />
+  <text x="400" y="140" class="subtitle">Biological Neural Language Circuit</text>
+  
+  <rect x="100" y="470" width="600" height="20" fill="none" stroke="none" />
+  <text x="400" y="480" class="subtitle">Computational Language Model</text>
+</svg>
