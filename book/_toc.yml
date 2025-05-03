@@ -9,6 +9,14 @@ parts:
     chapters:
       - file: cover
         title: Cover
+  - caption: Front Matter
+    chapters:
+      - file: frontmatter/copyright
+        title: Copyright
+      - file: frontmatter/acknowledgments
+        title: Acknowledgments
+      - file: frontmatter/about
+        title: About This Book
   - caption: Part I · Brains & Inspiration
     chapters:
       - file: part1/ch01_intro

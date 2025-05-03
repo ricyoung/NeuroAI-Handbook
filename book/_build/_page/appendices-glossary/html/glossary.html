@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Neuroscience of AI</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=720ed60b" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=60c0e2ec"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'glossary';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="canonical" href="https://neuroai-handbook.github.io/glossary.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">None</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Glossary
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fglossary.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Glossary</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="glossary">
+<h1>Glossary<a class="headerlink" href="#glossary" title="Link to this heading">#</a></h1>
+<p>This glossary provides definitions for key terms used throughout the NeuroAI Handbook. Terms are organized alphabetically and include cross-references to relevant chapters where the concepts are discussed in detail.</p>
+<section id="a">
+<h2>A<a class="headerlink" href="#a" title="Link to this heading">#</a></h2>
+<p><strong>Action Potential</strong><br />
+The electrical signal that neurons use to transmit information along their axons. Characterized by a rapid rise and fall in voltage caused by ion channel activity. Also called a “spike.”<br />
+<em>See: [Chapter 2 (Neuroscience Foundations)]</em></p>
+<p><strong>Activation Function</strong><br />
+A mathematical function that determines the output of a neuron in artificial neural networks. Common examples include ReLU, sigmoid, and tanh.<br />
+<em>See: [Chapter 2 (Neuroscience Foundations)], [Chapter 10 (Deep Learning)]</em></p>
+<p><strong>Attention Mechanism</strong><br />
+A component in neural networks that allows the model to focus on specific parts of the input when generating output. Crucial for transformer models.<br />
+<em>See: [Chapter 11 (Sequence Models)], [Chapter 20 (Case Studies in NeuroAI)]</em></p>
+<p><strong>Axon</strong><br />
+The long, slender projection of a neuron that conducts electrical impulses (action potentials) away from the cell body to target cells.<br />
+<em>See: [Chapter 2 (Neuroscience Foundations)]</em></p>
+</section>
+<section id="b">
+<h2>B<a class="headerlink" href="#b" title="Link to this heading">#</a></h2>
+<p><strong>Backpropagation</strong><br />
+An algorithm for training artificial neural networks by calculating gradients of the loss function with respect to the network weights, propagating backward from the output.<br />
+<em>See: [Chapter 10 (Deep Learning)]</em></p>
+<p><strong>Batch Normalization</strong><br />
+A technique used to improve the stability and performance of neural networks by normalizing the activations of each layer.<br />
+<em>See: [Chapter 10 (Deep Learning)]</em></p>
+<p><strong>Basal Ganglia</strong><br />
+A group of subcortical nuclei involved in motor control, procedural learning, and action selection. Often analogized to reinforcement learning systems.<br />
+<em>See: [Chapter 2 (Neuroscience Foundations)]</em></p>
+</section>
+<section id="c">
+<h2>C<a class="headerlink" href="#c" title="Link to this heading">#</a></h2>
+<p><strong>Channel Capacity</strong><br />
+In information theory, the maximum rate at which information can be reliably transmitted over a communication channel.<br />
+<em>See: [Chapter 7 (Information Theory)]</em></p>
+<p><strong>Convolution</strong><br />
+An operation that applies a filter to an input, producing a feature map that indicates where features are located in the input. Fundamental to convolutional neural networks.<br />
+<em>See: [Chapter 10 (Deep Learning)]</em></p>
+<p><strong>Corpus</strong><br />
+A large collection of text used for training language models.<br />
+<em>See: [Chapter 12 (Large Language Models)]</em></p>
+</section>
+<section id="d">
+<h2>D<a class="headerlink" href="#d" title="Link to this heading">#</a></h2>
+<p><strong>Dendrite</strong><br />
+Branched extensions of neural cell bodies that receive signals from other neurons at synapses.<br />
+<em>See: [Chapter 2 (Neuroscience Foundations)]</em></p>
+<p><strong>Deep Learning</strong><br />
+A subset of machine learning based on artificial neural networks with multiple layers that progressively extract higher-level features from raw input.<br />
+<em>See: [Chapter 10 (Deep Learning)]</em></p>
+<p><strong>Dropout</strong><br />
+A regularization technique in neural networks where randomly selected neurons are ignored during training to prevent overfitting.<br />
+<em>See: [Chapter 10 (Deep Learning)]</em></p>
+</section>
+<section id="e">
+<h2>E<a class="headerlink" href="#e" title="Link to this heading">#</a></h2>
+<p><strong>Efficient Coding Hypothesis</strong><br />
+The hypothesis that sensory systems have evolved to efficiently represent natural stimuli by reducing redundancy and maximizing information transmission given metabolic constraints.<br />
+<em>See: [Chapter 7 (Information Theory)]</em></p>
+<p><strong>Emergent Abilities</strong><br />
+Capabilities that appear in large language models only after reaching a certain scale, not present in smaller models.<br />
+<em>See: [Chapter 12 (Large Language Models)]</em></p>
+<p><strong>Entropy</strong><br />
+A measure of uncertainty or randomness in a probability distribution, central to information theory.<br />
+<em>See: [Chapter 7 (Information Theory)]</em></p>
+</section>
+<section id="f">
+<h2>F<a class="headerlink" href="#f" title="Link to this heading">#</a></h2>
+<p><strong>Fine-tuning</strong><br />
+The process of taking a pre-trained model and adapting it to a specific task by training it further on a smaller, task-specific dataset.<br />
+<em>See: [Chapter 12 (Large Language Models)]</em></p>
+<p><strong>Few-shot Learning</strong><br />
+A learning paradigm where a model can learn new tasks or concepts from only a few examples.<br />
+<em>See: [Chapter 12 (Large Language Models)]</em></p>
+</section>
+<section id="g">
+<h2>G<a class="headerlink" href="#g" title="Link to this heading">#</a></h2>
+<p><strong>Gradient Descent</strong><br />
+An optimization algorithm that iteratively adjusts parameters to minimize a loss function by moving in the direction of steepest descent of the gradient.<br />
+<em>See: [Chapter 10 (Deep Learning)]</em></p>
+<p><strong>Gated Recurrent Unit (GRU)</strong><br />
+A type of recurrent neural network architecture similar to LSTMs but with a simpler structure, designed to capture dependencies in sequential data.<br />
+<em>See: [Chapter 11 (Sequence Models)]</em></p>
+</section>
+<section id="h">
+<h2>H<a class="headerlink" href="#h" title="Link to this heading">#</a></h2>
+<p><strong>Hebbian Learning</strong><br />
+A theory describing how synaptic connections strengthen when neurons fire together (“cells that fire together wire together”).<br />
+<em>See: [Chapter 2 (Neuroscience Foundations)]</em></p>
+<p><strong>Hippocampus</strong><br />
+A brain structure in the medial temporal lobe critical for forming new episodic memories and spatial navigation.<br />
+<em>See: [Chapter 2 (Neuroscience Foundations)]</em></p>
+</section>
+<section id="i">
+<h2>I<a class="headerlink" href="#i" title="Link to this heading">#</a></h2>
+<p><strong>Information Bottleneck</strong><br />
+A framework that quantifies the tradeoff between compression (minimal representation) and prediction (preserving relevant information) in neural networks.<br />
+<em>See: [Chapter 7 (Information Theory)]</em></p>
+</section>
+<section id="k">
+<h2>K<a class="headerlink" href="#k" title="Link to this heading">#</a></h2>
+<p><strong>KL Divergence (Kullback-Leibler Divergence)</strong><br />
+A measure of how one probability distribution differs from a reference probability distribution.<br />
+<em>See: [Chapter 7 (Information Theory)]</em></p>
+</section>
+<section id="l">
+<h2>L<a class="headerlink" href="#l" title="Link to this heading">#</a></h2>
+<p><strong>Latent Factor Analysis via Dynamical Systems (LFADS)</strong><br />
+A deep learning method that uses recurrent neural networks to model neural population dynamics and extract meaningful low-dimensional representations from high-dimensional neural data.<br />
+<em>See: [Chapter 20 (Case Studies in NeuroAI)]</em></p>
+<p><strong>LSTM (Long Short-Term Memory)</strong><br />
+A type of recurrent neural network architecture designed to address the vanishing gradient problem and better capture long-term dependencies in sequential data.<br />
+<em>See: [Chapter 11 (Sequence Models)]</em></p>
+<p><strong>Large Language Model (LLM)</strong><br />
+Neural network models with billions to trillions of parameters, trained on vast text corpora, capable of generating human-like text and performing a wide range of language tasks.<br />
+<em>See: [Chapter 12 (Large Language Models)]</em></p>
+</section>
+<section id="m">
+<h2>M<a class="headerlink" href="#m" title="Link to this heading">#</a></h2>
+<p><strong>Mutual Information</strong><br />
+A measure of the mutual dependence between two random variables, quantifying how much information one variable contains about another.<br />
+<em>See: [Chapter 7 (Information Theory)]</em></p>
+<p><strong>Multi-head Attention</strong><br />
+An extension of the attention mechanism that runs multiple attention computations in parallel, allowing the model to focus on different parts of the input for different purposes.<br />
+<em>See: [Chapter 11 (Sequence Models)]</em></p>
+</section>
+<section id="n">
+<h2>N<a class="headerlink" href="#n" title="Link to this heading">#</a></h2>
+<p><strong>Neuromorphic Computing</strong><br />
+Computing systems that mimic the neuro-biological architectures of the brain, often implementing neural networks in hardware for efficiency.<br />
+<em>See: [Chapter 2 (Neuroscience Foundations)]</em></p>
+<p><strong>Neurotransmitter</strong><br />
+Chemical messengers that transmit signals across synapses from a neuron to a target cell.<br />
+<em>See: [Chapter 2 (Neuroscience Foundations)]</em></p>
+</section>
+<section id="o">
+<h2>O<a class="headerlink" href="#o" title="Link to this heading">#</a></h2>
+<p><strong>Overfitting</strong><br />
+When a model learns the training data too well, including noise and outliers, resulting in poor generalization to new data.<br />
+<em>See: [Chapter 10 (Deep Learning)]</em></p>
+</section>
+<section id="p">
+<h2>P<a class="headerlink" href="#p" title="Link to this heading">#</a></h2>
+<p><strong>Parameter-Efficient Fine-Tuning (PEFT)</strong><br />
+Techniques to adapt large language models to new tasks by updating only a small subset of parameters, saving computational resources.<br />
+<em>See: [Chapter 12 (Large Language Models)]</em></p>
+<p><strong>Perceptron</strong><br />
+The simplest type of artificial neuron, which computes a weighted sum of its inputs, applies a step function, and outputs the result.<br />
+<em>See: [Chapter 2 (Neuroscience Foundations)]</em></p>
+<p><strong>PredNet</strong><br />
+A deep learning architecture that implements hierarchical predictive coding, modeling how the brain constantly generates predictions about incoming sensory information and learns from prediction errors.<br />
+<em>See: [Chapter 20 (Case Studies in NeuroAI)]</em></p>
+<p><strong>Predictive Coding</strong><br />
+A neuroscience theory proposing that the brain constantly generates predictions about incoming sensory information and updates its internal models based on prediction errors.<br />
+<em>See: [Chapter 20 (Case Studies in NeuroAI)]</em></p>
+<p><strong>Prioritized Experience Replay (PER)</strong><br />
+A biologically-inspired reinforcement learning technique that preferentially revisits experiences with high learning value, paralleling how the hippocampus selectively consolidates important memories.<br />
+<em>See: [Chapter 20 (Case Studies in NeuroAI)]</em></p>
+<p><strong>Prompting</strong><br />
+The practice of crafting input text to elicit specific behaviors or responses from language models.<br />
+<em>See: [Chapter 12 (Large Language Models)]</em></p>
+</section>
+<section id="r">
+<h2>R<a class="headerlink" href="#r" title="Link to this heading">#</a></h2>
+<p><strong>Recurrent Neural Network (RNN)</strong><br />
+A class of neural networks that have connections between nodes forming a directed graph along a temporal sequence, allowing them to exhibit temporal dynamic behavior.<br />
+<em>See: [Chapter 11 (Sequence Models)]</em></p>
+<p><strong>Regularization</strong><br />
+Techniques used during model training to prevent overfitting by adding a penalty on the complexity of the model.<br />
+<em>See: [Chapter 10 (Deep Learning)]</em></p>
+<p><strong>Reinforcement Learning from Human Feedback (RLHF)</strong><br />
+A technique to align language models with human preferences by training them using human feedback.<br />
+<em>See: [Chapter 12 (Large Language Models)]</em></p>
+</section>
+<section id="s">
+<h2>S<a class="headerlink" href="#s" title="Link to this heading">#</a></h2>
+<p><strong>Scaling Law</strong><br />
+Empirical relationships showing how model performance improves as a function of model size, dataset size, and computation.<br />
+<em>See: [Chapter 12 (Large Language Models)]</em></p>
+<p><strong>Self-Attention</strong><br />
+A mechanism where a sequence attends to itself, allowing the model to weigh the importance of different positions within the same sequence.<br />
+<em>See: [Chapter 11 (Sequence Models)]</em></p>
+<p><strong>Spike-Timing-Dependent Plasticity (STDP)</strong><br />
+A biological learning mechanism where the strength of connections between neurons is adjusted based on the relative timing of a neuron’s action potentials.<br />
+<em>See: [Chapter 2 (Neuroscience Foundations)]</em></p>
+<p><strong>Synapse</strong><br />
+The junction between two neurons where signals are transmitted from one neuron to another.<br />
+<em>See: [Chapter 2 (Neuroscience Foundations)]</em></p>
+</section>
+<section id="t">
+<h2>T<a class="headerlink" href="#t" title="Link to this heading">#</a></h2>
+<p><strong>Tokenization</strong><br />
+The process of converting text into tokens (words, subwords, or characters) that can be processed by language models.<br />
+<em>See: [Chapter 12 (Large Language Models)]</em></p>
+<p><strong>Transfer Learning</strong><br />
+A machine learning technique where a model developed for one task is reused as the starting point for a model on a second task.<br />
+<em>See: [Chapter 10 (Deep Learning)], [Chapter 12 (Large Language Models)]</em></p>
+<p><strong>Transformer</strong><br />
+A neural network architecture that uses self-attention mechanisms to process sequential data, enabling parallel computation and capturing long-range dependencies effectively.<br />
+<em>See: [Chapter 11 (Sequence Models)], [Chapter 12 (Large Language Models)]</em></p>
+</section>
+<section id="v">
+<h2>V<a class="headerlink" href="#v" title="Link to this heading">#</a></h2>
+<p><strong>Vanishing Gradient Problem</strong><br />
+A difficulty encountered in training deep neural networks where gradients become extremely small during backpropagation, making learning ineffective in early layers.<br />
+<em>See: [Chapter 10 (Deep Learning)], [Chapter 11 (Sequence Models)]</em></p>
+<p><strong>Vision Transformer (ViT)</strong><br />
+A neural network architecture for computer vision that applies the transformer model to image processing, dividing images into patches and processing them using self-attention mechanisms, inspired by how the human visual system allocates attention.<br />
+<em>See: [Chapter 20 (Case Studies in NeuroAI)]</em></p>
+</section>
+<section id="z">
+<h2>Z<a class="headerlink" href="#z" title="Link to this heading">#</a></h2>
+<p><strong>Zero-shot Learning</strong><br />
+The ability of a model to perform tasks it wasn’t explicitly trained on, without requiring any examples.<br />
+<em>See: [Chapter 12 (Large Language Models)]</em></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Richard Young
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

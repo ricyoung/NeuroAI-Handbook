@@ -3,14 +3,21 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Build Commands
-- Build JupyterBook: `jb build book`
-- Build specific chapter: `jupyter-book build book/path/to/chapter.md --builder pdfhtml`
+- Build JupyterBook HTML: `jb build book`
+- Build specific chapter PDF: `jupyter-book build book/path/to/chapter.md --builder pdfhtml`
 - Preview locally: `python -m http.server -d book/_build/html`
 - Install dependencies: `pip install -r book/requirements.txt`
 - Initialize environment: `python init_neuroai.py --all`
-- Export PDFs: `bash export_pdfs.sh`
-- Create cover page: `bash create_cover_pdf.sh`
-- Add covers to PDFs: `bash add_covers_to_pdfs.sh`
+- Build complete PDF handbook: `python build_neuroai_handbook.py`
+- Open the built PDF: `python open_pdf.py`
+
+## PDF Build Process
+The PDF build process uses three main scripts:
+1. `01_build_chapters.py`: Builds individual chapter PDFs
+2. `02_build_supporting.py`: Creates supporting pages (cover, TOC, dividers)
+3. `03_merge_final.py`: Combines everything into a single PDF
+
+To use a custom cover page, place a `cover.pdf` file in the `_assets` directory.
 
 ## Project Structure
 - Content in `book/` directory
@@ -19,6 +26,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Python code examples in `book/part1/` directory
 - SVG figures in `book/figures/` organized by chapter
 - Reference management with `book/references.bib`
+- PDF build scripts in the root directory
+- Custom assets in `_assets/` directory
+- PDF outputs in `pdf_exports/` directory
+- Build logs in `logs/` directory
 
 ## Code Style Guidelines
 - Python: Follow PEP 8 style guidelines

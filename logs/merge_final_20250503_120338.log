@@ -1,0 +1,44 @@
+2025-05-03 12:03:38 - INFO - HEADER: NeuroAI Handbook - Final Merge
+2025-05-03 12:03:38 - INFO - Log file created at: /Volumes/data_bolt/_github/NeuroAI-Handbook/logs/merge_final_20250503_120338.log
+2025-05-03 12:03:38 - INFO - HEADER: CREATING NEUROAI HANDBOOK
+2025-05-03 12:03:38 - INFO - Identifying component files
+2025-05-03 12:03:38 - INFO - Found supporting file: 00_cover.pdf
+2025-05-03 12:03:38 - INFO - Found supporting file: 01_copyright.pdf
+2025-05-03 12:03:38 - INFO - Found supporting file: 02_toc.pdf
+2025-05-03 12:03:38 - INFO - Found supporting file: acknowledgments.pdf
+2025-05-03 12:03:38 - INFO - Found supporting file: partI_divider.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 01_ch01_intro.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 02_ch02_neuro_foundations.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 03_ch03_spatial_navigation.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 04_ch04_perception_pipeline.pdf
+2025-05-03 12:03:38 - INFO - Found supporting file: partII_divider.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 05_ch05_brain_networks.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 06_ch06_neurostimulation.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 07_ch07_information_theory.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 08_ch08_data_science_pipeline.pdf
+2025-05-03 12:03:38 - INFO - Found supporting file: partIII_divider.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 09_ch09_ml_foundations.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 10_ch10_deep_learning.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 11_ch11_sequence_models.pdf
+2025-05-03 12:03:38 - INFO - Found supporting file: partIV_divider.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 12_ch12_large_language_models.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 13_ch13_multimodal_models.pdf
+2025-05-03 12:03:38 - INFO - Found supporting file: partV_divider.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 15_ch15_ethical_ai.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 16_ch16_future_directions.pdf
+2025-05-03 12:03:38 - INFO - Found supporting file: partVI_divider.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 17_ch17_bci_human_ai_interfaces.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 18_ch18_neuromorphic_computing.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 19_ch19_cognitive_neuro_dl.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 20_ch20_case_studies.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 21_ch21_ai_for_neuro_discovery.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 22_ch22_embodied_ai_robotics.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 24_ch24_quantum_computing_neuroai.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: 23_ch23_lifelong_learning.pdf
+2025-05-03 12:03:38 - INFO - Found supporting file: partVII_divider.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: A1_glossary.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: A2_math_python_refresher.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: A3_dataset_catalogue.pdf
+2025-05-03 12:03:38 - INFO - Found chapter file: A4_colab_setup.pdf
+2025-05-03 12:03:38 - INFO - Creating basic version only (as requested)
+2025-05-03 12:03:38 - INFO - Creating basic PDF (no page numbers)

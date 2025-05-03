@@ -105,12 +105,40 @@ The initialization script provides several options:
 
 ### Building the Book
 
+#### Building the HTML Version
 ```bash
 # Build the book
 jb build book
 
 # View the book locally (open http://localhost:8000 in your browser)
 python -m http.server -d book/_build/html
+```
+
+#### Building the PDF Version
+```bash
+# Build the complete PDF (creates a single PDF with page numbers)
+python build_neuroai_handbook.py
+
+# The final PDF will be in pdf_exports/complete_handbook/neuroai_handbook.pdf
+```
+
+The build process includes three main steps:
+1. Building all individual chapter PDFs using jupyter-book
+2. Creating supporting pages (cover, TOC, dividers, etc.)
+3. Combining everything into a single PDF with page numbers
+
+You can also customize the build with a custom output directory:
+```bash
+python build_neuroai_handbook.py --output /path/to/output
+```
+
+#### Custom Cover Page
+To use a custom cover page, place a `cover.pdf` file in the `_assets` directory.
+
+#### Opening the PDF
+Once built, you can quickly open the PDF with:
+```bash
+python open_pdf.py
 ```
 
 ### Running the Examples

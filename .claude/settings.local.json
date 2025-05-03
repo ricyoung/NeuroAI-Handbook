@@ -34,7 +34,8 @@
       "Bash(touch:*)",
       "WebFetchTool(domain:www.nature.com)",
       "Bash(bash:*)",
-      "Bash(jupyter-book clean:*)"
+      "Bash(jupyter-book clean:*)",
+      "Bash(cat:*)"
     ],
     "deny": []
   }
