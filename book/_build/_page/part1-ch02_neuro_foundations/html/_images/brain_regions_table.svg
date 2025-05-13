@@ -24,7 +24,7 @@
   <text x="312.5" y="125" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Hierarchical feature</text>
   <text x="312.5" y="140" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">extraction & planning</text>
   <text x="487.5" y="135" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Pyramidal neurons</text>
-  <text x="662.5" y="125" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Deep feed-forward &</text>
+  <text x="662.5" y="125" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Deep feed-forward &amp;</text>
   <text x="662.5" y="140" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">recurrent networks</text>
   
   <!-- Row 2: Hippocampus -->
