@@ -131,7 +131,7 @@
   
   <!-- Natural language prompt -->
   <rect x="120" y="410" width="200" height="20" fill="#f8f8f8" stroke="#ccc" rx="5" ry="5"/>
-  <text x="140" y="424" class="code-text" style="font-style: italic;">"Filter the EEG data between 1-40Hz"</text>
+  <text x="140" y="424" class="code-text" style="font-style: italic;">&quot;Filter the EEG data between 1-40Hz&quot;</text>
   
   <!-- AI Generated code -->
   <rect x="320" y="410" width="160" height="20" fill="#f8f8f8" stroke="#ccc" rx="5" ry="5"/>

@@ -55,7 +55,7 @@
       <circle cx="440" cy="530" r="25" fill="#99ccff" stroke="#3366cc" stroke-width="1" fill-opacity="0.5"/>
       <ellipse cx="400" cy="530" rx="15" ry="15" fill="#cc99ff" stroke="#9933cc" stroke-width="1" fill-opacity="0.7"/>
       <text x="400" y="520" font-family="Arial" font-size="12" text-anchor="middle">Partial Correlation</text>
-      <text x="400" y="540" font-family="Arial" font-size="12" text-anchor="middle">0 < I(X;Y) < min(H(X),H(Y))</text>
+      <text x="400" y="540" font-family="Arial" font-size="12" text-anchor="middle">0 &lt; I(X;Y) &lt; min(H(X),H(Y))</text>
     </g>
     
     <!-- Completely dependent variables -->
