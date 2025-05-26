@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 24px Arial; fill: #333; text-anchor: middle; }
+    .subtitle { font: 18px Arial; fill: #666; text-anchor: middle; }
+    .method-title { font: bold 16px Arial; fill: #333; text-anchor: middle; }
+    .description { font: 14px Arial; fill: #333; text-anchor: middle; }
+    .code { font: 12px Courier; fill: #333; text-anchor: start; }
+    .neuron { fill: #f5f5f5; stroke: #333; stroke-width: 1.5; }
+    .active-neuron { fill: #ccffcc; stroke: #339933; stroke-width: 2; }
+    .inactive-neuron { fill: #ffcccc; stroke: #993333; stroke-width: 1; opacity: 0.5; }
+    .crossed-neuron { fill: #ffcccc; stroke: #993333; stroke-width: 1; }
+    .connection { stroke: #999; stroke-width: 1.5; }
+    .inactive-connection { stroke: #ccc; stroke-width: 1; stroke-dasharray: 3,3; }
+    .arrow { stroke: #666; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="40" class="title">Regularization Techniques in Deep Learning</text>
+  <text x="400" y="70" class="subtitle">Methods to prevent overfitting and improve generalization</text>
+  
+  <!-- Dropout -->
+  <g transform="translate(60, 120)">
+    <rect x="0" y="0" width="200" height="220" fill="#f9f9f9" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+    <text x="100" y="30" class="method-title">Dropout</text>
+    
+    <!-- Network Before -->
+    <circle cx="50" cy="80" r="15" class="neuron" />
+    <circle cx="50" cy="120" r="15" class="neuron" />
+    <circle cx="50" cy="160" r="15" class="neuron" />
+    
+    <circle cx="110" cy="70" r="15" class="neuron" />
+    <circle cx="110" cy="110" r="15" class="neuron" />
+    <circle cx="110" cy="150" r="15" class="neuron" />
+    <circle cx="110" cy="190" r="15" class="neuron" />
+    
+    <circle cx="170" cy="80" r="15" class="neuron" />
+    <circle cx="170" cy="120" r="15" class="neuron" />
+    <circle cx="170" cy="160" r="15" class="neuron" />
+    
+    <!-- Connections -->
+    <line x1="65" y1="80" x2="95" y2="70" class="connection" />
+    <line x1="65" y1="80" x2="95" y2="110" class="connection" />
+    <line x1="65" y1="80" x2="95" y2="150" class="connection" />
+    <line x1="65" y1="80" x2="95" y2="190" class="connection" />
+    
+    <line x1="65" y1="120" x2="95" y2="70" class="connection" />
+    <line x1="65" y1="120" x2="95" y2="110" class="connection" />
+    <line x1="65" y1="120" x2="95" y2="150" class="connection" />
+    <line x1="65" y1="120" x2="95" y2="190" class="connection" />
+    
+    <line x1="65" y1="160" x2="95" y2="70" class="connection" />
+    <line x1="65" y1="160" x2="95" y2="110" class="connection" />
+    <line x1="65" y1="160" x2="95" y2="150" class="connection" />
+    <line x1="65" y1="160" x2="95" y2="190" class="connection" />
+    
+    <line x1="125" y1="70" x2="155" y2="80" class="connection" />
+    <line x1="125" y1="70" x2="155" y2="120" class="connection" />
+    <line x1="125" y1="70" x2="155" y2="160" class="connection" />
+    
+    <line x1="125" y1="110" x2="155" y2="80" class="connection" />
+    <line x1="125" y1="110" x2="155" y2="120" class="connection" />
+    <line x1="125" y1="110" x2="155" y2="160" class="connection" />
+    
+    <line x1="125" y1="150" x2="155" y2="80" class="connection" />
+    <line x1="125" y1="150" x2="155" y2="120" class="connection" />
+    <line x1="125" y1="150" x2="155" y2="160" class="connection" />
+    
+    <line x1="125" y1="190" x2="155" y2="80" class="connection" />
+    <line x1="125" y1="190" x2="155" y2="120" class="connection" />
+    <line x1="125" y1="190" x2="155" y2="160" class="connection" />
+    
+    <text x="100" y="210" class="description">Randomly drops neurons</text>
+  </g>
+  
+  <!-- Weight Decay -->
+  <g transform="translate(300, 120)">
+    <rect x="0" y="0" width="200" height="220" fill="#f9f9f9" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+    <text x="100" y="30" class="method-title">Weight Decay (L2)</text>
+    
+    <!-- Visualization of weights -->
+    <line x1="40" y1="100" x2="160" y2="100" stroke="#333" stroke-width="1" />
+    <line x1="40" y1="150" x2="160" y2="150" stroke="#333" stroke-width="1" />
+    
+    <line x1="60" y1="90" x2="60" y2="110" stroke="#d62728" stroke-width="8" />
+    <line x1="90" y1="90" x2="90" y2="110" stroke="#1f77b4" stroke-width="3" />
+    <line x1="120" y1="90" x2="120" y2="110" stroke="#2ca02c" stroke-width="6" />
+    <line x1="150" y1="90" x2="150" y2="110" stroke="#9467bd" stroke-width="4" />
+    
+    <!-- After L2 regularization - weights get smaller -->
+    <line x1="60" y1="140" x2="60" y2="160" stroke="#d62728" stroke-width="4" />
+    <line x1="90" y1="140" x2="90" y2="160" stroke="#1f77b4" stroke-width="2" />
+    <line x1="120" y1="140" x2="120" y2="160" stroke="#2ca02c" stroke-width="3" />
+    <line x1="150" y1="140" x2="150" y2="160" stroke="#9467bd" stroke-width="2" />
+    
+    <text x="100" y="80" class="description">Before</text>
+    <text x="100" y="180" class="description">After (smaller weights)</text>
+    
+    <text x="100" y="210" class="description">Penalizes large weights</text>
+  </g>
+  
+  <!-- Batch Normalization -->
+  <g transform="translate(540, 120)">
+    <rect x="0" y="0" width="200" height="220" fill="#f9f9f9" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+    <text x="100" y="30" class="method-title">Batch Normalization</text>
+    
+    <!-- Input distribution visualization -->
+    <ellipse cx="60" cy="100" rx="40" ry="20" fill="none" stroke="#d62728" stroke-width="1.5" />
+    <ellipse cx="140" cy="90" rx="15" ry="30" fill="none" stroke="#1f77b4" stroke-width="1.5" />
+    
+    <!-- Normalized output -->
+    <ellipse cx="100" cy="160" rx="25" ry="25" fill="none" stroke="#2ca02c" stroke-width="1.5" />
+    
+    <!-- Arrow indicating normalization -->
+    <path d="M 100,120 L 100,140" class="arrow" />
+    
+    <text x="60" y="90" class="description" style="font-size: 12px;">μ₁=5, σ₁=3</text>
+    <text x="140" y="90" class="description" style="font-size: 12px;">μ₂=-2, σ₂=1</text>
+    <text x="100" y="160" class="description" style="font-size: 12px;">μ=0, σ=1</text>
+    
+    <text x="100" y="210" class="description">Normalizes layer inputs</text>
+  </g>
+  
+  <!-- Data Augmentation -->
+  <g transform="translate(60, 370)">
+    <rect x="0" y="0" width="200" height="200" fill="#f9f9f9" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+    <text x="100" y="30" class="method-title">Data Augmentation</text>
+    
+    <!-- Original image (represented as a box) -->
+    <rect x="70" y="50" width="60" height="60" fill="#ccc" stroke="#333" stroke-width="1" />
+    <text x="100" y="85" class="description" style="font-size: 12px;">Original</text>
+    
+    <!-- Augmented variants -->
+    <rect x="40" y="130" width="60" height="60" fill="#ccc" stroke="#333" stroke-width="1" transform="rotate(-15, 70, 160)" />
+    <rect x="100" y="130" width="60" height="60" fill="#ccc" stroke="#333" stroke-width="1" transform="scale(-1, 1) translate(-200, 0)" />
+    
+    <text x="100" y="180" class="description">Creates training variants</text>
+  </g>
+  
+  <!-- Early Stopping -->
+  <g transform="translate(300, 370)">
+    <rect x="0" y="0" width="200" height="200" fill="#f9f9f9" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+    <text x="100" y="30" class="method-title">Early Stopping</text>
+    
+    <!-- Loss curves -->
+    <path d="M 30,160 L 40,150 L 50,145 L 60,135 L 70,130 L 80,125 L 90,123 L 100,120 L 110,118 L 120,116 L 130,114 L 140,113 L 150,112 L 160,111 L 170,110" 
+          stroke="#d62728" fill="none" stroke-width="2" />
+    
+    <path d="M 30,160 L 40,150 L 50,145 L 60,142 L 70,140 L 80,138 L 90,137 L 100,138 L 110,140 L 120,145 L 130,150 L 140,156 L 150,164 L 160,170 L 170,178" 
+          stroke="#1f77b4" fill="none" stroke-width="2" />
+    
+    <!-- Vertical line for stopping point -->
+    <line x1="110" y1="60" x2="110" y2="170" stroke="#333" stroke-dasharray="3,3" stroke-width="1.5" />
+    <text x="110" y="55" class="description" style="font-size: 12px;">Stop Here</text>
+    
+    <text x="40" y="170" class="description" style="font-size: 12px; text-anchor: start;">Training</text>
+    <text x="160" y="180" class="description" style="font-size: 12px; text-anchor: end;">Validation</text>
+    
+    <text x="100" y="180" class="description">Stops when valid. loss rises</text>
+  </g>
+  
+  <!-- Label Smoothing -->
+  <g transform="translate(540, 370)">
+    <rect x="0" y="0" width="200" height="200" fill="#f9f9f9" stroke="#ccc" stroke-width="1" rx="5" ry="5" />
+    <text x="100" y="30" class="method-title">Label Smoothing</text>
+    
+    <!-- One-hot encoding vs smoothed labels -->
+    <rect x="40" y="60" width="30" height="60" fill="#2ca02c" stroke="#333" stroke-width="1" />
+    <rect x="70" y="60" width="30" height="60" fill="#f9f9f9" stroke="#333" stroke-width="1" />
+    <rect x="100" y="60" width="30" height="60" fill="#f9f9f9" stroke="#333" stroke-width="1" />
+    <rect x="130" y="60" width="30" height="60" fill="#f9f9f9" stroke="#333" stroke-width="1" />
+    
+    <text x="55" y="90" class="description" style="font-size: 12px;">1.0</text>
+    <text x="85" y="90" class="description" style="font-size: 12px;">0.0</text>
+    <text x="115" y="90" class="description" style="font-size: 12px;">0.0</text>
+    <text x="145" y="90" class="description" style="font-size: 12px;">0.0</text>
+    
+    <rect x="40" y="130" width="30" height="60" fill="#2ca02c" stroke="#333" stroke-width="1" opacity="0.8" />
+    <rect x="70" y="130" width="30" height="60" fill="#2ca02c" stroke="#333" stroke-width="1" opacity="0.1" />
+    <rect x="100" y="130" width="30" height="60" fill="#2ca02c" stroke="#333" stroke-width="1" opacity="0.1" />
+    <rect x="130" y="130" width="30" height="60" fill="#2ca02c" stroke="#333" stroke-width="1" opacity="0.1" />
+    
+    <text x="55" y="160" class="description" style="font-size: 12px;">0.7</text>
+    <text x="85" y="160" class="description" style="font-size: 12px;">0.1</text>
+    <text x="115" y="160" class="description" style="font-size: 12px;">0.1</text>
+    <text x="145" y="160" class="description" style="font-size: 12px;">0.1</text>
+    
+    <text x="100" y="45" class="description" style="font-size: 12px;">One-hot labels</text>
+    <text x="100" y="115" class="description" style="font-size: 12px;">Smoothed labels</text>
+    
+    <text x="100" y="180" class="description">Prevents overconfidence</text>
+  </g>
+</svg>

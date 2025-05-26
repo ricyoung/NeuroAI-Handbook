@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
   <!-- Background -->
   <rect width="800" height="600" fill="#f9f9f9"/>
   
@@ -30,15 +30,15 @@
   <!-- Neuroscience Components -->
   <rect x="180" y="200" width="140" height="60" rx="10" ry="10" fill="#ffcccc" fill-opacity="0.6" stroke="#cc0000" stroke-width="2"/>
   <text x="250" y="225" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Brain Architecture</text>
-  <text x="250" y="245" font-family="Arial" font-size="12" text-anchor="middle">(Structure & Function)</text>
+  <text x="250" y="245" font-family="Arial" font-size="12" text-anchor="middle">(Structure &amp; Function)</text>
   
   <rect x="180" y="280" width="140" height="60" rx="10" ry="10" fill="#ffcccc" fill-opacity="0.6" stroke="#cc0000" stroke-width="2"/>
   <text x="250" y="305" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Learning Mechanisms</text>
-  <text x="250" y="325" font-family="Arial" font-size="12" text-anchor="middle">(Plasticity & Development)</text>
+  <text x="250" y="325" font-family="Arial" font-size="12" text-anchor="middle">(Plasticity &amp; Development)</text>
   
   <rect x="180" y="360" width="140" height="60" rx="10" ry="10" fill="#ffcccc" fill-opacity="0.6" stroke="#cc0000" stroke-width="2"/>
   <text x="250" y="385" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Information Processing</text>
-  <text x="250" y="405" font-family="Arial" font-size="12" text-anchor="middle">(Perception & Cognition)</text>
+  <text x="250" y="405" font-family="Arial" font-size="12" text-anchor="middle">(Perception &amp; Cognition)</text>
   
   <!-- AI Components -->
   <rect x="480" y="200" width="140" height="60" rx="10" ry="10" fill="#ccccff" fill-opacity="0.6" stroke="#0066cc" stroke-width="2"/>
@@ -91,7 +91,7 @@
   
   <rect x="410" y="500" width="120" height="30" rx="5" ry="5" fill="#9966cc" fill-opacity="0.2" stroke="#9966cc" stroke-width="1"/>
   <text x="470" y="520" font-family="Arial" font-size="12" text-anchor="middle">Neural Encoding</text>
-  <text x="470" y="535" font-family="Arial" font-size="12" text-anchor="middle">& Decoding Models</text>
+  <text x="470" y="535" font-family="Arial" font-size="12" text-anchor="middle">&amp; Decoding Models</text>
   
   <!-- Key Application Examples -->
   <rect x="600" y="230" width="180" height="140" rx="10" ry="10" fill="#f9f9f9" stroke="#0066cc" stroke-width="2"/>

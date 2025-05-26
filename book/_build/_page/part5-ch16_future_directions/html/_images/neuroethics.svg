@@ -52,7 +52,7 @@
   <rect x="70" y="120" width="210" height="60" fill="#aed6f1" stroke="#2980b9" stroke-width="1" rx="5" ry="5" />
   <text x="175" y="140" class="label" text-anchor="middle" fill="#2c3e50">Neural Privacy</text>
   <text x="175" y="160" class="small-label" text-anchor="middle">• Brain data ownership</text>
-  <text x="175" y="175" class="small-label" text-anchor="middle">• Mental decoding & "thought privacy"</text>
+  <text x="175" y="175" class="small-label" text-anchor="middle">• Mental decoding &amp; &quot;thought privacy&quot;</text>
   
   <!-- Domain 2: Bias -->
   <rect x="70" y="190" width="210" height="60" fill="#aed6f1" stroke="#2980b9" stroke-width="1" rx="5" ry="5" />
@@ -63,12 +63,12 @@
   <!-- Domain 3: Autonomy -->
   <rect x="70" y="260" width="210" height="60" fill="#aed6f1" stroke="#2980b9" stroke-width="1" rx="5" ry="5" />
   <text x="175" y="280" class="label" text-anchor="middle" fill="#2c3e50">Human Autonomy</text>
-  <text x="175" y="300" class="small-label" text-anchor="middle">• Agency & control in BCI systems</text>
+  <text x="175" y="300" class="small-label" text-anchor="middle">• Agency &amp; control in BCI systems</text>
   <text x="175" y="315" class="small-label" text-anchor="middle">• Cognitive manipulation risks</text>
   
   <!-- Domain 4: Identity -->
   <rect x="70" y="330" width="210" height="60" fill="#aed6f1" stroke="#2980b9" stroke-width="1" rx="5" ry="5" />
-  <text x="175" y="350" class="label" text-anchor="middle" fill="#2c3e50">Identity & Personhood</text>
+  <text x="175" y="350" class="label" text-anchor="middle" fill="#2c3e50">Identity &amp; Personhood</text>
   <text x="175" y="370" class="small-label" text-anchor="middle">• Mind-machine boundaries</text>
   <text x="175" y="385" class="small-label" text-anchor="middle">• Cognitive enhancement equity</text>
   
@@ -79,7 +79,7 @@
   <!-- Framework 1 -->
   <rect x="520" y="120" width="210" height="60" fill="#f5b7b1" stroke="#c0392b" stroke-width="1" rx="5" ry="5" />
   <text x="625" y="140" class="label" text-anchor="middle" fill="#2c3e50">Rights-Based Approaches</text>
-  <text x="625" y="160" class="small-label" text-anchor="middle">• "Neurorights" frameworks</text>
+  <text x="625" y="160" class="small-label" text-anchor="middle">• &quot;Neurorights&quot; frameworks</text>
   <text x="625" y="175" class="small-label" text-anchor="middle">• Cognitive liberty protections</text>
   
   <!-- Framework 2 -->
@@ -96,7 +96,7 @@
   
   <!-- Framework 4 -->
   <rect x="520" y="330" width="210" height="60" fill="#f5b7b1" stroke="#c0392b" stroke-width="1" rx="5" ry="5" />
-  <text x="625" y="350" class="label" text-anchor="middle" fill="#2c3e50">Transparency & Oversight</text>
+  <text x="625" y="350" class="label" text-anchor="middle" fill="#2c3e50">Transparency &amp; Oversight</text>
   <text x="625" y="370" class="small-label" text-anchor="middle">• Explainable neuro-AI systems</text>
   <text x="625" y="385" class="small-label" text-anchor="middle">• Public engagement requirements</text>
   

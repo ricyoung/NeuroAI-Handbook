@@ -1,46 +1,71 @@
 # The Neuroscience of AI Handbook
 
 [![build-and-deploy-book](https://github.com/neuralinterfacinglab/NeuroAI-Handbook/actions/workflows/book.yml/badge.svg)](https://github.com/neuralinterfacinglab/NeuroAI-Handbook/actions/workflows/book.yml)
+[![License: Content](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](LICENSE-content)
+[![License: Code](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE-code)
 
-A comprehensive handbook bridging neuroscience and artificial intelligence concepts, with practical Python implementations and interactive code examples.
+A comprehensive handbook bridging neuroscience and artificial intelligence, featuring 24 chapters with practical Python implementations, interactive examples, and cutting-edge research at the intersection of brain science and AI.
 
 ## About This Book
 
-This handbook explores the intersection of neuroscience and artificial intelligence, showing how biological principles inspire computational models. The content progresses from fundamental neuroscience to cutting-edge AI architectures.
+This handbook serves as a comprehensive guide to the bidirectional relationship between neuroscience and artificial intelligence. It demonstrates how biological neural systems inspire AI architectures and how AI methods advance our understanding of the brain.
 
-### Structure
+### Key Features
 
-1. **Part I: Brains & Inspiration**
-   - ✅ Introduction to Neuroscience ↔ AI
-   - ✅ Neuroscience Foundations for AI
-   - ✅ Spatial Navigation – Place & Grid Cells
-   - ✅ Perception Pipeline – Visual Cortex → CNNs
+- 📚 **24 comprehensive chapters** covering neuroscience fundamentals through advanced AI
+- 💻 **Practical Python implementations** with executable code examples
+- 🧠 **Biological foundations** for major AI breakthroughs
+- 🔬 **Real-world applications** in neuroscience research and AI development
+- 📊 **Interactive visualizations** and hands-on exercises
+- 🎓 **Suitable for** researchers, students, and practitioners in both fields
 
-2. **Part II: Brains Meet Math & Data**
-   - ✅ Default-Mode vs Executive Control Networks
-   - ✅ Neuro-stimulation & Plasticity
-   - ✅ Information Theory Essentials
-   - ✅ Data-Science Pipeline in Python
+### Book Structure
 
-3. **Part III: Learning Machines**
-   - ✅ Classical Machine-Learning Foundations
-   - ✅ Deep Learning: Training & Optimisation
-   - ✅ Sequence Models: RNN → Attention → Transformer
+#### Part I: Brains & Inspiration
+1. **Introduction to Neuroscience ↔ AI** - Historical context and bidirectional influence
+2. **Neuroscience Foundations for AI** - Core concepts with Python implementations
+3. **Spatial Navigation** - Place cells, grid cells, and cognitive maps
+4. **Perception Pipeline** - Visual cortex to CNNs
 
-4. **Part IV: Frontier Models**
-   - ✅ Large Language Models & Fine-Tuning
-   - ✅ Multimodal & Diffusion Models
+#### Part II: Brains Meet Math & Data
+5. **Brain Networks** - Default-mode vs executive control networks
+6. **Neurostimulation & Plasticity** - Neural adaptation and learning
+7. **Information Theory Essentials** - Mathematical foundations for neural coding
+8. **Data-Science Pipeline** - Neural data analysis in Python
 
-5. **Part V: Reflection & Futures**
-   - ✅ Where Next for Neuro-AI?
+#### Part III: Learning Machines
+9. **Classical Machine Learning** - Foundations with neural applications
+10. **Deep Learning** - Training, optimization, and biological parallels
+11. **Sequence Models** - RNNs to Transformers evolution
 
-6. **Appendices**
-   - ✅ Comprehensive glossary with cross-references
-   - ✅ Math & Python mini-refresher
-   - ✅ Dataset catalogue
-   - ✅ Colab setup tips
+#### Part IV: Frontier Models
+12. **Large Language Models** - Architecture, fine-tuning, and neural language
+13. **Multimodal & Diffusion Models** - Cross-modal learning and generation
 
-### Implemented Content
+#### Part V: Ethics & Future
+14. *[Placeholder for Ethics chapter]*
+15. **Ethical AI** - Responsible development of brain-inspired AI
+16. **Future Directions** - Emerging frontiers in NeuroAI
+
+#### Part VI: Advanced Topics
+17. **Brain-Computer Interfaces** - Neural decoding and human-AI interaction
+18. **Neuromorphic Computing** - Brain-inspired hardware
+19. **Cognitive Neuroscience meets Deep Learning** - Representational analysis
+20. **Case Studies** - Real-world NeuroAI applications
+21. **AI for Neuroscience Discovery** - ML-driven brain research
+22. **Embodied AI & Robotics** - Sensorimotor integration
+23. **Lifelong Learning** - Continual adaptation in brains and AI
+24. **Quantum Computing & NeuroAI** - Future computational paradigms
+
+#### Appendices
+- **A: Comprehensive Glossary** - Key terms with cross-references
+- **B: Math & Python Refresher** - Essential foundations
+- **C: Dataset Catalogue** - Neuroscience and AI datasets
+- **D: Colab Setup Guide** - Optimized cloud computing
+
+## Current Status
+
+### ✅ Completed Content
 
 #### Core Chapters
 
@@ -59,12 +84,19 @@ This handbook explores the intersection of neuroscience and artificial intellige
 - **Chapter 13: Multimodal & Diffusion Models** - In-depth exploration of multimodal learning architectures, diffusion model principles, text-to-image generation, and neural multimodal integration, with detailed Python implementations and connections to biological multisensory processing.
 - **Chapter 14: Where Next for Neuro-AI?** - Exploration of frontier research directions including neuromorphic computing, continual learning, AI for neuroscience, whole-brain integration, and ethical considerations of brain-inspired AI, with implementable code examples for spiking neural networks and other emerging technologies.
 
-#### Appendices
+#### Supporting Materials
 
-- **Appendix A: Comprehensive Glossary** - Alphabetically organized glossary of key terms in neuroscience, information theory, machine learning, and artificial intelligence with cross-references to relevant chapters where concepts are discussed in detail.
-- **Appendix B: Math & Python Mini-Refresher** - Comprehensive review of essential mathematical concepts (linear algebra, calculus, probability) and Python programming fundamentals for NeuroAI research, with practical examples using NumPy, SciPy, Matplotlib, and other scientific computing libraries.
-- **Appendix C: Dataset Catalogue** - Extensive collection of neuroscience datasets (Allen Brain Atlas, Human Connectome Project), AI benchmark datasets, and NeuroAI-specific datasets with examples for data loading, preprocessing, and analysis.
-- **Appendix D: Colab Setup for NeuroAI** - Detailed guide for setting up and optimizing Google Colab for neuroscience and AI research, including environment configuration, GPU utilization, data management, memory optimization, and visualization techniques specific to NeuroAI applications.
+- **Appendix A: Comprehensive Glossary** - 200+ key terms with cross-references
+- **Appendix B: Math & Python Mini-Refresher** - Essential mathematical and programming foundations
+- **Appendix C: Dataset Catalogue** - Curated neuroscience and AI datasets with loading examples
+- **Appendix D: Colab Setup for NeuroAI** - Cloud computing optimization guide
+
+### 🔧 Recent Updates
+
+- **Fixed:** All SVG figures now have properly escaped XML characters
+- **Fixed:** Missing viewBox attributes added to 49 SVG files
+- **Validated:** All image references verified and working
+- **Identified:** Content gaps for future expansion (see Contributing section)
 
 ## Getting Started
 
@@ -186,48 +218,79 @@ The examples in this handbook use the following Python libraries:
 
 We welcome contributions to the NeuroAI Handbook! Here's how you can help:
 
-1. **Report Issues**: If you find errors or have suggestions, please [open an issue](https://github.com/neuralinterfacinglab/NeuroAI-Handbook/issues)
-2. **Submit Improvements**: Feel free to submit pull requests with corrections or additional content
-3. **Share Examples**: If you have interesting neuroscience or AI examples, consider contributing them
+### Priority Areas for Contribution
+
+1. **Missing Standard Sections**: Chapters 4-8, 11-12 need "Take-aways" and "Further Reading" sections
+2. **Placeholder Code**: Chapters 20, 22, 23 contain placeholder implementations to be expanded
+3. **New Content Areas**:
+   - Reinforcement Learning (dopamine pathways to Deep RL)
+   - Graph Neural Networks for brain connectivity
+   - Spiking Neural Networks with practical examples
+   - Foundation models for neuroscience
+   - Computational psychiatry applications
+
+### How to Contribute
+
+1. **Report Issues**: [Open an issue](https://github.com/neuralinterfacinglab/NeuroAI-Handbook/issues) for errors or suggestions
+2. **Submit PRs**: Corrections, new examples, or content expansions welcome
+3. **Add Examples**: Share interesting NeuroAI implementations or case studies
 
 ### Contribution Guidelines
 
-- Follow the existing code style and documentation patterns
-- For new content, maintain consistency with the handbook's structure
-- Include appropriate citations for scientific claims
-- Test any code examples before submitting
-- Update relevant documentation when adding features
+- Follow existing code style (PEP 8 for Python)
+- Use NumPy-style docstrings
+- Include citations for scientific claims
+- Test code examples before submitting
+- Escape special characters in SVG files
+- Clear Jupyter notebook outputs before committing
 
-## Maintenance and Troubleshooting
+## Technical Notes
 
-### SVG Figure Maintenance
+### SVG Figure Guidelines
 
-When creating or editing SVG figures, be aware of these common issues:
+- **Always escape** special characters: `&` → `&amp;`, `<` → `&lt;`, `>` → `&gt;`, `"` → `&quot;`
+- **Include viewBox** attributes for proper scaling
+- **Validate** SVGs before committing ([W3C Validator](https://validator.w3.org/))
+- **Use standard fonts** or embed custom fonts
 
-1. **XML Escaping**: Always properly escape special characters in SVG files:
-   - Replace `&` with `&amp;`
-   - Replace `<` with `&lt;`
-   - Replace `>` with `&gt;`
-   - Replace `"` with `&quot;`
+### Build Troubleshooting
 
-2. **SVG Validation**: Consider validating SVG files with a tool like [W3C Validator](https://validator.w3.org/) before including them in the book.
+- **PDF build fails**: Check `logs/` directory for detailed error messages
+- **Missing figures**: Verify SVG files are valid XML
+- **Notebook errors**: Ensure all dependencies in `requirements.txt` are installed
+- **Memory issues**: Use `--low-memory` flag for large builds
 
-3. **Troubleshooting Display Issues**: If a figure doesn't display correctly:
-   - Check for unescaped special characters (especially `&` in text elements)
-   - Verify that fonts used in the SVG are standard or embedded
-   - Check for invalid XML in the SVG file
+### Performance Tips
 
-### Interactive Content Requirements
+- Build individual chapters during development: `jupyter-book build book/part1/ch01_intro.md --builder pdfhtml`
+- Use cached builds when possible
+- Clear build artifacts if encountering issues: `jb clean book`
 
-For running the interactive Jupyter notebooks:
-- Ensure all required packages are installed (`torch`, `matplotlib`, etc.)
-- Some notebooks require specific Python packages that need to be installed manually
-- Check `book/requirements.txt` for core dependencies
+## Citation
+
+If you use this handbook in your research or teaching, please cite:
+
+```bibtex
+@book{young2025neuroai,
+  title={The Neuroscience of AI Handbook},
+  author={Young, Richard},
+  year={2025},
+  publisher={Neural Interfacing Lab},
+  url={https://github.com/neuralinterfacinglab/NeuroAI-Handbook}
+}
+```
 
 ## License
 
-This project is licensed under multiple licenses:
-- Content: [LICENSE-content](LICENSE-content)
-- Code: [LICENSE-code](LICENSE-code)
+- **Content**: [Creative Commons BY-NC-SA 4.0](LICENSE-content) - Share and adapt with attribution
+- **Code**: [MIT License](LICENSE-code) - Use freely in your projects
 
 © 2025 Richard Young. All rights reserved.
+
+---
+
+<p align="center">
+  <a href="https://neuralinterfacinglab.github.io/NeuroAI-Handbook">📖 Read Online</a> •
+  <a href="https://github.com/neuralinterfacinglab/NeuroAI-Handbook/issues">🐛 Report Issues</a> •
+  <a href="https://github.com/neuralinterfacinglab/NeuroAI-Handbook/discussions">💬 Discussions</a>
+</p>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f9f9f9"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">Quantum Algorithms for NeuroAI</text>
+  <text x="400" y="70" font-family="Arial" font-size="16" text-anchor="middle">Key Methods and Their Neuroscience Applications</text>
+  
+  <!-- Main workspace -->
+  <rect x="50" y="100" width="700" height="380" rx="10" ry="10" fill="#f9f9f9" stroke="#9966cc" stroke-width="2"/>
+  
+  <!-- Left Section: Quantum Algorithms -->
+  <rect x="70" y="120" width="300" height="340" rx="10" ry="10" fill="#ccccff" fill-opacity="0.2" stroke="#0066cc" stroke-width="2"/>
+  <text x="220" y="145" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#0066cc">Quantum Algorithms</text>
+  
+  <!-- Right Section: NeuroAI Applications -->
+  <rect x="430" y="120" width="300" height="340" rx="10" ry="10" fill="#ffcccc" fill-opacity="0.2" stroke="#cc0000" stroke-width="2"/>
+  <text x="580" y="145" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#cc0000">NeuroAI Applications</text>
+  
+  <!-- Quantum Algorithm 1: QNN -->
+  <rect x="90" y="170" width="260" height="60" rx="8" ry="8" fill="#ccccff" fill-opacity="0.5" stroke="#0066cc" stroke-width="1.5"/>
+  <text x="220" y="190" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Quantum Neural Networks</text>
+  <text x="220" y="210" font-family="Arial" font-size="11" text-anchor="middle">Neural nets using quantum operations</text>
+  
+  <!-- Quantum Algorithm 2: VQA -->
+  <rect x="90" y="240" width="260" height="60" rx="8" ry="8" fill="#ccccff" fill-opacity="0.5" stroke="#0066cc" stroke-width="1.5"/>
+  <text x="220" y="260" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Variational Quantum Algorithms</text>
+  <text x="220" y="280" font-family="Arial" font-size="11" text-anchor="middle">Hybrid quantum-classical optimization</text>
+  
+  <!-- Quantum Algorithm 3: QA -->
+  <rect x="90" y="310" width="260" height="60" rx="8" ry="8" fill="#ccccff" fill-opacity="0.5" stroke="#0066cc" stroke-width="1.5"/>
+  <text x="220" y="330" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Quantum Annealing</text>
+  <text x="220" y="350" font-family="Arial" font-size="11" text-anchor="middle">Optimization via quantum tunneling</text>
+  
+  <!-- Quantum Algorithm 4: QRAM -->
+  <rect x="90" y="380" width="260" height="60" rx="8" ry="8" fill="#ccccff" fill-opacity="0.5" stroke="#0066cc" stroke-width="1.5"/>
+  <text x="220" y="400" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Quantum RAM</text>
+  <text x="220" y="420" font-family="Arial" font-size="11" text-anchor="middle">Superposition-based memory access</text>
+  
+  <!-- NeuroAI Application 1 -->
+  <rect x="450" y="170" width="260" height="60" rx="8" ry="8" fill="#ffcccc" fill-opacity="0.5" stroke="#cc0000" stroke-width="1.5"/>
+  <text x="580" y="190" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Neural Network Training</text>
+  <text x="580" y="210" font-family="Arial" font-size="11" text-anchor="middle">Accelerated learning algorithms</text>
+  
+  <!-- NeuroAI Application 2 -->
+  <rect x="450" y="240" width="260" height="60" rx="8" ry="8" fill="#ffcccc" fill-opacity="0.5" stroke="#cc0000" stroke-width="1.5"/>
+  <text x="580" y="260" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Network Architecture Search</text>
+  <text x="580" y="280" font-family="Arial" font-size="11" text-anchor="middle">Optimizing neural architectures</text>
+  
+  <!-- NeuroAI Application 3 -->
+  <rect x="450" y="310" width="260" height="60" rx="8" ry="8" fill="#ffcccc" fill-opacity="0.5" stroke="#cc0000" stroke-width="1.5"/>
+  <text x="580" y="330" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Brain Connectivity Modeling</text>
+  <text x="580" y="350" font-family="Arial" font-size="11" text-anchor="middle">Complex network simulation</text>
+  
+  <!-- NeuroAI Application 4 -->
+  <rect x="450" y="380" width="260" height="60" rx="8" ry="8" fill="#ffcccc" fill-opacity="0.5" stroke="#cc0000" stroke-width="1.5"/>
+  <text x="580" y="400" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Associative Memory</text>
+  <text x="580" y="420" font-family="Arial" font-size="11" text-anchor="middle">Quantum-enhanced pattern completion</text>
+  
+  <!-- Connection lines between quantum algorithms and applications -->
+  <!-- QNN to NN Training -->
+  <line x1="350" y1="200" x2="450" y2="200" stroke="#9966cc" stroke-width="2"/>
+  <polygon points="445,196 455,200 445,204" fill="#9966cc"/>
+  
+  <!-- VQA to Architecture Search -->
+  <line x1="350" y1="270" x2="450" y2="270" stroke="#9966cc" stroke-width="2"/>
+  <polygon points="445,266 455,270 445,274" fill="#9966cc"/>
+  
+  <!-- QA to Connectivity -->
+  <line x1="350" y1="340" x2="450" y2="340" stroke="#9966cc" stroke-width="2"/>
+  <polygon points="445,336 455,340 445,344" fill="#9966cc"/>
+  
+  <!-- QRAM to Associative Memory -->
+  <line x1="350" y1="410" x2="450" y2="410" stroke="#9966cc" stroke-width="2"/>
+  <polygon points="445,406 455,410 445,414" fill="#9966cc"/>
+  
+  <!-- Additional connections showing versatility -->
+  <path d="M 350 200 C 380 200, 390 340, 450 340" stroke="#9966cc" stroke-width="1" stroke-dasharray="4,4"/>
+  <polygon points="445,336 455,340 445,344" fill="#9966cc"/>
+  
+  <path d="M 350 270 C 380 270, 390 410, 450 410" stroke="#9966cc" stroke-width="1" stroke-dasharray="4,4"/>
+  <polygon points="445,406 455,410 445,414" fill="#9966cc"/>
+  
+  <!-- Quantum computational advantage section -->
+  <rect x="50" y="500" width="700" height="80" rx="10" ry="10" fill="#f9f9f9" stroke="#9966cc" stroke-width="2"/>
+  <text x="400" y="525" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Quantum Advantages for NeuroAI</text>
+  
+  <!-- Advantage boxes -->
+  <rect x="80" y="540" width="160" height="30" rx="5" ry="5" fill="#ccccff" fill-opacity="0.3" stroke="#0066cc" stroke-width="1"/>
+  <text x="160" y="560" font-family="Arial" font-size="12" text-anchor="middle">Exponential State Space</text>
+  
+  <rect x="260" y="540" width="160" height="30" rx="5" ry="5" fill="#ccccff" fill-opacity="0.3" stroke="#0066cc" stroke-width="1"/>
+  <text x="340" y="560" font-family="Arial" font-size="12" text-anchor="middle">Parallel Computation</text>
+  
+  <rect x="440" y="540" width="160" height="30" rx="5" ry="5" fill="#ccccff" fill-opacity="0.3" stroke="#0066cc" stroke-width="1"/>
+  <text x="520" y="560" font-family="Arial" font-size="12" text-anchor="middle">Quantum Entanglement</text>
+  
+  <rect x="620" y="540" width="100" height="30" rx="5" ry="5" fill="#ffcccc" fill-opacity="0.3" stroke="#cc0000" stroke-width="1"/>
+  <text x="670" y="560" font-family="Arial" font-size="12" text-anchor="middle">Speedup</text>
+  
+  <!-- Figure Caption -->
+  <text x="400" y="590" font-family="Arial" font-size="12" text-anchor="middle">Figure 22.2: Core quantum algorithms and their applications to neuroscience-inspired AI</text>
+</svg>

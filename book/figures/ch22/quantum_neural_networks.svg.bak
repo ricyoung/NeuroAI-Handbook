@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f9f9f9"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">Quantum Neural Networks</text>
+  <text x="400" y="70" font-family="Arial" font-size="16" text-anchor="middle">Comparison with Classical Neural Networks</text>
+  
+  <!-- Main sections -->
+  <rect x="50" y="100" width="340" height="380" rx="10" ry="10" fill="#ffcccc" fill-opacity="0.2" stroke="#cc0000" stroke-width="2"/>
+  <text x="220" y="130" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#cc0000">Classical Neural Network</text>
+  
+  <rect x="410" y="100" width="340" height="380" rx="10" ry="10" fill="#ccccff" fill-opacity="0.2" stroke="#0066cc" stroke-width="2"/>
+  <text x="580" y="130" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#0066cc">Quantum Neural Network</text>
+  
+  <!-- Classical Neural Network visualization -->
+  <!-- Input Layer -->
+  <circle cx="120" cy="200" r="15" fill="#ffcccc" stroke="#cc0000" stroke-width="1.5"/>
+  <circle cx="120" cy="250" r="15" fill="#ffcccc" stroke="#cc0000" stroke-width="1.5"/>
+  <circle cx="120" cy="300" r="15" fill="#ffcccc" stroke="#cc0000" stroke-width="1.5"/>
+  <circle cx="120" cy="350" r="15" fill="#ffcccc" stroke="#cc0000" stroke-width="1.5"/>
+  
+  <!-- Hidden Layer -->
+  <circle cx="220" cy="175" r="15" fill="#ffcccc" stroke="#cc0000" stroke-width="1.5"/>
+  <circle cx="220" cy="225" r="15" fill="#ffcccc" stroke="#cc0000" stroke-width="1.5"/>
+  <circle cx="220" cy="275" r="15" fill="#ffcccc" stroke="#cc0000" stroke-width="1.5"/>
+  <circle cx="220" cy="325" r="15" fill="#ffcccc" stroke="#cc0000" stroke-width="1.5"/>
+  <circle cx="220" cy="375" r="15" fill="#ffcccc" stroke="#cc0000" stroke-width="1.5"/>
+  
+  <!-- Output Layer -->
+  <circle cx="320" cy="225" r="15" fill="#ffcccc" stroke="#cc0000" stroke-width="1.5"/>
+  <circle cx="320" cy="275" r="15" fill="#ffcccc" stroke="#cc0000" stroke-width="1.5"/>
+  <circle cx="320" cy="325" r="15" fill="#ffcccc" stroke="#cc0000" stroke-width="1.5"/>
+  
+  <!-- Connections between layers -->
+  <!-- Input to Hidden -->
+  <line x1="135" y1="200" x2="205" y2="175" stroke="#cc0000" stroke-width="1"/>
+  <line x1="135" y1="200" x2="205" y2="225" stroke="#cc0000" stroke-width="1"/>
+  <line x1="135" y1="200" x2="205" y2="275" stroke="#cc0000" stroke-width="1"/>
+  <line x1="135" y1="200" x2="205" y2="325" stroke="#cc0000" stroke-width="1"/>
+  <line x1="135" y1="200" x2="205" y2="375" stroke="#cc0000" stroke-width="1"/>
+  
+  <line x1="135" y1="250" x2="205" y2="175" stroke="#cc0000" stroke-width="1"/>
+  <line x1="135" y1="250" x2="205" y2="225" stroke="#cc0000" stroke-width="1"/>
+  <line x1="135" y1="250" x2="205" y2="275" stroke="#cc0000" stroke-width="1"/>
+  <line x1="135" y1="250" x2="205" y2="325" stroke="#cc0000" stroke-width="1"/>
+  <line x1="135" y1="250" x2="205" y2="375" stroke="#cc0000" stroke-width="1"/>
+  
+  <line x1="135" y1="300" x2="205" y2="175" stroke="#cc0000" stroke-width="1"/>
+  <line x1="135" y1="300" x2="205" y2="225" stroke="#cc0000" stroke-width="1"/>
+  <line x1="135" y1="300" x2="205" y2="275" stroke="#cc0000" stroke-width="1"/>
+  <line x1="135" y1="300" x2="205" y2="325" stroke="#cc0000" stroke-width="1"/>
+  <line x1="135" y1="300" x2="205" y2="375" stroke="#cc0000" stroke-width="1"/>
+  
+  <line x1="135" y1="350" x2="205" y2="175" stroke="#cc0000" stroke-width="1"/>
+  <line x1="135" y1="350" x2="205" y2="225" stroke="#cc0000" stroke-width="1"/>
+  <line x1="135" y1="350" x2="205" y2="275" stroke="#cc0000" stroke-width="1"/>
+  <line x1="135" y1="350" x2="205" y2="325" stroke="#cc0000" stroke-width="1"/>
+  <line x1="135" y1="350" x2="205" y2="375" stroke="#cc0000" stroke-width="1"/>
+  
+  <!-- Hidden to Output -->
+  <line x1="235" y1="175" x2="305" y2="225" stroke="#cc0000" stroke-width="1"/>
+  <line x1="235" y1="175" x2="305" y2="275" stroke="#cc0000" stroke-width="1"/>
+  <line x1="235" y1="175" x2="305" y2="325" stroke="#cc0000" stroke-width="1"/>
+  
+  <line x1="235" y1="225" x2="305" y2="225" stroke="#cc0000" stroke-width="1"/>
+  <line x1="235" y1="225" x2="305" y2="275" stroke="#cc0000" stroke-width="1"/>
+  <line x1="235" y1="225" x2="305" y2="325" stroke="#cc0000" stroke-width="1"/>
+  
+  <line x1="235" y1="275" x2="305" y2="225" stroke="#cc0000" stroke-width="1"/>
+  <line x1="235" y1="275" x2="305" y2="275" stroke="#cc0000" stroke-width="1"/>
+  <line x1="235" y1="275" x2="305" y2="325" stroke="#cc0000" stroke-width="1"/>
+  
+  <line x1="235" y1="325" x2="305" y2="225" stroke="#cc0000" stroke-width="1"/>
+  <line x1="235" y1="325" x2="305" y2="275" stroke="#cc0000" stroke-width="1"/>
+  <line x1="235" y1="325" x2="305" y2="325" stroke="#cc0000" stroke-width="1"/>
+  
+  <line x1="235" y1="375" x2="305" y2="225" stroke="#cc0000" stroke-width="1"/>
+  <line x1="235" y1="375" x2="305" y2="275" stroke="#cc0000" stroke-width="1"/>
+  <line x1="235" y1="375" x2="305" y2="325" stroke="#cc0000" stroke-width="1"/>
+  
+  <!-- Quantum Neural Network visualization -->
+  <!-- Quantum Circuit Representation -->
+  <rect x="460" y="160" width="240" height="200" fill="#ccccff" fill-opacity="0.3" stroke="#0066cc" stroke-width="1.5"/>
+  
+  <!-- Qubits and Gates -->
+  <line x1="460" y1="200" x2="700" y2="200" stroke="#0066cc" stroke-width="1.5"/>
+  <line x1="460" y1="240" x2="700" y2="240" stroke="#0066cc" stroke-width="1.5"/>
+  <line x1="460" y1="280" x2="700" y2="280" stroke="#0066cc" stroke-width="1.5"/>
+  <line x1="460" y1="320" x2="700" y2="320" stroke="#0066cc" stroke-width="1.5"/>
+  
+  <!-- Single-qubit gates -->
+  <rect x="500" y="185" width="30" height="30" fill="#ccccff" stroke="#0066cc" stroke-width="1.5"/>
+  <text x="515" y="205" font-family="Arial" font-size="14" text-anchor="middle">H</text>
+  
+  <rect x="500" y="225" width="30" height="30" fill="#ccccff" stroke="#0066cc" stroke-width="1.5"/>
+  <text x="515" y="245" font-family="Arial" font-size="14" text-anchor="middle">H</text>
+  
+  <rect x="500" y="265" width="30" height="30" fill="#ccccff" stroke="#0066cc" stroke-width="1.5"/>
+  <text x="515" y="285" font-family="Arial" font-size="14" text-anchor="middle">H</text>
+  
+  <rect x="500" y="305" width="30" height="30" fill="#ccccff" stroke="#0066cc" stroke-width="1.5"/>
+  <text x="515" y="325" font-family="Arial" font-size="14" text-anchor="middle">H</text>
+  
+  <!-- Rotation gates -->
+  <rect x="560" y="185" width="30" height="30" fill="#ccccff" stroke="#0066cc" stroke-width="1.5"/>
+  <text x="575" y="205" font-family="Arial" font-size="14" text-anchor="middle">Rx</text>
+  
+  <rect x="560" y="225" width="30" height="30" fill="#ccccff" stroke="#0066cc" stroke-width="1.5"/>
+  <text x="575" y="245" font-family="Arial" font-size="14" text-anchor="middle">Ry</text>
+  
+  <rect x="560" y="265" width="30" height="30" fill="#ccccff" stroke="#0066cc" stroke-width="1.5"/>
+  <text x="575" y="285" font-family="Arial" font-size="14" text-anchor="middle">Rx</text>
+  
+  <rect x="560" y="305" width="30" height="30" fill="#ccccff" stroke="#0066cc" stroke-width="1.5"/>
+  <text x="575" y="325" font-family="Arial" font-size="14" text-anchor="middle">Ry</text>
+  
+  <!-- Entangling gates -->
+  <line x1="630" y1="200" x2="630" y2="240" stroke="#0066cc" stroke-width="1.5"/>
+  <circle cx="630" cy="200" r="5" fill="#0066cc"/>
+  <circle cx="630" cy="240" r="5" fill="#ffffff" stroke="#0066cc" stroke-width="1.5"/>
+  
+  <line x1="630" y1="280" x2="630" y2="320" stroke="#0066cc" stroke-width="1.5"/>
+  <circle cx="630" cy="280" r="5" fill="#0066cc"/>
+  <circle cx="630" cy="320" r="5" fill="#ffffff" stroke="#0066cc" stroke-width="1.5"/>
+  
+  <line x1="650" y1="200" x2="650" y2="320" stroke="#0066cc" stroke-width="1.5"/>
+  <circle cx="650" cy="200" r="5" fill="#0066cc"/>
+  <circle cx="650" cy="320" r="5" fill="#ffffff" stroke="#0066cc" stroke-width="1.5"/>
+  
+  <!-- Final measurement -->
+  <rect x="670" y="185" width="20" height="30" fill="#ccccff" stroke="#0066cc" stroke-width="1.5"/>
+  <rect x="670" y="225" width="20" height="30" fill="#ccccff" stroke="#0066cc" stroke-width="1.5"/>
+  <rect x="670" y="265" width="20" height="30" fill="#ccccff" stroke="#0066cc" stroke-width="1.5"/>
+  <rect x="670" y="305" width="20" height="30" fill="#ccccff" stroke="#0066cc" stroke-width="1.5"/>
+  
+  <!-- Labels -->
+  <text x="460" y="185" font-family="Arial" font-size="12" text-anchor="end">|q₀⟩</text>
+  <text x="460" y="225" font-family="Arial" font-size="12" text-anchor="end">|q₁⟩</text>
+  <text x="460" y="265" font-family="Arial" font-size="12" text-anchor="end">|q₂⟩</text>
+  <text x="460" y="305" font-family="Arial" font-size="12" text-anchor="end">|q₃⟩</text>
+  
+  <!-- Quantum circuit label -->
+  <text x="580" y="370" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Parameterized Quantum Circuit</text>
+  
+  <!-- Classical network label -->
+  <text x="220" y="400" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Feed-forward Network</text>
+  
+  <!-- Key characteristics section -->
+  <rect x="50" y="500" width="700" height="80" rx="10" ry="10" fill="#f9f9f9" stroke="#9966cc" stroke-width="2"/>
+  <text x="400" y="520" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Key Characteristics</text>
+  
+  <!-- Comparison points -->
+  <line x1="400" y1="530" x2="400" y2="570" stroke="#9966cc" stroke-width="1"/>
+  
+  <!-- Classical side -->
+  <text x="225" y="545" font-family="Arial" font-size="12" text-anchor="middle" fill="#cc0000">• Real-valued activations</text>
+  <text x="225" y="565" font-family="Arial" font-size="12" text-anchor="middle" fill="#cc0000">• Weight-based connections</text>
+  <text x="225" y="585" font-family="Arial" font-size="12" text-anchor="middle" fill="#cc0000">• Gradient-based optimization</text>
+  
+  <!-- Quantum side -->
+  <text x="575" y="545" font-family="Arial" font-size="12" text-anchor="middle" fill="#0066cc">• Quantum state superposition</text>
+  <text x="575" y="565" font-family="Arial" font-size="12" text-anchor="middle" fill="#0066cc">• Entanglement between qubits</text>
+  <text x="575" y="585" font-family="Arial" font-size="12" text-anchor="middle" fill="#0066cc">• Variational optimization</text>
+  
+  <!-- Figure caption -->
+  <text x="400" y="595" font-family="Arial" font-size="12" text-anchor="middle">Figure 22.3: Comparison of classical and quantum neural network architectures</text>
+</svg>

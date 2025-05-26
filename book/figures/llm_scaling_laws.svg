@@ -103,13 +103,13 @@
   <circle cx="600" cy="170" r="7" fill="#ff9900" />
   <circle cx="600" cy="250" r="7" fill="#3366cc" />
   <text x="600" y="155" text-anchor="middle" class="small-label">GPT-4</text>
-  <text x="600" y="170" text-anchor="middle" class="tiny-label">(>1T est.)</text>
+  <text x="600" y="170" text-anchor="middle" class="tiny-label">(&gt;1T est.)</text>
   
   <!-- Claude -->
   <circle cx="650" cy="165" r="6" fill="#ff9900" />
   <circle cx="650" cy="240" r="6" fill="#3366cc" />
   <text x="650" y="150" text-anchor="middle" class="small-label">Claude</text>
-  <text x="650" y="165" text-anchor="middle" class="tiny-label">(>1T est.)</text>
+  <text x="650" y="165" text-anchor="middle" class="tiny-label">(&gt;1T est.)</text>
   
   <!-- Emergent Abilities -->
   <rect x="380" y="330" width="200" height="45" rx="10" ry="10" fill="#ffffcc" stroke="#ffcc00" stroke-width="2" />

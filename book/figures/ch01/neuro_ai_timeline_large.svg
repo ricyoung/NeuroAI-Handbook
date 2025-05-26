@@ -37,7 +37,7 @@
         
         <circle cx="300" cy="120" r="8" fill="#0066cc"/>
         <text x="300" y="105" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Minsky &amp; Papert</text>
-        <text x="300" y="90" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">"Perceptrons" (1969)</text>
+        <text x="300" y="90" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">&quot;Perceptrons&quot; (1969)</text>
         
         <circle cx="505" cy="150" r="8" fill="#0066cc"/>
         <text x="505" y="135" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Backpropagation</text>

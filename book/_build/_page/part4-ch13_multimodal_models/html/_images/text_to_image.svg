@@ -57,7 +57,7 @@
   <!-- Text Prompt Box -->
   <rect x="50" y="100" width="300" height="70" rx="5" ry="5" fill="url(#textGradient)" filter="url(#shadow)"/>
   <text x="200" y="145" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#fff" font-weight="bold">
-    "A sunset over a calm ocean"
+    &quot;A sunset over a calm ocean&quot;
   </text>
   <text x="200" y="190" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#1976D2">
     Text Prompt

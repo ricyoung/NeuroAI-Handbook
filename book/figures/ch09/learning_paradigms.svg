@@ -126,7 +126,7 @@
   <text x="450" y="350" class="subtitle">Brain-Inspired Learning Methods</text>
   <rect x="190" y="370" width="220" height="110" class="box brain"/>
   <text x="300" y="390" class="box-title">Hebbian Learning</text>
-  <text x="300" y="410" class="box-content">"Neurons that fire together, wire together"</text>
+  <text x="300" y="410" class="box-content">&quot;Neurons that fire together, wire together&quot;</text>
   <text x="300" y="430" class="box-content">Unsupervised feature learning</text>
   <text x="300" y="450" class="box-content">Self-organizing maps</text>
   

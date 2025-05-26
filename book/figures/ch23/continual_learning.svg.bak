@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="500" viewBox="0 0 800 500">
+  <style>
+    .title { font: bold 20px sans-serif; }
+    .subtitle { font: bold 16px sans-serif; }
+    .label { font: 14px sans-serif; }
+    .small-label { font: 12px sans-serif; }
+    .caption { font: italic 12px sans-serif; }
+    .arrow { fill: none; stroke: #666; stroke-width: 2; marker-end: url(#arrowhead); }
+  </style>
+  
+  <!-- Markers for arrows -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f8f8" rx="10" ry="10" />
+  
+  <!-- Title -->
+  <text x="400" y="30" class="title" text-anchor="middle">Continual Learning: Biological vs Artificial Approaches</text>
+  
+  <!-- Top section: Catastrophic forgetting problem -->
+  <rect x="100" y="50" width="600" height="100" fill="#f2d7d5" stroke="#e74c3c" stroke-width="2" rx="5" ry="5" />
+  <text x="400" y="70" class="subtitle" text-anchor="middle" fill="#c0392b">The Catastrophic Forgetting Problem</text>
+  
+  <!-- Memory graphs illustration -->
+  <line x1="150" y1="100" x2="650" y2="100" stroke="#666" stroke-width="1" />
+  <line x1="150" y1="140" x2="650" y2="140" stroke="#666" stroke-width="1" />
+  
+  <!-- Performance on task A -->
+  <text x="145" y="95" class="small-label" text-anchor="end">Task A</text>
+  <polyline points="150,100 200,80 250,75 300,90 350,85 400,70 450,85 500,100 550,120 600,130 650,135" 
+            fill="none" stroke="#3498db" stroke-width="2" />
+  
+  <!-- Performance on task B -->
+  <text x="145" y="135" class="small-label" text-anchor="end">Task B</text>
+  <polyline points="150,140 200,140 250,140 300,140 350,140 400,120 450,100 500,90 550,85 600,80 650,75" 
+            fill="none" stroke="#2ecc71" stroke-width="2" />
+  
+  <text x="400" y="160" class="caption" text-anchor="middle">As a neural network learns Task B (green), it can lose performance on previously learned Task A (blue)</text>
+  
+  <!-- Middle section: Brain solutions -->
+  <rect x="50" y="170" width="350" height="230" fill="#d4e6f1" stroke="#3498db" stroke-width="2" rx="5" ry="5" />
+  <text x="225" y="190" class="subtitle" text-anchor="middle" fill="#2980b9">Biological Solutions</text>
+  
+  <!-- Hippocampal replay illustration -->
+  <ellipse cx="120" cy="240" rx="60" ry="40" fill="#85c1e9" stroke="#2980b9" stroke-width="2" />
+  <text x="120" y="240" class="small-label" text-anchor="middle">Hippocampus</text>
+  <text x="120" y="255" class="small-label" text-anchor="middle">Memory Replay</text>
+  
+  <!-- Consolidated memory -->
+  <rect x="220" y="220" width="120" height="40" fill="#aed6f1" stroke="#2980b9" stroke-width="2" rx="5" ry="5" />
+  <text x="280" y="245" class="small-label" text-anchor="middle">Neocortex</text>
+  
+  <!-- Arrow -->
+  <path d="M 160,240 C 180,240 200,240 220,240" class="arrow" />
+  <text x="190" y="230" class="small-label" text-anchor="middle">Replay</text>
+  
+  <!-- Synaptic consolidation -->
+  <circle cx="100" cy="320" r="20" fill="#85c1e9" stroke="#2980b9" stroke-width="2" />
+  <circle cx="160" cy="320" r="20" fill="#85c1e9" stroke="#2980b9" stroke-width="2" />
+  <line x1="100" y1="320" x2="160" y2="320" stroke="#2980b9" stroke-width="3" />
+  <text x="130" y="300" class="small-label" text-anchor="middle">Synaptic Consolidation</text>
+  
+  <!-- Neuromodulation -->
+  <rect x="220" y="300" width="120" height="40" fill="#aed6f1" stroke="#2980b9" stroke-width="2" rx="5" ry="5" />
+  <text x="280" y="325" class="small-label" text-anchor="middle">Neuromodulation</text>
+  <text x="280" y="340" class="small-label" text-anchor="middle">(Dopamine, ACh)</text>
+  
+  <!-- Additional labels -->
+  <text x="225" y="380" class="label" text-anchor="middle">• Sparse distributed representations</text>
+  <text x="225" y="400" class="label" text-anchor="middle">• Complementary learning systems</text>
+  
+  <!-- Right section: AI solutions -->
+  <rect x="420" y="170" width="350" height="230" fill="#d5f5e3" stroke="#2ecc71" stroke-width="2" rx="5" ry="5" />
+  <text x="595" y="190" class="subtitle" text-anchor="middle" fill="#27ae60">Artificial Intelligence Solutions</text>
+  
+  <!-- EWC illustration -->
+  <rect x="440" y="220" width="140" height="70" fill="#abebc6" stroke="#27ae60" stroke-width="2" rx="5" ry="5" />
+  <text x="510" y="245" class="small-label" text-anchor="middle">Elastic Weight</text>
+  <text x="510" y="260" class="small-label" text-anchor="middle">Consolidation (EWC)</text>
+  <text x="510" y="275" class="small-label" text-anchor="middle">Θ* = argmin L(Θ) + λF</text>
+  
+  <!-- Experience replay -->
+  <rect x="610" y="220" width="140" height="70" fill="#abebc6" stroke="#27ae60" stroke-width="2" rx="5" ry="5" />
+  <text x="680" y="245" class="small-label" text-anchor="middle">Experience Replay</text>
+  <text x="680" y="260" class="small-label" text-anchor="middle">Memory Buffer</text>
+  <circle cx="650" cy="275" r="10" fill="#27ae60" stroke="#27ae60" stroke-width="1" />
+  <circle cx="680" cy="275" r="10" fill="#27ae60" stroke="#27ae60" stroke-width="1" />
+  <circle cx="710" cy="275" r="10" fill="#27ae60" stroke="#27ae60" stroke-width="1" />
+  
+  <!-- Progressive Networks -->
+  <rect x="440" y="310" width="140" height="60" fill="#abebc6" stroke="#27ae60" stroke-width="2" rx="5" ry="5" />
+  <text x="510" y="335" class="small-label" text-anchor="middle">Progressive Networks</text>
+  <line x1="480" y1="350" x2="500" y2="350" stroke="#27ae60" stroke-width="2" />
+  <line x1="460" y1="350" x2="480" y2="350" stroke="#27ae60" stroke-width="2" />
+  <line x1="500" y1="350" x2="520" y2="350" stroke="#27ae60" stroke-width="2" />
+  
+  <!-- Meta-learning -->
+  <rect x="610" y="310" width="140" height="60" fill="#abebc6" stroke="#27ae60" stroke-width="2" rx="5" ry="5" />
+  <text x="680" y="335" class="small-label" text-anchor="middle">Meta-Learning</text>
+  <text x="680" y="350" class="small-label" text-anchor="middle">"Learning to Learn"</text>
+  
+  <!-- Bottom section: Comparison metrics -->
+  <rect x="50" y="420" width="700" height="60" fill="#eaeded" stroke="#95a5a6" stroke-width="2" rx="5" ry="5" />
+  <line x1="400" y1="420" x2="400" y2="480" stroke="#95a5a6" stroke-width="2" />
+  
+  <text x="225" y="440" class="subtitle" text-anchor="middle" fill="#34495e">Brain Solution Metrics</text>
+  <text x="225" y="460" class="small-label" text-anchor="middle">Extremely energy efficient, lifelong learning,</text>
+  <text x="225" y="475" class="small-label" text-anchor="middle">sacrifices some task-specific optimization</text>
+  
+  <text x="595" y="440" class="subtitle" text-anchor="middle" fill="#34495e">AI Solution Metrics</text>
+  <text x="595" y="460" class="small-label" text-anchor="middle">Memory & compute intensive, trade-off between</text>
+  <text x="595" y="475" class="small-label" text-anchor="middle">stability and plasticity, parameterizable</text>
+</svg>

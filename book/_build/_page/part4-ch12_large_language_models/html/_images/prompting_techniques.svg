@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
   <style>
     .title { font: bold 24px Arial; fill: #333; text-anchor: middle; }
     .subtitle { font: 18px Arial; fill: #666; text-anchor: middle; }
@@ -40,7 +40,7 @@
   
   <rect x="80" y="125" width="300" height="50" class="prompt" rx="3" ry="3" />
   <text x="90" y="145" class="code">Classify the following sentiment:</text>
-  <text x="90" y="160" class="code">"I love this new phone, it's amazing!"</text>
+  <text x="90" y="160" class="code">&quot;I love this new phone, it's amazing!&quot;</text>
   
   <rect x="400" y="125" width="50" height="50" class="model" />
   <text x="425" y="155" class="label">LLM</text>
@@ -56,11 +56,11 @@
   <text x="400" y="230" class="technique-title">Few-Shot Prompting</text>
   
   <rect x="80" y="245" width="300" height="90" class="prompt" rx="3" ry="3" />
-  <text x="90" y="265" class="code">Text: "The food was cold and bland."</text>
+  <text x="90" y="265" class="code">Text: &quot;The food was cold and bland.&quot;</text>
   <text x="90" y="280" class="code">Sentiment: Negative</text>
-  <text x="90" y="295" class="code">Text: "This movie is a masterpiece!"</text>
+  <text x="90" y="295" class="code">Text: &quot;This movie is a masterpiece!&quot;</text>
   <text x="90" y="310" class="code">Sentiment: Positive</text>
-  <text x="90" y="325" class="code">Text: "I love this new phone, it's amazing!"</text>
+  <text x="90" y="325" class="code">Text: &quot;I love this new phone, it's amazing!&quot;</text>
   <text x="90" y="340" class="code">Sentiment:</text>
   
   <rect x="400" y="265" width="50" height="50" class="model" />
